@@ -1,5 +1,5 @@
 // docs/js/app.js
-import * as duckdb from "https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.29.0/+esm";
+import * as duckdb from "./duckdb/duckdb-browser.mjs";
 import * as arrow from "https://cdn.jsdelivr.net/npm/apache-arrow@14.0.2/+esm";
 
 // DuckDB expects Arrow on globalThis
