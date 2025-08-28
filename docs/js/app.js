@@ -1,264 +1,204 @@
-// Initialize DuckDB
+import * as duckdb from "./duckdb.js";
+
+// Initialize DuckDB and connect
 async function initDuckDB() {
-    try {
-        // Load DuckDB-WASM
-        const JSDELIVR_CDN = 'https://cdn.jsdelivr.net/npm/duckdb@0.9.2/dist/duckdb.wasm';
-        const DUCKDB_VERSION = '0.9.2';
-        
-        // Load the DuckDB module
-        const DuckDB = await import('https://cdn.jsdelivr.net/npm/duckdb@0.9.2/+esm');
-        const db = new DuckDB.Database('memory');
-        const conn = db.connect();
-        
-        // Load parquet files
-        await loadParquetFiles(conn);
-        
-        // Query and visualize data
-        await visualizeData(conn);
-        
-    } catch (error) {
-        console.error('Error initializing DuckDB:', error);
-        document.body.innerHTML = `<div class="loading">Error loading data: ${error.message}</div>`;
-    }
+    const worker = new Worker("./duckdb.js");
+    const db = new duckdb.AsyncDuckDB(new duckdb.ConsoleLogger(), worker);
+    await db.instantiate();
+    const conn = await db.connect();
+
+    // Load parquet files
+    await conn.query(`
+        CREATE OR REPLACE TABLE findings AS
+        SELECT * FROM parquet_scan('data/findings.parquet');
+    `);
+
+    await conn.query(`
+        CREATE OR REPLACE TABLE metadata AS
+        SELECT * FROM parquet_scan('data/workflow_metadata.parquet');
+    `);
+
+    return conn;
 }
 
-// Load parquet files
-async function loadParquetFiles(conn) {
-    try {
-        // Load findings data
-        await conn.query(`
-            CREATE TABLE findings AS 
-            SELECT * FROM parquet_scan('./data/findings.parquet')
-        `);
-        
-        // Load metadata
-        await conn.query(`
-            CREATE TABLE metadata AS 
-            SELECT * FROM parquet_scan('./data/workflow_metadata.parquet')
-        `);
-        
-        console.log('Data loaded successfully');
-    } catch (error) {
-        console.error('Error loading parquet files:', error);
-        throw error;
-    }
+// Utility: run query and return rows
+async function queryRows(conn, sql) {
+    const result = await conn.query(sql);
+    return result.toArray().map(Object.fromEntries);
 }
 
-// Visualize the data
-async function visualizeData(conn) {
-    try {
-        // Get repository list for filter
-        const repoResult = await conn.query(`
-            SELECT DISTINCT repo_name FROM findings ORDER BY repo_name
-        `);
-        
-        const repoFilter = document.getElementById('repoFilter');
-        repoResult.forEach(row => {
-            const option = document.createElement('option');
-            option.value = row.repo_name;
-            option.textContent = row.repo_name;
-            repoFilter.appendChild(option);
-        });
-        
-        // Set up filter event listeners
-        repoFilter.addEventListener('change', () => updateVisualizations(conn));
-        document.getElementById('severityFilter').addEventListener('change', () => updateVisualizations(conn));
-        
-        // Initial visualization
-        await updateVisualizations(conn);
-        
-    } catch (error) {
-        console.error('Error visualizing data:', error);
-    }
+// Update the stats cards
+async function updateStats(conn) {
+    const totalFindings = await queryRows(conn, `SELECT COUNT(*) AS cnt FROM findings`);
+    const avgLineCount = await queryRows(conn, `SELECT AVG(line_count) AS avg FROM metadata`);
+    const findingsPerLine = await queryRows(conn, `
+        SELECT (COUNT(*) * 100.0 / SUM(line_count)) AS ratio
+        FROM findings f JOIN metadata m ON f.workflow_id = m.workflow_id
+    `);
+
+    document.getElementById("totalFindings").innerText = totalFindings[0].cnt;
+    document.getElementById("avgLineCount").innerText = avgLineCount[0].avg.toFixed(1);
+    document.getElementById("findingsPerLine").innerText = findingsPerLine[0].ratio.toFixed(2);
 }
 
-// Update visualizations based on filters
-async function updateVisualizations(conn) {
-    try {
-        const repoFilter = document.getElementById('repoFilter').value;
-        const severityFilter = document.getElementById('severityFilter').value;
-        
-        // Build WHERE clause based on filters
-        let whereClause = '';
-        if (repoFilter) whereClause += ` AND repo_name = '${repoFilter.replace(/'/g, "''")}'`;
-        if (severityFilter) whereClause += ` AND severity = '${severityFilter}'`;
-        if (whereClause) whereClause = 'WHERE ' + whereClause.substring(5);
-        
-        // Query for repository chart
-        const repoData = await conn.query(`
-            SELECT repo_name, COUNT(*) as count 
-            FROM findings 
-            ${whereClause}
-            GROUP BY repo_name 
-            ORDER BY count DESC
-        `);
-        
-        // Query for severity chart
-        const severityData = await conn.query(`
-            SELECT severity, COUNT(*) as count 
-            FROM findings 
-            ${whereClause}
-            GROUP BY severity 
-            ORDER BY count DESC
-        `);
-        
-        // Query for timeline chart
-        const timelineData = await conn.query(`
-            SELECT date_trunc('month', version_ts) as month, severity, COUNT(*) as count
-            FROM findings 
-            ${whereClause}
-            GROUP BY month, severity 
-            ORDER BY month
-        `);
-        
-        // Query for table data
-        const tableData = await conn.query(`
-            SELECT repo_name, workflow_name, rule_id, severity, message, version_ts
-            FROM findings 
-            ${whereClause}
-            ORDER BY version_ts DESC
-            LIMIT 100
-        `);
-        
-        // Render visualizations
-        renderRepoChart(repoData);
-        renderSeverityChart(severityData);
-        renderTimelineChart(timelineData);
-        renderTable(tableData);
-        
-    } catch (error) {
-        console.error('Error updating visualizations:', error);
-    }
-}
-
-// Render repository chart
-function renderRepoChart(data) {
-    const ctx = document.getElementById('repoChart').getContext('2d');
-    
-    if (window.repoChartInstance) {
-        window.repoChartInstance.destroy();
-    }
-    
-    window.repoChartInstance = new Chart(ctx, {
-        type: 'bar',
+// Chart helper
+function makeScatterChart(ctx, label, xLabel, yLabel, points) {
+    return new Chart(ctx, {
+        type: "scatter",
         data: {
-            labels: data.map(row => row.repo_name),
             datasets: [{
-                label: 'Number of Findings',
-                data: data.map(row => row.count),
-                backgroundColor: 'rgba(54, 162, 235, 0.5)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 1
+                label: label,
+                data: points,
+                backgroundColor: "rgba(54, 162, 235, 0.6)"
             }]
         },
         options: {
             responsive: true,
             scales: {
-                y: {
-                    beginAtZero: true
-                }
+                x: { title: { display: true, text: xLabel } },
+                y: { title: { display: true, text: yLabel } }
             }
         }
     });
 }
 
-// Render severity chart
-function renderSeverityChart(data) {
-    const ctx = document.getElementById('severityChart').getContext('2d');
-    
-    if (window.severityChartInstance) {
-        window.severityChartInstance.destroy();
-    }
-    
-    // Define colors based on severity
-    const colors = {
-        'warning': 'rgba(255, 206, 86, 0.5)',
-        'error': 'rgba(255, 99, 132, 0.5)'
-    };
-    
-    window.severityChartInstance = new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: data.map(row => row.severity),
-            datasets: [{
-                data: data.map(row => row.count),
-                backgroundColor: data.map(row => colors[row.severity] || 'rgba(0, 0, 0, 0.1)'),
-                borderWidth: 1
-            }]
-        },
-        options: {
-            responsive: true
-        }
-    });
+// Render charts
+async function renderCharts(conn) {
+    const lineCount = await queryRows(conn, `
+        SELECT m.line_count AS x, COUNT(f.*) AS y
+        FROM metadata m LEFT JOIN findings f ON f.workflow_id = m.workflow_id
+        GROUP BY m.line_count
+    `);
+
+    makeScatterChart(
+        document.getElementById("lineCountChart"),
+        "Line Count vs Findings",
+        "Line Count",
+        "Findings",
+        lineCount
+    );
+
+    const jobs = await queryRows(conn, `
+        SELECT m.jobs AS x, COUNT(f.*) AS y
+        FROM metadata m LEFT JOIN findings f ON f.workflow_id = m.workflow_id
+        GROUP BY m.jobs
+    `);
+
+    makeScatterChart(
+        document.getElementById("jobsChart"),
+        "Jobs vs Findings",
+        "Jobs",
+        "Findings",
+        jobs
+    );
+
+    const steps = await queryRows(conn, `
+        SELECT m.steps AS x, COUNT(f.*) AS y
+        FROM metadata m LEFT JOIN findings f ON f.workflow_id = m.workflow_id
+        GROUP BY m.steps
+    `);
+
+    makeScatterChart(
+        document.getElementById("stepsChart"),
+        "Steps vs Findings",
+        "Steps per Job",
+        "Findings",
+        steps
+    );
 }
 
-// Render timeline chart
-function renderTimelineChart(data) {
-    const ctx = document.getElementById('timelineChart').getContext('2d');
-    
-    if (window.timelineChartInstance) {
-        window.timelineChartInstance.destroy();
-    }
-    
-    // Group data by month and severity
-    const months = [...new Set(data.map(row => row.month))].sort();
-    const severities = [...new Set(data.map(row => row.severity))];
-    
-    const datasets = severities.map(severity => {
-        return {
-            label: severity,
-            data: months.map(month => {
-                const match = data.find(row => row.month === month && row.severity === severity);
-                return match ? match.count : 0;
-            }),
-            fill: false,
-            tension: 0.1
-        };
-    });
-    
-    window.timelineChartInstance = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: months.map(month => new Date(month).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })),
-            datasets: datasets
-        },
-        options: {
-            responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-}
+// Fill table
+async function fillTable(conn) {
+    const rows = await queryRows(conn, `
+        SELECT m.repo, m.workflow, m.line_count, m.jobs, m.steps,
+               COUNT(f.*) AS findings,
+               COUNT(f.*) * 1.0 / NULLIF(m.line_count,0) AS findings_per_line
+        FROM metadata m LEFT JOIN findings f ON f.workflow_id = m.workflow_id
+        GROUP BY m.repo, m.workflow, m.line_count, m.jobs, m.steps
+        ORDER BY findings DESC
+        LIMIT 100
+    `);
 
-// Render data table
-function renderTable(data) {
-    const tableBody = document.querySelector('#findingsTable tbody');
-    tableBody.innerHTML = '';
-    
-    data.forEach(row => {
-        const tr = document.createElement('tr');
+    const tbody = document.getElementById("findingsTable");
+    tbody.innerHTML = "";
+    rows.forEach(r => {
+        const tr = document.createElement("tr");
         tr.innerHTML = `
-            <td>${escapeHtml(row.repo_name)}</td>
-            <td>${escapeHtml(row.workflow_name)}</td>
-            <td>${escapeHtml(row.rule_id)}</td>
-            <td>${escapeHtml(row.severity)}</td>
-            <td>${escapeHtml(row.message)}</td>
-            <td>${new Date(row.version_ts).toLocaleDateString()}</td>
+            <td>${r.repo}</td>
+            <td>${r.workflow}</td>
+            <td>${r.line_count}</td>
+            <td>${r.jobs}</td>
+            <td>${r.steps}</td>
+            <td>${r.findings}</td>
+            <td>${(r.findings_per_line*100).toFixed(2)}</td>
         `;
-        tableBody.appendChild(tr);
+        tbody.appendChild(tr);
     });
 }
 
-// Helper function to escape HTML
-function escapeHtml(text) {
-    if (text === null || text === undefined) return '';
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML;
+// Populate repo/workflow dropdowns
+async function populateDropdowns(conn) {
+    const repos = await queryRows(conn, `SELECT DISTINCT repo FROM metadata ORDER BY repo`);
+    const repoSelect = document.getElementById("repoSelect");
+    repos.forEach(r => {
+        const opt = document.createElement("option");
+        opt.value = r.repo;
+        opt.text = r.repo;
+        repoSelect.appendChild(opt);
+    });
+
+    repoSelect.addEventListener("change", async () => {
+        const workflows = await queryRows(conn, `
+            SELECT DISTINCT workflow FROM metadata WHERE repo = '${repoSelect.value}'
+        `);
+        const workflowSelect = document.getElementById("workflowSelect");
+        workflowSelect.innerHTML = `<option value="">Select Workflow</option>`;
+        workflows.forEach(w => {
+            const opt = document.createElement("option");
+            opt.value = w.workflow;
+            opt.text = w.workflow;
+            workflowSelect.appendChild(opt);
+        });
+    });
 }
 
-// Initialize the application when the page loads
-document.addEventListener('DOMContentLoaded', initDuckDB);
+// Hook up "Analyze Evolution" button
+function setupEvolution(conn) {
+    document.getElementById("analyzeBtn").addEventListener("click", async () => {
+        const repo = document.getElementById("repoSelect").value;
+        const wf = document.getElementById("workflowSelect").value;
+        if (!repo || !wf) return;
+
+        const evo = await queryRows(conn, `
+            SELECT m.commit_date AS x, COUNT(f.*) AS y
+            FROM metadata m LEFT JOIN findings f ON f.workflow_id = m.workflow_id
+            WHERE m.repo = '${repo}' AND m.workflow = '${wf}'
+            GROUP BY m.commit_date
+            ORDER BY m.commit_date
+        `);
+
+        new Chart(document.getElementById("evolutionChart"), {
+            type: "line",
+            data: {
+                labels: evo.map(r => r.x),
+                datasets: [{
+                    label: "Findings Over Time",
+                    data: evo.map(r => r.y),
+                    borderColor: "rgba(255,99,132,1)",
+                    fill: false
+                }]
+            }
+        });
+    });
+}
+
+// Bootstrapping
+(async () => {
+    const conn = await initDuckDB();
+    await updateStats(conn);
+    await renderCharts(conn);
+    await fillTable(conn);
+    await populateDropdowns(conn);
+    setupEvolution(conn);
+})();
+
