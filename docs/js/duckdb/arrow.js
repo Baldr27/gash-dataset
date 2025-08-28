@@ -1,3 +1,3 @@
-// Load Apache Arrow from CDN and re-export it
-import * as arrow from 'https://cdn.jsdelivr.net/npm/apache-arrow@14.0.2/+esm';
-export * from 'https://cdn.jsdelivr.net/npm/apache-arrow@14.0.2/+esm';
+// This file is a placeholder to help with module resolution
+// Apache Arrow is loaded via CDN in the main HTML file
+console.log('Arrow.js placeholder loaded');
