@@ -25,59 +25,148 @@
     </nav>
 
     <div class="container mt-4">
+
+        <!-- Stats Cards -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card stats-card">
+                    <div class="stats-number" id="totalFindings">0</div>
+                    <div class="stats-label">Total Findings</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card stats-card">
+                    <div class="stats-number" id="avgLineCount">0</div>
+                    <div class="stats-label">Avg. Workflow Lines</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card stats-card">
+                    <div class="stats-number" id="findingsPerLine">0</div>
+                    <div class="stats-label">Findings per 100 Lines</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts -->
         <div class="row">
             <div class="col-md-12">
-                <div class="analysis-section">
-                    <h2>Detailed Findings</h2>
-                    <div class="row mb-3">
-                        <div class="col-md-6">
-                            <select id="repoSelect" class="form-select">
-                                <option value="">Select Repository</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 d-flex align-items-center">
-                            <span class="me-2">Show</span>
-                            <select id="rowsPerPage" class="form-select form-select-sm" style="width:auto;">
-                                <option value="10">10</option>
-                                <option value="25">25</option>
-                                <option value="50">50</option>
-                                <option value="100">100</option>
-                            </select>
-                            <span class="ms-2">entries</span>
-                        </div>
+                <div class="card chart-card">
+                    <div class="card-header">
+                        Line Count vs Vulnerabilities
                     </div>
-
-                    <div class="table-responsive">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Repository</th>
-                                    <th>Workflow</th>
-                                    <th>Line Count</th>
-                                    <th>Jobs</th>
-                                    <th>Steps/Job</th>
-                                    <th>Findings</th>
-                                    <th>Findings/Line</th>
-                                </tr>
-                            </thead>
-                            <tbody id="findingsTable">
-                                <tr><td colspan="7" class="text-center">Loading data...</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div id="paginationInfo"></div>
-                        <nav>
-                            <ul class="pagination">
-                                <li class="page-item disabled"><a class="page-link" href="#" id="prevPage">Previous</a></li>
-                                <li class="page-item"><a class="page-link" href="#" id="nextPage">Next</a></li>
-                            </ul>
-                        </nav>
+                    <div class="card-body">
+                        <canvas id="lineCountChart"></canvas>
+                        <div id="lineCountAnalysis" class="analysis-result"></div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card chart-card">
+                    <div class="card-header">Number of Jobs vs Vulnerabilities</div>
+                    <div class="card-body">
+                        <canvas id="jobsChart"></canvas>
+                        <div id="jobsAnalysis" class="analysis-result"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card chart-card">
+                    <div class="card-header">Steps per Job vs Vulnerabilities</div>
+                    <div class="card-body">
+                        <canvas id="stepsChart"></canvas>
+                        <div id="stepsAnalysis" class="analysis-result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Workflow Evolution -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card chart-card">
+                    <div class="card-header">Workflow Evolution Over Time</div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <select id="repoSelect" class="form-select">
+                                    <option value="">Select Repository</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <select id="workflowSelect" class="form-select">
+                                    <option value="">Select Workflow</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <button id="analyzeBtn" class="btn btn-primary w-100">Analyze Evolution</button>
+                            </div>
+                        </div>
+                        <canvas id="evolutionChart"></canvas>
+                        <div id="evolutionAnalysis" class="analysis-result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detailed Findings Table -->
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">Detailed Findings</div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <span class="me-2">Show</span>
+                                <select id="rowsPerPage" class="form-select form-select-sm" style="width: auto;">
+                                    <option value="10">10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>
+                                <span class="ms-2">entries</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <span class="me-2">Search:</span>
+                                <input type="text" id="searchInput" class="form-control form-control-sm" style="width: auto;">
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Repository</th>
+                                        <th>Workflow</th>
+                                        <th>Line Count</th>
+                                        <th>Jobs</th>
+                                        <th>Steps/Job</th>
+                                        <th>Findings</th>
+                                        <th>Findings/Line</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="findingsTable">
+                                    <tr>
+                                        <td colspan="7" class="text-center">Loading data...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div id="paginationInfo"></div>
+                            <nav>
+                                <ul class="pagination" id="pagination">
+                                    <li class="page-item disabled"><a class="page-link" href="#" id="prevPage">Previous</a></li>
+                                    <li class="page-item"><a class="page-link" href="#" id="nextPage">Next</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <script src="./js/app.js"></script>
