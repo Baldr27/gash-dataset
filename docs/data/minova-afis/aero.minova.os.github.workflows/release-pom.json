@@ -1,0 +1,151 @@
+{
+  "release-pom": {
+    "2023-08-22T07-15-48Z": [],
+    "2023-08-22T07-35-32Z": [],
+    "2023-09-07T10-45-40Z": [],
+    "2023-11-30T08-47-28Z": [],
+    "2024-04-03T08-23-42Z": [],
+    "2024-04-03T08-50-35Z": [],
+    "2024-04-03T12-01-45Z": []
+  },
+  "metadata": {
+    "2023-08-22T07-15-48Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 3
+      },
+      "line_count": 49,
+      "workflow": "name: release POM\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n\njobs:\n  release:\n    name: release ... repeat\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        java-version: ['17']\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v3\n        with:\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: set up JDK\n        uses: actions/setup-java@v3\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2023-08-22T07-35-32Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 3
+      },
+      "line_count": 47,
+      "workflow": "name: release POM\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n\njobs:\n  release:\n    name: release ... repeat\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        java-version: ['17']\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v3\n\n      - name: set up JDK\n        uses: actions/setup-java@v3\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2023-09-07T10-45-40Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 3
+      },
+      "line_count": 47,
+      "workflow": "name: release POM\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n\njobs:\n  release:\n    name: release ... repeat\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        java-version: ['17']\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v4\n\n      - name: set up JDK\n        uses: actions/setup-java@v3\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2023-11-30T08-47-28Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 3
+      },
+      "line_count": 47,
+      "workflow": "name: release POM\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n\njobs:\n  release:\n    name: release ... repeat\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        java-version: ['17']\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v4\n\n      - name: set up JDK\n        uses: actions/setup-java@v4\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2024-04-03T08-23-42Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 3
+      },
+      "line_count": 47,
+      "workflow": "name: release POM\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n\njobs:\n  release:\n    name: release ... repeat\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        java-version: ['21']\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v4\n\n      - name: set up JDK\n        uses: actions/setup-java@v4\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2024-04-03T08-50-35Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 3
+      },
+      "line_count": 47,
+      "workflow": "name: release POM\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n\njobs:\n  release:\n    name: release ... repeat\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        java-version: ['17']\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v4\n\n      - name: set up JDK\n        uses: actions/setup-java@v4\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2024-04-03T12-01-45Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            },
+            "java-version": {
+              "description": "This is the version of Java used for release.",
+              "type": "string",
+              "default": "21"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 3
+      },
+      "line_count": 52,
+      "workflow": "name: release POM\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n      java-version:\n        description: 'This is the version of Java used for release.'\n        type: string\n        default: '21'\n\njobs:\n  release:\n    name: release ... repeat\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        java-version:\n          - ${{inputs.java-version}}\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v4\n\n      - name: set up JDK\n        uses: actions/setup-java@v4\n        with:\n          distribution: 'temurin'\n          java-version: ${{matrix.java-version}}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    }
+  }
+}

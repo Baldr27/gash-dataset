@@ -1,0 +1,76 @@
+{
+  "main": {
+    "2022-05-25T15-49-39Z": [
+      {
+        "region": {
+          "startLine": 31,
+          "startColumn": 5,
+          "endLine": 76,
+          "endColumn": 35
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 42,
+          "startColumn": 16,
+          "endLine": null,
+          "endColumn": 63
+        },
+        "message": "Potential code injection in [${{ steps.branch-name.outputs.current_branch }}](1), which may be controlled by an external user ([workflow_dispatch](2)).",
+        "ruleId": "actions/code-injection/critical",
+        "cwe": "CWE-094",
+        "precision": "very-high",
+        "severity": "error",
+        "security_severity": "9"
+      },
+      {
+        "region": {
+          "startLine": 35,
+          "startColumn": 9,
+          "endLine": 39,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v4.3](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ]
+  },
+  "metadata": {
+    "2022-05-25T15-49-39Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main",
+            "master",
+            "releasecandidate"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main",
+            "master",
+            "draft",
+            "releasecandidate"
+          ]
+        },
+        "workflow_dispatch": null
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 7
+      },
+      "line_count": 76,
+      "workflow": "# This is a simple workflow that runs the publisher and copies the output to https://<owner>.github.io/<repo>/index.html\n# Based on the instructions from Elliot Silver, available from: https://www.argentixinfo.com/archives/156\n\n# Make sure your repo has a branch called gh-pages\n\nname: CI\n\n# Controls when the action will run. \non:\n  # Triggers the workflow on push or pull request events but only for the main branch\n  push:\n    branches: \n      - main\n      - master\n      - releasecandidate\n  pull_request:\n    branches: \n      - main\n      - master\n      - draft\n      - releasecandidate\n\n  # Allows you to run this workflow manually from the Actions tab\n  workflow_dispatch:\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  build:\n    # The type of runner that the job will run on\n    runs-on: ubuntu-latest\n\n    # Steps represent a sequence of tasks that will be executed as part of the job\n    steps:\n      - name: Get branch names\n        id: branch-name\n        uses: tj-actions/branch-names@v4.3\n\n      - name: Get branch name\n        run: |\n          echo ${GITHUB_REF##*/}\n          echo ${{ steps.branch-name.outputs.current_branch }}\n          echo ${{ steps.branch-name.outputs.is_default }}\n        \n      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it\n      - uses: actions/checkout@v2\n      - name: Update the image to the latest publisher\n        uses: docker://hl7fhir/ig-publisher-base:latest\n        with:\n          # Get the latest publisher - don't run the batch script but run the line directly\n          args: curl -L https://github.com/HL7/fhir-ig-publisher/releases/latest/download/publisher.jar -o ./input-cache/publisher.jar --create-dirs\n\n      - name: Run the IG publisher\n        uses: docker://hl7fhir/ig-publisher-base:latest\n        with:\n          # Run the publisher - don't run the batch script but run the line directly\n          args: java -jar ./input-cache/publisher.jar publisher -ig .\n\n      - name: Deploy candidate\n        uses: JamesIves/github-pages-deploy-action@4.1.4\n        if: ${{ steps.branch-name.outputs.is_default }} == 'false'\n        with:\n          branch: gh-pages # The branch the action should deploy to.\n          folder: ./output # The folder the action should deploy.\n          commit-message: Deploy candidate branch\n          target-folder: branches/${{ steps.branch-name.outputs.current_branch }}\n          clean: false \n\n      - name: Deploy main\n        uses: JamesIves/github-pages-deploy-action@4.1.4\n        if: ${{ steps.branch-name.outputs.is_default }} == 'true'\n        with:\n          branch: gh-pages # The branch the action should deploy to.\n          folder: ./output # The folder the action should deploy.\n          commit-message: Deploy main branch\n          clean-exclude: branches\n"
+    }
+  }
+}

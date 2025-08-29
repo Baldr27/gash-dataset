@@ -1,0 +1,842 @@
+{
+  "nightly-merge": {
+    "2024-01-06T07-12-58Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 25,
+          "endColumn": 35
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-01-06T09-33-49Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 31,
+          "endColumn": 35
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-01-06T11-24-07Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 31,
+          "endColumn": 35
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-01-13T10-00-45Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 29,
+          "endColumn": 55
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-01-13T10-22-32Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 30,
+          "endColumn": 55
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-01-13T10-52-47Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 30,
+          "endColumn": 55
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-01-13T11-23-04Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 30,
+          "endColumn": 55
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-01-13T11-39-32Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 30,
+          "endColumn": 55
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-12-11T00-57-05Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 57,
+          "endColumn": 45
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-12-11T01-53-08Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 69,
+          "endColumn": 45
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-12-11T01-58-40Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 74,
+          "endColumn": 45
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-12-11T02-16-51Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 86,
+          "endColumn": 45
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-12-11T02-12-58Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 76,
+          "endColumn": 45
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-12-11T02-20-07Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 91,
+          "endColumn": 45
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-12-11T02-23-44Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 97,
+          "endColumn": 45
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-12-11T05-49-23Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 27,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 28,
+          "startColumn": 5,
+          "endLine": 63,
+          "endColumn": 14
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-12-11T06-14-09Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 38,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 39,
+          "startColumn": 5,
+          "endLine": 74,
+          "endColumn": 14
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-12-11T09-10-24Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 38,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 41,
+          "startColumn": 5,
+          "endLine": 74,
+          "endColumn": 14
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-12-11T09-45-03Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 38,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 39,
+          "startColumn": 5,
+          "endLine": 74,
+          "endColumn": 14
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-12-11T15-27-28Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 74,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 75,
+          "startColumn": 5,
+          "endLine": 111,
+          "endColumn": 14
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2025-02-05T21-59-51Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 88,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 89,
+          "startColumn": 5,
+          "endLine": 125,
+          "endColumn": 14
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2024-01-06T07-12-58Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly-merge-test"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "0 14 * * *"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "nightly-merge": 3
+      },
+      "line_count": 25,
+      "workflow": "name: nightly-merge\n\non:\n  push:\n    branches: [nightly-merge-test]\n  schedule:\n    - cron: '0 14 * * *'  # At 14:00 UTC every day\n\njobs:\n  nightly-merge:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n        with:\n          fetch-depth: 0  # Fetch all history for all branches and tags\n\n      - name: Merge develop into nightly\n        run: |\n          git checkout nightly\n          git merge --no-ff origin/develop -m \"Automated merge of develop into nightly\"\n\n      - name: Push changes\n        run: |\n          git push origin nightly\n"
+    },
+    "2024-01-06T09-33-49Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly-merge-test"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "0 14 * * *"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "nightly-merge": 4
+      },
+      "line_count": 31,
+      "workflow": "name: nightly-merge\n\non:\n  push:\n    branches: [nightly-merge-test]\n  schedule:\n    - cron: '0 14 * * *'  # At 14:00 UTC every day\n\njobs:\n  nightly-merge:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n        with:\n          fetch-depth: 0  # Fetch all history for all branches and tags\n\n      # Temporary config before nautilus-bot account\n      - name: Configure Git\n        run: |\n          git config --local user.email \"chris@cjdsellers.io\"\n          git config --local user.name \"Chris Sellers\"\n\n      - name: Merge develop into nightly\n        run: |\n          git checkout nightly\n          git merge --no-ff origin/develop -m \"Automated merge of develop into nightly\"\n\n      - name: Push changes\n        run: |\n          git push origin nightly\n"
+    },
+    "2024-01-06T11-24-07Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly-merge-test"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "nightly-merge": 4
+      },
+      "line_count": 31,
+      "workflow": "name: nightly-merge\n\non:\n  push:\n    branches: [nightly-merge-test]\n  # schedule:\n  #   - cron: '0 14 * * *'  # At 14:00 UTC every day\n\njobs:\n  nightly-merge:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n        with:\n          fetch-depth: 0  # Fetch all history for all branches and tags\n\n      # Temporary config before nautilus-bot account\n      - name: Configure Git\n        run: |\n          git config --local user.email \"chris@cjdsellers.io\"\n          git config --local user.name \"Chris Sellers\"\n\n      - name: Merge develop into nightly\n        run: |\n          git checkout nightly\n          git merge --no-ff origin/develop -m \"Automated merge of develop into nightly\"\n\n      - name: Push changes\n        run: |\n          git push origin nightly\n"
+    },
+    "2024-01-13T10-00-45Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly-merge-test"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "0 14 * * *"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "nightly-merge": 2
+      },
+      "line_count": 29,
+      "workflow": "name: nightly-merge\n\non:\n  push:\n    branches: [nightly-merge-test]\n  schedule:\n    - cron: '0 14 * * *'  # At 14:00 UTC every day\n\njobs:\n  nightly-merge:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n        with:\n          fetch-depth: 0  # Fetch all history for all branches and tags\n\n      - name: Nightly merge\n        uses: robotology/gh-action-nightly-merge@v1.4.0\n        with:\n          stable_branch: 'develop'  # Branch to merge from\n          development_branch: 'nightly'  # Branch to merge to\n          allow_ff: false\n          user_name: 'Chris Sellers'\n          user_email: 'chris@cjdsellers.io'\n          push_token: 'NIGHTLY_TOKEN'\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n          NIGHTLY_TOKEN: ${{ secrets.NIGHTLY_TOKEN }}\n"
+    },
+    "2024-01-13T10-22-32Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly-merge-test"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "0 14 * * *"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "nightly-merge": 2
+      },
+      "line_count": 30,
+      "workflow": "name: nightly-merge\n\non:\n  push:\n    branches: [nightly-merge-test]\n  schedule:\n    - cron: '0 14 * * *'  # At 14:00 UTC every day\n\njobs:\n  nightly-merge:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n        with:\n          token: ${{ secrets.NIGHTLY_TOKEN }}\n          fetch-depth: 0  # Fetch all history for all branches and tags\n\n      - name: Nightly merge\n        uses: robotology/gh-action-nightly-merge@v1.4.0\n        with:\n          stable_branch: 'develop'  # Branch to merge from\n          development_branch: 'nightly'  # Branch to merge to\n          allow_ff: false\n          user_name: 'Chris Sellers'\n          user_email: 'chris@cjdsellers.io'\n          push_token: 'NIGHTLY_TOKEN'\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n          NIGHTLY_TOKEN: ${{ secrets.NIGHTLY_TOKEN }}\n"
+    },
+    "2024-01-13T10-52-47Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly-merge-test"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "0 14 * * *"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "nightly-merge": 2
+      },
+      "line_count": 30,
+      "workflow": "name: nightly-merge\n\non:\n  push:\n    branches: [nightly-merge-test]\n  schedule:\n    - cron: '0 14 * * *'  # At 14:00 UTC every day\n\njobs:\n  nightly-merge:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n        with:\n          token: ${{ secrets.NIGHTLY_TOKEN }}\n          fetch-depth: 1  # Fetch only the latest commit from each branch\n\n      - name: Nightly merge\n        uses: robotology/gh-action-nightly-merge@v1.4.0\n        with:\n          stable_branch: 'develop'  # Branch to merge from\n          development_branch: 'nightly'  # Branch to merge to\n          allow_ff: false\n          user_name: 'Chris Sellers'\n          user_email: 'chris@cjdsellers.io'\n          push_token: 'NIGHTLY_TOKEN'\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n          NIGHTLY_TOKEN: ${{ secrets.NIGHTLY_TOKEN }}\n"
+    },
+    "2024-01-13T11-23-04Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly-merge-test"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "0 14 * * *"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "nightly-merge": 2
+      },
+      "line_count": 30,
+      "workflow": "name: nightly-merge\n\non:\n  push:\n    branches: [nightly-merge-test]\n  schedule:\n    - cron: '0 14 * * *'  # At 14:00 UTC every day\n\njobs:\n  nightly-merge:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n        with:\n          token: ${{ secrets.NIGHTLY_TOKEN }}\n          fetch-depth: 0  # Fetch all history for all tags and branches\n\n      - name: Nightly merge\n        uses: robotology/gh-action-nightly-merge@v1.4.0\n        with:\n          stable_branch: 'develop'  # Branch to merge from\n          development_branch: 'nightly'  # Branch to merge to\n          allow_ff: false\n          user_name: 'Chris Sellers'\n          user_email: 'chris@cjdsellers.io'\n          push_token: 'NIGHTLY_TOKEN'\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n          NIGHTLY_TOKEN: ${{ secrets.NIGHTLY_TOKEN }}\n"
+    },
+    "2024-01-13T11-39-32Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly-merge-test"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "nightly-merge": 2
+      },
+      "line_count": 30,
+      "workflow": "name: nightly-merge\n\non:\n  push:\n    branches: [nightly-merge-test]\n  # schedule:\n  #   - cron: '0 14 * * *'  # At 14:00 UTC every day\n\njobs:\n  nightly-merge:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n        with:\n          token: ${{ secrets.NIGHTLY_TOKEN }}\n          fetch-depth: 0  # Fetch all history for all tags and branches\n\n      - name: Nightly merge\n        uses: robotology/gh-action-nightly-merge@v1.4.0\n        with:\n          stable_branch: 'develop'  # Branch to merge from\n          development_branch: 'nightly'  # Branch to merge to\n          allow_ff: false\n          user_name: 'Chris Sellers'\n          user_email: 'chris@cjdsellers.io'\n          push_token: 'NIGHTLY_TOKEN'\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n          NIGHTLY_TOKEN: ${{ secrets.NIGHTLY_TOKEN }}\n"
+    },
+    "2024-12-11T00-57-05Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly-merge-test"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "0 14 * * *"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "nightly-merge": 5
+      },
+      "line_count": 57,
+      "workflow": "name: nightly-merge\n\non:\n  push:\n    branches: [nightly-merge-test]\n  schedule:\n    - cron: '0 14 * * *'  # At 14:00 UTC every day\n\njobs:\n  nightly-merge:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n        with:\n          token: ${{ secrets.NIGHTLY_TOKEN }}\n          fetch-depth: 0  # Fetch all history for all tags and branches\n\n      - name: Nightly merge\n        uses: robotology/gh-action-nightly-merge@v1.4.0\n        with:\n          stable_branch: 'develop'  # Branch to merge from\n          development_branch: 'nightly'  # Branch to merge to\n          allow_ff: false\n          user_name: 'nautilus-trader-bot'\n          user_email: 'bot@nautechsystems.io'\n          push_token: 'NIGHTLY_TOKEN'\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n          NIGHTLY_TOKEN: ${{ secrets.NIGHTLY_TOKEN }}\n\n      - name: Log no-merge message\n        if: steps.nightly-merge.outputs.conclusion != 'merge'\n        run: echo \"No changes were merged into the nightly branch, skipping version update\"\n\n      - name: Update version for nightly build\n        if: steps.nightly-merge.outputs.conclusion == 'merge'\n        run: |\n          current_version=$(grep '^version = ' pyproject.toml | cut -d '\"' -f2)\n          date_suffix=\".dev$(date +%Y%m%d)\"\n          if [[ $current_version != *\"$date_suffix\" ]]; then\n            if ! sed -i \"s/^version = \\\".*\\\"/version = \\\"${current_version}${date_suffix}\\\"/\" pyproject.toml; then\n                echo \"Error updating version in pyproject.toml\"\n                exit 1\n            fi\n            git add pyproject.toml\n            git commit -m \"Update nightly version suffix ${date_suffix}\"\n            git push\n          else\n            echo \"Version already has the nightly suffix; no changes made\"\n          fi\n\n      - name: Log updated version\n        if: steps.nightly-merge.outputs.conclusion == 'merge'\n        run: |\n          echo \"Updated version in pyproject.toml:\"\n          grep '^version = ' pyproject.toml\n"
+    },
+    "2024-12-11T01-53-08Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly-merge-test"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "0 14 * * *"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "nightly-merge": 6
+      },
+      "line_count": 69,
+      "workflow": "name: nightly-merge\n\non:\n  push:\n    branches: [nightly-merge-test]\n  schedule:\n    - cron: '0 14 * * *'  # At 14:00 UTC every day\n\njobs:\n  nightly-merge:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n        with:\n          token: ${{ secrets.NIGHTLY_TOKEN }}\n          fetch-depth: 0  # Fetch all history for all tags and branches\n\n      - name: Nightly merge\n        id: merge\n        uses: robotology/gh-action-nightly-merge@v1.5.2\n        with:\n          stable_branch: 'develop'  # Branch to merge from\n          development_branch: 'nightly'  # Branch to merge to\n          allow_ff: false\n          user_name: 'nautilus-trader-bot'\n          user_email: 'bot@nautechsystems.io'\n          push_token: 'NIGHTLY_TOKEN'\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n          NIGHTLY_TOKEN: ${{ secrets.NIGHTLY_TOKEN }}\n\n      - name: Check merge result\n        id: check_merge\n        run: |\n          if [[ $(git rev-parse HEAD) == $(git merge-base HEAD develop) ]]; then\n            echo \"changes=false\" >> $GITHUB_OUTPUT\n            echo \"No changes needed to be merged\"\n          else\n            echo \"changes=true\" >> $GITHUB_OUTPUT\n            echo \"Changes were merged\"\n          fi\n\n      - name: Log no-merge message\n        if: steps.check_merge.outputs.changes == 'false'\n        run: echo \"No changes were merged into the nightly branch, skipping version update\"\n\n      - name: Update version for nightly build\n        if: steps.check_merge.outputs.changes == 'true'\n        run: |\n          current_version=$(grep '^version = ' pyproject.toml | cut -d '\"' -f2)\n          date_suffix=\".dev$(date +%Y%m%d)\"\n          if [[ $current_version != *\"$date_suffix\" ]]; then\n            if ! sed -i \"s/^version = \\\".*\\\"/version = \\\"${current_version}${date_suffix}\\\"/\" pyproject.toml; then\n                echo \"Error updating version in pyproject.toml\"\n                exit 1\n            fi\n            git add pyproject.toml\n            git commit -m \"Update nightly version suffix ${date_suffix}\"\n            git push\n          else\n            echo \"Version already has the nightly suffix; no changes made\"\n          fi\n\n      - name: Log updated version\n        if: steps.check_merge.outputs.changes == 'true'\n        run: |\n          echo \"Updated version in pyproject.toml:\"\n          grep '^version = ' pyproject.toml\n"
+    },
+    "2024-12-11T01-58-40Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly-merge-test"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "0 14 * * *"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "nightly-merge": 7
+      },
+      "line_count": 74,
+      "workflow": "name: nightly-merge\n\non:\n  push:\n    branches: [nightly-merge-test]\n  schedule:\n    - cron: '0 14 * * *'  # At 14:00 UTC every day\n\njobs:\n  nightly-merge:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n        with:\n          token: ${{ secrets.NIGHTLY_TOKEN }}\n          fetch-depth: 0  # Fetch all history for all tags and branches\n\n      - name: Configure Git user\n        run: |\n          git config --global user.name \"nautilus-trader-bot\"\n          git config --global user.email \"bot@nautechsystems.io\"\n\n      - name: Nightly merge\n        id: merge\n        uses: robotology/gh-action-nightly-merge@v1.5.2\n        with:\n          stable_branch: 'develop'  # Branch to merge from\n          development_branch: 'nightly'  # Branch to merge to\n          allow_ff: false\n          user_name: 'nautilus-trader-bot'\n          user_email: 'bot@nautechsystems.io'\n          push_token: 'NIGHTLY_TOKEN'\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n          NIGHTLY_TOKEN: ${{ secrets.NIGHTLY_TOKEN }}\n\n      - name: Check merge result\n        id: check_merge\n        run: |\n          if [[ $(git rev-parse HEAD) == $(git merge-base HEAD develop) ]]; then\n            echo \"changes=false\" >> $GITHUB_OUTPUT\n            echo \"No changes needed to be merged\"\n          else\n            echo \"changes=true\" >> $GITHUB_OUTPUT\n            echo \"Changes were merged\"\n          fi\n\n      - name: Log no-merge message\n        if: steps.check_merge.outputs.changes == 'false'\n        run: echo \"No changes were merged into the nightly branch, skipping version update\"\n\n      - name: Update version for nightly build\n        if: steps.check_merge.outputs.changes == 'true'\n        run: |\n          current_version=$(grep '^version = ' pyproject.toml | cut -d '\"' -f2)\n          date_suffix=\".dev$(date +%Y%m%d)\"\n          if [[ $current_version != *\"$date_suffix\" ]]; then\n            if ! sed -i \"s/^version = \\\".*\\\"/version = \\\"${current_version}${date_suffix}\\\"/\" pyproject.toml; then\n                echo \"Error updating version in pyproject.toml\"\n                exit 1\n            fi\n            git add pyproject.toml\n            git commit -m \"Update nightly version suffix ${date_suffix}\"\n            git push\n          else\n            echo \"Version already has the nightly suffix; no changes made\"\n          fi\n\n      - name: Log updated version\n        if: steps.check_merge.outputs.changes == 'true'\n        run: |\n          echo \"Updated version in pyproject.toml:\"\n          grep '^version = ' pyproject.toml\n"
+    },
+    "2024-12-11T02-16-51Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly-merge-test"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "0 14 * * *"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "nightly-merge": 9
+      },
+      "line_count": 86,
+      "workflow": "name: nightly-merge\n\non:\n  push:\n    branches: [nightly-merge-test]\n  schedule:\n    - cron: '0 14 * * *'  # At 14:00 UTC every day\n\njobs:\n  nightly-merge:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n        with:\n          token: ${{ secrets.NIGHTLY_TOKEN }}\n          fetch-depth: 0  # Fetch all history for all tags and branches\n\n      - name: Configure Git user\n        run: |\n          git config --global user.name \"nautilus-trader-bot\"\n          git config --global user.email \"bot@nautechsystems.io\"\n\n      - name: Get Poetry version from poetry-version\n        run: |\n          version=$(cat poetry-version)\n          echo \"POETRY_VERSION=$version\" >> $GITHUB_ENV\n\n      - name: Install Poetry\n        uses: snok/install-poetry@v1\n        with:\n          version: ${{ env.POETRY_VERSION }}\n\n      - name: Nightly merge\n        id: merge\n        uses: robotology/gh-action-nightly-merge@v1.5.2\n        with:\n          stable_branch: 'develop'  # Branch to merge from\n          development_branch: 'nightly'  # Branch to merge to\n          allow_ff: false\n          user_name: 'nautilus-trader-bot'\n          user_email: 'bot@nautechsystems.io'\n          push_token: 'NIGHTLY_TOKEN'\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n          NIGHTLY_TOKEN: ${{ secrets.NIGHTLY_TOKEN }}\n\n      - name: Check merge result\n        id: check_merge\n        run: |\n          if [[ $(git rev-parse HEAD) == $(git merge-base HEAD develop) ]]; then\n            echo \"changes=false\" >> $GITHUB_OUTPUT\n            echo \"No changes needed to be merged\"\n          else\n            echo \"changes=true\" >> $GITHUB_OUTPUT\n            echo \"Changes were merged\"\n          fi\n\n      - name: Log no-merge message\n        if: steps.check_merge.outputs.changes == 'false'\n        run: echo \"No changes were merged into the nightly branch, skipping version update\"\n\n      - name: Update version for nightly build\n        if: steps.check_merge.outputs.changes == 'true'\n        run: |\n          current_version=$(grep '^version = ' pyproject.toml | cut -d '\"' -f2)\n          date_suffix=\".dev$(date +%Y%m%d)\"\n          if [[ $current_version != *\"$date_suffix\" ]]; then\n            if ! sed -i \"s/^version = \\\".*\\\"/version = \\\"${current_version}${date_suffix}\\\"/\" pyproject.toml; then\n                echo \"Error updating version in pyproject.toml\"\n                exit 1\n            fi\n            poetry lock --no-update  # Update lock file without installing dependencies\n            git add pyproject.toml poetry.lock\n            git remote set-url origin https://x-access-token:${{ secrets.NIGHTLY_TOKEN }}@github.com/${{ github.repository }}\n            git commit -m \"Update nightly version suffix ${date_suffix}\"\n            git push\n          else\n            echo \"Version already has the nightly suffix; no changes made\"\n          fi\n\n      - name: Log updated version\n        if: steps.check_merge.outputs.changes == 'true'\n        run: |\n          echo \"Updated version in pyproject.toml:\"\n          grep '^version = ' pyproject.toml\n"
+    },
+    "2024-12-11T02-12-58Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly-merge-test"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "0 14 * * *"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "nightly-merge": 7
+      },
+      "line_count": 76,
+      "workflow": "name: nightly-merge\n\non:\n  push:\n    branches: [nightly-merge-test]\n  schedule:\n    - cron: '0 14 * * *'  # At 14:00 UTC every day\n\njobs:\n  nightly-merge:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n        with:\n          token: ${{ secrets.NIGHTLY_TOKEN }}\n          fetch-depth: 0  # Fetch all history for all tags and branches\n\n      - name: Configure Git user\n        run: |\n          git config --global user.name \"nautilus-trader-bot\"\n          git config --global user.email \"bot@nautechsystems.io\"\n\n      - name: Nightly merge\n        id: merge\n        uses: robotology/gh-action-nightly-merge@v1.5.2\n        with:\n          stable_branch: 'develop'  # Branch to merge from\n          development_branch: 'nightly'  # Branch to merge to\n          allow_ff: false\n          user_name: 'nautilus-trader-bot'\n          user_email: 'bot@nautechsystems.io'\n          push_token: 'NIGHTLY_TOKEN'\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n          NIGHTLY_TOKEN: ${{ secrets.NIGHTLY_TOKEN }}\n\n      - name: Check merge result\n        id: check_merge\n        run: |\n          if [[ $(git rev-parse HEAD) == $(git merge-base HEAD develop) ]]; then\n            echo \"changes=false\" >> $GITHUB_OUTPUT\n            echo \"No changes needed to be merged\"\n          else\n            echo \"changes=true\" >> $GITHUB_OUTPUT\n            echo \"Changes were merged\"\n          fi\n\n      - name: Log no-merge message\n        if: steps.check_merge.outputs.changes == 'false'\n        run: echo \"No changes were merged into the nightly branch, skipping version update\"\n\n      - name: Update version for nightly build\n        if: steps.check_merge.outputs.changes == 'true'\n        run: |\n          current_version=$(grep '^version = ' pyproject.toml | cut -d '\"' -f2)\n          date_suffix=\".dev$(date +%Y%m%d)\"\n          if [[ $current_version != *\"$date_suffix\" ]]; then\n            if ! sed -i \"s/^version = \\\".*\\\"/version = \\\"${current_version}${date_suffix}\\\"/\" pyproject.toml; then\n                echo \"Error updating version in pyproject.toml\"\n                exit 1\n            fi\n            poetry lock --no-update  # Update lock file without installing dependencies\n            git add pyproject.toml poetry.lock\n            git remote set-url origin https://x-access-token:${{ secrets.NIGHTLY_TOKEN }}@github.com/${{ github.repository }}\n            git commit -m \"Update nightly version suffix ${date_suffix}\"\n            git push\n          else\n            echo \"Version already has the nightly suffix; no changes made\"\n          fi\n\n      - name: Log updated version\n        if: steps.check_merge.outputs.changes == 'true'\n        run: |\n          echo \"Updated version in pyproject.toml:\"\n          grep '^version = ' pyproject.toml\n"
+    },
+    "2024-12-11T02-20-07Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly-merge-test"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "0 14 * * *"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "nightly-merge": 10
+      },
+      "line_count": 91,
+      "workflow": "name: nightly-merge\n\non:\n  push:\n    branches: [nightly-merge-test]\n  schedule:\n    - cron: '0 14 * * *'  # At 14:00 UTC every day\n\njobs:\n  nightly-merge:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n        with:\n          token: ${{ secrets.NIGHTLY_TOKEN }}\n          fetch-depth: 0  # Fetch all history for all tags and branches\n\n      - name: Configure Git user\n        run: |\n          git config --global user.name \"nautilus-trader-bot\"\n          git config --global user.email \"bot@nautechsystems.io\"\n\n      - name: Set up Python environment\n        uses: actions/setup-python@v5\n        with:\n          python-version: \"3.12\"\n\n      - name: Get Poetry version from poetry-version\n        run: |\n          version=$(cat poetry-version)\n          echo \"POETRY_VERSION=$version\" >> $GITHUB_ENV\n\n      - name: Install Poetry\n        uses: snok/install-poetry@v1\n        with:\n          version: ${{ env.POETRY_VERSION }}\n\n      - name: Nightly merge\n        id: merge\n        uses: robotology/gh-action-nightly-merge@v1.5.2\n        with:\n          stable_branch: 'develop'  # Branch to merge from\n          development_branch: 'nightly'  # Branch to merge to\n          allow_ff: false\n          user_name: 'nautilus-trader-bot'\n          user_email: 'bot@nautechsystems.io'\n          push_token: 'NIGHTLY_TOKEN'\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n          NIGHTLY_TOKEN: ${{ secrets.NIGHTLY_TOKEN }}\n\n      - name: Check merge result\n        id: check_merge\n        run: |\n          if [[ $(git rev-parse HEAD) == $(git merge-base HEAD develop) ]]; then\n            echo \"changes=false\" >> $GITHUB_OUTPUT\n            echo \"No changes needed to be merged\"\n          else\n            echo \"changes=true\" >> $GITHUB_OUTPUT\n            echo \"Changes were merged\"\n          fi\n\n      - name: Log no-merge message\n        if: steps.check_merge.outputs.changes == 'false'\n        run: echo \"No changes were merged into the nightly branch, skipping version update\"\n\n      - name: Update version for nightly build\n        if: steps.check_merge.outputs.changes == 'true'\n        run: |\n          current_version=$(grep '^version = ' pyproject.toml | cut -d '\"' -f2)\n          date_suffix=\".dev$(date +%Y%m%d)\"\n          if [[ $current_version != *\"$date_suffix\" ]]; then\n            if ! sed -i \"s/^version = \\\".*\\\"/version = \\\"${current_version}${date_suffix}\\\"/\" pyproject.toml; then\n                echo \"Error updating version in pyproject.toml\"\n                exit 1\n            fi\n            poetry lock --no-update  # Update lock file without installing dependencies\n            git add pyproject.toml poetry.lock\n            git remote set-url origin https://x-access-token:${{ secrets.NIGHTLY_TOKEN }}@github.com/${{ github.repository }}\n            git commit -m \"Update nightly version suffix ${date_suffix}\"\n            git push\n          else\n            echo \"Version already has the nightly suffix; no changes made\"\n          fi\n\n      - name: Log updated version\n        if: steps.check_merge.outputs.changes == 'true'\n        run: |\n          echo \"Updated version in pyproject.toml:\"\n          grep '^version = ' pyproject.toml\n"
+    },
+    "2024-12-11T02-23-44Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly-merge-test"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "0 14 * * *"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "nightly-merge": 12
+      },
+      "line_count": 97,
+      "workflow": "name: nightly-merge\n\non:\n  push:\n    branches: [nightly-merge-test]\n  schedule:\n    - cron: '0 14 * * *'  # At 14:00 UTC every day\n\njobs:\n  nightly-merge:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n        with:\n          token: ${{ secrets.NIGHTLY_TOKEN }}\n          fetch-depth: 0  # Fetch all history for all tags and branches\n\n      - name: Configure Git user\n        run: |\n          git config --global user.name \"nautilus-trader-bot\"\n          git config --global user.email \"bot@nautechsystems.io\"\n\n      - name: Install runner dependencies (Linux)\n        run: sudo apt-get install -y curl clang git libssl-dev make pkg-config\n\n      - name: Install build dependencies\n        run: python -m pip install --upgrade pip setuptools wheel\n\n      - name: Set up Python environment\n        uses: actions/setup-python@v5\n        with:\n          python-version: \"3.12\"\n\n      - name: Get Poetry version from poetry-version\n        run: |\n          version=$(cat poetry-version)\n          echo \"POETRY_VERSION=$version\" >> $GITHUB_ENV\n\n      - name: Install Poetry\n        uses: snok/install-poetry@v1\n        with:\n          version: ${{ env.POETRY_VERSION }}\n\n      - name: Nightly merge\n        id: merge\n        uses: robotology/gh-action-nightly-merge@v1.5.2\n        with:\n          stable_branch: 'develop'  # Branch to merge from\n          development_branch: 'nightly'  # Branch to merge to\n          allow_ff: false\n          user_name: 'nautilus-trader-bot'\n          user_email: 'bot@nautechsystems.io'\n          push_token: 'NIGHTLY_TOKEN'\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n          NIGHTLY_TOKEN: ${{ secrets.NIGHTLY_TOKEN }}\n\n      - name: Check merge result\n        id: check_merge\n        run: |\n          if [[ $(git rev-parse HEAD) == $(git merge-base HEAD develop) ]]; then\n            echo \"changes=false\" >> $GITHUB_OUTPUT\n            echo \"No changes needed to be merged\"\n          else\n            echo \"changes=true\" >> $GITHUB_OUTPUT\n            echo \"Changes were merged\"\n          fi\n\n      - name: Log no-merge message\n        if: steps.check_merge.outputs.changes == 'false'\n        run: echo \"No changes were merged into the nightly branch, skipping version update\"\n\n      - name: Update version for nightly build\n        if: steps.check_merge.outputs.changes == 'true'\n        run: |\n          current_version=$(grep '^version = ' pyproject.toml | cut -d '\"' -f2)\n          date_suffix=\".dev$(date +%Y%m%d)\"\n          if [[ $current_version != *\"$date_suffix\" ]]; then\n            if ! sed -i \"s/^version = \\\".*\\\"/version = \\\"${current_version}${date_suffix}\\\"/\" pyproject.toml; then\n                echo \"Error updating version in pyproject.toml\"\n                exit 1\n            fi\n            poetry lock --no-update  # Update lock file without installing dependencies\n            git add pyproject.toml poetry.lock\n            git remote set-url origin https://x-access-token:${{ secrets.NIGHTLY_TOKEN }}@github.com/${{ github.repository }}\n            git commit -m \"Update nightly version suffix ${date_suffix}\"\n            git push\n          else\n            echo \"Version already has the nightly suffix; no changes made\"\n          fi\n\n      - name: Log updated version\n        if: steps.check_merge.outputs.changes == 'true'\n        run: |\n          echo \"Updated version in pyproject.toml:\"\n          grep '^version = ' pyproject.toml\n"
+    },
+    "2024-12-11T05-49-23Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly-merge-test"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "0 14 * * *"
+          }
+        ]
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "check-develop-status": 2,
+        "nightly-merge": 4
+      },
+      "line_count": 63,
+      "workflow": "name: nightly-merge\n\non:\n  push:\n    branches: [nightly-merge-test]\n  schedule:\n    - cron: '0 14 * * *'  # At 14:00 UTC every day\n\njobs:\n  check-develop-status:\n    runs-on: ubuntu-latest\n    outputs:\n      develop_status: ${{ steps.check-workflow.outputs.status }}\n    steps:\n      - name: Install jq\n        run: sudo apt-get install -y jq\n\n      - name: Check develop branch workflow status\n        id: check-workflow\n        run: |\n          status=$(curl -s -H \"Authorization: token ${{ secrets.GITHUB_TOKEN }}\" \\\n            \"https://api.github.com/repos/${{ github.repository }}/actions/runs?branch=develop&per_page=1\" \\\n            | jq -r '.workflow_runs[0].conclusion')\n          echo \"status=$status\" >> $GITHUB_OUTPUT\n          echo \"Last develop branch workflow status: $status\"\n\n  nightly-merge:\n    needs: check-develop-status\n    if: needs.check-develop-status.outputs.develop_status == 'success'\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n        with:\n          token: ${{ secrets.NIGHTLY_TOKEN }}\n          fetch-depth: 0  # Fetch all history for all tags and branches\n\n      - name: Configure Git user\n        run: |\n          git config --global user.name \"nautilus-trader-bot\"\n          git config --global user.email \"bot@nautechsystems.io\"\n\n      - name: Nightly merge\n        id: merge\n        uses: robotology/gh-action-nightly-merge@v1.5.2\n        with:\n          stable_branch: 'develop'  # Branch to merge from\n          development_branch: 'nightly'  # Branch to merge to\n          allow_ff: false\n          user_name: 'nautilus-trader-bot'\n          user_email: 'bot@nautechsystems.io'\n          push_token: 'NIGHTLY_TOKEN'\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n          NIGHTLY_TOKEN: ${{ secrets.NIGHTLY_TOKEN }}\n\n      - name: Check merge result\n        run: |\n          if [[ $(git rev-parse HEAD) == $(git merge-base HEAD develop) ]]; then\n            echo \"No changes needed to be merged\"\n          else\n            echo \"Changes were merged\"\n          fi\n"
+    },
+    "2024-12-11T06-14-09Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly-merge-test"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "0 14 * * *"
+          }
+        ]
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "check-develop-status": 2,
+        "nightly-merge": 4
+      },
+      "line_count": 74,
+      "workflow": "name: nightly-merge\n\non:\n  push:\n    branches: [nightly-merge-test]\n  schedule:\n    - cron: '0 14 * * *'  # At 14:00 UTC every day\n\njobs:\n  check-develop-status:\n    runs-on: ubuntu-latest\n    outputs:\n      develop_status: ${{ steps.check-workflow.outputs.status }}\n    steps:\n      - name: Install jq\n        run: sudo apt-get install -y jq\n\n      - name: Check develop branch workflow status\n        id: check-workflow\n        run: |\n          status=$(curl -s -H \"Authorization: token ${{ secrets.GITHUB_TOKEN }}\" \\\n            \"https://api.github.com/repos/nautechsystems/nautilus_trader/actions/runs?branch=develop&per_page=1\" \\\n            | jq -r '.workflow_runs[0] | if .status == \"in_progress\" then \"in_progress\" else .conclusion end')\n\n          echo \"status=$status\" >> $GITHUB_OUTPUT\n          echo \"Last develop branch workflow status: $status\"\n\n          if [[ \"$status\" == \"in_progress\" ]]; then\n            echo \"The latest workflow for the develop branch is still in progress, exiting\"\n            exit 1\n          elif [[ \"$status\" != \"success\" ]]; then\n            echo \"The latest workflow for the develop branch did not succeed, exiting\"\n            exit 1\n          fi\n\n          echo \"The latest workflow for the develop branch succeeded, proceeding\"\n\n  nightly-merge:\n    needs: check-develop-status\n    if: needs.check-develop-status.outputs.develop_status == 'success'\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n        with:\n          token: ${{ secrets.NIGHTLY_TOKEN }}\n          fetch-depth: 0  # Fetch all history for all tags and branches\n\n      - name: Configure Git user\n        run: |\n          git config --global user.name \"nautilus-trader-bot\"\n          git config --global user.email \"bot@nautechsystems.io\"\n\n      - name: Nightly merge\n        id: merge\n        uses: robotology/gh-action-nightly-merge@v1.5.2\n        with:\n          stable_branch: 'develop'  # Branch to merge from\n          development_branch: 'nightly'  # Branch to merge to\n          allow_ff: false\n          user_name: 'nautilus-trader-bot'\n          user_email: 'bot@nautechsystems.io'\n          push_token: 'NIGHTLY_TOKEN'\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n          NIGHTLY_TOKEN: ${{ secrets.NIGHTLY_TOKEN }}\n\n      - name: Check merge result\n        run: |\n          if [[ $(git rev-parse HEAD) == $(git merge-base HEAD develop) ]]; then\n            echo \"No changes needed to be merged\"\n          else\n            echo \"Changes were merged\"\n          fi\n"
+    },
+    "2024-12-11T09-10-24Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly-merge-test"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "0 14 * * *"
+          }
+        ]
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "check-develop-status": 2,
+        "nightly-merge": 4
+      },
+      "line_count": 74,
+      "workflow": "name: nightly-merge\n\non:\n  push:\n    branches: [nightly-merge-test]\n  schedule:\n    - cron: '0 14 * * *'  # At 14:00 UTC every day\n\njobs:\n  check-develop-status:\n    runs-on: ubuntu-latest\n    outputs:\n      develop_status: ${{ steps.check-workflow.outputs.status }}\n    steps:\n      - name: Install jq\n        run: sudo apt-get install -y jq\n\n      - name: Check develop branch workflow status\n        id: check-workflow\n        run: |\n          status=$(curl -s -H \"Authorization: token ${{ secrets.GITHUB_TOKEN }}\" \\\n            \"https://api.github.com/repos/nautechsystems/nautilus_trader/actions/runs?branch=develop&per_page=1\" \\\n            | jq -r '.workflow_runs[0] | if .status == \"in_progress\" then \"in_progress\" else .conclusion end')\n\n          echo \"status=$status\" >> $GITHUB_OUTPUT\n          echo \"Last develop branch workflow status: $status\"\n\n          if [[ \"$status\" == \"in_progress\" ]]; then\n            echo \"The latest workflow for the develop branch is still in progress, exiting\"\n            exit 1\n          elif [[ \"$status\" != \"success\" ]]; then\n            echo \"The latest workflow for the develop branch did not succeed, exiting\"\n            exit 1\n          fi\n\n          echo \"The latest workflow for the develop branch succeeded, proceeding\"\n\n  nightly-merge:\n    # needs: check-develop-status\n    # if: needs.check-develop-status.outputs.develop_status == 'success'\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n        with:\n          token: ${{ secrets.NIGHTLY_TOKEN }}\n          fetch-depth: 0  # Fetch all history for all tags and branches\n\n      - name: Configure Git user\n        run: |\n          git config --global user.name \"nautilus-trader-bot\"\n          git config --global user.email \"bot@nautechsystems.io\"\n\n      - name: Nightly merge\n        id: merge\n        uses: robotology/gh-action-nightly-merge@v1.5.2\n        with:\n          stable_branch: 'develop'  # Branch to merge from\n          development_branch: 'nightly'  # Branch to merge to\n          allow_ff: false\n          user_name: 'nautilus-trader-bot'\n          user_email: 'bot@nautechsystems.io'\n          push_token: 'NIGHTLY_TOKEN'\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n          NIGHTLY_TOKEN: ${{ secrets.NIGHTLY_TOKEN }}\n\n      - name: Check merge result\n        run: |\n          if [[ $(git rev-parse HEAD) == $(git merge-base HEAD develop) ]]; then\n            echo \"No changes needed to be merged\"\n          else\n            echo \"Changes were merged\"\n          fi\n"
+    },
+    "2024-12-11T09-45-03Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly-merge-test"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "0 14 * * *"
+          }
+        ]
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "check-develop-status": 2,
+        "nightly-merge": 4
+      },
+      "line_count": 74,
+      "workflow": "name: nightly-merge\n\non:\n  push:\n    branches: [nightly-merge-test]\n  schedule:\n    - cron: '0 14 * * *'  # At 14:00 UTC every day\n\njobs:\n  check-develop-status:\n    runs-on: ubuntu-latest\n    outputs:\n      develop_status: ${{ steps.check-workflow.outputs.status }}\n    steps:\n      - name: Install jq\n        run: sudo apt-get install -y jq\n\n      - name: Check develop branch workflow status\n        id: check-workflow\n        run: |\n          status=$(curl -s -H \"Authorization: token ${{ secrets.GITHUB_TOKEN }}\" \\\n            \"https://api.github.com/repos/nautechsystems/nautilus_trader/actions/runs?branch=develop&per_page=1\" \\\n            | jq -r '.workflow_runs[0] | if .status == \"in_progress\" then \"in_progress\" else .conclusion end')\n\n          echo \"status=$status\" >> $GITHUB_OUTPUT\n          echo \"Last develop branch workflow status: $status\"\n\n          if [[ \"$status\" == \"in_progress\" ]]; then\n            echo \"The latest workflow for the develop branch is still in progress, exiting\"\n            exit 1\n          elif [[ \"$status\" != \"success\" ]]; then\n            echo \"The latest workflow for the develop branch did not succeed, exiting\"\n            exit 1\n          fi\n\n          echo \"The latest workflow for the develop branch succeeded, proceeding\"\n\n  nightly-merge:\n    needs: check-develop-status\n    if: needs.check-develop-status.outputs.develop_status == 'success'\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n        with:\n          token: ${{ secrets.NIGHTLY_TOKEN }}\n          fetch-depth: 0  # Fetch all history for all tags and branches\n\n      - name: Configure Git user\n        run: |\n          git config --global user.name \"nautilus-trader-bot\"\n          git config --global user.email \"bot@nautechsystems.io\"\n\n      - name: Nightly merge\n        id: merge\n        uses: robotology/gh-action-nightly-merge@v1.5.2\n        with:\n          stable_branch: 'develop'  # Branch to merge from\n          development_branch: 'nightly'  # Branch to merge to\n          allow_ff: false\n          user_name: 'nautilus-trader-bot'\n          user_email: 'bot@nautechsystems.io'\n          push_token: 'NIGHTLY_TOKEN'\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n          NIGHTLY_TOKEN: ${{ secrets.NIGHTLY_TOKEN }}\n\n      - name: Check merge result\n        run: |\n          if [[ $(git rev-parse HEAD) == $(git merge-base HEAD develop) ]]; then\n            echo \"No changes needed to be merged\"\n          else\n            echo \"Changes were merged\"\n          fi\n"
+    },
+    "2024-12-11T15-27-28Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly-merge-test"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "0 14 * * *"
+          }
+        ]
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "check-develop-status": 4,
+        "nightly-merge": 4
+      },
+      "line_count": 111,
+      "workflow": "name: nightly-merge\n\non:\n  push:\n    branches: [nightly-merge-test]\n  schedule:\n    - cron: '0 14 * * *'  # At 14:00 UTC every day\n\njobs:\n  check-develop-status:\n    runs-on: ubuntu-latest\n    outputs:\n      develop_status: ${{ steps.check-workflow.outputs.status }}\n    steps:\n      - name: Install jq\n        run: sudo apt-get install -y jq\n\n      - name: Fetch develop branch workflows\n        id: fetch-workflows\n        run: |\n          set -eo pipefail\n\n          url=\"https://api.github.com/repos/nautechsystems/nautilus_trader/actions/runs?branch=develop&per_page=20\"\n          echo \"Fetching workflows from: $url\"\n          if ! curl -s --max-time 30 -H \"Authorization: token ${{ secrets.NIGHTLY_TOKEN }}\" \"$url\" > workflow_runs.json; then\n              echo \"Failed to fetch workflows, exiting\"\n              exit 1\n          fi\n\n          echo \"Fetched workflow runs:\"\n          jq '.' workflow_runs.json\n\n      - name: Check develop branch workflow status\n        id: check-workflow\n        run: |\n          set -eo pipefail\n\n          matching_workflows=$(jq '.workflow_runs | map(select(.name == \"build\" and .head_branch == \"develop\"))' workflow_runs.json)\n          if [[ -z \"$matching_workflows\" ]]; then\n            echo \"No matching workflows found for the develop branch\"\n            exit 1\n          fi\n\n          echo \"Matching workflows:\"\n          echo \"$matching_workflows\" | jq '.'\n\n          first_workflow=$(echo \"$matching_workflows\" | jq -r 'first')\n          if [[ \"$first_workflow\" == \"null\" || -z \"$first_workflow\" ]]; then\n              echo \"No valid workflows found, exiting\"\n              exit 1\n          fi\n\n          echo \"First matching workflow:\"\n          echo \"$first_workflow\"\n\n          status=$(echo \"$first_workflow\" | jq -r 'if .status == \"in_progress\" then \"in_progress\" else .conclusion end')\n\n          echo \"status=$status\" >> $GITHUB_OUTPUT\n          echo \"Last develop branch workflow status: $status\"\n\n          if [[ \"$status\" == \"in_progress\" ]]; then\n            echo \"The latest workflow for the develop branch is still in progress, exiting\"\n            exit 1\n          elif [[ \"$status\" != \"success\" ]]; then\n            echo \"The latest workflow for the develop branch did not succeed, exiting\"\n            exit 1\n          fi\n\n          echo \"The latest workflow for the develop branch succeeded, proceeding\"\n\n      - name: Cleanup temporary files\n        run: rm -f workflow_runs.json\n\n  nightly-merge:\n    needs: check-develop-status\n    if: needs.check-develop-status.outputs.develop_status == 'success'\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n        with:\n          token: ${{ secrets.NIGHTLY_TOKEN }}\n          fetch-depth: 0  # Fetch all history for all tags and branches\n\n      - name: Configure Git user\n        run: |\n          git config --global user.name \"nautilus-trader-bot\"\n          git config --global user.email \"bot@nautechsystems.io\"\n\n      - name: Nightly merge\n        id: merge\n        uses: robotology/gh-action-nightly-merge@v1.5.2\n        with:\n          stable_branch: 'develop'  # Branch to merge from\n          development_branch: 'nightly'  # Branch to merge to\n          allow_ff: true\n          ff_only: true\n          user_name: 'nautilus-trader-bot'\n          user_email: 'bot@nautechsystems.io'\n          push_token: 'NIGHTLY_TOKEN'\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n          NIGHTLY_TOKEN: ${{ secrets.NIGHTLY_TOKEN }}\n\n      - name: Check merge result\n        run: |\n          if [[ $(git rev-parse HEAD) == $(git merge-base HEAD develop) ]]; then\n            echo \"No changes needed to be merged\"\n          else\n            echo \"Changes were merged\"\n          fi\n"
+    },
+    "2025-02-05T21-59-51Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly-merge-test"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "0 14 * * *"
+          }
+        ]
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "check-develop-status": 4,
+        "nightly-merge": 4
+      },
+      "line_count": 125,
+      "workflow": "name: nightly-merge\n\non:\n  push:\n    branches: [nightly-merge-test]\n  schedule:\n    - cron: '0 14 * * *'  # At 14:00 UTC every day\n\njobs:\n  check-develop-status:\n    runs-on: ubuntu-latest\n    outputs:\n      develop_status: ${{ steps.check-workflow.outputs.status }}\n    steps:\n      - name: Install jq\n        run: sudo apt-get install -y jq\n\n      - name: Fetch develop branch workflows\n        id: fetch-workflows\n        run: |\n          set -eo pipefail\n          url=\"https://api.github.com/repos/nautechsystems/nautilus_trader/actions/runs?branch=develop&per_page=20\"\n          echo \"Fetching workflows from: $url\"\n          if ! curl -s --max-time 30 -H \"Authorization: token ${{ secrets.NIGHTLY_TOKEN }}\" \"$url\" > workflow_runs.json; then\n              echo \"Failed to fetch workflows, exiting\"\n              exit 1\n          fi\n          echo \"Fetched workflow runs:\"\n          jq '.' workflow_runs.json\n\n      - name: Check develop branch workflow status\n        id: check-workflow\n        run: |\n          set -eo pipefail\n          matching_workflows=$(jq '\n            .workflow_runs\n            | map(\n                select(\n                  .name == \"build\"\n                  and .head_branch == \"develop\"\n                  and .event == \"push\"\n                )\n              )\n            | sort_by(.created_at)\n            | reverse\n          ' workflow_runs.json) || {\n            echo \"Error parsing workflow data\"\n            exit 1\n          }\n\n          if [[ -z \"$matching_workflows\" || \"$matching_workflows\" == \"null\" ]]; then\n            echo \"No matching workflows found for the develop branch (push events)\"\n            exit 1\n          fi\n\n          echo \"Matching workflows:\"\n          echo \"$matching_workflows\" | jq '.'\n\n          first_workflow=$(echo \"$matching_workflows\" | jq '.[0]')\n          if [[ \"$first_workflow\" == \"null\" || -z \"$first_workflow\" ]]; then\n            echo \"No valid workflows found, exiting\"\n            exit 1\n          fi\n\n          echo \"First matching workflow:\"\n          echo \"$first_workflow\"\n          echo \"Workflow event type: $(echo \"$first_workflow\" | jq -r '.event')\"\n          echo \"Workflow created at: $(echo \"$first_workflow\" | jq -r '.created_at')\"\n\n          # If .status is in_progress, use that; else use .conclusion\n          status=$(echo \"$first_workflow\" | jq -r 'if .status == \"in_progress\" then \"in_progress\" else .conclusion end')\n          echo \"status=$status\" >> $GITHUB_OUTPUT\n          echo \"Last develop branch push workflow status: $status\"\n\n          if [[ \"$status\" == \"in_progress\" ]]; then\n            echo \"The latest workflow for the develop branch is still in progress, exiting\"\n            exit 1\n          elif [[ \"$status\" != \"success\" ]]; then\n            echo \"The latest workflow for the develop branch did not succeed, exiting\"\n            exit 1\n          fi\n\n          echo \"The latest workflow for the develop branch succeeded, proceeding\"\n\n      - name: Cleanup temporary files\n        run: rm -f workflow_runs.json\n\n  nightly-merge:\n    needs: check-develop-status\n    if: needs.check-develop-status.outputs.develop_status == 'success'\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n        with:\n          token: ${{ secrets.NIGHTLY_TOKEN }}\n          fetch-depth: 0  # Fetch all history for all tags and branches\n\n      - name: Configure Git user\n        run: |\n          git config --global user.name \"nautilus-trader-bot\"\n          git config --global user.email \"bot@nautechsystems.io\"\n\n      - name: Nightly merge\n        id: merge\n        uses: robotology/gh-action-nightly-merge@v1.5.2\n        with:\n          stable_branch: 'develop'  # Branch to merge from\n          development_branch: 'nightly'  # Branch to merge to\n          allow_ff: true\n          ff_only: true\n          user_name: 'nautilus-trader-bot'\n          user_email: 'bot@nautechsystems.io'\n          push_token: 'NIGHTLY_TOKEN'\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n          NIGHTLY_TOKEN: ${{ secrets.NIGHTLY_TOKEN }}\n\n      - name: Check merge result\n        run: |\n          if [[ $(git rev-parse HEAD) == $(git merge-base HEAD develop) ]]; then\n            echo \"No changes needed to be merged\"\n          else\n            echo \"Changes were merged\"\n          fi\n"
+    }
+  }
+}

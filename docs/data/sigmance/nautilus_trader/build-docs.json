@@ -1,0 +1,102 @@
+{
+  "build-docs": {
+    "2024-12-11T05-49-23Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 19,
+          "endColumn": 40
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-06-18T08-02-46Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 19,
+          "endColumn": 40
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-12-11T09-45-03Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 19,
+          "endColumn": 40
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2024-12-11T05-49-23Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "master",
+            "nightly-pause"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build-docs": 1
+      },
+      "line_count": 19,
+      "workflow": "name: build-docs\n\non:\n  push:\n    branches: [master, nightly-pause]\n\njobs:\n  build-docs:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Fire event to nautilus_docs\n        run: |\n          curl -L \\\n            -X POST \\\n            -H \"Accept: application/vnd.github+json\" \\\n            -H \"Authorization: Bearer ${{ secrets.REPOSITORY_ACCESS_TOKEN }}\" \\\n            -H \"X-GitHub-Api-Version: 2022-11-28\" \\\n            https://api.github.com/repos/nautechsystems/nautilus_docs/dispatches \\\n            -d '{\"event_type\":\"push\"}'\n"
+    },
+    "2024-06-18T08-02-46Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "master",
+            "nightly"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build-docs": 1
+      },
+      "line_count": 19,
+      "workflow": "name: build-docs\n\non:\n  push:\n    branches: [master, nightly]\n\njobs:\n  build-docs:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Fire event to nautilus_docs\n        run: |\n          curl -L \\\n            -X POST \\\n            -H \"Accept: application/vnd.github+json\" \\\n            -H \"Authorization: Bearer ${{ secrets.REPOSITORY_ACCESS_TOKEN }}\" \\\n            -H \"X-GitHub-Api-Version: 2022-11-28\" \\\n            https://api.github.com/repos/nautechsystems/nautilus_docs/dispatches \\\n            -d '{\"event_type\":\"push\"}'\n"
+    },
+    "2024-12-11T09-45-03Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "master",
+            "nightly"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build-docs": 1
+      },
+      "line_count": 19,
+      "workflow": "name: build-docs\n\non:\n  push:\n    branches: [master, nightly]\n\njobs:\n  build-docs:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Fire event to nautilus_docs\n        run: |\n          curl -L \\\n            -X POST \\\n            -H \"Accept: application/vnd.github+json\" \\\n            -H \"Authorization: Bearer ${{ secrets.REPOSITORY_ACCESS_TOKEN }}\" \\\n            -H \"X-GitHub-Api-Version: 2022-11-28\" \\\n            https://api.github.com/repos/nautechsystems/nautilus_docs/dispatches \\\n            -d '{\"event_type\":\"push\"}'\n"
+    }
+  }
+}

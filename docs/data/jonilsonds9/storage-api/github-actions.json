@@ -1,0 +1,710 @@
+{
+  "github-actions": {
+    "2022-08-08T21-51-25Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 10,
+          "endColumn": 42
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-08-08T21-55-20Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 13,
+          "endColumn": 20
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-08-08T22-04-55Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 18,
+          "endColumn": 21
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-08-08T22-00-19Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 13,
+          "endColumn": 20
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-08-08T22-08-47Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 24,
+          "endColumn": 26
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-08-08T22-17-49Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 31,
+          "endColumn": 26
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-08-08T22-23-35Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 33,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 34,
+          "startColumn": 5,
+          "endLine": 37,
+          "endColumn": 48
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-08-08T22-26-31Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 33,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 34,
+          "startColumn": 5,
+          "endLine": 38,
+          "endColumn": 48
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-08-08T22-45-59Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 33,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 34,
+          "startColumn": 5,
+          "endLine": 55,
+          "endColumn": 7
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 48,
+          "startColumn": 9,
+          "endLine": 52,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v5.4](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2022-08-08T22-53-57Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 33,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 34,
+          "startColumn": 5,
+          "endLine": 56,
+          "endColumn": 7
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 49,
+          "startColumn": 9,
+          "endLine": 53,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v5.4](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2022-08-08T22-59-13Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 33,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 34,
+          "startColumn": 5,
+          "endLine": 60,
+          "endColumn": 114
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 49,
+          "startColumn": 9,
+          "endLine": 53,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v5.4](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2022-08-08T23-04-00Z": [
+      {
+        "region": {
+          "startLine": 13,
+          "startColumn": 5,
+          "endLine": 39,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 40,
+          "startColumn": 5,
+          "endLine": 66,
+          "endColumn": 114
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 55,
+          "startColumn": 9,
+          "endLine": 59,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v5.4](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2022-08-08T23-04-20Z": [
+      {
+        "region": {
+          "startLine": 13,
+          "startColumn": 5,
+          "endLine": 39,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 40,
+          "startColumn": 5,
+          "endLine": 66,
+          "endColumn": 116
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 55,
+          "startColumn": 9,
+          "endLine": 59,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v5.4](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2022-08-08T23-12-24Z": [
+      {
+        "region": {
+          "startLine": 13,
+          "startColumn": 5,
+          "endLine": 39,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 40,
+          "startColumn": 5,
+          "endLine": 68,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 69,
+          "startColumn": 5,
+          "endLine": 85,
+          "endColumn": 59
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 55,
+          "startColumn": 9,
+          "endLine": 59,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v5.4](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2022-08-08T23-09-13Z": [
+      {
+        "region": {
+          "startLine": 13,
+          "startColumn": 5,
+          "endLine": 39,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 40,
+          "startColumn": 5,
+          "endLine": 68,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 69,
+          "startColumn": 5,
+          "endLine": 85,
+          "endColumn": 59
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 55,
+          "startColumn": 9,
+          "endLine": 59,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v5.4](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ]
+  },
+  "metadata": {
+    "2022-08-08T21-51-25Z": {
+      "triggers": {
+        "push": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 1
+      },
+      "line_count": 10,
+      "workflow": "name: CI/CD\n\non: push\n\njobs:\n  build:\n    runs-on: ubuntu-22.04\n    steps:\n      - name: Iniciando\n        run: echo \"Iniciando com Actions\""
+    },
+    "2022-08-08T21-55-20Z": {
+      "triggers": {
+        "push": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 2
+      },
+      "line_count": 13,
+      "workflow": "name: CI/CD\n\non: push\n\njobs:\n  build:\n    runs-on: ubuntu-22.04\n    steps:\n      - name: Iniciando\n        run: echo \"Iniciando com Actions\"\n      \n      - name: Listando arquivos\n        run: ls -la"
+    },
+    "2022-08-08T22-04-55Z": {
+      "triggers": {
+        "push": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 3
+      },
+      "line_count": 18,
+      "workflow": "name: CI/CD\n\non: push\n\njobs:\n  build:\n    runs-on: ubuntu-22.04\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n      \n      - name: Usando Node\n        uses: actions/setup-node@v3\n        with:\n          node-version: 16.16.0\n      \n      - name: Visualizar a vers\u00e3o do Node\n        run: node -v"
+    },
+    "2022-08-08T22-00-19Z": {
+      "triggers": {
+        "push": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 2
+      },
+      "line_count": 13,
+      "workflow": "name: CI/CD\n\non: push\n\njobs:\n  build:\n    runs-on: ubuntu-22.04\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n      \n      - name: Listando arquivos\n        run: ls -la"
+    },
+    "2022-08-08T22-08-47Z": {
+      "triggers": {
+        "push": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 5
+      },
+      "line_count": 24,
+      "workflow": "name: CI/CD\n\non: push\n\njobs:\n  build:\n    runs-on: ubuntu-22.04\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n      \n      - name: Usando Node\n        uses: actions/setup-node@v3\n        with:\n          node-version: 16.16.0\n      \n      - name: Instalando dependecias\n        run: npm install\n\n      - name: Build do projeto\n        run: npm run build\n\n      - name: Rodando testes\n        run: npm run test"
+    },
+    "2022-08-08T22-17-49Z": {
+      "triggers": {
+        "push": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 6
+      },
+      "line_count": 31,
+      "workflow": "name: CI/CD\n\non: push\n\njobs:\n  build:\n    runs-on: ubuntu-22.04\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n\n      - name: Cacheando node_modules\n        id: cache-npm\n        uses: actions/cache@v3\n        with:\n          path: ~/.npm\n          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}\n\n      - name: Usando Node\n        uses: actions/setup-node@v3\n        with:\n          node-version: 16.16.0\n      \n      - name: Instalando dependecias\n        run: npm install\n\n      - name: Build do projeto\n        run: npm run build\n\n      - name: Rodando testes\n        run: npm run test"
+    },
+    "2022-08-08T22-23-35Z": {
+      "triggers": {
+        "push": {}
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "build": 6,
+        "homolog": 1
+      },
+      "line_count": 37,
+      "workflow": "name: CI/CD\n\non: push\n\njobs:\n  build:\n    runs-on: ubuntu-22.04\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n\n      - name: Cacheando node_modules\n        id: cache-npm\n        uses: actions/cache@v3\n        with:\n          path: ~/.npm\n          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}\n\n      - name: Usando Node\n        uses: actions/setup-node@v3\n        with:\n          node-version: 16.16.0\n      \n      - name: Instalando dependecias\n        run: npm install\n\n      - name: Build do projeto\n        run: npm run build\n\n      - name: Rodando testes\n        run: npm run test\n  \n  homolog:\n    runs-on: ubuntu-22.04\n    steps:\n      - name: Iniciando homolog\n        run: echo \"Iniciando deploy em homolog\""
+    },
+    "2022-08-08T22-26-31Z": {
+      "triggers": {
+        "push": {}
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "build": 6,
+        "homolog": 1
+      },
+      "line_count": 38,
+      "workflow": "name: CI/CD\n\non: push\n\njobs:\n  build:\n    runs-on: ubuntu-22.04\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n\n      - name: Cacheando node_modules\n        id: cache-npm\n        uses: actions/cache@v3\n        with:\n          path: ~/.npm\n          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}\n\n      - name: Usando Node\n        uses: actions/setup-node@v3\n        with:\n          node-version: 16.16.0\n      \n      - name: Instalando dependecias\n        run: npm install\n\n      - name: Build do projeto\n        run: npm run build\n\n      - name: Rodando testes\n        run: npm run test\n  \n  homolog:\n    needs: [build]\n    runs-on: ubuntu-22.04\n    steps:\n      - name: Iniciando homolog\n        run: echo \"Iniciando deploy em homolog\""
+    },
+    "2022-08-08T22-45-59Z": {
+      "triggers": {
+        "push": {}
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "build": 6,
+        "homolog": 4
+      },
+      "line_count": 55,
+      "workflow": "name: CI/CD\n\non: push\n\njobs:\n  build:\n    runs-on: ubuntu-22.04\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n\n      - name: Cacheando node_modules\n        id: cache-npm\n        uses: actions/cache@v3\n        with:\n          path: ~/.npm\n          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}\n\n      - name: Usando Node\n        uses: actions/setup-node@v3\n        with:\n          node-version: 16.16.0\n      \n      - name: Instalando dependecias\n        run: npm install\n\n      - name: Build do projeto\n        run: npm run build\n\n      - name: Rodando testes\n        run: npm run test\n  \n  homolog:\n    needs: [build]\n    runs-on: ubuntu-22.04\n    env:\n      IP_HOMLOG: 54.236.32.229\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n\n      - name: Install SSH key\n        uses: shimataro/ssh-key-action@v2\n        with:\n          key: ${{ secrets.SSH_KEY }}\n          known_hosts: ${{ secrets.KNOWN_HOSTS_HOMOLOG }}\n      \n      - name: Pegar nome da branch\n        id: branch-name\n        uses: tj-actions/branch-names@v5.4\n      \n      - name: Deploy homolog\n        run: ./deploy/deploy-homolog.sh -b ${{ steps.branch-name.outputs.current_branch }} -i ${{ env.IP_HOMLOG }}\n\n      "
+    },
+    "2022-08-08T22-53-57Z": {
+      "triggers": {
+        "push": {}
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "build": 6,
+        "homolog": 4
+      },
+      "line_count": 56,
+      "workflow": "name: CI/CD\n\non: push\n\njobs:\n  build:\n    runs-on: ubuntu-22.04\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n\n      - name: Cacheando node_modules\n        id: cache-npm\n        uses: actions/cache@v3\n        with:\n          path: ~/.npm\n          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}\n\n      - name: Usando Node\n        uses: actions/setup-node@v3\n        with:\n          node-version: 16.16.0\n      \n      - name: Instalando dependecias\n        run: npm install\n\n      - name: Build do projeto\n        run: npm run build\n\n      - name: Rodando testes\n        run: npm run test\n  \n  homolog:\n    if: github.ref_name != 'main'\n    needs: [build]\n    runs-on: ubuntu-22.04\n    env:\n      IP_HOMLOG: 54.236.32.229\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n\n      - name: Install SSH key\n        uses: shimataro/ssh-key-action@v2\n        with:\n          key: ${{ secrets.SSH_KEY }}\n          known_hosts: ${{ secrets.KNOWN_HOSTS_HOMOLOG }}\n      \n      - name: Pegar nome da branch\n        id: branch-name\n        uses: tj-actions/branch-names@v5.4\n      \n      - name: Deploy homolog\n        run: ./deploy/deploy-homolog.sh -b ${{ steps.branch-name.outputs.current_branch }} -i ${{ env.IP_HOMLOG }}\n\n      "
+    },
+    "2022-08-08T22-59-13Z": {
+      "triggers": {
+        "push": {}
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "build": 6,
+        "homolog": 5
+      },
+      "line_count": 60,
+      "workflow": "name: CI/CD\n\non: push\n\njobs:\n  build:\n    runs-on: ubuntu-22.04\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n\n      - name: Cacheando node_modules\n        id: cache-npm\n        uses: actions/cache@v3\n        with:\n          path: ~/.npm\n          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}\n\n      - name: Usando Node\n        uses: actions/setup-node@v3\n        with:\n          node-version: 16.16.0\n      \n      - name: Instalando dependecias\n        run: npm install\n\n      - name: Build do projeto\n        run: npm run build\n\n      - name: Rodando testes\n        run: npm run test\n  \n  homolog:\n    if: github.ref_name != 'main'\n    needs: [build]\n    runs-on: ubuntu-22.04\n    env:\n      IP_HOMLOG: 54.236.32.229\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n\n      - name: Install SSH key\n        uses: shimataro/ssh-key-action@v2\n        with:\n          key: ${{ secrets.SSH_KEY }}\n          known_hosts: ${{ secrets.KNOWN_HOSTS_HOMOLOG }}\n      \n      - name: Pegar nome da branch\n        id: branch-name\n        uses: tj-actions/branch-names@v5.4\n      \n      - name: Deploy homolog\n        run: ./deploy/deploy-homolog.sh -b ${{ steps.branch-name.outputs.current_branch }} -i ${{ env.IP_HOMLOG }}\n\n      - name: Adicionando URL de Homlog no PR\n        uses: blablacar/action-sticky-description@master\n        with:\n          issue_number: ${{ github.event_name == 'pull_request' && github.event.number }}\n          message: '> URL de Homlog: http://${{ env.IP_HOMLOG }}/${{ steps.branch-name.outputs.current_branch }}'"
+    },
+    "2022-08-08T23-04-00Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        }
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "build": 6,
+        "homolog": 5
+      },
+      "line_count": 66,
+      "workflow": "name: CI/CD\n\non:\n  push:\n    branches:\n      - main\n  pull_request:\n    branches:\n      - main\n\njobs:\n  build:\n    runs-on: ubuntu-22.04\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n\n      - name: Cacheando node_modules\n        id: cache-npm\n        uses: actions/cache@v3\n        with:\n          path: ~/.npm\n          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}\n\n      - name: Usando Node\n        uses: actions/setup-node@v3\n        with:\n          node-version: 16.16.0\n      \n      - name: Instalando dependecias\n        run: npm install\n\n      - name: Build do projeto\n        run: npm run build\n\n      - name: Rodando testes\n        run: npm run test\n  \n  homolog:\n    if: github.ref_name != 'main'\n    needs: [build]\n    runs-on: ubuntu-22.04\n    env:\n      IP_HOMLOG: 54.236.32.229\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n\n      - name: Install SSH key\n        uses: shimataro/ssh-key-action@v2\n        with:\n          key: ${{ secrets.SSH_KEY }}\n          known_hosts: ${{ secrets.KNOWN_HOSTS_HOMOLOG }}\n      \n      - name: Pegar nome da branch\n        id: branch-name\n        uses: tj-actions/branch-names@v5.4\n      \n      - name: Deploy homolog\n        run: ./deploy/deploy-homolog.sh -b ${{ steps.branch-name.outputs.current_branch }} -i ${{ env.IP_HOMLOG }}\n\n      - name: Adicionando URL de Homlog no PR\n        uses: blablacar/action-sticky-description@master\n        with:\n          issue_number: ${{ github.event_name == 'pull_request' && github.event.number }}\n          message: '> URL de Homlog: http://${{ env.IP_HOMLOG }}/${{ steps.branch-name.outputs.current_branch }}'"
+    },
+    "2022-08-08T23-04-20Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        }
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "build": 6,
+        "homolog": 4
+      },
+      "line_count": 66,
+      "workflow": "name: CI/CD\n\non:\n  push:\n    branches:\n      - main\n  pull_request:\n    branches:\n      - main\n\njobs:\n  build:\n    runs-on: ubuntu-22.04\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n\n      - name: Cacheando node_modules\n        id: cache-npm\n        uses: actions/cache@v3\n        with:\n          path: ~/.npm\n          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}\n\n      - name: Usando Node\n        uses: actions/setup-node@v3\n        with:\n          node-version: 16.16.0\n      \n      - name: Instalando dependecias\n        run: npm install\n\n      - name: Build do projeto\n        run: npm run build\n\n      - name: Rodando testes\n        run: npm run test\n  \n  homolog:\n    if: github.ref_name != 'main'\n    needs: [build]\n    runs-on: ubuntu-22.04\n    env:\n      IP_HOMLOG: 54.236.32.229\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n\n      - name: Install SSH key\n        uses: shimataro/ssh-key-action@v2\n        with:\n          key: ${{ secrets.SSH_KEY }}\n          known_hosts: ${{ secrets.KNOWN_HOSTS_HOMOLOG }}\n      \n      - name: Pegar nome da branch\n        id: branch-name\n        uses: tj-actions/branch-names@v5.4\n      \n      - name: Deploy homolog\n        run: ./deploy/deploy-homolog.sh -b ${{ steps.branch-name.outputs.current_branch }} -i ${{ env.IP_HOMLOG }}\n\n      # - name: Adicionando URL de Homlog no PR\n      #   uses: blablacar/action-sticky-description@master\n      #   with:\n      #     issue_number: ${{ github.event_name == 'pull_request' && github.event.number }}\n      #     message: '> URL de Homlog: http://${{ env.IP_HOMLOG }}/${{ steps.branch-name.outputs.current_branch }}'"
+    },
+    "2022-08-08T23-12-24Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        }
+      },
+      "num_jobs": 3,
+      "steps_per_job": {
+        "build": 6,
+        "homolog": 5,
+        "prod": 3
+      },
+      "line_count": 85,
+      "workflow": "name: CI/CD\n\non:\n  push:\n    branches:\n      - main\n  pull_request:\n    branches:\n      - main\n\njobs:\n  build:\n    runs-on: ubuntu-22.04\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n\n      - name: Cacheando node_modules\n        id: cache-npm\n        uses: actions/cache@v3\n        with:\n          path: ~/.npm\n          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}\n\n      - name: Usando Node\n        uses: actions/setup-node@v3\n        with:\n          node-version: 16.16.0\n      \n      - name: Instalando dependecias\n        run: npm install\n\n      - name: Build do projeto\n        run: npm run build\n\n      - name: Rodando testes\n        run: npm run test\n  \n  homolog:\n    if: github.ref_name != 'main'\n    needs: [build]\n    runs-on: ubuntu-22.04\n    env:\n      IP_HOMLOG: 54.236.32.229\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n\n      - name: Install SSH key\n        uses: shimataro/ssh-key-action@v2\n        with:\n          key: ${{ secrets.SSH_KEY }}\n          known_hosts: ${{ secrets.KNOWN_HOSTS_HOMOLOG }}\n      \n      - name: Pegar nome da branch\n        id: branch-name\n        uses: tj-actions/branch-names@v5.4\n      \n      - name: Deploy homolog\n        run: ./deploy/deploy-homolog.sh -b ${{ steps.branch-name.outputs.current_branch }} -i ${{ env.IP_HOMLOG }}\n\n      - name: Adicionando URL de Homlog no PR\n        uses: blablacar/action-sticky-description@master\n        with:\n          issue_number: ${{ github.event_name == 'pull_request' && github.event.number }}\n          message: '> URL de Homlog: http://${{ env.IP_HOMLOG }}/${{ steps.branch-name.outputs.current_branch }}'\n\n  prod:\n    if: github.ref_name == 'main'\n    needs: [build]\n    runs-on: ubuntu-22.04\n    env:\n      IP_PROD: 44.204.246.113\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n\n      - name: Install SSH key\n        uses: shimataro/ssh-key-action@v2\n        with:\n          key: ${{ secrets.SSH_KEY }}\n          known_hosts: ${{ secrets.KNOWN_HOSTS_PROD }}\n\n      - name: Deploy prod\n        run: ./deploy/deploy-prod.sh -i ${{ env.IP_PROD }}"
+    },
+    "2022-08-08T23-09-13Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        }
+      },
+      "num_jobs": 3,
+      "steps_per_job": {
+        "build": 6,
+        "homolog": 4,
+        "prod": 3
+      },
+      "line_count": 85,
+      "workflow": "name: CI/CD\n\non:\n  push:\n    branches:\n      - main\n  pull_request:\n    branches:\n      - main\n\njobs:\n  build:\n    runs-on: ubuntu-22.04\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n\n      - name: Cacheando node_modules\n        id: cache-npm\n        uses: actions/cache@v3\n        with:\n          path: ~/.npm\n          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}\n\n      - name: Usando Node\n        uses: actions/setup-node@v3\n        with:\n          node-version: 16.16.0\n      \n      - name: Instalando dependecias\n        run: npm install\n\n      - name: Build do projeto\n        run: npm run build\n\n      - name: Rodando testes\n        run: npm run test\n  \n  homolog:\n    if: github.ref_name != 'main'\n    needs: [build]\n    runs-on: ubuntu-22.04\n    env:\n      IP_HOMLOG: 54.236.32.229\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n\n      - name: Install SSH key\n        uses: shimataro/ssh-key-action@v2\n        with:\n          key: ${{ secrets.SSH_KEY }}\n          known_hosts: ${{ secrets.KNOWN_HOSTS_HOMOLOG }}\n      \n      - name: Pegar nome da branch\n        id: branch-name\n        uses: tj-actions/branch-names@v5.4\n      \n      - name: Deploy homolog\n        run: ./deploy/deploy-homolog.sh -b ${{ steps.branch-name.outputs.current_branch }} -i ${{ env.IP_HOMLOG }}\n\n      # - name: Adicionando URL de Homlog no PR\n      #   uses: blablacar/action-sticky-description@master\n      #   with:\n      #     issue_number: ${{ github.event_name == 'pull_request' && github.event.number }}\n      #     message: '> URL de Homlog: http://${{ env.IP_HOMLOG }}/${{ steps.branch-name.outputs.current_branch }}'\n\n  prod:\n    if: github.ref_name == 'main'\n    needs: [build]\n    runs-on: ubuntu-22.04\n    env:\n      IP_PROD: 44.204.246.113\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n\n      - name: Install SSH key\n        uses: shimataro/ssh-key-action@v2\n        with:\n          key: ${{ secrets.SSH_KEY }}\n          known_hosts: ${{ secrets.KNOWN_HOSTS_PROD }}\n\n      - name: Deploy prod\n        run: ./deploy/deploy-prod.sh -i ${{ env.IP_PROD }}"
+    }
+  }
+}

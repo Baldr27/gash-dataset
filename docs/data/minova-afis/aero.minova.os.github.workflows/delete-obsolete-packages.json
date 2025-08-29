@@ -1,0 +1,66 @@
+{
+  "delete-obsolete-packages": {
+    "2023-06-12T13-02-51Z": [],
+    "2024-02-15T10-18-37Z": []
+  },
+  "metadata": {
+    "2023-06-12T13-02-51Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "min-versions-to-keep": {
+              "description": "minimum number of versions to keep",
+              "type": "number",
+              "default": 3
+            },
+            "package-name": {
+              "description": "Name of the package to be deleted",
+              "type": "string",
+              "required": true
+            },
+            "package-type": {
+              "description": "Type of the package. Can be one of container, maven, npm, nuget, or rubygems",
+              "type": "string",
+              "default": "maven"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "delete": 1
+      },
+      "line_count": 32,
+      "workflow": "name: Delete Obsolete Packages\non:\n  workflow_call:\n    inputs:\n      min-versions-to-keep:\n        description: 'minimum number of versions to keep'\n        type: number\n        default: 3\n      package-name:\n        description: 'Name of the package to be deleted'\n        type: string\n        required: true\n      package-type:\n        description: 'Type of the package. Can be one of container, maven, npm, nuget, or rubygems'\n        type: string\n        default: 'maven'\n\njobs:\n  delete:\n    if: ${{ github.event.workflow_run.conclusion == 'success' }}\n    runs-on: ubuntu-latest\n    steps:\n      - name: delete '${{inputs.package-name}}' packages\n        uses: actions/delete-package-versions@v4\n        with:\n          #repo: 'aero.minova.maven.root'\n          package-name: ${{inputs.package-name}}\n          package-type: ${{inputs.package-type}}\n          min-versions-to-keep: 3\n          token: ${{ secrets.DELETE_PACKAGE }}\n\n\n"
+    },
+    "2024-02-15T10-18-37Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "min-versions-to-keep": {
+              "description": "minimum number of versions to keep",
+              "type": "number",
+              "default": 3
+            },
+            "package-name": {
+              "description": "Name of the package to be deleted",
+              "type": "string",
+              "required": true
+            },
+            "package-type": {
+              "description": "Type of the package. Can be one of container, maven, npm, nuget, or rubygems",
+              "type": "string",
+              "default": "maven"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "delete": 1
+      },
+      "line_count": 32,
+      "workflow": "name: Delete Obsolete Packages\non:\n  workflow_call:\n    inputs:\n      min-versions-to-keep:\n        description: 'minimum number of versions to keep'\n        type: number\n        default: 3\n      package-name:\n        description: 'Name of the package to be deleted'\n        type: string\n        required: true\n      package-type:\n        description: 'Type of the package. Can be one of container, maven, npm, nuget, or rubygems'\n        type: string\n        default: 'maven'\n\njobs:\n  delete:\n    if: ${{ github.event.workflow_run.conclusion == 'success' }}\n    runs-on: ubuntu-latest\n    steps:\n      - name: delete '${{inputs.package-name}}' packages\n        uses: actions/delete-package-versions@v5\n        with:\n          #repo: 'aero.minova.maven.root'\n          package-name: ${{inputs.package-name}}\n          package-type: ${{inputs.package-type}}\n          min-versions-to-keep: 3\n          token: ${{ secrets.DELETE_PACKAGE }}\n\n\n"
+    }
+  }
+}

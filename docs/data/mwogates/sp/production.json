@@ -1,0 +1,74 @@
+{
+  "production": {
+    "2024-06-14T23-29-39Z": [
+      {
+        "region": {
+          "startLine": 3,
+          "startColumn": 5,
+          "endLine": 36,
+          "endColumn": 40
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-06-15T00-38-17Z": [
+      {
+        "region": {
+          "startLine": 3,
+          "startColumn": 5,
+          "endLine": 36,
+          "endColumn": 63
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2024-06-14T23-29-39Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ],
+          "paths": [
+            "theme/**"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy": 7
+      },
+      "line_count": 43,
+      "workflow": "jobs:\n  deploy:\n    name: Deploy\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v3\n      - uses: actions/setup-node@v3\n        with:\n          node-version: 20\n      - uses: ruby/setup-ruby@v1\n        with:\n          ruby-version: 3.1\n          bundler: 'latest'\n      - name: Install Shopify CLI\n        run: npm install -g @shopify/cli @shopify/theme\n      - name: Select Store\n        id: select-store\n        uses: actions/github-script@v6\n        with:\n          result-encoding: string\n          script: |\n            return 'sp-home-test'\n      - name: Select Token\n        id: select-token\n        uses: actions/github-script@v6\n        with:\n          result-encoding: string\n          script: |\n            return 'shptka_5a287548322834b94b68e577aaf85239'\n      - name: Update the live theme\n        id: update-theme\n        env:\n          SHOPIFY_FLAG_STORE: ${{ steps.select-store.outputs.result }}\n          SHOPIFY_CLI_THEME_TOKEN: ${{ steps.select-token.outputs.result }}\n          SHOPIFY_FLAG_PATH: './theme'\n        run: shopify theme push --live\nname: 'Production'\non:\n  push:\n    branches:\n      - main\n    paths:\n      - 'theme/**'\n"
+    },
+    "2024-06-15T00-38-17Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ],
+          "paths": [
+            "theme/**"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy": 7
+      },
+      "line_count": 43,
+      "workflow": "jobs:\n  deploy:\n    name: Deploy\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v3\n      - uses: actions/setup-node@v3\n        with:\n          node-version: 20\n      - uses: ruby/setup-ruby@v1\n        with:\n          ruby-version: 3.1\n          bundler: 'latest'\n      - name: Install Shopify CLI\n        run: npm install -g @shopify/cli @shopify/theme\n      - name: Select Store\n        id: select-store\n        uses: actions/github-script@v6\n        with:\n          result-encoding: string\n          script: |\n            return 'sp-home-test'\n      - name: Select Token\n        id: select-token\n        uses: actions/github-script@v6\n        with:\n          result-encoding: string\n          script: |\n            return 'shptka_5a287548322834b94b68e577aaf85239'\n      - name: Update the live theme\n        id: update-theme\n        env:\n          SHOPIFY_FLAG_STORE: ${{ steps.select-store.outputs.result }}\n          SHOPIFY_CLI_THEME_TOKEN: ${{ steps.select-token.outputs.result }}\n          SHOPIFY_FLAG_PATH: './theme'\n        run: shopify theme push --verbose --allow-live --live\nname: 'Production'\non:\n  push:\n    branches:\n      - main\n    paths:\n      - 'theme/**'\n"
+    }
+  }
+}

@@ -1,0 +1,306 @@
+{
+  "pom-continuous-integration": {
+    "2023-08-22T07-15-48Z": [
+      {
+        "region": {
+          "startLine": 24,
+          "startColumn": 9,
+          "endLine": 28,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v6.5](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2023-08-22T07-17-24Z": [
+      {
+        "region": {
+          "startLine": 24,
+          "startColumn": 9,
+          "endLine": 28,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v6.5](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2023-09-07T10-45-40Z": [
+      {
+        "region": {
+          "startLine": 24,
+          "startColumn": 9,
+          "endLine": 28,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v6.5](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2023-08-22T07-19-54Z": [
+      {
+        "region": {
+          "startLine": 24,
+          "startColumn": 9,
+          "endLine": 28,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v6.5](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2023-11-30T08-47-28Z": [
+      {
+        "region": {
+          "startLine": 24,
+          "startColumn": 9,
+          "endLine": 28,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v6.5](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2023-12-06T09-44-47Z": [],
+    "2023-12-08T07-46-35Z": [],
+    "2024-02-15T10-18-50Z": [],
+    "2024-04-03T08-23-42Z": [],
+    "2024-04-03T08-50-35Z": [],
+    "2024-04-03T12-01-45Z": []
+  },
+  "metadata": {
+    "2023-08-22T07-15-48Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "maven-goal": {
+              "description": "Maven goal during the build, e.g. verify, package, install",
+              "type": "string",
+              "default": "verify"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 4
+      },
+      "line_count": 51,
+      "workflow": "name: POM Continuous Integration\n\non:\n  workflow_call:\n    inputs:\n      maven-goal:\n        description: 'Maven goal during the build, e.g. verify, package, install'\n        type: string\n        default: 'verify'\n\njobs:\n  build:\n    name: build ... repeat\n    runs-on: ubuntu-latest\n    outputs:\n      container-image: ${{steps.container-name-and-githash.outputs.container-image}}\n    permissions: write-all\n\n    strategy:\n      matrix:\n        java-version: [ '17' ]\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v6.5\n\n      - name: checkout repository\n        uses: actions/checkout@v3\n        with:\n          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis\n\n      - name: set up JDK\n        uses: actions/setup-java@v3\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Maven build and SonarQube scan\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2023-08-22T07-17-24Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "maven-goal": {
+              "description": "Maven goal during the build, e.g. verify, package, install",
+              "type": "string",
+              "default": "verify"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 4
+      },
+      "line_count": 51,
+      "workflow": "name: POM Continuous Integration\n\non:\n  workflow_call:\n    inputs:\n      maven-goal:\n        description: 'Maven goal during the build, e.g. verify, package, install'\n        type: string\n        default: 'verify'\n\njobs:\n  build:\n    name: build ... repeat\n    runs-on: ubuntu-latest\n    outputs:\n      container-image: ${{steps.container-name-and-githash.outputs.container-image}}\n    permissions: write-all\n\n    strategy:\n      matrix:\n        java-version: [ '17' ]\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v6.5\n\n      - name: checkout repository\n        uses: actions/checkout@v3\n        with:\n          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis\n\n      - name: set up JDK\n        uses: actions/setup-java@v3\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Maven build\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2023-09-07T10-45-40Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "maven-goal": {
+              "description": "Maven goal during the build, e.g. verify, package, install",
+              "type": "string",
+              "default": "verify"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 4
+      },
+      "line_count": 52,
+      "workflow": "name: POM Continuous Integration\n\non:\n  workflow_call:\n    inputs:\n      maven-goal:\n        description: 'Maven goal during the build, e.g. verify, package, install'\n        type: string\n        default: 'verify'\n\njobs:\n  build:\n    name: build ... repeat\n    runs-on: ubuntu-latest\n    outputs:\n      container-image: ${{steps.container-name-and-githash.outputs.container-image}}\n    permissions: write-all\n\n    strategy:\n      matrix:\n        java-version: [ '17' ]\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v6.5\n\n      - name: checkout repository\n        uses: actions/checkout@v4\n        with:\n          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis\n\n      - name: set up JDK\n        uses: actions/setup-java@v3\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Maven build\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            clean ${{ inputs.maven-goal }} \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2023-08-22T07-19-54Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "maven-goal": {
+              "description": "Maven goal during the build, e.g. verify, package, install",
+              "type": "string",
+              "default": "verify"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 4
+      },
+      "line_count": 52,
+      "workflow": "name: POM Continuous Integration\n\non:\n  workflow_call:\n    inputs:\n      maven-goal:\n        description: 'Maven goal during the build, e.g. verify, package, install'\n        type: string\n        default: 'verify'\n\njobs:\n  build:\n    name: build ... repeat\n    runs-on: ubuntu-latest\n    outputs:\n      container-image: ${{steps.container-name-and-githash.outputs.container-image}}\n    permissions: write-all\n\n    strategy:\n      matrix:\n        java-version: [ '17' ]\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v6.5\n\n      - name: checkout repository\n        uses: actions/checkout@v3\n        with:\n          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis\n\n      - name: set up JDK\n        uses: actions/setup-java@v3\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Maven build\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            clean ${{ inputs.maven-goal }} \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2023-11-30T08-47-28Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "maven-goal": {
+              "description": "Maven goal during the build, e.g. verify, package, install",
+              "type": "string",
+              "default": "verify"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 4
+      },
+      "line_count": 52,
+      "workflow": "name: POM Continuous Integration\n\non:\n  workflow_call:\n    inputs:\n      maven-goal:\n        description: 'Maven goal during the build, e.g. verify, package, install'\n        type: string\n        default: 'verify'\n\njobs:\n  build:\n    name: build ... repeat\n    runs-on: ubuntu-latest\n    outputs:\n      container-image: ${{steps.container-name-and-githash.outputs.container-image}}\n    permissions: write-all\n\n    strategy:\n      matrix:\n        java-version: [ '17' ]\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v6.5\n\n      - name: checkout repository\n        uses: actions/checkout@v4\n        with:\n          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis\n\n      - name: set up JDK\n        uses: actions/setup-java@v4\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Maven build\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            clean ${{ inputs.maven-goal }} \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2023-12-06T09-44-47Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "maven-goal": {
+              "description": "Maven goal during the build, e.g. verify, package, install",
+              "type": "string",
+              "default": "verify"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 4
+      },
+      "line_count": 52,
+      "workflow": "name: POM Continuous Integration\n\non:\n  workflow_call:\n    inputs:\n      maven-goal:\n        description: 'Maven goal during the build, e.g. verify, package, install'\n        type: string\n        default: 'verify'\n\njobs:\n  build:\n    name: build ... repeat\n    runs-on: ubuntu-latest\n    outputs:\n      container-image: ${{steps.container-name-and-githash.outputs.container-image}}\n    permissions: write-all\n\n    strategy:\n      matrix:\n        java-version: [ '17' ]\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v7.0.7\n\n      - name: checkout repository\n        uses: actions/checkout@v4\n        with:\n          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis\n\n      - name: set up JDK\n        uses: actions/setup-java@v4\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Maven build\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            clean ${{ inputs.maven-goal }} \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2023-12-08T07-46-35Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "maven-goal": {
+              "description": "Maven goal during the build, e.g. verify, package, install",
+              "type": "string",
+              "default": "verify"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 4
+      },
+      "line_count": 52,
+      "workflow": "name: POM Continuous Integration\n\non:\n  workflow_call:\n    inputs:\n      maven-goal:\n        description: 'Maven goal during the build, e.g. verify, package, install'\n        type: string\n        default: 'verify'\n\njobs:\n  build:\n    name: build ... repeat\n    runs-on: ubuntu-latest\n    outputs:\n      container-image: ${{steps.container-name-and-githash.outputs.container-image}}\n    permissions: write-all\n\n    strategy:\n      matrix:\n        java-version: [ '17' ]\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8.0.0\n\n      - name: checkout repository\n        uses: actions/checkout@v4\n        with:\n          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis\n\n      - name: set up JDK\n        uses: actions/setup-java@v4\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Maven build\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            clean ${{ inputs.maven-goal }} \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2024-02-15T10-18-50Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "maven-goal": {
+              "description": "Maven goal during the build, e.g. verify, package, install",
+              "type": "string",
+              "default": "verify"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 4
+      },
+      "line_count": 52,
+      "workflow": "name: POM Continuous Integration\n\non:\n  workflow_call:\n    inputs:\n      maven-goal:\n        description: 'Maven goal during the build, e.g. verify, package, install'\n        type: string\n        default: 'verify'\n\njobs:\n  build:\n    name: build ... repeat\n    runs-on: ubuntu-latest\n    outputs:\n      container-image: ${{steps.container-name-and-githash.outputs.container-image}}\n    permissions: write-all\n\n    strategy:\n      matrix:\n        java-version: [ '17' ]\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8.0.1\n\n      - name: checkout repository\n        uses: actions/checkout@v4\n        with:\n          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis\n\n      - name: set up JDK\n        uses: actions/setup-java@v4\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Maven build\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            clean ${{ inputs.maven-goal }} \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2024-04-03T08-23-42Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "maven-goal": {
+              "description": "Maven goal during the build, e.g. verify, package, install",
+              "type": "string",
+              "default": "verify"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 4
+      },
+      "line_count": 52,
+      "workflow": "name: POM Continuous Integration\n\non:\n  workflow_call:\n    inputs:\n      maven-goal:\n        description: 'Maven goal during the build, e.g. verify, package, install'\n        type: string\n        default: 'verify'\n\njobs:\n  build:\n    name: build ... repeat\n    runs-on: ubuntu-latest\n    outputs:\n      container-image: ${{steps.container-name-and-githash.outputs.container-image}}\n    permissions: write-all\n\n    strategy:\n      matrix:\n        java-version: [ '21' ]\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8.0.1\n\n      - name: checkout repository\n        uses: actions/checkout@v4\n        with:\n          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis\n\n      - name: set up JDK\n        uses: actions/setup-java@v4\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Maven build\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            clean ${{ inputs.maven-goal }} \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2024-04-03T08-50-35Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "maven-goal": {
+              "description": "Maven goal during the build, e.g. verify, package, install",
+              "type": "string",
+              "default": "verify"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 4
+      },
+      "line_count": 52,
+      "workflow": "name: POM Continuous Integration\n\non:\n  workflow_call:\n    inputs:\n      maven-goal:\n        description: 'Maven goal during the build, e.g. verify, package, install'\n        type: string\n        default: 'verify'\n\njobs:\n  build:\n    name: build ... repeat\n    runs-on: ubuntu-latest\n    outputs:\n      container-image: ${{steps.container-name-and-githash.outputs.container-image}}\n    permissions: write-all\n\n    strategy:\n      matrix:\n        java-version: [ '17' ]\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8.0.1\n\n      - name: checkout repository\n        uses: actions/checkout@v4\n        with:\n          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis\n\n      - name: set up JDK\n        uses: actions/setup-java@v4\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Maven build\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            clean ${{ inputs.maven-goal }} \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2024-04-03T12-01-45Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "maven-goal": {
+              "description": "Maven goal during the build, e.g. verify, package, install",
+              "type": "string",
+              "default": "verify"
+            },
+            "java-version": {
+              "description": "This is the version of Java used for release.",
+              "type": "string",
+              "default": "21"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 4
+      },
+      "line_count": 57,
+      "workflow": "name: POM Continuous Integration\n\non:\n  workflow_call:\n    inputs:\n      maven-goal:\n        description: 'Maven goal during the build, e.g. verify, package, install'\n        type: string\n        default: 'verify'\n      java-version:\n        description: 'This is the version of Java used for release.'\n        type: string\n        default: '21'\n\njobs:\n  build:\n    name: build ... repeat\n    runs-on: ubuntu-latest\n    outputs:\n      container-image: ${{steps.container-name-and-githash.outputs.container-image}}\n    permissions: write-all\n\n    strategy:\n      matrix:\n        java-version:\n          - ${{inputs.java-version}}\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8.0.1\n\n      - name: checkout repository\n        uses: actions/checkout@v4\n        with:\n          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis\n\n      - name: set up JDK\n        uses: actions/setup-java@v4\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Maven build\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            clean ${{ inputs.maven-goal }} \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    }
+  }
+}

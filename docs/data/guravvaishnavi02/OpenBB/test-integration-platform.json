@@ -1,0 +1,70 @@
+{
+  "test-integration-platform": {
+    "2024-05-14T15-38-06Z": [
+      {
+        "region": {
+          "startLine": 15,
+          "startColumn": 5,
+          "endLine": 115,
+          "endColumn": 22
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-07-01T13-05-59Z": [
+      {
+        "region": {
+          "startLine": 15,
+          "startColumn": 5,
+          "endLine": 115,
+          "endColumn": 22
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2024-05-14T15-38-06Z": {
+      "triggers": {
+        "workflow_dispatch": null,
+        "pull_request": {
+          "branches": [
+            "release/*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "api-integration-tests": 14
+      },
+      "line_count": 115,
+      "workflow": "name: \ud83d\ude89 Integration test Platform (API)\n\non:\n  workflow_dispatch:\n  pull_request:\n    branches:\n      - release/*\n\nconcurrency:\n  group: ${{ github.workflow }}-${{ github.ref }}\n  cancel-in-progress: true\n\njobs:\n  api-integration-tests:\n    runs-on: ubuntu-latest\n    env:\n      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}\n      OPENBB_API_AUTH: true\n      OPENBB_API_USERNAME: \"USER\"\n      OPENBB_API_PASSWORD: \"PASS\"\n\n    steps:\n      - name: Slack Notification - Starting\n        uses: act10ns/slack@v1\n        with:\n          status: starting\n          channel: \"#workflows\"\n          message: Starting API Integration Test...\n        if: always()\n\n      - name: Checkout code\n        uses: actions/checkout@v3\n\n      - name: Checkout specific ref\n        if: github.event_name == 'pull_request'\n        run: git fetch origin ${{ github.event.pull_request.head.ref }} && git checkout FETCH_HEAD\n\n      - name: Setup Python 3.10\n        uses: actions/setup-python@v4\n        with:\n          python-version: \"3.10\"\n          architecture: x64\n\n      - name: Install Dependencies\n        run: |\n          python -m venv runner_env\n          source runner_env/bin/activate\n          pip install poetry toml\n          python openbb_platform/dev_install.py -e\n\n      - name: Populate System Setting Files\n        run: |\n          mkdir -p ~/.openbb_platform\n          touch ~/.openbb_platform/system_settings.json\n          echo '{\"log_collect\":false}' > ~/.openbb_platform/system_settings.json\n          cat ~/.openbb_platform/system_settings.json\n\n      - name: Create and Populate user_settings.json from GitHub Secrets\n        run: |\n          touch ~/.openbb_platform/user_settings.json\n          echo '{\n            \"credentials\": {\n              \"benzinga_api_key\": \"${{ secrets.BENZINGA_API_KEY }}\",\n              \"fmp_api_key\": \"${{ secrets.FMP_API_KEY }}\",\n              \"polygon_api_key\": \"${{ secrets.POLYGON_API_KEY }}\",\n              \"alpha_vantage_api_key\": \"${{ secrets.ALPHA_VANTAGE_API_KEY }}\",\n              \"fred_api_key\": \"${{ secrets.FRED_API_KEY }}\",\n              \"intrinio_api_key\": \"${{ secrets.INTRINIO_API_KEY }}\",\n              \"tradingeconomics_api_key\": \"${{ secrets.TRADINGECONOMICS_API_KEY }}\",\n              \"quandl_api_key\": \"${{ secrets.QUANDL_API_KEY }}\",\n              \"biztoc_api_key\": \"${{ secrets.BIZTOC_API_KEY }}\",\n              \"nasdaq_api_key\": \"${{ secrets.NASDAQ_API_KEY }}\",\n              \"tiingo_token\": \"${{ secrets.TIINGO_TOKEN }}\"\n            }\n          }' > ~/.openbb_platform/user_settings.json\n\n      - name: Build openbb\n        run: |\n          source runner_env/bin/activate\n          python -c \"import openbb; openbb.build()\"\n\n      - name: Launch the Uvicorn Process\n        run: |\n          source runner_env/bin/activate\n          uvicorn openbb_core.api.rest_api:app --host 0.0.0.0 --port 8000 --reload &\n\n      - name: Wait for 42 seconds\n        run: sleep 42\n\n      - name: Check installed packages\n        run: |\n          source runner_env/bin/activate\n          pip list\n\n      - name: Run Integration Tests\n        run: |\n          source runner_env/bin/activate\n          pytest openbb_platform -m integration\n\n      - name: Upload summary to Slack\n        uses: adrey/slack-file-upload-action@master\n        with:\n          token: ${{ secrets.SLACK_API_TOKEN }}\n          initial_comment: \"API Integration test summary\"\n          title: \"Integration test summary\"\n          path: summary.txt\n          channel: ${{ secrets.SLACK_CHANNEL_ID }}\n\n      - name: Slack Notification - Success/Failure\n        uses: act10ns/slack@v1\n        with:\n          status: ${{ job.status }}\n          steps: ${{ toJson(steps) }}\n          channel: \"#workflows\"\n        if: always()\n"
+    },
+    "2024-07-01T13-05-59Z": {
+      "triggers": {
+        "workflow_dispatch": null,
+        "pull_request": {
+          "branches": [
+            "release/*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "api-integration-tests": 14
+      },
+      "line_count": 115,
+      "workflow": "name: \ud83d\ude89 Integration test Platform (API)\n\non:\n  workflow_dispatch:\n  pull_request:\n    branches:\n      - release/*\n\nconcurrency:\n  group: ${{ github.workflow }}-${{ github.ref }}\n  cancel-in-progress: true\n\njobs:\n  api-integration-tests:\n    runs-on: ubuntu-latest\n    env:\n      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}\n      OPENBB_API_AUTH: true\n      OPENBB_API_USERNAME: \"USER\"\n      OPENBB_API_PASSWORD: \"PASS\"\n\n    steps:\n      - name: Slack Notification - Starting\n        uses: act10ns/slack@v1\n        with:\n          status: starting\n          channel: \"#workflows\"\n          message: Starting API Integration Test...\n        if: always()\n\n      - name: Checkout code\n        uses: actions/checkout@v4\n\n      - name: Checkout specific ref\n        if: github.event_name == 'pull_request'\n        run: git fetch origin ${{ github.event.pull_request.head.ref }} && git checkout FETCH_HEAD\n\n      - name: Setup Python 3.10\n        uses: actions/setup-python@v5\n        with:\n          python-version: \"3.10\"\n          architecture: x64\n\n      - name: Install Dependencies\n        run: |\n          python -m venv runner_env\n          source runner_env/bin/activate\n          pip install poetry toml\n          python openbb_platform/dev_install.py -e\n\n      - name: Populate System Setting Files\n        run: |\n          mkdir -p ~/.openbb_platform\n          touch ~/.openbb_platform/system_settings.json\n          echo '{\"log_collect\":false}' > ~/.openbb_platform/system_settings.json\n          cat ~/.openbb_platform/system_settings.json\n\n      - name: Create and Populate user_settings.json from GitHub Secrets\n        run: |\n          touch ~/.openbb_platform/user_settings.json\n          echo '{\n            \"credentials\": {\n              \"benzinga_api_key\": \"${{ secrets.BENZINGA_API_KEY }}\",\n              \"fmp_api_key\": \"${{ secrets.FMP_API_KEY }}\",\n              \"polygon_api_key\": \"${{ secrets.POLYGON_API_KEY }}\",\n              \"alpha_vantage_api_key\": \"${{ secrets.ALPHA_VANTAGE_API_KEY }}\",\n              \"fred_api_key\": \"${{ secrets.FRED_API_KEY }}\",\n              \"intrinio_api_key\": \"${{ secrets.INTRINIO_API_KEY }}\",\n              \"tradingeconomics_api_key\": \"${{ secrets.TRADINGECONOMICS_API_KEY }}\",\n              \"quandl_api_key\": \"${{ secrets.QUANDL_API_KEY }}\",\n              \"biztoc_api_key\": \"${{ secrets.BIZTOC_API_KEY }}\",\n              \"nasdaq_api_key\": \"${{ secrets.NASDAQ_API_KEY }}\",\n              \"tiingo_token\": \"${{ secrets.TIINGO_TOKEN }}\"\n            }\n          }' > ~/.openbb_platform/user_settings.json\n\n      - name: Build openbb\n        run: |\n          source runner_env/bin/activate\n          python -c \"import openbb; openbb.build()\"\n\n      - name: Launch the Uvicorn Process\n        run: |\n          source runner_env/bin/activate\n          uvicorn openbb_core.api.rest_api:app --host 0.0.0.0 --port 8000 --reload &\n\n      - name: Wait for 42 seconds\n        run: sleep 42\n\n      - name: Check installed packages\n        run: |\n          source runner_env/bin/activate\n          pip list\n\n      - name: Run Integration Tests\n        run: |\n          source runner_env/bin/activate\n          pytest openbb_platform -m integration\n\n      - name: Upload summary to Slack\n        uses: adrey/slack-file-upload-action@master\n        with:\n          token: ${{ secrets.SLACK_API_TOKEN }}\n          initial_comment: \"API Integration test summary\"\n          title: \"Integration test summary\"\n          path: summary.txt\n          channel: ${{ secrets.SLACK_CHANNEL_ID }}\n\n      - name: Slack Notification - Success/Failure\n        uses: act10ns/slack@v1\n        with:\n          status: ${{ job.status }}\n          steps: ${{ toJson(steps) }}\n          channel: \"#workflows\"\n        if: always()\n"
+    }
+  }
+}

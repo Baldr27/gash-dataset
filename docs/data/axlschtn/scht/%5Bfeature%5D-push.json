@@ -1,0 +1,35 @@
+{
+  "%5Bfeature%5D-push": {
+    "2024-04-25T14-53-14Z": [
+      {
+        "region": {
+          "startLine": 10,
+          "startColumn": 5,
+          "endLine": 24,
+          "endColumn": 31
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 12,
+          "startColumn": 9,
+          "endLine": 15,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v6](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ]
+  },
+  "metadata": {}
+}

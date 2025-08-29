@@ -1,0 +1,56 @@
+{
+  "fossa": {
+    "2022-11-30T11-38-43Z": [
+      {
+        "region": {
+          "startLine": 13,
+          "startColumn": 5,
+          "endLine": 37,
+          "endColumn": 72
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 20,
+          "startColumn": 9,
+          "endLine": 23,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v6.2](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ]
+  },
+  "metadata": {
+    "2022-11-30T11-38-43Z": {
+      "triggers": {
+        "pull_request": {
+          "branches": [
+            "master"
+          ]
+        },
+        "push": {
+          "branches": [
+            "master"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "fossa-analyze": 6
+      },
+      "line_count": 37,
+      "workflow": "name: fossa-analyze\n\non:\n  pull_request:\n    branches:\n      - master\n  push:\n    branches:\n      - master\n\njobs:\n  fossa-analyze:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout branch\n        uses: actions/checkout@v3\n      - name: Install Fossa CLI\n        run: |\n          curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/fossas/fossa-cli/master/install-latest.sh | bash   \n      - name: Get Branch Name\n        id: branch-name\n        uses: tj-actions/branch-names@v6.2\n      - name: Set Variables\n        run: |\n          echo \"PROJECT_TITLE=${GITHUB_REPOSITORY#*/}\" >> \"$GITHUB_ENV\"\n          echo \"PROJECT_URL=${GITHUB_SERVER_UR}/${GITHUB_REPOSITORY}\" >> \"$GITHUB_ENV\"\n          echo \"PROJECT_BRANCH=${{ steps.branch-name.outputs.current_branch }}\" >> \"$GITHUB_ENV\"\n      - name: Run Fossa Analyze\n        run: |\n          fossa analyze --branch \"${{ env.PROJECT_BRANCH }}\" --revision \"${{ github.sha }}\" --title \"${{ env.PROJECT_TITLE }}\" --project-url \"${{ env.PROJECT_URL }}\"\n        env:\n          FOSSA_API_KEY: 51d4e100eb0417813079fe2291ca70c2\n      - name: Fossa Test\n        run: |\n          fossa test\n        env:  \n          FOSSA_API_KEY: 51d4e100eb0417813079fe2291ca70c2              "
+    }
+  }
+}

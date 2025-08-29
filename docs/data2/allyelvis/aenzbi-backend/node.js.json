@@ -1,0 +1,42 @@
+{
+  "node.js": {
+    "2024-06-30T01-39-53Z": [
+      {
+        "region": {
+          "startLine": 15,
+          "startColumn": 5,
+          "endLine": 31,
+          "endColumn": 21
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2024-06-30T01-39-53Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 5
+      },
+      "line_count": 31,
+      "workflow": "# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node\n# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs\n\nname: Node.js CI\n\non:\n  push:\n    branches: [ \"main\" ]\n  pull_request:\n    branches: [ \"main\" ]\n\njobs:\n  build:\n\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        node-version: [14.x, 16.x, 18.x]\n        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/\n\n    steps:\n    - uses: actions/checkout@v4\n    - name: Use Node.js ${{ matrix.node-version }}\n      uses: actions/setup-node@v3\n      with:\n        node-version: ${{ matrix.node-version }}\n        cache: 'npm'\n    - run: npm ci\n    - run: npm run build --if-present\n    - run: npm test\n"
+    }
+  }
+}

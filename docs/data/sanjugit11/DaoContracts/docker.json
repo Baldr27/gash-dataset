@@ -1,0 +1,51 @@
+{
+  "docker": {
+    "2022-01-19T20-43-43Z": [
+      {
+        "region": {
+          "startLine": 14,
+          "startColumn": 9,
+          "endLine": 44,
+          "endColumn": 47
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 16,
+          "startColumn": 15,
+          "endLine": 19,
+          "endColumn": 13
+        },
+        "message": "The workflow is using a known vulnerable version ([v5.1](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ]
+  },
+  "metadata": {
+    "2022-01-19T20-43-43Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "**"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "docker": 6
+      },
+      "line_count": 44,
+      "workflow": "# We need a Docker image to be built and stored in order to run e2e tests\nname: Docker Build\n\non:\n    push:\n        branches:\n            - \"**\"\n\nenv:\n    REGISTRY: ghcr.io\n\njobs:\n    docker:\n        runs-on: ubuntu-latest\n        steps:\n            - name: Get branch name\n              id: branch-name\n              uses: tj-actions/branch-names@v5.1\n            - name: Set up QEMU\n              uses: docker/setup-qemu-action@v1\n            - name: Set up Docker Buildx\n              uses: docker/setup-buildx-action@v1\n            - name: Login to GitHub Container Registry\n              uses: docker/login-action@v1\n              with:\n                  registry: ${{ env.REGISTRY }}\n                  username: ${{ github.repository_owner }}\n                  password: ${{ secrets.GITHUB_TOKEN }}\n            - name: Extract Docker metadata\n              id: meta\n              uses: docker/metadata-action@v3\n              with:\n                  # owner/repository\n                  # the action also takes care of making it docker-compatible\n                  images: ${{ env.REGISTRY }}/${{ github.repository }}\n            - name: Build and push\n              id: docker_build\n              uses: docker/build-push-action@v2\n              with:\n                  push: true\n                  tags: ${{ steps.meta.outputs.tags }}\n                  labels: ${{ steps.meta.outputs.labels }}\n                  cache-from: type=gha\n                  cache-to: type=gha,mode=max\n"
+    }
+  }
+}

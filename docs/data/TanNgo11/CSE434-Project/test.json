@@ -1,0 +1,44 @@
+{
+  "test": {
+    "2025-03-22T09-33-04Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 43,
+          "endColumn": 27
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2025-03-22T09-33-04Z": {
+      "triggers": {
+        "pull_request": {
+          "branches": [
+            "*"
+          ]
+        },
+        "push": {
+          "branches": [
+            "dev",
+            "staging",
+            "main"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "test": 6
+      },
+      "line_count": 43,
+      "workflow": "name: CI - APP\n\non:\n  pull_request:\n    branches: ['*']\n  push:\n    branches: ['dev', 'staging', 'main']\n\njobs:\n  test:\n    name: App Test\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        node-version: [20.x]\n    steps:\n      # checkout the repository\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      # setup node\n      - name: Setup Node\n        uses: actions/setup-node@v3\n        with:\n          cache-dependency-path: package-lock.json\n          node-version: ${{ matrix.node-version }}\n          cache: npm\n\n      # install dependencies\n      - name: Install dependencies\n        run: npm ci\n\n      # run code formatter\n      - name: Code Formatter\n        run: npm run format\n\n      # run lint test\n      - name: Lint Test\n        run: npm run lint\n\n      # run unit test\n      - name: Unit Test\n        run: npm run test\n"
+    }
+  }
+}

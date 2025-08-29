@@ -1,0 +1,577 @@
+{
+  "doc": {
+    "2020-05-24T08-42-42Z": [
+      {
+        "region": {
+          "startLine": 16,
+          "startColumn": 5,
+          "endLine": 48,
+          "endColumn": 83
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2020-08-24T12-03-59Z": [
+      {
+        "region": {
+          "startLine": 16,
+          "startColumn": 5,
+          "endLine": 37,
+          "endColumn": 70
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2020-09-11T16-26-06Z": [
+      {
+        "region": {
+          "startLine": 16,
+          "startColumn": 5,
+          "endLine": 37,
+          "endColumn": 72
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2020-09-19T14-57-19Z": [
+      {
+        "region": {
+          "startLine": 16,
+          "startColumn": 5,
+          "endLine": 37,
+          "endColumn": 59
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2020-09-20T04-10-22Z": [
+      {
+        "region": {
+          "startLine": 16,
+          "startColumn": 5,
+          "endLine": 38,
+          "endColumn": 28
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-01-15T10-17-44Z": [
+      {
+        "region": {
+          "startLine": 16,
+          "startColumn": 5,
+          "endLine": 38,
+          "endColumn": 28
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-01-15T12-36-53Z": [
+      {
+        "region": {
+          "startLine": 16,
+          "startColumn": 5,
+          "endLine": 38,
+          "endColumn": 28
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-01-28T03-51-32Z": [
+      {
+        "region": {
+          "startLine": 16,
+          "startColumn": 5,
+          "endLine": 41,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 42,
+          "startColumn": 5,
+          "endLine": 67,
+          "endColumn": 28
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-01-30T13-58-26Z": [
+      {
+        "region": {
+          "startLine": 16,
+          "startColumn": 5,
+          "endLine": 42,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 43,
+          "startColumn": 5,
+          "endLine": 70,
+          "endColumn": 28
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-02-27T06-44-46Z": [
+      {
+        "region": {
+          "startLine": 16,
+          "startColumn": 5,
+          "endLine": 42,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 43,
+          "startColumn": 5,
+          "endLine": 70,
+          "endColumn": 28
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-06-19T15-58-27Z": [
+      {
+        "region": {
+          "startLine": 16,
+          "startColumn": 5,
+          "endLine": 42,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 43,
+          "startColumn": 5,
+          "endLine": 70,
+          "endColumn": 28
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-04-05T14-41-26Z": [
+      {
+        "region": {
+          "startLine": 16,
+          "startColumn": 5,
+          "endLine": 42,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 43,
+          "startColumn": 5,
+          "endLine": 70,
+          "endColumn": 28
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-12-18T09-12-50Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 37,
+          "endColumn": 48
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-12-04T15-43-09Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 39,
+          "endColumn": 48
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2023-02-20T23-56-20Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 37,
+          "endColumn": 48
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-07-19T16-30-16Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 37,
+          "endColumn": 48
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2020-05-24T08-42-42Z": {
+      "triggers": {
+        "release": {
+          "types": [
+            "created"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 7
+      },
+      "line_count": 48,
+      "workflow": "# This is a basic workflow to help you get started with Actions\n\nname: mirai-doc Publish\n\n# Controls when the action will run. Triggers the workflow on push or pull request \n# events but only for the master branch\non:\n  release:\n    types:\n      - created\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n      - name: Grant execute permission for gradlew\n        run: chmod +x gradlew\n      - name: Gradle clean\n        run: ./gradlew clean\n      - name: Gradle build\n        run: ./gradlew build # if test's failed, don't publish\n      - name: Gradle :mirai-core:dokkaGitHubUpload\n        run: ./gradlew :mirai-core:dokkaGitHubUpload -Dgithub_token=${{ secrets.MAMOE_TOKEN }} -Pgithub_token=${{ secrets.MAMOE_TOKEN }}\n      - name: Gradle :mirai-core-qqandroid:dokkaGitHubUpload\n        run: ./gradlew :mirai-core-qqandroid:dokkaGitHubUpload -Dgithub_token=${{ secrets.MAMOE_TOKEN }} -Pgithub_token=${{ secrets.MAMOE_TOKEN }}\n\n\n#      - name: Upload artifact\n#        uses: actions/upload-artifact@v1.0.0\n#        with:\n#          # Artifact name\n#          name: mirai-core\n#          # Directory containing files to upload\n#          path: \"mirai-core/build/libs/mirai-core-*-all.jar\"\n#      - name: Upload artifact\n#        uses: actions/upload-artifact@v1.0.0\n#        with:\n#          # Artifact name\n#          name: mirai-core-qqandroid-all\n#          # Directory containing files to upload\n#          path: \"mirai-core-qqandroid/build/libs/mirai-core-qqandroid-*-all.jar\"\n"
+    },
+    "2020-08-24T12-03-59Z": {
+      "triggers": {
+        "release": {
+          "types": [
+            "created"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 6
+      },
+      "line_count": 38,
+      "workflow": "# This is a basic workflow to help you get started with Actions\n\nname: mirai-doc Publish\n\n# Controls when the action will run. Triggers the workflow on push or pull request\n# events but only for the master branch\non:\n  release:\n    types:\n      - created\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n      - name: Grant execute permission for gradlew\n        run: chmod +x gradlew\n      - name: Gradle build\n        run: ./gradlew clean build # if test's failed, don't publish\n      - name: Gradle :mirai-core:dokkaGenerator\n        run: ./gradlew :mirai-core:dokka\n      - name: GitHub Pages Deploy\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          deploy_key: ${{ secrets.DOC_DEPLOY_KEY }}\n          publish_dir: ./mirai-core/build/dokka\n          external_repository: project-mirai/mirai-doc\n          publish_branch: master\n          user_name: 'github-actions[bot]'\n          user_email: 'github-actions[bot]@users.noreply.github.com'\n\n"
+    },
+    "2020-09-11T16-26-06Z": {
+      "triggers": {
+        "release": {
+          "types": [
+            "created"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 6
+      },
+      "line_count": 38,
+      "workflow": "# This is a basic workflow to help you get started with Actions\n\nname: mirai-doc Publish\n\n# Controls when the action will run. Triggers the workflow on push or pull request\n# events but only for the master branch\non:\n  release:\n    types:\n      - created\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n      - name: Grant execute permission for gradlew\n        run: chmod +x gradlew\n      - name: Gradle build\n        run: ./gradlew clean build # if test's failed, don't publish\n      - name: Gradle :mirai-core:dokkaGenerator\n        run: ./gradlew :mirai-core:dokka\n      - name: GitHub Pages Deploy\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          personal_token: ${{ secrets.MAMOE_TOKEN }}\n          publish_dir: ./mirai-core/build/dokka\n          external_repository: project-mirai/mirai-doc\n          publish_branch: master\n          # user_name: 'github-actions[bot]'\n          # user_email: 'github-actions[bot]@users.noreply.github.com'\n\n"
+    },
+    "2020-09-19T14-57-19Z": {
+      "triggers": {
+        "release": {
+          "types": [
+            "created"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 6
+      },
+      "line_count": 38,
+      "workflow": "# This is a basic workflow to help you get started with Actions\n\nname: mirai-doc Publish\n\n# Controls when the action will run. Triggers the workflow on push or pull request\n# events but only for the master branch\non:\n  release:\n    types:\n      - created\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n      - name: Grant execute permission for gradlew\n        run: chmod +x gradlew\n      - name: Gradle build\n        run: ./gradlew clean build # if test's failed, don't publish\n      - name: Gradle :mirai-core:dokkaGenerator\n        run: ./gradlew :mirai-core:dokka\n      - name: GitHub Pages Deploy\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          personal_token: ${{ secrets.MAMOE_TOKEN }}\n          publish_dir: ./mirai-core/build/dokka\n          external_repository: project-mirai/mirai-doc\n          publish_branch: master\n          user_name: 'mamoebot'\n          user_email: 'mamoebot@users.noreply.github.com'\n\n"
+    },
+    "2020-09-20T04-10-22Z": {
+      "triggers": {
+        "release": {
+          "types": [
+            "created"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 6
+      },
+      "line_count": 39,
+      "workflow": "# This is a basic workflow to help you get started with Actions\n\nname: mirai-doc Publish\n\n# Controls when the action will run. Triggers the workflow on push or pull request\n# events but only for the master branch\non:\n  release:\n    types:\n      - created\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n      - name: Grant execute permission for gradlew\n        run: chmod +x gradlew\n      - name: Gradle build\n        run: ./gradlew clean build # if test's failed, don't publish\n      - name: Gradle :mirai-core:dokkaGenerator\n        run: ./gradlew :mirai-core:dokka\n      - name: GitHub Pages Deploy\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          personal_token: ${{ secrets.MAMOE_TOKEN }}\n          publish_dir: ./mirai-core/build/dokka\n          external_repository: project-mirai/mirai-doc\n          publish_branch: master\n          user_name: 'mamoebot'\n          user_email: 'mamoebot@users.noreply.github.com'\n          keep_files: true\n\n"
+    },
+    "2021-01-15T10-17-44Z": {
+      "triggers": {
+        "release": {
+          "types": [
+            "created"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 6
+      },
+      "line_count": 39,
+      "workflow": "# This is a basic workflow to help you get started with Actions\n\nname: mirai-doc Publish\n\n# Controls when the action will run. Triggers the workflow on push or pull request\n# events but only for the master branch\non:\n  release:\n    types:\n      - created\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n      - name: Grant execute permission for gradlew\n        run: chmod +x gradlew\n      - name: Gradle build\n        run: ./gradlew clean build # if test's failed, don't publish\n      - name: Dokka\n        run: ./gradlew :mirai-core-api:dokkaHtml\n      - name: GitHub Pages Deploy\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          personal_token: ${{ secrets.MAMOE_TOKEN }}\n          publish_dir: ./mirai-core-api/build/dokkaHtml\n          external_repository: project-mirai/mirai-doc\n          publish_branch: master\n          user_name: 'mamoebot'\n          user_email: 'mamoebot@users.noreply.github.com'\n          keep_files: true\n\n"
+    },
+    "2021-01-15T12-36-53Z": {
+      "triggers": {
+        "release": {
+          "types": [
+            "created"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 6
+      },
+      "line_count": 39,
+      "workflow": "# This is a basic workflow to help you get started with Actions\n\nname: mirai-doc Publish\n\n# Controls when the action will run. Triggers the workflow on push or pull request\n# events but only for the master branch\non:\n  release:\n    types:\n      - created\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n      - name: Grant execute permission for gradlew\n        run: chmod +x gradlew\n      - name: Gradle build\n        run: ./gradlew clean build # if test's failed, don't publish\n      - name: Dokka\n        run: ./gradlew :mirai-core-api:dokkaHtml\n      - name: GitHub Pages Deploy\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          personal_token: ${{ secrets.MAMOE_TOKEN }}\n          publish_dir: ./mirai-core-api/build/dokka\n          external_repository: project-mirai/mirai-doc\n          publish_branch: master\n          user_name: 'mamoebot'\n          user_email: 'mamoebot@users.noreply.github.com'\n          keep_files: true\n\n"
+    },
+    "2021-01-28T03-51-32Z": {
+      "triggers": {
+        "release": {
+          "types": [
+            "created"
+          ]
+        }
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "mirai-core-docs": 6,
+        "mirai-console-docs": 6
+      },
+      "line_count": 68,
+      "workflow": "# This is a basic workflow to help you get started with Actions\n\nname: mirai-doc Publish\n\n# Controls when the action will run. Triggers the workflow on push or pull request\n# events but only for the master branch\non:\n  release:\n    types:\n      - created\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  mirai-core-docs:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n      - name: Grant execute permission for gradlew\n        run: chmod +x gradlew\n      - name: Gradle build\n        run: ./gradlew clean build # if test's failed, don't publish\n      - name: Dokka\n        run: ./gradlew :mirai-core-api:dokkaHtml\n      - name: GitHub Pages Deploy\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          personal_token: ${{ secrets.MAMOE_TOKEN }}\n          publish_dir: ./mirai-core-api/build/dokka\n          external_repository: project-mirai/mirai-doc\n          publish_branch: master\n          user_name: 'mamoebot'\n          user_email: 'mamoebot@users.noreply.github.com'\n          keep_files: true\n\n  # This workflow contains a single job called \"build\"\n  mirai-console-docs:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n        with:\n          submodules: recursive\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n      - name: Grant execute permission for gradlew\n        run: chmod +x gradlew\n      - name: Gradle build\n        run: ./gradlew clean build # if test's failed, don't publish\n      - name: Dokka\n        run: ./gradlew :mirai-console:dokkaHtml\n      - name: GitHub Pages Deploy\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          personal_token: ${{ secrets.MAMOE_TOKEN }}\n          publish_dir: ./mirai-console/build/dokka\n          external_repository: project-mirai/mirai-doc\n          publish_branch: master\n          user_name: 'mamoebot'\n          user_email: 'mamoebot@users.noreply.github.com'\n          keep_files: true\n\n"
+    },
+    "2021-01-30T13-58-26Z": {
+      "triggers": {
+        "release": {
+          "types": [
+            "created"
+          ]
+        }
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "mirai-core-docs": 6,
+        "mirai-console-docs": 7
+      },
+      "line_count": 71,
+      "workflow": "# This is a basic workflow to help you get started with Actions\n\nname: mirai-doc Publish\n\n# Controls when the action will run. Triggers the workflow on push or pull request\n# events but only for the master branch\non:\n  release:\n    types:\n      - created\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  mirai-core-docs:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n      - name: Gradle build\n        run: ./gradlew clean build # if test's failed, don't publish\n      - name: Dokka\n        run: ./gradlew :mirai-core-api:dokkaHtml\n      - name: GitHub Pages Deploy\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          personal_token: ${{ secrets.MAMOE_TOKEN }}\n          publish_dir: ./mirai-core-api/build/dokka\n          external_repository: project-mirai/mirai-doc\n          publish_branch: master\n          user_name: 'mamoebot'\n          user_email: 'mamoebot@users.noreply.github.com'\n          keep_files: true\n\n  # This workflow contains a single job called \"build\"\n  mirai-console-docs:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n\n      - name: Checkout submodules\n        run: git submodule update --init --recursive --remote\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n      - name: Gradle build\n        run: ./gradlew clean build # if test's failed, don't publish\n      - name: Dokka\n        run: ./gradlew :mirai-console:dokkaHtml\n      - name: GitHub Pages Deploy\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          personal_token: ${{ secrets.MAMOE_TOKEN }}\n          publish_dir: ./mirai-console/build/dokka\n          external_repository: project-mirai/mirai-doc\n          publish_branch: master\n          user_name: 'mamoebot'\n          user_email: 'mamoebot@users.noreply.github.com'\n          keep_files: true\n\n"
+    },
+    "2021-02-27T06-44-46Z": {
+      "triggers": {
+        "release": {
+          "types": [
+            "created"
+          ]
+        }
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "mirai-core-docs": 6,
+        "mirai-console-docs": 7
+      },
+      "line_count": 71,
+      "workflow": "# This is a basic workflow to help you get started with Actions\n\nname: mirai-doc Publish\n\n# Controls when the action will run. Triggers the workflow on push or pull request\n# events but only for the master branch\non:\n  release:\n    types:\n      - created\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  mirai-core-docs:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n      - name: Gradle build\n        run: ./gradlew clean build # if test's failed, don't publish\n      - name: Dokka\n        run: ./gradlew :mirai-core-api:dokkaHtml\n      - name: GitHub Pages Deploy\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          personal_token: ${{ secrets.MAMOE_TOKEN }}\n          publish_dir: ./mirai-core-api/build/dokka\n          external_repository: project-mirai/mirai-doc\n          publish_branch: master\n          user_name: 'mamoebot'\n          user_email: 'mamoebot@users.noreply.github.com'\n          keep_files: true\n\n  # This workflow contains a single job called \"build\"\n  mirai-console-docs:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n\n      - name: Checkout submodules\n        run: git submodule update --init --recursive\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n      - name: Gradle build\n        run: ./gradlew clean build # if test's failed, don't publish\n      - name: Dokka\n        run: ./gradlew :mirai-console:dokkaHtml\n      - name: GitHub Pages Deploy\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          personal_token: ${{ secrets.MAMOE_TOKEN }}\n          publish_dir: ./mirai-console/build/dokka\n          external_repository: project-mirai/mirai-doc\n          publish_branch: master\n          user_name: 'mamoebot'\n          user_email: 'mamoebot@users.noreply.github.com'\n          keep_files: true\n\n"
+    },
+    "2021-06-19T15-58-27Z": {
+      "triggers": {
+        "release": {
+          "types": [
+            "created"
+          ]
+        }
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "mirai-core-docs": 6,
+        "mirai-console-docs": 7
+      },
+      "line_count": 71,
+      "workflow": "# This is a basic workflow to help you get started with Actions\n\nname: mirai-doc Publish\n\n# Controls when the action will run. Triggers the workflow on push or pull request\n# events but only for the master branch\non:\n  release:\n    types:\n      - created\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  mirai-core-docs:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n      - name: Gradle build\n        run: ./gradlew clean build # if test's failed, don't publish\n      - name: Dokka\n        run: ./gradlew :mirai-core-api:dokkaHtml\n      - name: GitHub Pages Deploy\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          personal_token: ${{ secrets.MAMOE_TOKEN }}\n          publish_dir: ./mirai-core-api/build/dokka\n          external_repository: project-mirai/mirai-doc\n          publish_branch: master\n          user_name: 'mamoebot'\n          user_email: 'mamoebot@users.noreply.github.com'\n          keep_files: true\n\n  # This workflow contains a single job called \"build\"\n  mirai-console-docs:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n\n      - name: Checkout submodules\n        run: git submodule update --init --recursive\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n      - name: Gradle build\n        run: ./gradlew clean build # if test's failed, don't publish\n      - name: Dokka\n        run: ./gradlew :mirai-console:dokkaHtml\n      - name: GitHub Pages Deploy\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          personal_token: ${{ secrets.MAMOE_TOKEN }}\n          publish_dir: ./mirai-console/build/dokka\n          external_repository: project-mirai/mirai-doc\n          publish_branch: master\n          user_name: 'mamoebot'\n          user_email: 'mamoebot@users.noreply.github.com'\n          keep_files: true\n\n"
+    },
+    "2021-04-05T14-41-26Z": {
+      "triggers": {
+        "release": {
+          "types": [
+            "created"
+          ]
+        }
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "mirai-core-docs": 6,
+        "mirai-console-docs": 7
+      },
+      "line_count": 71,
+      "workflow": "# This is a basic workflow to help you get started with Actions\n\nname: mirai-doc Publish\n\n# Controls when the action will run. Triggers the workflow on push or pull request\n# events but only for the master branch\non:\n  release:\n    types:\n      - created\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  mirai-core-docs:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n      - name: Gradle build -Pmirai.pkc.check.enable\n        run: ./gradlew clean build -Pmirai.pkc.check.enable # if test's failed, don't publish\n      - name: Dokka\n        run: ./gradlew :mirai-core-api:dokkaHtml -Pmirai.pkc.check.enable\n      - name: GitHub Pages Deploy\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          personal_token: ${{ secrets.MAMOE_TOKEN }}\n          publish_dir: ./mirai-core-api/build/dokka\n          external_repository: project-mirai/mirai-doc\n          publish_branch: master\n          user_name: 'mamoebot'\n          user_email: 'mamoebot@users.noreply.github.com'\n          keep_files: true\n\n  # This workflow contains a single job called \"build\"\n  mirai-console-docs:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n\n      - name: Checkout submodules\n        run: git submodule update --init --recursive\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n      - name: Gradle build\n        run: ./gradlew clean build -Pmirai.pkc.check.enable # if test's failed, don't publish\n      - name: Dokka\n        run: ./gradlew :mirai-console:dokkaHtml -Pmirai.pkc.check.enable\n      - name: GitHub Pages Deploy\n        uses: peaceiris/actions-gh-pages@v3\n        with:\n          personal_token: ${{ secrets.MAMOE_TOKEN }}\n          publish_dir: ./mirai-console/build/dokka\n          external_repository: project-mirai/mirai-doc\n          publish_branch: master\n          user_name: 'mamoebot'\n          user_email: 'mamoebot@users.noreply.github.com'\n          keep_files: true\n\n"
+    },
+    "2021-12-18T09-12-50Z": {
+      "triggers": {
+        "push": {
+          "tags": [
+            "v*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "mirai-docs": 7
+      },
+      "line_count": 37,
+      "workflow": "name: mirai-doc Publish\n\non:\n  push:\n    tags:\n      - 'v*' # \u6b63\u5f0f\u7248\u672c\n\n\njobs:\n  mirai-docs:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      - name: Setup JDK 11\n        uses: actions/setup-java@v2\n        with:\n          distribution: 'adopt'\n          java-version: '11'\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Prepare environment\n        run: ./gradlew :mirai-dokka:prepare\n\n      - name: Dokka\n        run: ./gradlew dokkaHtmlMultiModule\n\n      - name: Update version number\n        run: ./gradlew :mirai-dokka:update-vers\n\n      - name: Deploy\n        run: ./gradlew :mirai-dokka:deployPages\n        env:\n          gh_token: ${{ secrets.MAMOE_TOKEN }}\n"
+    },
+    "2021-12-04T15-43-09Z": {
+      "triggers": {
+        "push": {
+          "tags": [
+            "v*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "mirai-docs": 8
+      },
+      "line_count": 39,
+      "workflow": "name: mirai-doc Publish\n\non:\n  push:\n    tags:\n      - 'v*' # \u6b63\u5f0f\u7248\u672c\n\n\njobs:\n  mirai-docs:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      - name: Checkout submodules\n        run: git submodule update --init --recursive\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Prepare environment\n        run: ./gradlew :mirai-dokka:prepare\n\n      - name: Dokka\n        run: ./gradlew dokkaHtmlMultiModule\n\n      - name: Update version number\n        run: ./gradlew :mirai-dokka:update-vers\n\n      - name: Deploy\n        run: ./gradlew :mirai-dokka:deployPages\n        env:\n          gh_token: ${{ secrets.MAMOE_TOKEN }}\n"
+    },
+    "2023-02-20T23-56-20Z": {
+      "triggers": {
+        "push": {
+          "tags": [
+            "v*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "mirai-docs": 7
+      },
+      "line_count": 37,
+      "workflow": "name: mirai-doc Publish\n\non:\n  push:\n    tags:\n      - 'v*' # \u6b63\u5f0f\u7248\u672c\n\n\njobs:\n  mirai-docs:\n    runs-on: macos-12 # 14G memory\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v3\n\n      - name: Setup JDK 11\n        uses: actions/setup-java@v3\n        with:\n          distribution: 'adopt'\n          java-version: '11'\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Prepare environment\n        run: ./gradlew :mirai-dokka:prepare\n\n      - name: Dokka\n        run: ./gradlew dokkaHtmlMultiModule\n\n      - name: Update version number\n        run: ./gradlew :mirai-dokka:update-vers\n\n      - name: Deploy\n        run: ./gradlew :mirai-dokka:deployPages\n        env:\n          gh_token: ${{ secrets.MAMOE_TOKEN }}\n"
+    },
+    "2022-07-19T16-30-16Z": {
+      "triggers": {
+        "push": {
+          "tags": [
+            "v*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "mirai-docs": 7
+      },
+      "line_count": 37,
+      "workflow": "name: mirai-doc Publish\n\non:\n  push:\n    tags:\n      - 'v*' # \u6b63\u5f0f\u7248\u672c\n\n\njobs:\n  mirai-docs:\n    runs-on: macos-12 # 14G memory\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      - name: Setup JDK 11\n        uses: actions/setup-java@v2\n        with:\n          distribution: 'adopt'\n          java-version: '11'\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Prepare environment\n        run: ./gradlew :mirai-dokka:prepare\n\n      - name: Dokka\n        run: ./gradlew dokkaHtmlMultiModule\n\n      - name: Update version number\n        run: ./gradlew :mirai-dokka:update-vers\n\n      - name: Deploy\n        run: ./gradlew :mirai-dokka:deployPages\n        env:\n          gh_token: ${{ secrets.MAMOE_TOKEN }}\n"
+    }
+  }
+}

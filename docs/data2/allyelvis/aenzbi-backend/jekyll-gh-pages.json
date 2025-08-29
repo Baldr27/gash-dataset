@@ -1,0 +1,24 @@
+{
+  "jekyll-gh-pages": {
+    "2024-06-13T18-08-05Z": []
+  },
+  "metadata": {
+    "2024-06-13T18-08-05Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "workflow_dispatch": null
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "build": 5,
+        "deploy": 1
+      },
+      "line_count": 52,
+      "workflow": "name: Deploy React App to GitHub Pages\n\non:\n  # Runs on pushes targeting the default branch\n  push:\n    branches: [\"main\"]\n\n  # Allows you to run this workflow manually from the Actions tab\n  workflow_dispatch:\n\npermissions:\n  contents: read\n  pages: write\n  id-token: write\n\nconcurrency:\n  group: \"pages\"\n  cancel-in-progress: false\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout code\n        uses: actions/checkout@v4\n\n      - name: Setup Node.js\n        uses: actions/setup-node@v3\n        with:\n          node-version: '16' # Specify the version of Node.js to use\n\n      - name: Install dependencies\n        run: npm install\n\n      - name: Build the React app\n        run: npm run build\n\n      - name: Upload artifact\n        uses: actions/upload-pages-artifact@v3\n        with:\n          path: ./build\n\n  deploy:\n    runs-on: ubuntu-latest\n    needs: build\n    steps:\n      - name: Deploy to GitHub Pages\n        id: deployment\n        uses: actions/deploy-pages@v4\n    environment:\n      name: github-pages\n      url: ${{ steps.deployment.outputs.page_url }}\n"
+    }
+  }
+}

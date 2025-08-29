@@ -1,0 +1,34 @@
+{
+  "format-or-lint": {
+    "2022-07-19T03-29-37Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 28,
+          "endColumn": 57
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2022-07-19T03-29-37Z": {
+      "triggers": {
+        "push": {},
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "test": 4
+      },
+      "line_count": 28,
+      "workflow": "name: 'Check Format and Lint.'\n\non: [push, pull_request]\n\njobs:\n  test:\n    runs-on: ${{ matrix.os }}\n\n    strategy:\n      matrix:\n        deno: [v1.x]\n        os: [ubuntu-latest]\n\n    steps:\n      - name: Setup repo\n        uses: actions/checkout@v3\n\n      - name: Setup Deno\n        uses: denoland/setup-deno@v1\n        with:\n          # We check only format and lint, so we'll use specific version of deno and ubuntu.\n          deno-version: ${{ matrix.deno }}\n\n      - name: Check code is formatted.\n        run: deno fmt --check --config ./deno.jsonc --unstable\n\n      - name: Check code lint.\n        run: deno lint --config ./deno.jsonc --unstable\n"
+    }
+  }
+}

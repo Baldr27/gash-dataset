@@ -1,0 +1,220 @@
+{
+  "docker-image": {
+    "2022-02-26T07-58-29Z": [
+      {
+        "region": {
+          "startLine": 13,
+          "startColumn": 5,
+          "endLine": null,
+          "endColumn": 5
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 18,
+          "startColumn": 7,
+          "endLine": 22,
+          "endColumn": 5
+        },
+        "message": "The workflow is using a known vulnerable version ([v5.1](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2022-02-26T07-54-59Z": [
+      {
+        "region": {
+          "startLine": 13,
+          "startColumn": 5,
+          "endLine": null,
+          "endColumn": 5
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 18,
+          "startColumn": 7,
+          "endLine": 22,
+          "endColumn": 5
+        },
+        "message": "The workflow is using a known vulnerable version ([v5.1](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2022-02-26T07-59-39Z": [
+      {
+        "region": {
+          "startLine": 13,
+          "startColumn": 5,
+          "endLine": null,
+          "endColumn": 5
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 18,
+          "startColumn": 7,
+          "endLine": 22,
+          "endColumn": 5
+        },
+        "message": "The workflow is using a known vulnerable version ([v5.1](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2022-02-26T08-03-14Z": [
+      {
+        "region": {
+          "startLine": 13,
+          "startColumn": 5,
+          "endLine": 48,
+          "endColumn": 108
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 18,
+          "startColumn": 7,
+          "endLine": 22,
+          "endColumn": 5
+        },
+        "message": "The workflow is using a known vulnerable version ([v5.1](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2022-02-26T08-29-39Z": [
+      {
+        "region": {
+          "startLine": 13,
+          "startColumn": 5,
+          "endLine": 47,
+          "endColumn": 108
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 18,
+          "startColumn": 7,
+          "endLine": 22,
+          "endColumn": 5
+        },
+        "message": "The workflow is using a known vulnerable version ([v5.1](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ]
+  },
+  "metadata": {
+    "2022-02-26T07-58-29Z": {
+      "triggers": {},
+      "num_jobs": 0,
+      "steps_per_job": {},
+      "line_count": 47,
+      "workflow": null,
+      "parse_error": "while scanning for the next token\nfound character '\\t' that cannot start any token\n  in \"<unicode string>\", line 36, column 7:\n          \tcontext: .\n          ^"
+    },
+    "2022-02-26T07-54-59Z": {
+      "triggers": {},
+      "num_jobs": 0,
+      "steps_per_job": {},
+      "line_count": 48,
+      "workflow": null,
+      "parse_error": "while scanning for the next token\nfound character '\\t' that cannot start any token\n  in \"<unicode string>\", line 30, column 1:\n    \t    uses: docker/setup-buildx-a ... \n    ^"
+    },
+    "2022-02-26T07-59-39Z": {
+      "triggers": {},
+      "num_jobs": 0,
+      "steps_per_job": {},
+      "line_count": 48,
+      "workflow": null,
+      "parse_error": "while scanning for the next token\nfound character '\\t' that cannot start any token\n  in \"<unicode string>\", line 36, column 7:\n          \tcontext: .\n          ^"
+    },
+    "2022-02-26T08-03-14Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "**"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "**"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 6
+      },
+      "line_count": 48,
+      "workflow": "name: Docker Image Ansible CI\n\non:\n  push:\n    branches: [ '**' ]\n  pull_request:\n    branches: [ '**' ]\n\njobs:\n\n  build:\n\n    runs-on: ubuntu-latest\n\n    steps:\n    - uses: actions/checkout@v2\n    \n    - name: Get branch name\n      id: branch-name\n      uses: tj-actions/branch-names@v5.1\n      \n    - name: Login to Docker Hub\n      uses: docker/login-action@v1\n      with:\n        registry: registry.hub.docker.com\n        username: ${{ secrets.DOCKER_HUB_USERNAME }}\n        password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}\n        \n    - name: Set up Docker Buildx\n      uses: docker/setup-buildx-action@v1\n    \n    - name: Build and push in main branch\n      if: steps.branch-name.outputs.current_branch == 'main'\n      uses: docker/build-push-action@v2\n      with:\n          context: .\n          file: ./Dockerfile\n          push: true\n          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/ansible:latest\n\n    - name: Build and push in every branch but main\n      if: steps.branch-name.outputs.current_branch != 'main'\n      uses: docker/build-push-action@v2\n      with:\n          context: .\n          file: ./Dockerfile\n          push: true\n          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/ansible:${{ steps.branch-name.outputs.current_branch }}\n"
+    },
+    "2022-02-26T08-29-39Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "**"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "**"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 6
+      },
+      "line_count": 47,
+      "workflow": "name: Docker Image Ansible CI\n\non:\n  push:\n    branches: [ '**' ]\n  pull_request:\n    branches: [ '**' ]\n\njobs:\n\n  build:\n\n    runs-on: ubuntu-latest\n\n    steps:\n    - uses: actions/checkout@v2\n    \n    - name: Get branch name\n      id: branch-name\n      uses: tj-actions/branch-names@v5.1\n      \n    - name: Login to Docker Hub\n      uses: docker/login-action@v1\n      with:\n        username: ${{ secrets.DOCKER_HUB_USERNAME }}\n        password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}\n        \n    - name: Set up Docker Buildx\n      uses: docker/setup-buildx-action@v1\n    \n    - name: Build and push in main branch\n      if: steps.branch-name.outputs.current_branch == 'main'\n      uses: docker/build-push-action@v2\n      with:\n          context: .\n          file: ./Dockerfile\n          push: true\n          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/ansible:latest\n\n    - name: Build and push in every branch but main\n      if: steps.branch-name.outputs.current_branch != 'main'\n      uses: docker/build-push-action@v2\n      with:\n          context: .\n          file: ./Dockerfile\n          push: true\n          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/ansible:${{ steps.branch-name.outputs.current_branch }}\n"
+    }
+  }
+}

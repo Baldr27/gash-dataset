@@ -1,0 +1,60 @@
+{
+  "semgrep": {
+    "2022-02-01T16-02-22Z": [
+      {
+        "region": {
+          "startLine": 6,
+          "startColumn": 5,
+          "endLine": 13,
+          "endColumn": 57
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2023-11-06T21-21-26Z": [
+      {
+        "region": {
+          "startLine": 6,
+          "startColumn": 5,
+          "endLine": 15,
+          "endColumn": 62
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2022-02-01T16-02-22Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "semgrep": 2
+      },
+      "line_count": 13,
+      "workflow": "name: Semgrep\non:\n  pull_request: {}\njobs:\n  semgrep:\n    name: Scan\n    runs-on: ubuntu-latest\n    if: (github.actor != 'dependabot[bot]' && github.actor != 'snyk-bot')\n    steps:\n      - uses: actions/checkout@v2\n      - uses: returntocorp/semgrep-action@v1\n        with:\n          publishToken: ${{ secrets.SEMGREP_APP_TOKEN }}"
+    },
+    "2023-11-06T21-21-26Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "semgrep": 2
+      },
+      "line_count": 15,
+      "workflow": "name: Semgrep\non:\n  pull_request: {}\njobs:\n  semgrep:\n    name: Scan\n    runs-on: ubuntu-latest\n    container:\n      image: returntocorp/semgrep\n    if: (github.actor != 'dependabot[bot]' && github.actor != 'snyk-bot')\n    steps:\n      - uses: actions/checkout@v3\n      - run: semgrep ci\n        env:\n          SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}"
+    }
+  }
+}

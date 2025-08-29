@@ -1,0 +1,117 @@
+{
+  "push-docker-hub": {
+    "2024-09-29T19-55-20Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 33,
+          "endColumn": 92
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-10-03T20-22-01Z": [
+      {
+        "region": {
+          "startLine": 8,
+          "startColumn": 5,
+          "endLine": 25,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 26,
+          "startColumn": 5,
+          "endLine": 56,
+          "endColumn": 92
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-10-01T21-32-59Z": [
+      {
+        "region": {
+          "startLine": 8,
+          "startColumn": 5,
+          "endLine": 25,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 26,
+          "startColumn": 5,
+          "endLine": 56,
+          "endColumn": 92
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2024-09-29T19-55-20Z": {
+      "triggers": {
+        "workflow_dispatch": null
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 5
+      },
+      "line_count": 33,
+      "workflow": "name: Build and push Docker Image to Docker Hub\nrun-name: Build and push Docker Image to Docker Hub [${{ github.ref_name }}]\non:\n  workflow_dispatch:\njobs:\n  build:\n    name: Build and push Docker Image to Docker Hub\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n\n      - name: Set up QEMU\n        uses: docker/setup-qemu-action@v3\n\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v3\n\n      - name: Docker Login\n        env:\n          DOCKER_USER: ${{secrets.DOCKER_USER}}\n          DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}\n        run: |\n          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD\n\n      - name: Build and push\n        uses: docker/build-push-action@v5\n        with:\n          cache-from: type=gha\n          cache-to: type=gha,mode=max\n          context: .\n          platforms: linux/amd64,linux/arm64,windows/amd64\n          push: true\n          tags: ${{vars.DOCKER_USERNAME}}/${{vars.DOCKER_REPOSITORY}}:${{github.ref_name}}\n"
+    },
+    "2024-10-03T20-22-01Z": {
+      "triggers": {
+        "workflow_dispatch": null
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "tests": 3,
+        "build": 6
+      },
+      "line_count": 56,
+      "workflow": "name: Build and Push Docker Image to Docker Hub\nrun-name: Build and Push Docker Image to Docker Hub [${{ github.ref_name }}]\non:\n  workflow_dispatch:\njobs:\n\n  tests:\n    name: Docker Build Test\n    runs-on: ubuntu-22.04\n    steps:\n      - uses: actions/checkout@v4\n\n      - name: \"Build Docker Image\"\n        run: |\n          docker compose up -d  \n\n      - name: \"SmokeTest\"\n        run: |\n          sleep 20\n          if ! curl --output /dev/null --silent --head --fail \"http://127.0.0.1:8080/en/home\"; then\n            echo \"SmokeTest failed\"\n            exit 1\n          fi  \n\n  build:\n    name: Build and Push\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n\n      - name: Set up QEMU\n        uses: docker/setup-qemu-action@v3\n\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v3\n\n      - name: Docker Login\n        env:\n          DOCKER_USER: ${{secrets.DOCKER_USER}}\n          DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}\n        run: |\n          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD\n\n      - name: Set App Version\n        run: |\n          sed -i 's/###LOCAL###/${{github.ref_name}}/g' src/main/resources/application.properties\n\n      - name: Build and push\n        uses: docker/build-push-action@v5\n        with:\n          cache-from: type=gha\n          cache-to: type=gha,mode=max\n          context: .\n          platforms: linux/amd64,linux/arm64\n          push: true\n          tags: ${{vars.DOCKER_USERNAME}}/${{vars.DOCKER_REPOSITORY}}:${{github.ref_name}}\n"
+    },
+    "2024-10-01T21-32-59Z": {
+      "triggers": {
+        "workflow_dispatch": null
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "tests": 3,
+        "build": 6
+      },
+      "line_count": 56,
+      "workflow": "name: Build and Push Docker Image to Docker Hub\nrun-name: Build and Push Docker Image to Docker Hub [${{ github.ref_name }}]\non:\n  workflow_dispatch:\njobs:\n\n  tests:\n    name: Docker Build Test\n    runs-on: ubuntu-22.04\n    steps:\n      - uses: actions/checkout@v4\n\n      - name: \"Build Docker Image\"\n        run: |\n          docker compose up -d  \n\n      - name: \"SmokeTest\"\n        run: |\n          sleep 20\n          if ! curl --output /dev/null --silent --head --fail \"http://127.0.0.1:8080/en/home\"; then\n            echo \"SmokeTest failed\"\n            exit 1\n          fi  \n\n  build:\n    name: Build and Push\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n\n      - name: Set up QEMU\n        uses: docker/setup-qemu-action@v3\n\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v3\n\n      - name: Docker Login\n        env:\n          DOCKER_USER: ${{secrets.DOCKER_USER}}\n          DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}\n        run: |\n          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD\n\n      - name: Set App Version\n        run: |\n          sed -i 's/###LOCAL###/${{github.ref_name}}/g' src/main/resources/application.properties\n\n      - name: Build and push\n        uses: docker/build-push-action@v5\n        with:\n          cache-from: type=gha\n          cache-to: type=gha,mode=max\n          context: .\n          platforms: linux/amd64,linux/arm64,windows/amd64\n          push: true\n          tags: ${{vars.DOCKER_USERNAME}}/${{vars.DOCKER_REPOSITORY}}:${{github.ref_name}}\n"
+    }
+  }
+}

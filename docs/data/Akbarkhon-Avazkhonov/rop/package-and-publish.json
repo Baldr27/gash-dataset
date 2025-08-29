@@ -1,0 +1,51 @@
+{
+  "package-and-publish": {
+    "2024-02-21T15-50-04Z": [
+      {
+        "region": {
+          "startLine": 21,
+          "startColumn": 5,
+          "endLine": 103,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 104,
+          "startColumn": 5,
+          "endLine": 196,
+          "endColumn": 150
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2024-02-21T15-50-04Z": {
+      "triggers": {
+        "workflow_dispatch": null,
+        "push": {
+          "branches": "master"
+        }
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "electron-release": 11,
+        "electron-sign-for-windows": 11
+      },
+      "line_count": 196,
+      "workflow": "# Terms:\n# \"build\" - Compile web project using webpack.\n# \"package\" - Produce a distributive package for a specific platform as a workflow artifact.\n# \"publish\" - Send a package to corresponding store and GitHub release page.\n# \"release\" - build + package + publish\n#\n# Jobs in this workflow will skip the \"publish\" step when `PUBLISH_REPO` is not set.\n\nname: Package and publish\n\non:\n  workflow_dispatch:\n  push:\n    branches: master\n\nenv:\n  APP_NAME: Telegram A\n\njobs:\n  electron-release:\n    name: Build, package and publish Electron\n    runs-on: macOS-latest\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v4\n\n      - name: Use Node.js 20.x\n        uses: actions/setup-node@v4\n        with:\n          node-version: 20.x\n\n      - name: Cache node modules\n        id: npm-cache\n        uses: actions/cache@v4\n        with:\n          path: node_modules\n          key: ${{ runner.os }}-build-${{ hashFiles('**/package-lock.json') }}\n          restore-keys: |\n            ${{ runner.os }}-build-\n\n      - name: Install dependencies\n        if: steps.npm-cache.outputs.cache-hit != 'true'\n        run: npm ci\n\n      - name: Import MacOS signing certificate\n        env:\n          APPLE_CERTIFICATE_BASE64: ${{ secrets.APPLE_CERTIFICATE_BASE64 }}\n          APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}\n        run: |\n          KEY_CHAIN=build.keychain\n          CERTIFICATE_P12=certificate.p12\n          echo \"$APPLE_CERTIFICATE_BASE64\" | base64 --decode > $CERTIFICATE_P12\n          security create-keychain -p actions $KEY_CHAIN\n          security default-keychain -s $KEY_CHAIN\n          security unlock-keychain -p actions $KEY_CHAIN\n          security import $CERTIFICATE_P12 -k $KEY_CHAIN -P $APPLE_CERTIFICATE_PASSWORD -T /usr/bin/codesign\n          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k actions $KEY_CHAIN\n          security find-identity -v -p codesigning $KEY_CHAIN\n\n      - name: Get branch name for current workflow run\n        id: branch-name\n        uses: tj-actions/branch-names@v8\n\n      - name: Build, package and publish\n        env:\n          TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}\n          TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}\n\n          APPLE_ID: ${{ secrets.APPLE_ID }}\n          APPLE_APP_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}\n\n          GH_TOKEN: ${{ secrets.GH_TOKEN }}\n          PUBLISH_REPO: ${{ vars.PUBLISH_REPO }}\n          BASE_URL: ${{ vars.BASE_URL }}\n          IS_PREVIEW: ${{ steps.branch-name.outputs.current_branch != 'master' }}\n        run: |\n          if [ -z \"$PUBLISH_REPO\" ]; then\n            npm run electron:package:staging\n          else\n            npm run electron:release:production\n          fi\n\n      - uses: actions/upload-artifact@v4\n        with:\n          name: ${{ env.APP_NAME }}-x64.dmg\n          path: dist-electron/${{ env.APP_NAME }}-x64.dmg\n\n      - uses: actions/upload-artifact@v4\n        with:\n          name: ${{ env.APP_NAME }}-arm64.dmg\n          path: dist-electron/${{ env.APP_NAME }}-arm64.dmg\n\n      - uses: actions/upload-artifact@v4\n        with:\n          name: ${{ env.APP_NAME }}-x86_64.AppImage\n          path: dist-electron/${{ env.APP_NAME }}-x86_64.AppImage\n\n      - uses: actions/upload-artifact@v4\n        with:\n          name: ${{ env.APP_NAME }}-x64.exe\n          path: dist-electron/${{ env.APP_NAME }}-x64.exe\n\n  electron-sign-for-windows:\n    name: Sign and re-publish Windows package\n    needs: electron-release\n    runs-on: windows-latest\n    if: vars.PUBLISH_REPO != ''\n    env:\n      GH_TOKEN: ${{ secrets.GH_TOKEN }}\n      PUBLISH_REPO: ${{ vars.PUBLISH_REPO }}\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v4\n\n      - name: Setup certificate\n        shell: bash\n        run: echo \"${{ secrets.SM_CLIENT_CERT_FILE_B64 }}\" | base64 --decode > /d/Certificate_pkcs12.p12\n\n      - name: Set environment variables\n        id: variables\n        shell: bash\n        run: |\n          echo \"version=${GITHUB_REF#refs/tags/v}\" >> $GITHUB_OUTPUT\n          echo \"FILE_NAME=${{ env.APP_NAME }}-x64.exe\" >> \"$GITHUB_ENV\"\n          echo \"SM_HOST=${{ secrets.SM_HOST }}\" >> \"$GITHUB_ENV\"\n          echo \"SM_API_KEY=${{ secrets.SM_API_KEY }}\" >> \"$GITHUB_ENV\"\n          echo \"SM_CLIENT_CERT_FILE=D:\\\\Certificate_pkcs12.p12\" >> \"$GITHUB_ENV\"\n          echo \"SM_CLIENT_CERT_PASSWORD=${{ secrets.SM_CLIENT_CERT_PASSWORD }}\" >> \"$GITHUB_ENV\"\n          echo \"C:\\Program Files (x86)\\Windows Kits\\10\\App Certification Kit\" >> $GITHUB_PATH\n          echo \"C:\\Program Files (x86)\\Microsoft SDKs\\Windows\\v10.0A\\bin\\NETFX 4.8 Tools\" >> $GITHUB_PATH\n          echo \"C:\\Program Files\\DigiCert\\DigiCert One Signing Manager Tools\" >> $GITHUB_PATH\n\n      - name: Setup SSM KSP\n        env:\n          SM_API_KEY: ${{ secrets.SM_API_KEY }}\n        shell: cmd\n        run: |\n          curl.exe -X GET https://one.digicert.com/signingmanager/api-ui/v1/releases/smtools-windows-x64.msi/download -H \"x-api-key:%SM_API_KEY%\" -o smtools.msi\n          msiexec /i smtools.msi /quiet /qn\n          smksp_registrar.exe list\n          smctl.exe keypair ls\n          C:\\Windows\\System32\\certutil.exe -csp \"DigiCert Signing Manager KSP\" -key -user\n          smksp_cert_sync.exe\n\n      - name: Download Windows package\n        id: download-artifact\n        uses: actions/download-artifact@v4\n        with:\n          name: ${{ env.FILE_NAME }}\n\n      - name: Sign package\n        env:\n          KEYPAIR_ALIAS: ${{ secrets.KEYPAIR_ALIAS }}\n          FILE_PATH: ${{ steps.download-artifact.outputs.download-path }}\n        shell: cmd\n        run: smctl.exe sign --keypair-alias=%KEYPAIR_ALIAS% --input \"%FILE_PATH%\\%FILE_NAME%\"\n\n      - uses: actions/upload-artifact@v4\n        with:\n          name: ${{ env.FILE_NAME }}\n          path: ${{ env.FILE_NAME }}\n\n      - name: Get latest release ID\n        id: release-id\n        shell: bash\n        run: |\n          RELEASE_ID=$(curl -s -H \"Authorization: Bearer $GH_TOKEN\" \"https://api.github.com/repos/$PUBLISH_REPO/releases?per_page=1\" | jq -r '.[0].id')\n          echo \"release_id=$RELEASE_ID\" >> $GITHUB_OUTPUT\n\n      - name: Delete existing asset\n        env:\n          RELEASE_ID: ${{ steps.release-id.outputs.release_id }}\n        shell: bash\n        run: |\n          PUBLISH_FILE_NAME=${FILE_NAME// /-} # Consistency with electron-builder\n          ASSET_ID=$(curl -s -H \"Authorization: Bearer $GH_TOKEN\" \"https://api.github.com/repos/$PUBLISH_REPO/releases/$RELEASE_ID/assets\" | jq -r --arg PUBLISH_FILE_NAME \"$PUBLISH_FILE_NAME\" '.[] | select(.name == $PUBLISH_FILE_NAME) | .id')\n          curl -X DELETE -H \"Authorization: Bearer $GH_TOKEN\" \"https://api.github.com/repos/$PUBLISH_REPO/releases/assets/$ASSET_ID\"\n\n      - name: Push new asset\n        env:\n          FILE_PATH: ${{ steps.download-artifact.outputs.download-path }}\n          RELEASE_ID: ${{ steps.release-id.outputs.release_id }}\n        shell: bash\n        run: |\n          PUBLISH_FILE_NAME=${FILE_NAME// /-} # Consistency with electron-builder\n          curl -X POST -H \"Authorization: Bearer $GH_TOKEN\" \\\n            -H \"Content-Type: application/octet-stream\" \\\n            --data-binary \"@$FILE_PATH\\\\$FILE_NAME\" \\\n            \"https://uploads.github.com/repos/$PUBLISH_REPO/releases/$RELEASE_ID/assets?name=$PUBLISH_FILE_NAME\"\n\n      - name: Publish release\n        env:\n          RELEASE_ID: ${{ steps.release-id.outputs.release_id }}\n        shell: bash\n        run: |\n          curl -X PATCH -H \"Authorization: Bearer $GH_TOKEN\" \"https://api.github.com/repos/$PUBLISH_REPO/releases/$RELEASE_ID\" -d '{\"draft\": false}'\n"
+    }
+  }
+}

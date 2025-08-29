@@ -1,0 +1,111 @@
+{
+  "sonar": {
+    "2023-02-10T11-11-16Z": [
+      {
+        "region": {
+          "startLine": 14,
+          "startColumn": 5,
+          "endLine": 26,
+          "endColumn": 51
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-10-11T10-56-43Z": [
+      {
+        "region": {
+          "startLine": 14,
+          "startColumn": 5,
+          "endLine": 27,
+          "endColumn": 7
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2023-06-16T16-52-11Z": [
+      {
+        "region": {
+          "startLine": 14,
+          "startColumn": 5,
+          "endLine": 26,
+          "endColumn": 51
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2023-02-10T11-11-16Z": {
+      "triggers": {
+        "pull_request": {
+          "branches": [
+            "main",
+            "v*"
+          ],
+          "paths": [
+            "frontend/**"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "sonar-analysis": 2
+      },
+      "line_count": 26,
+      "workflow": "name: sonar\non:\n  pull_request:\n    branches:\n      - main\n      - v*\n    paths:\n      - 'frontend/**'\ndefaults:\n  run:\n    working-directory: frontend\njobs:\n  sonar-analysis:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout code\n        uses: actions/checkout@v2\n        with: \n          fetch-depth: 0\n      - name: Sonar analysis\n        uses: sonarsource/sonarcloud-github-action@master\n        with:\n          projectBaseDir: frontend\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}\n"
+    },
+    "2021-10-11T10-56-43Z": {
+      "triggers": {
+        "pull_request": {
+          "branches": [
+            "main",
+            "v*"
+          ],
+          "paths": [
+            "frontend/**"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "sonar-analysis": 2
+      },
+      "line_count": 27,
+      "workflow": "name: sonar\non:\n  pull_request:\n    branches:\n      - main\n      - v*\n    paths:\n      - 'frontend/**'\ndefaults:\n  run:\n    working-directory: frontend\njobs:\n  sonar-analysis:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout code\n        uses: actions/checkout@v2\n        with: \n          fetch-depth: 0\n      - name: Sonar analysis\n        uses: sonarsource/sonarcloud-github-action@master\n        with:\n          projectBaseDir: frontend\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}\n      "
+    },
+    "2023-06-16T16-52-11Z": {
+      "triggers": {
+        "pull_request": {
+          "branches": [
+            "main",
+            "develop"
+          ],
+          "paths": [
+            "frontend/**"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "sonar-analysis": 2
+      },
+      "line_count": 26,
+      "workflow": "name: sonar\non:\n  pull_request:\n    branches:\n      - main\n      - develop\n    paths:\n      - 'frontend/**'\ndefaults:\n  run:\n    working-directory: frontend\njobs:\n  sonar-analysis:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout code\n        uses: actions/checkout@v3\n        with: \n          fetch-depth: 0\n      - name: Sonar analysis\n        uses: sonarsource/sonarcloud-github-action@master\n        with:\n          projectBaseDir: frontend\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}\n"
+    }
+  }
+}

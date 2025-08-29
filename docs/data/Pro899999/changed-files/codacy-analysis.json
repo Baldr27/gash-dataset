@@ -1,0 +1,1043 @@
+{
+  "codacy-analysis": {
+    "2021-06-24T16-38-48Z": [
+      {
+        "region": {
+          "startLine": 22,
+          "startColumn": 5,
+          "endLine": 49,
+          "endColumn": 37
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-07-19T19-23-23Z": [
+      {
+        "region": {
+          "startLine": 22,
+          "startColumn": 5,
+          "endLine": 49,
+          "endColumn": 37
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-07-19T19-36-26Z": [
+      {
+        "region": {
+          "startLine": 22,
+          "startColumn": 5,
+          "endLine": 49,
+          "endColumn": 37
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-07-30T17-34-38Z": [
+      {
+        "region": {
+          "startLine": 22,
+          "startColumn": 5,
+          "endLine": 49,
+          "endColumn": 37
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-07-23T12-02-23Z": [
+      {
+        "region": {
+          "startLine": 22,
+          "startColumn": 5,
+          "endLine": 49,
+          "endColumn": 37
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-03-01T19-57-43Z": [
+      {
+        "region": {
+          "startLine": 22,
+          "startColumn": 5,
+          "endLine": 49,
+          "endColumn": 37
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-03-03T18-01-09Z": [
+      {
+        "region": {
+          "startLine": 22,
+          "startColumn": 5,
+          "endLine": 49,
+          "endColumn": 37
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-03-09T16-08-10Z": [
+      {
+        "region": {
+          "startLine": 22,
+          "startColumn": 5,
+          "endLine": 49,
+          "endColumn": 37
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-04-25T12-30-56Z": [
+      {
+        "region": {
+          "startLine": 22,
+          "startColumn": 5,
+          "endLine": 49,
+          "endColumn": 37
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-09-20T02-31-08Z": [
+      {
+        "region": {
+          "startLine": 22,
+          "startColumn": 5,
+          "endLine": 51,
+          "endColumn": 37
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-06-15T13-41-32Z": [
+      {
+        "region": {
+          "startLine": 22,
+          "startColumn": 5,
+          "endLine": 49,
+          "endColumn": 37
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-09-20T03-00-57Z": [
+      {
+        "region": {
+          "startLine": 24,
+          "startColumn": 5,
+          "endLine": 56,
+          "endColumn": 37
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-09-20T18-36-24Z": [
+      {
+        "region": {
+          "startLine": 24,
+          "startColumn": 5,
+          "endLine": 56,
+          "endColumn": 37
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-10-21T13-10-17Z": [
+      {
+        "region": {
+          "startLine": 22,
+          "startColumn": 5,
+          "endLine": 51,
+          "endColumn": 37
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2023-03-07T14-48-21Z": [
+      {
+        "region": {
+          "startLine": 22,
+          "startColumn": 5,
+          "endLine": 51,
+          "endColumn": 37
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2023-09-04T13-21-19Z": [
+      {
+        "region": {
+          "startLine": 24,
+          "startColumn": 5,
+          "endLine": 56,
+          "endColumn": 37
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2023-09-22T18-36-50Z": [
+      {
+        "region": {
+          "startLine": 24,
+          "startColumn": 5,
+          "endLine": 56,
+          "endColumn": 37
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2023-05-25T18-22-24Z": [
+      {
+        "region": {
+          "startLine": 24,
+          "startColumn": 5,
+          "endLine": 56,
+          "endColumn": 37
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2023-10-03T00-09-57Z": [
+      {
+        "region": {
+          "startLine": 24,
+          "startColumn": 5,
+          "endLine": 56,
+          "endColumn": 37
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2023-12-13T17-06-49Z": [
+      {
+        "region": {
+          "startLine": 24,
+          "startColumn": 5,
+          "endLine": 56,
+          "endColumn": 37
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-07-19T19-20-30Z": [],
+    "2024-01-13T07-31-45Z": [],
+    "2024-02-08T16-41-50Z": [],
+    "2024-02-13T16-34-23Z": [],
+    "2024-05-08T11-24-48Z": [],
+    "2024-07-11T13-46-28Z": [],
+    "2024-07-11T15-55-03Z": [],
+    "2024-07-12T14-41-02Z": [],
+    "2025-03-22T22-03-14Z": []
+  },
+  "metadata": {
+    "2021-06-24T16-38-48Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "15 16 * * 2"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "codacy-security-scan": 3
+      },
+      "line_count": 49,
+      "workflow": "# This workflow checks out code, performs a Codacy security scan\n# and integrates the results with the\n# GitHub Advanced Security code scanning feature.  For more information on\n# the Codacy security scan action usage and parameters, see\n# https://github.com/codacy/codacy-analysis-cli-action.\n# For more information on Codacy Analysis CLI in general, see\n# https://github.com/codacy/codacy-analysis-cli.\n\nname: Codacy Security Scan\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    # The branches below must be a subset of the branches above\n    branches: [ main ]\n  schedule:\n    - cron: '15 16 * * 2'\n\njobs:\n  codacy-security-scan:\n    name: Codacy Security Scan\n    runs-on: ubuntu-latest\n    steps:\n      # Checkout the repository to the GitHub Actions runner\n      - name: Checkout code\n        uses: actions/checkout@v2\n\n      # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis\n      - name: Run Codacy Analysis CLI\n        uses: codacy/codacy-analysis-cli-action@1.1.0\n        with:\n          # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository\n          # You can also omit the token and run the tools that support default configurations\n          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}\n          verbose: true\n          output: results.sarif\n          format: sarif\n          # Adjust severity of non-security issues\n          gh-code-scanning-compat: true\n          # Force 0 exit code to allow SARIF file generation\n          # This will handover control about PR rejection to the GitHub side\n          max-allowed-issues: 2147483647\n\n      # Upload the SARIF file generated in the previous step\n      - name: Upload SARIF results file\n        uses: github/codeql-action/upload-sarif@v1\n        with:\n          sarif_file: results.sarif\n"
+    },
+    "2021-07-19T19-23-23Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "15 16 * * 2"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "codacy-security-scan": 3
+      },
+      "line_count": 49,
+      "workflow": "# This workflow checks out code, performs a Codacy security scan\n# and integrates the results with the\n# GitHub Advanced Security code scanning feature.  For more information on\n# the Codacy security scan action usage and parameters, see\n# https://github.com/codacy/codacy-analysis-cli-action.\n# For more information on Codacy Analysis CLI in general, see\n# https://github.com/codacy/codacy-analysis-cli.\n\nname: Codacy Security Scan\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    # The branches below must be a subset of the branches above\n    branches: [ main ]\n  schedule:\n    - cron: '15 16 * * 2'\n\njobs:\n  codacy-security-scan:\n    name: Codacy Security Scan\n    runs-on: ubuntu-latest\n    steps:\n      # Checkout the repository to the GitHub Actions runner\n      - name: Checkout code\n        uses: actions/checkout@v2\n\n      # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis\n      - name: Run Codacy Analysis CLI\n        uses: codacy/codacy-analysis-cli-action@1.1.0\n        with:\n          # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository\n          # You can also omit the token and run the tools that support default configurations\n          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}\n          verbose: true\n          output: results.sarif\n          format: sarif\n          # Adjust severity of non-security issues\n          gh-code-scanning-compat: true\n          # Force 0 exit code to allow SARIF file generation\n          # This will handover control about PR rejection to the GitHub side\n          max-allowed-issues: 2147483647\n\n      # Upload the SARIF file generated in the previous step\n      - name: Upload SARIF results file\n        uses: github/codeql-action/upload-sarif@v1\n        with:\n          sarif_file: results.sarif\n"
+    },
+    "2021-07-19T19-36-26Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "15 16 * * 2"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "codacy-security-scan": 3
+      },
+      "line_count": 49,
+      "workflow": "# This workflow checks out code, performs a Codacy security scan\n# and integrates the results with the\n# GitHub Advanced Security code scanning feature.  For more information on\n# the Codacy security scan action usage and parameters, see\n# https://github.com/codacy/codacy-analysis-cli-action.\n# For more information on Codacy Analysis CLI in general, see\n# https://github.com/codacy/codacy-analysis-cli.\n\nname: Codacy Security Scan\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    # The branches below must be a subset of the branches above\n    branches: [ main ]\n  schedule:\n    - cron: '15 16 * * 2'\n\njobs:\n  codacy-security-scan:\n    name: Codacy Security Scan\n    runs-on: ubuntu-latest\n    steps:\n      # Checkout the repository to the GitHub Actions runner\n      - name: Checkout code\n        uses: actions/checkout@v2\n\n      # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis\n      - name: Run Codacy Analysis CLI\n        uses: codacy/codacy-analysis-cli-action@3.0.3\n        with:\n          # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository\n          # You can also omit the token and run the tools that support default configurations\n          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}\n          verbose: true\n          output: results.sarif\n          format: sarif\n          # Adjust severity of non-security issues\n          gh-code-scanning-compat: true\n          # Force 0 exit code to allow SARIF file generation\n          # This will handover control about PR rejection to the GitHub side\n          max-allowed-issues: 2147483647\n\n      # Upload the SARIF file generated in the previous step\n      - name: Upload SARIF results file\n        uses: github/codeql-action/upload-sarif@v1\n        with:\n          sarif_file: results.sarif\n"
+    },
+    "2021-07-30T17-34-38Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "15 16 * * 2"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "codacy-security-scan": 3
+      },
+      "line_count": 49,
+      "workflow": "# This workflow checks out code, performs a Codacy security scan\n# and integrates the results with the\n# GitHub Advanced Security code scanning feature.  For more information on\n# the Codacy security scan action usage and parameters, see\n# https://github.com/codacy/codacy-analysis-cli-action.\n# For more information on Codacy Analysis CLI in general, see\n# https://github.com/codacy/codacy-analysis-cli.\n\nname: Codacy Security Scan\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    # The branches below must be a subset of the branches above\n    branches: [ main ]\n  schedule:\n    - cron: '15 16 * * 2'\n\njobs:\n  codacy-security-scan:\n    name: Codacy Security Scan\n    runs-on: ubuntu-latest\n    steps:\n      # Checkout the repository to the GitHub Actions runner\n      - name: Checkout code\n        uses: actions/checkout@v2\n\n      # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis\n      - name: Run Codacy Analysis CLI\n        uses: codacy/codacy-analysis-cli-action@4.0.0\n        with:\n          # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository\n          # You can also omit the token and run the tools that support default configurations\n          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}\n          verbose: true\n          output: results.sarif\n          format: sarif\n          # Adjust severity of non-security issues\n          gh-code-scanning-compat: true\n          # Force 0 exit code to allow SARIF file generation\n          # This will handover control about PR rejection to the GitHub side\n          max-allowed-issues: 2147483647\n\n      # Upload the SARIF file generated in the previous step\n      - name: Upload SARIF results file\n        uses: github/codeql-action/upload-sarif@v1\n        with:\n          sarif_file: results.sarif\n"
+    },
+    "2021-07-23T12-02-23Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "15 16 * * 2"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "codacy-security-scan": 3
+      },
+      "line_count": 49,
+      "workflow": "# This workflow checks out code, performs a Codacy security scan\n# and integrates the results with the\n# GitHub Advanced Security code scanning feature.  For more information on\n# the Codacy security scan action usage and parameters, see\n# https://github.com/codacy/codacy-analysis-cli-action.\n# For more information on Codacy Analysis CLI in general, see\n# https://github.com/codacy/codacy-analysis-cli.\n\nname: Codacy Security Scan\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    # The branches below must be a subset of the branches above\n    branches: [ main ]\n  schedule:\n    - cron: '15 16 * * 2'\n\njobs:\n  codacy-security-scan:\n    name: Codacy Security Scan\n    runs-on: ubuntu-latest\n    steps:\n      # Checkout the repository to the GitHub Actions runner\n      - name: Checkout code\n        uses: actions/checkout@v2\n\n      # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis\n      - name: Run Codacy Analysis CLI\n        uses: codacy/codacy-analysis-cli-action@4.0.0\n        with:\n          # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository\n          # You can also omit the token and run the tools that support default configurations\n          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}\n          verbose: true\n          output: results.sarif\n          format: sarif\n          # Adjust severity of non-security issues\n          gh-code-scanning-compat: true\n          # Force 0 exit code to allow SARIF file generation\n          # This will handover control about PR rejection to the GitHub side\n          max-allowed-issues: 2147483647\n\n      # Upload the SARIF file generated in the previous step\n      - name: Upload SARIF results file\n        uses: github/codeql-action/upload-sarif@v1\n        with:\n          sarif_file: results.sarif\n"
+    },
+    "2022-03-01T19-57-43Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "15 16 * * 2"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "codacy-security-scan": 3
+      },
+      "line_count": 49,
+      "workflow": "# This workflow checks out code, performs a Codacy security scan\n# and integrates the results with the\n# GitHub Advanced Security code scanning feature.  For more information on\n# the Codacy security scan action usage and parameters, see\n# https://github.com/codacy/codacy-analysis-cli-action.\n# For more information on Codacy Analysis CLI in general, see\n# https://github.com/codacy/codacy-analysis-cli.\n\nname: Codacy Security Scan\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    # The branches below must be a subset of the branches above\n    branches: [ main ]\n  schedule:\n    - cron: '15 16 * * 2'\n\njobs:\n  codacy-security-scan:\n    name: Codacy Security Scan\n    runs-on: ubuntu-latest\n    steps:\n      # Checkout the repository to the GitHub Actions runner\n      - name: Checkout code\n        uses: actions/checkout@v3\n\n      # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis\n      - name: Run Codacy Analysis CLI\n        uses: codacy/codacy-analysis-cli-action@4.0.0\n        with:\n          # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository\n          # You can also omit the token and run the tools that support default configurations\n          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}\n          verbose: true\n          output: results.sarif\n          format: sarif\n          # Adjust severity of non-security issues\n          gh-code-scanning-compat: true\n          # Force 0 exit code to allow SARIF file generation\n          # This will handover control about PR rejection to the GitHub side\n          max-allowed-issues: 2147483647\n\n      # Upload the SARIF file generated in the previous step\n      - name: Upload SARIF results file\n        uses: github/codeql-action/upload-sarif@v1\n        with:\n          sarif_file: results.sarif\n"
+    },
+    "2022-03-03T18-01-09Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "15 16 * * 2"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "codacy-security-scan": 3
+      },
+      "line_count": 49,
+      "workflow": "# This workflow checks out code, performs a Codacy security scan\n# and integrates the results with the\n# GitHub Advanced Security code scanning feature.  For more information on\n# the Codacy security scan action usage and parameters, see\n# https://github.com/codacy/codacy-analysis-cli-action.\n# For more information on Codacy Analysis CLI in general, see\n# https://github.com/codacy/codacy-analysis-cli.\n\nname: Codacy Security Scan\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    # The branches below must be a subset of the branches above\n    branches: [ main ]\n  schedule:\n    - cron: '15 16 * * 2'\n\njobs:\n  codacy-security-scan:\n    name: Codacy Security Scan\n    runs-on: ubuntu-latest\n    steps:\n      # Checkout the repository to the GitHub Actions runner\n      - name: Checkout code\n        uses: actions/checkout@v3\n\n      # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis\n      - name: Run Codacy Analysis CLI\n        uses: codacy/codacy-analysis-cli-action@4.0.1\n        with:\n          # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository\n          # You can also omit the token and run the tools that support default configurations\n          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}\n          verbose: true\n          output: results.sarif\n          format: sarif\n          # Adjust severity of non-security issues\n          gh-code-scanning-compat: true\n          # Force 0 exit code to allow SARIF file generation\n          # This will handover control about PR rejection to the GitHub side\n          max-allowed-issues: 2147483647\n\n      # Upload the SARIF file generated in the previous step\n      - name: Upload SARIF results file\n        uses: github/codeql-action/upload-sarif@v1\n        with:\n          sarif_file: results.sarif\n"
+    },
+    "2022-03-09T16-08-10Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "15 16 * * 2"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "codacy-security-scan": 3
+      },
+      "line_count": 49,
+      "workflow": "# This workflow checks out code, performs a Codacy security scan\n# and integrates the results with the\n# GitHub Advanced Security code scanning feature.  For more information on\n# the Codacy security scan action usage and parameters, see\n# https://github.com/codacy/codacy-analysis-cli-action.\n# For more information on Codacy Analysis CLI in general, see\n# https://github.com/codacy/codacy-analysis-cli.\n\nname: Codacy Security Scan\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    # The branches below must be a subset of the branches above\n    branches: [ main ]\n  schedule:\n    - cron: '15 16 * * 2'\n\njobs:\n  codacy-security-scan:\n    name: Codacy Security Scan\n    runs-on: ubuntu-latest\n    steps:\n      # Checkout the repository to the GitHub Actions runner\n      - name: Checkout code\n        uses: actions/checkout@v3\n\n      # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis\n      - name: Run Codacy Analysis CLI\n        uses: codacy/codacy-analysis-cli-action@4.0.2\n        with:\n          # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository\n          # You can also omit the token and run the tools that support default configurations\n          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}\n          verbose: true\n          output: results.sarif\n          format: sarif\n          # Adjust severity of non-security issues\n          gh-code-scanning-compat: true\n          # Force 0 exit code to allow SARIF file generation\n          # This will handover control about PR rejection to the GitHub side\n          max-allowed-issues: 2147483647\n\n      # Upload the SARIF file generated in the previous step\n      - name: Upload SARIF results file\n        uses: github/codeql-action/upload-sarif@v1\n        with:\n          sarif_file: results.sarif\n"
+    },
+    "2022-04-25T12-30-56Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "15 16 * * 2"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "codacy-security-scan": 3
+      },
+      "line_count": 49,
+      "workflow": "# This workflow checks out code, performs a Codacy security scan\n# and integrates the results with the\n# GitHub Advanced Security code scanning feature.  For more information on\n# the Codacy security scan action usage and parameters, see\n# https://github.com/codacy/codacy-analysis-cli-action.\n# For more information on Codacy Analysis CLI in general, see\n# https://github.com/codacy/codacy-analysis-cli.\n\nname: Codacy Security Scan\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    # The branches below must be a subset of the branches above\n    branches: [ main ]\n  schedule:\n    - cron: '15 16 * * 2'\n\njobs:\n  codacy-security-scan:\n    name: Codacy Security Scan\n    runs-on: ubuntu-latest\n    steps:\n      # Checkout the repository to the GitHub Actions runner\n      - name: Checkout code\n        uses: actions/checkout@v3\n\n      # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis\n      - name: Run Codacy Analysis CLI\n        uses: codacy/codacy-analysis-cli-action@4.0.2\n        with:\n          # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository\n          # You can also omit the token and run the tools that support default configurations\n          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}\n          verbose: true\n          output: results.sarif\n          format: sarif\n          # Adjust severity of non-security issues\n          gh-code-scanning-compat: true\n          # Force 0 exit code to allow SARIF file generation\n          # This will handover control about PR rejection to the GitHub side\n          max-allowed-issues: 2147483647\n\n      # Upload the SARIF file generated in the previous step\n      - name: Upload SARIF results file\n        uses: github/codeql-action/upload-sarif@v2\n        with:\n          sarif_file: results.sarif\n"
+    },
+    "2022-09-20T02-31-08Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "15 16 * * 2"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "codacy-security-scan": 3
+      },
+      "line_count": 51,
+      "workflow": "# This workflow checks out code, performs a Codacy security scan\n# and integrates the results with the\n# GitHub Advanced Security code scanning feature.  For more information on\n# the Codacy security scan action usage and parameters, see\n# https://github.com/codacy/codacy-analysis-cli-action.\n# For more information on Codacy Analysis CLI in general, see\n# https://github.com/codacy/codacy-analysis-cli.\n\nname: Codacy Security Scan\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    # The branches below must be a subset of the branches above\n    branches: [ main ]\n  schedule:\n    - cron: '15 16 * * 2'\n\njobs:\n  codacy-security-scan:\n    name: Codacy Security Scan\n    runs-on: ubuntu-latest\n    steps:\n      # Checkout the repository to the GitHub Actions runner\n      - name: Checkout code\n        uses: actions/checkout@v3\n\n      # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis\n      - name: Run Codacy Analysis CLI\n        continue-on-error: true\n        uses: codacy/codacy-analysis-cli-action@v4.1.0\n        with:\n          # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository\n          # You can also omit the token and run the tools that support default configurations\n          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}\n          verbose: true\n          output: results.sarif\n          format: sarif\n          # Adjust severity of non-security issues\n          gh-code-scanning-compat: true\n          # Force 0 exit code to allow SARIF file generation\n          # This will hand over control about PR rejection to the GitHub side\n          max-allowed-issues: 2147483647\n\n      # Upload the SARIF file generated in the previous step\n      - name: Upload SARIF results file\n        continue-on-error: true\n        uses: github/codeql-action/upload-sarif@v2\n        with:\n          sarif_file: results.sarif\n"
+    },
+    "2022-06-15T13-41-32Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "15 16 * * 2"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "codacy-security-scan": 3
+      },
+      "line_count": 49,
+      "workflow": "# This workflow checks out code, performs a Codacy security scan\n# and integrates the results with the\n# GitHub Advanced Security code scanning feature.  For more information on\n# the Codacy security scan action usage and parameters, see\n# https://github.com/codacy/codacy-analysis-cli-action.\n# For more information on Codacy Analysis CLI in general, see\n# https://github.com/codacy/codacy-analysis-cli.\n\nname: Codacy Security Scan\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    # The branches below must be a subset of the branches above\n    branches: [ main ]\n  schedule:\n    - cron: '15 16 * * 2'\n\njobs:\n  codacy-security-scan:\n    name: Codacy Security Scan\n    runs-on: ubuntu-latest\n    steps:\n      # Checkout the repository to the GitHub Actions runner\n      - name: Checkout code\n        uses: actions/checkout@v3\n\n      # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis\n      - name: Run Codacy Analysis CLI\n        uses: codacy/codacy-analysis-cli-action@v4.1.0\n        with:\n          # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository\n          # You can also omit the token and run the tools that support default configurations\n          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}\n          verbose: true\n          output: results.sarif\n          format: sarif\n          # Adjust severity of non-security issues\n          gh-code-scanning-compat: true\n          # Force 0 exit code to allow SARIF file generation\n          # This will handover control about PR rejection to the GitHub side\n          max-allowed-issues: 2147483647\n\n      # Upload the SARIF file generated in the previous step\n      - name: Upload SARIF results file\n        uses: github/codeql-action/upload-sarif@v2\n        with:\n          sarif_file: results.sarif\n"
+    },
+    "2022-09-20T03-00-57Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "15 16 * * 2"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "codacy-security-scan": 3
+      },
+      "line_count": 56,
+      "workflow": "# This workflow checks out code, performs a Codacy security scan\n# and integrates the results with the\n# GitHub Advanced Security code scanning feature.  For more information on\n# the Codacy security scan action usage and parameters, see\n# https://github.com/codacy/codacy-analysis-cli-action.\n# For more information on Codacy Analysis CLI in general, see\n# https://github.com/codacy/codacy-analysis-cli.\n\nname: Codacy Security Scan\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    # The branches below must be a subset of the branches above\n    branches: [ main ]\n  schedule:\n    - cron: '15 16 * * 2'\n\njobs:\n  codacy-security-scan:\n    # Cancel other workflows that are running for the same branch\n    # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#concurrency\n    concurrency:\n      group: ${{ github.workflow }}-${{ github.ref }}\n      cancel-in-progress: true\n    name: Codacy Security Scan\n    runs-on: ubuntu-latest\n    steps:\n      # Checkout the repository to the GitHub Actions runner\n      - name: Checkout code\n        uses: actions/checkout@v3\n\n      # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis\n      - name: Run Codacy Analysis CLI\n        continue-on-error: true\n        uses: codacy/codacy-analysis-cli-action@v4.1.0\n        with:\n          # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository\n          # You can also omit the token and run the tools that support default configurations\n          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}\n          verbose: true\n          output: results.sarif\n          format: sarif\n          # Adjust severity of non-security issues\n          gh-code-scanning-compat: true\n          # Force 0 exit code to allow SARIF file generation\n          # This will hand over control about PR rejection to the GitHub side\n          max-allowed-issues: 2147483647\n\n      # Upload the SARIF file generated in the previous step\n      - name: Upload SARIF results file\n        continue-on-error: true\n        uses: github/codeql-action/upload-sarif@v2\n        with:\n          sarif_file: results.sarif\n"
+    },
+    "2022-09-20T18-36-24Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "15 16 * * 2"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "codacy-security-scan": 3
+      },
+      "line_count": 56,
+      "workflow": "# This workflow checks out code, performs a Codacy security scan\n# and integrates the results with the\n# GitHub Advanced Security code scanning feature.  For more information on\n# the Codacy security scan action usage and parameters, see\n# https://github.com/codacy/codacy-analysis-cli-action.\n# For more information on Codacy Analysis CLI in general, see\n# https://github.com/codacy/codacy-analysis-cli.\n\nname: Codacy Security Scan\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    # The branches below must be a subset of the branches above\n    branches: [ main ]\n  schedule:\n    - cron: '15 16 * * 2'\n\njobs:\n  codacy-security-scan:\n    # Cancel other workflows that are running for the same branch\n    # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#concurrency\n    concurrency:\n      group: ${{ github.workflow }}-${{ github.ref }}\n      cancel-in-progress: true\n    name: Codacy Security Scan\n    runs-on: ubuntu-latest\n    steps:\n      # Checkout the repository to the GitHub Actions runner\n      - name: Checkout code\n        uses: actions/checkout@v3\n\n      # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis\n      - name: Run Codacy Analysis CLI\n        continue-on-error: true\n        uses: codacy/codacy-analysis-cli-action@v4.2.0\n        with:\n          # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository\n          # You can also omit the token and run the tools that support default configurations\n          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}\n          verbose: true\n          output: results.sarif\n          format: sarif\n          # Adjust severity of non-security issues\n          gh-code-scanning-compat: true\n          # Force 0 exit code to allow SARIF file generation\n          # This will hand over control about PR rejection to the GitHub side\n          max-allowed-issues: 2147483647\n\n      # Upload the SARIF file generated in the previous step\n      - name: Upload SARIF results file\n        continue-on-error: true\n        uses: github/codeql-action/upload-sarif@v2\n        with:\n          sarif_file: results.sarif\n"
+    },
+    "2022-10-21T13-10-17Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "15 16 * * 2"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "codacy-security-scan": 3
+      },
+      "line_count": 51,
+      "workflow": "# This workflow checks out code, performs a Codacy security scan\n# and integrates the results with the\n# GitHub Advanced Security code scanning feature.  For more information on\n# the Codacy security scan action usage and parameters, see\n# https://github.com/codacy/codacy-analysis-cli-action.\n# For more information on Codacy Analysis CLI in general, see\n# https://github.com/codacy/codacy-analysis-cli.\n\nname: Codacy Security Scan\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    # The branches below must be a subset of the branches above\n    branches: [ main ]\n  schedule:\n    - cron: '15 16 * * 2'\n\njobs:\n  codacy-security-scan:\n    name: Codacy Security Scan\n    runs-on: ubuntu-latest\n    steps:\n      # Checkout the repository to the GitHub Actions runner\n      - name: Checkout code\n        uses: actions/checkout@v3\n\n      # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis\n      - name: Run Codacy Analysis CLI\n        continue-on-error: true\n        uses: codacy/codacy-analysis-cli-action@v4.2.0\n        with:\n          # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository\n          # You can also omit the token and run the tools that support default configurations\n          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}\n          verbose: true\n          output: results.sarif\n          format: sarif\n          # Adjust severity of non-security issues\n          gh-code-scanning-compat: true\n          # Force 0 exit code to allow SARIF file generation\n          # This will hand over control about PR rejection to the GitHub side\n          max-allowed-issues: 2147483647\n\n      # Upload the SARIF file generated in the previous step\n      - name: Upload SARIF results file\n        continue-on-error: true\n        uses: github/codeql-action/upload-sarif@v2\n        with:\n          sarif_file: results.sarif\n"
+    },
+    "2023-03-07T14-48-21Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "15 16 * * 2"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "codacy-security-scan": 3
+      },
+      "line_count": 51,
+      "workflow": "# This workflow checks out code, performs a Codacy security scan\n# and integrates the results with the\n# GitHub Advanced Security code scanning feature.  For more information on\n# the Codacy security scan action usage and parameters, see\n# https://github.com/codacy/codacy-analysis-cli-action.\n# For more information on Codacy Analysis CLI in general, see\n# https://github.com/codacy/codacy-analysis-cli.\n\nname: Codacy Security Scan\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    # The branches below must be a subset of the branches above\n    branches: [ main ]\n  schedule:\n    - cron: '15 16 * * 2'\n\njobs:\n  codacy-security-scan:\n    name: Codacy Security Scan\n    runs-on: ubuntu-latest\n    steps:\n      # Checkout the repository to the GitHub Actions runner\n      - name: Checkout code\n        uses: actions/checkout@v3\n\n      # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis\n      - name: Run Codacy Analysis CLI\n        continue-on-error: true\n        uses: codacy/codacy-analysis-cli-action@v4.3.0\n        with:\n          # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository\n          # You can also omit the token and run the tools that support default configurations\n          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}\n          verbose: true\n          output: results.sarif\n          format: sarif\n          # Adjust severity of non-security issues\n          gh-code-scanning-compat: true\n          # Force 0 exit code to allow SARIF file generation\n          # This will hand over control about PR rejection to the GitHub side\n          max-allowed-issues: 2147483647\n\n      # Upload the SARIF file generated in the previous step\n      - name: Upload SARIF results file\n        continue-on-error: true\n        uses: github/codeql-action/upload-sarif@v2\n        with:\n          sarif_file: results.sarif\n"
+    },
+    "2023-09-04T13-21-19Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "15 16 * * 2"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "codacy-security-scan": 3
+      },
+      "line_count": 56,
+      "workflow": "# This workflow checks out code, performs a Codacy security scan\n# and integrates the results with the\n# GitHub Advanced Security code scanning feature.  For more information on\n# the Codacy security scan action usage and parameters, see\n# https://github.com/codacy/codacy-analysis-cli-action.\n# For more information on Codacy Analysis CLI in general, see\n# https://github.com/codacy/codacy-analysis-cli.\n\nname: Codacy Security Scan\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    # The branches below must be a subset of the branches above\n    branches: [ main ]\n  schedule:\n    - cron: '15 16 * * 2'\n\njobs:\n  codacy-security-scan:\n    # Cancel other workflows that are running for the same branch\n    # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#concurrency\n    concurrency:\n      group: ${{ github.workflow }}-${{ github.ref }}\n      cancel-in-progress: true\n    name: Codacy Security Scan\n    runs-on: ubuntu-latest\n    steps:\n      # Checkout the repository to the GitHub Actions runner\n      - name: Checkout code\n        uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4\n\n      # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis\n      - name: Run Codacy Analysis CLI\n        continue-on-error: true\n        uses: codacy/codacy-analysis-cli-action@v4.3.0\n        with:\n          # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository\n          # You can also omit the token and run the tools that support default configurations\n          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}\n          verbose: true\n          output: results.sarif\n          format: sarif\n          # Adjust severity of non-security issues\n          gh-code-scanning-compat: true\n          # Force 0 exit code to allow SARIF file generation\n          # This will hand over control about PR rejection to the GitHub side\n          max-allowed-issues: 2147483647\n\n      # Upload the SARIF file generated in the previous step\n      - name: Upload SARIF results file\n        continue-on-error: true\n        uses: github/codeql-action/upload-sarif@v2\n        with:\n          sarif_file: results.sarif\n"
+    },
+    "2023-09-22T18-36-50Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "15 16 * * 2"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "codacy-security-scan": 3
+      },
+      "line_count": 56,
+      "workflow": "# This workflow checks out code, performs a Codacy security scan\n# and integrates the results with the\n# GitHub Advanced Security code scanning feature.  For more information on\n# the Codacy security scan action usage and parameters, see\n# https://github.com/codacy/codacy-analysis-cli-action.\n# For more information on Codacy Analysis CLI in general, see\n# https://github.com/codacy/codacy-analysis-cli.\n\nname: Codacy Security Scan\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    # The branches below must be a subset of the branches above\n    branches: [ main ]\n  schedule:\n    - cron: '15 16 * * 2'\n\njobs:\n  codacy-security-scan:\n    # Cancel other workflows that are running for the same branch\n    # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#concurrency\n    concurrency:\n      group: ${{ github.workflow }}-${{ github.ref }}\n      cancel-in-progress: true\n    name: Codacy Security Scan\n    runs-on: ubuntu-latest\n    steps:\n      # Checkout the repository to the GitHub Actions runner\n      - name: Checkout code\n        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4\n\n      # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis\n      - name: Run Codacy Analysis CLI\n        continue-on-error: true\n        uses: codacy/codacy-analysis-cli-action@v4.3.0\n        with:\n          # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository\n          # You can also omit the token and run the tools that support default configurations\n          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}\n          verbose: true\n          output: results.sarif\n          format: sarif\n          # Adjust severity of non-security issues\n          gh-code-scanning-compat: true\n          # Force 0 exit code to allow SARIF file generation\n          # This will hand over control about PR rejection to the GitHub side\n          max-allowed-issues: 2147483647\n\n      # Upload the SARIF file generated in the previous step\n      - name: Upload SARIF results file\n        continue-on-error: true\n        uses: github/codeql-action/upload-sarif@v2\n        with:\n          sarif_file: results.sarif\n"
+    },
+    "2023-05-25T18-22-24Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "15 16 * * 2"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "codacy-security-scan": 3
+      },
+      "line_count": 56,
+      "workflow": "# This workflow checks out code, performs a Codacy security scan\n# and integrates the results with the\n# GitHub Advanced Security code scanning feature.  For more information on\n# the Codacy security scan action usage and parameters, see\n# https://github.com/codacy/codacy-analysis-cli-action.\n# For more information on Codacy Analysis CLI in general, see\n# https://github.com/codacy/codacy-analysis-cli.\n\nname: Codacy Security Scan\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    # The branches below must be a subset of the branches above\n    branches: [ main ]\n  schedule:\n    - cron: '15 16 * * 2'\n\njobs:\n  codacy-security-scan:\n    # Cancel other workflows that are running for the same branch\n    # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#concurrency\n    concurrency:\n      group: ${{ github.workflow }}-${{ github.ref }}\n      cancel-in-progress: true\n    name: Codacy Security Scan\n    runs-on: ubuntu-latest\n    steps:\n      # Checkout the repository to the GitHub Actions runner\n      - name: Checkout code\n        uses: actions/checkout@v3\n\n      # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis\n      - name: Run Codacy Analysis CLI\n        continue-on-error: true\n        uses: codacy/codacy-analysis-cli-action@v4.3.0\n        with:\n          # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository\n          # You can also omit the token and run the tools that support default configurations\n          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}\n          verbose: true\n          output: results.sarif\n          format: sarif\n          # Adjust severity of non-security issues\n          gh-code-scanning-compat: true\n          # Force 0 exit code to allow SARIF file generation\n          # This will hand over control about PR rejection to the GitHub side\n          max-allowed-issues: 2147483647\n\n      # Upload the SARIF file generated in the previous step\n      - name: Upload SARIF results file\n        continue-on-error: true\n        uses: github/codeql-action/upload-sarif@v2\n        with:\n          sarif_file: results.sarif\n"
+    },
+    "2023-10-03T00-09-57Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "15 16 * * 2"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "codacy-security-scan": 3
+      },
+      "line_count": 56,
+      "workflow": "# This workflow checks out code, performs a Codacy security scan\n# and integrates the results with the\n# GitHub Advanced Security code scanning feature.  For more information on\n# the Codacy security scan action usage and parameters, see\n# https://github.com/codacy/codacy-analysis-cli-action.\n# For more information on Codacy Analysis CLI in general, see\n# https://github.com/codacy/codacy-analysis-cli.\n\nname: Codacy Security Scan\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    # The branches below must be a subset of the branches above\n    branches: [ main ]\n  schedule:\n    - cron: '15 16 * * 2'\n\njobs:\n  codacy-security-scan:\n    # Cancel other workflows that are running for the same branch\n    # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#concurrency\n    concurrency:\n      group: ${{ github.workflow }}-${{ github.ref }}\n      cancel-in-progress: true\n    name: Codacy Security Scan\n    runs-on: ubuntu-latest\n    steps:\n      # Checkout the repository to the GitHub Actions runner\n      - name: Checkout code\n        uses: actions/checkout@v4\n\n      # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis\n      - name: Run Codacy Analysis CLI\n        continue-on-error: true\n        uses: codacy/codacy-analysis-cli-action@v4.3.0\n        with:\n          # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository\n          # You can also omit the token and run the tools that support default configurations\n          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}\n          verbose: true\n          output: results.sarif\n          format: sarif\n          # Adjust severity of non-security issues\n          gh-code-scanning-compat: true\n          # Force 0 exit code to allow SARIF file generation\n          # This will hand over control about PR rejection to the GitHub side\n          max-allowed-issues: 2147483647\n\n      # Upload the SARIF file generated in the previous step\n      - name: Upload SARIF results file\n        continue-on-error: true\n        uses: github/codeql-action/upload-sarif@v2\n        with:\n          sarif_file: results.sarif\n"
+    },
+    "2023-12-13T17-06-49Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "15 16 * * 2"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "codacy-security-scan": 3
+      },
+      "line_count": 56,
+      "workflow": "# This workflow checks out code, performs a Codacy security scan\n# and integrates the results with the\n# GitHub Advanced Security code scanning feature.  For more information on\n# the Codacy security scan action usage and parameters, see\n# https://github.com/codacy/codacy-analysis-cli-action.\n# For more information on Codacy Analysis CLI in general, see\n# https://github.com/codacy/codacy-analysis-cli.\n\nname: Codacy Security Scan\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    # The branches below must be a subset of the branches above\n    branches: [ main ]\n  schedule:\n    - cron: '15 16 * * 2'\n\njobs:\n  codacy-security-scan:\n    # Cancel other workflows that are running for the same branch\n    # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#concurrency\n    concurrency:\n      group: ${{ github.workflow }}-${{ github.ref }}\n      cancel-in-progress: true\n    name: Codacy Security Scan\n    runs-on: ubuntu-latest\n    steps:\n      # Checkout the repository to the GitHub Actions runner\n      - name: Checkout code\n        uses: actions/checkout@v4\n\n      # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis\n      - name: Run Codacy Analysis CLI\n        continue-on-error: true\n        uses: codacy/codacy-analysis-cli-action@v4.3.0\n        with:\n          # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository\n          # You can also omit the token and run the tools that support default configurations\n          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}\n          verbose: true\n          output: results.sarif\n          format: sarif\n          # Adjust severity of non-security issues\n          gh-code-scanning-compat: true\n          # Force 0 exit code to allow SARIF file generation\n          # This will hand over control about PR rejection to the GitHub side\n          max-allowed-issues: 2147483647\n\n      # Upload the SARIF file generated in the previous step\n      - name: Upload SARIF results file\n        continue-on-error: true\n        uses: github/codeql-action/upload-sarif@v3\n        with:\n          sarif_file: results.sarif\n"
+    },
+    "2021-07-19T19-20-30Z": {
+      "triggers": {},
+      "num_jobs": 0,
+      "steps_per_job": {},
+      "line_count": 1,
+      "workflow": null,
+      "parse_error": "Invalid YAML structure"
+    },
+    "2024-01-13T07-31-45Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "15 16 * * 2"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "codacy-security-scan": 3
+      },
+      "line_count": 61,
+      "workflow": "# This workflow checks out code, performs a Codacy security scan\n# and integrates the results with the\n# GitHub Advanced Security code scanning feature.  For more information on\n# the Codacy security scan action usage and parameters, see\n# https://github.com/codacy/codacy-analysis-cli-action.\n# For more information on Codacy Analysis CLI in general, see\n# https://github.com/codacy/codacy-analysis-cli.\n\nname: Codacy Security Scan\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    # The branches below must be a subset of the branches above\n    branches: [ main ]\n  schedule:\n    - cron: '15 16 * * 2'\n\npermissions:\n  actions: read\n  contents: read\n  security-events: write\n\njobs:\n  codacy-security-scan:\n    # Cancel other workflows that are running for the same branch\n    # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#concurrency\n    concurrency:\n      group: ${{ github.workflow }}-${{ github.ref }}\n      cancel-in-progress: true\n    name: Codacy Security Scan\n    runs-on: ubuntu-latest\n    steps:\n      # Checkout the repository to the GitHub Actions runner\n      - name: Checkout code\n        uses: actions/checkout@v4\n\n      # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis\n      - name: Run Codacy Analysis CLI\n        continue-on-error: true\n        uses: codacy/codacy-analysis-cli-action@v4.3.0\n        with:\n          # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository\n          # You can also omit the token and run the tools that support default configurations\n          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}\n          verbose: true\n          output: results.sarif\n          format: sarif\n          # Adjust severity of non-security issues\n          gh-code-scanning-compat: true\n          # Force 0 exit code to allow SARIF file generation\n          # This will hand over control about PR rejection to the GitHub side\n          max-allowed-issues: 2147483647\n\n      # Upload the SARIF file generated in the previous step\n      - name: Upload SARIF results file\n        continue-on-error: true\n        uses: github/codeql-action/upload-sarif@v3\n        with:\n          sarif_file: results.sarif\n"
+    },
+    "2024-02-08T16-41-50Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "15 16 * * 2"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "codacy-security-scan": 3
+      },
+      "line_count": 61,
+      "workflow": "# This workflow checks out code, performs a Codacy security scan\n# and integrates the results with the\n# GitHub Advanced Security code scanning feature.  For more information on\n# the Codacy security scan action usage and parameters, see\n# https://github.com/codacy/codacy-analysis-cli-action.\n# For more information on Codacy Analysis CLI in general, see\n# https://github.com/codacy/codacy-analysis-cli.\n\nname: Codacy Security Scan\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    # The branches below must be a subset of the branches above\n    branches: [ main ]\n  schedule:\n    - cron: '15 16 * * 2'\n\npermissions:\n  actions: read\n  contents: read\n  security-events: write\n\njobs:\n  codacy-security-scan:\n    # Cancel other workflows that are running for the same branch\n    # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#concurrency\n    concurrency:\n      group: ${{ github.workflow }}-${{ github.ref }}\n      cancel-in-progress: true\n    name: Codacy Security Scan\n    runs-on: ubuntu-latest\n    steps:\n      # Checkout the repository to the GitHub Actions runner\n      - name: Checkout code\n        uses: actions/checkout@v4\n\n      # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis\n      - name: Run Codacy Analysis CLI\n        continue-on-error: true\n        uses: codacy/codacy-analysis-cli-action@v4.4.0\n        with:\n          # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository\n          # You can also omit the token and run the tools that support default configurations\n          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}\n          verbose: true\n          output: results.sarif\n          format: sarif\n          # Adjust severity of non-security issues\n          gh-code-scanning-compat: true\n          # Force 0 exit code to allow SARIF file generation\n          # This will hand over control about PR rejection to the GitHub side\n          max-allowed-issues: 2147483647\n\n      # Upload the SARIF file generated in the previous step\n      - name: Upload SARIF results file\n        continue-on-error: true\n        uses: github/codeql-action/upload-sarif@v3\n        with:\n          sarif_file: results.sarif\n"
+    },
+    "2024-02-13T16-34-23Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "15 16 * * 2"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "codacy-security-scan": 3
+      },
+      "line_count": 56,
+      "workflow": "# This workflow checks out code, performs a Codacy security scan\n# and integrates the results with the\n# GitHub Advanced Security code scanning feature.  For more information on\n# the Codacy security scan action usage and parameters, see\n# https://github.com/codacy/codacy-analysis-cli-action.\n# For more information on Codacy Analysis CLI in general, see\n# https://github.com/codacy/codacy-analysis-cli.\n\nname: Codacy Security Scan\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    # The branches below must be a subset of the branches above\n    branches: [ main ]\n  schedule:\n    - cron: '15 16 * * 2'\n\npermissions:\n  actions: read\n  contents: read\n  security-events: write\n\njobs:\n  codacy-security-scan:\n    name: Codacy Security Scan\n    runs-on: ubuntu-latest\n    steps:\n      # Checkout the repository to the GitHub Actions runner\n      - name: Checkout code\n        uses: actions/checkout@v4\n\n      # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis\n      - name: Run Codacy Analysis CLI\n        continue-on-error: true\n        uses: codacy/codacy-analysis-cli-action@v4.4.0\n        with:\n          # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository\n          # You can also omit the token and run the tools that support default configurations\n          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}\n          verbose: true\n          output: results.sarif\n          format: sarif\n          # Adjust severity of non-security issues\n          gh-code-scanning-compat: true\n          # Force 0 exit code to allow SARIF file generation\n          # This will hand over control about PR rejection to the GitHub side\n          max-allowed-issues: 2147483647\n\n      # Upload the SARIF file generated in the previous step\n      - name: Upload SARIF results file\n        continue-on-error: true\n        uses: github/codeql-action/upload-sarif@v3\n        with:\n          sarif_file: results.sarif\n"
+    },
+    "2024-05-08T11-24-48Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "15 16 * * 2"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "codacy-security-scan": 3
+      },
+      "line_count": 56,
+      "workflow": "# This workflow checks out code, performs a Codacy security scan\n# and integrates the results with the\n# GitHub Advanced Security code scanning feature.  For more information on\n# the Codacy security scan action usage and parameters, see\n# https://github.com/codacy/codacy-analysis-cli-action.\n# For more information on Codacy Analysis CLI in general, see\n# https://github.com/codacy/codacy-analysis-cli.\n\nname: Codacy Security Scan\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    # The branches below must be a subset of the branches above\n    branches: [ main ]\n  schedule:\n    - cron: '15 16 * * 2'\n\npermissions:\n  actions: read\n  contents: read\n  security-events: write\n\njobs:\n  codacy-security-scan:\n    name: Codacy Security Scan\n    runs-on: ubuntu-latest\n    steps:\n      # Checkout the repository to the GitHub Actions runner\n      - name: Checkout code\n        uses: actions/checkout@v4\n\n      # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis\n      - name: Run Codacy Analysis CLI\n        continue-on-error: true\n        uses: codacy/codacy-analysis-cli-action@v4.4.1\n        with:\n          # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository\n          # You can also omit the token and run the tools that support default configurations\n          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}\n          verbose: true\n          output: results.sarif\n          format: sarif\n          # Adjust severity of non-security issues\n          gh-code-scanning-compat: true\n          # Force 0 exit code to allow SARIF file generation\n          # This will hand over control about PR rejection to the GitHub side\n          max-allowed-issues: 2147483647\n\n      # Upload the SARIF file generated in the previous step\n      - name: Upload SARIF results file\n        continue-on-error: true\n        uses: github/codeql-action/upload-sarif@v3\n        with:\n          sarif_file: results.sarif\n"
+    },
+    "2024-07-11T13-46-28Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "15 16 * * 2"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "codacy-security-scan": 3
+      },
+      "line_count": 56,
+      "workflow": "# This workflow checks out code, performs a Codacy security scan\n# and integrates the results with the\n# GitHub Advanced Security code scanning feature.  For more information on\n# the Codacy security scan action usage and parameters, see\n# https://github.com/codacy/codacy-analysis-cli-action.\n# For more information on Codacy Analysis CLI in general, see\n# https://github.com/codacy/codacy-analysis-cli.\n\nname: Codacy Security Scan\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    # The branches below must be a subset of the branches above\n    branches: [ main ]\n  schedule:\n    - cron: '15 16 * * 2'\n\npermissions:\n  actions: read\n  contents: read\n  security-events: write\n\njobs:\n  codacy-security-scan:\n    name: Codacy Security Scan\n    runs-on: ubuntu-latest\n    steps:\n      # Checkout the repository to the GitHub Actions runner\n      - name: Checkout code\n        uses: actions/checkout@v4\n\n      # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis\n      - name: Run Codacy Analysis CLI\n        continue-on-error: true\n        uses: codacy/codacy-analysis-cli-action@v4.4.2\n        with:\n          # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository\n          # You can also omit the token and run the tools that support default configurations\n          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}\n          verbose: true\n          output: results.sarif\n          format: sarif\n          # Adjust severity of non-security issues\n          gh-code-scanning-compat: true\n          # Force 0 exit code to allow SARIF file generation\n          # This will hand over control about PR rejection to the GitHub side\n          max-allowed-issues: 2147483647\n\n      # Upload the SARIF file generated in the previous step\n      - name: Upload SARIF results file\n        continue-on-error: true\n        uses: github/codeql-action/upload-sarif@v3\n        with:\n          sarif_file: results.sarif\n"
+    },
+    "2024-07-11T15-55-03Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "15 16 * * 2"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "codacy-security-scan": 3
+      },
+      "line_count": 56,
+      "workflow": "# This workflow checks out code, performs a Codacy security scan\n# and integrates the results with the\n# GitHub Advanced Security code scanning feature.  For more information on\n# the Codacy security scan action usage and parameters, see\n# https://github.com/codacy/codacy-analysis-cli-action.\n# For more information on Codacy Analysis CLI in general, see\n# https://github.com/codacy/codacy-analysis-cli.\n\nname: Codacy Security Scan\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    # The branches below must be a subset of the branches above\n    branches: [ main ]\n  schedule:\n    - cron: '15 16 * * 2'\n\npermissions:\n  actions: read\n  contents: read\n  security-events: write\n\njobs:\n  codacy-security-scan:\n    name: Codacy Security Scan\n    runs-on: ubuntu-latest\n    steps:\n      # Checkout the repository to the GitHub Actions runner\n      - name: Checkout code\n        uses: actions/checkout@v4\n\n      # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis\n      - name: Run Codacy Analysis CLI\n        continue-on-error: true\n        uses: codacy/codacy-analysis-cli-action@v4.4.4\n        with:\n          # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository\n          # You can also omit the token and run the tools that support default configurations\n          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}\n          verbose: true\n          output: results.sarif\n          format: sarif\n          # Adjust severity of non-security issues\n          gh-code-scanning-compat: true\n          # Force 0 exit code to allow SARIF file generation\n          # This will hand over control about PR rejection to the GitHub side\n          max-allowed-issues: 2147483647\n\n      # Upload the SARIF file generated in the previous step\n      - name: Upload SARIF results file\n        continue-on-error: true\n        uses: github/codeql-action/upload-sarif@v3\n        with:\n          sarif_file: results.sarif\n"
+    },
+    "2024-07-12T14-41-02Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "15 16 * * 2"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "codacy-security-scan": 3
+      },
+      "line_count": 56,
+      "workflow": "# This workflow checks out code, performs a Codacy security scan\n# and integrates the results with the\n# GitHub Advanced Security code scanning feature.  For more information on\n# the Codacy security scan action usage and parameters, see\n# https://github.com/codacy/codacy-analysis-cli-action.\n# For more information on Codacy Analysis CLI in general, see\n# https://github.com/codacy/codacy-analysis-cli.\n\nname: Codacy Security Scan\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    # The branches below must be a subset of the branches above\n    branches: [ main ]\n  schedule:\n    - cron: '15 16 * * 2'\n\npermissions:\n  actions: read\n  contents: read\n  security-events: write\n\njobs:\n  codacy-security-scan:\n    name: Codacy Security Scan\n    runs-on: ubuntu-latest\n    steps:\n      # Checkout the repository to the GitHub Actions runner\n      - name: Checkout code\n        uses: actions/checkout@v4\n\n      # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis\n      - name: Run Codacy Analysis CLI\n        continue-on-error: true\n        uses: codacy/codacy-analysis-cli-action@v4.4.5\n        with:\n          # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository\n          # You can also omit the token and run the tools that support default configurations\n          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}\n          verbose: true\n          output: results.sarif\n          format: sarif\n          # Adjust severity of non-security issues\n          gh-code-scanning-compat: true\n          # Force 0 exit code to allow SARIF file generation\n          # This will hand over control about PR rejection to the GitHub side\n          max-allowed-issues: 2147483647\n\n      # Upload the SARIF file generated in the previous step\n      - name: Upload SARIF results file\n        continue-on-error: true\n        uses: github/codeql-action/upload-sarif@v3\n        with:\n          sarif_file: results.sarif\n"
+    },
+    "2025-03-22T22-03-14Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "15 16 * * 2"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "codacy-security-scan": 3
+      },
+      "line_count": 56,
+      "workflow": "# This workflow checks out code, performs a Codacy security scan\n# and integrates the results with the\n# GitHub Advanced Security code scanning feature.  For more information on\n# the Codacy security scan action usage and parameters, see\n# https://github.com/codacy/codacy-analysis-cli-action.\n# For more information on Codacy Analysis CLI in general, see\n# https://github.com/codacy/codacy-analysis-cli.\n\nname: Codacy Security Scan\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    # The branches below must be a subset of the branches above\n    branches: [ main ]\n  schedule:\n    - cron: '15 16 * * 2'\n\npermissions:\n  actions: read\n  contents: read\n  security-events: write\n\njobs:\n  codacy-security-scan:\n    name: Codacy Security Scan\n    runs-on: ubuntu-latest\n    steps:\n      # Checkout the repository to the GitHub Actions runner\n      - name: Checkout code\n        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2\n\n      # Execute Codacy Analysis CLI and generate a SARIF output with the security issues identified during the analysis\n      - name: Run Codacy Analysis CLI\n        continue-on-error: true\n        uses: codacy/codacy-analysis-cli-action@97bf5df3c09e75f5bcd72695998f96ebd701846e # v4.4.5\n        with:\n          # Check https://github.com/codacy/codacy-analysis-cli#project-token to get your project token from your Codacy repository\n          # You can also omit the token and run the tools that support default configurations\n          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}\n          verbose: true\n          output: results.sarif\n          format: sarif\n          # Adjust severity of non-security issues\n          gh-code-scanning-compat: true\n          # Force 0 exit code to allow SARIF file generation\n          # This will hand over control about PR rejection to the GitHub side\n          max-allowed-issues: 2147483647\n\n      # Upload the SARIF file generated in the previous step\n      - name: Upload SARIF results file\n        continue-on-error: true\n        uses: github/codeql-action/upload-sarif@5f8171a638ada777af81d42b55959a643bb29017 # v3.28.12\n        with:\n          sarif_file: results.sarif\n"
+    }
+  }
+}

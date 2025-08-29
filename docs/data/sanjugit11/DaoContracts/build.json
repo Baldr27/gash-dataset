@@ -1,0 +1,127 @@
+{
+  "build": {
+    "2021-10-30T02-15-28Z": [
+      {
+        "region": {
+          "startLine": 10,
+          "startColumn": 5,
+          "endLine": 37,
+          "endColumn": 52
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-11-02T04-33-34Z": [
+      {
+        "region": {
+          "startLine": 10,
+          "startColumn": 5,
+          "endLine": 35,
+          "endColumn": 53
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-11-02T21-04-02Z": [
+      {
+        "region": {
+          "startLine": 10,
+          "startColumn": 5,
+          "endLine": 35,
+          "endColumn": 75
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-11-03T00-09-24Z": [
+      {
+        "region": {
+          "startLine": 12,
+          "startColumn": 9,
+          "endLine": 37,
+          "endColumn": 81
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2021-10-30T02-15-28Z": {
+      "triggers": {
+        "pull_request": null,
+        "push": null
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 6
+      },
+      "line_count": 37,
+      "workflow": "# Chats that led me here: https://dapphub.chat/channel/dev?msg=SjN9jmkiXFuKaFqWM and https://dapphub.chat/channel/dev?msg=HnZi8PHXquyzZ35cX \n# So based it off of: https://github.com/centrifuge/tinlake-maker-lib/blob/c47b6e1b17e3e3d58036ad7356bec34370edccd4/.github/workflows/build.yml\n\nname: \"Dapptools CI\"\non:\n  pull_request:\n  push:\njobs:\n  build:\n    strategy:\n      matrix:\n        os: [ ubuntu-latest,]\n        # we need this to map platform names as used by github to\n        # the attribute names defined in release.nix\n        include:\n          - os: ubuntu-latest\n            os_attr: linux\n      fail-fast: false\n    runs-on: ${{ matrix.os }}\n    steps:\n      - uses: actions/checkout@v2\n      - name: Checkout submodules\n        run: git submodule update --init --recursive\n      - uses: cachix/install-nix-action@ef4324316b96b50b4671cecef9ecc6fd286f224a\n        with:\n          skip_adding_nixpkgs_channel: false        \n      - uses: cachix/cachix-action@6e4751ed42b22f60165d3f266cfa4cce66ae406d\n        with:\n          name: dapp\n          skipPush: true\n          signingKey: ''\n      - name: install\n        run: nix-env -f https://github.com/dapphub/dapptools/archive/master.tar.gz -iA solc-static-versions.solc_0_7_5\n      - name: test\n      # They used 'make test' instead which referenced a Makefile https://github.com/centrifuge/tinlake-maker-lib/blob/master/Makefile\n      # I'm not sure if we need that so just doing this instead\n        run: nix-shell --pure --command \"dapp test\""
+    },
+    "2021-11-02T04-33-34Z": {
+      "triggers": {
+        "pull_request": null,
+        "push": null
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 6
+      },
+      "line_count": 35,
+      "workflow": "# Chats that led me here: https://dapphub.chat/channel/dev?msg=SjN9jmkiXFuKaFqWM and https://dapphub.chat/channel/dev?msg=HnZi8PHXquyzZ35cX\n# So based it off of: https://github.com/centrifuge/tinlake-maker-lib/blob/c47b6e1b17e3e3d58036ad7356bec34370edccd4/.github/workflows/build.yml\n\nname: \"Dapptools CI\"\non:\n  pull_request:\n  push:\njobs:\n  build:\n    strategy:\n      matrix:\n        os: [ ubuntu-latest,]\n        # we need this to map platform names as used by github to\n        # the attribute names defined in release.nix\n        include:\n          - os: ubuntu-latest\n            os_attr: linux\n      fail-fast: false\n    runs-on: ${{ matrix.os }}\n    steps:\n      - uses: actions/checkout@v2\n      - name: Checkout submodules\n        run: git submodule update --init --recursive\n      - uses: cachix/install-nix-action@v14\n      - uses: cachix/cachix-action@v10\n        with:\n          name: dapp\n          skipPush: true\n          signingKey: ''\n      - name: install\n        run: nix-env -f https://github.com/dapphub/dapptools/archive/master.tar.gz -iA solc-static-versions.solc_0_7_5\n      - name: test\n      # They used 'make test' instead which referenced a Makefile https://github.com/centrifuge/tinlake-maker-lib/blob/master/Makefile\n      # I'm not sure if we need that so just doing this instead\n        run: nix-shell --pure --command \"dapp test\"\n"
+    },
+    "2021-11-02T21-04-02Z": {
+      "triggers": {
+        "pull_request": null,
+        "push": null
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 6
+      },
+      "line_count": 35,
+      "workflow": "# Chats that led me here: https://dapphub.chat/channel/dev?msg=SjN9jmkiXFuKaFqWM and https://dapphub.chat/channel/dev?msg=HnZi8PHXquyzZ35cX\n# So based it off of: https://github.com/centrifuge/tinlake-maker-lib/blob/c47b6e1b17e3e3d58036ad7356bec34370edccd4/.github/workflows/build.yml\n\nname: \"Dapptools CI\"\non:\n  pull_request:\n  push:\njobs:\n  build:\n    strategy:\n      matrix:\n        os: [ ubuntu-latest,]\n        # we need this to map platform names as used by github to\n        # the attribute names defined in release.nix\n        include:\n          - os: ubuntu-latest\n            os_attr: linux\n      fail-fast: false\n    runs-on: ${{ matrix.os }}\n    steps:\n      - uses: actions/checkout@v2\n      - name: Checkout submodules\n        run: git submodule update --init --recursive\n      - uses: cachix/install-nix-action@v14\n      - uses: cachix/cachix-action@v10\n        with:\n          name: dapp\n          skipPush: true\n          signingKey: ''\n      - name: install\n        run: nix-env -f https://github.com/dapphub/dapptools/archive/master.tar.gz -iA solc-static-versions.solc_0_7_5\n      - name: test\n      # 1.  They used 'make test' instead which referenced a Makefile https://github.com/centrifuge/tinlake-maker-lib/blob/master/Makefile   I'm not sure if we need that so just doing this instead\n      # 2.  Had to add 'export LANG=C.UTF-8' as per recommendation from https://stackoverflow.com/questions/63746826/what-might-cause-commitandreleasebuffer-invalid-argument-invalid-character\n        run: nix-shell --pure --command \"export LANG=C.UTF-8 ; dapp test\"\n"
+    },
+    "2021-11-03T00-09-24Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "Version-1.1",
+            "Version-2"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 6
+      },
+      "line_count": 37,
+      "workflow": "# Chats that led me here: https://dapphub.chat/channel/dev?msg=SjN9jmkiXFuKaFqWM and https://dapphub.chat/channel/dev?msg=HnZi8PHXquyzZ35cX\n# So based it off of: https://github.com/centrifuge/tinlake-maker-lib/blob/c47b6e1b17e3e3d58036ad7356bec34370edccd4/.github/workflows/build.yml\n\nname: \"Dapptools CI\"\non:\n    push:\n        branches: [Version-1.1, Version-2]\n    pull_request:\n        branches: [\"*\"]\njobs:\n    build:\n        strategy:\n            matrix:\n                os: [ubuntu-latest]\n                # we need this to map platform names as used by github to\n                # the attribute names defined in release.nix\n                include:\n                    - os: ubuntu-latest\n                      os_attr: linux\n            fail-fast: false\n        runs-on: ${{ matrix.os }}\n        steps:\n            - uses: actions/checkout@v2\n            - name: Checkout submodules\n              run: git submodule update --init --recursive\n            - uses: cachix/install-nix-action@v14\n            - uses: cachix/cachix-action@v10\n              with:\n                  name: dapp\n                  skipPush: true\n                  signingKey: \"\"\n            - name: install\n              run: nix-env -f https://github.com/dapphub/dapptools/archive/master.tar.gz -iA solc-static-versions.solc_0_7_5\n            - name: test\n              # 1.  They used 'make test' instead which referenced a Makefile https://github.com/centrifuge/tinlake-maker-lib/blob/master/Makefile   I'm not sure if we need that so just doing this instead\n              # 2.  Had to add 'export LANG=C.UTF-8' as per recommendation from https://stackoverflow.com/questions/63746826/what-might-cause-commitandreleasebuffer-invalid-argument-invalid-character\n              run: nix-shell --pure --command \"export LANG=C.UTF-8 ; dapp test\"\n"
+    }
+  }
+}

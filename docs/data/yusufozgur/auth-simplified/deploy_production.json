@@ -1,0 +1,134 @@
+{
+  "deploy_production": {
+    "2024-08-27T16-34-05Z": [],
+    "2024-08-27T16-52-01Z": [],
+    "2024-08-27T16-53-30Z": [],
+    "2024-08-27T18-20-52Z": [],
+    "2024-08-27T18-24-24Z": [],
+    "2024-08-27T19-07-50Z": [],
+    "2024-08-27T19-18-33Z": [],
+    "2024-08-27T19-24-53Z": []
+  },
+  "metadata": {
+    "2024-08-27T16-34-05Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-production": 6
+      },
+      "line_count": 32,
+      "workflow": "name: Deploy Production\n\non:\n  push:\n    branches:\n      - 'main'\n\nenv:\n  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}\n  DATABASE_URL: ${{ secrets.PROD_DATABASE_URL }}\n\njobs:\n  deploy-production:\n    permissions: write-all\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n\n      - name: Run Drizzle Migrate\n        run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: npm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Build Project Artifacts\n        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Project Artifacts to Vercel\n        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}"
+    },
+    "2024-08-27T16-52-01Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-production": 6
+      },
+      "line_count": 32,
+      "workflow": "name: Deploy Production\n\non:\n  push:\n    branches:\n      - 'main'\n\nenv:\n  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}\n  DATABASE_URL: ${{ secrets.PROD_DATABASE_URL }}\n\njobs:\n  deploy-production:\n    permissions: write-all\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n\n      - name: Run Drizzle Migrate\n        run: npm run db:migrate\n\n      - name: Install Vercel CLI\n        run: npm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Build Project Artifacts\n        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Project Artifacts to Vercel\n        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}"
+    },
+    "2024-08-27T16-53-30Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-production": 9
+      },
+      "line_count": 41,
+      "workflow": "name: Deploy Production\n\non:\n  push:\n    branches:\n      - 'main'\n\nenv:\n  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}\n  DATABASE_URL: ${{ secrets.PROD_DATABASE_URL }}\n\njobs:\n  deploy-production:\n    permissions: write-all\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Run Drizzle Migrate\n        run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Build Project Artifacts\n        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Project Artifacts to Vercel\n        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}"
+    },
+    "2024-08-27T18-20-52Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-production": 9
+      },
+      "line_count": 44,
+      "workflow": "name: Deploy Production\n\non:\n  push:\n    branches:\n      - 'main'\n\nenv:\n  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}\n  DATABASE_URL: ${{ secrets.PROD_DATABASE_URL }}\n\njobs:\n  deploy-production:\n    permissions: write-all\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n\n      - name: Run Drizzle Migrate\n        run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: npm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Build Project Artifacts\n        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Project Artifacts to Vercel\n        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Install testing browsers\n        run: npx playwright install --with-deps\n      - name: Run Playwright tests\n        run: npx playwright test\n\n      - uses: actions/upload-artifact@v4\n        if: always()\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 30"
+    },
+    "2024-08-27T18-24-24Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-production": 12
+      },
+      "line_count": 53,
+      "workflow": "name: Deploy Production\n\non:\n  push:\n    branches:\n      - 'main'\n\nenv:\n  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}\n  DATABASE_URL: ${{ secrets.PROD_DATABASE_URL }}\n\njobs:\n  deploy-production:\n    permissions: write-all\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Run Drizzle Migrate\n        run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Build Project Artifacts\n        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Project Artifacts to Vercel\n        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Install testing browsers\n        run: npx playwright install --with-deps\n      - name: Run Playwright tests\n        run: npx playwright test\n\n      - uses: actions/upload-artifact@v4\n        if: always()\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 30"
+    },
+    "2024-08-27T19-07-50Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-production": 12
+      },
+      "line_count": 53,
+      "workflow": "name: Deploy Production\n\non:\n  push:\n    branches:\n      - 'main'\n\nenv:\n  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}\n  DATABASE_URL: ${{ secrets.PROD_DATABASE_URL }}\n\njobs:\n  deploy-production:\n    permissions: write-all\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Run Drizzle Migrate\n        run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Build Project Artifacts\n        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Project Artifacts to Vercel\n        run: echo PREVIEW_URL=$(vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }})  >> \"$GITHUB_ENV\"\n\n      - name: Install testing browsers\n        run: npx playwright install --with-deps\n      - name: Run Playwright tests\n        run: npx playwright test\n\n      - uses: actions/upload-artifact@v4\n        if: always()\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 30\n"
+    },
+    "2024-08-27T19-18-33Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-production": 13
+      },
+      "line_count": 56,
+      "workflow": "name: Deploy Production\n\non:\n  push:\n    branches:\n      - 'main'\n\nenv:\n  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}\n  DATABASE_URL: ${{ secrets.PROD_DATABASE_URL }}\n\njobs:\n  deploy-production:\n    permissions: write-all\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - name: db url to .env\n        run: echo \"$DATABASE_URL\" >> .env\n\n      - run: pnpm install\n\n      - name: Run Drizzle Migrate\n        run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Build Project Artifacts\n        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Project Artifacts to Vercel\n        run: echo PREVIEW_URL=$(vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }})  >> \"$GITHUB_ENV\"\n\n      - name: Install testing browsers\n        run: npx playwright install --with-deps\n      - name: Run Playwright tests\n        run: npx playwright test\n\n      - uses: actions/upload-artifact@v4\n        if: always()\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 30\n"
+    },
+    "2024-08-27T19-24-53Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-production": 13
+      },
+      "line_count": 56,
+      "workflow": "name: Deploy Production\n\non:\n  push:\n    branches:\n      - 'main'\n\nenv:\n  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}\n  DATABASE_URL: ${{ secrets.PROD_DATABASE_URL }}\n\njobs:\n  deploy-production:\n    permissions: write-all\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - name: db url to .env\n        run: echo \"DATABASE_URL=$DATABASE_URL\" >> .env\n\n      - run: pnpm install\n\n      - name: Run Drizzle Migrate\n        run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Build Project Artifacts\n        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Project Artifacts to Vercel\n        run: echo PREVIEW_URL=$(vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }})  >> \"$GITHUB_ENV\"\n\n      - name: Install testing browsers\n        run: npx playwright install --with-deps\n      - name: Run Playwright tests\n        run: npx playwright test\n\n      - uses: actions/upload-artifact@v4\n        if: always()\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 30\n"
+    }
+  }
+}

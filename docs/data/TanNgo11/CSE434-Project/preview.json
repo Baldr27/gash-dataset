@@ -1,0 +1,45 @@
+{
+  "preview": {
+    "2025-03-22T09-33-04Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 91,
+          "endColumn": 32
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2025-03-22T09-33-04Z": {
+      "triggers": {
+        "pull_request": {
+          "branches": [
+            "*"
+          ]
+        },
+        "push": {
+          "branches": [
+            "dev",
+            "staging",
+            "main",
+            "release/**"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "update": 12
+      },
+      "line_count": 91,
+      "workflow": "name: CI - APP Preview\n\non:\n  pull_request:\n    branches: ['*']\n  push:\n    branches: ['dev', 'staging', 'main', 'release/**']\n\njobs:\n  update:\n    name: Publish Preview Channel\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        node-version: [20.x]\n    steps:\n      # Check for EXPO_TOKEN\n      - name: Check for EXPO_TOKEN\n        run: |\n          if [ -z \"${{ secrets.EXPO_TOKEN }}\" ]; then\n            echo \"You must provide an EXPO_TOKEN secret linked to this project's Expo account in this repo's secrets.\"\n            exit 1\n          fi\n\n      # checkout the repository\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      # setup node\n      - name: Setup Node\n        uses: actions/setup-node@v3\n        with:\n          cache-dependency-path: package-lock.json\n          node-version: ${{ matrix.node-version }}\n          cache: npm\n\n      # setup expo\n      - name: Setup Expo\n        uses: expo/expo-github-action@v7\n        with:\n          expo-version: latest\n          eas-version: latest\n          token: ${{ secrets.EXPO_TOKEN }}\n\n      # install dependencies\n      - name: Install dependencies\n        run: npm ci\n\n      # get branch name\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v7\n\n      # set environment variables\n      - name: Load .env file\n        if: steps.branch-name.outputs.current_branch != 'main'\n        uses: xom9ikk/dotenv@v2\n        with:\n          mode: development\n\n      - name: Load .env file\n        if: steps.branch-name.outputs.current_branch == 'main'\n        uses: xom9ikk/dotenv@v2\n        with:\n          mode: production\n\n      # eas update (PR)\n      - name: EAS update\n        if: github.event_name == 'pull_request' && steps.branch-name.outputs.current_branch != 'main'\n        run: eas update --branch ${{ steps.branch-name.outputs.current_branch }} --message \"${{ github.event.pull_request.title }}\"\n        env:\n          NODE_ENV: development\n\n      - name: EAS update\n        if: github.event_name == 'pull_request' && steps.branch-name.outputs.current_branch == 'main'\n        run: eas update --branch ${{ steps.branch-name.outputs.current_branch }} --message \"${{ github.event.pull_request.title }}\"\n        env:\n          NODE_ENV: production\n\n      # eas update (PUSH)\n      - name: EAS update\n        if: github.event_name == 'push' && steps.branch-name.outputs.current_branch != 'main'\n        run: eas update --branch ${{ steps.branch-name.outputs.current_branch }} --message \"${{ github.event.head_commit.message }}\"\n        env:\n          NODE_ENV: development\n\n      - name: EAS update\n        if: github.event_name == 'push' && steps.branch-name.outputs.current_branch == 'main'\n        run: eas update --branch ${{ steps.branch-name.outputs.current_branch }} --message \"${{ github.event.head_commit.message }}\"\n        env:\n          NODE_ENV: production\n"
+    }
+  }
+}

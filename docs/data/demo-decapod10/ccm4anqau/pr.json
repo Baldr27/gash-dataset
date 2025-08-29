@@ -1,0 +1,37 @@
+{
+  "pr": {
+    "2022-07-27T16-00-29Z": [
+      {
+        "region": {
+          "startLine": 17,
+          "startColumn": 5,
+          "endLine": 28,
+          "endColumn": 42
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2022-07-27T16-00-29Z": {
+      "triggers": {
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 2
+      },
+      "line_count": 28,
+      "workflow": "# This is a basic workflow to help you get started with Actions\n\nname: Validate\n\n# Controls when the action will run. \non:\n  # Triggers the workflow on push or pull request events but only for the main branch\n  pull_request:\n    branches:\n      - main\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  build:\n    # The type of runner that the job will run on\n    runs-on: ubuntu-latest\n\n    # Steps represent a sequence of tasks that will be executed as part of the job\n    steps:\n      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it\n      - uses: actions/checkout@v2\n\n      - name: Run render-cd.sh\n        run: |\n          set -xe\n          chmod +x .github/workflows/render-cd.sh\n          .github/workflows/render-cd.sh\n"
+    }
+  }
+}

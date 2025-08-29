@@ -1,0 +1,37 @@
+{
+  "%5Bbackend%5D-heroku-deploy": {
+    "2024-04-25T13-59-18Z": [
+      {
+        "region": {
+          "startLine": 10,
+          "startColumn": 5,
+          "endLine": 17,
+          "endColumn": 51
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-04-25T14-13-50Z": [
+      {
+        "region": {
+          "startLine": 10,
+          "startColumn": 5,
+          "endLine": 18,
+          "endColumn": 27
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {}
+}

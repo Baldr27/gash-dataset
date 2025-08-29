@@ -1,0 +1,39 @@
+{
+  "docker-build-test": {
+    "2024-09-29T20-24-58Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 26,
+          "endColumn": 14
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2024-09-29T20-24-58Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main",
+            "dev"
+          ]
+        },
+        "workflow_dispatch": null
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "tests": 3
+      },
+      "line_count": 26,
+      "workflow": "name: \"Docker Image Build Test\"\nrun-name: Docker Image Build Test [${{ github.ref_name }}]\non:\n  push:\n    branches:\n      - main\n      - dev\n  workflow_dispatch:\njobs:\n  tests:\n    name: Docker Build Test\n    runs-on: ubuntu-22.04\n    steps:\n      - uses: actions/checkout@v4\n\n      - name: \"Build Docker Image\"\n        run: |\n          docker compose up -d  \n\n      - name: \"SmokeTest\"\n        run: |\n          sleep 20\n          if ! curl --output /dev/null --silent --head --fail \"http://127.0.0.1:8080/en/home\"; then\n            echo \"SmokeTest failed\"\n            exit 1\n          fi\n"
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "test-unit-cli": {
+    "2024-05-14T15-38-06Z": [
+      {
+        "region": {
+          "startLine": 16,
+          "startColumn": 5,
+          "endLine": 46,
+          "endColumn": 100
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-07-01T13-05-59Z": [
+      {
+        "region": {
+          "startLine": 16,
+          "startColumn": 5,
+          "endLine": 46,
+          "endColumn": 100
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-07-02T19-33-11Z": [
+      {
+        "region": {
+          "startLine": 16,
+          "startColumn": 5,
+          "endLine": 46,
+          "endColumn": 100
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2024-05-14T15-38-06Z": {
+      "triggers": {
+        "pull_request": {
+          "branches": [
+            "develop"
+          ],
+          "paths": [
+            "cli/**"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "unit_tests": 4
+      },
+      "line_count": 46,
+      "workflow": "name: \ud83d\udda5\ufe0f Unit test CLI\n\non:\n  pull_request:\n    branches:\n      - develop\n    paths:\n      - 'cli/**'\n\nconcurrency:\n    group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}\n    cancel-in-progress: true\n\njobs:\n  unit_tests:\n    runs-on: ubuntu-latest\n    strategy:\n        fail-fast: false\n\n        matrix:\n          python_version:\n            [\"3.9\", \"3.10\", \"3.11\"]\n    steps:\n      - name: Checkout code\n        uses: actions/checkout@v3\n        with:\n          ref: ${{ github.event.pull_request.head.sha }}\n      - name: Install Python ${{ matrix.python_version }}\n        uses: actions/setup-python@v4\n        with:\n            python-version: ${{ matrix.python_version }}\n            allow-prereleases: true\n            cache: \"pip\"\n\n      - name: Cache pip packages\n        uses: actions/cache@v2\n        with:\n          path: ~/.cache/pip\n          key: ${{ runner.os }}-pip-${{ matrix.python-version }}-${{ hashFiles('cli/poetry.lock') }}\n          restore-keys: |\n            ${{ runner.os }}-pip-\n\n      - name: Run tests\n        run: |\n          pip install nox\n          nox -f .github/scripts/noxfile.py -s unit_test_cli --python ${{ matrix.python_version }}\n"
+    },
+    "2024-07-01T13-05-59Z": {
+      "triggers": {
+        "pull_request": {
+          "branches": [
+            "develop"
+          ],
+          "paths": [
+            "cli/**"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "unit_tests": 4
+      },
+      "line_count": 46,
+      "workflow": "name: \ud83d\udda5\ufe0f Unit test CLI\n\non:\n  pull_request:\n    branches:\n      - develop\n    paths:\n      - 'cli/**'\n\nconcurrency:\n    group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}\n    cancel-in-progress: true\n\njobs:\n  unit_tests:\n    runs-on: ubuntu-latest\n    strategy:\n        fail-fast: false\n\n        matrix:\n          python_version:\n            [\"3.9\", \"3.10\", \"3.11\"]\n    steps:\n      - name: Checkout code\n        uses: actions/checkout@v4\n        with:\n          ref: ${{ github.event.pull_request.head.sha }}\n      - name: Install Python ${{ matrix.python_version }}\n        uses: actions/setup-python@v5\n        with:\n            python-version: ${{ matrix.python_version }}\n            allow-prereleases: true\n            cache: \"pip\"\n\n      - name: Cache pip packages\n        uses: actions/cache@v4\n        with:\n          path: ~/.cache/pip\n          key: ${{ runner.os }}-pip-${{ matrix.python-version }}-${{ hashFiles('cli/poetry.lock') }}\n          restore-keys: |\n            ${{ runner.os }}-pip-\n\n      - name: Run tests\n        run: |\n          pip install nox\n          nox -f .github/scripts/noxfile.py -s unit_test_cli --python ${{ matrix.python_version }}\n"
+    },
+    "2024-07-02T19-33-11Z": {
+      "triggers": {
+        "pull_request": {
+          "branches": [
+            "develop"
+          ],
+          "paths": [
+            "cli/**"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "unit_tests": 4
+      },
+      "line_count": 46,
+      "workflow": "name: \ud83d\udda5\ufe0f Unit test CLI\n\non:\n  pull_request:\n    branches:\n      - develop\n    paths:\n      - 'cli/**'\n\nconcurrency:\n    group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}\n    cancel-in-progress: true\n\njobs:\n  unit_tests:\n    runs-on: ubuntu-latest\n    strategy:\n        fail-fast: false\n\n        matrix:\n          python_version:\n            [\"3.9\", \"3.10\", \"3.11\", \"3.12\"]\n    steps:\n      - name: Checkout code\n        uses: actions/checkout@v4\n        with:\n          ref: ${{ github.event.pull_request.head.sha }}\n      - name: Install Python ${{ matrix.python_version }}\n        uses: actions/setup-python@v5\n        with:\n            python-version: ${{ matrix.python_version }}\n            allow-prereleases: true\n            cache: \"pip\"\n\n      - name: Cache pip packages\n        uses: actions/cache@v4\n        with:\n          path: ~/.cache/pip\n          key: ${{ runner.os }}-pip-${{ matrix.python-version }}-${{ hashFiles('cli/poetry.lock') }}\n          restore-keys: |\n            ${{ runner.os }}-pip-\n\n      - name: Run tests\n        run: |\n          pip install nox\n          nox -f .github/scripts/noxfile.py -s unit_test_cli --python ${{ matrix.python_version }}\n"
+    }
+  }
+}

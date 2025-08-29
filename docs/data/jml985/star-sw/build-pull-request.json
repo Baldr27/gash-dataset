@@ -1,0 +1,1604 @@
+{
+  "build-pull-request": {
+    "2022-05-23T13-13-34Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 30,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 31,
+          "startColumn": 5,
+          "endLine": 51,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 52,
+          "startColumn": 5,
+          "endLine": 68,
+          "endColumn": 166
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-06-08T18-37-02Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 32,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 33,
+          "startColumn": 5,
+          "endLine": 55,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 56,
+          "startColumn": 5,
+          "endLine": 75,
+          "endColumn": 90
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-06-15T15-08-09Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 35,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 36,
+          "startColumn": 5,
+          "endLine": 58,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 59,
+          "startColumn": 5,
+          "endLine": 78,
+          "endColumn": 90
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-06-27T15-26-13Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 35,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 36,
+          "startColumn": 5,
+          "endLine": 58,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 59,
+          "startColumn": 5,
+          "endLine": 78,
+          "endColumn": 90
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-07-08T13-53-02Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 35,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 36,
+          "startColumn": 5,
+          "endLine": 58,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 59,
+          "startColumn": 5,
+          "endLine": 81,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 82,
+          "startColumn": 5,
+          "endLine": 104,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 105,
+          "startColumn": 5,
+          "endLine": 124,
+          "endColumn": 90
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 35,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 36,
+          "startColumn": 5,
+          "endLine": 58,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 59,
+          "startColumn": 5,
+          "endLine": 81,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 82,
+          "startColumn": 5,
+          "endLine": 101,
+          "endColumn": 90
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-07-08T18-43-06Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 35,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 36,
+          "startColumn": 5,
+          "endLine": 58,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 59,
+          "startColumn": 5,
+          "endLine": 81,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 82,
+          "startColumn": 5,
+          "endLine": 104,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 105,
+          "startColumn": 5,
+          "endLine": 124,
+          "endColumn": 90
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-07-09T04-21-10Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 35,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 36,
+          "startColumn": 5,
+          "endLine": 59,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 60,
+          "startColumn": 5,
+          "endLine": 83,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 84,
+          "startColumn": 5,
+          "endLine": 107,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 35,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 36,
+          "startColumn": 5,
+          "endLine": 59,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 108,
+          "startColumn": 5,
+          "endLine": 127,
+          "endColumn": 90
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 60,
+          "startColumn": 5,
+          "endLine": 83,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 84,
+          "startColumn": 5,
+          "endLine": 107,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 108,
+          "startColumn": 5,
+          "endLine": 127,
+          "endColumn": 90
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-10-23T15-12-20Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 35,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 36,
+          "startColumn": 5,
+          "endLine": 59,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 60,
+          "startColumn": 5,
+          "endLine": 83,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 84,
+          "startColumn": 5,
+          "endLine": 107,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 108,
+          "startColumn": 5,
+          "endLine": 127,
+          "endColumn": 90
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-10-24T21-22-46Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 35,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 36,
+          "startColumn": 5,
+          "endLine": 59,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 60,
+          "startColumn": 5,
+          "endLine": 83,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 84,
+          "startColumn": 5,
+          "endLine": 107,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 108,
+          "startColumn": 5,
+          "endLine": 127,
+          "endColumn": 90
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-10-27T13-45-46Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 35,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 36,
+          "startColumn": 5,
+          "endLine": 59,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 60,
+          "startColumn": 5,
+          "endLine": 83,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 84,
+          "startColumn": 5,
+          "endLine": 107,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 108,
+          "startColumn": 5,
+          "endLine": 127,
+          "endColumn": 90
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-11-03T22-17-11Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 35,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 36,
+          "startColumn": 5,
+          "endLine": 60,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 61,
+          "startColumn": 5,
+          "endLine": 85,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 86,
+          "startColumn": 5,
+          "endLine": 110,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 111,
+          "startColumn": 5,
+          "endLine": 131,
+          "endColumn": 90
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-11-11T00-24-13Z": [
+      {
+        "region": {
+          "startLine": 12,
+          "startColumn": 5,
+          "endLine": 40,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 41,
+          "startColumn": 5,
+          "endLine": 65,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 66,
+          "startColumn": 5,
+          "endLine": 90,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 91,
+          "startColumn": 5,
+          "endLine": 115,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 116,
+          "startColumn": 5,
+          "endLine": 136,
+          "endColumn": 90
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-12-02T03-30-31Z": [
+      {
+        "region": {
+          "startLine": 16,
+          "startColumn": 5,
+          "endLine": 44,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 45,
+          "startColumn": 5,
+          "endLine": 69,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 70,
+          "startColumn": 5,
+          "endLine": 94,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 95,
+          "startColumn": 5,
+          "endLine": 119,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 120,
+          "startColumn": 5,
+          "endLine": 140,
+          "endColumn": 90
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-12-29T21-48-20Z": [
+      {
+        "region": {
+          "startLine": 16,
+          "startColumn": 5,
+          "endLine": 44,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 45,
+          "startColumn": 5,
+          "endLine": 69,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 70,
+          "startColumn": 5,
+          "endLine": 94,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 95,
+          "startColumn": 5,
+          "endLine": 119,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 120,
+          "startColumn": 5,
+          "endLine": 140,
+          "endColumn": 90
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2023-03-31T14-27-34Z": [
+      {
+        "region": {
+          "startLine": 16,
+          "startColumn": 5,
+          "endLine": 44,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 45,
+          "startColumn": 5,
+          "endLine": 69,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 70,
+          "startColumn": 5,
+          "endLine": 94,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 95,
+          "startColumn": 5,
+          "endLine": 119,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 120,
+          "startColumn": 5,
+          "endLine": 140,
+          "endColumn": 90
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2023-04-19T12-31-47Z": [
+      {
+        "region": {
+          "startLine": 16,
+          "startColumn": 5,
+          "endLine": 44,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 45,
+          "startColumn": 5,
+          "endLine": 69,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 70,
+          "startColumn": 5,
+          "endLine": 94,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 95,
+          "startColumn": 5,
+          "endLine": 119,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 120,
+          "startColumn": 5,
+          "endLine": 140,
+          "endColumn": 90
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2023-09-28T19-29-15Z": [
+      {
+        "region": {
+          "startLine": 16,
+          "startColumn": 5,
+          "endLine": 44,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 45,
+          "startColumn": 5,
+          "endLine": 69,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 70,
+          "startColumn": 5,
+          "endLine": 94,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 95,
+          "startColumn": 5,
+          "endLine": 119,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 120,
+          "startColumn": 5,
+          "endLine": 140,
+          "endColumn": 96
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2023-10-13T00-09-22Z": [
+      {
+        "region": {
+          "startLine": 16,
+          "startColumn": 5,
+          "endLine": 44,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 45,
+          "startColumn": 5,
+          "endLine": 70,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 71,
+          "startColumn": 5,
+          "endLine": 95,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 96,
+          "startColumn": 5,
+          "endLine": 118,
+          "endColumn": 96
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2022-05-23T13-13-34Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 3,
+      "steps_per_job": {
+        "build": 3,
+        "ROOT5_test": 4,
+        "ROOT6_test_ignore_fail": 4
+      },
+      "line_count": 68,
+      "workflow": "name: Build Pull Request\n\non: pull_request\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        starenv: [root5, root6]\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v2\n        with:\n          driver-opts: env.BUILDKIT_STEP_LOG_MAX_SIZE=10000000\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v3\n        with:\n          build-args: starenv=${{ matrix.starenv }}\n          tags: ghcr.io/star-bnl/star-sw-${{ matrix.starenv }}-build\n          outputs: type=docker,dest=/tmp/star-sw-${{ matrix.starenv }}-build.tar\n\n      - name: Save built image for test jobs\n        uses: actions/upload-artifact@v3\n        with:\n          name: star-sw-${{ matrix.starenv }}-build\n          path: /tmp/star-sw-${{ matrix.starenv }}-build.tar\n\n  ROOT5_test:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      matrix:\n        test_id: [29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 59, 60, 76, 77, 78, 90, 91, 92, 119, 120]\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-root5-build\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-root5-build.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v2\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-root5-build tests/executest.py -c ${{ matrix.test_id }})\n             # Workaround https://sft.its.cern.ch/jira/browse/ROOT-7660 in ROOT 5 by checking the output log\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-root5-build \\\n               sh -c \"set -e; MALLOC_CHECK_=3 $TEST_CMD 2>&1 | tee log; grep 'Run completed' log\"\n\n  ROOT6_test_ignore_fail:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      matrix:\n        test_id: [50, 52, 54, 90, 91, 92, 119, 120]\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-root6-build\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-root6-build.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v2\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-root6-build tests/executest.py -c ${{ matrix.test_id }})\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-root6-build sh -c \"MALLOC_CHECK_=3 $TEST_CMD || echo 'Failed with an exit code: '\\$?\"\n"
+    },
+    "2022-06-08T18-37-02Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 3,
+      "steps_per_job": {
+        "build": 3,
+        "ROOT5_test": 4,
+        "ROOT6_test_ignore_fail": 4
+      },
+      "line_count": 75,
+      "workflow": "name: Build Pull Request\n\non: pull_request\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        starenv: [root5, root6]\n    env:\n      STARENV: ${{ matrix.starenv }}\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v2\n        with:\n          driver-opts: env.BUILDKIT_STEP_LOG_MAX_SIZE=10000000\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v3\n        with:\n          build-args: starenv=${{ matrix.starenv }}\n          tags: ghcr.io/star-bnl/star-sw-${{ env.STARENV }}\n          outputs: type=docker,dest=/tmp/star-sw-${{ env.STARENV }}.tar\n\n      - name: Save built image for test jobs\n        uses: actions/upload-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp/star-sw-${{ env.STARENV }}.tar\n\n  ROOT5_test:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      matrix:\n        test_id: [29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 59, 60, 76, 77, 78, 90, 91, 92, 119, 120]\n    env:\n      STARENV: root5\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v2\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             # Workaround https://sft.its.cern.ch/jira/browse/ROOT-7660 in ROOT 5 by checking the output log\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; MALLOC_CHECK_=3 $TEST_CMD 2>&1 | tee log; grep 'Run completed' log\"\n\n  ROOT6_test_ignore_fail:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      matrix:\n        test_id: [50, 52, 54, 90, 91, 92, 119, 120]\n    env:\n      STARENV: root6\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v2\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"MALLOC_CHECK_=3 $TEST_CMD || echo 'Failed with an exit code: '\\$?\"\n"
+    },
+    "2022-06-15T15-08-09Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 3,
+      "steps_per_job": {
+        "build": 3,
+        "ROOT5_test": 4,
+        "ROOT6_test_ignore_fail": 4
+      },
+      "line_count": 78,
+      "workflow": "name: Build Pull Request\n\non: pull_request\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        starenv: [root5, root6]\n        compiler: [gcc485]\n    env:\n      STARENV: ${{ matrix.starenv }}-${{ matrix.compiler }}\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v2\n        with:\n          driver-opts: env.BUILDKIT_STEP_LOG_MAX_SIZE=10000000\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v3\n        with:\n          build-args: |\n            starenv=${{ matrix.starenv }}\n            compiler=${{ matrix.compiler }}\n          tags: ghcr.io/star-bnl/star-sw-${{ env.STARENV }}\n          outputs: type=docker,dest=/tmp/star-sw-${{ env.STARENV }}.tar\n\n      - name: Save built image for test jobs\n        uses: actions/upload-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp/star-sw-${{ env.STARENV }}.tar\n\n  ROOT5_test:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      matrix:\n        test_id: [29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 59, 60, 76, 77, 78, 90, 91, 92, 119, 120]\n    env:\n      STARENV: root5-gcc485\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v2\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             # Workaround https://sft.its.cern.ch/jira/browse/ROOT-7660 in ROOT 5 by checking the output log\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; MALLOC_CHECK_=3 $TEST_CMD 2>&1 | tee log; grep 'Run completed' log\"\n\n  ROOT6_test_ignore_fail:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      matrix:\n        test_id: [50, 52, 54, 90, 91, 92, 119, 120]\n    env:\n      STARENV: root6-gcc485\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v2\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"MALLOC_CHECK_=3 $TEST_CMD || echo 'Failed with an exit code: '\\$?\"\n"
+    },
+    "2022-06-27T15-26-13Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 3,
+      "steps_per_job": {
+        "build": 3,
+        "ROOT5_test": 4,
+        "ROOT6_test_ignore_fail": 4
+      },
+      "line_count": 78,
+      "workflow": "name: Build Pull Request\n\non: pull_request\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        starenv: [root5, root6]\n        compiler: [gcc485]\n    env:\n      STARENV: ${{ matrix.starenv }}-${{ matrix.compiler }}\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v2\n        with:\n          driver-opts: env.BUILDKIT_STEP_LOG_MAX_SIZE=10000000\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v3\n        with:\n          build-args: |\n            starenv=${{ matrix.starenv }}\n            compiler=${{ matrix.compiler }}\n          tags: ghcr.io/star-bnl/star-sw-${{ env.STARENV }}\n          outputs: type=docker,dest=/tmp/star-sw-${{ env.STARENV }}.tar\n\n      - name: Save built image for test jobs\n        uses: actions/upload-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp/star-sw-${{ env.STARENV }}.tar\n\n  ROOT5_test:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      matrix:\n        test_id: [10, 11, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 59, 60, 76, 77, 78, 90, 91, 92, 102, 103, 119, 120, 121, 122]\n    env:\n      STARENV: root5-gcc485\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v3\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             # Workaround https://sft.its.cern.ch/jira/browse/ROOT-7660 in ROOT 5 by checking the output log\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; MALLOC_CHECK_=3 $TEST_CMD 2>&1 | tee log; grep 'Run completed' log\"\n\n  ROOT6_test_ignore_fail:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      matrix:\n        test_id: [50, 52, 54, 90, 91, 92, 119, 120]\n    env:\n      STARENV: root6-gcc485\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v3\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"MALLOC_CHECK_=3 $TEST_CMD || echo 'Failed with an exit code: '\\$?\"\n"
+    },
+    "2022-07-08T13-53-02Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 4,
+      "steps_per_job": {
+        "build": 3,
+        "ROOT5_test": 4,
+        "ROOT5_test_doEvents": 4,
+        "ROOT6_test_ignore_fail": 4
+      },
+      "line_count": 101,
+      "workflow": "name: Build Pull Request\n\non: pull_request\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        starenv: [root5, root6]\n        compiler: [gcc485]\n    env:\n      STARENV: ${{ matrix.starenv }}-${{ matrix.compiler }}\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v2\n        with:\n          driver-opts: env.BUILDKIT_STEP_LOG_MAX_SIZE=10000000\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v3\n        with:\n          build-args: |\n            starenv=${{ matrix.starenv }}\n            compiler=${{ matrix.compiler }}\n          tags: ghcr.io/star-bnl/star-sw-${{ env.STARENV }}\n          outputs: type=docker,dest=/tmp/star-sw-${{ env.STARENV }}.tar\n\n      - name: Save built image for test jobs\n        uses: actions/upload-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp/star-sw-${{ env.STARENV }}.tar\n\n  ROOT5_test:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      matrix:\n        test_id: [10, 11, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 59, 60, 76, 77, 78, 90, 91, 92, 102, 103, 119, 120, 121, 122]\n    env:\n      STARENV: root5-gcc485\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v3\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             # Workaround https://sft.its.cern.ch/jira/browse/ROOT-7660 in ROOT 5 by checking the output log\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; MALLOC_CHECK_=3 $TEST_CMD 2>&1 | tee log; grep 'Run completed' log\"\n\n  ROOT5_test_doEvents:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      matrix:\n        test_id: [102, 121, 122]\n    env:\n      STARENV: root5-gcc485\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:latest\n      - run: |\n             TEST_FILE=$(echo \"$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py ${{ matrix.test_id }} -a fullpath)\" | sed -E 's/\\.(daq|fzd)$/.event.root/')\n             TEST_CMD=\"root4star -b -q -l 'StRoot/macros/analysis/doEvents.C(100, \\\"$TEST_FILE\\\")'\"\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; $TEST_CMD 2>&1 | tee log;  grep '<StIOMaker::Finish> IO:' log\"\n\n  ROOT6_test_ignore_fail:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      matrix:\n        test_id: [50, 52, 54, 90, 91, 92, 119, 120]\n    env:\n      STARENV: root6-gcc485\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v3\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"MALLOC_CHECK_=3 $TEST_CMD || echo 'Failed with an exit code: '\\$?\"\n"
+    },
+    "2022-07-08T18-43-06Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 5,
+      "steps_per_job": {
+        "build": 3,
+        "ROOT5_test": 4,
+        "ROOT5_test_doEvents": 4,
+        "ROOT5_test_find_vertex": 4,
+        "ROOT6_test_ignore_fail": 4
+      },
+      "line_count": 124,
+      "workflow": "name: Build Pull Request\n\non: pull_request\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        starenv: [root5, root6]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: ${{ matrix.starenv }}-${{ matrix.compiler }}\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v2\n        with:\n          driver-opts: env.BUILDKIT_STEP_LOG_MAX_SIZE=10000000\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v3\n        with:\n          build-args: |\n            starenv=${{ matrix.starenv }}\n            compiler=${{ matrix.compiler }}\n          tags: ghcr.io/star-bnl/star-sw-${{ env.STARENV }}\n          outputs: type=docker,dest=/tmp/star-sw-${{ env.STARENV }}.tar\n\n      - name: Save built image for test jobs\n        uses: actions/upload-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp/star-sw-${{ env.STARENV }}.tar\n\n  ROOT5_test:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      matrix:\n        test_id: [10, 11, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 59, 60, 76, 77, 78, 90, 91, 92, 102, 103, 119, 120, 121, 122]\n    env:\n      STARENV: root5-gcc485\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v3\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             # Workaround https://sft.its.cern.ch/jira/browse/ROOT-7660 in ROOT 5 by checking the output log\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; MALLOC_CHECK_=3 $TEST_CMD 2>&1 | tee log; grep 'Run completed' log\"\n\n  ROOT5_test_doEvents:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      matrix:\n        test_id: [102, 121, 122]\n    env:\n      STARENV: root5-gcc485\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:latest\n      - run: |\n             TEST_FILE=$(echo \"$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py ${{ matrix.test_id }} -a fullpath)\" | sed -E 's/\\.(daq|fzd)$/.event.root/')\n             TEST_CMD=\"root4star -b -q -l 'StRoot/macros/analysis/doEvents.C(100, \\\"$TEST_FILE\\\")'\"\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; $TEST_CMD 2>&1 | tee log;  grep '<StIOMaker::Finish> IO:' log\"\n\n  ROOT5_test_find_vertex:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      matrix:\n        test_id: [102, 121, 122]\n    env:\n      STARENV: root5-gcc485\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:latest\n      - run: |\n             TEST_FILE=$(echo \"$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py ${{ matrix.test_id }} -a fullpath)\" | sed -E 's/\\.(daq|fzd)$/.event.root/')\n             TEST_CMD=\"root4star -b -q -l 'StRoot/macros/analysis/find_vertex.C(\\\"$TEST_FILE\\\")'\"\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; $TEST_CMD 2>&1 | tee log;  grep '<StIOMaker::Finish> StIO:' log\"\n\n  ROOT6_test_ignore_fail:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      matrix:\n        test_id: [50, 52, 54, 90, 91, 92, 119, 120]\n    env:\n      STARENV: root6-gcc485\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v3\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"MALLOC_CHECK_=3 $TEST_CMD || echo 'Failed with an exit code: '\\$?\"\n"
+    },
+    "2022-07-09T04-21-10Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 5,
+      "steps_per_job": {
+        "build": 3,
+        "ROOT5_test": 4,
+        "ROOT5_test_doEvents": 4,
+        "ROOT5_test_find_vertex": 4,
+        "ROOT6_test_ignore_fail": 4
+      },
+      "line_count": 127,
+      "workflow": "name: Build Pull Request\n\non: pull_request\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        starenv: [root5, root6]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: ${{ matrix.starenv }}-${{ matrix.compiler }}\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v2\n        with:\n          driver-opts: env.BUILDKIT_STEP_LOG_MAX_SIZE=10000000\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v3\n        with:\n          build-args: |\n            starenv=${{ matrix.starenv }}\n            compiler=${{ matrix.compiler }}\n          tags: ghcr.io/star-bnl/star-sw-${{ env.STARENV }}\n          outputs: type=docker,dest=/tmp/star-sw-${{ env.STARENV }}.tar\n\n      - name: Save built image for test jobs\n        uses: actions/upload-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp/star-sw-${{ env.STARENV }}.tar\n\n  ROOT5_test:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      matrix:\n        test_id: [10, 11, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 59, 60, 76, 77, 78, 90, 91, 92, 102, 103, 119, 120, 121, 122]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v3\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             # Workaround https://sft.its.cern.ch/jira/browse/ROOT-7660 in ROOT 5 by checking the output log\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; MALLOC_CHECK_=3 $TEST_CMD 2>&1 | tee log; grep 'Run completed' log\"\n\n  ROOT5_test_doEvents:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      matrix:\n        test_id: [102, 121, 122]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:latest\n      - run: |\n             TEST_FILE=$(echo \"$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py ${{ matrix.test_id }} -a fullpath)\" | sed -E 's/\\.(daq|fzd)$/.event.root/')\n             TEST_CMD=\"root4star -b -q -l 'StRoot/macros/analysis/doEvents.C(100, \\\"$TEST_FILE\\\")'\"\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; $TEST_CMD 2>&1 | tee log;  grep '<StIOMaker::Finish> IO:' log\"\n\n  ROOT5_test_find_vertex:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      matrix:\n        test_id: [102, 121, 122]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:latest\n      - run: |\n             TEST_FILE=$(echo \"$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py ${{ matrix.test_id }} -a fullpath)\" | sed -E 's/\\.(daq|fzd)$/.event.root/')\n             TEST_CMD=\"root4star -b -q -l 'StRoot/macros/analysis/find_vertex.C(\\\"$TEST_FILE\\\")'\"\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; $TEST_CMD 2>&1 | tee log;  grep '<StIOMaker::Finish> StIO:' log\"\n\n  ROOT6_test_ignore_fail:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      matrix:\n        test_id: [50, 52, 54, 90, 91, 92, 119, 120]\n    env:\n      STARENV: root6-gcc485\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v3\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"MALLOC_CHECK_=3 $TEST_CMD || echo 'Failed with an exit code: '\\$?\"\n"
+    },
+    "2022-10-23T15-12-20Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 5,
+      "steps_per_job": {
+        "build": 3,
+        "ROOT5_test": 4,
+        "ROOT5_test_doEvents": 4,
+        "ROOT5_test_find_vertex": 4,
+        "ROOT6_test_ignore_fail": 4
+      },
+      "line_count": 127,
+      "workflow": "name: Build Pull Request\n\non: pull_request\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        starenv: [root5, root6]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: ${{ matrix.starenv }}-${{ matrix.compiler }}\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v2\n        with:\n          driver-opts: env.BUILDKIT_STEP_LOG_MAX_SIZE=10000000\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v3\n        with:\n          build-args: |\n            starenv=${{ matrix.starenv }}\n            compiler=${{ matrix.compiler }}\n          tags: ghcr.io/star-bnl/star-sw-${{ env.STARENV }}\n          outputs: type=docker,dest=/tmp/star-sw-${{ env.STARENV }}.tar\n\n      - name: Save built image for test jobs\n        uses: actions/upload-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp/star-sw-${{ env.STARENV }}.tar\n\n  ROOT5_test:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      matrix:\n        test_id: [10, 11, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 59, 60, 76, 77, 78, 90, 91, 92, 102, 103, 119, 120, 121, 122]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:latest\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             # Workaround https://sft.its.cern.ch/jira/browse/ROOT-7660 in ROOT 5 by checking the output log\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; MALLOC_CHECK_=3 $TEST_CMD 2>&1 | tee log; grep 'Run completed' log\"\n\n  ROOT5_test_doEvents:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      matrix:\n        test_id: [121, 122]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:latest\n      - run: |\n             TEST_FILE=$(echo \"$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py ${{ matrix.test_id }} -a fullpath)\" | sed -E 's/\\.(daq|fzd)$/.event.root/')\n             TEST_CMD=\"root4star -b -q -l 'StRoot/macros/analysis/doEvents.C(100, \\\"$TEST_FILE\\\")'\"\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; $TEST_CMD 2>&1 | tee log;  grep '<StIOMaker::Finish> IO:' log\"\n\n  ROOT5_test_find_vertex:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      matrix:\n        test_id: [102, 121, 122]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:latest\n      - run: |\n             TEST_FILE=$(echo \"$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py ${{ matrix.test_id }} -a fullpath)\" | sed -E 's/\\.(daq|fzd)$/.event.root/')\n             TEST_CMD=\"root4star -b -q -l 'StRoot/macros/analysis/find_vertex.C(\\\"$TEST_FILE\\\")'\"\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; $TEST_CMD 2>&1 | tee log;  grep '<StIOMaker::Finish> StIO:' log\"\n\n  ROOT6_test_ignore_fail:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      matrix:\n        test_id: [50, 52, 54, 90, 91, 92, 119, 120]\n    env:\n      STARENV: root6-gcc485\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:latest\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"MALLOC_CHECK_=3 $TEST_CMD || echo 'Failed with an exit code: '\\$?\"\n"
+    },
+    "2022-10-24T21-22-46Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 5,
+      "steps_per_job": {
+        "build": 3,
+        "ROOT5_test": 4,
+        "ROOT5_test_doEvents": 4,
+        "ROOT5_test_find_vertex": 4,
+        "ROOT6_test_ignore_fail": 4
+      },
+      "line_count": 127,
+      "workflow": "name: Build Pull Request\n\non: pull_request\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        starenv: [root5, root6]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: ${{ matrix.starenv }}-${{ matrix.compiler }}\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v2\n        with:\n          driver-opts: env.BUILDKIT_STEP_LOG_MAX_SIZE=10000000\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v3\n        with:\n          build-args: |\n            starenv=${{ matrix.starenv }}\n            compiler=${{ matrix.compiler }}\n          tags: ghcr.io/star-bnl/star-sw-${{ env.STARENV }}\n          outputs: type=docker,dest=/tmp/star-sw-${{ env.STARENV }}.tar\n\n      - name: Save built image for test jobs\n        uses: actions/upload-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp/star-sw-${{ env.STARENV }}.tar\n\n  ROOT5_test:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      matrix:\n        test_id: [10, 11, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 59, 60, 76, 77, 78, 90, 91, 92, 102, 103, 119, 120, 121, 122]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v5\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             # Workaround https://sft.its.cern.ch/jira/browse/ROOT-7660 in ROOT 5 by checking the output log\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; MALLOC_CHECK_=3 $TEST_CMD 2>&1 | tee log; grep 'Run completed' log\"\n\n  ROOT5_test_doEvents:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      matrix:\n        test_id: [121, 122]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v5\n      - run: |\n             TEST_FILE=$(echo \"$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py ${{ matrix.test_id }} -a fullpath)\" | sed -E 's/\\.(daq|fzd)$/.event.root/')\n             TEST_CMD=\"root4star -b -q -l 'StRoot/macros/analysis/doEvents.C(100, \\\"$TEST_FILE\\\")'\"\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; $TEST_CMD 2>&1 | tee log;  grep '<StIOMaker::Finish> IO:' log\"\n\n  ROOT5_test_find_vertex:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      matrix:\n        test_id: [102, 121, 122]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v5\n      - run: |\n             TEST_FILE=$(echo \"$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py ${{ matrix.test_id }} -a fullpath)\" | sed -E 's/\\.(daq|fzd)$/.event.root/')\n             TEST_CMD=\"root4star -b -q -l 'StRoot/macros/analysis/find_vertex.C(\\\"$TEST_FILE\\\")'\"\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; $TEST_CMD 2>&1 | tee log;  grep '<StIOMaker::Finish> StIO:' log\"\n\n  ROOT6_test_ignore_fail:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      matrix:\n        test_id: [50, 52, 54, 90, 91, 92, 119, 120]\n    env:\n      STARENV: root6-gcc485\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v5\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"MALLOC_CHECK_=3 $TEST_CMD || echo 'Failed with an exit code: '\\$?\"\n"
+    },
+    "2022-10-27T13-45-46Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 5,
+      "steps_per_job": {
+        "build": 3,
+        "ROOT5_test": 4,
+        "ROOT5_test_doEvents": 4,
+        "ROOT5_test_find_vertex": 4,
+        "ROOT6_test_ignore_fail": 4
+      },
+      "line_count": 127,
+      "workflow": "name: Build Pull Request\n\non: pull_request\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        starenv: [root5, root6]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: ${{ matrix.starenv }}-${{ matrix.compiler }}\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v2\n        with:\n          driver-opts: env.BUILDKIT_STEP_LOG_MAX_SIZE=10000000\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v3\n        with:\n          build-args: |\n            starenv=${{ matrix.starenv }}\n            compiler=${{ matrix.compiler }}\n          tags: ghcr.io/star-bnl/star-sw-${{ env.STARENV }}\n          outputs: type=docker,dest=/tmp/star-sw-${{ env.STARENV }}.tar\n\n      - name: Save built image for test jobs\n        uses: actions/upload-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp/star-sw-${{ env.STARENV }}.tar\n\n  ROOT5_test:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      matrix:\n        test_id: [10, 11, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 59, 60, 76, 77, 78, 90, 91, 92, 102, 103, 119, 120, 121, 122, 123]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v6\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             # Workaround https://sft.its.cern.ch/jira/browse/ROOT-7660 in ROOT 5 by checking the output log\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; MALLOC_CHECK_=3 $TEST_CMD 2>&1 | tee log; grep 'Run completed' log\"\n\n  ROOT5_test_doEvents:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      matrix:\n        test_id: [121, 122]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v6\n      - run: |\n             TEST_FILE=$(echo \"$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py ${{ matrix.test_id }} -a fullpath)\" | sed -E 's/\\.(daq|fzd)$/.event.root/')\n             TEST_CMD=\"root4star -b -q -l 'StRoot/macros/analysis/doEvents.C(100, \\\"$TEST_FILE\\\")'\"\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; $TEST_CMD 2>&1 | tee log;  grep '<StIOMaker::Finish> IO:' log\"\n\n  ROOT5_test_find_vertex:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      matrix:\n        test_id: [102, 121, 122]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v6\n      - run: |\n             TEST_FILE=$(echo \"$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py ${{ matrix.test_id }} -a fullpath)\" | sed -E 's/\\.(daq|fzd)$/.event.root/')\n             TEST_CMD=\"root4star -b -q -l 'StRoot/macros/analysis/find_vertex.C(\\\"$TEST_FILE\\\")'\"\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; $TEST_CMD 2>&1 | tee log;  grep '<StIOMaker::Finish> StIO:' log\"\n\n  ROOT6_test_ignore_fail:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      matrix:\n        test_id: [50, 52, 54, 90, 91, 92, 119, 120]\n    env:\n      STARENV: root6-gcc485\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v6\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"MALLOC_CHECK_=3 $TEST_CMD || echo 'Failed with an exit code: '\\$?\"\n"
+    },
+    "2022-11-03T22-17-11Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 5,
+      "steps_per_job": {
+        "build": 3,
+        "ROOT5_test": 4,
+        "ROOT5_test_doEvents": 4,
+        "ROOT5_test_find_vertex": 4,
+        "ROOT6_test_ignore_fail": 4
+      },
+      "line_count": 131,
+      "workflow": "name: Build Pull Request\n\non: pull_request\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        starenv: [root5, root6]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: ${{ matrix.starenv }}-${{ matrix.compiler }}\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v2\n        with:\n          driver-opts: env.BUILDKIT_STEP_LOG_MAX_SIZE=10000000\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v3\n        with:\n          build-args: |\n            starenv=${{ matrix.starenv }}\n            compiler=${{ matrix.compiler }}\n          tags: ghcr.io/star-bnl/star-sw-${{ env.STARENV }}\n          outputs: type=docker,dest=/tmp/star-sw-${{ env.STARENV }}.tar\n\n      - name: Save built image for test jobs\n        uses: actions/upload-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp/star-sw-${{ env.STARENV }}.tar\n\n  ROOT5_test:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      fail-fast: false\n      matrix:\n        test_id: [10, 11, 22, 23, 24, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 59, 60, 76, 77, 78, 90, 91, 92, 102, 103, 119, 120, 121, 122, 123]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v6\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             # Workaround https://sft.its.cern.ch/jira/browse/ROOT-7660 in ROOT 5 by checking the output log\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; MALLOC_CHECK_=3 $TEST_CMD 2>&1 | tee log; grep 'Run completed' log\"\n\n  ROOT5_test_doEvents:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      fail-fast: false\n      matrix:\n        test_id: [121, 122]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v6\n      - run: |\n             TEST_FILE=$(echo \"$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py ${{ matrix.test_id }} -a fullpath)\" | sed -E 's/\\.(daq|fzd)$/.event.root/')\n             TEST_CMD=\"root4star -b -q -l 'StRoot/macros/analysis/doEvents.C(100, \\\"$TEST_FILE\\\")'\"\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; $TEST_CMD 2>&1 | tee log;  grep '<StIOMaker::Finish> IO:' log\"\n\n  ROOT5_test_find_vertex:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      fail-fast: false\n      matrix:\n        test_id: [102, 121, 122]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v6\n      - run: |\n             TEST_FILE=$(echo \"$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py ${{ matrix.test_id }} -a fullpath)\" | sed -E 's/\\.(daq|fzd)$/.event.root/')\n             TEST_CMD=\"root4star -b -q -l 'StRoot/macros/analysis/find_vertex.C(\\\"$TEST_FILE\\\")'\"\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; $TEST_CMD 2>&1 | tee log;  grep '<StIOMaker::Finish> StIO:' log\"\n\n  ROOT6_test_ignore_fail:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      fail-fast: false\n      matrix:\n        test_id: [50, 52, 54, 90, 91, 92, 119, 120]\n    env:\n      STARENV: root6-gcc485\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v6\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"MALLOC_CHECK_=3 $TEST_CMD || echo 'Failed with an exit code: '\\$?\"\n"
+    },
+    "2022-11-11T00-24-13Z": {
+      "triggers": {
+        "pull_request": {
+          "paths-ignore": [
+            ".github/**",
+            "docs/**",
+            "!.github/workflows/**"
+          ]
+        }
+      },
+      "num_jobs": 5,
+      "steps_per_job": {
+        "build": 3,
+        "ROOT5_test": 4,
+        "ROOT5_test_doEvents": 4,
+        "ROOT5_test_find_vertex": 4,
+        "ROOT6_test_ignore_fail": 4
+      },
+      "line_count": 136,
+      "workflow": "name: Build Pull Request\n\non:\n  pull_request:\n    paths-ignore:\n      - '.github/**'\n      - 'docs/**'\n      - '!.github/workflows/**'\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        starenv: [root5, root6]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: ${{ matrix.starenv }}-${{ matrix.compiler }}\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v2\n        with:\n          driver-opts: env.BUILDKIT_STEP_LOG_MAX_SIZE=10000000\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v3\n        with:\n          build-args: |\n            starenv=${{ matrix.starenv }}\n            compiler=${{ matrix.compiler }}\n          tags: ghcr.io/star-bnl/star-sw-${{ env.STARENV }}\n          outputs: type=docker,dest=/tmp/star-sw-${{ env.STARENV }}.tar\n\n      - name: Save built image for test jobs\n        uses: actions/upload-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp/star-sw-${{ env.STARENV }}.tar\n\n  ROOT5_test:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      fail-fast: false\n      matrix:\n        test_id: [10, 11, 22, 23, 24, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 59, 60, 76, 77, 78, 90, 91, 92, 102, 103, 119, 120, 121, 122, 123]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v6\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             # Workaround https://sft.its.cern.ch/jira/browse/ROOT-7660 in ROOT 5 by checking the output log\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; MALLOC_CHECK_=3 $TEST_CMD 2>&1 | tee log; grep 'Run completed' log\"\n\n  ROOT5_test_doEvents:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      fail-fast: false\n      matrix:\n        test_id: [121, 122]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v6\n      - run: |\n             TEST_FILE=$(echo \"$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py ${{ matrix.test_id }} -a fullpath)\" | sed -E 's/\\.(daq|fzd)$/.event.root/')\n             TEST_CMD=\"root4star -b -q -l 'StRoot/macros/analysis/doEvents.C(100, \\\"$TEST_FILE\\\")'\"\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; $TEST_CMD 2>&1 | tee log;  grep '<StIOMaker::Finish> IO:' log\"\n\n  ROOT5_test_find_vertex:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      fail-fast: false\n      matrix:\n        test_id: [102, 121, 122]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v6\n      - run: |\n             TEST_FILE=$(echo \"$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py ${{ matrix.test_id }} -a fullpath)\" | sed -E 's/\\.(daq|fzd)$/.event.root/')\n             TEST_CMD=\"root4star -b -q -l 'StRoot/macros/analysis/find_vertex.C(\\\"$TEST_FILE\\\")'\"\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; $TEST_CMD 2>&1 | tee log;  grep '<StIOMaker::Finish> StIO:' log\"\n\n  ROOT6_test_ignore_fail:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      fail-fast: false\n      matrix:\n        test_id: [50, 52, 54, 90, 91, 92, 119, 120]\n    env:\n      STARENV: root6-gcc485\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v6\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"MALLOC_CHECK_=3 $TEST_CMD || echo 'Failed with an exit code: '\\$?\"\n"
+    },
+    "2022-12-02T03-30-31Z": {
+      "triggers": {
+        "pull_request": {
+          "paths-ignore": [
+            ".github/**",
+            "docs/**",
+            "!.github/workflows/**"
+          ]
+        }
+      },
+      "num_jobs": 5,
+      "steps_per_job": {
+        "build": 3,
+        "ROOT5_test": 4,
+        "ROOT5_test_doEvents": 4,
+        "ROOT5_test_find_vertex": 4,
+        "ROOT6_test_ignore_fail": 4
+      },
+      "line_count": 140,
+      "workflow": "name: Build Pull Request\n\non:\n  pull_request:\n    paths-ignore:\n      - '.github/**'\n      - 'docs/**'\n      - '!.github/workflows/**'\n\nconcurrency:\n   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}\n   cancel-in-progress: true\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        starenv: [root5, root6]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: ${{ matrix.starenv }}-${{ matrix.compiler }}\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v2\n        with:\n          driver-opts: env.BUILDKIT_STEP_LOG_MAX_SIZE=10000000\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v3\n        with:\n          build-args: |\n            starenv=${{ matrix.starenv }}\n            compiler=${{ matrix.compiler }}\n          tags: ghcr.io/star-bnl/star-sw-${{ env.STARENV }}\n          outputs: type=docker,dest=/tmp/star-sw-${{ env.STARENV }}.tar\n\n      - name: Save built image for test jobs\n        uses: actions/upload-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp/star-sw-${{ env.STARENV }}.tar\n\n  ROOT5_test:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      fail-fast: false\n      matrix:\n        test_id: [10, 11, 22, 23, 24, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 59, 60, 76, 77, 78, 90, 91, 92, 102, 103, 119, 120, 121, 122, 123]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v6\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             # Workaround https://sft.its.cern.ch/jira/browse/ROOT-7660 in ROOT 5 by checking the output log\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; MALLOC_CHECK_=3 $TEST_CMD 2>&1 | tee log; grep 'Run completed' log\"\n\n  ROOT5_test_doEvents:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      fail-fast: false\n      matrix:\n        test_id: [121, 122]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v6\n      - run: |\n             TEST_FILE=$(echo \"$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py ${{ matrix.test_id }} -a fullpath)\" | sed -E 's/\\.(daq|fzd)$/.event.root/')\n             TEST_CMD=\"root4star -b -q -l 'StRoot/macros/analysis/doEvents.C(100, \\\"$TEST_FILE\\\")'\"\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; $TEST_CMD 2>&1 | tee log;  grep '<StIOMaker::Finish> IO:' log\"\n\n  ROOT5_test_find_vertex:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      fail-fast: false\n      matrix:\n        test_id: [102, 121, 122]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v6\n      - run: |\n             TEST_FILE=$(echo \"$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py ${{ matrix.test_id }} -a fullpath)\" | sed -E 's/\\.(daq|fzd)$/.event.root/')\n             TEST_CMD=\"root4star -b -q -l 'StRoot/macros/analysis/find_vertex.C(\\\"$TEST_FILE\\\")'\"\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; $TEST_CMD 2>&1 | tee log;  grep '<StIOMaker::Finish> StIO:' log\"\n\n  ROOT6_test_ignore_fail:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      fail-fast: false\n      matrix:\n        test_id: [50, 52, 54, 90, 91, 92, 119, 120]\n    env:\n      STARENV: root6-gcc485\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v6\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"MALLOC_CHECK_=3 $TEST_CMD || echo 'Failed with an exit code: '\\$?\"\n"
+    },
+    "2022-12-29T21-48-20Z": {
+      "triggers": {
+        "pull_request": {
+          "paths-ignore": [
+            ".github/**",
+            "docs/**",
+            "!.github/workflows/**"
+          ]
+        }
+      },
+      "num_jobs": 5,
+      "steps_per_job": {
+        "build": 3,
+        "ROOT5_test": 4,
+        "ROOT5_test_doEvents": 4,
+        "ROOT5_test_find_vertex": 4,
+        "ROOT6_test_ignore_fail": 4
+      },
+      "line_count": 140,
+      "workflow": "name: Build Pull Request\n\non:\n  pull_request:\n    paths-ignore:\n      - '.github/**'\n      - 'docs/**'\n      - '!.github/workflows/**'\n\nconcurrency:\n   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}\n   cancel-in-progress: true\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        starenv: [root5, root6]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: ${{ matrix.starenv }}-${{ matrix.compiler }}\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v2\n        with:\n          driver-opts: env.BUILDKIT_STEP_LOG_MAX_SIZE=10000000\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v3\n        with:\n          build-args: |\n            starenv=${{ matrix.starenv }}\n            compiler=${{ matrix.compiler }}\n          tags: ghcr.io/star-bnl/star-sw-${{ env.STARENV }}\n          outputs: type=docker,dest=/tmp/star-sw-${{ env.STARENV }}.tar\n\n      - name: Save built image for test jobs\n        uses: actions/upload-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp/star-sw-${{ env.STARENV }}.tar\n\n  ROOT5_test:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      fail-fast: false\n      matrix:\n        test_id: [10, 11, 22, 23, 24, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 59, 60, 76, 77, 78, 90, 91, 92, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v7\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             # Workaround https://sft.its.cern.ch/jira/browse/ROOT-7660 in ROOT 5 by checking the output log\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; MALLOC_CHECK_=3 $TEST_CMD 2>&1 | tee log; grep 'Run completed' log\"\n\n  ROOT5_test_doEvents:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      fail-fast: false\n      matrix:\n        test_id: [121, 122]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v7\n      - run: |\n             TEST_FILE=$(echo \"$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py ${{ matrix.test_id }} -a fullpath)\" | sed -E 's/\\.(daq|fzd)$/.event.root/')\n             TEST_CMD=\"root4star -b -q -l 'StRoot/macros/analysis/doEvents.C(100, \\\"$TEST_FILE\\\")'\"\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; $TEST_CMD 2>&1 | tee log;  grep '<StIOMaker::Finish> IO:' log\"\n\n  ROOT5_test_find_vertex:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      fail-fast: false\n      matrix:\n        test_id: [102, 121, 122]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v7\n      - run: |\n             TEST_FILE=$(echo \"$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py ${{ matrix.test_id }} -a fullpath)\" | sed -E 's/\\.(daq|fzd)$/.event.root/')\n             TEST_CMD=\"root4star -b -q -l 'StRoot/macros/analysis/find_vertex.C(\\\"$TEST_FILE\\\")'\"\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; $TEST_CMD 2>&1 | tee log;  grep '<StIOMaker::Finish> StIO:' log\"\n\n  ROOT6_test_ignore_fail:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      fail-fast: false\n      matrix:\n        test_id: [50, 52, 54, 90, 91, 92, 119, 120]\n    env:\n      STARENV: root6-gcc485\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v7\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"MALLOC_CHECK_=3 $TEST_CMD || echo 'Failed with an exit code: '\\$?\"\n"
+    },
+    "2023-03-31T14-27-34Z": {
+      "triggers": {
+        "pull_request": {
+          "paths-ignore": [
+            ".github/**",
+            "docs/**",
+            "!.github/workflows/**"
+          ]
+        }
+      },
+      "num_jobs": 5,
+      "steps_per_job": {
+        "build": 3,
+        "ROOT5_test": 4,
+        "ROOT5_test_doEvents": 4,
+        "ROOT5_test_find_vertex": 4,
+        "ROOT6_test_ignore_fail": 4
+      },
+      "line_count": 140,
+      "workflow": "name: Build Pull Request\n\non:\n  pull_request:\n    paths-ignore:\n      - '.github/**'\n      - 'docs/**'\n      - '!.github/workflows/**'\n\nconcurrency:\n   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}\n   cancel-in-progress: true\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        starenv: [root5, root6]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: ${{ matrix.starenv }}-${{ matrix.compiler }}\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v2\n        with:\n          driver-opts: env.BUILDKIT_STEP_LOG_MAX_SIZE=10000000\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v3\n        with:\n          build-args: |\n            starenv=${{ matrix.starenv }}\n            compiler=${{ matrix.compiler }}\n          tags: ghcr.io/star-bnl/star-sw-${{ env.STARENV }}\n          outputs: type=docker,dest=/tmp/star-sw-${{ env.STARENV }}.tar\n\n      - name: Save built image for test jobs\n        uses: actions/upload-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp/star-sw-${{ env.STARENV }}.tar\n\n  ROOT5_test:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      fail-fast: false\n      matrix:\n        test_id: [10, 11, 22, 23, 24, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 59, 60, 76, 77, 78, 90, 91, 92, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v7\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             # Workaround https://sft.its.cern.ch/jira/browse/ROOT-7660 in ROOT 5 by checking the output log\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; MALLOC_CHECK_=3 $TEST_CMD 2>&1 | tee log; grep 'Run completed' log\"\n\n  ROOT5_test_doEvents:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      fail-fast: false\n      matrix:\n        test_id: [121, 122]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v7\n      - run: |\n             TEST_FILE=$(echo \"$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py ${{ matrix.test_id }} -a fullpath)\" | sed -E 's/\\.(daq|fzd)$/.event.root/')\n             TEST_CMD=\"root4star -b -q -l 'StRoot/macros/analysis/doEvents.C(100, \\\"$TEST_FILE\\\")'\"\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; $TEST_CMD 2>&1 | tee log;  grep '<StIOMaker::Finish> IO:' log\"\n\n  ROOT5_test_find_vertex:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      fail-fast: false\n      matrix:\n        test_id: [102, 121, 122]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v7\n      - run: |\n             TEST_FILE=$(echo \"$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py ${{ matrix.test_id }} -a fullpath)\" | sed -E 's/\\.(daq|fzd)$/.event.root/')\n             TEST_CMD=\"root4star -b -q -l 'StRoot/macros/analysis/find_vertex.C(\\\"$TEST_FILE\\\")'\"\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; $TEST_CMD 2>&1 | tee log;  grep '<StIOMaker::Finish> StIO:' log\"\n\n  ROOT6_test_ignore_fail:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      fail-fast: false\n      matrix:\n        test_id: [50, 52, 54, 90, 91, 92, 119, 120]\n    env:\n      STARENV: root6-gcc485\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v7\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"MALLOC_CHECK_=3 $TEST_CMD || echo 'Failed with an exit code: '\\$?\"\n"
+    },
+    "2023-04-19T12-31-47Z": {
+      "triggers": {
+        "pull_request": {
+          "paths-ignore": [
+            ".github/**",
+            "docs/**",
+            "!.github/workflows/**"
+          ]
+        }
+      },
+      "num_jobs": 5,
+      "steps_per_job": {
+        "build": 3,
+        "ROOT5_test": 4,
+        "ROOT5_test_doEvents": 4,
+        "ROOT5_test_find_vertex": 4,
+        "ROOT6_test_ignore_fail": 4
+      },
+      "line_count": 140,
+      "workflow": "name: Build Pull Request\n\non:\n  pull_request:\n    paths-ignore:\n      - '.github/**'\n      - 'docs/**'\n      - '!.github/workflows/**'\n\nconcurrency:\n   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}\n   cancel-in-progress: true\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        starenv: [root5, root6]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: ${{ matrix.starenv }}-${{ matrix.compiler }}\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v2\n        with:\n          driver-opts: env.BUILDKIT_STEP_LOG_MAX_SIZE=10000000\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v3\n        with:\n          build-args: |\n            starenv=${{ matrix.starenv }}\n            compiler=${{ matrix.compiler }}\n          tags: ghcr.io/star-bnl/star-sw-${{ env.STARENV }}\n          outputs: type=docker,dest=/tmp/star-sw-${{ env.STARENV }}.tar\n\n      - name: Save built image for test jobs\n        uses: actions/upload-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp/star-sw-${{ env.STARENV }}.tar\n\n  ROOT5_test:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      fail-fast: false\n      matrix:\n        test_id: [10, 11, 22, 23, 24, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 59, 60, 76, 77, 78, 90, 91, 92, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v7\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             # Workaround https://sft.its.cern.ch/jira/browse/ROOT-7660 in ROOT 5 by checking the output log\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; MALLOC_CHECK_=3 $TEST_CMD 2>&1 | tee log; grep 'Run completed' log\"\n\n  ROOT5_test_doEvents:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      fail-fast: false\n      matrix:\n        test_id: [121, 122]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v7\n      - run: |\n             TEST_FILE=$(echo \"$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py ${{ matrix.test_id }} -a fullpath)\" | sed -E 's/\\.(daq|fzd)$/.event.root/')\n             TEST_CMD=\"root4star -b -q -l 'StRoot/macros/analysis/doEvents.C(100, \\\"$TEST_FILE\\\")'\"\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; $TEST_CMD 2>&1 | tee log;  grep '<StIOMaker::Finish> IO:' log\"\n\n  ROOT5_test_find_vertex:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      fail-fast: false\n      matrix:\n        test_id: [102, 121, 122]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v7\n      - run: |\n             TEST_FILE=$(echo \"$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py ${{ matrix.test_id }} -a fullpath)\" | sed -E 's/\\.(daq|fzd)$/.event.root/')\n             TEST_CMD=\"root4star -b -q -l 'StRoot/macros/analysis/find_vertex.C(\\\"$TEST_FILE\\\")'\"\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; $TEST_CMD 2>&1 | tee log;  grep '<StIOMaker::Finish> StIO:' log\"\n\n  ROOT6_test_ignore_fail:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      fail-fast: false\n      matrix:\n        test_id: [50, 52, 54, 90, 91, 92, 119, 120]\n    env:\n      STARENV: root6-gcc485\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v7\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"MALLOC_CHECK_=3 $TEST_CMD || echo 'Failed with an exit code: '\\$?\"\n"
+    },
+    "2023-09-28T19-29-15Z": {
+      "triggers": {
+        "pull_request": {
+          "paths-ignore": [
+            ".github/**",
+            "docs/**",
+            "!.github/workflows/**"
+          ]
+        }
+      },
+      "num_jobs": 5,
+      "steps_per_job": {
+        "build": 3,
+        "ROOT5_test": 4,
+        "ROOT5_test_doEvents": 4,
+        "ROOT5_test_find_vertex": 4,
+        "ROOT6_test": 4
+      },
+      "line_count": 140,
+      "workflow": "name: Build Pull Request\n\non:\n  pull_request:\n    paths-ignore:\n      - '.github/**'\n      - 'docs/**'\n      - '!.github/workflows/**'\n\nconcurrency:\n   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}\n   cancel-in-progress: true\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        starenv: [root5, root6]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: ${{ matrix.starenv }}-${{ matrix.compiler }}\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v2\n        with:\n          driver-opts: env.BUILDKIT_STEP_LOG_MAX_SIZE=10000000\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v3\n        with:\n          build-args: |\n            starenv=${{ matrix.starenv }}\n            compiler=${{ matrix.compiler }}\n          tags: ghcr.io/star-bnl/star-sw-${{ env.STARENV }}\n          outputs: type=docker,dest=/tmp/star-sw-${{ env.STARENV }}.tar\n\n      - name: Save built image for test jobs\n        uses: actions/upload-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp/star-sw-${{ env.STARENV }}.tar\n\n  ROOT5_test:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      fail-fast: false\n      matrix:\n        test_id: [10, 11, 22, 23, 24, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 59, 60, 76, 77, 78, 90, 91, 92, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v7\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             # Workaround https://sft.its.cern.ch/jira/browse/ROOT-7660 in ROOT 5 by checking the output log\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; MALLOC_CHECK_=3 $TEST_CMD 2>&1 | tee log; grep 'Run completed' log\"\n\n  ROOT5_test_doEvents:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      fail-fast: false\n      matrix:\n        test_id: [121, 122]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v7\n      - run: |\n             TEST_FILE=$(echo \"$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py ${{ matrix.test_id }} -a fullpath)\" | sed -E 's/\\.(daq|fzd)$/.event.root/')\n             TEST_CMD=\"root4star -b -q -l 'StRoot/macros/analysis/doEvents.C(100, \\\"$TEST_FILE\\\")'\"\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; $TEST_CMD 2>&1 | tee log;  grep '<StIOMaker::Finish> IO:' log\"\n\n  ROOT5_test_find_vertex:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      fail-fast: false\n      matrix:\n        test_id: [102, 121, 122]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v7\n      - run: |\n             TEST_FILE=$(echo \"$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py ${{ matrix.test_id }} -a fullpath)\" | sed -E 's/\\.(daq|fzd)$/.event.root/')\n             TEST_CMD=\"root4star -b -q -l 'StRoot/macros/analysis/find_vertex.C(\\\"$TEST_FILE\\\")'\"\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; $TEST_CMD 2>&1 | tee log;  grep '<StIOMaker::Finish> StIO:' log\"\n\n  ROOT6_test:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      fail-fast: false\n      matrix:\n        test_id: [10, 11, 22, 23, 24, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 59, 60, 76, 77, 78, 90, 91, 92, 102, 103, 119, 120, 121, 122, 123]\n    env:\n      STARENV: root6-gcc485\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v7\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -l -c \"module unload kfparticle-1.1-root-6.16.00; MALLOC_CHECK_=3 $TEST_CMD\"\n"
+    },
+    "2023-10-13T00-09-22Z": {
+      "triggers": {
+        "pull_request": {
+          "paths-ignore": [
+            ".github/**",
+            "docs/**",
+            "!.github/workflows/**"
+          ]
+        }
+      },
+      "num_jobs": 4,
+      "steps_per_job": {
+        "build": 3,
+        "test": 4,
+        "ROOT5_test_doEvents": 4,
+        "ROOT5_test_find_vertex": 4
+      },
+      "line_count": 118,
+      "workflow": "name: Build Pull Request\n\non:\n  pull_request:\n    paths-ignore:\n      - '.github/**'\n      - 'docs/**'\n      - '!.github/workflows/**'\n\nconcurrency:\n   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}\n   cancel-in-progress: true\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        starenv: [root5, root6]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: ${{ matrix.starenv }}-${{ matrix.compiler }}\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v2\n        with:\n          driver-opts: env.BUILDKIT_STEP_LOG_MAX_SIZE=10000000\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v3\n        with:\n          build-args: |\n            starenv=${{ matrix.starenv }}\n            compiler=${{ matrix.compiler }}\n          tags: ghcr.io/star-bnl/star-sw-${{ env.STARENV }}\n          outputs: type=docker,dest=/tmp/star-sw-${{ env.STARENV }}.tar\n\n      - name: Save built image for test jobs\n        uses: actions/upload-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp/star-sw-${{ env.STARENV }}.tar\n\n  test:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      fail-fast: false\n      matrix:\n        test_id: [10, 11, 22, 23, 24, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 59, 60, 76, 77, 78, 90, 91, 92, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125]\n        starenv: [root5, root6]\n        compiler: [gcc485]\n    env:\n      STARENV: ${{ matrix.starenv }}-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v7\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py -c ${{ matrix.test_id }})\n             # Workaround https://sft.its.cern.ch/jira/browse/ROOT-7660 in ROOT 5 by checking the output log\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; MALLOC_CHECK_=3 $TEST_CMD 2>&1 | tee log; grep 'Run completed' log\"\n\n  ROOT5_test_doEvents:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      fail-fast: false\n      matrix:\n        test_id: [121, 122]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v7\n      - run: |\n             TEST_FILE=$(echo \"$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py ${{ matrix.test_id }} -a fullpath)\" | sed -E 's/\\.(daq|fzd)$/.event.root/')\n             TEST_CMD=\"root4star -b -q -l 'StRoot/macros/analysis/doEvents.C(100, \\\"$TEST_FILE\\\")'\"\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; $TEST_CMD 2>&1 | tee log;  grep '<StIOMaker::Finish> IO:' log\"\n\n  ROOT5_test_find_vertex:\n    runs-on: ubuntu-latest\n    needs: build\n    strategy:\n      fail-fast: false\n      matrix:\n        test_id: [102, 121, 122]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: root5-${{ matrix.compiler }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v3\n        with:\n          name: star-sw-${{ env.STARENV }}\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-${{ env.STARENV }}.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v7\n      - run: |\n             TEST_FILE=$(echo \"$(docker run --rm ghcr.io/star-bnl/star-sw-${{ env.STARENV }} tests/executest.py ${{ matrix.test_id }} -a fullpath)\" | sed -E 's/\\.(daq|fzd)$/.event.root/')\n             TEST_CMD=\"root4star -b -q -l 'StRoot/macros/analysis/find_vertex.C(\\\"$TEST_FILE\\\")'\"\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-${{ env.STARENV }} \\\n               sh -c \"set -e; $TEST_CMD 2>&1 | tee log;  grep '<StIOMaker::Finish> StIO:' log\"\n"
+    }
+  }
+}

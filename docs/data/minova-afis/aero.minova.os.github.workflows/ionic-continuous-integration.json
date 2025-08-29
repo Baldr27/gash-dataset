@@ -1,0 +1,683 @@
+{
+  "ionic-continuous-integration": {
+    "2023-06-12T13-04-38Z": [
+      {
+        "region": {
+          "startLine": 28,
+          "startColumn": 9,
+          "endLine": 32,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v6.5](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2023-06-12T13-02-51Z": [
+      {
+        "region": {
+          "startLine": 28,
+          "startColumn": 9,
+          "endLine": 32,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v6.4](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2023-06-19T10-25-32Z": [
+      {
+        "region": {
+          "startLine": 28,
+          "startColumn": 9,
+          "endLine": 32,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v6.5](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2023-09-07T10-45-40Z": [
+      {
+        "region": {
+          "startLine": 28,
+          "startColumn": 9,
+          "endLine": 32,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v6.5](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2023-09-15T11-33-02Z": [
+      {
+        "region": {
+          "startLine": 28,
+          "startColumn": 9,
+          "endLine": 32,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v6.5](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2023-11-30T12-10-26Z": [
+      {
+        "region": {
+          "startLine": 32,
+          "startColumn": 9,
+          "endLine": 36,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v6.5](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2023-12-06T09-44-47Z": [],
+    "2023-12-08T07-46-35Z": [],
+    "2024-02-06T08-45-35Z": [],
+    "2024-02-15T10-18-50Z": [],
+    "2024-05-27T11-25-34Z": [],
+    "2024-11-21T11-35-04Z": [],
+    "2024-11-21T12-08-44Z": [],
+    "2024-11-21T12-11-19Z": [],
+    "2024-11-21T12-40-18Z": [],
+    "2024-11-21T13-43-49Z": [],
+    "2024-12-11T09-10-14Z": []
+  },
+  "metadata": {
+    "2023-06-12T13-04-38Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "do-containerize": {
+              "description": "Should CI flow create a container image?",
+              "type": "boolean",
+              "default": false
+            },
+            "registry": {
+              "description": "Container registry to be used, e.g. ghcr.io, docker.io",
+              "type": "string",
+              "default": "ghcr.io"
+            }
+          },
+          "outputs": {
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "value": "${{jobs.build.outputs.container-image}}"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 8
+      },
+      "line_count": 79,
+      "workflow": "name: Ionic Continuous Integration\n\non:\n  workflow_call:\n    inputs:\n      do-containerize:\n        description: \"Should CI flow create a container image?\"\n        type: boolean\n        default: false\n      registry:\n        description: \"Container registry to be used, e.g. ghcr.io, docker.io\"\n        type: string\n        default: \"ghcr.io\"\n    outputs:\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        value: ${{jobs.build.outputs.container-image}}\n\njobs:\n  build:\n    name: build, analyze, containerize ... repeat\n    runs-on: ubuntu-latest\n    outputs:\n      container-image: ${{steps.container-name-and-githash.outputs.container-image}}\n    permissions: write-all\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v6.5\n\n      - uses: actions/checkout@v3\n        with:\n          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis\n\n      - name: Install dependencies\n        run: |\n          cd app \n          npm install --force\n\n      - name: Test and coverage\n        run: |\n          cd app\n          npm test --code-coverage -- --watch=false --browsers=ChromeHeadless\n\n      - uses: sonarsource/sonarqube-scan-action@master\n        env:\n          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}\n          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}\n\n      # Build Container Image\n      - name: get date\n        if: inputs.do-containerize == true\n        id: time\n        uses: boredland/get-time-action@2.0.0\n        with:\n          timeZone: UTC\n          format: \"YYYYMMDD\"\n\n      - name: prepare container image name\n        if: inputs.do-containerize == true\n        id: container-name-and-githash\n        shell: bash\n        run: |\n          GITHUB_SHA_SHORT=$(git rev-parse --short HEAD)\n          echo \"github_sha_short=$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n          echo \"container-image=${{inputs.registry}}/${{github.repository_owner}}/${{github.event.repository.name}}:${{ steps.time.outputs.time }}_$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n\n      - name: build & push container image '${{ steps.container-name-and-githash.outputs.container-image }}'\n        if: inputs.do-containerize == true && steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        uses: mr-smithers-excellent/docker-build-push@v6.2\n        with:\n          image: ${{github.event.repository.name}}\n          addLatest: true\n          tags: ${{ steps.time.outputs.time }}_${{ steps.container-name-and-githash.outputs.github_sha_short }}, latest\n          dockerfile: ./app/Dockerfile\n          registry: ${{ inputs.registry }}\n          username: ${{ secrets.GHCR_USERNAME }}\n          password: ${{ secrets.GHCR_PASSWORD }}\n"
+    },
+    "2023-06-12T13-02-51Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "do-containerize": {
+              "description": "Should CI flow create a container image?",
+              "type": "boolean",
+              "default": false
+            },
+            "registry": {
+              "description": "Container registry to be used, e.g. ghcr.io, docker.io",
+              "type": "string",
+              "default": "ghcr.io"
+            }
+          },
+          "outputs": {
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "value": "${{jobs.build.outputs.container-image}}"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 8
+      },
+      "line_count": 79,
+      "workflow": "name: Ionic Continuous Integration\n\non:\n  workflow_call:\n    inputs:\n      do-containerize:\n        description: \"Should CI flow create a container image?\"\n        type: boolean\n        default: false\n      registry:\n        description: \"Container registry to be used, e.g. ghcr.io, docker.io\"\n        type: string\n        default: \"ghcr.io\"\n    outputs:\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        value: ${{jobs.build.outputs.container-image}}\n\njobs:\n  build:\n    name: build, analyze, containerize ... repeat\n    runs-on: ubuntu-latest\n    outputs:\n      container-image: ${{steps.container-name-and-githash.outputs.container-image}}\n    permissions: write-all\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v6.4\n\n      - uses: actions/checkout@v3\n        with:\n          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis\n\n      - name: Install dependencies\n        run: |\n          cd app \n          npm install --force\n\n      - name: Test and coverage\n        run: |\n          cd app\n          npm test --code-coverage -- --watch=false --browsers=ChromeHeadless\n\n      - uses: sonarsource/sonarqube-scan-action@master\n        env:\n          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}\n          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}\n\n      # Build Container Image\n      - name: get date\n        if: inputs.do-containerize == true\n        id: time\n        uses: boredland/get-time-action@2.0.0\n        with:\n          timeZone: UTC\n          format: \"YYYYMMDD\"\n\n      - name: prepare container image name\n        if: inputs.do-containerize == true\n        id: container-name-and-githash\n        shell: bash\n        run: |\n          GITHUB_SHA_SHORT=$(git rev-parse --short HEAD)\n          echo \"github_sha_short=$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n          echo \"container-image=${{inputs.registry}}/${{github.repository_owner}}/${{github.event.repository.name}}:${{ steps.time.outputs.time }}_$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n\n      - name: build & push container image '${{ steps.container-name-and-githash.outputs.container-image }}'\n        if: inputs.do-containerize == true && steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        uses: mr-smithers-excellent/docker-build-push@v6.2\n        with:\n          image: ${{github.event.repository.name}}\n          addLatest: true\n          tags: ${{ steps.time.outputs.time }}_${{ steps.container-name-and-githash.outputs.github_sha_short }}, latest\n          dockerfile: ./app/Dockerfile\n          registry: ${{ inputs.registry }}\n          username: ${{ secrets.GHCR_USERNAME }}\n          password: ${{ secrets.GHCR_PASSWORD }}\n"
+    },
+    "2023-06-19T10-25-32Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "do-containerize": {
+              "description": "Should CI flow create a container image?",
+              "type": "boolean",
+              "default": false
+            },
+            "registry": {
+              "description": "Container registry to be used, e.g. ghcr.io, docker.io",
+              "type": "string",
+              "default": "ghcr.io"
+            }
+          },
+          "outputs": {
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "value": "${{jobs.build.outputs.container-image}}"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 9
+      },
+      "line_count": 84,
+      "workflow": "name: Ionic Continuous Integration\n\non:\n  workflow_call:\n    inputs:\n      do-containerize:\n        description: \"Should CI flow create a container image?\"\n        type: boolean\n        default: false\n      registry:\n        description: \"Container registry to be used, e.g. ghcr.io, docker.io\"\n        type: string\n        default: \"ghcr.io\"\n    outputs:\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        value: ${{jobs.build.outputs.container-image}}\n\njobs:\n  build:\n    name: build, analyze, containerize ... repeat\n    runs-on: ubuntu-latest\n    outputs:\n      container-image: ${{steps.container-name-and-githash.outputs.container-image}}\n    permissions: write-all\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v6.5\n\n      - uses: actions/checkout@v3\n        with:\n          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis\n    \n      - name: Authenticate with GitHub Package Registry\n        run: |\n          echo \"@minova-afis:registry=https://npm.pkg.github.com\" >> app/.npmrc\n          echo \"//npm.pkg.github.com/:_authToken=${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\" >> app/.npmrc\n\n      - name: Install dependencies\n        run: |\n          cd app \n          npm install --force\n\n      - name: Test and coverage\n        run: |\n          cd app\n          npm test --code-coverage -- --watch=false --browsers=ChromeHeadless\n\n      - uses: sonarsource/sonarqube-scan-action@master\n        env:\n          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}\n          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}\n\n      # Build Container Image\n      - name: get date\n        if: inputs.do-containerize == true\n        id: time\n        uses: boredland/get-time-action@2.0.0\n        with:\n          timeZone: UTC\n          format: \"YYYYMMDD\"\n\n      - name: prepare container image name\n        if: inputs.do-containerize == true\n        id: container-name-and-githash\n        shell: bash\n        run: |\n          GITHUB_SHA_SHORT=$(git rev-parse --short HEAD)\n          echo \"github_sha_short=$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n          echo \"container-image=${{inputs.registry}}/${{github.repository_owner}}/${{github.event.repository.name}}:${{ steps.time.outputs.time }}_$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n\n      - name: build & push container image '${{ steps.container-name-and-githash.outputs.container-image }}'\n        if: inputs.do-containerize == true && steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        uses: mr-smithers-excellent/docker-build-push@v6.2\n        with:\n          image: ${{github.event.repository.name}}\n          addLatest: true\n          tags: ${{ steps.time.outputs.time }}_${{ steps.container-name-and-githash.outputs.github_sha_short }}, latest\n          dockerfile: ./app/Dockerfile\n          registry: ${{ inputs.registry }}\n          username: ${{ secrets.GHCR_USERNAME }}\n          password: ${{ secrets.GHCR_PASSWORD }}\n"
+    },
+    "2023-09-07T10-45-40Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "do-containerize": {
+              "description": "Should CI flow create a container image?",
+              "type": "boolean",
+              "default": false
+            },
+            "registry": {
+              "description": "Container registry to be used, e.g. ghcr.io, docker.io",
+              "type": "string",
+              "default": "ghcr.io"
+            }
+          },
+          "outputs": {
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "value": "${{jobs.build.outputs.container-image}}"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 9
+      },
+      "line_count": 84,
+      "workflow": "name: Ionic Continuous Integration\n\non:\n  workflow_call:\n    inputs:\n      do-containerize:\n        description: \"Should CI flow create a container image?\"\n        type: boolean\n        default: false\n      registry:\n        description: \"Container registry to be used, e.g. ghcr.io, docker.io\"\n        type: string\n        default: \"ghcr.io\"\n    outputs:\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        value: ${{jobs.build.outputs.container-image}}\n\njobs:\n  build:\n    name: build, analyze, containerize ... repeat\n    runs-on: ubuntu-latest\n    outputs:\n      container-image: ${{steps.container-name-and-githash.outputs.container-image}}\n    permissions: write-all\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v6.5\n\n      - uses: actions/checkout@v4\n        with:\n          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis\n    \n      - name: Authenticate with GitHub Package Registry\n        run: |\n          echo \"@minova-afis:registry=https://npm.pkg.github.com\" >> app/.npmrc\n          echo \"//npm.pkg.github.com/:_authToken=${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\" >> app/.npmrc\n\n      - name: Install dependencies\n        run: |\n          cd app \n          npm install --force\n\n      - name: Test and coverage\n        run: |\n          cd app\n          npm test --code-coverage -- --watch=false --browsers=ChromeHeadless\n\n      - uses: sonarsource/sonarqube-scan-action@master\n        env:\n          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}\n          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}\n\n      # Build Container Image\n      - name: get date\n        if: inputs.do-containerize == true\n        id: time\n        uses: boredland/get-time-action@2.0.0\n        with:\n          timeZone: UTC\n          format: \"YYYYMMDD\"\n\n      - name: prepare container image name\n        if: inputs.do-containerize == true\n        id: container-name-and-githash\n        shell: bash\n        run: |\n          GITHUB_SHA_SHORT=$(git rev-parse --short HEAD)\n          echo \"github_sha_short=$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n          echo \"container-image=${{inputs.registry}}/${{github.repository_owner}}/${{github.event.repository.name}}:${{ steps.time.outputs.time }}_$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n\n      - name: build & push container image '${{ steps.container-name-and-githash.outputs.container-image }}'\n        if: inputs.do-containerize == true && steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        uses: mr-smithers-excellent/docker-build-push@v6.2\n        with:\n          image: ${{github.event.repository.name}}\n          addLatest: true\n          tags: ${{ steps.time.outputs.time }}_${{ steps.container-name-and-githash.outputs.github_sha_short }}, latest\n          dockerfile: ./app/Dockerfile\n          registry: ${{ inputs.registry }}\n          username: ${{ secrets.GHCR_USERNAME }}\n          password: ${{ secrets.GHCR_PASSWORD }}\n"
+    },
+    "2023-09-15T11-33-02Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "do-containerize": {
+              "description": "Should CI flow create a container image?",
+              "type": "boolean",
+              "default": false
+            },
+            "registry": {
+              "description": "Container registry to be used, e.g. ghcr.io, docker.io",
+              "type": "string",
+              "default": "ghcr.io"
+            }
+          },
+          "outputs": {
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "value": "${{jobs.build.outputs.container-image}}"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 9
+      },
+      "line_count": 84,
+      "workflow": "name: Ionic Continuous Integration\n\non:\n  workflow_call:\n    inputs:\n      do-containerize:\n        description: \"Should CI flow create a container image?\"\n        type: boolean\n        default: false\n      registry:\n        description: \"Container registry to be used, e.g. ghcr.io, docker.io\"\n        type: string\n        default: \"ghcr.io\"\n    outputs:\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        value: ${{jobs.build.outputs.container-image}}\n\njobs:\n  build:\n    name: build, analyze, containerize ... repeat\n    runs-on: ubuntu-latest\n    outputs:\n      container-image: ${{steps.container-name-and-githash.outputs.container-image}}\n    permissions: write-all\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v6.5\n\n      - uses: actions/checkout@v4\n        with:\n          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis\n    \n      - name: Authenticate with GitHub Package Registry\n        run: |\n          echo \"@minova-afis:registry=https://npm.pkg.github.com\" >> app/.npmrc\n          echo \"//npm.pkg.github.com/:_authToken=${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\" >> app/.npmrc\n\n      - name: Install dependencies\n        run: |\n          cd app \n          npm install --legacy-peer-deps\n\n      - name: Test and coverage\n        run: |\n          cd app\n          npm test --code-coverage -- --watch=false --browsers=ChromeHeadless\n\n      - uses: sonarsource/sonarqube-scan-action@master\n        env:\n          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}\n          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}\n\n      # Build Container Image\n      - name: get date\n        if: inputs.do-containerize == true\n        id: time\n        uses: boredland/get-time-action@2.0.0\n        with:\n          timeZone: UTC\n          format: \"YYYYMMDD\"\n\n      - name: prepare container image name\n        if: inputs.do-containerize == true\n        id: container-name-and-githash\n        shell: bash\n        run: |\n          GITHUB_SHA_SHORT=$(git rev-parse --short HEAD)\n          echo \"github_sha_short=$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n          echo \"container-image=${{inputs.registry}}/${{github.repository_owner}}/${{github.event.repository.name}}:${{ steps.time.outputs.time }}_$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n\n      - name: build & push container image '${{ steps.container-name-and-githash.outputs.container-image }}'\n        if: inputs.do-containerize == true && steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        uses: mr-smithers-excellent/docker-build-push@v6.2\n        with:\n          image: ${{github.event.repository.name}}\n          addLatest: true\n          tags: ${{ steps.time.outputs.time }}_${{ steps.container-name-and-githash.outputs.github_sha_short }}, latest\n          dockerfile: ./app/Dockerfile\n          registry: ${{ inputs.registry }}\n          username: ${{ secrets.GHCR_USERNAME }}\n          password: ${{ secrets.GHCR_PASSWORD }}\n"
+    },
+    "2023-11-30T12-10-26Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "do-containerize": {
+              "description": "Should CI flow create a container image?",
+              "type": "boolean",
+              "default": false
+            },
+            "do-publish": {
+              "description": "Should CI flow publish an artifact?",
+              "type": "boolean",
+              "default": false
+            },
+            "registry": {
+              "description": "Container registry to be used, e.g. ghcr.io, docker.io",
+              "type": "string",
+              "default": "ghcr.io"
+            }
+          },
+          "outputs": {
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "value": "${{jobs.build.outputs.container-image}}"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 10
+      },
+      "line_count": 94,
+      "workflow": "name: Ionic Continuous Integration\n\non:\n  workflow_call:\n    inputs:\n      do-containerize:\n        description: \"Should CI flow create a container image?\"\n        type: boolean\n        default: false\n      do-publish:\n        description: \"Should CI flow publish an artifact?\"\n        type: boolean\n        default: false\n      registry:\n        description: \"Container registry to be used, e.g. ghcr.io, docker.io\"\n        type: string\n        default: \"ghcr.io\"\n    outputs:\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        value: ${{jobs.build.outputs.container-image}}\n\njobs:\n  build:\n    name: build, analyze, containerize ... repeat\n    runs-on: ubuntu-latest\n    outputs:\n      container-image: ${{steps.container-name-and-githash.outputs.container-image}}\n    permissions: write-all\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v6.5\n\n      - uses: actions/checkout@v4\n        with:\n          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis\n    \n      - name: Authenticate with GitHub Package Registry\n        run: |\n          echo \"@minova-afis:registry=https://npm.pkg.github.com\" >> app/.npmrc\n          echo \"//npm.pkg.github.com/:_authToken=${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\" >> app/.npmrc\n\n      - name: Install dependencies\n        run: |\n          cd app \n          npm install --legacy-peer-deps\n\n      - name: Test and coverage\n        run: |\n          cd app\n          npm test --code-coverage -- --watch=false --browsers=ChromeHeadless\n\n      - uses: sonarsource/sonarqube-scan-action@master\n        env:\n          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}\n          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}\n\n      - name: publish artifact\n        if: inputs.do-publish == true\n        shell: bash\n        run: |\n           npm publish\n\n      # Build Container Image\n      - name: get date\n        if: inputs.do-containerize == true\n        id: time\n        uses: boredland/get-time-action@2.0.0\n        with:\n          timeZone: UTC\n          format: \"YYYYMMDD\"\n\n      - name: prepare container image name\n        if: inputs.do-containerize == true\n        id: container-name-and-githash\n        shell: bash\n        run: |\n          GITHUB_SHA_SHORT=$(git rev-parse --short HEAD)\n          echo \"github_sha_short=$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n          echo \"container-image=${{inputs.registry}}/${{github.repository_owner}}/${{github.event.repository.name}}:${{ steps.time.outputs.time }}_$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n\n      - name: build & push container image '${{ steps.container-name-and-githash.outputs.container-image }}'\n        if: inputs.do-containerize == true && steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        uses: mr-smithers-excellent/docker-build-push@v6.2\n        with:\n          image: ${{github.event.repository.name}}\n          addLatest: true\n          tags: ${{ steps.time.outputs.time }}_${{ steps.container-name-and-githash.outputs.github_sha_short }}, latest\n          dockerfile: ./app/Dockerfile\n          registry: ${{ inputs.registry }}\n          username: ${{ secrets.GHCR_USERNAME }}\n          password: ${{ secrets.GHCR_PASSWORD }}\n"
+    },
+    "2023-12-06T09-44-47Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "do-containerize": {
+              "description": "Should CI flow create a container image?",
+              "type": "boolean",
+              "default": false
+            },
+            "do-publish": {
+              "description": "Should CI flow publish an artifact?",
+              "type": "boolean",
+              "default": false
+            },
+            "registry": {
+              "description": "Container registry to be used, e.g. ghcr.io, docker.io",
+              "type": "string",
+              "default": "ghcr.io"
+            }
+          },
+          "outputs": {
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "value": "${{jobs.build.outputs.container-image}}"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 10
+      },
+      "line_count": 94,
+      "workflow": "name: Ionic Continuous Integration\n\non:\n  workflow_call:\n    inputs:\n      do-containerize:\n        description: \"Should CI flow create a container image?\"\n        type: boolean\n        default: false\n      do-publish:\n        description: \"Should CI flow publish an artifact?\"\n        type: boolean\n        default: false\n      registry:\n        description: \"Container registry to be used, e.g. ghcr.io, docker.io\"\n        type: string\n        default: \"ghcr.io\"\n    outputs:\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        value: ${{jobs.build.outputs.container-image}}\n\njobs:\n  build:\n    name: build, analyze, containerize ... repeat\n    runs-on: ubuntu-latest\n    outputs:\n      container-image: ${{steps.container-name-and-githash.outputs.container-image}}\n    permissions: write-all\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v7.0.7\n\n      - uses: actions/checkout@v4\n        with:\n          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis\n    \n      - name: Authenticate with GitHub Package Registry\n        run: |\n          echo \"@minova-afis:registry=https://npm.pkg.github.com\" >> app/.npmrc\n          echo \"//npm.pkg.github.com/:_authToken=${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\" >> app/.npmrc\n\n      - name: Install dependencies\n        run: |\n          cd app \n          npm install --legacy-peer-deps\n\n      - name: Test and coverage\n        run: |\n          cd app\n          npm test --code-coverage -- --watch=false --browsers=ChromeHeadless\n\n      - uses: sonarsource/sonarqube-scan-action@master\n        env:\n          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}\n          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}\n\n      - name: publish artifact\n        if: inputs.do-publish == true\n        shell: bash\n        run: |\n           npm publish\n\n      # Build Container Image\n      - name: get date\n        if: inputs.do-containerize == true\n        id: time\n        uses: boredland/get-time-action@2.0.0\n        with:\n          timeZone: UTC\n          format: \"YYYYMMDD\"\n\n      - name: prepare container image name\n        if: inputs.do-containerize == true\n        id: container-name-and-githash\n        shell: bash\n        run: |\n          GITHUB_SHA_SHORT=$(git rev-parse --short HEAD)\n          echo \"github_sha_short=$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n          echo \"container-image=${{inputs.registry}}/${{github.repository_owner}}/${{github.event.repository.name}}:${{ steps.time.outputs.time }}_$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n\n      - name: build & push container image '${{ steps.container-name-and-githash.outputs.container-image }}'\n        if: inputs.do-containerize == true && steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        uses: mr-smithers-excellent/docker-build-push@v6.2\n        with:\n          image: ${{github.event.repository.name}}\n          addLatest: true\n          tags: ${{ steps.time.outputs.time }}_${{ steps.container-name-and-githash.outputs.github_sha_short }}, latest\n          dockerfile: ./app/Dockerfile\n          registry: ${{ inputs.registry }}\n          username: ${{ secrets.GHCR_USERNAME }}\n          password: ${{ secrets.GHCR_PASSWORD }}\n"
+    },
+    "2023-12-08T07-46-35Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "do-containerize": {
+              "description": "Should CI flow create a container image?",
+              "type": "boolean",
+              "default": false
+            },
+            "do-publish": {
+              "description": "Should CI flow publish an artifact?",
+              "type": "boolean",
+              "default": false
+            },
+            "registry": {
+              "description": "Container registry to be used, e.g. ghcr.io, docker.io",
+              "type": "string",
+              "default": "ghcr.io"
+            }
+          },
+          "outputs": {
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "value": "${{jobs.build.outputs.container-image}}"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 10
+      },
+      "line_count": 94,
+      "workflow": "name: Ionic Continuous Integration\n\non:\n  workflow_call:\n    inputs:\n      do-containerize:\n        description: \"Should CI flow create a container image?\"\n        type: boolean\n        default: false\n      do-publish:\n        description: \"Should CI flow publish an artifact?\"\n        type: boolean\n        default: false\n      registry:\n        description: \"Container registry to be used, e.g. ghcr.io, docker.io\"\n        type: string\n        default: \"ghcr.io\"\n    outputs:\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        value: ${{jobs.build.outputs.container-image}}\n\njobs:\n  build:\n    name: build, analyze, containerize ... repeat\n    runs-on: ubuntu-latest\n    outputs:\n      container-image: ${{steps.container-name-and-githash.outputs.container-image}}\n    permissions: write-all\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8.0.0\n\n      - uses: actions/checkout@v4\n        with:\n          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis\n    \n      - name: Authenticate with GitHub Package Registry\n        run: |\n          echo \"@minova-afis:registry=https://npm.pkg.github.com\" >> app/.npmrc\n          echo \"//npm.pkg.github.com/:_authToken=${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\" >> app/.npmrc\n\n      - name: Install dependencies\n        run: |\n          cd app \n          npm install --legacy-peer-deps\n\n      - name: Test and coverage\n        run: |\n          cd app\n          npm test --code-coverage -- --watch=false --browsers=ChromeHeadless\n\n      - uses: sonarsource/sonarqube-scan-action@master\n        env:\n          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}\n          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}\n\n      - name: publish artifact\n        if: inputs.do-publish == true\n        shell: bash\n        run: |\n           npm publish\n\n      # Build Container Image\n      - name: get date\n        if: inputs.do-containerize == true\n        id: time\n        uses: boredland/get-time-action@2.0.0\n        with:\n          timeZone: UTC\n          format: \"YYYYMMDD\"\n\n      - name: prepare container image name\n        if: inputs.do-containerize == true\n        id: container-name-and-githash\n        shell: bash\n        run: |\n          GITHUB_SHA_SHORT=$(git rev-parse --short HEAD)\n          echo \"github_sha_short=$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n          echo \"container-image=${{inputs.registry}}/${{github.repository_owner}}/${{github.event.repository.name}}:${{ steps.time.outputs.time }}_$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n\n      - name: build & push container image '${{ steps.container-name-and-githash.outputs.container-image }}'\n        if: inputs.do-containerize == true && steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        uses: mr-smithers-excellent/docker-build-push@v6.2\n        with:\n          image: ${{github.event.repository.name}}\n          addLatest: true\n          tags: ${{ steps.time.outputs.time }}_${{ steps.container-name-and-githash.outputs.github_sha_short }}, latest\n          dockerfile: ./app/Dockerfile\n          registry: ${{ inputs.registry }}\n          username: ${{ secrets.GHCR_USERNAME }}\n          password: ${{ secrets.GHCR_PASSWORD }}\n"
+    },
+    "2024-02-06T08-45-35Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "do-containerize": {
+              "description": "Should CI flow create a container image?",
+              "type": "boolean",
+              "default": false
+            },
+            "do-publish": {
+              "description": "Should CI flow publish an artifact?",
+              "type": "boolean",
+              "default": false
+            },
+            "registry": {
+              "description": "Container registry to be used, e.g. ghcr.io, docker.io",
+              "type": "string",
+              "default": "ghcr.io"
+            }
+          },
+          "outputs": {
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "value": "${{jobs.build.outputs.container-image}}"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 10
+      },
+      "line_count": 94,
+      "workflow": "name: Ionic Continuous Integration\n\non:\n  workflow_call:\n    inputs:\n      do-containerize:\n        description: \"Should CI flow create a container image?\"\n        type: boolean\n        default: false\n      do-publish:\n        description: \"Should CI flow publish an artifact?\"\n        type: boolean\n        default: false\n      registry:\n        description: \"Container registry to be used, e.g. ghcr.io, docker.io\"\n        type: string\n        default: \"ghcr.io\"\n    outputs:\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        value: ${{jobs.build.outputs.container-image}}\n\njobs:\n  build:\n    name: build, analyze, containerize ... repeat\n    runs-on: ubuntu-latest\n    outputs:\n      container-image: ${{steps.container-name-and-githash.outputs.container-image}}\n    permissions: write-all\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8.0.0\n\n      - uses: actions/checkout@v4\n        with:\n          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis\n    \n      - name: Authenticate with GitHub Package Registry\n        run: |\n          echo \"@minova-afis:registry=https://npm.pkg.github.com\" >> app/.npmrc\n          echo \"//npm.pkg.github.com/:_authToken=${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\" >> app/.npmrc\n\n      - name: Install dependencies\n        run: |\n          cd app \n          npm install --legacy-peer-deps\n\n      - name: Test and coverage\n        run: |\n          cd app\n          npm test --code-coverage -- --watch=false --browsers=ChromeHeadless\n\n      - uses: sonarsource/sonarqube-scan-action@master\n        env:\n          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}\n          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}\n\n      - name: publish artifact\n        if: inputs.do-publish == true\n        shell: bash\n        run: |\n           npm publish\n\n      # Build Container Image\n      - name: get date\n        if: inputs.do-containerize == true\n        id: time\n        uses: boredland/get-time-action@2.0.0\n        with:\n          timeZone: UTC\n          format: \"YYYYMMDD\"\n\n      - name: prepare container image name\n        if: inputs.do-containerize == true\n        id: container-name-and-githash\n        shell: bash\n        run: |\n          GITHUB_SHA_SHORT=$(git rev-parse --short HEAD)\n          echo \"github_sha_short=$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n          echo \"container-image=${{inputs.registry}}/${{github.repository_owner}}/${{github.event.repository.name}}:${{ steps.time.outputs.time }}_$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n\n      - name: build & push container image '${{ steps.container-name-and-githash.outputs.container-image }}'\n        if: inputs.do-containerize == true && steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        uses: mr-smithers-excellent/docker-build-push@v6.3\n        with:\n          image: ${{github.event.repository.name}}\n          addLatest: true\n          tags: ${{ steps.time.outputs.time }}_${{ steps.container-name-and-githash.outputs.github_sha_short }}, latest\n          dockerfile: ./app/Dockerfile\n          registry: ${{ inputs.registry }}\n          username: ${{ secrets.GHCR_USERNAME }}\n          password: ${{ secrets.GHCR_PASSWORD }}\n"
+    },
+    "2024-02-15T10-18-50Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "do-containerize": {
+              "description": "Should CI flow create a container image?",
+              "type": "boolean",
+              "default": false
+            },
+            "do-publish": {
+              "description": "Should CI flow publish an artifact?",
+              "type": "boolean",
+              "default": false
+            },
+            "registry": {
+              "description": "Container registry to be used, e.g. ghcr.io, docker.io",
+              "type": "string",
+              "default": "ghcr.io"
+            }
+          },
+          "outputs": {
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "value": "${{jobs.build.outputs.container-image}}"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 10
+      },
+      "line_count": 94,
+      "workflow": "name: Ionic Continuous Integration\n\non:\n  workflow_call:\n    inputs:\n      do-containerize:\n        description: \"Should CI flow create a container image?\"\n        type: boolean\n        default: false\n      do-publish:\n        description: \"Should CI flow publish an artifact?\"\n        type: boolean\n        default: false\n      registry:\n        description: \"Container registry to be used, e.g. ghcr.io, docker.io\"\n        type: string\n        default: \"ghcr.io\"\n    outputs:\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        value: ${{jobs.build.outputs.container-image}}\n\njobs:\n  build:\n    name: build, analyze, containerize ... repeat\n    runs-on: ubuntu-latest\n    outputs:\n      container-image: ${{steps.container-name-and-githash.outputs.container-image}}\n    permissions: write-all\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8.0.1\n\n      - uses: actions/checkout@v4\n        with:\n          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis\n    \n      - name: Authenticate with GitHub Package Registry\n        run: |\n          echo \"@minova-afis:registry=https://npm.pkg.github.com\" >> app/.npmrc\n          echo \"//npm.pkg.github.com/:_authToken=${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\" >> app/.npmrc\n\n      - name: Install dependencies\n        run: |\n          cd app \n          npm install --legacy-peer-deps\n\n      - name: Test and coverage\n        run: |\n          cd app\n          npm test --code-coverage -- --watch=false --browsers=ChromeHeadless\n\n      - uses: sonarsource/sonarqube-scan-action@master\n        env:\n          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}\n          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}\n\n      - name: publish artifact\n        if: inputs.do-publish == true\n        shell: bash\n        run: |\n           npm publish\n\n      # Build Container Image\n      - name: get date\n        if: inputs.do-containerize == true\n        id: time\n        uses: boredland/get-time-action@2.0.0\n        with:\n          timeZone: UTC\n          format: \"YYYYMMDD\"\n\n      - name: prepare container image name\n        if: inputs.do-containerize == true\n        id: container-name-and-githash\n        shell: bash\n        run: |\n          GITHUB_SHA_SHORT=$(git rev-parse --short HEAD)\n          echo \"github_sha_short=$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n          echo \"container-image=${{inputs.registry}}/${{github.repository_owner}}/${{github.event.repository.name}}:${{ steps.time.outputs.time }}_$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n\n      - name: build & push container image '${{ steps.container-name-and-githash.outputs.container-image }}'\n        if: inputs.do-containerize == true && steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        uses: mr-smithers-excellent/docker-build-push@v6.3\n        with:\n          image: ${{github.event.repository.name}}\n          addLatest: true\n          tags: ${{ steps.time.outputs.time }}_${{ steps.container-name-and-githash.outputs.github_sha_short }}, latest\n          dockerfile: ./app/Dockerfile\n          registry: ${{ inputs.registry }}\n          username: ${{ secrets.GHCR_USERNAME }}\n          password: ${{ secrets.GHCR_PASSWORD }}\n"
+    },
+    "2024-05-27T11-25-34Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "do-containerize": {
+              "description": "Should CI flow create a container image?",
+              "type": "boolean",
+              "default": false
+            },
+            "do-publish": {
+              "description": "Should CI flow publish an artifact?",
+              "type": "boolean",
+              "default": false
+            },
+            "registry": {
+              "description": "Container registry to be used, e.g. ghcr.io, docker.io",
+              "type": "string",
+              "default": "ghcr.io"
+            }
+          },
+          "outputs": {
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "value": "${{jobs.build.outputs.container-image}}"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 10
+      },
+      "line_count": 96,
+      "workflow": "name: Ionic Continuous Integration\n\non:\n  workflow_call:\n    inputs:\n      do-containerize:\n        description: \"Should CI flow create a container image?\"\n        type: boolean\n        default: false\n      do-publish:\n        description: \"Should CI flow publish an artifact?\"\n        type: boolean\n        default: false\n      registry:\n        description: \"Container registry to be used, e.g. ghcr.io, docker.io\"\n        type: string\n        default: \"ghcr.io\"\n    outputs:\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        value: ${{jobs.build.outputs.container-image}}\n\njobs:\n  build:\n    name: build, analyze, containerize ... repeat\n    runs-on: ubuntu-latest\n    outputs:\n      container-image: ${{steps.container-name-and-githash.outputs.container-image}}\n    permissions: write-all\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8.0.1\n\n      - uses: actions/checkout@v4\n        with:\n          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis\n    \n      - name: Authenticate with GitHub Package Registry\n        run: |\n          echo \"@minova-afis:registry=https://npm.pkg.github.com\" >> app/.npmrc\n          echo \"//npm.pkg.github.com/:_authToken=${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\" >> app/.npmrc\n\n      #TODO: - name: Use npm cache\n\n      - name: Install dependencies\n        run: |\n          cd app \n          npm install --legacy-peer-deps\n\n      - name: Test and coverage\n        run: |\n          cd app\n          npm test --code-coverage -- --watch=false --browsers=ChromeHeadless\n\n      - uses: sonarsource/sonarqube-scan-action@master\n        env:\n          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}\n          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}\n\n      - name: publish artifact\n        if: inputs.do-publish == true\n        shell: bash\n        run: |\n           npm publish\n\n      # Build Container Image\n      - name: get date\n        if: inputs.do-containerize == true\n        id: time\n        uses: boredland/get-time-action@2.0.0\n        with:\n          timeZone: UTC\n          format: \"YYYYMMDD\"\n\n      - name: prepare container image name\n        if: inputs.do-containerize == true\n        id: container-name-and-githash\n        shell: bash\n        run: |\n          GITHUB_SHA_SHORT=$(git rev-parse --short HEAD)\n          echo \"github_sha_short=$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n          echo \"container-image=${{inputs.registry}}/${{github.repository_owner}}/${{github.event.repository.name}}:${{ steps.time.outputs.time }}_$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n\n      - name: build & push container image '${{ steps.container-name-and-githash.outputs.container-image }}'\n        if: inputs.do-containerize == true && steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        uses: mr-smithers-excellent/docker-build-push@v6.3\n        with:\n          image: ${{github.event.repository.name}}\n          addLatest: true\n          tags: ${{ steps.time.outputs.time }}_${{ steps.container-name-and-githash.outputs.github_sha_short }}, latest\n          dockerfile: ./app/Dockerfile\n          registry: ${{ inputs.registry }}\n          username: ${{ secrets.GHCR_USERNAME }}\n          password: ${{ secrets.GHCR_PASSWORD }}\n"
+    },
+    "2024-11-21T11-35-04Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "do-containerize": {
+              "description": "Should CI flow create a container image?",
+              "type": "boolean",
+              "default": false
+            },
+            "do-publish": {
+              "description": "Should CI flow publish an artifact?",
+              "type": "boolean",
+              "default": false
+            },
+            "registry": {
+              "description": "Container registry to be used, e.g. ghcr.io, docker.io",
+              "type": "string",
+              "default": "ghcr.io"
+            }
+          },
+          "outputs": {
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "value": "${{jobs.build.outputs.container-image}}"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 10
+      },
+      "line_count": 96,
+      "workflow": "name: Ionic Continuous Integration\n\non:\n  workflow_call:\n    inputs:\n      do-containerize:\n        description: \"Should CI flow create a container image?\"\n        type: boolean\n        default: false\n      do-publish:\n        description: \"Should CI flow publish an artifact?\"\n        type: boolean\n        default: false\n      registry:\n        description: \"Container registry to be used, e.g. ghcr.io, docker.io\"\n        type: string\n        default: \"ghcr.io\"\n    outputs:\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        value: ${{jobs.build.outputs.container-image}}\n\njobs:\n  build:\n    name: build, analyze, containerize ... repeat\n    runs-on: ubuntu-latest\n    outputs:\n      container-image: ${{steps.container-name-and-githash.outputs.container-image}}\n    permissions: write-all\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8.0.1\n\n      - uses: actions/checkout@v4\n        with:\n          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis\n    \n      - name: Authenticate with GitHub Package Registry\n        run: |\n          echo \"@minova-afis:registry=https://npm.pkg.github.com\" >> app/.npmrc\n          echo \"//npm.pkg.github.com/:_authToken=${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\" >> app/.npmrc\n\n      #TODO: - name: Use npm cache\n\n      - name: Install dependencies\n        run: |\n          cd app \n          npm install --legacy-peer-deps\n\n      - name: Test and coverage\n        run: |\n          cd app\n          npm test --code-coverage -- --watch=false --browsers=ChromeHeadless\n\n      - uses: sonarsource/sonarqube-scan-action@master\n        env:\n          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}\n          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}\n\n      - name: publish artifact\n        if: inputs.do-publish == true\n        shell: bash\n        run: |\n           npm publish\n\n      # Build Container Image\n      - name: get date\n        if: inputs.do-containerize == true\n        id: time\n        uses: boredland/get-time-action@2.0.0\n        with:\n          timeZone: UTC\n          format: \"YYYYMMDD\"\n\n      - name: prepare container image name\n        if: inputs.do-containerize == true\n        id: container-name-and-githash\n        shell: bash\n        run: |\n          GITHUB_SHA_SHORT=$(git rev-parse --short HEAD)\n          echo \"github_sha_short=$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n          echo \"container-image=${{inputs.registry}}/${{github.repository_owner}}/${{github.event.repository.name}}:${{ steps.time.outputs.time }}_$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n\n      - name: build & push container image '${{ steps.container-name-and-githash.outputs.container-image }}'\n        if: inputs.do-containerize == true && steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        uses: mr-smithers-excellent/docker-build-push@v6.4\n        with:\n          image: ${{github.event.repository.name}}\n          addLatest: true\n          tags: ${{ steps.time.outputs.time }}_${{ steps.container-name-and-githash.outputs.github_sha_short }}, latest\n          dockerfile: ./app/Dockerfile\n          registry: ${{ inputs.registry }}\n          username: ${{ secrets.GHCR_USERNAME }}\n          password: ${{ secrets.GHCR_PASSWORD }}\n"
+    },
+    "2024-11-21T12-08-44Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "do-containerize": {
+              "description": "Should CI flow create a container image?",
+              "type": "boolean",
+              "default": false
+            },
+            "do-publish": {
+              "description": "Should CI flow publish an artifact?",
+              "type": "boolean",
+              "default": false
+            },
+            "registry": {
+              "description": "Container registry to be used, e.g. ghcr.io, docker.io",
+              "type": "string",
+              "default": "ghcr.io"
+            }
+          },
+          "outputs": {
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "value": "${{jobs.build.outputs.container-image}}"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 10
+      },
+      "line_count": 96,
+      "workflow": "name: Ionic Continuous Integration\n\non:\n  workflow_call:\n    inputs:\n      do-containerize:\n        description: \"Should CI flow create a container image?\"\n        type: boolean\n        default: false\n      do-publish:\n        description: \"Should CI flow publish an artifact?\"\n        type: boolean\n        default: false\n      registry:\n        description: \"Container registry to be used, e.g. ghcr.io, docker.io\"\n        type: string\n        default: \"ghcr.io\"\n    outputs:\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        value: ${{jobs.build.outputs.container-image}}\n\njobs:\n  build:\n    name: build, analyze, containerize ... repeat\n    runs-on: ubuntu-latest\n    outputs:\n      container-image: ${{steps.container-name-and-githash.outputs.container-image}}\n    permissions: write-all\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8.0.1\n\n      - uses: actions/checkout@v4\n        with:\n          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis\n    \n      - name: Authenticate with GitHub Package Registry\n        run: |\n          echo \"@minova-afis:registry=https://npm.pkg.github.com\" >> app/.npmrc\n          echo \"//npm.pkg.github.com/:_authToken=${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\" >> app/.npmrc\n\n      #TODO: - name: Use npm cache\n\n      - name: Install dependencies\n        run: |\n          cd app \n          npm install --legacy-peer-deps\n\n      - name: Test and coverage\n        run: |\n          cd app\n          npm test --code-coverage -- --watch=false --browsers=ChromeHeadless\n\n      - uses: sonarsource/sonarqube-scan-action@master\n        env:\n          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}\n          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}\n\n      - name: publish artifact\n        if: inputs.do-publish == true\n        shell: bash\n        run: |\n           npm publish\n\n      # Build Container Image\n      - name: get date\n        if: inputs.do-containerize == true\n        id: time\n        uses: boredland/get-time-action@2.0.0\n        with:\n          timeZone: UTC\n          format: \"YYYYMMDD\"\n\n      - name: prepare container image name\n        if: inputs.do-containerize == true\n        id: container-name-and-githash\n        shell: bash\n        run: |\n          GITHUB_SHA_SHORT=$(git rev-parse --short HEAD)\n          echo \"github_sha_short=$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n          echo \"container-image=${{inputs.registry}}/${{github.repository_owner}}/${{github.event.repository.name}}:${{ steps.time.outputs.time }}_$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n\n      - name: build & push container image '${{ steps.container-name-and-githash.outputs.container-image }}'\n        if: inputs.do-containerize == true && steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        uses: mr-smithers-excellent/docker-build-push@v6.3\n        with:\n          image: ${{github.event.repository.name}}\n          addLatest: true\n          tags: ${{ steps.time.outputs.time }}_${{ steps.container-name-and-githash.outputs.github_sha_short }}, latest\n          dockerfile: ./app/Dockerfile\n          registry: ${{ inputs.registry }}\n          username: ${{ secrets.GHCR_USERNAME }}\n          password: ${{ secrets.GHCR_PASSWORD }}\n"
+    },
+    "2024-11-21T12-11-19Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "do-containerize": {
+              "description": "Should CI flow create a container image?",
+              "type": "boolean",
+              "default": false
+            },
+            "do-publish": {
+              "description": "Should CI flow publish an artifact?",
+              "type": "boolean",
+              "default": false
+            },
+            "registry": {
+              "description": "Container registry to be used, e.g. ghcr.io, docker.io",
+              "type": "string",
+              "default": "ghcr.io"
+            }
+          },
+          "outputs": {
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "value": "${{jobs.build.outputs.container-image}}"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 10
+      },
+      "line_count": 98,
+      "workflow": "name: Ionic Continuous Integration\n\non:\n  workflow_call:\n    inputs:\n      do-containerize:\n        description: \"Should CI flow create a container image?\"\n        type: boolean\n        default: false\n      do-publish:\n        description: \"Should CI flow publish an artifact?\"\n        type: boolean\n        default: false\n      registry:\n        description: \"Container registry to be used, e.g. ghcr.io, docker.io\"\n        type: string\n        default: \"ghcr.io\"\n    outputs:\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        value: ${{jobs.build.outputs.container-image}}\n\njobs:\n  build:\n    name: build, analyze, containerize ... repeat\n    runs-on: ubuntu-latest\n    outputs:\n      container-image: ${{steps.container-name-and-githash.outputs.container-image}}\n    permissions: write-all\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8.0.1\n\n      - uses: actions/checkout@v4\n        with:\n          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis\n    \n      - name: Authenticate with GitHub Package Registry\n        run: |\n          echo \"@minova-afis:registry=https://npm.pkg.github.com\" >> app/.npmrc\n          echo \"//npm.pkg.github.com/:_authToken=${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\" >> app/.npmrc\n\n      #TODO: - name: Use npm cache\n\n      - name: Install dependencies\n        run: |\n          cd app \n          npm install --legacy-peer-deps\n\n      - name: Test and coverage\n        run: |\n          cd app\n          npm test --code-coverage -- --watch=false --browsers=ChromeHeadless\n\n      - uses: sonarsource/sonarqube-scan-action@master\n        env:\n          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}\n          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}\n\n      - name: publish artifact\n        if: inputs.do-publish == true\n        shell: bash\n        run: |\n           npm publish\n\n      # Build Container Image\n      - name: get date\n        if: inputs.do-containerize == true\n        id: time\n        uses: boredland/get-time-action@2.0.0\n        with:\n          timeZone: UTC\n          format: \"YYYYMMDD\"\n\n      - name: prepare container image name\n        if: inputs.do-containerize == true\n        id: container-name-and-githash\n        shell: bash\n        run: |\n          GITHUB_SHA_SHORT=$(git rev-parse --short HEAD)\n          echo \"github_sha_short=$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n          echo \"container-image=${{inputs.registry}}/${{github.repository_owner}}/${{github.event.repository.name}}:${{ steps.time.outputs.time }}_$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n\n      - name: build & push container image '${{ steps.container-name-and-githash.outputs.container-image }}'\n        if: inputs.do-containerize == true && steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        uses: mr-smithers-excellent/docker-build-push@v6.4\n        with:\n          image: ${{github.event.repository.name}}\n          addLatest: true\n          tags: ${{ steps.time.outputs.time }}_${{ steps.container-name-and-githash.outputs.github_sha_short }}, latest\n          dockerfile: ./app/Dockerfile\n          registry: ${{ inputs.registry }}\n          username: ${{ secrets.GHCR_USERNAME }}\n          password: ${{ secrets.GHCR_PASSWORD }}\n          buildArgs: |\n            GITHUB_TOKEN=${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2024-11-21T12-40-18Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "do-containerize": {
+              "description": "Should CI flow create a container image?",
+              "type": "boolean",
+              "default": false
+            },
+            "do-publish": {
+              "description": "Should CI flow publish an artifact?",
+              "type": "boolean",
+              "default": false
+            },
+            "registry": {
+              "description": "Container registry to be used, e.g. ghcr.io, docker.io",
+              "type": "string",
+              "default": "ghcr.io"
+            }
+          },
+          "outputs": {
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "value": "${{jobs.build.outputs.container-image}}"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 10
+      },
+      "line_count": 96,
+      "workflow": "name: Ionic Continuous Integration\n\non:\n  workflow_call:\n    inputs:\n      do-containerize:\n        description: \"Should CI flow create a container image?\"\n        type: boolean\n        default: false\n      do-publish:\n        description: \"Should CI flow publish an artifact?\"\n        type: boolean\n        default: false\n      registry:\n        description: \"Container registry to be used, e.g. ghcr.io, docker.io\"\n        type: string\n        default: \"ghcr.io\"\n    outputs:\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        value: ${{jobs.build.outputs.container-image}}\n\njobs:\n  build:\n    name: build, analyze, containerize ... repeat\n    runs-on: ubuntu-latest\n    outputs:\n      container-image: ${{steps.container-name-and-githash.outputs.container-image}}\n    permissions: write-all\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8.0.1\n\n      - uses: actions/checkout@v4\n        with:\n          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis\n    \n      - name: Authenticate with GitHub Package Registry\n        run: |\n          echo \"@minova-afis:registry=https://npm.pkg.github.com\" >> app/.npmrc\n          echo \"//npm.pkg.github.com/:_authToken=${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\" >> app/.npmrc\n\n      #TODO: - name: Use npm cache\n\n      - name: Install dependencies\n        run: |\n          cd app \n          npm install --legacy-peer-deps\n\n      - name: Test and coverage\n        run: |\n          cd app\n          npm test --code-coverage -- --watch=false --browsers=ChromeHeadless\n\n      - uses: sonarsource/sonarqube-scan-action@master\n        env:\n          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}\n          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}\n\n      - name: publish artifact\n        if: inputs.do-publish == true\n        shell: bash\n        run: |\n           npm publish\n\n      # Build Container Image\n      - name: get date\n        if: inputs.do-containerize == true\n        id: time\n        uses: boredland/get-time-action@2.0.0\n        with:\n          timeZone: UTC\n          format: \"YYYYMMDD\"\n\n      - name: prepare container image name\n        if: inputs.do-containerize == true\n        id: container-name-and-githash\n        shell: bash\n        run: |\n          GITHUB_SHA_SHORT=$(git rev-parse --short HEAD)\n          echo \"github_sha_short=$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n          echo \"container-image=${{inputs.registry}}/${{github.repository_owner}}/${{github.event.repository.name}}:${{ steps.time.outputs.time }}_$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n\n      - name: build & push container image '${{ steps.container-name-and-githash.outputs.container-image }}'\n        if: inputs.do-containerize == true && steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        uses: mr-smithers-excellent/docker-build-push@v6.4\n        with:\n          image: ${{github.event.repository.name}}\n          addLatest: true\n          tags: ${{ steps.time.outputs.time }}_${{ steps.container-name-and-githash.outputs.github_sha_short }}, latest\n          dockerfile: ./app/Dockerfile\n          registry: ${{ inputs.registry }}\n          username: ${{ secrets.GHCR_USERNAME }}\n          password: ${{ secrets.GHCR_PASSWORD }}\n"
+    },
+    "2024-11-21T13-43-49Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "do-containerize": {
+              "description": "Should CI flow create a container image?",
+              "type": "boolean",
+              "default": false
+            },
+            "do-publish": {
+              "description": "Should CI flow publish an artifact?",
+              "type": "boolean",
+              "default": false
+            },
+            "registry": {
+              "description": "Container registry to be used, e.g. ghcr.io, docker.io",
+              "type": "string",
+              "default": "ghcr.io"
+            }
+          },
+          "outputs": {
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "value": "${{jobs.build.outputs.container-image}}"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 12
+      },
+      "line_count": 109,
+      "workflow": "name: Ionic Continuous Integration\n\non:\n  workflow_call:\n    inputs:\n      do-containerize:\n        description: \"Should CI flow create a container image?\"\n        type: boolean\n        default: false\n      do-publish:\n        description: \"Should CI flow publish an artifact?\"\n        type: boolean\n        default: false\n      registry:\n        description: \"Container registry to be used, e.g. ghcr.io, docker.io\"\n        type: string\n        default: \"ghcr.io\"\n    outputs:\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        value: ${{jobs.build.outputs.container-image}}\n\njobs:\n  build:\n    name: build, analyze, containerize ... repeat\n    runs-on: ubuntu-latest\n    outputs:\n      container-image: ${{steps.container-name-and-githash.outputs.container-image}}\n    permissions: write-all\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8.0.1\n\n      - uses: actions/checkout@v4\n        with:\n          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis\n\n      - name: Authenticate with GitHub Package Registry\n        run: |\n          echo \"@minova-afis:registry=https://npm.pkg.github.com\" >> app/.npmrc\n          echo \"//npm.pkg.github.com/:_authToken=${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\" >> app/.npmrc\n\n      - name: Cache Node.js modules\n        uses: actions/cache@v3\n        with:\n          path: app/node_modules\n          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/app/package-lock.json') }}\n          restore-keys: |\n            ${{ runner.os }}-node-modules-\n    \n      - name: Authenticate with GitHub Package Registry\n        run: |\n          echo \"@minova-afis:registry=https://npm.pkg.github.com\" >> app/.npmrc\n          echo \"//npm.pkg.github.com/:_authToken=${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\" >> app/.npmrc\n\n      #TODO: - name: Use npm cache\n\n      - name: Install dependencies\n        run: |\n          cd app \n          npm install --legacy-peer-deps\n\n      - name: Test and coverage\n        run: |\n          cd app\n          npm test --code-coverage -- --watch=false --browsers=ChromeHeadless\n\n      - uses: sonarsource/sonarqube-scan-action@master\n        env:\n          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}\n          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}\n\n      - name: publish artifact\n        if: inputs.do-publish == true\n        shell: bash\n        run: |\n           npm publish\n\n      # Build Container Image\n      - name: get date\n        if: inputs.do-containerize == true\n        id: time\n        uses: boredland/get-time-action@2.0.0\n        with:\n          timeZone: UTC\n          format: \"YYYYMMDD\"\n\n      - name: prepare container image name\n        if: inputs.do-containerize == true\n        id: container-name-and-githash\n        shell: bash\n        run: |\n          GITHUB_SHA_SHORT=$(git rev-parse --short HEAD)\n          echo \"github_sha_short=$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n          echo \"container-image=${{inputs.registry}}/${{github.repository_owner}}/${{github.event.repository.name}}:${{ steps.time.outputs.time }}_$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n\n      - name: build & push container image '${{ steps.container-name-and-githash.outputs.container-image }}'\n        if: inputs.do-containerize == true && steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        uses: mr-smithers-excellent/docker-build-push@v6.4\n        with:\n          image: ${{github.event.repository.name}}\n          addLatest: true\n          tags: ${{ steps.time.outputs.time }}_${{ steps.container-name-and-githash.outputs.github_sha_short }}, latest\n          dockerfile: ./app/Dockerfile\n          registry: ${{ inputs.registry }}\n          username: ${{ secrets.GHCR_USERNAME }}\n          password: ${{ secrets.GHCR_PASSWORD }}\n"
+    },
+    "2024-12-11T09-10-14Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "do-containerize": {
+              "description": "Should CI flow create a container image?",
+              "type": "boolean",
+              "default": false
+            },
+            "do-publish": {
+              "description": "Should CI flow publish an artifact?",
+              "type": "boolean",
+              "default": false
+            },
+            "registry": {
+              "description": "Container registry to be used, e.g. ghcr.io, docker.io",
+              "type": "string",
+              "default": "ghcr.io"
+            }
+          },
+          "outputs": {
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "value": "${{jobs.build.outputs.container-image}}"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 12
+      },
+      "line_count": 109,
+      "workflow": "name: Ionic Continuous Integration\n\non:\n  workflow_call:\n    inputs:\n      do-containerize:\n        description: \"Should CI flow create a container image?\"\n        type: boolean\n        default: false\n      do-publish:\n        description: \"Should CI flow publish an artifact?\"\n        type: boolean\n        default: false\n      registry:\n        description: \"Container registry to be used, e.g. ghcr.io, docker.io\"\n        type: string\n        default: \"ghcr.io\"\n    outputs:\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        value: ${{jobs.build.outputs.container-image}}\n\njobs:\n  build:\n    name: build, analyze, containerize ... repeat\n    runs-on: ubuntu-latest\n    outputs:\n      container-image: ${{steps.container-name-and-githash.outputs.container-image}}\n    permissions: write-all\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8.0.1\n\n      - uses: actions/checkout@v4\n        with:\n          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis\n\n      - name: Authenticate with GitHub Package Registry\n        run: |\n          echo \"@minova-afis:registry=https://npm.pkg.github.com\" >> app/.npmrc\n          echo \"//npm.pkg.github.com/:_authToken=${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\" >> app/.npmrc\n\n      - name: Cache Node.js modules\n        uses: actions/cache@v4\n        with:\n          path: app/node_modules\n          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/app/package-lock.json') }}\n          restore-keys: |\n            ${{ runner.os }}-node-modules-\n    \n      - name: Authenticate with GitHub Package Registry\n        run: |\n          echo \"@minova-afis:registry=https://npm.pkg.github.com\" >> app/.npmrc\n          echo \"//npm.pkg.github.com/:_authToken=${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\" >> app/.npmrc\n\n      #TODO: - name: Use npm cache\n\n      - name: Install dependencies\n        run: |\n          cd app \n          npm install --legacy-peer-deps\n\n      - name: Test and coverage\n        run: |\n          cd app\n          npm test --code-coverage -- --watch=false --browsers=ChromeHeadless\n\n      - uses: sonarsource/sonarqube-scan-action@master\n        env:\n          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}\n          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}\n\n      - name: publish artifact\n        if: inputs.do-publish == true\n        shell: bash\n        run: |\n           npm publish\n\n      # Build Container Image\n      - name: get date\n        if: inputs.do-containerize == true\n        id: time\n        uses: boredland/get-time-action@2.0.0\n        with:\n          timeZone: UTC\n          format: \"YYYYMMDD\"\n\n      - name: prepare container image name\n        if: inputs.do-containerize == true\n        id: container-name-and-githash\n        shell: bash\n        run: |\n          GITHUB_SHA_SHORT=$(git rev-parse --short HEAD)\n          echo \"github_sha_short=$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n          echo \"container-image=${{inputs.registry}}/${{github.repository_owner}}/${{github.event.repository.name}}:${{ steps.time.outputs.time }}_$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n\n      - name: build & push container image '${{ steps.container-name-and-githash.outputs.container-image }}'\n        if: inputs.do-containerize == true && steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        uses: mr-smithers-excellent/docker-build-push@v6.4\n        with:\n          image: ${{github.event.repository.name}}\n          addLatest: true\n          tags: ${{ steps.time.outputs.time }}_${{ steps.container-name-and-githash.outputs.github_sha_short }}, latest\n          dockerfile: ./app/Dockerfile\n          registry: ${{ inputs.registry }}\n          username: ${{ secrets.GHCR_USERNAME }}\n          password: ${{ secrets.GHCR_PASSWORD }}\n"
+    }
+  }
+}

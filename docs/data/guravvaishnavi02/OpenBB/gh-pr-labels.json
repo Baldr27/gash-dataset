@@ -1,0 +1,76 @@
+{
+  "gh-pr-labels": {
+    "2024-05-14T15-38-06Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 25,
+          "endColumn": 52
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-05-15T11-28-52Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 25,
+          "endColumn": 53
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2024-05-14T15-38-06Z": {
+      "triggers": {
+        "pull_request": {
+          "types": [
+            "opened",
+            "reopened",
+            "labeled",
+            "unlabeled",
+            "synchronize"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "label": 2
+      },
+      "line_count": 25,
+      "workflow": "name: Pull Request Labels\n\non:\n  pull_request:\n    types: [opened, reopened, labeled, unlabeled, synchronize]\n\njobs:\n  label:\n    runs-on: ubuntu-latest\n    steps:\n      # - uses: mheap/github-action-required-labels@v1\n      #   with:\n      #     mode: minimum\n      #     count: 1\n      #     labels: \"guides, bug, build, docker, docs, feat XS, feat S, feat M, feat L, feat XL, help wanted, refactor, tests, dependencies, release\"\n      - uses: mheap/github-action-required-labels@v1\n        with:\n          mode: exactly\n          count: 0\n          labels: \"do not merge\"\n      \n      - name: \ud83c\udff7\ufe0f Label OpenBB Platform PRs\n        uses: srvaroa/labeler@master\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}"
+    },
+    "2024-05-15T11-28-52Z": {
+      "triggers": {
+        "pull_request": {
+          "types": [
+            "opened",
+            "reopened",
+            "labeled",
+            "unlabeled",
+            "synchronize"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "label": 2
+      },
+      "line_count": 25,
+      "workflow": "name: \ud83c\udff7\ufe0f Pull Request Labels\n\non:\n  pull_request:\n    types: [opened, reopened, labeled, unlabeled, synchronize]\n\njobs:\n  label:\n    runs-on: ubuntu-latest\n    steps:\n      # - uses: mheap/github-action-required-labels@v1\n      #   with:\n      #     mode: minimum\n      #     count: 1\n      #     labels: \"guides, bug, build, docker, docs, feat XS, feat S, feat M, feat L, feat XL, help wanted, refactor, tests, dependencies, release\"\n      - uses: mheap/github-action-required-labels@v1\n        with:\n          mode: exactly\n          count: 0\n          labels: \"do not merge\"\n\n      - name: \ud83c\udff7\ufe0f Label OpenBB Platform PRs\n        uses: srvaroa/labeler@master\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n"
+    }
+  }
+}

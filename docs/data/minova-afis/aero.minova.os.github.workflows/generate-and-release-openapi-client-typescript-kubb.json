@@ -1,0 +1,81 @@
+{
+  "generate-and-release-openapi-client-typescript-kubb": {
+    "2025-02-04T08-21-41Z": [],
+    "2025-02-04T09-51-14Z": [],
+    "2025-02-04T11-32-54Z": []
+  },
+  "metadata": {
+    "2025-02-04T08-21-41Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "openapi-specification": {
+              "description": "OpenAPI specification in YAML format used by kubb.dev",
+              "type": "string",
+              "required": true
+            },
+            "base-package-as-path": {
+              "description": "Path where the generated client should be stored",
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "generate-client-typescript": 7
+      },
+      "line_count": 57,
+      "workflow": "name: Generate OpenAPI Client with kubb.dev\n\non:\n  workflow_call:\n    inputs:\n      openapi-specification:\n        description: 'OpenAPI specification in YAML format used by kubb.dev'\n        type: string\n        required: true\n      base-package-as-path:\n        description: \"Path where the generated client should be stored\"\n        type: string\n        required: true\n\njobs:\n  generate-client-typescript:\n    name: Generate TypeScript Client with Kubb\n    runs-on: ubuntu-latest\n    permissions:\n      contents: read\n      packages: write\n\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8.0.1\n\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Skip commits by 'maven-release-plugin'\n        run: |\n          commit_message=$(git log -1 --pretty=%B)\n          if [[ $commit_message == *\"[maven-release-plugin]\"* ]]; then\n            echo \"Commit initiated by 'maven-release-plugin'. Skipping workflow...\"\n            exit 78\n          fi\n\n      - name: Setup Node.js\n        uses: actions/setup-node@v4\n        with:\n          node-version: 20\n          registry-url: 'https://npm.pkg.github.com'\n\n      - name: Install dependencies\n        run: npm install --save-dev @kubb/cli @kubb/core @kubb/plugin-oas @kubb/plugin-ts @kubb/plugin-client\n\n      - name: Generate API client using Kubb\n        run: npx kubb\n\n      - name: Publish NPM package\n        if: steps.branch-name.outputs.ref_branch == 'main'\n        run: |\n          cd ${{ inputs.base-package-as-path }}\n          npm publish --ignore-scripts\n        env:\n          NODE_AUTH_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2025-02-04T09-51-14Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "openapi-specification": {
+              "description": "OpenAPI specification in YAML format used by kubb.dev",
+              "type": "string",
+              "required": true
+            },
+            "base-package-as-path": {
+              "description": "Path where the generated client should be stored",
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "generate-client-typescript": 7
+      },
+      "line_count": 58,
+      "workflow": "name: Generate OpenAPI Client with kubb.dev\n\non:\n  workflow_call:\n    inputs:\n      openapi-specification:\n        description: 'OpenAPI specification in YAML format used by kubb.dev'\n        type: string\n        required: true\n      base-package-as-path:\n        description: \"Path where the generated client should be stored\"\n        type: string\n        required: true\n\njobs:\n  generate-client-typescript:\n    name: Generate TypeScript Client with Kubb\n    runs-on: ubuntu-latest\n    permissions:\n      contents: read\n      packages: write\n\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8.0.1\n\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Skip commits by 'maven-release-plugin'\n        run: |\n          commit_message=$(git log -1 --pretty=%B)\n          if [[ $commit_message == *\"[maven-release-plugin]\"* ]]; then\n            echo \"Commit initiated by 'maven-release-plugin'. Skipping workflow...\"\n            exit 78\n          fi\n\n      - name: Setup Node.js\n        uses: actions/setup-node@v4\n        with:\n          node-version: 20\n          registry-url: 'https://npm.pkg.github.com'\n\n      - name: Install dependencies\n        run: |\n          npm ci\n\n      - name: Generate API client using Kubb\n        run: npx kubb\n\n      - name: Publish NPM package\n        if: steps.branch-name.outputs.ref_branch == 'main'\n        run: |\n          cd ${{ inputs.base-package-as-path }}\n          npm publish --ignore-scripts\n        env:\n          NODE_AUTH_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2025-02-04T11-32-54Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "openapi-specification": {
+              "description": "OpenAPI specification in YAML format used by kubb.dev",
+              "type": "string",
+              "default": "typescript-angular.config.json"
+            },
+            "base-package-as-path": {
+              "description": "Path where the generated client should be stored",
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "generate-client-typescript": 7
+      },
+      "line_count": 64,
+      "workflow": "name: Generate OpenAPI Client with kubb.dev\n\non:\n  workflow_call:\n    inputs:\n      openapi-specification:\n        description: 'OpenAPI specification in YAML format used by kubb.dev'\n        type: string\n        default: 'typescript-angular.config.json'\n      base-package-as-path:\n        description: \"Path where the generated client should be stored\"\n        type: string\n        required: true\n\njobs:\n  generate-client-typescript:\n    name: Generate TypeScript Client with Kubb\n    runs-on: ubuntu-latest\n    permissions:\n      contents: read\n      packages: write\n\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8.0.1\n\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Skip commits by 'maven-release-plugin'\n        run: |\n          commit_message=$(git log -1 --pretty=%B)\n          if [[ $commit_message == *\"[maven-release-plugin]\"* ]]; then\n            echo \"Commit initiated by 'maven-release-plugin'. Skipping workflow...\"\n            exit 78\n          fi\n\n      - name: Setup Node.js\n        uses: actions/setup-node@v4\n        with:\n          node-version: 20\n          registry-url: 'https://npm.pkg.github.com'\n\n      - name: Install dependencies (ci fallback)\n        run: |\n          if [ -f package-lock.json ]; then\n            npm ci\n          else\n            echo \"\u26a0\ufe0f package-lock.json not found, using npm install\"\n            npm install --legacy-peer-deps\n          fi\n  \n\n      - name: Generate API client using Kubb\n        run: npx kubb\n\n      - name: Publish NPM package\n        if: steps.branch-name.outputs.ref_branch == 'main'\n        run: |\n          cd ${{ inputs.base-package-as-path }}\n          npm publish --ignore-scripts\n        env:\n          NODE_AUTH_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    }
+  }
+}

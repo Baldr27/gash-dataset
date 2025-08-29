@@ -1,0 +1,54 @@
+{
+  "multi-job-example": {
+    "2024-01-21T05-54-00Z": [],
+    "2025-03-22T22-03-14Z": []
+  },
+  "metadata": {
+    "2024-01-21T05-54-00Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "**"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "**"
+          ]
+        }
+      },
+      "num_jobs": 4,
+      "steps_per_job": {
+        "changed-files": 3,
+        "view-changed-files": 1,
+        "changed-files-rest-api": 3,
+        "view-changed-files-rest-api": 1
+      },
+      "line_count": 67,
+      "workflow": "name: Multi Job Example\n\npermissions:\n   contents: read\n\non:\n  push:\n    branches:\n      - \"**\"\n  pull_request:\n    branches:\n      - \"**\"\n\njobs:\n  changed-files:\n    name: Get changed files\n    runs-on: ubuntu-latest\n    outputs:\n      all_changed_files: ${{ steps.changed-files.outputs.all_changed_files }}\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v4\n        with:\n          fetch-depth: 0\n      - name: Get changed files\n        id: changed-files\n        uses: ./\n      - name: List all changed files\n        run: echo '${{ steps.changed-files.outputs.all_changed_files }}'\n  \n  view-changed-files:\n    name: View all changed files\n    runs-on: ubuntu-latest\n    needs: [changed-files]\n    steps:\n      - name: List all changed files\n        run: |\n          echo '${{ needs.changed-files.outputs.all_changed_files }}'\n          \n\n  changed-files-rest-api:\n    name: Get changed files using REST API\n    runs-on: ubuntu-latest\n    outputs:\n      all_changed_files: ${{ steps.changed-files.outputs.all_changed_files }}\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v4\n        with:\n          fetch-depth: 0\n      - name: Get changed files\n        id: changed-files\n        continue-on-error: ${{ github.event_name == 'push' }}\n        uses: ./\n        with:\n          use_rest_api: true\n      - name: List all changed files\n        run: echo '${{ steps.changed-files.outputs.all_changed_files }}'\n\n  view-changed-files-rest-api:\n    name: View all changed files using REST API\n    runs-on: ubuntu-latest\n    needs: [changed-files-rest-api]\n    steps:\n      - name: List all changed files\n        run: |\n          echo '${{ needs.changed-files-rest-api.outputs.all_changed_files }}'\n"
+    },
+    "2025-03-22T22-03-14Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "**"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "**"
+          ]
+        }
+      },
+      "num_jobs": 4,
+      "steps_per_job": {
+        "changed-files": 3,
+        "view-changed-files": 1,
+        "changed-files-rest-api": 3,
+        "view-changed-files-rest-api": 1
+      },
+      "line_count": 67,
+      "workflow": "name: Multi Job Example\n\npermissions:\n   contents: read\n\non:\n  push:\n    branches:\n      - \"**\"\n  pull_request:\n    branches:\n      - \"**\"\n\njobs:\n  changed-files:\n    name: Get changed files\n    runs-on: ubuntu-latest\n    outputs:\n      all_changed_files: ${{ steps.changed-files.outputs.all_changed_files }}\n    steps:\n      - name: Checkout\n        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2\n        with:\n          fetch-depth: 0\n      - name: Get changed files\n        id: changed-files\n        uses: ./\n      - name: List all changed files\n        run: echo '${{ steps.changed-files.outputs.all_changed_files }}'\n  \n  view-changed-files:\n    name: View all changed files\n    runs-on: ubuntu-latest\n    needs: [changed-files]\n    steps:\n      - name: List all changed files\n        run: |\n          echo '${{ needs.changed-files.outputs.all_changed_files }}'\n          \n\n  changed-files-rest-api:\n    name: Get changed files using REST API\n    runs-on: ubuntu-latest\n    outputs:\n      all_changed_files: ${{ steps.changed-files.outputs.all_changed_files }}\n    steps:\n      - name: Checkout\n        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2\n        with:\n          fetch-depth: 0\n      - name: Get changed files\n        id: changed-files\n        continue-on-error: ${{ github.event_name == 'push' }}\n        uses: ./\n        with:\n          use_rest_api: true\n      - name: List all changed files\n        run: echo '${{ steps.changed-files.outputs.all_changed_files }}'\n\n  view-changed-files-rest-api:\n    name: View all changed files using REST API\n    runs-on: ubuntu-latest\n    needs: [changed-files-rest-api]\n    steps:\n      - name: List all changed files\n        run: |\n          echo '${{ needs.changed-files-rest-api.outputs.all_changed_files }}'\n"
+    }
+  }
+}

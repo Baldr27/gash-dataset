@@ -1,0 +1,680 @@
+{
+  "release-with-helper-java": {
+    "2023-06-13T09-34-25Z": [],
+    "2023-06-13T09-52-02Z": [],
+    "2023-06-13T09-58-26Z": [],
+    "2023-06-13T10-03-31Z": [],
+    "2023-06-13T10-25-13Z": [],
+    "2023-06-13T10-57-55Z": [],
+    "2023-06-13T13-48-24Z": [],
+    "2023-06-16T11-14-44Z": [],
+    "2023-06-16T11-18-39Z": [],
+    "2023-06-16T11-28-25Z": [],
+    "2023-06-16T11-32-02Z": [],
+    "2023-06-16T11-40-36Z": [],
+    "2023-06-16T11-45-27Z": [],
+    "2023-06-16T11-49-24Z": [],
+    "2023-09-07T10-45-40Z": [],
+    "2023-11-30T08-47-28Z": [],
+    "2024-02-05T12-53-14Z": [],
+    "2024-04-03T08-50-35Z": [],
+    "2024-04-03T12-01-45Z": [],
+    "2024-12-18T10-38-57Z": [],
+    "2024-12-18T10-45-06Z": [],
+    "2024-12-18T10-56-26Z": [],
+    "2024-12-18T11-05-14Z": [],
+    "2025-01-08T09-24-38Z": []
+  },
+  "metadata": {
+    "2023-06-13T09-34-25Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            },
+            "client-target-directory": {
+              "description": "Directory containing helper's *.jar files",
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 4
+      },
+      "line_count": 68,
+      "workflow": "name: release V12 applications\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n      client-target-directory:\n        description: \"Directory containing helper's *.jar files\"\n        type: string\n        required: true\n\njobs:\n  release:\n    name: release with helper\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        java-version: ['17']\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v3\n        with:\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: set up JDK\n        uses: actions/setup-java@v3\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Build Helper and Copy to plugins\n        run: |\n          cd client && mvn org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=\"${{ inputs.release-version }}.qualifier\"\n          cd ..\n          mvn --batch-mode --update-snapshots verify --file client/pom.xml\n          rm app/src/main/app/plugins/*\n          cp ${{ client-target-directory }}/*.jar app/src/main/app/plugins/\n          git config user.email \"service@minova.com\"\n          git config user.name \"minova-worker\"\n          git add . \n          git commit -m \"add .jar to plugin-folder\"\n          git push\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            -Darguments=\"-Dmaven.javadoc.skip=true\" \\\n            -Darguments=\"-DAWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }} -DAWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}\" \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2023-06-13T09-52-02Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            },
+            "client-target-directory": {
+              "description": "Directory containing helper's *.jar files",
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 4
+      },
+      "line_count": 69,
+      "workflow": "name: release V12 applications\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n      client-target-directory:\n        description: \"Directory containing helper's *.jar files\"\n        type: string\n        required: true\n\njobs:\n  release:\n    name: release with helper\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        java-version: ['17']\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v3\n        with:\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: set up JDK\n        uses: actions/setup-java@v3\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Build Helper and Copy to plugins\n        shell: bash\n        run: |\n          cd client && mvn org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=\"${{ inputs.release-version }}.qualifier\"\n          cd ..\n          mvn --batch-mode --update-snapshots verify --file client/pom.xml\n          rm app/src/main/app/plugins/*\n          cp ${{ inputs.client-target-directory }}/*.jar app/src/main/app/plugins/\n          git config user.email \"service@minova.com\"\n          git config user.name \"minova-worker\"\n          git add . \n          git commit -m \"add .jar to plugin-folder\"\n          git push\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            -Darguments=\"-Dmaven.javadoc.skip=true\" \\\n            -Darguments=\"-DAWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }} -DAWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}\" \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2023-06-13T09-58-26Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            },
+            "client-target-directory": {
+              "description": "Directory containing helper's *.jar files",
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 4
+      },
+      "line_count": 69,
+      "workflow": "name: release V12 applications\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n      client-target-directory:\n        description: \"Directory containing helper's *.jar files\"\n        type: string\n        required: true\n\njobs:\n  release:\n    name: release with helper\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        java-version: ['17']\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v3\n        with:\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: set up JDK\n        uses: actions/setup-java@v3\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Build Helper and Copy to plugins\n        shell: bash\n        run: |\n          cd client && mvn org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=${{ inputs.release-version }}.qualifier\n          cd ..\n          mvn --batch-mode --update-snapshots verify --file client/pom.xml\n          rm app/src/main/app/plugins/*\n          cp ${{ inputs.client-target-directory }}/*.jar app/src/main/app/plugins/\n          git config user.email \"service@minova.com\"\n          git config user.name \"minova-worker\"\n          git add . \n          git commit -m \"add .jar to plugin-folder\"\n          git push\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            -Darguments=\"-Dmaven.javadoc.skip=true\" \\\n            -Darguments=\"-DAWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }} -DAWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}\" \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2023-06-13T10-03-31Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            },
+            "client-target-directory": {
+              "description": "Directory containing helper's *.jar files",
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 4
+      },
+      "line_count": 72,
+      "workflow": "name: release V12 applications\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n      client-target-directory:\n        description: \"Directory containing helper's *.jar files\"\n        type: string\n        required: true\n\njobs:\n  release:\n    name: release with helper\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        java-version: ['17']\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v3\n        with:\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: set up JDK\n        uses: actions/setup-java@v3\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Build Helper and Copy to plugins\n        shell: bash\n        run: |\n          export QUALIFIER=${{ inputs.release-version }}\".qualifier\"\n          echo ${QUALIFIER}\n          cd client && mvn org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=${QUALIFIER}\n          cd ..\n          mvn --batch-mode --no-transfer-progress \\\n            --update-snapshots verify --file client/pom.xml\n          rm app/src/main/app/plugins/*\n          cp ${{ inputs.client-target-directory }}/*.jar app/src/main/app/plugins/\n          git config user.email \"service@minova.com\"\n          git config user.name \"minova-worker\"\n          git add . \n          git commit -m \"add .jar to plugin-folder\"\n          git push\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            -Darguments=\"-Dmaven.javadoc.skip=true\" \\\n            -Darguments=\"-DAWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }} -DAWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}\" \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2023-06-13T10-25-13Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            },
+            "client-target-directory": {
+              "description": "Directory containing helper's *.jar files",
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 4
+      },
+      "line_count": 70,
+      "workflow": "name: release V12 applications\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n      client-target-directory:\n        description: \"Directory containing helper's *.jar files\"\n        type: string\n        required: true\n\njobs:\n  release:\n    name: release with helper\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        java-version: ['17']\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v3\n        with:\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: set up JDK\n        uses: actions/setup-java@v3\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Build Helper and Copy to plugins\n        shell: bash\n        run: |\n          cd client && mvn org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=\"${{ inputs.release-version }}.qualifier\"\n          cd ..\n          mvn --batch-mode --no-transfer-progress \\\n            --update-snapshots verify --file client/pom.xml\n          rm app/src/main/app/plugins/*\n          cp ${{ inputs.client-target-directory }}/*.jar app/src/main/app/plugins/\n          git config user.email \"service@minova.com\"\n          git config user.name \"minova-worker\"\n          git add . \n          git commit -m \"add .jar to plugin-folder\"\n          git push\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            -Darguments=\"-Dmaven.javadoc.skip=true\" \\\n            -Darguments=\"-DAWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }} -DAWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}\" \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2023-06-13T10-57-55Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            },
+            "client-target-directory": {
+              "description": "Directory containing helper's *.jar files",
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 4
+      },
+      "line_count": 72,
+      "workflow": "name: release V12 applications\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n      client-target-directory:\n        description: \"Directory containing helper's *.jar files\"\n        type: string\n        required: true\n\njobs:\n  release:\n    name: release with helper\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        java-version: ['17']\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v3\n        with:\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: set up JDK\n        uses: actions/setup-java@v3\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Build Helper and Copy to plugins\n        shell: bash\n        run: |\n          cd client && mvn org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=\"${{ inputs.release-version }}.qualifier\"\n          cd ..\n          mvn --batch-mode --no-transfer-progress \\\n            --update-snapshots verify --file client/pom.xml\n          set -xv\n          rm app/src/main/app/plugins/*\n          ls -la ${{ inputs.client-target-directory }}\n          cp -av ${{ inputs.client-target-directory }}/*.jar app/src/main/app/plugins/\n          git config user.email \"service@minova.com\"\n          git config user.name \"minova-worker\"\n          git add . \n          git commit -m \"add .jar to plugin-folder\"\n          git push\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            -Darguments=\"-Dmaven.javadoc.skip=true\" \\\n            -Darguments=\"-DAWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }} -DAWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}\" \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2023-06-13T13-48-24Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            },
+            "client-target-directory": {
+              "description": "Directory containing helper's *.jar files",
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 4
+      },
+      "line_count": 70,
+      "workflow": "name: release V12 applications\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n      client-target-directory:\n        description: \"Directory containing helper's *.jar files\"\n        type: string\n        required: true\n\njobs:\n  release:\n    name: release with helper\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        java-version: ['17']\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v3\n        with:\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: set up JDK\n        uses: actions/setup-java@v3\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Build Helper and Copy to plugins\n        shell: bash\n        run: |\n          cd client && mvn org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=\"${{ inputs.release-version }}.qualifier\"\n          cd ..\n          mvn --batch-mode --no-transfer-progress \\\n            --update-snapshots verify --file client/pom.xml\n          rm app/src/main/app/plugins/*\n          cp -av ${{ inputs.client-target-directory }}/*.jar app/src/main/app/plugins/\n          git config user.email \"service@minova.com\"\n          git config user.name \"minova-worker\"\n          git add . \n          git commit -m \"add .jar to plugin-folder\"\n          git push\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            -Darguments=\"-Dmaven.javadoc.skip=true\" \\\n            -Darguments=\"-DAWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }} -DAWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}\" \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2023-06-16T11-14-44Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            },
+            "client-target-directory": {
+              "description": "Directory containing helper's *.jar files",
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 4
+      },
+      "line_count": 70,
+      "workflow": "name: release V12 applications\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n      client-target-directory:\n        description: \"Directory containing helper's *.jar files\"\n        type: string\n        required: true\n\njobs:\n  release:\n    name: release with helper\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        java-version: ['17']\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v3\n        with:\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: set up JDK\n        uses: actions/setup-java@v3\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Build Helper and Copy to plugins\n        shell: bash\n        run: |\n          cd client && mvn --batch-mode --no-transfer-progress org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=\"${{ inputs.release-version }}.qualifier\"\n          cd ..\n          mvn --batch-mode --no-transfer-progress \\\n            --update-snapshots verify --file client/pom.xml\n          rm app/src/main/app/plugins/*\n          cp -av ${{ inputs.client-target-directory }}/*.jar app/src/main/app/plugins/\n          git config user.email \"service@minova.com\"\n          git config user.name \"minova-worker\"\n          git add . \n          git commit -m \"add .jar to plugin-folder\"\n          git push\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            -Darguments=\"-Dmaven.javadoc.skip=true\" \\\n            -Darguments=\"-DAWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }} -DAWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}\" \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2023-06-16T11-18-39Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            },
+            "client-target-directory": {
+              "description": "Directory containing helper's *.jar files",
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 4
+      },
+      "line_count": 76,
+      "workflow": "name: release V12 applications\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n      client-target-directory:\n        description: \"Directory containing helper's *.jar files\"\n        type: string\n        required: true\n\njobs:\n  release:\n    name: release with helper\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        java-version: ['17']\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v3\n        with:\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: set up JDK\n        uses: actions/setup-java@v3\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Build Helper and Copy to plugins\n        shell: bash\n        run: |\n          cd client && mvn --batch-mode --no-transfer-progress \\\n              org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=\"${{ inputs.release-version }}.qualifier\" \\\n              --settings .github/settings.xml\n          cd ..\n          mvn --batch-mode --no-transfer-progress \\\n            --update-snapshots verify --file client/pom.xml\n          rm app/src/main/app/plugins/*\n          cp -av ${{ inputs.client-target-directory }}/*.jar app/src/main/app/plugins/\n          git config user.email \"service@minova.com\"\n          git config user.name \"minova-worker\"\n          git add . \n          git commit -m \"add .jar to plugin-folder\"\n          git push\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            -Darguments=\"-Dmaven.javadoc.skip=true\" \\\n            -Darguments=\"-DAWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }} -DAWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}\" \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2023-06-16T11-28-25Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            },
+            "client-target-directory": {
+              "description": "Directory containing helper's *.jar files",
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 4
+      },
+      "line_count": 74,
+      "workflow": "name: release V12 applications\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n      client-target-directory:\n        description: \"Directory containing helper's *.jar files\"\n        type: string\n        required: true\n\njobs:\n  release:\n    name: release with helper\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        java-version: ['17']\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v3\n        with:\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: set up JDK\n        uses: actions/setup-java@v3\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Build Helper and Copy to plugins\n        shell: bash\n        run: |\n          cd client && mvn --batch-mode --no-transfer-progress org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=\"${{ inputs.release-version }}.qualifier\" --settings .github/settings.xml\n          cd ..\n          mvn --batch-mode --no-transfer-progress \\\n            --update-snapshots verify --file client/pom.xml\n          rm app/src/main/app/plugins/*\n          cp -av ${{ inputs.client-target-directory }}/*.jar app/src/main/app/plugins/\n          git config user.email \"service@minova.com\"\n          git config user.name \"minova-worker\"\n          git add . \n          git commit -m \"add .jar to plugin-folder\"\n          git push\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            -Darguments=\"-Dmaven.javadoc.skip=true\" \\\n            -Darguments=\"-DAWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }} -DAWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}\" \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2023-06-16T11-32-02Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            },
+            "client-target-directory": {
+              "description": "Directory containing helper's *.jar files",
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 4
+      },
+      "line_count": 74,
+      "workflow": "name: release V12 applications\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n      client-target-directory:\n        description: \"Directory containing helper's *.jar files\"\n        type: string\n        required: true\n\njobs:\n  release:\n    name: release with helper\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        java-version: ['17']\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v3\n        with:\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: set up JDK\n        uses: actions/setup-java@v3\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Build Helper and Copy to plugins\n        shell: bash\n        run: |\n          cd client && mvn --batch-mode --no-transfer-progress org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=\"${{ inputs.release-version }}.qualifier\" --settings ../.github/settings.xml\n          cd ..\n          mvn --batch-mode --no-transfer-progress \\\n            --update-snapshots verify --file client/pom.xml\n          rm app/src/main/app/plugins/*\n          cp -av ${{ inputs.client-target-directory }}/*.jar app/src/main/app/plugins/\n          git config user.email \"service@minova.com\"\n          git config user.name \"minova-worker\"\n          git add . \n          git commit -m \"add .jar to plugin-folder\"\n          git push\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            -Darguments=\"-Dmaven.javadoc.skip=true\" \\\n            -Darguments=\"-DAWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }} -DAWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}\" \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2023-06-16T11-40-36Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            },
+            "client-target-directory": {
+              "description": "Directory containing helper's *.jar files",
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 5
+      },
+      "line_count": 79,
+      "workflow": "name: release V12 applications\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n      client-target-directory:\n        description: \"Directory containing helper's *.jar files\"\n        type: string\n        required: true\n\njobs:\n  release:\n    name: release with helper\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        java-version: ['17']\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v3\n        with:\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: set up JDK\n        uses: actions/setup-java@v3\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Do the Tycho twist\n        working-directory: ./client\n        shell: bash\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=\"${{ inputs.release-version }}.qualifier\" \\\n            --settings ../.github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n\n      - name: Build Helper, copy to plugins folder, commit to Git\n        shell: bash\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            --update-snapshots verify --file client/pom.xml\n          rm app/src/main/app/plugins/*\n          cp -av ${{ inputs.client-target-directory }}/*.jar app/src/main/app/plugins/\n          git config user.email \"service@minova.com\"\n          git config user.name \"minova-worker\"\n          git add . \n          git commit -m \"added .jar to plugin-folder\"\n          git push\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            -Darguments=\"-Dmaven.javadoc.skip=true\" \\\n            -Darguments=\"-DAWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }} -DAWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}\" \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2023-06-16T11-45-27Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            },
+            "client-target-directory": {
+              "description": "Directory containing helper's *.jar files",
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 5
+      },
+      "line_count": 81,
+      "workflow": "name: release V12 applications\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n      client-target-directory:\n        description: \"Directory containing helper's *.jar files\"\n        type: string\n        required: true\n\njobs:\n  release:\n    name: release with helper\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        java-version: ['17']\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v3\n        with:\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: set up JDK\n        uses: actions/setup-java@v3\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Do the Tycho twist\n        working-directory: ./client\n        shell: bash\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=\"${{ inputs.release-version }}.qualifier\" \\\n            --settings ../.github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n\n      - name: Build Helper, copy to plugins folder, commit to Git\n        shell: bash\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            --update-snapshots verify \\\n            --file client/pom.xml \\\n            --settings .github/settings.xml\n          rm app/src/main/app/plugins/*\n          cp -av ${{ inputs.client-target-directory }}/*.jar app/src/main/app/plugins/\n          git config user.email \"service@minova.com\"\n          git config user.name \"minova-worker\"\n          git add . \n          git commit -m \"added .jar to plugin-folder\"\n          git push\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            -Darguments=\"-Dmaven.javadoc.skip=true\" \\\n            -Darguments=\"-DAWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }} -DAWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}\" \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2023-06-16T11-49-24Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            },
+            "client-target-directory": {
+              "description": "Directory containing helper's *.jar files",
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 5
+      },
+      "line_count": 84,
+      "workflow": "name: release V12 applications\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n      client-target-directory:\n        description: \"Directory containing helper's *.jar files\"\n        type: string\n        required: true\n\njobs:\n  release:\n    name: release with helper\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        java-version: ['17']\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v3\n        with:\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: set up JDK\n        uses: actions/setup-java@v3\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Do the Tycho twist\n        working-directory: ./client\n        shell: bash\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=\"${{ inputs.release-version }}.qualifier\" \\\n            --settings ../.github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n\n      - name: Build Helper, copy to plugins folder, commit to Git\n        shell: bash\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            --update-snapshots verify \\\n            --file client/pom.xml \\\n            --settings .github/settings.xml\n          rm app/src/main/app/plugins/*\n          cp -av ${{ inputs.client-target-directory }}/*.jar app/src/main/app/plugins/\n          git config user.email \"service@minova.com\"\n          git config user.name \"minova-worker\"\n          git add . \n          git commit -m \"added .jar to plugin-folder\"\n          git push\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            -Darguments=\"-Dmaven.javadoc.skip=true\" \\\n            -Darguments=\"-DAWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }} -DAWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}\" \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2023-09-07T10-45-40Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            },
+            "client-target-directory": {
+              "description": "Directory containing helper's *.jar files",
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 5
+      },
+      "line_count": 84,
+      "workflow": "name: release V12 applications\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n      client-target-directory:\n        description: \"Directory containing helper's *.jar files\"\n        type: string\n        required: true\n\njobs:\n  release:\n    name: release with helper\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        java-version: ['17']\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v4\n        with:\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: set up JDK\n        uses: actions/setup-java@v3\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Do the Tycho twist\n        working-directory: ./client\n        shell: bash\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=\"${{ inputs.release-version }}.qualifier\" \\\n            --settings ../.github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n\n      - name: Build Helper, copy to plugins folder, commit to Git\n        shell: bash\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            --update-snapshots verify \\\n            --file client/pom.xml \\\n            --settings .github/settings.xml\n          rm app/src/main/app/plugins/*\n          cp -av ${{ inputs.client-target-directory }}/*.jar app/src/main/app/plugins/\n          git config user.email \"service@minova.com\"\n          git config user.name \"minova-worker\"\n          git add . \n          git commit -m \"added .jar to plugin-folder\"\n          git push\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            -Darguments=\"-Dmaven.javadoc.skip=true\" \\\n            -Darguments=\"-DAWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }} -DAWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}\" \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2023-11-30T08-47-28Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            },
+            "client-target-directory": {
+              "description": "Directory containing helper's *.jar files",
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 5
+      },
+      "line_count": 84,
+      "workflow": "name: release V12 applications\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n      client-target-directory:\n        description: \"Directory containing helper's *.jar files\"\n        type: string\n        required: true\n\njobs:\n  release:\n    name: release with helper\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        java-version: ['17']\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v4\n        with:\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: set up JDK\n        uses: actions/setup-java@v4\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Do the Tycho twist\n        working-directory: ./client\n        shell: bash\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=\"${{ inputs.release-version }}.qualifier\" \\\n            --settings ../.github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n\n      - name: Build Helper, copy to plugins folder, commit to Git\n        shell: bash\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            --update-snapshots verify \\\n            --file client/pom.xml \\\n            --settings .github/settings.xml\n          rm app/src/main/app/plugins/*\n          cp -av ${{ inputs.client-target-directory }}/*.jar app/src/main/app/plugins/\n          git config user.email \"service@minova.com\"\n          git config user.name \"minova-worker\"\n          git add . \n          git commit -m \"added .jar to plugin-folder\"\n          git push\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            -Darguments=\"-Dmaven.javadoc.skip=true\" \\\n            -Darguments=\"-DAWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }} -DAWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}\" \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2024-02-05T12-53-14Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            },
+            "client-target-directory": {
+              "description": "Directory containing helper's *.jar files",
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 5
+      },
+      "line_count": 84,
+      "workflow": "name: release V12 applications\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n      client-target-directory:\n        description: \"Directory containing helper's *.jar files\"\n        type: string\n        required: true\n\njobs:\n  release:\n    name: release with helper\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        java-version: ['21']\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v4\n        with:\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: set up JDK\n        uses: actions/setup-java@v4\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Do the Tycho twist\n        working-directory: ./client\n        shell: bash\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=\"${{ inputs.release-version }}.qualifier\" \\\n            --settings ../.github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n\n      - name: Build Helper, copy to plugins folder, commit to Git\n        shell: bash\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            --update-snapshots verify \\\n            --file client/pom.xml \\\n            --settings .github/settings.xml\n          rm app/src/main/app/plugins/*\n          cp -av ${{ inputs.client-target-directory }}/*.jar app/src/main/app/plugins/\n          git config user.email \"service@minova.com\"\n          git config user.name \"minova-worker\"\n          git add . \n          git commit -m \"added .jar to plugin-folder\"\n          git push\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            -Darguments=\"-Dmaven.javadoc.skip=true\" \\\n            -Darguments=\"-DAWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }} -DAWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}\" \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2024-04-03T08-50-35Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            },
+            "client-target-directory": {
+              "description": "Directory containing helper's *.jar files",
+              "type": "string",
+              "required": true
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 5
+      },
+      "line_count": 84,
+      "workflow": "name: release V12 applications\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n      client-target-directory:\n        description: \"Directory containing helper's *.jar files\"\n        type: string\n        required: true\n\njobs:\n  release:\n    name: release with helper\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        java-version: ['17']\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v4\n        with:\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: set up JDK\n        uses: actions/setup-java@v4\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Do the Tycho twist\n        working-directory: ./client\n        shell: bash\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=\"${{ inputs.release-version }}.qualifier\" \\\n            --settings ../.github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n\n      - name: Build Helper, copy to plugins folder, commit to Git\n        shell: bash\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            --update-snapshots verify \\\n            --file client/pom.xml \\\n            --settings .github/settings.xml\n          rm app/src/main/app/plugins/*\n          cp -av ${{ inputs.client-target-directory }}/*.jar app/src/main/app/plugins/\n          git config user.email \"service@minova.com\"\n          git config user.name \"minova-worker\"\n          git add . \n          git commit -m \"added .jar to plugin-folder\"\n          git push\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            -Darguments=\"-Dmaven.javadoc.skip=true\" \\\n            -Darguments=\"-DAWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }} -DAWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}\" \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2024-04-03T12-01-45Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            },
+            "client-target-directory": {
+              "description": "Directory containing helper's *.jar files",
+              "type": "string",
+              "required": true
+            },
+            "java-version": {
+              "description": "This is the version of Java used for release.",
+              "type": "string",
+              "default": "21"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 5
+      },
+      "line_count": 89,
+      "workflow": "name: release V12 applications\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n      client-target-directory:\n        description: \"Directory containing helper's *.jar files\"\n        type: string\n        required: true\n      java-version:\n        description: 'This is the version of Java used for release.'\n        type: string\n        default: '21'\n\njobs:\n  release:\n    name: release with helper\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        java-version:\n        - ${{inputs.java-version }}\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v4\n        with:\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: set up JDK\n        uses: actions/setup-java@v4\n        with:\n          distribution: 'temurin'\n          java-version: ${{matrix.java-version}}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Do the Tycho twist\n        working-directory: ./client\n        shell: bash\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=\"${{ inputs.release-version }}.qualifier\" \\\n            --settings ../.github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n\n      - name: Build Helper, copy to plugins folder, commit to Git\n        shell: bash\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            --update-snapshots verify \\\n            --file client/pom.xml \\\n            --settings .github/settings.xml\n          rm app/src/main/app/plugins/*\n          cp -av ${{ inputs.client-target-directory }}/*.jar app/src/main/app/plugins/\n          git config user.email \"service@minova.com\"\n          git config user.name \"minova-worker\"\n          git add . \n          git commit -m \"added .jar to plugin-folder\"\n          git push\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            -Darguments=\"-Dmaven.javadoc.skip=true\" \\\n            -Darguments=\"-DAWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }} -DAWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}\" \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2024-12-18T10-38-57Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            },
+            "client-target-directory": {
+              "description": "Directory containing helper's *.jar files",
+              "type": "string",
+              "required": true
+            },
+            "app-target-directory": {
+              "description": "Directory where helper's *.jar files should end up",
+              "type": "string",
+              "required": true,
+              "default": "app/src/main/app/plugins/"
+            },
+            "java-version": {
+              "description": "This is the version of Java used for release.",
+              "type": "string",
+              "default": "21"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 5
+      },
+      "line_count": 94,
+      "workflow": "name: release V12 applications\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n      client-target-directory:\n        description: \"Directory containing helper's *.jar files\"\n        type: string\n        required: true\n      app-target-directory:\n        description: \"Directory where helper's *.jar files should end up\"\n        type: string\n        required: true\n        default: 'app/src/main/app/plugins/'\n      java-version:\n        description: 'This is the version of Java used for release.'\n        type: string\n        default: '21'\n\njobs:\n  release:\n    name: release with helper\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        java-version:\n        - ${{inputs.java-version }}\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v4\n        with:\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: set up JDK\n        uses: actions/setup-java@v4\n        with:\n          distribution: 'temurin'\n          java-version: ${{matrix.java-version}}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Do the Tycho twist\n        working-directory: ./client\n        shell: bash\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=\"${{ inputs.release-version }}.qualifier\" \\\n            --settings ../.github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n\n      - name: Build Helper, copy to plugins folder, commit to Git\n        shell: bash\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            --update-snapshots verify \\\n            --file client/pom.xml \\\n            --settings .github/settings.xml\n          rm app/src/main/app/plugins/*\n          cp -av ${{ inputs.client-target-directory }}/*.jar ${{ inputs.app-target-directory }}\n          git config user.email \"service@minova.com\"\n          git config user.name \"minova-worker\"\n          git add . \n          git commit -m \"added .jar to plugin-folder\"\n          git push\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            -Darguments=\"-Dmaven.javadoc.skip=true\" \\\n            -Darguments=\"-DAWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }} -DAWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}\" \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2024-12-18T10-45-06Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            },
+            "client-target-directory": {
+              "description": "Directory containing helper's *.jar files",
+              "type": "string",
+              "required": true
+            },
+            "app-target-directory": {
+              "description": "Directory where helper's *.jar files should end up",
+              "type": "string",
+              "required": true,
+              "default": "app/src/main/app/plugins/"
+            },
+            "java-version": {
+              "description": "This is the version of Java used for release.",
+              "type": "string",
+              "default": "21"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 5
+      },
+      "line_count": 94,
+      "workflow": "name: release V12 applications\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n      client-target-directory:\n        description: \"Directory containing helper's *.jar files\"\n        type: string\n        required: true\n      app-target-directory:\n        description: \"Directory where helper's *.jar files should end up\"\n        type: string\n        required: true\n        default: 'app/src/main/app/plugins/'\n      java-version:\n        description: 'This is the version of Java used for release.'\n        type: string\n        default: '21'\n\njobs:\n  release:\n    name: release with helper\n    runs-on: ubuntu-latest\n\n    strategy:\n      matrix:\n        java-version:\n        - ${{inputs.java-version }}\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v4\n        with:\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: set up JDK\n        uses: actions/setup-java@v4\n        with:\n          distribution: 'temurin'\n          java-version: ${{matrix.java-version}}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Do the Tycho twist\n        working-directory: ./client\n        shell: bash\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=\"${{ inputs.release-version }}.qualifier\" \\\n            --settings ../.github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n\n      - name: Build Helper, copy to plugins folder, commit to Git\n        shell: bash\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            --update-snapshots verify \\\n            --file client/pom.xml \\\n            --settings .github/settings.xml\n          rm ${{ inputs.app-target-directory }}/*\n          cp -av ${{ inputs.client-target-directory }}/*.jar ${{ inputs.app-target-directory }}\n          git config user.email \"service@minova.com\"\n          git config user.name \"minova-worker\"\n          git add . \n          git commit -m \"added .jar to plugin-folder\"\n          git push\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            -Darguments=\"-Dmaven.javadoc.skip=true\" \\\n            -Darguments=\"-DAWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }} -DAWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}\" \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2024-12-18T10-56-26Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            },
+            "client-target-directory": {
+              "description": "Directory containing helper's *.jar files",
+              "type": "string",
+              "required": true
+            },
+            "app-target-directory": {
+              "description": "Directory where helper's *.jar files should end up",
+              "type": "string",
+              "required": true,
+              "default": "app/src/main/app/plugins/"
+            },
+            "java-version": {
+              "description": "This is the version of Java used for release.",
+              "type": "string",
+              "default": "21"
+            },
+            "helper-java-version": {
+              "description": "This is the version of Java used for the helper.",
+              "type": "string",
+              "default": "17"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 6
+      },
+      "line_count": 101,
+      "workflow": "name: release V12 applications\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n      client-target-directory:\n        description: \"Directory containing helper's *.jar files\"\n        type: string\n        required: true\n      app-target-directory:\n        description: \"Directory where helper's *.jar files should end up\"\n        type: string\n        required: true\n        default: 'app/src/main/app/plugins/'\n      java-version:\n        description: 'This is the version of Java used for release.'\n        type: string\n        default: '21'\n      helper-java-version:\n        description: 'This is the version of Java used for the helper.'\n        type: string\n        default: '17'\n\njobs:\n  release:\n    name: release with helper\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v4\n        with:\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: set up JDK for Helper\n        uses: actions/setup-java@v4\n        with:\n          distribution: 'temurin'\n          java-version: ${{inputs.helper-java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Do the Tycho twist\n        working-directory: ./client\n        shell: bash\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=\"${{ inputs.release-version }}.qualifier\" \\\n            --settings ../.github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n\n      - name: Build Helper, copy to plugins folder, commit to Git\n        shell: bash\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            --update-snapshots verify \\\n            --file client/pom.xml \\\n            --settings .github/settings.xml\n          rm ${{ inputs.app-target-directory }}/*\n          cp -av ${{ inputs.client-target-directory }}/*.jar ${{ inputs.app-target-directory }}\n          git config user.email \"service@minova.com\"\n          git config user.name \"minova-worker\"\n          git add . \n          git commit -m \"added .jar to plugin-folder\"\n          git push\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n\n      - name: set up JDK for main release\n        uses: actions/setup-java@v4\n        with:\n          distribution: 'temurin'\n          java-version: ${{inputs.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            -Darguments=\"-Dmaven.javadoc.skip=true\" \\\n            -Darguments=\"-DAWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }} -DAWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}\" \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2024-12-18T11-05-14Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            },
+            "client-target-directory": {
+              "description": "Directory containing helper's *.jar files",
+              "type": "string",
+              "required": true
+            },
+            "app-target-directory": {
+              "description": "Directory where helper's *.jar files should end up",
+              "type": "string",
+              "required": true,
+              "default": "app/src/main/app/plugins"
+            },
+            "java-version": {
+              "description": "This is the version of Java used for release.",
+              "type": "string",
+              "default": "21"
+            },
+            "helper-java-version": {
+              "description": "This is the version of Java used for the helper.",
+              "type": "string",
+              "default": "17"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 6
+      },
+      "line_count": 101,
+      "workflow": "name: release V12 applications\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n      client-target-directory:\n        description: \"Directory containing helper's *.jar files\"\n        type: string\n        required: true\n      app-target-directory:\n        description: \"Directory where helper's *.jar files should end up\"\n        type: string\n        required: true\n        default: 'app/src/main/app/plugins'\n      java-version:\n        description: 'This is the version of Java used for release.'\n        type: string\n        default: '21'\n      helper-java-version:\n        description: 'This is the version of Java used for the helper.'\n        type: string\n        default: '17'\n\njobs:\n  release:\n    name: release with helper\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v4\n        with:\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: set up JDK for Helper\n        uses: actions/setup-java@v4\n        with:\n          distribution: 'temurin'\n          java-version: ${{inputs.helper-java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Do the Tycho twist\n        working-directory: ./client\n        shell: bash\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=\"${{ inputs.release-version }}.qualifier\" \\\n            --settings ../.github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n\n      - name: Build Helper, copy to plugins folder, commit to Git\n        shell: bash\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            --update-snapshots verify \\\n            --file client/pom.xml \\\n            --settings .github/settings.xml\n          rm ${{ inputs.app-target-directory }}/*\n          cp -av ${{ inputs.client-target-directory }}/*.jar ${{ inputs.app-target-directory }}/\n          git config user.email \"service@minova.com\"\n          git config user.name \"minova-worker\"\n          git add . \n          git commit -m \"added .jar to plugin-folder\"\n          git push\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n\n      - name: set up JDK for main release\n        uses: actions/setup-java@v4\n        with:\n          distribution: 'temurin'\n          java-version: ${{inputs.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            -Darguments=\"-Dmaven.javadoc.skip=true\" \\\n            -Darguments=\"-DAWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }} -DAWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}\" \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2025-01-08T09-24-38Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            },
+            "client-target-directory": {
+              "description": "Directory containing helper's *.jar files",
+              "type": "string",
+              "required": true
+            },
+            "app-target-directory": {
+              "description": "Directory where helper's *.jar files should end up",
+              "type": "string",
+              "default": "app/src/main/app/plugins"
+            },
+            "java-version": {
+              "description": "This is the version of Java used for release.",
+              "type": "string",
+              "default": "21"
+            },
+            "helper-java-version": {
+              "description": "This is the version of Java used for the helper.",
+              "type": "string",
+              "default": "17"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 6
+      },
+      "line_count": 100,
+      "workflow": "name: release V12 applications\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n      client-target-directory:\n        description: \"Directory containing helper's *.jar files\"\n        type: string\n        required: true\n      app-target-directory:\n        description: \"Directory where helper's *.jar files should end up\"\n        type: string\n        default: 'app/src/main/app/plugins'\n      java-version:\n        description: 'This is the version of Java used for release.'\n        type: string\n        default: '21'\n      helper-java-version:\n        description: 'This is the version of Java used for the helper.'\n        type: string\n        default: '17'\n\njobs:\n  release:\n    name: release with helper\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v4\n        with:\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: set up JDK for Helper\n        uses: actions/setup-java@v4\n        with:\n          distribution: 'temurin'\n          java-version: ${{inputs.helper-java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Do the Tycho twist\n        working-directory: ./client\n        shell: bash\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=\"${{ inputs.release-version }}.qualifier\" \\\n            --settings ../.github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n\n      - name: Build Helper, copy to plugins folder, commit to Git\n        shell: bash\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            --update-snapshots verify \\\n            --file client/pom.xml \\\n            --settings .github/settings.xml\n          rm ${{ inputs.app-target-directory }}/*\n          cp -av ${{ inputs.client-target-directory }}/*.jar ${{ inputs.app-target-directory }}/\n          git config user.email \"service@minova.com\"\n          git config user.name \"minova-worker\"\n          git add . \n          git commit -m \"added .jar to plugin-folder\"\n          git push\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n\n      - name: set up JDK for main release\n        uses: actions/setup-java@v4\n        with:\n          distribution: 'temurin'\n          java-version: ${{inputs.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            -Darguments=\"-Dmaven.javadoc.skip=true\" \\\n            -Darguments=\"-DAWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }} -DAWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}\" \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    }
+  }
+}

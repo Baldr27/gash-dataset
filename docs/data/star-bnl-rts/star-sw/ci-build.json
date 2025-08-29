@@ -1,0 +1,885 @@
+{
+  "ci-build": {
+    "2021-06-25T13-49-59Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 19,
+          "endColumn": 48
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-06-30T14-11-57Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 20,
+          "endColumn": 41
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-07-19T16-06-53Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 21,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 21,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 22,
+          "startColumn": 5,
+          "endLine": 33,
+          "endColumn": 41
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 22,
+          "startColumn": 5,
+          "endLine": 33,
+          "endColumn": 41
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-08-05T14-22-26Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 21,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 22,
+          "startColumn": 5,
+          "endLine": 33,
+          "endColumn": 41
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-08-10T18-18-56Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 19,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 20,
+          "startColumn": 5,
+          "endLine": 31,
+          "endColumn": 41
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-08-11T16-48-37Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 21,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 19,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 22,
+          "startColumn": 5,
+          "endLine": 33,
+          "endColumn": 41
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 20,
+          "startColumn": 5,
+          "endLine": 31,
+          "endColumn": 41
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-08-18T16-38-31Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 27,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 28,
+          "startColumn": 5,
+          "endLine": 41,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 42,
+          "startColumn": 5,
+          "endLine": 55,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 56,
+          "startColumn": 5,
+          "endLine": 69,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 70,
+          "startColumn": 5,
+          "endLine": 83,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 84,
+          "startColumn": 5,
+          "endLine": 97,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 98,
+          "startColumn": 5,
+          "endLine": 111,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 112,
+          "startColumn": 5,
+          "endLine": 123,
+          "endColumn": 286
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-08-21T14-31-34Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 27,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 28,
+          "startColumn": 5,
+          "endLine": 41,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 42,
+          "startColumn": 5,
+          "endLine": 55,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 56,
+          "startColumn": 5,
+          "endLine": 69,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 70,
+          "startColumn": 5,
+          "endLine": 83,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 84,
+          "startColumn": 5,
+          "endLine": 97,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 98,
+          "startColumn": 5,
+          "endLine": 111,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 112,
+          "startColumn": 5,
+          "endLine": 123,
+          "endColumn": 286
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-08-23T14-58-04Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 27,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 27,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 28,
+          "startColumn": 5,
+          "endLine": 41,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 28,
+          "startColumn": 5,
+          "endLine": 48,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 49,
+          "startColumn": 5,
+          "endLine": 58,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 42,
+          "startColumn": 5,
+          "endLine": 51,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 52,
+          "startColumn": 5,
+          "endLine": 68,
+          "endColumn": 110
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 27,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 59,
+          "startColumn": 5,
+          "endLine": 75,
+          "endColumn": 110
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 28,
+          "startColumn": 5,
+          "endLine": 48,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 49,
+          "startColumn": 5,
+          "endLine": 58,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 59,
+          "startColumn": 5,
+          "endLine": 75,
+          "endColumn": 110
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-08-30T14-44-34Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 29,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 30,
+          "startColumn": 5,
+          "endLine": 52,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 53,
+          "startColumn": 5,
+          "endLine": 62,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 63,
+          "startColumn": 5,
+          "endLine": 79,
+          "endColumn": 110
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-09-23T13-24-35Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 29,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 30,
+          "startColumn": 5,
+          "endLine": 52,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 53,
+          "startColumn": 5,
+          "endLine": 62,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 63,
+          "startColumn": 5,
+          "endLine": 79,
+          "endColumn": 110
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2021-06-25T13-49-59Z": {
+      "triggers": {
+        "pull_request": {
+          "branches": "main"
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "cibuild": 2
+      },
+      "line_count": 19,
+      "workflow": "name: CI Build\n\non:\n  pull_request:\n    branches: main\n\njobs:\n  cibuild:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v1\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/star-bnl/star-sw-build\n          push: false\n          tags: ghcr.io/star-bnl/star-sw-build\n"
+    },
+    "2021-06-30T14-11-57Z": {
+      "triggers": {
+        "pull_request": {
+          "branches": "main"
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "ROOT5": 2
+      },
+      "line_count": 20,
+      "workflow": "name: CI Build\n\non:\n  pull_request:\n    branches: main\n\njobs:\n  ROOT5:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v1\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/star-bnl/star-sw-base-root5\n          push: false\n          tags: ghcr.io/star-bnl/star-sw-base-root5\n          file: docker/Dockerfile.root5\n"
+    },
+    "2021-07-19T16-06-53Z": {
+      "triggers": {
+        "pull_request": {
+          "branches": "main"
+        }
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "ROOT5": 2,
+        "ROOT6": 2
+      },
+      "line_count": 33,
+      "workflow": "name: CI Build\n\non:\n  pull_request:\n    branches: main\n\njobs:\n  ROOT5:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v1\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/star-bnl/star-sw-base-root5\n          push: false\n          tags: ghcr.io/star-bnl/star-sw-base-root5\n          file: docker/Dockerfile.root5\n  ROOT6:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v1\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/star-bnl/star-sw-base-root6\n          push: false\n          tags: ghcr.io/star-bnl/star-sw-base-root6\n          file: docker/Dockerfile.root6\n"
+    },
+    "2021-08-05T14-22-26Z": {
+      "triggers": {
+        "pull_request": {
+          "branches": "main"
+        }
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "ROOT5": 2,
+        "ROOT6": 2
+      },
+      "line_count": 33,
+      "workflow": "name: CI Build\n\non:\n  pull_request:\n    branches: main\n\njobs:\n  ROOT5:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v1\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/star-bnl/star-sw-root5-base@sha256:bc73379c552ff02181d9c6778ff64bece4f11c5a2aaf75fd23cd62d9af6b8349\n          push: false\n          tags: ghcr.io/star-bnl/star-sw-root5-build\n          file: docker/Dockerfile.root5\n  ROOT6:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v1\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/star-bnl/star-sw-root6-base@sha256:9b40544fa0af6ac911eddeaa396b04bab5e78da0ebef36170e779269c177e9f9\n          push: false\n          tags: ghcr.io/star-bnl/star-sw-root6-build\n          file: docker/Dockerfile.root6\n"
+    },
+    "2021-08-10T18-18-56Z": {
+      "triggers": {
+        "push": {},
+        "pull_request": {}
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "ROOT5": 2,
+        "ROOT6": 2
+      },
+      "line_count": 31,
+      "workflow": "name: CI Build\n\non: [push, pull_request]\n\njobs:\n  ROOT5:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v1\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/star-bnl/star-sw-root5-base@sha256:bc73379c552ff02181d9c6778ff64bece4f11c5a2aaf75fd23cd62d9af6b8349\n          push: false\n          tags: ghcr.io/star-bnl/star-sw-root5-build\n          file: docker/Dockerfile.root5\n  ROOT6:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v1\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/star-bnl/star-sw-root6-base@sha256:9b40544fa0af6ac911eddeaa396b04bab5e78da0ebef36170e779269c177e9f9\n          push: false\n          tags: ghcr.io/star-bnl/star-sw-root6-build\n          file: docker/Dockerfile.root6\n"
+    },
+    "2021-08-11T16-48-37Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "ROOT5": 2,
+        "ROOT6": 2
+      },
+      "line_count": 31,
+      "workflow": "name: CI Build\n\non: [pull_request]\n\njobs:\n  ROOT5:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v1\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/star-bnl/star-sw-root5-base@sha256:bc73379c552ff02181d9c6778ff64bece4f11c5a2aaf75fd23cd62d9af6b8349\n          push: false\n          tags: ghcr.io/star-bnl/star-sw-root5-build\n          file: docker/Dockerfile.root5\n  ROOT6:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v1\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/star-bnl/star-sw-root6-base@sha256:9b40544fa0af6ac911eddeaa396b04bab5e78da0ebef36170e779269c177e9f9\n          push: false\n          tags: ghcr.io/star-bnl/star-sw-root6-build\n          file: docker/Dockerfile.root6\n"
+    },
+    "2021-08-18T16-38-31Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 8,
+      "steps_per_job": {
+        "ROOT5": 3,
+        "ROOT6": 2,
+        "ROOT5_test_job87": 4,
+        "ROOT5_test_job88": 4,
+        "ROOT5_test_job89": 4,
+        "ROOT5_test_job101": 4,
+        "ROOT5_test_job102": 4,
+        "ROOT5_test_job103": 4
+      },
+      "line_count": 123,
+      "workflow": "name: CI Build\n\non: [pull_request]\n\njobs:\n  ROOT5:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v1\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/star-bnl/star-sw-root5-base@sha256:bc73379c552ff02181d9c6778ff64bece4f11c5a2aaf75fd23cd62d9af6b8349\n          push: false\n          tags: ghcr.io/star-bnl/star-sw-root5-build\n          file: docker/Dockerfile.root5\n          outputs: type=docker,dest=/tmp/star-sw-root5-build.tar\n\n      - name: Save built image for test jobs\n        uses: actions/upload-artifact@v2\n        with:\n          name: star-sw-root5-build\n          path: /tmp/star-sw-root5-build.tar\n\n  ROOT6:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v1\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/star-bnl/star-sw-root6-base@sha256:9b40544fa0af6ac911eddeaa396b04bab5e78da0ebef36170e779269c177e9f9\n          push: false\n          tags: ghcr.io/star-bnl/star-sw-root6-build\n          file: docker/Dockerfile.root6\n\n  ROOT5_test_job87:\n    runs-on: ubuntu-latest\n    needs: ROOT5\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v2\n        with:\n          name: star-sw-root5-build\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-root5-build.tar\n      - run: docker run --name star-test-data --volume /star-test-data ghcr.io/star-bnl/star-test-data\n      - run: docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-root5-build root4star -b -l -q 'bfc.C(10, \"pp2017,btof,mtd,pp2pp,fmsDat,fmsPoint,fpsDat,BEmcChkStat,QAalltrigs,CorrX,OSpaceZ2,OGridLeak3D,-hitfilt\", \"/star-test-data/quick/st_physics_18069061_raw_2000021.daq\")'\n\n  ROOT5_test_job88:\n    runs-on: ubuntu-latest\n    needs: ROOT5\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v2\n        with:\n          name: star-sw-root5-build\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-root5-build.tar\n      - run: docker run --name star-test-data --volume /star-test-data ghcr.io/star-bnl/star-test-data\n      - run: docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-root5-build root4star -b -l -q 'bfc.C(10, \"pp2017,StiCA,btof,mtd,pp2pp,fmsDat,fmsPoint,fpsDat,BEmcChkStat,QAalltrigs,CorrX,OSpaceZ2,OGridLeak3D,-hitfilt\", \"/star-test-data/quick/st_physics_18069061_raw_2000021.daq\")'\n\n  ROOT5_test_job89:\n    runs-on: ubuntu-latest\n    needs: ROOT5\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v2\n        with:\n          name: star-sw-root5-build\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-root5-build.tar\n      - run: docker run --name star-test-data --volume /star-test-data ghcr.io/star-bnl/star-test-data\n      - run: docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-root5-build root4star -b -l -q 'bfc.C(10, \"pp2017,Sti,hitreuseon,btof,mtd,pp2pp,fmsDat,fmsPoint,fpsDat,BEmcChkStat,QAalltrigs,CorrX,OSpaceZ2,OGridLeak3D,-hitfilt\", \"/star-test-data/quick/st_physics_18069061_raw_2000021.daq\")'\n\n  ROOT5_test_job101:\n    runs-on: ubuntu-latest\n    needs: ROOT5\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v2\n        with:\n          name: star-sw-root5-build\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-root5-build.tar\n      - run: docker run --name star-test-data --volume /star-test-data ghcr.io/star-bnl/star-test-data\n      - run: docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-root5-build root4star -b -l -q 'bfc.C(10, \"P2018a,Sti,btof,mtd,PicoVtxDefault,BEmcChkStat,QAalltrigs,OSpaceZ2,OGridLeak3D,-hitfilt\", \"/star-test-data/quick/st_physics_19136012_raw_1000016.daq\")'\n\n  ROOT5_test_job102:\n    runs-on: ubuntu-latest\n    needs: ROOT5\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v2\n        with:\n          name: star-sw-root5-build\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-root5-build.tar\n      - run: docker run --name star-test-data --volume /star-test-data ghcr.io/star-bnl/star-test-data\n      - run: docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-root5-build root4star -b -l -q 'bfc.C(10, \"P2018a,StiCA,btof,mtd,PicoVtxDefault,BEmcChkStat,QAalltrigs,OSpaceZ2,OGridLeak3D,-hitfilt\", \"/star-test-data/quick/st_physics_19136012_raw_1000016.daq\")'\n\n  ROOT5_test_job103:\n    runs-on: ubuntu-latest\n    needs: ROOT5\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v2\n        with:\n          name: star-sw-root5-build\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-root5-build.tar\n      - run: docker run --name star-test-data --volume /star-test-data ghcr.io/star-bnl/star-test-data\n      - run: docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-root5-build root4star -b -l -q 'bfc.C(10, \"P2018a,Sti,hitreuseon,btof,mtd,PicoVtxDefault,BEmcChkStat,QAalltrigs,OSpaceZ2,OGridLeak3D,-hitfilt\", \"/star-test-data/quick/st_physics_19136012_raw_1000016.daq\")'\n"
+    },
+    "2021-08-21T14-31-34Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 8,
+      "steps_per_job": {
+        "ROOT5": 3,
+        "ROOT6": 2,
+        "ROOT5_test_job87": 4,
+        "ROOT5_test_job88": 4,
+        "ROOT5_test_job89": 4,
+        "ROOT5_test_job101": 4,
+        "ROOT5_test_job102": 4,
+        "ROOT5_test_job103": 4
+      },
+      "line_count": 123,
+      "workflow": "name: CI Build\n\non: [pull_request]\n\njobs:\n  ROOT5:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v1\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/star-bnl/star-sw-root5-base@sha256:4bed8a8b729fa9e6c8e92b2bdecd6b73869e67a07bfbde969936f921123d4c3e\n          push: false\n          tags: ghcr.io/star-bnl/star-sw-root5-build\n          file: docker/Dockerfile.root5\n          outputs: type=docker,dest=/tmp/star-sw-root5-build.tar\n\n      - name: Save built image for test jobs\n        uses: actions/upload-artifact@v2\n        with:\n          name: star-sw-root5-build\n          path: /tmp/star-sw-root5-build.tar\n\n  ROOT6:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v1\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/star-bnl/star-sw-root6-base@sha256:107736be0e111ef9eaac37281f9bcad95769ab3ce75a4c9624d8cea98b1eb966\n          push: false\n          tags: ghcr.io/star-bnl/star-sw-root6-build\n          file: docker/Dockerfile.root6\n\n  ROOT5_test_job87:\n    runs-on: ubuntu-latest\n    needs: ROOT5\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v2\n        with:\n          name: star-sw-root5-build\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-root5-build.tar\n      - run: docker run --name star-test-data --volume /star-test-data ghcr.io/star-bnl/star-test-data\n      - run: docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-root5-build root4star -b -l -q 'bfc.C(10, \"pp2017,btof,mtd,pp2pp,fmsDat,fmsPoint,fpsDat,BEmcChkStat,QAalltrigs,CorrX,OSpaceZ2,OGridLeak3D,-hitfilt\", \"/star-test-data/quick/st_physics_18069061_raw_2000021.daq\")'\n\n  ROOT5_test_job88:\n    runs-on: ubuntu-latest\n    needs: ROOT5\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v2\n        with:\n          name: star-sw-root5-build\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-root5-build.tar\n      - run: docker run --name star-test-data --volume /star-test-data ghcr.io/star-bnl/star-test-data\n      - run: docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-root5-build root4star -b -l -q 'bfc.C(10, \"pp2017,StiCA,btof,mtd,pp2pp,fmsDat,fmsPoint,fpsDat,BEmcChkStat,QAalltrigs,CorrX,OSpaceZ2,OGridLeak3D,-hitfilt\", \"/star-test-data/quick/st_physics_18069061_raw_2000021.daq\")'\n\n  ROOT5_test_job89:\n    runs-on: ubuntu-latest\n    needs: ROOT5\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v2\n        with:\n          name: star-sw-root5-build\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-root5-build.tar\n      - run: docker run --name star-test-data --volume /star-test-data ghcr.io/star-bnl/star-test-data\n      - run: docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-root5-build root4star -b -l -q 'bfc.C(10, \"pp2017,Sti,hitreuseon,btof,mtd,pp2pp,fmsDat,fmsPoint,fpsDat,BEmcChkStat,QAalltrigs,CorrX,OSpaceZ2,OGridLeak3D,-hitfilt\", \"/star-test-data/quick/st_physics_18069061_raw_2000021.daq\")'\n\n  ROOT5_test_job101:\n    runs-on: ubuntu-latest\n    needs: ROOT5\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v2\n        with:\n          name: star-sw-root5-build\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-root5-build.tar\n      - run: docker run --name star-test-data --volume /star-test-data ghcr.io/star-bnl/star-test-data\n      - run: docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-root5-build root4star -b -l -q 'bfc.C(10, \"P2018a,Sti,btof,mtd,PicoVtxDefault,BEmcChkStat,QAalltrigs,OSpaceZ2,OGridLeak3D,-hitfilt\", \"/star-test-data/quick/st_physics_19136012_raw_1000016.daq\")'\n\n  ROOT5_test_job102:\n    runs-on: ubuntu-latest\n    needs: ROOT5\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v2\n        with:\n          name: star-sw-root5-build\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-root5-build.tar\n      - run: docker run --name star-test-data --volume /star-test-data ghcr.io/star-bnl/star-test-data\n      - run: docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-root5-build root4star -b -l -q 'bfc.C(10, \"P2018a,StiCA,btof,mtd,PicoVtxDefault,BEmcChkStat,QAalltrigs,OSpaceZ2,OGridLeak3D,-hitfilt\", \"/star-test-data/quick/st_physics_19136012_raw_1000016.daq\")'\n\n  ROOT5_test_job103:\n    runs-on: ubuntu-latest\n    needs: ROOT5\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v2\n        with:\n          name: star-sw-root5-build\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-root5-build.tar\n      - run: docker run --name star-test-data --volume /star-test-data ghcr.io/star-bnl/star-test-data\n      - run: docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-root5-build root4star -b -l -q 'bfc.C(10, \"P2018a,Sti,hitreuseon,btof,mtd,PicoVtxDefault,BEmcChkStat,QAalltrigs,OSpaceZ2,OGridLeak3D,-hitfilt\", \"/star-test-data/quick/st_physics_19136012_raw_1000016.daq\")'\n"
+    },
+    "2021-08-23T14-58-04Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 4,
+      "steps_per_job": {
+        "ROOT5": 3,
+        "ROOT6": 3,
+        "ROOT5_test_setup": 2,
+        "ROOT5_test": 4
+      },
+      "line_count": 75,
+      "workflow": "name: CI Build\n\non: [pull_request]\n\njobs:\n  ROOT5:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v1\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/star-bnl/star-sw-root5-base@sha256:4bed8a8b729fa9e6c8e92b2bdecd6b73869e67a07bfbde969936f921123d4c3e\n          push: false\n          tags: ghcr.io/star-bnl/star-sw-root5-build\n          file: docker/Dockerfile.root5\n          outputs: type=docker,dest=/tmp/star-sw-root5-build.tar\n\n      - name: Save built image for test jobs\n        uses: actions/upload-artifact@v2\n        with:\n          name: star-sw-root5-build\n          path: /tmp/star-sw-root5-build.tar\n\n  ROOT6:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v1\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/star-bnl/star-sw-root6-base@sha256:107736be0e111ef9eaac37281f9bcad95769ab3ce75a4c9624d8cea98b1eb966\n          push: false\n          tags: ghcr.io/star-bnl/star-sw-root6-build\n          file: docker/Dockerfile.root6\n          outputs: type=docker,dest=/tmp/star-sw-root6-build.tar\n\n      - name: Save built image for test jobs\n        uses: actions/upload-artifact@v2\n        with:\n          name: star-sw-root6-build\n          path: /tmp/star-sw-root6-build.tar\n\n  ROOT5_test_setup:\n    runs-on: ubuntu-latest\n    needs: ROOT5\n    outputs:\n      matrix: ${{ steps.set-matrix.outputs.matrix }}\n    steps:\n      - uses: actions/checkout@v2\n      - run: echo \"::set-output name=matrix::\" $(cat test/joblist_ci.json)\n        id: set-matrix\n\n  ROOT5_test:\n    runs-on: ubuntu-latest\n    needs: ROOT5_test_setup\n    strategy:\n      matrix:\n        test_id: ${{ fromJSON(needs.ROOT5_test_setup.outputs.matrix) }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v2\n        with:\n          name: star-sw-root5-build\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-root5-build.tar\n      - run: docker run --name star-test-data --volume /star-test-data ghcr.io/star-bnl/star-test-data\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-root5-build star-sw/test/executest.py -c ${{ matrix.test_id }})\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-root5-build sh -c \"$TEST_CMD\"\n"
+    },
+    "2021-08-30T14-44-34Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 4,
+      "steps_per_job": {
+        "ROOT5": 3,
+        "ROOT6": 3,
+        "ROOT5_test_setup": 2,
+        "ROOT5_test": 4
+      },
+      "line_count": 79,
+      "workflow": "name: CI Build\n\non: [pull_request]\n\njobs:\n  ROOT5:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v1\n        with:\n          driver-opts: env.BUILDKIT_STEP_LOG_MAX_SIZE=10000000\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/star-bnl/star-sw-root5-base@sha256:4bed8a8b729fa9e6c8e92b2bdecd6b73869e67a07bfbde969936f921123d4c3e\n          push: false\n          tags: ghcr.io/star-bnl/star-sw-root5-build\n          file: docker/Dockerfile.root5\n          outputs: type=docker,dest=/tmp/star-sw-root5-build.tar\n\n      - name: Save built image for test jobs\n        uses: actions/upload-artifact@v2\n        with:\n          name: star-sw-root5-build\n          path: /tmp/star-sw-root5-build.tar\n\n  ROOT6:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v1\n        with:\n          driver-opts: env.BUILDKIT_STEP_LOG_MAX_SIZE=10000000\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/star-bnl/star-sw-root6-base@sha256:107736be0e111ef9eaac37281f9bcad95769ab3ce75a4c9624d8cea98b1eb966\n          push: false\n          tags: ghcr.io/star-bnl/star-sw-root6-build\n          file: docker/Dockerfile.root6\n          outputs: type=docker,dest=/tmp/star-sw-root6-build.tar\n\n      - name: Save built image for test jobs\n        uses: actions/upload-artifact@v2\n        with:\n          name: star-sw-root6-build\n          path: /tmp/star-sw-root6-build.tar\n\n  ROOT5_test_setup:\n    runs-on: ubuntu-latest\n    needs: ROOT5\n    outputs:\n      matrix: ${{ steps.set-matrix.outputs.matrix }}\n    steps:\n      - uses: actions/checkout@v2\n      - run: echo \"::set-output name=matrix::\" $(cat tests/joblist_ci.json)\n        id: set-matrix\n\n  ROOT5_test:\n    runs-on: ubuntu-latest\n    needs: ROOT5_test_setup\n    strategy:\n      matrix:\n        test_id: ${{ fromJSON(needs.ROOT5_test_setup.outputs.matrix) }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v2\n        with:\n          name: star-sw-root5-build\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-root5-build.tar\n      - run: docker run --name star-test-data --volume /star-test-data ghcr.io/star-bnl/star-test-data\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-root5-build star-sw/tests/executest.py -c ${{ matrix.test_id }})\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-root5-build sh -c \"$TEST_CMD\"\n"
+    },
+    "2021-09-23T13-24-35Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 4,
+      "steps_per_job": {
+        "ROOT5": 3,
+        "ROOT6": 3,
+        "ROOT5_test_setup": 2,
+        "ROOT5_test": 4
+      },
+      "line_count": 79,
+      "workflow": "name: CI Build\n\non: [pull_request]\n\njobs:\n  ROOT5:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v1\n        with:\n          driver-opts: env.BUILDKIT_STEP_LOG_MAX_SIZE=10000000\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/star-bnl/star-sw-root5-base@sha256:4bed8a8b729fa9e6c8e92b2bdecd6b73869e67a07bfbde969936f921123d4c3e\n          push: false\n          tags: ghcr.io/star-bnl/star-sw-root5-build\n          file: docker/Dockerfile.root5\n          outputs: type=docker,dest=/tmp/star-sw-root5-build.tar\n\n      - name: Save built image for test jobs\n        uses: actions/upload-artifact@v2\n        with:\n          name: star-sw-root5-build\n          path: /tmp/star-sw-root5-build.tar\n\n  ROOT6:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v1\n        with:\n          driver-opts: env.BUILDKIT_STEP_LOG_MAX_SIZE=10000000\n\n      - name: Build with Docker\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/star-bnl/star-sw-root6-base@sha256:107736be0e111ef9eaac37281f9bcad95769ab3ce75a4c9624d8cea98b1eb966\n          push: false\n          tags: ghcr.io/star-bnl/star-sw-root6-build\n          file: docker/Dockerfile.root6\n          outputs: type=docker,dest=/tmp/star-sw-root6-build.tar\n\n      - name: Save built image for test jobs\n        uses: actions/upload-artifact@v2\n        with:\n          name: star-sw-root6-build\n          path: /tmp/star-sw-root6-build.tar\n\n  ROOT5_test_setup:\n    runs-on: ubuntu-latest\n    needs: ROOT5\n    outputs:\n      matrix: ${{ steps.set-matrix.outputs.matrix }}\n    steps:\n      - uses: actions/checkout@v2\n      - run: echo \"::set-output name=matrix::\" $(cat tests/joblist_ci.json)\n        id: set-matrix\n\n  ROOT5_test:\n    runs-on: ubuntu-latest\n    needs: ROOT5_test_setup\n    strategy:\n      matrix:\n        test_id: ${{ fromJSON(needs.ROOT5_test_setup.outputs.matrix) }}\n    steps:\n      - name: Download artifact\n        uses: actions/download-artifact@v2\n        with:\n          name: star-sw-root5-build\n          path: /tmp\n\n      - run: docker load --input /tmp/star-sw-root5-build.tar\n      - run: docker run --name star-test-data --volume /star ghcr.io/star-bnl/star-test-data:v2\n      - run: |\n             TEST_CMD=$(docker run --rm ghcr.io/star-bnl/star-sw-root5-build star-sw/tests/executest.py -c ${{ matrix.test_id }})\n             docker run --volumes-from star-test-data ghcr.io/star-bnl/star-sw-root5-build sh -c \"$TEST_CMD\"\n"
+    }
+  }
+}

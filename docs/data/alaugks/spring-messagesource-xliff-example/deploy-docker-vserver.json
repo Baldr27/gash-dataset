@@ -1,0 +1,276 @@
+{
+  "deploy-docker-vserver": {
+    "2023-08-11T17-15-37Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 36,
+          "endColumn": 14
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2023-08-03T19-59-46Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 36,
+          "endColumn": 14
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2023-08-11T18-05-53Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 36,
+          "endColumn": 14
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2023-08-13T21-07-04Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 39,
+          "endColumn": 14
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2023-08-17T19-56-03Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 43,
+          "endColumn": 14
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2023-08-17T20-09-28Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 43,
+          "endColumn": 15
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-02-27T11-56-16Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 39,
+          "endColumn": 14
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-09-29T19-19-37Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 39,
+          "endColumn": 14
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-09-29T19-55-20Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 33,
+          "endColumn": 14
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-10-01T21-32-59Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 33,
+          "endColumn": 14
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2023-08-11T17-15-37Z": {
+      "triggers": {
+        "workflow_dispatch": null
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 4
+      },
+      "line_count": 36,
+      "workflow": "name: Run Docker Image\nrun-name: Run Docker Image [${{github.ref_name}}]\non:\n  workflow_dispatch:\njobs:\n  build:\n    name: Build Image and Push Image\n    runs-on: ubuntu-latest\n    steps:\n      - name: Evaluate Docker Tag\n        run: |\n          if [[ '${{github.ref_type}}' == 'tag' ]]; then\n            echo \"DOCKER_TAG=${{github.ref_name}}\" >> $GITHUB_ENV\n          else\n            echo \"DOCKER_TAG=latest\" >> $GITHUB_ENV\n          fi\n          \n      - name: Run Docker Image\n        uses: appleboy/ssh-action@v1.0.0\n        with:\n          host: ${{secrets.AWS_SSH_HOST}}\n          username: ${{secrets.AWS_SSH_USERNAME}}\n          key: ${{secrets.SSH_PRIVATE_KEY}}\n          port: 22\n          script: |\n            stop $(docker container ls  | grep 'alaugks/spring-boot-xliff-example' | awk '{print $1}')\n            docker run -it -d -p 8001:8080 ${{vars.DOCKER_USERNAME}}/${{vars.DOCKER_REPOSITORY}}:${{env.DOCKER_TAG}}\n      - name: Wait for Docker Startup\n        uses: jakejarvis/wait-action@master\n        with:\n          time: '20s'\n      - name: Check Website available\n        run: |\n          if ! curl --output /dev/null --silent --head --fail \"http://spring-boot-xliff-example.alaugks.de/en/home\"; then\n            exit 1\n          fi\n"
+    },
+    "2023-08-03T19-59-46Z": {
+      "triggers": {
+        "workflow_dispatch": null
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 4
+      },
+      "line_count": 36,
+      "workflow": "name: Run Docker Image\nrun-name: Run Docker Image [${{github.ref_name}}]\non:\n  workflow_dispatch:\njobs:\n  build:\n    name: Build Image and Push Image\n    runs-on: ubuntu-latest\n    steps:\n      - name: Evaluate Docker Tag\n        run: |\n          if [[ '${{github.ref_type}}' == 'tag' ]]; then\n            echo \"DOCKER_TAG=${{github.ref_name}}\" >> $GITHUB_ENV\n          else\n            echo \"DOCKER_TAG=latest\" >> $GITHUB_ENV\n          fi\n          \n      - name: Run Docker Image\n        uses: appleboy/ssh-action@v1.0.0\n        with:\n          host: ${{secrets.AWS_SSH_HOST}}\n          username: ${{secrets.AWS_SSH_USERNAME}}\n          key: ${{secrets.SSH_PRIVATE_KEY}}\n          port: 22\n          script: |\n            docker stop $(docker ps -aq)\n            docker run -it -d -p 80:8080 ${{vars.DOCKER_USERNAME}}/${{vars.DOCKER_REPOSITORY}}:${{env.DOCKER_TAG}}\n      - name: Wait for Docker Startup\n        uses: jakejarvis/wait-action@master\n        with:\n          time: '30s'\n      - name: Check Website available\n        run: |\n          if ! curl --output /dev/null --silent --head --fail \"http://spring-boot-xliff-example.alaugks.de/en/home\"; then\n            exit 1\n          fi\n"
+    },
+    "2023-08-11T18-05-53Z": {
+      "triggers": {
+        "workflow_dispatch": null
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 4
+      },
+      "line_count": 36,
+      "workflow": "name: Run Docker Image\nrun-name: Run Docker Image [${{github.ref_name}}]\non:\n  workflow_dispatch:\njobs:\n  build:\n    name: Build Image and Push Image\n    runs-on: ubuntu-latest\n    steps:\n      - name: Evaluate Docker Tag\n        run: |\n          if [[ '${{github.ref_type}}' == 'tag' ]]; then\n            echo \"DOCKER_TAG=${{github.ref_name}}\" >> $GITHUB_ENV\n          else\n            echo \"DOCKER_TAG=latest\" >> $GITHUB_ENV\n          fi\n          \n      - name: Run Docker Image\n        uses: appleboy/ssh-action@v1.0.0\n        with:\n          host: ${{secrets.AWS_SSH_HOST}}\n          username: ${{secrets.AWS_SSH_USERNAME}}\n          key: ${{secrets.SSH_PRIVATE_KEY}}\n          port: 22\n          script: |\n            stop $(docker container ls  | grep 'alaugks/spring-boot-xliff-example' | awk '{print $1}')\n            docker run -it -d -p 8001:8080 ${{vars.DOCKER_USERNAME}}/${{vars.DOCKER_REPOSITORY}}:${{env.DOCKER_TAG}}\n      - name: Wait for Docker Startup\n        uses: jakejarvis/wait-action@master\n        with:\n          time: '20s'\n      - name: Check Website available\n        run: |\n          if ! curl --output /dev/null --silent --head --fail \"${{vars.MONITORING_URI}\"; then\n            exit 1\n          fi\n"
+    },
+    "2023-08-13T21-07-04Z": {
+      "triggers": {
+        "workflow_dispatch": null
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 4
+      },
+      "line_count": 39,
+      "workflow": "name: Run Docker Image\nrun-name: Run Docker Image [${{github.ref_name}}]\non:\n  workflow_dispatch:\njobs:\n  build:\n    name: Build Image and Push Image\n    runs-on: ubuntu-latest\n    steps:\n      - name: Evaluate Docker Tag\n        run: |\n          if [[ '${{github.ref_type}}' == 'tag' ]]; then\n            echo \"DOCKER_TAG=${{github.ref_name}}\" >> $GITHUB_ENV\n          else\n            echo \"DOCKER_TAG=latest\" >> $GITHUB_ENV\n          fi\n          \n      - name: Run Docker Image\n        uses: appleboy/ssh-action@v1.0.0\n        with:\n          host: ${{secrets.AWS_SSH_HOST}}\n          username: ${{secrets.AWS_SSH_USERNAME}}\n          key: ${{secrets.SSH_PRIVATE_KEY}}\n          port: 22\n          script: |\n            container_id=\"$(docker container ls  | grep 'alaugks/spring-boot-xliff-example' | awk '{print $1}')\"\n            if [ ! -z $container_id ]; then\n              docker stop $container_id > /dev/null\n            fi\n            docker run -it -d -p 8001:8080 ${{vars.DOCKER_USERNAME}}/${{vars.DOCKER_REPOSITORY}}:${{env.DOCKER_TAG}}\n      - name: Wait for Docker Startup\n        uses: jakejarvis/wait-action@master\n        with:\n          time: '20s'\n      - name: Check Website available\n        run: |\n          if ! curl --output /dev/null --silent --head --fail \"${{vars.MONITORING_URI}\"; then\n            exit 1\n          fi\n"
+    },
+    "2023-08-17T19-56-03Z": {
+      "triggers": {
+        "workflow_dispatch": null
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 4
+      },
+      "line_count": 43,
+      "workflow": "name: Run Docker Image\nrun-name: Run Docker Image [${{github.ref_name}}]\non:\n  workflow_dispatch:\njobs:\n  build:\n    name: Build Image and Push Image\n    runs-on: ubuntu-latest\n    steps:\n      - name: Evaluate Docker Tag\n        run: |\n          if [[ '${{github.ref_type}}' == 'tag' ]]; then\n            echo \"DOCKER_TAG=${{github.ref_name}}\" >> $GITHUB_ENV\n          else\n            echo \"DOCKER_TAG=latest\" >> $GITHUB_ENV\n          fi\n\n      - name: Run Docker Image\n        uses: appleboy/ssh-action@v1.0.0\n        with:\n          host: ${{secrets.AWS_SSH_HOST}}\n          username: ${{secrets.AWS_SSH_USERNAME}}\n          key: ${{secrets.SSH_PRIVATE_KEY}}\n          port: 22\n          script: |\n            container_id=\"$(docker container ls  | grep 'alaugks/spring-boot-xliff-example' | awk '{print $1}')\"\n            if [ ! -z $container_id ]; then\n              docker stop $container_id > /dev/null\n            fi\n            docker run \\\n              -it \\\n              -d \\\n              -p 8001:8080 \\\n              ${{vars.DOCKER_USERNAME}}/${{vars.DOCKER_REPOSITORY}}:${{env.DOCKER_TAG}}\n      - name: Wait for Docker Startup\n        uses: jakejarvis/wait-action@master\n        with:\n          time: '20s'\n      - name: Check Website available\n        run: |\n          if ! curl --output /dev/null --silent --head --fail \"${{vars.MONITORING_URI}\"; then\n            exit 1\n          fi\n"
+    },
+    "2023-08-17T20-09-28Z": {
+      "triggers": {
+        "workflow_dispatch": null
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 2
+      },
+      "line_count": 43,
+      "workflow": "name: Run Docker Image\nrun-name: Run Docker Image [${{github.ref_name}}]\non:\n  workflow_dispatch:\njobs:\n  build:\n    name: Build Image and Push Image\n    runs-on: ubuntu-latest\n    steps:\n      - name: Evaluate Docker Tag\n        run: |\n          if [[ '${{github.ref_type}}' == 'tag' ]]; then\n            echo \"DOCKER_TAG=${{github.ref_name}}\" >> $GITHUB_ENV\n          else\n            echo \"DOCKER_TAG=latest\" >> $GITHUB_ENV\n          fi\n\n      - name: Run Docker Image\n        uses: appleboy/ssh-action@v1.0.0\n        with:\n          host: ${{secrets.AWS_SSH_HOST}}\n          username: ${{secrets.AWS_SSH_USERNAME}}\n          key: ${{secrets.SSH_PRIVATE_KEY}}\n          port: 22\n          script: |\n            container_id=\"$(docker container ls  | grep 'alaugks/spring-boot-xliff-example' | awk '{print $1}')\"\n            if [ ! -z $container_id ]; then\n              docker stop $container_id > /dev/null\n            fi\n            docker run \\\n              -it \\\n              -d \\\n              -p 8001:8080 \\\n              ${{vars.DOCKER_USERNAME}}/${{vars.DOCKER_REPOSITORY}}:${{env.DOCKER_TAG}}\n#      - name: Wait for Docker Startup\n#        uses: jakejarvis/wait-action@master\n#        with:\n#          time: '20s'\n#      - name: Check Website available\n#        run: |\n#          if ! curl --output /dev/null --silent --head --fail \"${{vars.MONITORING_URI}\"; then\n#            exit 1\n#          fi\n"
+    },
+    "2024-02-27T11-56-16Z": {
+      "triggers": {
+        "workflow_dispatch": null
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 4
+      },
+      "line_count": 39,
+      "workflow": "name: Run Docker Image\nrun-name: Run Docker Image [${{github.ref_name}}]\non:\n  workflow_dispatch:\njobs:\n  build:\n    name: Build Image and Push Image\n    runs-on: ubuntu-latest\n    steps:\n      - name: Evaluate Docker Tag\n        run: |\n          if [[ '${{github.ref_type}}' == 'tag' ]]; then\n            echo \"DOCKER_TAG=${{github.ref_name}}\" >> $GITHUB_ENV\n          else\n            echo \"DOCKER_TAG=latest\" >> $GITHUB_ENV\n          fi\n          \n      - name: Run Docker Image\n        uses: appleboy/ssh-action@v1.0.0\n        with:\n          host: ${{secrets.AWS_SSH_HOST}}\n          username: ${{secrets.AWS_SSH_USERNAME}}\n          key: ${{secrets.SSH_PRIVATE_KEY}}\n          port: 22\n          script: |\n            container_id=\"$(docker container ls  | grep 'alaugks/spring-boot-xliff-example' | awk '{print $1}')\"\n            if [ ! -z $container_id ]; then\n              docker stop $container_id > /dev/null\n            fi\n            docker run -it -d -p 8001:8080 ${{vars.DOCKER_USERNAME}}/${{vars.DOCKER_REPOSITORY}}:${{env.DOCKER_TAG}}\n      - name: Wait for Docker Startup\n        uses: jakejarvis/wait-action@master\n        with:\n          time: '20s'\n      - name: Check Website available\n        run: |\n          if ! curl --output /dev/null --silent --head --fail \"${{vars.MONITORING_URI}}\"; then\n            exit 1\n          fi\n"
+    },
+    "2024-09-29T19-19-37Z": {
+      "triggers": {
+        "workflow_dispatch": null
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 4
+      },
+      "line_count": 39,
+      "workflow": "name: Run Docker Image\nrun-name: Run Docker Image [${{github.ref_name}}]\non:\n  workflow_dispatch:\njobs:\n  build:\n    name: Build Image and Push Image\n    runs-on: ubuntu-latest\n    steps:\n      - name: Evaluate Docker Tag\n        run: |\n          if [[ '${{github.ref_type}}' == 'tag' ]]; then\n            echo \"DOCKER_TAG=${{github.ref_name}}\" >> $GITHUB_ENV\n          else\n            echo \"DOCKER_TAG=latest\" >> $GITHUB_ENV\n          fi\n\n      - name: Run Docker Image\n        uses: appleboy/ssh-action@v1.0.0\n        with:\n          host: ${{secrets.AWS_SSH_HOST}}\n          username: ${{secrets.AWS_SSH_USERNAME}}\n          key: ${{secrets.SSH_PRIVATE_KEY}}\n          port: 22\n          script: |\n            container_id=\"$(docker container ls  | grep 'alaugks/spring-boot-xliff-example' | awk '{print $1}')\"\n            if [ ! -z $container_id ]; then\n              docker stop $container_id > /dev/null\n            fi\n            docker run -it -d -p 8001:8080 ${{vars.DOCKER_USERNAME}}/${{vars.DOCKER_REPOSITORY}}:${{env.DOCKER_TAG}}\n      - name: Wait for Docker Startup\n        uses: jakejarvis/wait-action@master\n        with:\n          time: '20s'\n      - name: Check Website available\n        run: |\n          if ! curl --output /dev/null --silent --head --fail \"${{vars.MONITORING_URI}}\"; then\n            exit 1\n          fi\n"
+    },
+    "2024-09-29T19-55-20Z": {
+      "triggers": {
+        "workflow_dispatch": null
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 3
+      },
+      "line_count": 33,
+      "workflow": "name: Deploy and run Docker Image\nrun-name: Deploy and run Docker Image [${{github.ref_name}}]\non:\n  workflow_dispatch:\njobs:\n  build:\n    name: Deploy and run Docker Image\n    runs-on: ubuntu-latest\n    steps:\n      - name: Run Docker Image\n        uses: appleboy/ssh-action@v1.0.0\n        with:\n          host: ${{secrets.AWS_SSH_HOST}}\n          username: ${{secrets.AWS_SSH_USERNAME}}\n          key: ${{secrets.SSH_PRIVATE_KEY}}\n          port: 22\n          script: |\n            container_id=\"$(docker container ls  | grep 'alaugks/spring-boot-xliff-example' | awk '{print $1}')\"\n            if [ ! -z $container_id ]; then\n              docker stop $container_id > /dev/null\n            fi\n            docker run -it -d -p 8001:8080 ${{vars.DOCKER_USERNAME}}/${{vars.DOCKER_REPOSITORY}}:${{github.ref_name}}\n\n      - name: Wait for Docker Startup\n        uses: jakejarvis/wait-action@master\n        with:\n          time: '20s'\n\n      - name: Check Website available\n        run: |\n          if ! curl --output /dev/null --silent --head --fail \"${{vars.MONITORING_URI}}\"; then\n            exit 1\n          fi\n"
+    },
+    "2024-10-01T21-32-59Z": {
+      "triggers": {
+        "workflow_dispatch": null
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 3
+      },
+      "line_count": 33,
+      "workflow": "name: Deploy and run Docker Image\nrun-name: Deploy and run Docker Image [${{github.ref_name}}]\non:\n  workflow_dispatch:\njobs:\n  build:\n    name: Deploy and run Docker Image\n    runs-on: ubuntu-latest\n    steps:\n      - name: Run Docker Image\n        uses: appleboy/ssh-action@v1.0.0\n        with:\n          host: ${{secrets.AWS_SSH_HOST}}\n          username: ${{secrets.AWS_SSH_USERNAME}}\n          key: ${{secrets.SSH_PRIVATE_KEY}}\n          port: 22\n          script: |\n            container_id=\"$(docker container ls  | grep '${{vars.DOCKER_USERNAME}}/${{vars.DOCKER_REPOSITORY}}' | awk '{print $1}')\"\n            if [ ! -z $container_id ]; then\n              docker stop $container_id > /dev/null\n            fi\n            docker run -it -d -p 8001:8080 ${{vars.DOCKER_USERNAME}}/${{vars.DOCKER_REPOSITORY}}:${{github.ref_name}}\n\n      - name: Wait for Docker Startup\n        uses: jakejarvis/wait-action@master\n        with:\n          time: '20s'\n\n      - name: Check Website available\n        run: |\n          if ! curl --output /dev/null --silent --head --fail \"${{vars.MONITORING_URI}}\"; then\n            exit 1\n          fi\n"
+    }
+  }
+}

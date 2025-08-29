@@ -1,0 +1,157 @@
+{
+  "release-java-module": {
+    "2025-01-27T12-25-52Z": [],
+    "2025-01-29T13-04-05Z": [],
+    "2025-01-31T12-06-50Z": [],
+    "2025-01-31T12-09-19Z": [],
+    "2025-01-31T12-11-58Z": []
+  },
+  "metadata": {
+    "2025-01-27T12-25-52Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "do-containerize": {
+              "description": "Should CI flow create a container image?",
+              "type": "boolean",
+              "default": false
+            },
+            "container-name": {
+              "description": "Alternative name for the container-image, otherwise \\$github.event.repository.name",
+              "type": "string",
+              "default": "${{ github.event.repository.name }}"
+            },
+            "registry": {
+              "description": "Container registry to be used, e.g. ghcr.io, docker.io",
+              "type": "string",
+              "default": "ghcr.io"
+            },
+            "folder": {
+              "description": "Folder of the software project to be released in the repo.",
+              "type": "string",
+              "default": "./"
+            },
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": true
+            },
+            "java-version": {
+              "description": "This is the version of Java used for release.",
+              "type": "string",
+              "default": "8"
+            }
+          },
+          "outputs": {
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "value": "${{jobs.build.outputs.container-image}}"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "release": 5
+      },
+      "line_count": 99,
+      "workflow": "name: Release module\nrun-name: Release ${{ inputs.release-version }}\non:\n  workflow_call:\n    inputs:\n      do-containerize:\n        description: 'Should CI flow create a container image?'\n        type: boolean\n        default: false\n      container-name:\n        description: 'Alternative name for the container-image, otherwise \\$github.event.repository.name'\n        type: string\n        default: ${{ github.event.repository.name }}\n      registry:\n        description: 'Container registry to be used, e.g. ghcr.io, docker.io'\n        type: string\n        default: 'ghcr.io'\n      folder:\n        description: 'Folder of the software project to be released in the repo.'\n        type: string\n        default: './'\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: true\n      java-version:\n        description: 'This is the version of Java used for release.'\n        type: string\n        default: '8'\n    outputs:\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        value: ${{jobs.build.outputs.container-image}}\n\njobs:\n  release:\n    name: release, containerize ... repeat\n    runs-on: ubuntu-latest\n    outputs:\n      container-image: ${{steps.container-name-and-githash.outputs.container-image}}\n\n    strategy:\n      matrix:\n        java-version:\n          - ${{inputs.java-version}}\n\n    steps:\n      - name: checkout repository\n        uses: actions/checkout@v4\n        with:\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: set up JDK\n        uses: actions/setup-java@v4\n        with:\n          distribution: 'temurin'\n          java-version: ${{ matrix.java-version }}\n          java-package: 'jdk'\n          cache: 'maven'\n\n      - name: Maven release '${{ inputs.release-version }}'\n        shell: bash\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          cd $GITHUB_WORKSPACE/${{inputs.folder}}\n          mvn --batch-mode --no-transfer-progress \\\n            -P repo-github \\\n            release:prepare release:perform \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DreleaseVersion=${{ inputs.release-version }} \\\n            -Darguments=\"-Dmaven.javadoc.skip=true\" \\\n            -Darguments=\"-DAWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }} -DAWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}\" \\\n            --settings $GITHUB_WORKSPACE/.github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n\n      - name: prepare container image name\n        if: inputs.do-containerize == true\n        id: container-name-and-githash\n        shell: bash\n        run: |\n          GITHUB_SHA_SHORT=$(git rev-parse --short HEAD)\n          echo \"github_sha_short=$GITHUB_SHA_SHORT\" >> $GITHUB_OUTPUT\n          echo \"container-image=${{inputs.registry}}/${{github.repository_owner}}/${{ inputs.container-name }}:${{ inputs.release-version }}\" >> $GITHUB_OUTPUT\n\n      - name: build & push container image '${{ steps.container-name-and-githash.outputs.container-image }}'\n        if: inputs.do-containerize == true\n        uses: mr-smithers-excellent/docker-build-push@v6\n        with:\n          image: ${{ inputs.container-name }}\n          addLatest: true\n          tags: ${{ inputs.release-version }}, latest\n          registry: ${{ inputs.registry }}\n          username: ${{ secrets.GHCR_USERNAME }}\n          password: ${{ secrets.GHCR_PASSWORD }}\n"
+    },
+    "2025-01-29T13-04-05Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": false
+            },
+            "java-version": {
+              "description": "This is the version of Java used for release.",
+              "type": "string",
+              "default": "8"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "Release": 0
+      },
+      "line_count": 22,
+      "workflow": "name: Release module\nrun-name: Release ${{ inputs.release-version }}\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: false\n      java-version:\n        description: 'This is the version of Java used for release.'\n        type: string\n        default: '8'\n\njobs:\n  Release:\n    uses: minova-afis/aero.minova.os.github.workflows/.github/workflows/release-module.yml@main\n    secrets: inherit\n    with:\n      do-containerize: false\n      java-version: ${{ github.event.inputs.java-version }}\n      release-version: ${{ github.event.inputs.release-version }}\n"
+    },
+    "2025-01-31T12-06-50Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string",
+              "required": false
+            },
+            "java-version": {
+              "description": "This is the version of Java used for release.",
+              "type": "string",
+              "default": "8"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "Release": 0
+      },
+      "line_count": 22,
+      "workflow": "name: Release module\nrun-name: Release ${{ inputs.release-version }}\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n        required: false\n      java-version:\n        description: 'This is the version of Java used for release.'\n        type: string\n        default: '8'\n\njobs:\n  Release:\n    uses: minova-afis/aero.minova.os.github.workflows/.github/workflows/release-java.yml@main\n    secrets: inherit\n    with:\n      do-containerize: false\n      java-version: ${{ github.event.inputs.java-version }}\n      release-version: ${{ github.event.inputs.release-version }}\n"
+    },
+    "2025-01-31T12-09-19Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string"
+            },
+            "java-version": {
+              "description": "This is the version of Java used for release.",
+              "type": "string",
+              "default": "8",
+              "required": false
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "Release": 0
+      },
+      "line_count": 22,
+      "workflow": "name: Release module\nrun-name: Release ${{ inputs.release-version }}\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n      java-version:\n        description: 'This is the version of Java used for release.'\n        type: string\n        default: '8'\n        required: false\n        \njobs:\n  Release:\n    uses: minova-afis/aero.minova.os.github.workflows/.github/workflows/release-java.yml@main\n    secrets: inherit\n    with:\n      do-containerize: false\n      java-version: ${{ github.event.inputs.java-version }}\n      release-version: ${{ github.event.inputs.release-version }}\n"
+    },
+    "2025-01-31T12-11-58Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "release-version": {
+              "description": "Version string of this release",
+              "type": "string"
+            },
+            "java-version": {
+              "description": "This is the version of Java used for release.",
+              "type": "string",
+              "default": "8",
+              "required": false
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "Release": 0
+      },
+      "line_count": 22,
+      "workflow": "name: Release module\nrun-name: Release ${{ inputs.release-version }}\non:\n  workflow_call:\n    inputs:\n      release-version:\n        description: 'Version string of this release'\n        type: string\n      java-version:\n        description: 'This is the version of Java used for release.'\n        type: string\n        default: '8'\n        required: false\n        \njobs:\n  Release:\n    uses: minova-afis/aero.minova.os.github.workflows/.github/workflows/release-java.yml@main\n    secrets: inherit\n    with:\n      do-containerize: false\n      java-version: ${{ inputs.java-version }}\n      release-version: ${{ inputs.release-version }}\n"
+    }
+  }
+}

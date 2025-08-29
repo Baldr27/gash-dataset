@@ -1,0 +1,387 @@
+{
+  "codeql-analysis": {
+    "2020-11-03T00-11-55Z": [
+      {
+        "region": {
+          "startLine": 14,
+          "startColumn": 5,
+          "endLine": 45,
+          "endColumn": 47
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2020-11-03T00-28-31Z": [
+      {
+        "region": {
+          "startLine": 14,
+          "startColumn": 5,
+          "endLine": 45,
+          "endColumn": 47
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2020-11-03T00-30-20Z": [
+      {
+        "region": {
+          "startLine": 14,
+          "startColumn": 5,
+          "endLine": 40,
+          "endColumn": 47
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2020-11-03T00-31-13Z": [
+      {
+        "region": {
+          "startLine": 13,
+          "startColumn": 5,
+          "endLine": 39,
+          "endColumn": 47
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2020-11-04T00-46-01Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 37,
+          "endColumn": 47
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-08-20T04-34-41Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 37,
+          "endColumn": 47
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-12-04T02-43-16Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 37,
+          "endColumn": 47
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2023-07-22T13-26-47Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 33,
+          "endColumn": 47
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2023-10-07T01-10-13Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 33,
+          "endColumn": 47
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2023-10-12T06-21-14Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 35,
+          "endColumn": 47
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2020-11-03T00-11-55Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "master",
+            "develop"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "master"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "42 13 * * 4"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "analyze": 3
+      },
+      "line_count": 45,
+      "workflow": "name: codeql-analysis\n\non:\n  push:\n    branches: [ master, develop ]\n  pull_request:\n    # The branches below must be a subset of the branches above\n    branches: [ master ]\n  schedule:\n    - cron: '42 13 * * 4'\n\njobs:\n  analyze:\n    name: Analyze\n    runs-on: ubuntu-latest\n\n    strategy:\n      fail-fast: false\n      matrix:\n        language: [ 'python' ]\n        # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python' ]\n        # Learn more...\n        # https://docs.github.com/en/github/finding-security-vulnerabilities-and-errors-in-your-code/configuring-code-scanning#overriding-automatic-language-detection\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      # Initializes the CodeQL tools for scanning.\n      - name: Initialize CodeQL\n        uses: github/codeql-action/init@v1\n        with:\n          languages: ${{ matrix.language }}\n          # If you wish to specify custom queries, you can do so here or in a config file.\n          # By default, queries listed here will override any specified in a config file.\n          # Prefix the list here with \"+\" to use these queries and those in the config file.\n          # queries: ./path/to/local/query, your-org/your-repo/queries@main\n\n      # Autobuild attempts to build any compiled languages  (C/C++, C#, or Java).\n      # If this step fails, then you should remove it and run the build manually (see below)\n#      - name: Autobuild\n#        uses: github/codeql-action/autobuild@v1\n\n      - name: Perform CodeQL Analysis\n        uses: github/codeql-action/analyze@v1\n"
+    },
+    "2020-11-03T00-28-31Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "master"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "master"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "42 13 * * 4"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "analyze": 3
+      },
+      "line_count": 45,
+      "workflow": "name: codeql-analysis\n\non:\n  push:\n    branches: [ master ]\n  pull_request:\n    # The branches below must be a subset of the branches above\n    branches: [ master ]\n  schedule:\n    - cron: '42 13 * * 4'\n\njobs:\n  analyze:\n    name: Analyze\n    runs-on: ubuntu-latest\n\n    strategy:\n      fail-fast: false\n      matrix:\n        language: [ 'python' ]\n        # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python' ]\n        # Learn more...\n        # https://docs.github.com/en/github/finding-security-vulnerabilities-and-errors-in-your-code/configuring-code-scanning#overriding-automatic-language-detection\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      # Initializes the CodeQL tools for scanning.\n      - name: Initialize CodeQL\n        uses: github/codeql-action/init@v1\n        with:\n          languages: ${{ matrix.language }}\n          # If you wish to specify custom queries, you can do so here or in a config file.\n          # By default, queries listed here will override any specified in a config file.\n          # Prefix the list here with \"+\" to use these queries and those in the config file.\n          # queries: ./path/to/local/query, your-org/your-repo/queries@main\n\n      # Autobuild attempts to build any compiled languages  (C/C++, C#, or Java).\n      # If this step fails, then you should remove it and run the build manually (see below)\n#      - name: Autobuild\n#        uses: github/codeql-action/autobuild@v1\n\n      - name: Perform CodeQL Analysis\n        uses: github/codeql-action/analyze@v1\n"
+    },
+    "2020-11-03T00-30-20Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "master"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "master"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "42 13 * * 4"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "analyze": 3
+      },
+      "line_count": 40,
+      "workflow": "name: codeql-analysis\n\non:\n  push:\n    branches: [ master ]\n  pull_request:\n    # The branches below must be a subset of the branches above\n    branches: [ master ]\n  schedule:\n    - cron: '42 13 * * 4'\n\njobs:\n  analyze:\n    name: Analyze\n    runs-on: ubuntu-latest\n\n    strategy:\n      fail-fast: false\n      matrix:\n        language: [ 'python' ]\n        # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python' ]\n        # Learn more...\n        # https://docs.github.com/en/github/finding-security-vulnerabilities-and-errors-in-your-code/configuring-code-scanning#overriding-automatic-language-detection\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      # Initializes the CodeQL tools for scanning.\n      - name: Initialize CodeQL\n        uses: github/codeql-action/init@v1\n        with:\n          languages: ${{ matrix.language }}\n          # If you wish to specify custom queries, you can do so here or in a config file.\n          # By default, queries listed here will override any specified in a config file.\n          # Prefix the list here with \"+\" to use these queries and those in the config file.\n          # queries: ./path/to/local/query, your-org/your-repo/queries@main\n\n      - name: Perform CodeQL Analysis\n        uses: github/codeql-action/analyze@v1\n"
+    },
+    "2020-11-03T00-31-13Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "master"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "master"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "42 13 * * 4"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "analyze": 3
+      },
+      "line_count": 39,
+      "workflow": "name: codeql-analysis\n\non:\n  push:\n    branches: [ master ]\n  pull_request:\n    branches: [ master ]\n  schedule:\n    - cron: '42 13 * * 4'\n\njobs:\n  analyze:\n    name: Analyze\n    runs-on: ubuntu-latest\n\n    strategy:\n      fail-fast: false\n      matrix:\n        language: [ 'python' ]\n        # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python' ]\n        # Learn more...\n        # https://docs.github.com/en/github/finding-security-vulnerabilities-and-errors-in-your-code/configuring-code-scanning#overriding-automatic-language-detection\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      # Initializes the CodeQL tools for scanning.\n      - name: Initialize CodeQL\n        uses: github/codeql-action/init@v1\n        with:\n          languages: ${{ matrix.language }}\n          # If you wish to specify custom queries, you can do so here or in a config file.\n          # By default, queries listed here will override any specified in a config file.\n          # Prefix the list here with \"+\" to use these queries and those in the config file.\n          # queries: ./path/to/local/query, your-org/your-repo/queries@main\n\n      - name: Perform CodeQL Analysis\n        uses: github/codeql-action/analyze@v1\n"
+    },
+    "2020-11-04T00-46-01Z": {
+      "triggers": {
+        "pull_request": {
+          "branches": [
+            "master"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "42 13 * * 4"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "analyze": 3
+      },
+      "line_count": 37,
+      "workflow": "name: codeql-analysis\n\non:\n  pull_request:\n    branches: [ master ]\n  schedule:\n    - cron: '42 13 * * 4'\n\njobs:\n  analyze:\n    name: Analyze\n    runs-on: ubuntu-latest\n\n    strategy:\n      fail-fast: false\n      matrix:\n        language: [ 'python' ]\n        # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python' ]\n        # Learn more...\n        # https://docs.github.com/en/github/finding-security-vulnerabilities-and-errors-in-your-code/configuring-code-scanning#overriding-automatic-language-detection\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      # Initializes the CodeQL tools for scanning.\n      - name: Initialize CodeQL\n        uses: github/codeql-action/init@v1\n        with:\n          languages: ${{ matrix.language }}\n          # If you wish to specify custom queries, you can do so here or in a config file.\n          # By default, queries listed here will override any specified in a config file.\n          # Prefix the list here with \"+\" to use these queries and those in the config file.\n          # queries: ./path/to/local/query, your-org/your-repo/queries@main\n\n      - name: Perform CodeQL Analysis\n        uses: github/codeql-action/analyze@v1\n"
+    },
+    "2022-08-20T04-34-41Z": {
+      "triggers": {
+        "pull_request": {
+          "branches": [
+            "master"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "42 13 * * 4"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "analyze": 3
+      },
+      "line_count": 37,
+      "workflow": "name: codeql-analysis\n\non:\n  pull_request:\n    branches: [ master ]\n  schedule:\n    - cron: '42 13 * * 4'\n\njobs:\n  analyze:\n    name: Analyze\n    runs-on: ubuntu-latest\n\n    strategy:\n      fail-fast: false\n      matrix:\n        language: [ 'python' ]\n        # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python' ]\n        # Learn more...\n        # https://docs.github.com/en/github/finding-security-vulnerabilities-and-errors-in-your-code/configuring-code-scanning#overriding-automatic-language-detection\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v3\n\n      # Initializes the CodeQL tools for scanning.\n      - name: Initialize CodeQL\n        uses: github/codeql-action/init@v1\n        with:\n          languages: ${{ matrix.language }}\n          # If you wish to specify custom queries, you can do so here or in a config file.\n          # By default, queries listed here will override any specified in a config file.\n          # Prefix the list here with \"+\" to use these queries and those in the config file.\n          # queries: ./path/to/local/query, your-org/your-repo/queries@main\n\n      - name: Perform CodeQL Analysis\n        uses: github/codeql-action/analyze@v1\n"
+    },
+    "2022-12-04T02-43-16Z": {
+      "triggers": {
+        "pull_request": {
+          "branches": [
+            "master"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "42 13 * * 4"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "analyze": 3
+      },
+      "line_count": 37,
+      "workflow": "name: codeql-analysis\n\non:\n  pull_request:\n    branches: [master]\n  schedule:\n    - cron: '42 13 * * 4'\n\njobs:\n  analyze:\n    name: Analyze\n    runs-on: ubuntu-latest\n\n    strategy:\n      fail-fast: false\n      matrix:\n        language: ['python']\n        # CodeQL supports ['cpp', 'csharp', 'go', 'java', 'javascript', 'python']\n        # Learn more...\n        # https://docs.github.com/en/github/finding-security-vulnerabilities-and-errors-in-your-code/configuring-code-scanning#overriding-automatic-language-detection\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v3\n\n      # Initializes the CodeQL tools for scanning.\n      - name: Initialize CodeQL\n        uses: github/codeql-action/init@v1\n        with:\n          languages: ${{ matrix.language }}\n          # If you wish to specify custom queries, you can do so here or in a config file.\n          # By default, queries listed here will override any specified in a config file.\n          # Prefix the list here with \"+\" to use these queries and those in the config file.\n          # queries: ./path/to/local/query, your-org/your-repo/queries@main\n\n      - name: Perform CodeQL Analysis\n        uses: github/codeql-action/analyze@v1\n"
+    },
+    "2023-07-22T13-26-47Z": {
+      "triggers": {
+        "pull_request": {
+          "branches": [
+            "master"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "42 13 * * 4"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "analyze": 3
+      },
+      "line_count": 33,
+      "workflow": "name: codeql-analysis\n\non:\n  pull_request:\n    branches: [master]\n  schedule:\n    - cron: '42 13 * * 4'\n\njobs:\n  analyze:\n    name: Analyze\n    runs-on: ubuntu-latest\n\n    strategy:\n      fail-fast: false\n      matrix:\n        language: ['python']\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v3\n\n      - name: Initialize CodeQL\n        uses: github/codeql-action/init@v1\n        with:\n          languages: ${{ matrix.language }}\n          # If you wish to specify custom queries, you can do so here or in a config file.\n          # By default, queries listed here will override any specified in a config file.\n          # Prefix the list here with \"+\" to use these queries and those in the config file.\n          # queries: ./path/to/local/query, your-org/your-repo/queries@main\n\n      - name: Perform CodeQL Analysis\n        uses: github/codeql-action/analyze@v1\n"
+    },
+    "2023-10-07T01-10-13Z": {
+      "triggers": {
+        "pull_request": {
+          "branches": [
+            "master"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "42 13 * * 4"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "analyze": 3
+      },
+      "line_count": 33,
+      "workflow": "name: codeql-analysis\n\non:\n  pull_request:\n    branches: [master]\n  schedule:\n    - cron: '42 13 * * 4'\n\njobs:\n  analyze:\n    name: Analyze\n    runs-on: ubuntu-latest\n\n    strategy:\n      fail-fast: false\n      matrix:\n        language: ['python']\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Initialize CodeQL\n        uses: github/codeql-action/init@v1\n        with:\n          languages: ${{ matrix.language }}\n          # If you wish to specify custom queries, you can do so here or in a config file.\n          # By default, queries listed here will override any specified in a config file.\n          # Prefix the list here with \"+\" to use these queries and those in the config file.\n          # queries: ./path/to/local/query, your-org/your-repo/queries@main\n\n      - name: Perform CodeQL Analysis\n        uses: github/codeql-action/analyze@v1\n"
+    },
+    "2023-10-12T06-21-14Z": {
+      "triggers": {
+        "pull_request": {
+          "branches": [
+            "master"
+          ]
+        },
+        "schedule": [
+          {
+            "cron": "42 13 * * 4"
+          }
+        ]
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "analyze": 3
+      },
+      "line_count": 35,
+      "workflow": "name: codeql-analysis\n\non:\n  pull_request:\n    branches: [master]\n  schedule:\n    - cron: '42 13 * * 4'\n\njobs:\n  analyze:\n    name: Analyze\n    runs-on: ubuntu-latest\n\n    strategy:\n      fail-fast: false\n      matrix:\n        language: ['python']\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n        with:\n          fetch-depth: 1\n\n      - name: Initialize CodeQL\n        uses: github/codeql-action/init@v1\n        with:\n          languages: ${{ matrix.language }}\n          # If you wish to specify custom queries, you can do so here or in a config file.\n          # By default, queries listed here will override any specified in a config file.\n          # Prefix the list here with \"+\" to use these queries and those in the config file.\n          # queries: ./path/to/local/query, your-org/your-repo/queries@main\n\n      - name: Perform CodeQL Analysis\n        uses: github/codeql-action/analyze@v1\n"
+    }
+  }
+}

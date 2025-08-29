@@ -1,0 +1,482 @@
+{
+  "general-linting": {
+    "2024-05-14T15-38-06Z": [
+      {
+        "region": {
+          "startLine": 24,
+          "startColumn": 5,
+          "endLine": 74,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 75,
+          "startColumn": 5,
+          "endLine": 85,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 86,
+          "startColumn": 5,
+          "endLine": 93,
+          "endColumn": 52
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-05-15T11-28-52Z": [
+      {
+        "region": {
+          "startLine": 24,
+          "startColumn": 5,
+          "endLine": 74,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 75,
+          "startColumn": 5,
+          "endLine": 85,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 86,
+          "startColumn": 5,
+          "endLine": 93,
+          "endColumn": 52
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-05-22T15-13-12Z": [
+      {
+        "region": {
+          "startLine": 24,
+          "startColumn": 5,
+          "endLine": 73,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 74,
+          "startColumn": 5,
+          "endLine": 84,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 85,
+          "startColumn": 5,
+          "endLine": 92,
+          "endColumn": 52
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-05-23T12-55-31Z": [
+      {
+        "region": {
+          "startLine": 24,
+          "startColumn": 5,
+          "endLine": 74,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 75,
+          "startColumn": 5,
+          "endLine": 85,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 86,
+          "startColumn": 5,
+          "endLine": 93,
+          "endColumn": 52
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-06-20T13-21-01Z": [
+      {
+        "region": {
+          "startLine": 24,
+          "startColumn": 5,
+          "endLine": 74,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 75,
+          "startColumn": 5,
+          "endLine": 85,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 86,
+          "startColumn": 5,
+          "endLine": 93,
+          "endColumn": 52
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-07-01T13-05-59Z": [
+      {
+        "region": {
+          "startLine": 24,
+          "startColumn": 5,
+          "endLine": 74,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 75,
+          "startColumn": 5,
+          "endLine": 85,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 86,
+          "startColumn": 5,
+          "endLine": 93,
+          "endColumn": 52
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-10-16T04-39-00Z": [
+      {
+        "region": {
+          "startLine": 24,
+          "startColumn": 5,
+          "endLine": 74,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 75,
+          "startColumn": 5,
+          "endLine": 85,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 86,
+          "startColumn": 5,
+          "endLine": 96,
+          "endColumn": 32
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2024-05-14T15-38-06Z": {
+      "triggers": {
+        "pull_request": {
+          "types": [
+            "opened",
+            "synchronize",
+            "edited"
+          ]
+        },
+        "merge_group": {
+          "types": [
+            "checks_requested"
+          ]
+        }
+      },
+      "num_jobs": 3,
+      "steps_per_job": {
+        "code-linting": 11,
+        "markdown-link-check": 2,
+        "json-yaml-validate": 2
+      },
+      "line_count": 93,
+      "workflow": "name: General Linting\n\nenv:\n  PIP_DEFAULT_TIMEOUT: 100\n\non:\n  pull_request:\n    types: [opened, synchronize, edited]\n  # push:\n  #   branches:\n  #     - \"feature/*\"\n  #     - \"hotfix/*\"\n  #     - \"release/*\"\n  merge_group:\n    types: [checks_requested]\n\n# Cancel previous runs that are not yet completed.\nconcurrency:\n  group: ${{ github.event_name }}-${{ github.repository }}-${{ github.ref }}\n  cancel-in-progress: true\n\njobs:\n  code-linting:\n    name: General Code Linting\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout Code\n        uses: actions/checkout@v4.1.1 # actions/checkout v3.0.2\n        with:\n          ref: ${{ github.event.pull_request.head.ref || github.ref }}\n          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}\n          fetch-depth: 20\n          token: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: Fetch base branch\n        run: git fetch --no-tags --depth=20 origin ${{ github.base_ref }}\n\n      - name: Setup Python 3.9\n        uses: actions/setup-python@v4\n        with:\n          python-version: \"3.9\"\n          architecture: x64\n\n      - name: Get changed files in openbb_platform for PR\n        if: github.event_name == 'pull_request'\n        run: |\n          # \"Checking PR diff\"\n          echo \"platform_files=$(git diff --diff-filter=d --name-only origin/${{ github.base_ref }}...${{ github.head_ref }} | grep 'openbb_platform/.*\\.py$' | grep -v 'openbb_platform/openbb/package' | grep -v 'integration' | grep -v 'tests' | xargs)\" >> $GITHUB_ENV\n          echo $platform_files\n\n      - uses: actions/cache@v3\n        with:\n          path: ~/.cache/pip\n          key: ${{ runner.os }}-linting-${{ hashFiles('**/poetry.lock') }}\n          restore-keys: ${{ runner.os }}-linting-${{ hashFiles('**/poetry.lock') }}\n\n      - run: |\n          pip install openbb-devtools\n          pip install types-pytz types-requests types-termcolor types-tabulate types-PyYAML types-python-dateutil types-setuptools types-six\n      - run: bandit -x ./tests -r . || true\n      - run: black --diff --check .\n      - run: codespell --ignore-words=.codespell.ignore --skip=\"$(tr '\\n' ',' < .codespell.skip | sed 's/,$//')\" --quiet-level=2\n      - run: ruff .\n      - run: |\n          # Run linters for openbb_platform\n          if [ -n \"${{ env.platform_files }}\" ]; then\n            pylint ${{ env.platform_files }}\n            mypy ${{ env.platform_files }}  --ignore-missing-imports  --scripts-are-modules --check-untyped-defs\n            pydocstyle ${{ env.platform_files }}\n          else\n            echo \"No Python files changed in openbb_platform\"\n          fi\n\n  markdown-link-check:\n    name: Markdown Linting\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v3\n        name: Check out the code\n      - name: Lint Code Base\n        uses: docker://avtodev/markdown-lint:v1\n        with:\n          args: \"./*.md ./changelogs/*.md ./openbb_terminal/**/*.md ./discordbot/**/*.md\"\n\n  json-yaml-validate:\n    name: JSON Check\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v3\n\n      - name: json-yaml-validate\n        id: json-yaml-validate\n        uses: GrantBirki/json-yaml-validate@v2.0.0\n"
+    },
+    "2024-05-15T11-28-52Z": {
+      "triggers": {
+        "pull_request": {
+          "types": [
+            "opened",
+            "synchronize",
+            "edited"
+          ]
+        },
+        "merge_group": {
+          "types": [
+            "checks_requested"
+          ]
+        }
+      },
+      "num_jobs": 3,
+      "steps_per_job": {
+        "code-linting": 11,
+        "markdown-link-check": 2,
+        "json-yaml-validate": 2
+      },
+      "line_count": 93,
+      "workflow": "name: \ud83e\uddf9 General Linting\n\nenv:\n  PIP_DEFAULT_TIMEOUT: 100\n\non:\n  pull_request:\n    types: [opened, synchronize, edited]\n  # push:\n  #   branches:\n  #     - \"feature/*\"\n  #     - \"hotfix/*\"\n  #     - \"release/*\"\n  merge_group:\n    types: [checks_requested]\n\n# Cancel previous runs that are not yet completed.\nconcurrency:\n  group: ${{ github.event_name }}-${{ github.repository }}-${{ github.ref }}\n  cancel-in-progress: true\n\njobs:\n  code-linting:\n    name: General Code Linting\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout Code\n        uses: actions/checkout@v4.1.1 # actions/checkout v3.0.2\n        with:\n          ref: ${{ github.event.pull_request.head.ref || github.ref }}\n          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}\n          fetch-depth: 20\n          token: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: Fetch base branch\n        run: git fetch --no-tags --depth=20 origin ${{ github.base_ref }}\n\n      - name: Setup Python 3.9\n        uses: actions/setup-python@v4\n        with:\n          python-version: \"3.9\"\n          architecture: x64\n\n      - name: Get changed files in openbb_platform for PR\n        if: github.event_name == 'pull_request'\n        run: |\n          # \"Checking PR diff\"\n          echo \"platform_files=$(git diff --diff-filter=d --name-only origin/${{ github.base_ref }}...${{ github.head_ref }} | grep 'openbb_platform/.*\\.py$' | grep -v 'openbb_platform/openbb/package' | grep -v 'integration' | grep -v 'tests' | xargs)\" >> $GITHUB_ENV\n          echo $platform_files\n\n      - uses: actions/cache@v3\n        with:\n          path: ~/.cache/pip\n          key: ${{ runner.os }}-linting-${{ hashFiles('**/poetry.lock') }}\n          restore-keys: ${{ runner.os }}-linting-${{ hashFiles('**/poetry.lock') }}\n\n      - run: |\n          pip install openbb-devtools\n          pip install types-pytz types-requests types-termcolor types-tabulate types-PyYAML types-python-dateutil types-setuptools types-six\n      - run: bandit -x ./tests -r . || true\n      - run: black --diff --check .\n      - run: codespell --ignore-words=.codespell.ignore --skip=\"$(tr '\\n' ',' < .codespell.skip | sed 's/,$//')\" --quiet-level=2\n      - run: ruff .\n      - run: |\n          # Run linters for openbb_platform\n          if [ -n \"${{ env.platform_files }}\" ]; then\n            pylint ${{ env.platform_files }}\n            mypy ${{ env.platform_files }}  --ignore-missing-imports  --scripts-are-modules --check-untyped-defs\n            pydocstyle ${{ env.platform_files }}\n          else\n            echo \"No Python files changed in openbb_platform\"\n          fi\n\n  markdown-link-check:\n    name: Markdown Linting\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v3\n        name: Check out the code\n      - name: Lint Code Base\n        uses: docker://avtodev/markdown-lint:v1\n        with:\n          args: \"./*.md ./changelogs/*.md ./openbb_terminal/**/*.md ./discordbot/**/*.md\"\n\n  json-yaml-validate:\n    name: JSON Check\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v3\n\n      - name: json-yaml-validate\n        id: json-yaml-validate\n        uses: GrantBirki/json-yaml-validate@v2.0.0\n"
+    },
+    "2024-05-22T15-13-12Z": {
+      "triggers": {
+        "pull_request": {
+          "types": [
+            "opened",
+            "synchronize",
+            "edited"
+          ]
+        },
+        "merge_group": {
+          "types": [
+            "checks_requested"
+          ]
+        }
+      },
+      "num_jobs": 3,
+      "steps_per_job": {
+        "code-linting": 11,
+        "markdown-link-check": 2,
+        "json-yaml-validate": 2
+      },
+      "line_count": 92,
+      "workflow": "name: \ud83e\uddf9 General Linting\n\nenv:\n  PIP_DEFAULT_TIMEOUT: 100\n\non:\n  pull_request:\n    types: [opened, synchronize, edited]\n  # push:\n  #   branches:\n  #     - \"feature/*\"\n  #     - \"hotfix/*\"\n  #     - \"release/*\"\n  merge_group:\n    types: [checks_requested]\n\n# Cancel previous runs that are not yet completed.\nconcurrency:\n  group: ${{ github.event_name }}-${{ github.repository }}-${{ github.ref }}\n  cancel-in-progress: true\n\njobs:\n  code-linting:\n    name: General Code Linting\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout Code\n        uses: actions/checkout@v4.1.1 # actions/checkout v3.0.2\n        with:\n          ref: ${{ github.event.pull_request.head.ref || github.ref }}\n          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}\n          fetch-depth: 20\n          token: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: Fetch base branch\n        run: git fetch --no-tags --depth=20 origin ${{ github.base_ref }}\n\n      - name: Setup Python 3.9\n        uses: actions/setup-python@v4\n        with:\n          python-version: \"3.9\"\n          architecture: x64\n\n      - name: Get changed files in openbb_platform for PR\n        if: github.event_name == 'pull_request'\n        run: |\n          # \"Checking PR diff\"\n          echo \"platform_files=$(git diff --diff-filter=d --name-only origin/${{ github.base_ref }}...${{ github.head_ref }} | grep 'openbb_platform/.*\\.py$' | grep -v 'openbb_platform/openbb/package' | grep -v 'integration' | grep -v 'tests' | xargs)\" >> $GITHUB_ENV\n          echo $platform_files\n\n      - uses: actions/cache@v3\n        with:\n          path: ~/.cache/pip\n          key: ${{ runner.os }}-linting-${{ hashFiles('**/poetry.lock') }}\n          restore-keys: ${{ runner.os }}-linting-${{ hashFiles('**/poetry.lock') }}\n\n      - run: |\n          pip install openbb-devtools\n          pip install types-pytz types-requests types-termcolor types-tabulate types-PyYAML types-python-dateutil types-setuptools types-six\n      - run: bandit -x ./tests -r . || true\n      - run: black --diff --check .\n      - run: codespell --ignore-words=.codespell.ignore --skip=\"$(tr '\\n' ',' < .codespell.skip | sed 's/,$//')\" --quiet-level=2\n      - run: ruff .\n      - run: |\n          # Run linters for openbb_platform\n          if [ -n \"${{ env.platform_files }}\" ]; then\n            pylint ${{ env.platform_files }}\n            pydocstyle ${{ env.platform_files }}\n          else\n            echo \"No Python files changed in openbb_platform\"\n          fi\n\n  markdown-link-check:\n    name: Markdown Linting\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v3\n        name: Check out the code\n      - name: Lint Code Base\n        uses: docker://avtodev/markdown-lint:v1\n        with:\n          args: \"./*.md ./changelogs/*.md ./openbb_terminal/**/*.md ./discordbot/**/*.md\"\n\n  json-yaml-validate:\n    name: JSON Check\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v3\n\n      - name: json-yaml-validate\n        id: json-yaml-validate\n        uses: GrantBirki/json-yaml-validate@v2.0.0\n"
+    },
+    "2024-05-23T12-55-31Z": {
+      "triggers": {
+        "pull_request": {
+          "types": [
+            "opened",
+            "synchronize",
+            "edited"
+          ]
+        },
+        "merge_group": {
+          "types": [
+            "checks_requested"
+          ]
+        }
+      },
+      "num_jobs": 3,
+      "steps_per_job": {
+        "code-linting": 9,
+        "markdown-link-check": 2,
+        "json-yaml-validate": 2
+      },
+      "line_count": 93,
+      "workflow": "name: \ud83e\uddf9 General Linting\n\nenv:\n  PIP_DEFAULT_TIMEOUT: 100\n\non:\n  pull_request:\n    types: [opened, synchronize, edited]\n  # push:\n  #   branches:\n  #     - \"feature/*\"\n  #     - \"hotfix/*\"\n  #     - \"release/*\"\n  merge_group:\n    types: [checks_requested]\n\n# Cancel previous runs that are not yet completed.\nconcurrency:\n  group: ${{ github.event_name }}-${{ github.repository }}-${{ github.ref }}\n  cancel-in-progress: true\n\njobs:\n  code-linting:\n    name: General Code Linting\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout Code\n        uses: actions/checkout@v4.1.1 # actions/checkout v3.0.2\n        with:\n          ref: ${{ github.event.pull_request.head.ref || github.ref }}\n          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}\n          fetch-depth: 20\n          token: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: Fetch base branch\n        run: git fetch --no-tags --depth=20 origin ${{ github.base_ref }}\n\n      - name: Setup Python 3.9\n        uses: actions/setup-python@v4\n        with:\n          python-version: \"3.9\"\n          architecture: x64\n\n      - name: Get changed files in openbb_platform for PR\n        if: github.event_name == 'pull_request'\n        run: |\n          # \"Checking PR diff\"\n          echo \"diff_files=$(git diff --diff-filter=d --name-only origin/${{ github.base_ref }}...${{ github.head_ref }} | grep 'openbb_platform/.*\\.py$|cli/.*\\.py$' | grep -v 'openbb_platform/openbb/package' | grep -v 'integration' | grep -v 'tests' | xargs)\" >> $GITHUB_ENV\n          echo $diff_files\n\n      - uses: actions/cache@v3\n        with:\n          path: ~/.cache/pip\n          key: ${{ runner.os }}-linting-${{ hashFiles('**/poetry.lock') }}\n          restore-keys: ${{ runner.os }}-linting-${{ hashFiles('**/poetry.lock') }}\n\n      - run: |\n          pip install openbb-devtools\n          pip install types-pytz types-requests types-termcolor types-tabulate types-PyYAML types-python-dateutil types-setuptools types-six\n      - run: bandit -x ./tests -r . || true\n      - run: codespell --ignore-words=.codespell.ignore --skip=\"$(tr '\\n' ',' < .codespell.skip | sed 's/,$//')\" --quiet-level=2\n      - run: |\n          # Run linters for openbb_platform | cli\n          if [ -n \"${{ env.diff_files }}\" ]; then\n            black --diff --check ${{ env.diff_files }}\n            mypy ${{ env.diff_files }}  --ignore-missing-imports  --scripts-are-modules --check-untyped-defs\n            pydocstyle ${{ env.diff_files }}\n            pylint ${{ env.diff_files }}\n            ruff check ${{ env.diff_files }}\n          else\n            echo \"No Python files changed in openbb_platform | cli\"\n          fi\n\n  markdown-link-check:\n    name: Markdown Linting\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v3\n        name: Check out the code\n      - name: Lint Code Base\n        uses: docker://avtodev/markdown-lint:v1\n        with:\n          args: \"./*.md ./changelogs/*.md ./openbb_terminal/**/*.md ./discordbot/**/*.md\"\n\n  json-yaml-validate:\n    name: JSON Check\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v3\n\n      - name: json-yaml-validate\n        id: json-yaml-validate\n        uses: GrantBirki/json-yaml-validate@v2.0.0\n"
+    },
+    "2024-06-20T13-21-01Z": {
+      "triggers": {
+        "pull_request": {
+          "types": [
+            "opened",
+            "synchronize",
+            "edited"
+          ]
+        },
+        "merge_group": {
+          "types": [
+            "checks_requested"
+          ]
+        }
+      },
+      "num_jobs": 3,
+      "steps_per_job": {
+        "code-linting": 9,
+        "markdown-link-check": 2,
+        "json-yaml-validate": 2
+      },
+      "line_count": 93,
+      "workflow": "name: \ud83e\uddf9 General Linting\n\nenv:\n  PIP_DEFAULT_TIMEOUT: 100\n\non:\n  pull_request:\n    types: [opened, synchronize, edited]\n  # push:\n  #   branches:\n  #     - \"feature/*\"\n  #     - \"hotfix/*\"\n  #     - \"release/*\"\n  merge_group:\n    types: [checks_requested]\n\n# Cancel previous runs that are not yet completed.\nconcurrency:\n  group: ${{ github.event_name }}-${{ github.repository }}-${{ github.ref }}\n  cancel-in-progress: true\n\njobs:\n  code-linting:\n    name: General Code Linting\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout Code\n        uses: actions/checkout@v4.1.1 # actions/checkout v3.0.2\n        with:\n          ref: ${{ github.event.pull_request.head.ref || github.ref }}\n          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}\n          fetch-depth: 20\n          token: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: Fetch base branch\n        run: git fetch --no-tags --depth=20 origin ${{ github.base_ref }}\n\n      - name: Setup Python 3.9\n        uses: actions/setup-python@v4\n        with:\n          python-version: \"3.9\"\n          architecture: x64\n\n      - name: Get changed files in openbb_platform for PR\n        if: github.event_name == 'pull_request'\n        run: |\n          # \"Checking PR diff\"\n          echo \"diff_files=$(git diff --diff-filter=d --name-only origin/${{ github.base_ref }}...${{ github.head_ref }} | grep -E '^(openbb_platform|cli)/.*\\.py$' | grep -v 'openbb_platform/openbb/package' | grep -v 'integration' | grep -v 'tests' | xargs)\" >> $GITHUB_ENV\n          echo $diff_files\n\n      - uses: actions/cache@v3\n        with:\n          path: ~/.cache/pip\n          key: ${{ runner.os }}-linting-${{ hashFiles('**/poetry.lock') }}\n          restore-keys: ${{ runner.os }}-linting-${{ hashFiles('**/poetry.lock') }}\n\n      - run: |\n          pip install openbb-devtools\n          pip install types-pytz types-requests types-termcolor types-tabulate types-PyYAML types-python-dateutil types-setuptools types-six\n      - run: bandit -x ./tests -r . || true\n      - run: codespell --ignore-words=.codespell.ignore --skip=\"$(tr '\\n' ',' < .codespell.skip | sed 's/,$//')\" --quiet-level=2\n      - run: |\n          # Run linters for openbb_platform | cli\n          if [ -n \"${{ env.diff_files }}\" ]; then\n            black --diff --check ${{ env.diff_files }}\n            mypy ${{ env.diff_files }}  --ignore-missing-imports  --scripts-are-modules --check-untyped-defs\n            pydocstyle ${{ env.diff_files }}\n            pylint ${{ env.diff_files }}\n            ruff check ${{ env.diff_files }}\n          else\n            echo \"No Python files changed in openbb_platform | cli\"\n          fi\n\n  markdown-link-check:\n    name: Markdown Linting\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v3\n        name: Check out the code\n      - name: Lint Code Base\n        uses: docker://avtodev/markdown-lint:v1\n        with:\n          args: \"./*.md ./changelogs/*.md ./openbb_terminal/**/*.md ./discordbot/**/*.md\"\n\n  json-yaml-validate:\n    name: JSON Check\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v3\n\n      - name: json-yaml-validate\n        id: json-yaml-validate\n        uses: GrantBirki/json-yaml-validate@v2.0.0\n"
+    },
+    "2024-07-01T13-05-59Z": {
+      "triggers": {
+        "pull_request": {
+          "types": [
+            "opened",
+            "synchronize",
+            "edited"
+          ]
+        },
+        "merge_group": {
+          "types": [
+            "checks_requested"
+          ]
+        }
+      },
+      "num_jobs": 3,
+      "steps_per_job": {
+        "code-linting": 9,
+        "markdown-link-check": 2,
+        "json-yaml-validate": 2
+      },
+      "line_count": 93,
+      "workflow": "name: \ud83e\uddf9 General Linting\n\nenv:\n  PIP_DEFAULT_TIMEOUT: 100\n\non:\n  pull_request:\n    types: [opened, synchronize, edited]\n  # push:\n  #   branches:\n  #     - \"feature/*\"\n  #     - \"hotfix/*\"\n  #     - \"release/*\"\n  merge_group:\n    types: [checks_requested]\n\n# Cancel previous runs that are not yet completed.\nconcurrency:\n  group: ${{ github.event_name }}-${{ github.repository }}-${{ github.ref }}\n  cancel-in-progress: true\n\njobs:\n  code-linting:\n    name: General Code Linting\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout Code\n        uses: actions/checkout@v4.1.1 # actions/checkout v3.0.2\n        with:\n          ref: ${{ github.event.pull_request.head.ref || github.ref }}\n          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}\n          fetch-depth: 20\n          token: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: Fetch base branch\n        run: git fetch --no-tags --depth=20 origin ${{ github.base_ref }}\n\n      - name: Setup Python 3.10\n        uses: actions/setup-python@v5\n        with:\n          python-version: \"3.10\"\n          architecture: x64\n\n      - name: Get changed files in openbb_platform for PR\n        if: github.event_name == 'pull_request'\n        run: |\n          # \"Checking PR diff\"\n          echo \"diff_files=$(git diff --diff-filter=d --name-only origin/${{ github.base_ref }}...${{ github.head_ref }} | grep -E '^(openbb_platform|cli)/.*\\.py$' | grep -v 'openbb_platform/openbb/package' | grep -v 'integration' | grep -v 'tests' | xargs)\" >> $GITHUB_ENV\n          echo $diff_files\n\n      - uses: actions/cache@v4\n        with:\n          path: ~/.cache/pip\n          key: ${{ runner.os }}-linting-${{ hashFiles('**/poetry.lock') }}\n          restore-keys: ${{ runner.os }}-linting-${{ hashFiles('**/poetry.lock') }}\n\n      - run: |\n          pip install openbb-devtools\n          pip install types-pytz types-requests types-termcolor types-tabulate types-PyYAML types-python-dateutil types-setuptools types-six\n      - run: bandit -x ./tests -r . || true\n      - run: codespell --ignore-words=.codespell.ignore --skip=\"$(tr '\\n' ',' < .codespell.skip | sed 's/,$//')\" --quiet-level=2\n      - run: |\n          # Run linters for openbb_platform | cli\n          if [ -n \"${{ env.diff_files }}\" ]; then\n            black --diff --check ${{ env.diff_files }}\n            mypy ${{ env.diff_files }}  --ignore-missing-imports  --scripts-are-modules --check-untyped-defs\n            pydocstyle ${{ env.diff_files }}\n            pylint ${{ env.diff_files }}\n            ruff check ${{ env.diff_files }}\n          else\n            echo \"No Python files changed in openbb_platform | cli\"\n          fi\n\n  markdown-link-check:\n    name: Markdown Linting\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n        name: Check out the code\n      - name: Lint Code Base\n        uses: docker://avtodev/markdown-lint:v1\n        with:\n          args: \"./*.md ./changelogs/*.md ./openbb_terminal/**/*.md ./discordbot/**/*.md\"\n\n  json-yaml-validate:\n    name: JSON Check\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n\n      - name: json-yaml-validate\n        id: json-yaml-validate\n        uses: GrantBirki/json-yaml-validate@v2.0.0\n"
+    },
+    "2024-10-16T04-39-00Z": {
+      "triggers": {
+        "pull_request": {
+          "types": [
+            "opened",
+            "synchronize",
+            "edited"
+          ]
+        },
+        "merge_group": {
+          "types": [
+            "checks_requested"
+          ]
+        }
+      },
+      "num_jobs": 3,
+      "steps_per_job": {
+        "code-linting": 9,
+        "markdown-link-check": 2,
+        "json-yaml-validate": 2
+      },
+      "line_count": 96,
+      "workflow": "name: \ud83e\uddf9 General Linting\n\nenv:\n  PIP_DEFAULT_TIMEOUT: 100\n\non:\n  pull_request:\n    types: [opened, synchronize, edited]\n  # push:\n  #   branches:\n  #     - \"feature/*\"\n  #     - \"hotfix/*\"\n  #     - \"release/*\"\n  merge_group:\n    types: [checks_requested]\n\n# Cancel previous runs that are not yet completed.\nconcurrency:\n  group: ${{ github.event_name }}-${{ github.repository }}-${{ github.ref }}\n  cancel-in-progress: true\n\njobs:\n  code-linting:\n    name: General Code Linting\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout Code\n        uses: actions/checkout@v4.1.1 # actions/checkout v3.0.2\n        with:\n          ref: ${{ github.event.pull_request.head.ref || github.ref }}\n          repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}\n          fetch-depth: 20\n          token: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: Fetch base branch\n        run: git fetch --no-tags --depth=20 origin ${{ github.base_ref }}\n\n      - name: Setup Python 3.10\n        uses: actions/setup-python@v5\n        with:\n          python-version: \"3.10\"\n          architecture: x64\n\n      - name: Get changed files in openbb_platform for PR\n        if: github.event_name == 'pull_request'\n        run: |\n          # \"Checking PR diff\"\n          echo \"diff_files=$(git diff --diff-filter=d --name-only origin/${{ github.base_ref }}...${{ github.head_ref }} | grep -E '^(openbb_platform|cli)/.*\\.py$' | grep -v 'openbb_platform/openbb/package' | grep -v 'integration' | grep -v 'tests' | xargs)\" >> $GITHUB_ENV\n          echo $diff_files\n\n      - uses: actions/cache@v4\n        with:\n          path: ~/.cache/pip\n          key: ${{ runner.os }}-linting-${{ hashFiles('**/poetry.lock') }}\n          restore-keys: ${{ runner.os }}-linting-${{ hashFiles('**/poetry.lock') }}\n\n      - run: |\n          pip install openbb-devtools\n          pip install types-pytz types-requests types-termcolor types-tabulate types-PyYAML types-python-dateutil types-setuptools types-six\n      - run: bandit -x ./tests -r . || true\n      - run: codespell --ignore-words=.codespell.ignore --skip=\"$(tr '\\n' ',' < .codespell.skip | sed 's/,$//')\" --quiet-level=2\n      - run: |\n          # Run linters for openbb_platform | cli\n          if [ -n \"${{ env.diff_files }}\" ]; then\n            black --diff --check ${{ env.diff_files }}\n            mypy ${{ env.diff_files }}  --ignore-missing-imports  --scripts-are-modules --check-untyped-defs\n            pydocstyle ${{ env.diff_files }}\n            pylint ${{ env.diff_files }}\n            ruff check ${{ env.diff_files }}\n          else\n            echo \"No Python files changed in openbb_platform | cli\"\n          fi\n\n  markdown-link-check:\n    name: Markdown Linting\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n        name: Check out the code\n      - name: Lint Code Base\n        uses: docker://avtodev/markdown-lint:v1\n        with:\n          args: \"./*.md ./changelogs/*.md ./openbb_terminal/**/*.md ./discordbot/**/*.md\"\n\n  json-yaml-validate:\n    name: JSON Check\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v4\n\n      - name: json-yaml-validate\n        id: json-yaml-validate\n        uses: GrantBirki/json-yaml-validate@v2.0.0\n        with:\n          yaml_exclude_regex: \"construct.yaml\"\n          use_gitignore: false\n"
+    }
+  }
+}

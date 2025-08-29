@@ -1,0 +1,431 @@
+{
+  "generate-and-release-openapi-client-java": {
+    "2023-09-08T08-24-26Z": [
+      {
+        "region": {
+          "startLine": 23,
+          "startColumn": 9,
+          "endLine": 27,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v6.5](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2023-09-08T12-16-46Z": [
+      {
+        "region": {
+          "startLine": 30,
+          "startColumn": 9,
+          "endLine": 34,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v6.5](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2023-09-08T12-26-29Z": [
+      {
+        "region": {
+          "startLine": 23,
+          "startColumn": 9,
+          "endLine": 27,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v6.5](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2023-09-08T12-20-12Z": [
+      {
+        "region": {
+          "startLine": 23,
+          "startColumn": 9,
+          "endLine": 27,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v6.5](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2023-09-08T13-18-32Z": [
+      {
+        "region": {
+          "startLine": 23,
+          "startColumn": 9,
+          "endLine": 27,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v6.5](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2023-11-30T08-47-28Z": [
+      {
+        "region": {
+          "startLine": 23,
+          "startColumn": 9,
+          "endLine": 27,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v6.5](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2023-12-06T09-44-47Z": [],
+    "2023-12-08T07-46-35Z": [],
+    "2024-02-15T10-18-50Z": [],
+    "2024-04-03T08-23-42Z": [],
+    "2024-04-03T08-50-35Z": [],
+    "2024-04-03T12-01-45Z": [],
+    "2024-04-04T13-28-05Z": []
+  },
+  "metadata": {
+    "2023-09-08T08-24-26Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "openapi-specification": {
+              "description": "OpenAPI specification in YAML format used by the OpenAPI generator",
+              "type": "string",
+              "required": true
+            },
+            "openapi-config": {
+              "description": "Configuration file in JSON format used by the OpenAPI generator",
+              "type": "string",
+              "default": "java.config.json"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "generate-client-java": 6
+      },
+      "line_count": 64,
+      "workflow": "name: generate OpenAPI specification, release if on 'main' branch\non:\n  workflow_call:\n    inputs:\n      openapi-specification:\n        description: 'OpenAPI specification in YAML format used by the OpenAPI generator'\n        type: string\n        required: true\n      openapi-config:\n        description: 'Configuration file in JSON format used by the OpenAPI generator'\n        type: string\n        default: 'java.config.json'\n\njobs:\n  generate-client-java:\n    name: client for Java\n    runs-on: ubuntu-latest\n    permissions:\n      contents: read\n      packages: write\n\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v6.5\n\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: generate API for client/Java\n        uses: docker://openapitools/openapi-generator-cli:v6.6.0\n        with:\n          entrypoint: /usr/local/bin/docker-entrypoint.sh\n          args: generate -i ${{ inputs.openapi-specification }} -g java -o . -c ${{ inputs.openapi-config }}\n\n      - name: Set up JDK 17\n        uses: actions/setup-java@v3\n        with:\n          distribution: 'temurin'\n          java-version: '17'\n          cache: 'maven'\n\n      - name: Build with Maven\n        if: steps.branch-name.outputs.ref_branch != 'main'\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            compile\n\n      - name: Build release with Maven\n        if: steps.branch-name.outputs.ref_branch == 'main'\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          mvn --batch-mode --no-transfer-progress \\\n            deploy \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/minova-afis/aero.minova.maven.root \\\n            -Ddependency-check.skip=true -Dmaven.test.skip=true \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2023-09-08T12-16-46Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "openapi-specification": {
+              "description": "OpenAPI specification in YAML format used by the OpenAPI generator",
+              "type": "string",
+              "required": true
+            },
+            "openapi-config": {
+              "description": "Configuration file in JSON format used by the OpenAPI generator",
+              "type": "string",
+              "default": "java.config.json"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "generate-client-java": 7
+      },
+      "line_count": 71,
+      "workflow": "name: generate OpenAPI specification, release if on 'main' branch\non:\n  workflow_call:\n    inputs:\n      openapi-specification:\n        description: 'OpenAPI specification in YAML format used by the OpenAPI generator'\n        type: string\n        required: true\n      openapi-config:\n        description: 'Configuration file in JSON format used by the OpenAPI generator'\n        type: string\n        default: 'java.config.json'\n\njobs:\n  generate-client-java:\n    name: client for Java\n    runs-on: ubuntu-latest\n    permissions:\n      contents: read\n      packages: write\n\n    steps:\n      - name: Skip commits by 'maven-release-plugin'\n        run: |\n          commit_message=$(git log -1 --pretty=%B)\n          if [[ $commit_message == *\"[maven-release-plugin]\"* ]]; then\n            echo \"Commit initiated by 'maven-release-plugin'. Skipping workflow...\"\n            exit 0\n\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v6.5\n\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: generate API for client/Java\n        uses: docker://openapitools/openapi-generator-cli:v6.6.0\n        with:\n          entrypoint: /usr/local/bin/docker-entrypoint.sh\n          args: generate -i ${{ inputs.openapi-specification }} -g java -o . -c ${{ inputs.openapi-config }}\n\n      - name: Set up JDK 17\n        uses: actions/setup-java@v3\n        with:\n          distribution: 'temurin'\n          java-version: '17'\n          cache: 'maven'\n\n      - name: Build with Maven\n        if: steps.branch-name.outputs.ref_branch != 'main'\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            compile\n\n      - name: Build release with Maven\n        if: steps.branch-name.outputs.ref_branch == 'main'\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          mvn --batch-mode --no-transfer-progress \\\n            deploy \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/minova-afis/aero.minova.maven.root \\\n            -Ddependency-check.skip=true -Dmaven.test.skip=true \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2023-09-08T12-26-29Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "openapi-specification": {
+              "description": "OpenAPI specification in YAML format used by the OpenAPI generator",
+              "type": "string",
+              "required": true
+            },
+            "openapi-config": {
+              "description": "Configuration file in JSON format used by the OpenAPI generator",
+              "type": "string",
+              "default": "java.config.json"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "generate-client-java": 7
+      },
+      "line_count": 72,
+      "workflow": "name: generate OpenAPI specification, release if on 'main' branch\non:\n  workflow_call:\n    inputs:\n      openapi-specification:\n        description: 'OpenAPI specification in YAML format used by the OpenAPI generator'\n        type: string\n        required: true\n      openapi-config:\n        description: 'Configuration file in JSON format used by the OpenAPI generator'\n        type: string\n        default: 'java.config.json'\n\njobs:\n  generate-client-java:\n    name: client for Java\n    runs-on: ubuntu-latest\n    permissions:\n      contents: read\n      packages: write\n\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v6.5\n\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Skip commits by 'maven-release-plugin'\n        run: |\n          commit_message=$(git log -1 --pretty=%B)\n          if [[ $commit_message == *\"[maven-release-plugin]\"* ]]; then\n            echo \"Commit initiated by 'maven-release-plugin'. Skipping workflow...\"\n            exit 0\n          fi\n\n      - name: generate API for client/Java\n        uses: docker://openapitools/openapi-generator-cli:v6.6.0\n        with:\n          entrypoint: /usr/local/bin/docker-entrypoint.sh\n          args: generate -i ${{ inputs.openapi-specification }} -g java -o . -c ${{ inputs.openapi-config }}\n\n      - name: Set up JDK 17\n        uses: actions/setup-java@v3\n        with:\n          distribution: 'temurin'\n          java-version: '17'\n          cache: 'maven'\n\n      - name: Build with Maven\n        if: steps.branch-name.outputs.ref_branch != 'main'\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            compile\n\n      - name: Build release with Maven\n        if: steps.branch-name.outputs.ref_branch == 'main'\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          mvn --batch-mode --no-transfer-progress \\\n            deploy \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/minova-afis/aero.minova.maven.root \\\n            -Ddependency-check.skip=true -Dmaven.test.skip=true \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2023-09-08T12-20-12Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "openapi-specification": {
+              "description": "OpenAPI specification in YAML format used by the OpenAPI generator",
+              "type": "string",
+              "required": true
+            },
+            "openapi-config": {
+              "description": "Configuration file in JSON format used by the OpenAPI generator",
+              "type": "string",
+              "default": "java.config.json"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "generate-client-java": 7
+      },
+      "line_count": 71,
+      "workflow": "name: generate OpenAPI specification, release if on 'main' branch\non:\n  workflow_call:\n    inputs:\n      openapi-specification:\n        description: 'OpenAPI specification in YAML format used by the OpenAPI generator'\n        type: string\n        required: true\n      openapi-config:\n        description: 'Configuration file in JSON format used by the OpenAPI generator'\n        type: string\n        default: 'java.config.json'\n\njobs:\n  generate-client-java:\n    name: client for Java\n    runs-on: ubuntu-latest\n    permissions:\n      contents: read\n      packages: write\n\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v6.5\n\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Skip commits by 'maven-release-plugin'\n        run: |\n          commit_message=$(git log -1 --pretty=%B)\n          if [[ $commit_message == *\"[maven-release-plugin]\"* ]]; then\n            echo \"Commit initiated by 'maven-release-plugin'. Skipping workflow...\"\n            exit 0\n\n      - name: generate API for client/Java\n        uses: docker://openapitools/openapi-generator-cli:v6.6.0\n        with:\n          entrypoint: /usr/local/bin/docker-entrypoint.sh\n          args: generate -i ${{ inputs.openapi-specification }} -g java -o . -c ${{ inputs.openapi-config }}\n\n      - name: Set up JDK 17\n        uses: actions/setup-java@v3\n        with:\n          distribution: 'temurin'\n          java-version: '17'\n          cache: 'maven'\n\n      - name: Build with Maven\n        if: steps.branch-name.outputs.ref_branch != 'main'\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            compile\n\n      - name: Build release with Maven\n        if: steps.branch-name.outputs.ref_branch == 'main'\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          mvn --batch-mode --no-transfer-progress \\\n            deploy \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/minova-afis/aero.minova.maven.root \\\n            -Ddependency-check.skip=true -Dmaven.test.skip=true \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2023-09-08T13-18-32Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "openapi-specification": {
+              "description": "OpenAPI specification in YAML format used by the OpenAPI generator",
+              "type": "string",
+              "required": true
+            },
+            "openapi-config": {
+              "description": "Configuration file in JSON format used by the OpenAPI generator",
+              "type": "string",
+              "default": "java.config.json"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "generate-client-java": 7
+      },
+      "line_count": 72,
+      "workflow": "name: generate OpenAPI specification, release if on 'main' branch\non:\n  workflow_call:\n    inputs:\n      openapi-specification:\n        description: 'OpenAPI specification in YAML format used by the OpenAPI generator'\n        type: string\n        required: true\n      openapi-config:\n        description: 'Configuration file in JSON format used by the OpenAPI generator'\n        type: string\n        default: 'java.config.json'\n\njobs:\n  generate-client-java:\n    name: client for Java\n    runs-on: ubuntu-latest\n    permissions:\n      contents: read\n      packages: write\n\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v6.5\n\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Skip commits by 'maven-release-plugin'\n        run: |\n          commit_message=$(git log -1 --pretty=%B)\n          if [[ $commit_message == *\"[maven-release-plugin]\"* ]]; then\n            echo \"Commit initiated by 'maven-release-plugin'. Skipping workflow...\"\n            exit 78\n          fi\n\n      - name: generate API for client/Java\n        uses: docker://openapitools/openapi-generator-cli:v6.6.0\n        with:\n          entrypoint: /usr/local/bin/docker-entrypoint.sh\n          args: generate -i ${{ inputs.openapi-specification }} -g java -o . -c ${{ inputs.openapi-config }}\n\n      - name: Set up JDK 17\n        uses: actions/setup-java@v3\n        with:\n          distribution: 'temurin'\n          java-version: '17'\n          cache: 'maven'\n\n      - name: Build with Maven\n        if: steps.branch-name.outputs.ref_branch != 'main'\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            compile\n\n      - name: Build release with Maven\n        if: steps.branch-name.outputs.ref_branch == 'main'\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          mvn --batch-mode --no-transfer-progress \\\n            deploy \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/minova-afis/aero.minova.maven.root \\\n            -Ddependency-check.skip=true -Dmaven.test.skip=true \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2023-11-30T08-47-28Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "openapi-specification": {
+              "description": "OpenAPI specification in YAML format used by the OpenAPI generator",
+              "type": "string",
+              "required": true
+            },
+            "openapi-config": {
+              "description": "Configuration file in JSON format used by the OpenAPI generator",
+              "type": "string",
+              "default": "java.config.json"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "generate-client-java": 7
+      },
+      "line_count": 72,
+      "workflow": "name: generate OpenAPI specification, release if on 'main' branch\non:\n  workflow_call:\n    inputs:\n      openapi-specification:\n        description: 'OpenAPI specification in YAML format used by the OpenAPI generator'\n        type: string\n        required: true\n      openapi-config:\n        description: 'Configuration file in JSON format used by the OpenAPI generator'\n        type: string\n        default: 'java.config.json'\n\njobs:\n  generate-client-java:\n    name: client for Java\n    runs-on: ubuntu-latest\n    permissions:\n      contents: read\n      packages: write\n\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v6.5\n\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Skip commits by 'maven-release-plugin'\n        run: |\n          commit_message=$(git log -1 --pretty=%B)\n          if [[ $commit_message == *\"[maven-release-plugin]\"* ]]; then\n            echo \"Commit initiated by 'maven-release-plugin'. Skipping workflow...\"\n            exit 78\n          fi\n\n      - name: generate API for client/Java\n        uses: docker://openapitools/openapi-generator-cli:v6.6.0\n        with:\n          entrypoint: /usr/local/bin/docker-entrypoint.sh\n          args: generate -i ${{ inputs.openapi-specification }} -g java -o . -c ${{ inputs.openapi-config }}\n\n      - name: Set up JDK 17\n        uses: actions/setup-java@v4\n        with:\n          distribution: 'temurin'\n          java-version: '17'\n          cache: 'maven'\n\n      - name: Build with Maven\n        if: steps.branch-name.outputs.ref_branch != 'main'\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            compile\n\n      - name: Build release with Maven\n        if: steps.branch-name.outputs.ref_branch == 'main'\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          mvn --batch-mode --no-transfer-progress \\\n            deploy \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/minova-afis/aero.minova.maven.root \\\n            -Ddependency-check.skip=true -Dmaven.test.skip=true \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2023-12-06T09-44-47Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "openapi-specification": {
+              "description": "OpenAPI specification in YAML format used by the OpenAPI generator",
+              "type": "string",
+              "required": true
+            },
+            "openapi-config": {
+              "description": "Configuration file in JSON format used by the OpenAPI generator",
+              "type": "string",
+              "default": "java.config.json"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "generate-client-java": 7
+      },
+      "line_count": 72,
+      "workflow": "name: generate OpenAPI specification, release if on 'main' branch\non:\n  workflow_call:\n    inputs:\n      openapi-specification:\n        description: 'OpenAPI specification in YAML format used by the OpenAPI generator'\n        type: string\n        required: true\n      openapi-config:\n        description: 'Configuration file in JSON format used by the OpenAPI generator'\n        type: string\n        default: 'java.config.json'\n\njobs:\n  generate-client-java:\n    name: client for Java\n    runs-on: ubuntu-latest\n    permissions:\n      contents: read\n      packages: write\n\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v7.0.7\n\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Skip commits by 'maven-release-plugin'\n        run: |\n          commit_message=$(git log -1 --pretty=%B)\n          if [[ $commit_message == *\"[maven-release-plugin]\"* ]]; then\n            echo \"Commit initiated by 'maven-release-plugin'. Skipping workflow...\"\n            exit 78\n          fi\n\n      - name: generate API for client/Java\n        uses: docker://openapitools/openapi-generator-cli:v6.6.0\n        with:\n          entrypoint: /usr/local/bin/docker-entrypoint.sh\n          args: generate -i ${{ inputs.openapi-specification }} -g java -o . -c ${{ inputs.openapi-config }}\n\n      - name: Set up JDK 17\n        uses: actions/setup-java@v4\n        with:\n          distribution: 'temurin'\n          java-version: '17'\n          cache: 'maven'\n\n      - name: Build with Maven\n        if: steps.branch-name.outputs.ref_branch != 'main'\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            compile\n\n      - name: Build release with Maven\n        if: steps.branch-name.outputs.ref_branch == 'main'\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          mvn --batch-mode --no-transfer-progress \\\n            deploy \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/minova-afis/aero.minova.maven.root \\\n            -Ddependency-check.skip=true -Dmaven.test.skip=true \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2023-12-08T07-46-35Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "openapi-specification": {
+              "description": "OpenAPI specification in YAML format used by the OpenAPI generator",
+              "type": "string",
+              "required": true
+            },
+            "openapi-config": {
+              "description": "Configuration file in JSON format used by the OpenAPI generator",
+              "type": "string",
+              "default": "java.config.json"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "generate-client-java": 7
+      },
+      "line_count": 72,
+      "workflow": "name: generate OpenAPI specification, release if on 'main' branch\non:\n  workflow_call:\n    inputs:\n      openapi-specification:\n        description: 'OpenAPI specification in YAML format used by the OpenAPI generator'\n        type: string\n        required: true\n      openapi-config:\n        description: 'Configuration file in JSON format used by the OpenAPI generator'\n        type: string\n        default: 'java.config.json'\n\njobs:\n  generate-client-java:\n    name: client for Java\n    runs-on: ubuntu-latest\n    permissions:\n      contents: read\n      packages: write\n\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8.0.0\n\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Skip commits by 'maven-release-plugin'\n        run: |\n          commit_message=$(git log -1 --pretty=%B)\n          if [[ $commit_message == *\"[maven-release-plugin]\"* ]]; then\n            echo \"Commit initiated by 'maven-release-plugin'. Skipping workflow...\"\n            exit 78\n          fi\n\n      - name: generate API for client/Java\n        uses: docker://openapitools/openapi-generator-cli:v6.6.0\n        with:\n          entrypoint: /usr/local/bin/docker-entrypoint.sh\n          args: generate -i ${{ inputs.openapi-specification }} -g java -o . -c ${{ inputs.openapi-config }}\n\n      - name: Set up JDK 17\n        uses: actions/setup-java@v4\n        with:\n          distribution: 'temurin'\n          java-version: '17'\n          cache: 'maven'\n\n      - name: Build with Maven\n        if: steps.branch-name.outputs.ref_branch != 'main'\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            compile\n\n      - name: Build release with Maven\n        if: steps.branch-name.outputs.ref_branch == 'main'\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          mvn --batch-mode --no-transfer-progress \\\n            deploy \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/minova-afis/aero.minova.maven.root \\\n            -Ddependency-check.skip=true -Dmaven.test.skip=true \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2024-02-15T10-18-50Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "openapi-specification": {
+              "description": "OpenAPI specification in YAML format used by the OpenAPI generator",
+              "type": "string",
+              "required": true
+            },
+            "openapi-config": {
+              "description": "Configuration file in JSON format used by the OpenAPI generator",
+              "type": "string",
+              "default": "java.config.json"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "generate-client-java": 7
+      },
+      "line_count": 72,
+      "workflow": "name: generate OpenAPI specification, release if on 'main' branch\non:\n  workflow_call:\n    inputs:\n      openapi-specification:\n        description: 'OpenAPI specification in YAML format used by the OpenAPI generator'\n        type: string\n        required: true\n      openapi-config:\n        description: 'Configuration file in JSON format used by the OpenAPI generator'\n        type: string\n        default: 'java.config.json'\n\njobs:\n  generate-client-java:\n    name: client for Java\n    runs-on: ubuntu-latest\n    permissions:\n      contents: read\n      packages: write\n\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8.0.1\n\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Skip commits by 'maven-release-plugin'\n        run: |\n          commit_message=$(git log -1 --pretty=%B)\n          if [[ $commit_message == *\"[maven-release-plugin]\"* ]]; then\n            echo \"Commit initiated by 'maven-release-plugin'. Skipping workflow...\"\n            exit 78\n          fi\n\n      - name: generate API for client/Java\n        uses: docker://openapitools/openapi-generator-cli:v6.6.0\n        with:\n          entrypoint: /usr/local/bin/docker-entrypoint.sh\n          args: generate -i ${{ inputs.openapi-specification }} -g java -o . -c ${{ inputs.openapi-config }}\n\n      - name: Set up JDK 17\n        uses: actions/setup-java@v4\n        with:\n          distribution: 'temurin'\n          java-version: '17'\n          cache: 'maven'\n\n      - name: Build with Maven\n        if: steps.branch-name.outputs.ref_branch != 'main'\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            compile\n\n      - name: Build release with Maven\n        if: steps.branch-name.outputs.ref_branch == 'main'\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          mvn --batch-mode --no-transfer-progress \\\n            deploy \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/minova-afis/aero.minova.maven.root \\\n            -Ddependency-check.skip=true -Dmaven.test.skip=true \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2024-04-03T08-23-42Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "openapi-specification": {
+              "description": "OpenAPI specification in YAML format used by the OpenAPI generator",
+              "type": "string",
+              "required": true
+            },
+            "openapi-config": {
+              "description": "Configuration file in JSON format used by the OpenAPI generator",
+              "type": "string",
+              "default": "java.config.json"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "generate-client-java": 7
+      },
+      "line_count": 72,
+      "workflow": "name: generate OpenAPI specification, release if on 'main' branch\non:\n  workflow_call:\n    inputs:\n      openapi-specification:\n        description: 'OpenAPI specification in YAML format used by the OpenAPI generator'\n        type: string\n        required: true\n      openapi-config:\n        description: 'Configuration file in JSON format used by the OpenAPI generator'\n        type: string\n        default: 'java.config.json'\n\njobs:\n  generate-client-java:\n    name: client for Java\n    runs-on: ubuntu-latest\n    permissions:\n      contents: read\n      packages: write\n\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8.0.1\n\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Skip commits by 'maven-release-plugin'\n        run: |\n          commit_message=$(git log -1 --pretty=%B)\n          if [[ $commit_message == *\"[maven-release-plugin]\"* ]]; then\n            echo \"Commit initiated by 'maven-release-plugin'. Skipping workflow...\"\n            exit 78\n          fi\n\n      - name: generate API for client/Java\n        uses: docker://openapitools/openapi-generator-cli:v7.0.1\n        with:\n          entrypoint: /usr/local/bin/docker-entrypoint.sh\n          args: generate -i ${{ inputs.openapi-specification }} -g java -o . -c ${{ inputs.openapi-config }}\n\n      - name: Set up JDK 21\n        uses: actions/setup-java@v3\n        with:\n          distribution: 'temurin'\n          java-version: '21'\n          cache: 'maven'\n\n      - name: Build with Maven\n        if: steps.branch-name.outputs.ref_branch != 'main'\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            compile\n\n      - name: Build release with Maven\n        if: steps.branch-name.outputs.ref_branch == 'main'\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          mvn --batch-mode --no-transfer-progress \\\n            deploy \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/minova-afis/aero.minova.maven.root \\\n            -Ddependency-check.skip=true -Dmaven.test.skip=true \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2024-04-03T08-50-35Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "openapi-specification": {
+              "description": "OpenAPI specification in YAML format used by the OpenAPI generator",
+              "type": "string",
+              "required": true
+            },
+            "openapi-config": {
+              "description": "Configuration file in JSON format used by the OpenAPI generator",
+              "type": "string",
+              "default": "java.config.json"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "generate-client-java": 7
+      },
+      "line_count": 72,
+      "workflow": "name: generate OpenAPI specification, release if on 'main' branch\non:\n  workflow_call:\n    inputs:\n      openapi-specification:\n        description: 'OpenAPI specification in YAML format used by the OpenAPI generator'\n        type: string\n        required: true\n      openapi-config:\n        description: 'Configuration file in JSON format used by the OpenAPI generator'\n        type: string\n        default: 'java.config.json'\n\njobs:\n  generate-client-java:\n    name: client for Java\n    runs-on: ubuntu-latest\n    permissions:\n      contents: read\n      packages: write\n\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8.0.1\n\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Skip commits by 'maven-release-plugin'\n        run: |\n          commit_message=$(git log -1 --pretty=%B)\n          if [[ $commit_message == *\"[maven-release-plugin]\"* ]]; then\n            echo \"Commit initiated by 'maven-release-plugin'. Skipping workflow...\"\n            exit 78\n          fi\n\n      - name: generate API for client/Java\n        uses: docker://openapitools/openapi-generator-cli:v7.0.1\n        with:\n          entrypoint: /usr/local/bin/docker-entrypoint.sh\n          args: generate -i ${{ inputs.openapi-specification }} -g java -o . -c ${{ inputs.openapi-config }}\n\n      - name: Set up JDK\n        uses: actions/setup-java@v3\n        with:\n          distribution: 'temurin'\n          java-version: '17'\n          cache: 'maven'\n\n      - name: Build with Maven\n        if: steps.branch-name.outputs.ref_branch != 'main'\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            compile\n\n      - name: Build release with Maven\n        if: steps.branch-name.outputs.ref_branch == 'main'\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          mvn --batch-mode --no-transfer-progress \\\n            deploy \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/minova-afis/aero.minova.maven.root \\\n            -Ddependency-check.skip=true -Dmaven.test.skip=true \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2024-04-03T12-01-45Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "openapi-specification": {
+              "description": "OpenAPI specification in YAML format used by the OpenAPI generator",
+              "type": "string",
+              "required": true
+            },
+            "openapi-config": {
+              "description": "Configuration file in JSON format used by the OpenAPI generator",
+              "type": "string",
+              "default": "java.config.json"
+            },
+            "java-version": {
+              "description": "This is the version of Java used for release.",
+              "type": "string",
+              "default": "21"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "generate-client-java": 7
+      },
+      "line_count": 76,
+      "workflow": "name: generate OpenAPI specification, release if on 'main' branch\non:\n  workflow_call:\n    inputs:\n      openapi-specification:\n        description: 'OpenAPI specification in YAML format used by the OpenAPI generator'\n        type: string\n        required: true\n      openapi-config:\n        description: 'Configuration file in JSON format used by the OpenAPI generator'\n        type: string\n        default: 'java.config.json'\n      java-version:\n        description: 'This is the version of Java used for release.'\n        type: string\n        default: '21'\n\njobs:\n  generate-client-java:\n    name: client for Java\n    runs-on: ubuntu-latest\n    permissions:\n      contents: read\n      packages: write\n\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8.0.1\n\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Skip commits by 'maven-release-plugin'\n        run: |\n          commit_message=$(git log -1 --pretty=%B)\n          if [[ $commit_message == *\"[maven-release-plugin]\"* ]]; then\n            echo \"Commit initiated by 'maven-release-plugin'. Skipping workflow...\"\n            exit 78\n          fi\n\n      - name: generate API for client/Java\n        uses: docker://openapitools/openapi-generator-cli:v7.0.1\n        with:\n          entrypoint: /usr/local/bin/docker-entrypoint.sh\n          args: generate -i ${{ inputs.openapi-specification }} -g java -o . -c ${{ inputs.openapi-config }}\n\n      - name: Set up JDK\n        uses: actions/setup-java@v3\n        with:\n          distribution: 'temurin'\n          java-version: ${{inputs.java-version}}\n          cache: 'maven'\n\n      - name: Build with Maven\n        if: steps.branch-name.outputs.ref_branch != 'main'\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            compile\n\n      - name: Build release with Maven\n        if: steps.branch-name.outputs.ref_branch == 'main'\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          mvn --batch-mode --no-transfer-progress \\\n            deploy \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/minova-afis/aero.minova.maven.root \\\n            -Ddependency-check.skip=true -Dmaven.test.skip=true \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    },
+    "2024-04-04T13-28-05Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "openapi-specification": {
+              "description": "OpenAPI specification in YAML format used by the OpenAPI generator",
+              "type": "string",
+              "required": true
+            },
+            "openapi-config": {
+              "description": "Configuration file in JSON format used by the OpenAPI generator",
+              "type": "string",
+              "default": "java.config.json"
+            },
+            "java-version": {
+              "description": "This is the version of Java used for release.",
+              "type": "string",
+              "default": "21"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "generate-client-java": 7
+      },
+      "line_count": 76,
+      "workflow": "name: generate OpenAPI specification, release if on 'main' branch\non:\n  workflow_call:\n    inputs:\n      openapi-specification:\n        description: 'OpenAPI specification in YAML format used by the OpenAPI generator'\n        type: string\n        required: true\n      openapi-config:\n        description: 'Configuration file in JSON format used by the OpenAPI generator'\n        type: string\n        default: 'java.config.json'\n      java-version:\n        description: 'This is the version of Java used for release.'\n        type: string\n        default: '21'\n\njobs:\n  generate-client-java:\n    name: client for Java\n    runs-on: ubuntu-latest\n    permissions:\n      contents: read\n      packages: write\n\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8.0.1\n\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Skip commits by 'maven-release-plugin'\n        run: |\n          commit_message=$(git log -1 --pretty=%B)\n          if [[ $commit_message == *\"[maven-release-plugin]\"* ]]; then\n            echo \"Commit initiated by 'maven-release-plugin'. Skipping workflow...\"\n            exit 78\n          fi\n\n      - name: generate API for client/Java\n        uses: docker://openapitools/openapi-generator-cli:v7.0.1\n        with:\n          entrypoint: /usr/local/bin/docker-entrypoint.sh\n          args: generate -i ${{ inputs.openapi-specification }} -g java -o . -c ${{ inputs.openapi-config }}\n\n      - name: Set up JDK\n        uses: actions/setup-java@v4\n        with:\n          distribution: 'temurin'\n          java-version: ${{inputs.java-version}}\n          cache: 'maven'\n\n      - name: Build with Maven\n        if: steps.branch-name.outputs.ref_branch != 'main'\n        run: |\n          mvn --batch-mode --no-transfer-progress \\\n            compile\n\n      - name: Build release with Maven\n        if: steps.branch-name.outputs.ref_branch == 'main'\n        run: |\n          git config --global user.email \"service@minova.com\"\n          git config --global user.name \"minova-worker\"\n          mvn --batch-mode --no-transfer-progress \\\n            deploy \\\n            -Dusername=$GITHUB_ACCESS_TOKEN \\\n            -Dpassword=$GITHUB_ACCESS_TOKEN \\\n            -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/minova-afis/aero.minova.maven.root \\\n            -Ddependency-check.skip=true -Dmaven.test.skip=true \\\n            --settings .github/settings.xml\n        env:\n          MAIN_GITHUB_RELEASE_USERNAME: ${{ secrets.MAIN_GITHUB_RELEASE_USERNAME }}\n          MAIN_GITHUB_RELEASE_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n          GITHUB_ACCESS_TOKEN: ${{ secrets.MAIN_GITHUB_RELEASE_TOKEN }}\n"
+    }
+  }
+}

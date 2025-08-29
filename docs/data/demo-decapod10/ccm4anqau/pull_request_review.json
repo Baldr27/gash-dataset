@@ -1,0 +1,33 @@
+{
+  "pull_request_review": {
+    "2022-07-27T16-00-29Z": [
+      {
+        "region": {
+          "startLine": 5,
+          "startColumn": 5,
+          "endLine": 14,
+          "endColumn": 43
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2022-07-27T16-00-29Z": {
+      "triggers": {
+        "pull_request_review": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "labelWhenApproved": 1
+      },
+      "line_count": 14,
+      "workflow": "on: pull_request_review\nname: Label approved pull requests\njobs:\n  labelWhenApproved:\n    name: Label when approved\n    runs-on: ubuntu-latest\n    steps:\n    - name: Label when approved\n      uses: pullreminders/label-when-approved-action@master\n      env:\n        APPROVALS: \"1\"\n        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n        ADD_LABEL: \"approved\"\n        REMOVE_LABEL: \"awaiting%20review\"\n"
+    }
+  }
+}

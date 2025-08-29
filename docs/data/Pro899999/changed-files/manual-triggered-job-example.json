@@ -1,0 +1,30 @@
+{
+  "manual-triggered-job-example": {
+    "2024-01-21T05-54-00Z": [],
+    "2025-03-22T22-03-14Z": []
+  },
+  "metadata": {
+    "2024-01-21T05-54-00Z": {
+      "triggers": {
+        "workflow_dispatch": null
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "test": 7
+      },
+      "line_count": 55,
+      "workflow": "name: Manual Triggered Job Example\n\npermissions:\n   contents: read\n\non:\n  workflow_dispatch:\n\njobs:\n  test:\n    name: Test changed-files\n    runs-on: ${{ matrix.platform }}\n    strategy:\n      fail-fast: false\n      max-parallel: 7\n      matrix:\n        platform: [ubuntu-latest, windows-latest, macos-latest]\n\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v4\n        with:\n          submodules: true\n          fetch-depth: 0\n\n      - name: Run changed-files with defaults\n        id: changed-files\n        uses: ./\n\n      - name: Show output\n        run: |\n          echo '${{ toJSON(steps.changed-files.outputs) }}'\n\n      - name: Run changed-files with glob filtering\n        id: changed-files-glob\n        uses: ./\n        with:\n          files: |\n            test/*.txt\n\n      - name: Show output\n        run: |\n          echo '${{ toJSON(steps.changed-files-glob.outputs) }}'\n\n      - name: Run changed-files with glob filtering and all_old_new_renamed_files\n        id: changed-files-glob-all-old-new-renamed-files\n        uses: ./\n        with:\n          include_all_old_new_renamed_files: true\n          files: |\n            test/*.txt\n\n      - name: Show output\n        run: |\n          echo '${{ toJSON(steps.changed-files-glob-all-old-new-renamed-files.outputs) }}'\n"
+    },
+    "2025-03-22T22-03-14Z": {
+      "triggers": {
+        "workflow_dispatch": null
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "test": 7
+      },
+      "line_count": 55,
+      "workflow": "name: Manual Triggered Job Example\n\npermissions:\n   contents: read\n\non:\n  workflow_dispatch:\n\njobs:\n  test:\n    name: Test changed-files\n    runs-on: ${{ matrix.platform }}\n    strategy:\n      fail-fast: false\n      max-parallel: 7\n      matrix:\n        platform: [ubuntu-latest, windows-latest, macos-latest]\n\n    steps:\n      - name: Checkout\n        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2\n        with:\n          submodules: true\n          fetch-depth: 0\n\n      - name: Run changed-files with defaults\n        id: changed-files\n        uses: ./\n\n      - name: Show output\n        run: |\n          echo '${{ toJSON(steps.changed-files.outputs) }}'\n\n      - name: Run changed-files with glob filtering\n        id: changed-files-glob\n        uses: ./\n        with:\n          files: |\n            test/*.txt\n\n      - name: Show output\n        run: |\n          echo '${{ toJSON(steps.changed-files-glob.outputs) }}'\n\n      - name: Run changed-files with glob filtering and all_old_new_renamed_files\n        id: changed-files-glob-all-old-new-renamed-files\n        uses: ./\n        with:\n          include_all_old_new_renamed_files: true\n          files: |\n            test/*.txt\n\n      - name: Show output\n        run: |\n          echo '${{ toJSON(steps.changed-files-glob-all-old-new-renamed-files.outputs) }}'\n"
+    }
+  }
+}

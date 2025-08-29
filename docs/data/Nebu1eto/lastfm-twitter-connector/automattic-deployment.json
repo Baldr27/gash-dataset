@@ -1,0 +1,51 @@
+{
+  "automattic-deployment": {
+    "2022-07-19T03-29-37Z": [
+      {
+        "region": {
+          "startLine": 10,
+          "startColumn": 5,
+          "endLine": 66,
+          "endColumn": 23
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 16,
+          "startColumn": 7,
+          "endLine": 20,
+          "endColumn": 5
+        },
+        "message": "The workflow is using a known vulnerable version ([v2.1](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ]
+  },
+  "metadata": {
+    "2022-07-19T03-29-37Z": {
+      "triggers": {
+        "push": {
+          "tags": [
+            "v*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 9
+      },
+      "line_count": 66,
+      "workflow": "name: 'Publish Releases'\n\non:\n  push:\n    tags:\n      - 'v*'\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n\n    steps:\n    - name: Setup Repo\n      uses: actions/checkout@v3\n\n    - name: Get branch names\n      uses: tj-actions/branch-names@v2.1\n      id: branch-names\n\n    - name: Setup Deno\n      uses: denoland/setup-deno@v1\n      with:\n        deno-version: ${{ matrix.deno }}\n\n    - name: Create Dist Folder\n      run: mkdir dist\n\n    - name: Compile Windows x64 Binary\n      run: deno compile \n                --unstable --allow-env --allow-net --allow-read --allow-write \n                --config deno.jsonc --import-map ./import_map.json \n                --target x86_64-pc-windows-msvc\n                --output ./dist/lastfm-twitter-connector-windows-msvc-x86_64 \n                ./src/index.ts\n    \n    - name: Compile Linux x64 Binary\n      run: deno compile \n                --unstable --allow-env --allow-net --allow-read --allow-write \n                --config deno.jsonc --import-map ./import_map.json \n                --target x86_64-unknown-linux-gnu\n                --output ./dist/lastfm-twitter-connector-linux-gnu-x86_64 \n                ./src/index.ts\n\n    - name: Compile macOS x64 Binary\n      run: deno compile \n                --unstable --allow-env --allow-net --allow-read --allow-write \n                --config deno.jsonc --import-map ./import_map.json \n                --target x86_64-apple-darwin\n                --output ./dist/lastfm-twitter-connector-apple-darwin-x86_64 \n                ./src/index.ts\n\n    - name: Compile macOS Aarch64 Binary\n      run: deno compile \n                --unstable --allow-env --allow-net --allow-read --allow-write \n                --config deno.jsonc --import-map ./import_map.json \n                --target aarch64-apple-darwin\n                --output ./dist/lastfm-twitter-connector-apple-darwin-aarch64 \n                ./src/index.ts\n\n    - name: Create a Release \n      uses: \"marvinpinto/action-automatic-releases@latest\"\n      with:\n        repo_token: \"${{ secrets.GH_TOKEN }}\"\n        prerelease: ${{ contains(steps.branch-names.outputs.tag, '-beta') }}\n        title: Release of ${{ steps.branch-names.outputs.tag }}\n        files: dist/*\n"
+    }
+  }
+}

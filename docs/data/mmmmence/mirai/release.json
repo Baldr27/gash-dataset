@@ -1,0 +1,664 @@
+{
+  "release": {
+    "2021-02-06T07-41-09Z": [
+      {
+        "region": {
+          "startLine": 18,
+          "startColumn": 5,
+          "endLine": 120,
+          "endColumn": 133
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-02-06T08-31-59Z": [
+      {
+        "region": {
+          "startLine": 18,
+          "startColumn": 5,
+          "endLine": 121,
+          "endColumn": 134
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-02-06T14-39-09Z": [
+      {
+        "region": {
+          "startLine": 18,
+          "startColumn": 5,
+          "endLine": 126,
+          "endColumn": 63
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-02-07T07-28-29Z": [
+      {
+        "region": {
+          "startLine": 18,
+          "startColumn": 5,
+          "endLine": 125,
+          "endColumn": 63
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-02-06T08-38-43Z": [
+      {
+        "region": {
+          "startLine": 18,
+          "startColumn": 5,
+          "endLine": 121,
+          "endColumn": 134
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-02-08T04-24-15Z": [
+      {
+        "region": {
+          "startLine": 18,
+          "startColumn": 5,
+          "endLine": 125,
+          "endColumn": 63
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-02-10T02-01-07Z": [
+      {
+        "region": {
+          "startLine": 18,
+          "startColumn": 5,
+          "endLine": 125,
+          "endColumn": 63
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-02-11T09-02-54Z": [
+      {
+        "region": {
+          "startLine": 18,
+          "startColumn": 5,
+          "endLine": 116,
+          "endColumn": 63
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-02-11T11-09-08Z": [
+      {
+        "region": {
+          "startLine": 19,
+          "startColumn": 5,
+          "endLine": 117,
+          "endColumn": 63
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-02-27T06-44-46Z": [
+      {
+        "region": {
+          "startLine": 19,
+          "startColumn": 5,
+          "endLine": 117,
+          "endColumn": 63
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-03-26T02-40-08Z": [
+      {
+        "region": {
+          "startLine": 20,
+          "startColumn": 5,
+          "endLine": 118,
+          "endColumn": 63
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-03-26T02-46-01Z": [
+      {
+        "region": {
+          "startLine": 18,
+          "startColumn": 5,
+          "endLine": 116,
+          "endColumn": 63
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-04-05T14-41-26Z": [
+      {
+        "region": {
+          "startLine": 18,
+          "startColumn": 5,
+          "endLine": 116,
+          "endColumn": 63
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-05-25T04-25-53Z": [
+      {
+        "region": {
+          "startLine": 18,
+          "startColumn": 5,
+          "endLine": 112,
+          "endColumn": 63
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-05-31T08-14-51Z": [
+      {
+        "region": {
+          "startLine": 18,
+          "startColumn": 5,
+          "endLine": null,
+          "endColumn": 5
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-05-31T08-20-09Z": [
+      {
+        "region": {
+          "startLine": 18,
+          "startColumn": 5,
+          "endLine": 116,
+          "endColumn": 63
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-06-19T15-58-27Z": [
+      {
+        "region": {
+          "startLine": 18,
+          "startColumn": 5,
+          "endLine": 116,
+          "endColumn": 63
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-07-28T03-45-43Z": [
+      {
+        "region": {
+          "startLine": 18,
+          "startColumn": 5,
+          "endLine": 116,
+          "endColumn": 63
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-09-01T05-47-02Z": [
+      {
+        "region": {
+          "startLine": 10,
+          "startColumn": 5,
+          "endLine": 108,
+          "endColumn": 60
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2021-02-06T07-41-09Z": {
+      "triggers": {
+        "release": {
+          "types": [
+            "created",
+            "prereleased"
+          ]
+        },
+        "push": {
+          "tags": [
+            "*-dev*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "publish-mirai": 19
+      },
+      "line_count": 120,
+      "workflow": "# This is a basic workflow to help you get started with Actions\n\nname: Release Publish\n\n# Controls when the action will run. Triggers the workflow on push or pull request \n# events but only for the master branch\non:\n  release:\n    types: [ created, prereleased ]\n  push:\n    tags:\n      - '*-dev*'\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  publish-mirai:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      - name: Checkout submodules\n        run: git submodule update --init --recursive --remote\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Init gradle project\n        run: ./gradlew clean --info\n\n      - name: Keys setup\n        shell: bash\n        run: |\n          mkdir build-gpg-sign\n          echo \"$GPG_PRIVATE\" > build-gpg-sign/keys.gpg\n          echo \"$GPG_PUBLIC_\" > build-gpg-sign/keys.gpg.pub\n          mkdir build-secret-keys\n          echo \"$SONATYPE_USER\" > build-secret-keys/sonatype.key\n          echo \"$SONATYPE_KEY\" >> build-secret-keys/sonatype.key\n          echo \"$BINTRAY_USER\" > build-secret-keys/bintray.key\n          echo \"$BINTRAY_KEY\" >> build-secret-keys/bintray.key\n        env:\n          GPG_PRIVATE: ${{ secrets.GPG_PRIVATE_KEY }}\n          GPG_PUBLIC_: ${{ secrets.GPG_PUBLIC_KEY }}\n          SONATYPE_USER: ${{ secrets.SONATYPE_USER }}\n          SONATYPE_KEY: ${{ secrets.SONATYPE_KEY }}\n          BINTRAY_USER: ${{ secrets.BINTRAY_USER }}\n          BINTRAY_KEY: ${{ secrets.BINTRAY_KEY }}\n\n      - name: Check keys\n        run: >\n          ./gradlew\n          :mirai-core-utils:ensureBintrayAvailable\n          :mirai-core-api:ensureBintrayAvailable\n          :mirai-core:ensureBintrayAvailable\n          :mirai-console:ensureBintrayAvailable\n          :mirai-core-utils:ensureMavenCentralAvailable\n          :mirai-core-api:ensureMavenCentralAvailable\n          :mirai-core:ensureMavenCentralAvailable\n          :mirai-console:ensureMavenCentralAvailable\n\n      - name: fillBuildConstants\n        run: >\n          ./gradlew\n          fillBuildConstants --info --stacktrace\n\n      - name: Assemble\n        run: ./gradlew assemble --info --stacktrace\n\n      - name: Check\n        run: ./gradlew check --info --stacktrace\n\n      - name: Gradle :mirai-core-utils:publish\n        run: >\n          ./gradlew :mirai-core-utils:publish --info --stacktrace\n\n      - name: Gradle :mirai-core-api:publish\n        run: >\n          ./gradlew :mirai-core-api:publish --info --stacktrace\n\n      - name: Gradle :mirai-core:publish\n        run: >\n          ./gradlew :mirai-core:publish --info --stacktrace\n\n      - name: Gradle :mirai-core-all:publish\n        run: >\n          ./gradlew :mirai-core-all:publish --info\n\n      - name: Gradle :mirai-console:publish\n        run: >\n          ./gradlew\n          :mirai-console:publish --info\n\n      - name: Gradle :mirai-console-terminal:publish\n        run: >\n          ./gradlew\n          :mirai-console-terminal:publish --info\n\n      - name: Gradle :mirai-console-compiler-common:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-common:publish --info\n\n      - name: Gradle :mirai-console-compiler-annotations:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-annotations:publish --info\n\n      - name: Publish Gradle plugin\n        run: >\n          ./gradlew\n          :mirai-console-gradle:publishPlugins --info --stacktrace\n          -Dgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }} -Pgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }}\n          -Dgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }} -Pgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }}\n"
+    },
+    "2021-02-06T08-31-59Z": {
+      "triggers": {
+        "release": {
+          "types": [
+            "created",
+            "prereleased"
+          ]
+        },
+        "push": {
+          "tags": [
+            "*-dev*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "publish-mirai": 18
+      },
+      "line_count": 121,
+      "workflow": "# This is a basic workflow to help you get started with Actions\n\nname: Release Publish\n\n# Controls when the action will run. Triggers the workflow on push or pull request \n# events but only for the master branch\non:\n  release:\n    types: [ created, prereleased ]\n  push:\n    tags:\n      - '*-dev*'\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  publish-mirai:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      - name: Checkout submodules\n        run: git submodule update --init --recursive --remote\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Init gradle project\n        run: ./gradlew clean --info\n\n      - name: Keys setup\n        shell: bash\n        run: |\n          mkdir build-gpg-sign\n          echo \"$GPG_PRIVATE\" > build-gpg-sign/keys.gpg\n          echo \"$GPG_PUBLIC_\" > build-gpg-sign/keys.gpg.pub\n          mkdir build-secret-keys\n          echo \"$SONATYPE_USER\" > build-secret-keys/sonatype.key\n          echo \"$SONATYPE_KEY\" >> build-secret-keys/sonatype.key\n          echo \"$BINTRAY_USER\" > build-secret-keys/bintray.key\n          echo \"$BINTRAY_KEY\" >> build-secret-keys/bintray.key\n        env:\n          GPG_PRIVATE: ${{ secrets.GPG_PRIVATE_KEY }}\n          GPG_PUBLIC_: ${{ secrets.GPG_PUBLIC_KEY }}\n          SONATYPE_USER: ${{ secrets.SONATYPE_USER }}\n          SONATYPE_KEY: ${{ secrets.SONATYPE_KEY }}\n          BINTRAY_USER: ${{ secrets.BINTRAY_USER }}\n          BINTRAY_KEY: ${{ secrets.BINTRAY_KEY }}\n\n      - name: Check keys\n        run: >\n          ./gradlew\n          :mirai-core-utils:ensureBintrayAvailable\n          :mirai-core-api:ensureBintrayAvailable\n          :mirai-core:ensureBintrayAvailable\n          :mirai-console:ensureBintrayAvailable\n          :mirai-core-utils:ensureMavenCentralAvailable\n          :mirai-core-api:ensureMavenCentralAvailable\n          :mirai-core:ensureMavenCentralAvailable\n          :mirai-console:ensureMavenCentralAvailable\n\n      - name: fillBuildConstants\n        run: >\n          ./gradlew\n          fillBuildConstants --info --stacktrace\n\n      - name: Assemble\n        run: ./gradlew assemble --info --stacktrace\n\n      - name: Check\n        run: ./gradlew check --info --stacktrace\n\n      - name: Gradle :mirai-core-utils:publish\n        run: >\n          ./gradlew :mirai-core-utils:publish --info --stacktrace\n\n      - name: Gradle :mirai-core-api:publish\n        run: >\n          ./gradlew :mirai-core-api:publish --info --stacktrace\n\n      - name: Gradle :mirai-core:publish\n        run: >\n          ./gradlew :mirai-core:publish --info --stacktrace\n\n      - name: Gradle :mirai-core-all:publish\n        run: >\n          ./gradlew :mirai-core-all:publish --info\n\n      - name: Gradle :mirai-console:publish\n        run: >\n          ./gradlew\n          :mirai-console:publish --info\n\n      - name: Gradle :mirai-console-terminal:publish\n        run: >\n          ./gradlew\n          :mirai-console-terminal:publish --info\n\n      - name: Gradle :mirai-console-compiler-common:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-common:publish --info\n\n      - name: Gradle :mirai-console-compiler-annotations:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-annotations:publish --info\n\n#      TEMP DISABLE\n#      - name: Publish Gradle plugin\n#        run: >\n#          ./gradlew\n#          :mirai-console-gradle:publishPlugins --info --stacktrace\n#          -Dgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }} -Pgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }}\n#          -Dgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }} -Pgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }}\n"
+    },
+    "2021-02-06T14-39-09Z": {
+      "triggers": {
+        "release": {
+          "types": [
+            "created",
+            "prereleased"
+          ]
+        },
+        "push": {
+          "tags": [
+            "*-dev*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "publish-mirai": 19
+      },
+      "line_count": 126,
+      "workflow": "# This is a basic workflow to help you get started with Actions\n\nname: Release Publish\n\n# Controls when the action will run. Triggers the workflow on push or pull request \n# events but only for the master branch\non:\n  release:\n    types: [ created, prereleased ]\n  push:\n    tags:\n      - '*-dev*'\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  publish-mirai:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      - name: Checkout submodules\n        run: git submodule update --init --recursive --remote\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Keys setup\n        shell: bash\n        run: |\n          mkdir build-gpg-sign\n          echo \"$GPG_PRIVATE\" > build-gpg-sign/keys.gpg\n          echo \"$GPG_PUBLIC_\" > build-gpg-sign/keys.gpg.pub\n          mkdir build-secret-keys\n          echo \"$SONATYPE_USER\" > build-secret-keys/sonatype.key\n          echo \"$SONATYPE_KEY\" >> build-secret-keys/sonatype.key\n          echo \"$BINTRAY_USER\" > build-secret-keys/bintray.key\n          echo \"$BINTRAY_KEY\" >> build-secret-keys/bintray.key\n        env:\n          GPG_PRIVATE: ${{ secrets.GPG_PRIVATE_KEY }}\n          GPG_PUBLIC_: ${{ secrets.GPG_PUBLIC_KEY }}\n          SONATYPE_USER: ${{ secrets.SONATYPE_USER }}\n          SONATYPE_KEY: ${{ secrets.SONATYPE_KEY }}\n          BINTRAY_USER: ${{ secrets.BINTRAY_USER }}\n          BINTRAY_KEY: ${{ secrets.BINTRAY_KEY }}\n\n      - name: Init gradle project\n        run: ./gradlew clean --info\n\n      - name: Check keys\n        run: >\n          ./gradlew\n          :mirai-core-utils:ensureBintrayAvailable\n          :mirai-core-api:ensureBintrayAvailable\n          :mirai-core:ensureBintrayAvailable\n          :mirai-console:ensureBintrayAvailable\n          :mirai-core-utils:ensureMavenCentralAvailable\n          :mirai-core-api:ensureMavenCentralAvailable\n          :mirai-core:ensureMavenCentralAvailable\n          :mirai-console:ensureMavenCentralAvailable\n\n      - name: fillBuildConstants\n        run: >\n          ./gradlew\n          fillBuildConstants --info --stacktrace\n\n      - name: Assemble\n        run: ./gradlew assemble --info --stacktrace\n\n      - name: Check\n        run: ./gradlew check --info --stacktrace\n\n      - name: Gradle :mirai-core-utils:publish\n        run: >\n          ./gradlew :mirai-core-utils:publish --info --stacktrace\n\n      - name: Gradle :mirai-core-api:publish\n        run: >\n          ./gradlew :mirai-core-api:publish --info --stacktrace\n\n      - name: Gradle :mirai-core:publish\n        run: >\n          ./gradlew :mirai-core:publish --info --stacktrace\n\n      - name: Gradle :mirai-core-all:publish\n        run: >\n          ./gradlew :mirai-core-all:publish --info\n\n      - name: Gradle :mirai-console:publish\n        run: >\n          ./gradlew\n          :mirai-console:publish --info\n\n      - name: Gradle :mirai-console-terminal:publish\n        run: >\n          ./gradlew\n          :mirai-console-terminal:publish --info\n\n      - name: Gradle :mirai-console-compiler-common:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-common:publish --info\n\n      - name: Gradle :mirai-console-compiler-annotations:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-annotations:publish --info\n\n#      TEMP DISABLE\n#      - name: Publish Gradle plugin\n#        run: >\n#          ./gradlew\n#          :mirai-console-gradle:publishPlugins --info --stacktrace\n#          -Dgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }} -Pgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }}\n#          -Dgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }} -Pgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }}\n\n      - name: Gradle :ci-release-helper:closeAndReleaseRepository\n        run: >\n          ./gradlew\n          :ci-release-helper:closeAndReleaseRepository --info\n"
+    },
+    "2021-02-07T07-28-29Z": {
+      "triggers": {
+        "release": {
+          "types": [
+            "created",
+            "prereleased"
+          ]
+        },
+        "push": {
+          "tags": [
+            "*-dev*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "publish-mirai": 20
+      },
+      "line_count": 125,
+      "workflow": "# This is a basic workflow to help you get started with Actions\n\nname: Release Publish\n\n# Controls when the action will run. Triggers the workflow on push or pull request \n# events but only for the master branch\non:\n  release:\n    types: [ created, prereleased ]\n  push:\n    tags:\n      - '*-dev*'\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  publish-mirai:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      - name: Checkout submodules\n        run: git submodule update --init --recursive --remote\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Keys setup\n        shell: bash\n        run: |\n          mkdir build-gpg-sign\n          echo \"$GPG_PRIVATE\" > build-gpg-sign/keys.gpg\n          echo \"$GPG_PUBLIC_\" > build-gpg-sign/keys.gpg.pub\n          mkdir build-secret-keys\n          echo \"$SONATYPE_USER\" > build-secret-keys/sonatype.key\n          echo \"$SONATYPE_KEY\" >> build-secret-keys/sonatype.key\n          echo \"$BINTRAY_USER\" > build-secret-keys/bintray.key\n          echo \"$BINTRAY_KEY\" >> build-secret-keys/bintray.key\n        env:\n          GPG_PRIVATE: ${{ secrets.GPG_PRIVATE_KEY }}\n          GPG_PUBLIC_: ${{ secrets.GPG_PUBLIC_KEY }}\n          SONATYPE_USER: ${{ secrets.SONATYPE_USER }}\n          SONATYPE_KEY: ${{ secrets.SONATYPE_KEY }}\n          BINTRAY_USER: ${{ secrets.BINTRAY_USER }}\n          BINTRAY_KEY: ${{ secrets.BINTRAY_KEY }}\n\n      - name: Init gradle project\n        run: ./gradlew clean --info\n\n      - name: Check keys\n        run: >\n          ./gradlew\n          :mirai-core-utils:ensureBintrayAvailable\n          :mirai-core-api:ensureBintrayAvailable\n          :mirai-core:ensureBintrayAvailable\n          :mirai-console:ensureBintrayAvailable\n          :mirai-core-utils:ensureMavenCentralAvailable\n          :mirai-core-api:ensureMavenCentralAvailable\n          :mirai-core:ensureMavenCentralAvailable\n          :mirai-console:ensureMavenCentralAvailable\n\n      - name: fillBuildConstants\n        run: >\n          ./gradlew\n          fillBuildConstants --info --stacktrace\n\n      - name: Assemble\n        run: ./gradlew assemble --info --stacktrace\n\n      - name: Check\n        run: ./gradlew check --info --stacktrace\n\n      - name: Gradle :mirai-core-utils:publish\n        run: >\n          ./gradlew :mirai-core-utils:publish --info --stacktrace\n\n      - name: Gradle :mirai-core-api:publish\n        run: >\n          ./gradlew :mirai-core-api:publish --info --stacktrace\n\n      - name: Gradle :mirai-core:publish\n        run: >\n          ./gradlew :mirai-core:publish --info --stacktrace\n\n      - name: Gradle :mirai-core-all:publish\n        run: >\n          ./gradlew :mirai-core-all:publish --info\n\n      - name: Gradle :mirai-console:publish\n        run: >\n          ./gradlew\n          :mirai-console:publish --info\n\n      - name: Gradle :mirai-console-terminal:publish\n        run: >\n          ./gradlew\n          :mirai-console-terminal:publish --info\n\n      - name: Gradle :mirai-console-compiler-common:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-common:publish --info\n\n      - name: Gradle :mirai-console-compiler-annotations:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-annotations:publish --info\n\n      - name: Publish Gradle plugin\n        run: >\n          ./gradlew\n          :mirai-console-gradle:publishPlugins --info --stacktrace\n          -Dgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }} -Pgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }}\n          -Dgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }} -Pgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }}\n\n      - name: Gradle :ci-release-helper:closeAndReleaseRepository\n        run: >\n          ./gradlew\n          :ci-release-helper:closeAndReleaseRepository --info\n"
+    },
+    "2021-02-06T08-38-43Z": {
+      "triggers": {
+        "release": {
+          "types": [
+            "created",
+            "prereleased"
+          ]
+        },
+        "push": {
+          "tags": [
+            "*-dev*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "publish-mirai": 18
+      },
+      "line_count": 121,
+      "workflow": "# This is a basic workflow to help you get started with Actions\n\nname: Release Publish\n\n# Controls when the action will run. Triggers the workflow on push or pull request \n# events but only for the master branch\non:\n  release:\n    types: [ created, prereleased ]\n  push:\n    tags:\n      - '*-dev*'\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  publish-mirai:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      - name: Checkout submodules\n        run: git submodule update --init --recursive --remote\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Keys setup\n        shell: bash\n        run: |\n          mkdir build-gpg-sign\n          echo \"$GPG_PRIVATE\" > build-gpg-sign/keys.gpg\n          echo \"$GPG_PUBLIC_\" > build-gpg-sign/keys.gpg.pub\n          mkdir build-secret-keys\n          echo \"$SONATYPE_USER\" > build-secret-keys/sonatype.key\n          echo \"$SONATYPE_KEY\" >> build-secret-keys/sonatype.key\n          echo \"$BINTRAY_USER\" > build-secret-keys/bintray.key\n          echo \"$BINTRAY_KEY\" >> build-secret-keys/bintray.key\n        env:\n          GPG_PRIVATE: ${{ secrets.GPG_PRIVATE_KEY }}\n          GPG_PUBLIC_: ${{ secrets.GPG_PUBLIC_KEY }}\n          SONATYPE_USER: ${{ secrets.SONATYPE_USER }}\n          SONATYPE_KEY: ${{ secrets.SONATYPE_KEY }}\n          BINTRAY_USER: ${{ secrets.BINTRAY_USER }}\n          BINTRAY_KEY: ${{ secrets.BINTRAY_KEY }}\n\n      - name: Init gradle project\n        run: ./gradlew clean --info\n\n      - name: Check keys\n        run: >\n          ./gradlew\n          :mirai-core-utils:ensureBintrayAvailable\n          :mirai-core-api:ensureBintrayAvailable\n          :mirai-core:ensureBintrayAvailable\n          :mirai-console:ensureBintrayAvailable\n          :mirai-core-utils:ensureMavenCentralAvailable\n          :mirai-core-api:ensureMavenCentralAvailable\n          :mirai-core:ensureMavenCentralAvailable\n          :mirai-console:ensureMavenCentralAvailable\n\n      - name: fillBuildConstants\n        run: >\n          ./gradlew\n          fillBuildConstants --info --stacktrace\n\n      - name: Assemble\n        run: ./gradlew assemble --info --stacktrace\n\n      - name: Check\n        run: ./gradlew check --info --stacktrace\n\n      - name: Gradle :mirai-core-utils:publish\n        run: >\n          ./gradlew :mirai-core-utils:publish --info --stacktrace\n\n      - name: Gradle :mirai-core-api:publish\n        run: >\n          ./gradlew :mirai-core-api:publish --info --stacktrace\n\n      - name: Gradle :mirai-core:publish\n        run: >\n          ./gradlew :mirai-core:publish --info --stacktrace\n\n      - name: Gradle :mirai-core-all:publish\n        run: >\n          ./gradlew :mirai-core-all:publish --info\n\n      - name: Gradle :mirai-console:publish\n        run: >\n          ./gradlew\n          :mirai-console:publish --info\n\n      - name: Gradle :mirai-console-terminal:publish\n        run: >\n          ./gradlew\n          :mirai-console-terminal:publish --info\n\n      - name: Gradle :mirai-console-compiler-common:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-common:publish --info\n\n      - name: Gradle :mirai-console-compiler-annotations:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-annotations:publish --info\n\n#      TEMP DISABLE\n#      - name: Publish Gradle plugin\n#        run: >\n#          ./gradlew\n#          :mirai-console-gradle:publishPlugins --info --stacktrace\n#          -Dgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }} -Pgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }}\n#          -Dgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }} -Pgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }}\n"
+    },
+    "2021-02-08T04-24-15Z": {
+      "triggers": {
+        "release": {
+          "types": [
+            "created"
+          ]
+        },
+        "push": {
+          "tags": [
+            "*-dev*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "publish-mirai": 20
+      },
+      "line_count": 125,
+      "workflow": "# This is a basic workflow to help you get started with Actions\n\nname: Release Publish\n\n# Controls when the action will run. Triggers the workflow on push or pull request \n# events but only for the master branch\non:\n  release:\n    types: [ created ]\n  push:\n    tags:\n      - '*-dev*'\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  publish-mirai:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      - name: Checkout submodules\n        run: git submodule update --init --recursive --remote\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Keys setup\n        shell: bash\n        run: |\n          mkdir build-gpg-sign\n          echo \"$GPG_PRIVATE\" > build-gpg-sign/keys.gpg\n          echo \"$GPG_PUBLIC_\" > build-gpg-sign/keys.gpg.pub\n          mkdir build-secret-keys\n          echo \"$SONATYPE_USER\" > build-secret-keys/sonatype.key\n          echo \"$SONATYPE_KEY\" >> build-secret-keys/sonatype.key\n          echo \"$BINTRAY_USER\" > build-secret-keys/bintray.key\n          echo \"$BINTRAY_KEY\" >> build-secret-keys/bintray.key\n        env:\n          GPG_PRIVATE: ${{ secrets.GPG_PRIVATE_KEY }}\n          GPG_PUBLIC_: ${{ secrets.GPG_PUBLIC_KEY }}\n          SONATYPE_USER: ${{ secrets.SONATYPE_USER }}\n          SONATYPE_KEY: ${{ secrets.SONATYPE_KEY }}\n          BINTRAY_USER: ${{ secrets.BINTRAY_USER }}\n          BINTRAY_KEY: ${{ secrets.BINTRAY_KEY }}\n\n      - name: Init gradle project\n        run: ./gradlew clean --info\n\n      - name: Check keys\n        run: >\n          ./gradlew\n          :mirai-core-utils:ensureBintrayAvailable\n          :mirai-core-api:ensureBintrayAvailable\n          :mirai-core:ensureBintrayAvailable\n          :mirai-console:ensureBintrayAvailable\n          :mirai-core-utils:ensureMavenCentralAvailable\n          :mirai-core-api:ensureMavenCentralAvailable\n          :mirai-core:ensureMavenCentralAvailable\n          :mirai-console:ensureMavenCentralAvailable\n\n      - name: fillBuildConstants\n        run: >\n          ./gradlew\n          fillBuildConstants --info --stacktrace\n\n      - name: Assemble\n        run: ./gradlew assemble --info --stacktrace\n\n      - name: Check\n        run: ./gradlew check --info --stacktrace\n\n      - name: Gradle :mirai-core-utils:publish\n        run: >\n          ./gradlew :mirai-core-utils:publish --info --stacktrace\n\n      - name: Gradle :mirai-core-api:publish\n        run: >\n          ./gradlew :mirai-core-api:publish --info --stacktrace\n\n      - name: Gradle :mirai-core:publish\n        run: >\n          ./gradlew :mirai-core:publish --info --stacktrace\n\n      - name: Gradle :mirai-core-all:publish\n        run: >\n          ./gradlew :mirai-core-all:publish --info\n\n      - name: Gradle :mirai-console:publish\n        run: >\n          ./gradlew\n          :mirai-console:publish --info\n\n      - name: Gradle :mirai-console-terminal:publish\n        run: >\n          ./gradlew\n          :mirai-console-terminal:publish --info\n\n      - name: Gradle :mirai-console-compiler-common:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-common:publish --info\n\n      - name: Gradle :mirai-console-compiler-annotations:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-annotations:publish --info\n\n      - name: Publish Gradle plugin\n        run: >\n          ./gradlew\n          :mirai-console-gradle:publishPlugins --info --stacktrace\n          -Dgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }} -Pgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }}\n          -Dgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }} -Pgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }}\n\n      - name: Gradle :ci-release-helper:closeAndReleaseRepository\n        run: >\n          ./gradlew\n          :ci-release-helper:closeAndReleaseRepository --info\n"
+    },
+    "2021-02-10T02-01-07Z": {
+      "triggers": {
+        "release": {
+          "types": [
+            "created"
+          ]
+        },
+        "push": {
+          "tags": [
+            "*-dev*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "publish-mirai": 20
+      },
+      "line_count": 125,
+      "workflow": "# This is a basic workflow to help you get started with Actions\n\nname: Release Publish\n\n# Controls when the action will run. Triggers the workflow on push or pull request \n# events but only for the master branch\non:\n  release:\n    types: [ created ]\n  push:\n    tags:\n      - '*-dev*'\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  publish-mirai:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      - name: Checkout submodules\n        run: git submodule update --init --recursive --remote\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Keys setup\n        shell: bash\n        run: |\n          mkdir build-gpg-sign\n          echo \"$GPG_PRIVATE\" > build-gpg-sign/keys.gpg\n          echo \"$GPG_PUBLIC_\" > build-gpg-sign/keys.gpg.pub\n          mkdir build-secret-keys\n          echo \"$SONATYPE_USER\" > build-secret-keys/sonatype.key\n          echo \"$SONATYPE_KEY\" >> build-secret-keys/sonatype.key\n          echo \"$BINTRAY_USER\" > build-secret-keys/bintray.key\n          echo \"$BINTRAY_KEY\" >> build-secret-keys/bintray.key\n        env:\n          GPG_PRIVATE: ${{ secrets.GPG_PRIVATE_KEY }}\n          GPG_PUBLIC_: ${{ secrets.GPG_PUBLIC_KEY }}\n          SONATYPE_USER: ${{ secrets.SONATYPE_USER }}\n          SONATYPE_KEY: ${{ secrets.SONATYPE_KEY }}\n          BINTRAY_USER: ${{ secrets.BINTRAY_USER }}\n          BINTRAY_KEY: ${{ secrets.BINTRAY_KEY }}\n\n      - name: Init gradle project\n        run: ./gradlew clean --scan\n\n      - name: Check keys\n        run: >\n          ./gradlew\n          :mirai-core-utils:ensureBintrayAvailable\n          :mirai-core-api:ensureBintrayAvailable\n          :mirai-core:ensureBintrayAvailable\n          :mirai-console:ensureBintrayAvailable\n          :mirai-core-utils:ensureMavenCentralAvailable\n          :mirai-core-api:ensureMavenCentralAvailable\n          :mirai-core:ensureMavenCentralAvailable\n          :mirai-console:ensureMavenCentralAvailable\n\n      - name: fillBuildConstants\n        run: >\n          ./gradlew\n          fillBuildConstants --scan\n\n      - name: Assemble\n        run: ./gradlew assemble --scan\n\n      - name: Check\n        run: ./gradlew check --scan\n\n      - name: Gradle :mirai-core-utils:publish\n        run: >\n          ./gradlew :mirai-core-utils:publish --scan\n\n      - name: Gradle :mirai-core-api:publish\n        run: >\n          ./gradlew :mirai-core-api:publish --scan\n\n      - name: Gradle :mirai-core:publish\n        run: >\n          ./gradlew :mirai-core:publish --scan\n\n      - name: Gradle :mirai-core-all:publish\n        run: >\n          ./gradlew :mirai-core-all:publish --info\n\n      - name: Gradle :mirai-console:publish\n        run: >\n          ./gradlew\n          :mirai-console:publish --info\n\n      - name: Gradle :mirai-console-terminal:publish\n        run: >\n          ./gradlew\n          :mirai-console-terminal:publish --info\n\n      - name: Gradle :mirai-console-compiler-common:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-common:publish --info\n\n      - name: Gradle :mirai-console-compiler-annotations:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-annotations:publish --info\n\n      - name: Publish Gradle plugin\n        run: >\n          ./gradlew\n          :mirai-console-gradle:publishPlugins --scan\n          -Dgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }} -Pgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }}\n          -Dgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }} -Pgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }}\n\n      - name: Gradle :ci-release-helper:closeAndReleaseRepository\n        run: >\n          ./gradlew\n          :ci-release-helper:closeAndReleaseRepository --info\n"
+    },
+    "2021-02-11T09-02-54Z": {
+      "triggers": {
+        "release": {
+          "types": [
+            "created"
+          ]
+        },
+        "push": {
+          "tags": [
+            "*-dev*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "publish-mirai": 20
+      },
+      "line_count": 116,
+      "workflow": "# This is a basic workflow to help you get started with Actions\n\nname: Release Publish\n\n# Controls when the action will run. Triggers the workflow on push or pull request \n# events but only for the master branch\non:\n  release:\n    types: [ created ]\n  push:\n    tags:\n      - '*-dev*'\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  publish-mirai:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      - name: Checkout submodules\n        run: git submodule update --init --recursive --remote\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Keys setup\n        shell: bash\n        run: |\n          mkdir build-gpg-sign\n          echo \"$GPG_PRIVATE\" > build-gpg-sign/keys.gpg\n          echo \"$GPG_PUBLIC_\" > build-gpg-sign/keys.gpg.pub\n          mkdir build-secret-keys\n          echo \"$SONATYPE_USER\" > build-secret-keys/sonatype.key\n          echo \"$SONATYPE_KEY\" >> build-secret-keys/sonatype.key\n          echo \"$BINTRAY_USER\" > build-secret-keys/bintray.key\n          echo \"$BINTRAY_KEY\" >> build-secret-keys/bintray.key\n        env:\n          GPG_PRIVATE: ${{ secrets.GPG_PRIVATE_KEY }}\n          GPG_PUBLIC_: ${{ secrets.GPG_PUBLIC_KEY }}\n          SONATYPE_USER: ${{ secrets.SONATYPE_USER }}\n          SONATYPE_KEY: ${{ secrets.SONATYPE_KEY }}\n          BINTRAY_USER: ${{ secrets.BINTRAY_USER }}\n          BINTRAY_KEY: ${{ secrets.BINTRAY_KEY }}\n\n      - name: Init gradle project\n        run: ./gradlew clean --scan\n\n      - name: Check keys\n        run: ./gradlew ensureBintrayAvailable ensureMavenCentralAvailable\n\n      - name: fillBuildConstants\n        run: >\n          ./gradlew\n          fillBuildConstants --scan\n\n      - name: Assemble\n        run: ./gradlew assemble --scan\n\n      - name: Check\n        run: ./gradlew check --scan\n\n      - name: Gradle :mirai-core-utils:publish\n        run: >\n          ./gradlew :mirai-core-utils:publish --scan\n\n      - name: Gradle :mirai-core-api:publish\n        run: >\n          ./gradlew :mirai-core-api:publish --scan\n\n      - name: Gradle :mirai-core:publish\n        run: >\n          ./gradlew :mirai-core:publish --scan\n\n      - name: Gradle :mirai-core-all:publish\n        run: >\n          ./gradlew :mirai-core-all:publish --info\n\n      - name: Gradle :mirai-console:publish\n        run: >\n          ./gradlew\n          :mirai-console:publish --info\n\n      - name: Gradle :mirai-console-terminal:publish\n        run: >\n          ./gradlew\n          :mirai-console-terminal:publish --info\n\n      - name: Gradle :mirai-console-compiler-common:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-common:publish --info\n\n      - name: Gradle :mirai-console-compiler-annotations:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-annotations:publish --info\n\n      - name: Publish Gradle plugin\n        run: >\n          ./gradlew\n          :mirai-console-gradle:publishPlugins --scan\n          -Dgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }} -Pgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }}\n          -Dgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }} -Pgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }}\n\n      - name: Gradle :ci-release-helper:closeAndReleaseRepository\n        run: >\n          ./gradlew\n          :ci-release-helper:closeAndReleaseRepository --info\n"
+    },
+    "2021-02-11T11-09-08Z": {
+      "triggers": {
+        "release": {
+          "types": [
+            "created"
+          ]
+        },
+        "push": {
+          "tags": [
+            "*-dev*",
+            "*-release"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "publish-mirai": 20
+      },
+      "line_count": 117,
+      "workflow": "# This is a basic workflow to help you get started with Actions\n\nname: Release Publish\n\n# Controls when the action will run. Triggers the workflow on push or pull request \n# events but only for the master branch\non:\n  release:\n    types: [ created ]\n  push:\n    tags:\n      - '*-dev*'\n      - '*-release'\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  publish-mirai:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      - name: Checkout submodules\n        run: git submodule update --init --recursive --remote\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Keys setup\n        shell: bash\n        run: |\n          mkdir build-gpg-sign\n          echo \"$GPG_PRIVATE\" > build-gpg-sign/keys.gpg\n          echo \"$GPG_PUBLIC_\" > build-gpg-sign/keys.gpg.pub\n          mkdir build-secret-keys\n          echo \"$SONATYPE_USER\" > build-secret-keys/sonatype.key\n          echo \"$SONATYPE_KEY\" >> build-secret-keys/sonatype.key\n          echo \"$BINTRAY_USER\" > build-secret-keys/bintray.key\n          echo \"$BINTRAY_KEY\" >> build-secret-keys/bintray.key\n        env:\n          GPG_PRIVATE: ${{ secrets.GPG_PRIVATE_KEY }}\n          GPG_PUBLIC_: ${{ secrets.GPG_PUBLIC_KEY }}\n          SONATYPE_USER: ${{ secrets.SONATYPE_USER }}\n          SONATYPE_KEY: ${{ secrets.SONATYPE_KEY }}\n          BINTRAY_USER: ${{ secrets.BINTRAY_USER }}\n          BINTRAY_KEY: ${{ secrets.BINTRAY_KEY }}\n\n      - name: Init gradle project\n        run: ./gradlew clean --scan\n\n      - name: Check keys\n        run: ./gradlew ensureBintrayAvailable ensureMavenCentralAvailable\n\n      - name: fillBuildConstants\n        run: >\n          ./gradlew\n          fillBuildConstants --scan\n\n      - name: Assemble\n        run: ./gradlew assemble --scan\n\n      - name: Check\n        run: ./gradlew check --scan\n\n      - name: Gradle :mirai-core-utils:publish\n        run: >\n          ./gradlew :mirai-core-utils:publish --scan\n\n      - name: Gradle :mirai-core-api:publish\n        run: >\n          ./gradlew :mirai-core-api:publish --scan\n\n      - name: Gradle :mirai-core:publish\n        run: >\n          ./gradlew :mirai-core:publish --scan\n\n      - name: Gradle :mirai-core-all:publish\n        run: >\n          ./gradlew :mirai-core-all:publish --info\n\n      - name: Gradle :mirai-console:publish\n        run: >\n          ./gradlew\n          :mirai-console:publish --info\n\n      - name: Gradle :mirai-console-terminal:publish\n        run: >\n          ./gradlew\n          :mirai-console-terminal:publish --info\n\n      - name: Gradle :mirai-console-compiler-common:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-common:publish --info\n\n      - name: Gradle :mirai-console-compiler-annotations:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-annotations:publish --info\n\n      - name: Publish Gradle plugin\n        run: >\n          ./gradlew\n          :mirai-console-gradle:publishPlugins --scan\n          -Dgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }} -Pgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }}\n          -Dgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }} -Pgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }}\n\n      - name: Gradle :ci-release-helper:closeAndReleaseRepository\n        run: >\n          ./gradlew\n          :ci-release-helper:closeAndReleaseRepository --info\n"
+    },
+    "2021-02-27T06-44-46Z": {
+      "triggers": {
+        "release": {
+          "types": [
+            "created"
+          ]
+        },
+        "push": {
+          "tags": [
+            "*-dev*",
+            "*-release"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "publish-mirai": 20
+      },
+      "line_count": 117,
+      "workflow": "# This is a basic workflow to help you get started with Actions\n\nname: Release Publish\n\n# Controls when the action will run. Triggers the workflow on push or pull request \n# events but only for the master branch\non:\n  release:\n    types: [ created ]\n  push:\n    tags:\n      - '*-dev*'\n      - '*-release'\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  publish-mirai:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      - name: Checkout submodules\n        run: git submodule update --init --recursive\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Keys setup\n        shell: bash\n        run: |\n          mkdir build-gpg-sign\n          echo \"$GPG_PRIVATE\" > build-gpg-sign/keys.gpg\n          echo \"$GPG_PUBLIC_\" > build-gpg-sign/keys.gpg.pub\n          mkdir build-secret-keys\n          echo \"$SONATYPE_USER\" > build-secret-keys/sonatype.key\n          echo \"$SONATYPE_KEY\" >> build-secret-keys/sonatype.key\n          echo \"$BINTRAY_USER\" > build-secret-keys/bintray.key\n          echo \"$BINTRAY_KEY\" >> build-secret-keys/bintray.key\n        env:\n          GPG_PRIVATE: ${{ secrets.GPG_PRIVATE_KEY }}\n          GPG_PUBLIC_: ${{ secrets.GPG_PUBLIC_KEY }}\n          SONATYPE_USER: ${{ secrets.SONATYPE_USER }}\n          SONATYPE_KEY: ${{ secrets.SONATYPE_KEY }}\n          BINTRAY_USER: ${{ secrets.BINTRAY_USER }}\n          BINTRAY_KEY: ${{ secrets.BINTRAY_KEY }}\n\n      - name: Init gradle project\n        run: ./gradlew clean --scan\n\n      - name: Check keys\n        run: ./gradlew ensureBintrayAvailable ensureMavenCentralAvailable\n\n      - name: fillBuildConstants\n        run: >\n          ./gradlew\n          fillBuildConstants --scan\n\n      - name: Assemble\n        run: ./gradlew assemble --scan\n\n      - name: Check\n        run: ./gradlew check --scan\n\n      - name: Gradle :mirai-core-utils:publish\n        run: >\n          ./gradlew :mirai-core-utils:publish --scan\n\n      - name: Gradle :mirai-core-api:publish\n        run: >\n          ./gradlew :mirai-core-api:publish --scan\n\n      - name: Gradle :mirai-core:publish\n        run: >\n          ./gradlew :mirai-core:publish --scan\n\n      - name: Gradle :mirai-core-all:publish\n        run: >\n          ./gradlew :mirai-core-all:publish --info\n\n      - name: Gradle :mirai-console:publish\n        run: >\n          ./gradlew\n          :mirai-console:publish --info\n\n      - name: Gradle :mirai-console-terminal:publish\n        run: >\n          ./gradlew\n          :mirai-console-terminal:publish --info\n\n      - name: Gradle :mirai-console-compiler-common:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-common:publish --info\n\n      - name: Gradle :mirai-console-compiler-annotations:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-annotations:publish --info\n\n      - name: Publish Gradle plugin\n        run: >\n          ./gradlew\n          :mirai-console-gradle:publishPlugins --scan\n          -Dgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }} -Pgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }}\n          -Dgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }} -Pgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }}\n\n      - name: Gradle :ci-release-helper:closeAndReleaseRepository\n        run: >\n          ./gradlew\n          :ci-release-helper:closeAndReleaseRepository --info\n"
+    },
+    "2021-03-26T02-40-08Z": {
+      "triggers": {
+        "release": {
+          "types": [
+            "created"
+          ]
+        },
+        "push": {
+          "tags": [
+            "*-dev*",
+            "*-release",
+            "v*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "publish-mirai": 20
+      },
+      "line_count": 118,
+      "workflow": "# This is a basic workflow to help you get started with Actions\n\nname: Release Publish\n\n# Controls when the action will run. Triggers the workflow on push or pull request \n# events but only for the master branch\non:\n  release:\n    types: [ created ]\n  push:\n    tags:\n      - '*-dev*'\n      - '*-release'\n      - 'v*'\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  publish-mirai:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      - name: Checkout submodules\n        run: git submodule update --init --recursive\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Keys setup\n        shell: bash\n        run: |\n          mkdir build-gpg-sign\n          echo \"$GPG_PRIVATE\" > build-gpg-sign/keys.gpg\n          echo \"$GPG_PUBLIC_\" > build-gpg-sign/keys.gpg.pub\n          mkdir build-secret-keys\n          echo \"$SONATYPE_USER\" > build-secret-keys/sonatype.key\n          echo \"$SONATYPE_KEY\" >> build-secret-keys/sonatype.key\n          echo \"$BINTRAY_USER\" > build-secret-keys/bintray.key\n          echo \"$BINTRAY_KEY\" >> build-secret-keys/bintray.key\n        env:\n          GPG_PRIVATE: ${{ secrets.GPG_PRIVATE_KEY }}\n          GPG_PUBLIC_: ${{ secrets.GPG_PUBLIC_KEY }}\n          SONATYPE_USER: ${{ secrets.SONATYPE_USER }}\n          SONATYPE_KEY: ${{ secrets.SONATYPE_KEY }}\n          BINTRAY_USER: ${{ secrets.BINTRAY_USER }}\n          BINTRAY_KEY: ${{ secrets.BINTRAY_KEY }}\n\n      - name: Init gradle project\n        run: ./gradlew clean --scan\n\n      - name: Check keys\n        run: ./gradlew ensureBintrayAvailable ensureMavenCentralAvailable\n\n      - name: fillBuildConstants\n        run: >\n          ./gradlew\n          fillBuildConstants --scan\n\n      - name: Assemble\n        run: ./gradlew assemble --scan\n\n      - name: Check\n        run: ./gradlew check --scan\n\n      - name: Gradle :mirai-core-utils:publish\n        run: >\n          ./gradlew :mirai-core-utils:publish --scan\n\n      - name: Gradle :mirai-core-api:publish\n        run: >\n          ./gradlew :mirai-core-api:publish --scan\n\n      - name: Gradle :mirai-core:publish\n        run: >\n          ./gradlew :mirai-core:publish --scan\n\n      - name: Gradle :mirai-core-all:publish\n        run: >\n          ./gradlew :mirai-core-all:publish --info\n\n      - name: Gradle :mirai-console:publish\n        run: >\n          ./gradlew\n          :mirai-console:publish --info\n\n      - name: Gradle :mirai-console-terminal:publish\n        run: >\n          ./gradlew\n          :mirai-console-terminal:publish --info\n\n      - name: Gradle :mirai-console-compiler-common:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-common:publish --info\n\n      - name: Gradle :mirai-console-compiler-annotations:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-annotations:publish --info\n\n      - name: Publish Gradle plugin\n        run: >\n          ./gradlew\n          :mirai-console-gradle:publishPlugins --scan\n          -Dgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }} -Pgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }}\n          -Dgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }} -Pgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }}\n\n      - name: Gradle :ci-release-helper:closeAndReleaseRepository\n        run: >\n          ./gradlew\n          :ci-release-helper:closeAndReleaseRepository --info\n"
+    },
+    "2021-03-26T02-46-01Z": {
+      "triggers": {
+        "push": {
+          "tags": [
+            "*-dev*",
+            "*-release",
+            "v*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "publish-mirai": 20
+      },
+      "line_count": 116,
+      "workflow": "# This is a basic workflow to help you get started with Actions\n\nname: Release Publish\n\n# Controls when the action will run. Triggers the workflow on push or pull request \n# events but only for the master branch\non:\n  push:\n    tags:\n      - '*-dev*'\n      - '*-release'\n      - 'v*'\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  publish-mirai:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      - name: Checkout submodules\n        run: git submodule update --init --recursive\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Keys setup\n        shell: bash\n        run: |\n          mkdir build-gpg-sign\n          echo \"$GPG_PRIVATE\" > build-gpg-sign/keys.gpg\n          echo \"$GPG_PUBLIC_\" > build-gpg-sign/keys.gpg.pub\n          mkdir build-secret-keys\n          echo \"$SONATYPE_USER\" > build-secret-keys/sonatype.key\n          echo \"$SONATYPE_KEY\" >> build-secret-keys/sonatype.key\n          echo \"$BINTRAY_USER\" > build-secret-keys/bintray.key\n          echo \"$BINTRAY_KEY\" >> build-secret-keys/bintray.key\n        env:\n          GPG_PRIVATE: ${{ secrets.GPG_PRIVATE_KEY }}\n          GPG_PUBLIC_: ${{ secrets.GPG_PUBLIC_KEY }}\n          SONATYPE_USER: ${{ secrets.SONATYPE_USER }}\n          SONATYPE_KEY: ${{ secrets.SONATYPE_KEY }}\n          BINTRAY_USER: ${{ secrets.BINTRAY_USER }}\n          BINTRAY_KEY: ${{ secrets.BINTRAY_KEY }}\n\n      - name: Init gradle project\n        run: ./gradlew clean --scan\n\n      - name: Check keys\n        run: ./gradlew ensureBintrayAvailable ensureMavenCentralAvailable\n\n      - name: fillBuildConstants\n        run: >\n          ./gradlew\n          fillBuildConstants --scan\n\n      - name: Assemble\n        run: ./gradlew assemble --scan\n\n      - name: Check\n        run: ./gradlew check --scan\n\n      - name: Gradle :mirai-core-utils:publish\n        run: >\n          ./gradlew :mirai-core-utils:publish --scan\n\n      - name: Gradle :mirai-core-api:publish\n        run: >\n          ./gradlew :mirai-core-api:publish --scan\n\n      - name: Gradle :mirai-core:publish\n        run: >\n          ./gradlew :mirai-core:publish --scan\n\n      - name: Gradle :mirai-core-all:publish\n        run: >\n          ./gradlew :mirai-core-all:publish --info\n\n      - name: Gradle :mirai-console:publish\n        run: >\n          ./gradlew\n          :mirai-console:publish --info\n\n      - name: Gradle :mirai-console-terminal:publish\n        run: >\n          ./gradlew\n          :mirai-console-terminal:publish --info\n\n      - name: Gradle :mirai-console-compiler-common:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-common:publish --info\n\n      - name: Gradle :mirai-console-compiler-annotations:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-annotations:publish --info\n\n      - name: Publish Gradle plugin\n        run: >\n          ./gradlew\n          :mirai-console-gradle:publishPlugins --scan\n          -Dgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }} -Pgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }}\n          -Dgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }} -Pgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }}\n\n      - name: Gradle :ci-release-helper:closeAndReleaseRepository\n        run: >\n          ./gradlew\n          :ci-release-helper:closeAndReleaseRepository --info\n"
+    },
+    "2021-04-05T14-41-26Z": {
+      "triggers": {
+        "push": {
+          "tags": [
+            "*-dev*",
+            "*-release",
+            "v*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "publish-mirai": 20
+      },
+      "line_count": 116,
+      "workflow": "# This is a basic workflow to help you get started with Actions\n\nname: Release Publish\n\n# Controls when the action will run. Triggers the workflow on push or pull request \n# events but only for the master branch\non:\n  push:\n    tags:\n      - '*-dev*'\n      - '*-release'\n      - 'v*'\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  publish-mirai:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      - name: Checkout submodules\n        run: git submodule update --init --recursive\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Keys setup\n        shell: bash\n        run: |\n          mkdir build-gpg-sign\n          echo \"$GPG_PRIVATE\" > build-gpg-sign/keys.gpg\n          echo \"$GPG_PUBLIC_\" > build-gpg-sign/keys.gpg.pub\n          mkdir build-secret-keys\n          echo \"$SONATYPE_USER\" > build-secret-keys/sonatype.key\n          echo \"$SONATYPE_KEY\" >> build-secret-keys/sonatype.key\n          echo \"$BINTRAY_USER\" > build-secret-keys/bintray.key\n          echo \"$BINTRAY_KEY\" >> build-secret-keys/bintray.key\n        env:\n          GPG_PRIVATE: ${{ secrets.GPG_PRIVATE_KEY }}\n          GPG_PUBLIC_: ${{ secrets.GPG_PUBLIC_KEY }}\n          SONATYPE_USER: ${{ secrets.SONATYPE_USER }}\n          SONATYPE_KEY: ${{ secrets.SONATYPE_KEY }}\n          BINTRAY_USER: ${{ secrets.BINTRAY_USER }}\n          BINTRAY_KEY: ${{ secrets.BINTRAY_KEY }}\n\n      - name: Init gradle project\n        run: ./gradlew clean --scan\n\n      - name: Check keys\n        run: ./gradlew ensureBintrayAvailable ensureMavenCentralAvailable\n\n      - name: fillBuildConstants\n        run: >\n          ./gradlew\n          fillBuildConstants --scan\n\n      - name: Assemble\n        run: ./gradlew assemble -Pmirai.pkc.check.enable --scan\n\n      - name: Check\n        run: ./gradlew check -Pmirai.pkc.check.enable --scan\n\n      - name: Gradle :mirai-core-utils:publish\n        run: >\n          ./gradlew :mirai-core-utils:publish --scan\n\n      - name: Gradle :mirai-core-api:publish\n        run: >\n          ./gradlew :mirai-core-api:publish --scan\n\n      - name: Gradle :mirai-core:publish\n        run: >\n          ./gradlew :mirai-core:publish --scan\n\n      - name: Gradle :mirai-core-all:publish\n        run: >\n          ./gradlew :mirai-core-all:publish --info\n\n      - name: Gradle :mirai-console:publish\n        run: >\n          ./gradlew\n          :mirai-console:publish --info\n\n      - name: Gradle :mirai-console-terminal:publish\n        run: >\n          ./gradlew\n          :mirai-console-terminal:publish --info\n\n      - name: Gradle :mirai-console-compiler-common:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-common:publish --info\n\n      - name: Gradle :mirai-console-compiler-annotations:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-annotations:publish --info\n\n      - name: Publish Gradle plugin\n        run: >\n          ./gradlew\n          :mirai-console-gradle:publishPlugins --scan\n          -Dgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }} -Pgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }}\n          -Dgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }} -Pgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }}\n\n      - name: Gradle :ci-release-helper:closeAndReleaseRepository\n        run: >\n          ./gradlew\n          :ci-release-helper:closeAndReleaseRepository --info\n"
+    },
+    "2021-05-25T04-25-53Z": {
+      "triggers": {
+        "push": {
+          "tags": [
+            "*-dev*",
+            "*-release",
+            "v*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "publish-mirai": 20
+      },
+      "line_count": 112,
+      "workflow": "# This is a basic workflow to help you get started with Actions\n\nname: Release Publish\n\n# Controls when the action will run. Triggers the workflow on push or pull request \n# events but only for the master branch\non:\n  push:\n    tags:\n      - '*-dev*'\n      - '*-release'\n      - 'v*'\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  publish-mirai:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      - name: Checkout submodules\n        run: git submodule update --init --recursive\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Keys setup\n        shell: bash\n        run: |\n          mkdir build-gpg-sign\n          echo \"$GPG_PRIVATE\" > build-gpg-sign/keys.gpg\n          echo \"$GPG_PUBLIC_\" > build-gpg-sign/keys.gpg.pub\n          mkdir build-secret-keys\n          echo \"$SONATYPE_USER\" > build-secret-keys/sonatype.key\n          echo \"$SONATYPE_KEY\" >> build-secret-keys/sonatype.key\n        env:\n          GPG_PRIVATE: ${{ secrets.GPG_PRIVATE_KEY }}\n          GPG_PUBLIC_: ${{ secrets.GPG_PUBLIC_KEY }}\n          SONATYPE_USER: ${{ secrets.SONATYPE_USER }}\n          SONATYPE_KEY: ${{ secrets.SONATYPE_KEY }}\n\n      - name: Init gradle project\n        run: ./gradlew clean --scan\n\n      - name: Check keys\n        run: ./gradlew ensureMavenCentralAvailable\n\n      - name: fillBuildConstants\n        run: >\n          ./gradlew\n          fillBuildConstants --scan\n\n      - name: Assemble\n        run: ./gradlew assemble -Pmirai.pkc.check.enable --scan\n\n      - name: Check\n        run: ./gradlew check -Pmirai.pkc.check.enable --scan\n\n      - name: Gradle :mirai-core-utils:publish\n        run: >\n          ./gradlew :mirai-core-utils:publish --scan\n\n      - name: Gradle :mirai-core-api:publish\n        run: >\n          ./gradlew :mirai-core-api:publish --scan\n\n      - name: Gradle :mirai-core:publish\n        run: >\n          ./gradlew :mirai-core:publish --scan\n\n      - name: Gradle :mirai-core-all:publish\n        run: >\n          ./gradlew :mirai-core-all:publish --info\n\n      - name: Gradle :mirai-console:publish\n        run: >\n          ./gradlew\n          :mirai-console:publish --info\n\n      - name: Gradle :mirai-console-terminal:publish\n        run: >\n          ./gradlew\n          :mirai-console-terminal:publish --info\n\n      - name: Gradle :mirai-console-compiler-common:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-common:publish --info\n\n      - name: Gradle :mirai-console-compiler-annotations:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-annotations:publish --info\n\n      - name: Publish Gradle plugin\n        run: >\n          ./gradlew\n          :mirai-console-gradle:publishPlugins --scan\n          -Dgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }} -Pgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }}\n          -Dgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }} -Pgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }}\n\n      - name: Gradle :ci-release-helper:closeAndReleaseRepository\n        run: >\n          ./gradlew\n          :ci-release-helper:closeAndReleaseRepository --info\n"
+    },
+    "2021-05-31T08-14-51Z": {
+      "triggers": {},
+      "num_jobs": 0,
+      "steps_per_job": {},
+      "line_count": 116,
+      "workflow": null,
+      "parse_error": "while scanning a simple key\n  in \"<unicode string>\", line 65, column 9:\n            ./gradlew check -Pmirai.pkc.chec ... \n            ^\ncould not find expected ':'\n  in \"<unicode string>\", line 66, column 9:\n            -Dmirai.debug.network.show.all.c ... \n            ^"
+    },
+    "2021-05-31T08-20-09Z": {
+      "triggers": {
+        "push": {
+          "tags": [
+            "*-dev*",
+            "*-release",
+            "v*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "publish-mirai": 20
+      },
+      "line_count": 116,
+      "workflow": "# This is a basic workflow to help you get started with Actions\n\nname: Release Publish\n\n# Controls when the action will run. Triggers the workflow on push or pull request \n# events but only for the master branch\non:\n  push:\n    tags:\n      - '*-dev*'\n      - '*-release'\n      - 'v*'\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  publish-mirai:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      - name: Checkout submodules\n        run: git submodule update --init --recursive\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Keys setup\n        shell: bash\n        run: |\n          mkdir build-gpg-sign\n          echo \"$GPG_PRIVATE\" > build-gpg-sign/keys.gpg\n          echo \"$GPG_PUBLIC_\" > build-gpg-sign/keys.gpg.pub\n          mkdir build-secret-keys\n          echo \"$SONATYPE_USER\" > build-secret-keys/sonatype.key\n          echo \"$SONATYPE_KEY\" >> build-secret-keys/sonatype.key\n        env:\n          GPG_PRIVATE: ${{ secrets.GPG_PRIVATE_KEY }}\n          GPG_PUBLIC_: ${{ secrets.GPG_PUBLIC_KEY }}\n          SONATYPE_USER: ${{ secrets.SONATYPE_USER }}\n          SONATYPE_KEY: ${{ secrets.SONATYPE_KEY }}\n\n      - name: Init gradle project\n        run: ./gradlew clean --scan\n\n      - name: Check keys\n        run: ./gradlew ensureMavenCentralAvailable\n\n      - name: fillBuildConstants\n        run: >\n          ./gradlew\n          fillBuildConstants --scan\n\n      - name: Assemble\n        run: ./gradlew assemble -Pmirai.pkc.check.enable --scan\n\n      - name: Check\n        run: >\n          ./gradlew check -Pmirai.pkc.check.enable --scan\n          -Dmirai.debug.network.show.all.components=true\n          -Dkotlinx.coroutines.debug=on\n          -Dmirai.debug.network.show.packet.details=true\n\n      - name: Gradle :mirai-core-utils:publish\n        run: >\n          ./gradlew :mirai-core-utils:publish --scan\n\n      - name: Gradle :mirai-core-api:publish\n        run: >\n          ./gradlew :mirai-core-api:publish --scan\n\n      - name: Gradle :mirai-core:publish\n        run: >\n          ./gradlew :mirai-core:publish --scan\n\n      - name: Gradle :mirai-core-all:publish\n        run: >\n          ./gradlew :mirai-core-all:publish --info\n\n      - name: Gradle :mirai-console:publish\n        run: >\n          ./gradlew\n          :mirai-console:publish --info\n\n      - name: Gradle :mirai-console-terminal:publish\n        run: >\n          ./gradlew\n          :mirai-console-terminal:publish --info\n\n      - name: Gradle :mirai-console-compiler-common:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-common:publish --info\n\n      - name: Gradle :mirai-console-compiler-annotations:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-annotations:publish --info\n\n      - name: Publish Gradle plugin\n        run: >\n          ./gradlew\n          :mirai-console-gradle:publishPlugins --scan\n          -Dgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }} -Pgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }}\n          -Dgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }} -Pgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }}\n\n      - name: Gradle :ci-release-helper:closeAndReleaseRepository\n        run: >\n          ./gradlew\n          :ci-release-helper:closeAndReleaseRepository --info\n"
+    },
+    "2021-06-19T15-58-27Z": {
+      "triggers": {
+        "push": {
+          "tags": [
+            "*-dev*",
+            "*-release",
+            "v*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "publish-mirai": 20
+      },
+      "line_count": 116,
+      "workflow": "# This is a basic workflow to help you get started with Actions\n\nname: Release Publish\n\n# Controls when the action will run. Triggers the workflow on push or pull request \n# events but only for the master branch\non:\n  push:\n    tags:\n      - '*-dev*'\n      - '*-release'\n      - 'v*'\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  publish-mirai:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      - name: Checkout submodules\n        run: git submodule update --init --recursive\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Keys setup\n        shell: bash\n        run: |\n          mkdir build-gpg-sign\n          echo \"$GPG_PRIVATE\" > build-gpg-sign/keys.gpg\n          echo \"$GPG_PUBLIC_\" > build-gpg-sign/keys.gpg.pub\n          mkdir build-secret-keys\n          echo \"$SONATYPE_USER\" > build-secret-keys/sonatype.key\n          echo \"$SONATYPE_KEY\" >> build-secret-keys/sonatype.key\n        env:\n          GPG_PRIVATE: ${{ secrets.GPG_PRIVATE_KEY }}\n          GPG_PUBLIC_: ${{ secrets.GPG_PUBLIC_KEY }}\n          SONATYPE_USER: ${{ secrets.SONATYPE_USER }}\n          SONATYPE_KEY: ${{ secrets.SONATYPE_KEY }}\n\n      - name: Init gradle project\n        run: ./gradlew clean --scan\n\n      - name: Check keys\n        run: ./gradlew ensureMavenCentralAvailable\n\n      - name: fillBuildConstants\n        run: >\n          ./gradlew\n          fillBuildConstants --scan\n\n      - name: Assemble\n        run: ./gradlew assemble --scan\n\n      - name: Check\n        run: >\n          ./gradlew check --scan\n          -Dmirai.debug.network.show.all.components=true\n          -Dkotlinx.coroutines.debug=on\n          -Dmirai.debug.network.show.packet.details=true\n\n      - name: Gradle :mirai-core-utils:publish\n        run: >\n          ./gradlew :mirai-core-utils:publish --scan\n\n      - name: Gradle :mirai-core-api:publish\n        run: >\n          ./gradlew :mirai-core-api:publish --scan\n\n      - name: Gradle :mirai-core:publish\n        run: >\n          ./gradlew :mirai-core:publish --scan\n\n      - name: Gradle :mirai-core-all:publish\n        run: >\n          ./gradlew :mirai-core-all:publish --info\n\n      - name: Gradle :mirai-console:publish\n        run: >\n          ./gradlew\n          :mirai-console:publish --info\n\n      - name: Gradle :mirai-console-terminal:publish\n        run: >\n          ./gradlew\n          :mirai-console-terminal:publish --info\n\n      - name: Gradle :mirai-console-compiler-common:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-common:publish --info\n\n      - name: Gradle :mirai-console-compiler-annotations:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-annotations:publish --info\n\n      - name: Publish Gradle plugin\n        run: >\n          ./gradlew\n          :mirai-console-gradle:publishPlugins --scan\n          -Dgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }} -Pgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }}\n          -Dgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }} -Pgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }}\n\n      - name: Gradle :ci-release-helper:closeAndReleaseRepository\n        run: >\n          ./gradlew\n          :ci-release-helper:closeAndReleaseRepository --info\n"
+    },
+    "2021-07-28T03-45-43Z": {
+      "triggers": {
+        "push": {
+          "tags": [
+            "*-dev*",
+            "*-release",
+            "v*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "publish-mirai": 20
+      },
+      "line_count": 116,
+      "workflow": "# This is a basic workflow to help you get started with Actions\n\nname: Release Publish\n\n# Controls when the action will run. Triggers the workflow on push or pull request \n# events but only for the master branch\non:\n  push:\n    tags:\n      - '*-dev*'\n      - '*-release'\n      - 'v*'\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  publish-mirai:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      - name: Checkout submodules\n        run: git submodule update --init --recursive\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Keys setup\n        shell: bash\n        run: |\n          mkdir build-gpg-sign\n          echo \"$GPG_PRIVATE\" > build-gpg-sign/keys.gpg\n          echo \"$GPG_PUBLIC_\" > build-gpg-sign/keys.gpg.pub\n          mkdir build-secret-keys\n          echo \"$SONATYPE_USER\" > build-secret-keys/sonatype.key\n          echo \"$SONATYPE_KEY\" >> build-secret-keys/sonatype.key\n        env:\n          GPG_PRIVATE: ${{ secrets.GPG_PRIVATE_KEY }}\n          GPG_PUBLIC_: ${{ secrets.GPG_PUBLIC_KEY }}\n          SONATYPE_USER: ${{ secrets.SONATYPE_USER }}\n          SONATYPE_KEY: ${{ secrets.SONATYPE_KEY }}\n\n      - name: Init gradle project\n        run: ./gradlew clean --scan\n\n      - name: Check keys\n        run: ./gradlew ensureMavenCentralAvailable\n\n      - name: fillBuildConstants\n        run: >\n          ./gradlew\n          fillBuildConstants --scan\n\n      - name: Assemble\n        run: ./gradlew assemble --scan\n\n      - name: Check\n        run: >\n          ./gradlew check --scan\n          -Dmirai.network.show.all.components=true\n          -Dkotlinx.coroutines.debug=on\n          -Dmirai.network.show.packet.details=true\n\n      - name: Gradle :mirai-core-utils:publish\n        run: >\n          ./gradlew :mirai-core-utils:publish --scan\n\n      - name: Gradle :mirai-core-api:publish\n        run: >\n          ./gradlew :mirai-core-api:publish --scan\n\n      - name: Gradle :mirai-core:publish\n        run: >\n          ./gradlew :mirai-core:publish --scan\n\n      - name: Gradle :mirai-core-all:publish\n        run: >\n          ./gradlew :mirai-core-all:publish --info\n\n      - name: Gradle :mirai-console:publish\n        run: >\n          ./gradlew\n          :mirai-console:publish --info\n\n      - name: Gradle :mirai-console-terminal:publish\n        run: >\n          ./gradlew\n          :mirai-console-terminal:publish --info\n\n      - name: Gradle :mirai-console-compiler-common:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-common:publish --info\n\n      - name: Gradle :mirai-console-compiler-annotations:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-annotations:publish --info\n\n      - name: Publish Gradle plugin\n        run: >\n          ./gradlew\n          :mirai-console-gradle:publishPlugins --scan\n          -Dgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }} -Pgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }}\n          -Dgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }} -Pgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }}\n\n      - name: Gradle :ci-release-helper:closeAndReleaseRepository\n        run: >\n          ./gradlew\n          :ci-release-helper:closeAndReleaseRepository --info\n"
+    },
+    "2021-09-01T05-47-02Z": {
+      "triggers": {
+        "push": {
+          "tags": [
+            "v*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "publish-mirai": 20
+      },
+      "line_count": 108,
+      "workflow": "name: Release Publish\n\non:\n  push:\n    tags:\n      - 'v*' # \u6b63\u5f0f\u7248\u672c\n\njobs:\n  publish-mirai:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      - name: Checkout submodules\n        run: git submodule update --init --recursive\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Keys setup\n        shell: bash\n        run: |\n          mkdir build-gpg-sign\n          echo \"$GPG_PRIVATE\" > build-gpg-sign/keys.gpg\n          echo \"$GPG_PUBLIC_\" > build-gpg-sign/keys.gpg.pub\n          mkdir build-secret-keys\n          echo \"$SONATYPE_USER\" > build-secret-keys/sonatype.key\n          echo \"$SONATYPE_KEY\" >> build-secret-keys/sonatype.key\n        env:\n          GPG_PRIVATE: ${{ secrets.GPG_PRIVATE_KEY }}\n          GPG_PUBLIC_: ${{ secrets.GPG_PUBLIC_KEY }}\n          SONATYPE_USER: ${{ secrets.SONATYPE_USER }}\n          SONATYPE_KEY: ${{ secrets.SONATYPE_KEY }}\n\n      - name: Init gradle project\n        run: ./gradlew clean --scan\n\n      - name: Check keys\n        run: ./gradlew ensureMavenCentralAvailable\n\n      - name: fillBuildConstants\n        run: >\n          ./gradlew\n          fillBuildConstants --scan\n\n      - name: Assemble\n        run: ./gradlew assemble --scan\n\n      - name: Check\n        run: >\n          ./gradlew check --scan\n          -Dmirai.network.show.all.components=true\n          -Dkotlinx.coroutines.debug=on\n          -Dmirai.network.show.packet.details=true\n\n      - name: Gradle :mirai-core-utils:publish\n        run: >\n          ./gradlew :mirai-core-utils:publish --scan --scan\n\n      - name: Gradle :mirai-core-api:publish\n        run: >\n          ./gradlew :mirai-core-api:publish --scan --scan\n\n      - name: Gradle :mirai-core:publish\n        run: >\n          ./gradlew :mirai-core:publish --scan --scan\n\n      - name: Gradle :mirai-core-all:publish\n        run: >\n          ./gradlew :mirai-core-all:publish --info --scan\n\n      - name: Gradle :mirai-console:publish\n        run: >\n          ./gradlew\n          :mirai-console:publish --info --scan\n\n      - name: Gradle :mirai-console-terminal:publish\n        run: >\n          ./gradlew\n          :mirai-console-terminal:publish --info --scan\n\n      - name: Gradle :mirai-console-compiler-common:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-common:publish --info --scan\n\n      - name: Gradle :mirai-console-compiler-annotations:publish\n        run: >\n          ./gradlew\n          :mirai-console-compiler-annotations:publish --info --scan\n\n      - name: Publish Gradle plugin\n        run: >\n          ./gradlew\n          :mirai-console-gradle:publishPlugins --scan\n          -Dgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }} -Pgradle.publish.key=${{ secrets.GRADLE_PUBLISH_KEY }}\n          -Dgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }} -Pgradle.publish.secret=${{ secrets.GRADLE_PUBLISH_SECRET }}\n\n      - name: Gradle :ci-release-helper:closeRepository\n        run: >\n          ./gradlew\n          :ci-release-helper:closeRepository --info --scan\n"
+    }
+  }
+}

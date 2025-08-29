@@ -1,0 +1,60 @@
+{
+  "matrix-example": {
+    "2024-01-21T05-54-00Z": [],
+    "2024-03-09T01-20-45Z": [],
+    "2025-03-22T22-03-14Z": []
+  },
+  "metadata": {
+    "2024-01-21T05-54-00Z": {
+      "triggers": {
+        "workflow_dispatch": null,
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        }
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "changed-files": 3,
+        "matrix-job": 2
+      },
+      "line_count": 46,
+      "workflow": "name: Matrix Example\n\npermissions:\n   contents: read\n\non:\n  workflow_dispatch:\n  pull_request:\n    branches:\n      - main\n\njobs:\n  changed-files:\n    name: Get changed files\n    runs-on: ubuntu-latest\n    outputs:\n      matrix: ${{ steps.changed-files.outputs.all_changed_files }}\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v4\n        with:\n          fetch-depth: 0\n      - name: Get changed files\n        id: changed-files\n        uses: ./\n        with:\n          json: true\n          escape_json: false\n      - name: List all changed files\n        run: echo '${{ steps.changed-files.outputs.all_changed_files }}'\n\n  matrix-job:\n    name: Run Matrix Job\n    runs-on: ubuntu-latest\n    needs: [changed-files]\n    strategy:\n      matrix: \n        files: ${{ fromJSON(needs.changed-files.outputs.matrix) }}\n      max-parallel: 4\n      fail-fast: false\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v4\n      - name: Test\n        run: |\n          echo ${{ matrix.files }}\n"
+    },
+    "2024-03-09T01-20-45Z": {
+      "triggers": {
+        "workflow_dispatch": null,
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        }
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "changed-files": 3,
+        "matrix-job": 2
+      },
+      "line_count": 45,
+      "workflow": "name: Matrix Example\n\npermissions:\n   contents: read\n\non:\n  workflow_dispatch:\n  pull_request:\n    branches:\n      - main\n\njobs:\n  changed-files:\n    name: Get changed files\n    runs-on: ubuntu-latest\n    outputs:\n      matrix: ${{ steps.changed-files.outputs.all_changed_files }}\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v4\n        with:\n          fetch-depth: 0\n      - name: Get changed files\n        id: changed-files\n        uses: ./\n        with:\n          matrix: true\n      - name: List all changed files\n        run: echo '${{ steps.changed-files.outputs.all_changed_files }}'\n\n  matrix-job:\n    name: Run Matrix Job\n    runs-on: ubuntu-latest\n    needs: [changed-files]\n    strategy:\n      matrix: \n        files: ${{ fromJSON(needs.changed-files.outputs.matrix) }}\n      max-parallel: 4\n      fail-fast: false\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v4\n      - name: Test\n        run: |\n          echo ${{ matrix.files }}\n"
+    },
+    "2025-03-22T22-03-14Z": {
+      "triggers": {
+        "workflow_dispatch": null,
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        }
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "changed-files": 3,
+        "matrix-job": 2
+      },
+      "line_count": 45,
+      "workflow": "name: Matrix Example\n\npermissions:\n   contents: read\n\non:\n  workflow_dispatch:\n  pull_request:\n    branches:\n      - main\n\njobs:\n  changed-files:\n    name: Get changed files\n    runs-on: ubuntu-latest\n    outputs:\n      matrix: ${{ steps.changed-files.outputs.all_changed_files }}\n    steps:\n      - name: Checkout\n        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2\n        with:\n          fetch-depth: 0\n      - name: Get changed files\n        id: changed-files\n        uses: ./\n        with:\n          matrix: true\n      - name: List all changed files\n        run: echo '${{ steps.changed-files.outputs.all_changed_files }}'\n\n  matrix-job:\n    name: Run Matrix Job\n    runs-on: ubuntu-latest\n    needs: [changed-files]\n    strategy:\n      matrix: \n        files: ${{ fromJSON(needs.changed-files.outputs.matrix) }}\n      max-parallel: 4\n      fail-fast: false\n    steps:\n      - name: Checkout\n        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2\n      - name: Test\n        run: |\n          echo ${{ matrix.files }}\n"
+    }
+  }
+}

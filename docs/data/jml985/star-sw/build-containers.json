@@ -1,0 +1,887 @@
+{
+  "build-containers": {
+    "2021-08-28T00-22-54Z": [
+      {
+        "region": {
+          "startLine": 13,
+          "startColumn": 5,
+          "endLine": 50,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 51,
+          "startColumn": 5,
+          "endLine": 86,
+          "endColumn": 113
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 16,
+          "startColumn": 9,
+          "endLine": 20,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v4.8](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      },
+      {
+        "region": {
+          "startLine": 54,
+          "startColumn": 9,
+          "endLine": 58,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v4.8](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2021-08-26T17-53-33Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 44,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 45,
+          "startColumn": 5,
+          "endLine": 80,
+          "endColumn": 113
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 10,
+          "startColumn": 9,
+          "endLine": 14,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v4.8](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      },
+      {
+        "region": {
+          "startLine": 48,
+          "startColumn": 9,
+          "endLine": 52,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v4.8](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2021-11-17T02-31-41Z": [
+      {
+        "region": {
+          "startLine": 13,
+          "startColumn": 5,
+          "endLine": 50,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 51,
+          "startColumn": 5,
+          "endLine": 86,
+          "endColumn": 113
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 16,
+          "startColumn": 9,
+          "endLine": 20,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v4.8](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      },
+      {
+        "region": {
+          "startLine": 54,
+          "startColumn": 9,
+          "endLine": 58,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v4.8](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2022-05-16T23-52-09Z": [
+      {
+        "region": {
+          "startLine": 13,
+          "startColumn": 5,
+          "endLine": 50,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 51,
+          "startColumn": 5,
+          "endLine": 86,
+          "endColumn": 113
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 16,
+          "startColumn": 9,
+          "endLine": 20,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v5.2](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      },
+      {
+        "region": {
+          "startLine": 54,
+          "startColumn": 9,
+          "endLine": 58,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v5.2](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2022-05-20T20-33-04Z": [
+      {
+        "region": {
+          "startLine": 13,
+          "startColumn": 5,
+          "endLine": 49,
+          "endColumn": 129
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 19,
+          "startColumn": 9,
+          "endLine": 23,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v5.2](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2022-06-08T18-37-02Z": [
+      {
+        "region": {
+          "startLine": 13,
+          "startColumn": 5,
+          "endLine": 51,
+          "endColumn": 120
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 21,
+          "startColumn": 9,
+          "endLine": 25,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v5.2](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2022-05-23T13-31-55Z": [
+      {
+        "region": {
+          "startLine": 13,
+          "startColumn": 5,
+          "endLine": 49,
+          "endColumn": 129
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 19,
+          "startColumn": 9,
+          "endLine": 23,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v5.2](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2022-06-10T14-47-53Z": [
+      {
+        "region": {
+          "startLine": 13,
+          "startColumn": 5,
+          "endLine": 40,
+          "endColumn": 131
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 21,
+          "startColumn": 9,
+          "endLine": 25,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v5.2](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2022-06-15T15-08-09Z": [
+      {
+        "region": {
+          "startLine": 13,
+          "startColumn": 5,
+          "endLine": 43,
+          "endColumn": 131
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 22,
+          "startColumn": 9,
+          "endLine": 26,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v5.2](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2022-07-08T18-43-06Z": [
+      {
+        "region": {
+          "startLine": 13,
+          "startColumn": 5,
+          "endLine": 43,
+          "endColumn": 131
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 22,
+          "startColumn": 9,
+          "endLine": 26,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v5.2](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2022-10-23T23-35-40Z": [
+      {
+        "region": {
+          "startLine": 13,
+          "startColumn": 5,
+          "endLine": 43,
+          "endColumn": 131
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 22,
+          "startColumn": 9,
+          "endLine": 26,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v6](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2022-11-08T14-33-42Z": [
+      {
+        "region": {
+          "startLine": 13,
+          "startColumn": 5,
+          "endLine": 45,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 46,
+          "startColumn": 5,
+          "endLine": 51,
+          "endColumn": 89
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 22,
+          "startColumn": 9,
+          "endLine": 26,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v6](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2022-11-10T19-43-15Z": [
+      {
+        "region": {
+          "startLine": 13,
+          "startColumn": 5,
+          "endLine": 61,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 62,
+          "startColumn": 5,
+          "endLine": 67,
+          "endColumn": 89
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 22,
+          "startColumn": 9,
+          "endLine": 26,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v6](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2022-12-25T16-59-43Z": [
+      {
+        "region": {
+          "startLine": 13,
+          "startColumn": 5,
+          "endLine": 65,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 13,
+          "startColumn": 5,
+          "endLine": 71,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 66,
+          "startColumn": 5,
+          "endLine": 71,
+          "endColumn": 89
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 72,
+          "startColumn": 5,
+          "endLine": 77,
+          "endColumn": 89
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 22,
+          "startColumn": 9,
+          "endLine": 26,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v6](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      },
+      {
+        "region": {
+          "startLine": 22,
+          "startColumn": 9,
+          "endLine": 26,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v6](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ]
+  },
+  "metadata": {
+    "2021-08-28T00-22-54Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main",
+            "SL*"
+          ],
+          "tags": [
+            "*"
+          ]
+        }
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "ROOT5": 5,
+        "ROOT6": 5
+      },
+      "line_count": 86,
+      "workflow": "name: Build Containers\n\non:\n  push:\n    branches:\n      - main\n      - 'SL*'\n    tags:\n      - '*'\n\njobs:\n  ROOT5:\n    if: github.repository_owner == 'star-bnl'\n    runs-on: ubuntu-latest\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v4.8\n\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v1\n\n      - name: Login to GitHub Container Registry\n        uses: docker/login-action@v1\n        with:\n          registry: ghcr.io\n          username: ${{ github.actor }}\n          password: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: Rebuild up to base-stage\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw-root5-base\n          file: docker/Dockerfile.root5\n          target: base-stage\n          push: true\n          tags: ghcr.io/${{ github.repository_owner }}/star-sw-root5-base:${{ steps.branch-name.outputs.current_branch }}_latest\n          cache-to: type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw-root5-base,mode=max\n\n      - name: Build release container\n        if: steps.branch-name.outputs.is_tag == 'true'\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw-root5-base\n          file: docker/Dockerfile.root5\n          target: build-stage\n          push: true\n          tags: ghcr.io/${{ github.repository_owner }}/star-sw-root5-build:${{ steps.branch-name.outputs.tag }}\n\n  ROOT6:\n    if: github.repository_owner == 'star-bnl'\n    runs-on: ubuntu-latest\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v4.8\n\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v1\n\n      - name: Login to GitHub Container Registry\n        uses: docker/login-action@v1\n        with:\n          registry: ghcr.io\n          username: ${{ github.actor }}\n          password: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: Rebuild up to base-stage\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw-root6-base\n          file: docker/Dockerfile.root6\n          target: base-stage\n          push: true\n          tags: ghcr.io/${{ github.repository_owner }}/star-sw-root6-base:${{ steps.branch-name.outputs.current_branch }}_latest\n          cache-to: type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw-root6-base,mode=max\n\n      - name: Build release container\n        if: steps.branch-name.outputs.is_tag == 'true'\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw-root6-base\n          file: docker/Dockerfile.root6\n          target: build-stage\n          push: true\n          tags: ghcr.io/${{ github.repository_owner }}/star-sw-root6-build:${{ steps.branch-name.outputs.tag }}\n"
+    },
+    "2021-08-26T17-53-33Z": {
+      "triggers": {
+        "push": {}
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "ROOT5": 5,
+        "ROOT6": 5
+      },
+      "line_count": 80,
+      "workflow": "name: Build Containers\n\non: [push]\n\njobs:\n  ROOT5:\n    if: github.repository_owner == 'star-bnl'\n    runs-on: ubuntu-latest\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v4.8\n\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v1\n\n      - name: Login to GitHub Container Registry\n        uses: docker/login-action@v1\n        with:\n          registry: ghcr.io\n          username: ${{ github.actor }}\n          password: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: Rebuild up to base-stage\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw-root5-base\n          file: docker/Dockerfile.root5\n          target: base-stage\n          push: true\n          tags: ghcr.io/${{ github.repository_owner }}/star-sw-root5-base:${{ steps.branch-name.outputs.current_branch }}_latest\n          cache-to: type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw-root5-base,mode=max\n\n      - name: Build release container\n        if: steps.branch-name.outputs.is_tag == 'true'\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw-root5-base\n          file: docker/Dockerfile.root5\n          target: build-stage\n          push: true\n          tags: ghcr.io/${{ github.repository_owner }}/star-sw-root5-build:${{ steps.branch-name.outputs.tag }}\n\n  ROOT6:\n    if: github.repository_owner == 'star-bnl'\n    runs-on: ubuntu-latest\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v4.8\n\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v1\n\n      - name: Login to GitHub Container Registry\n        uses: docker/login-action@v1\n        with:\n          registry: ghcr.io\n          username: ${{ github.actor }}\n          password: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: Rebuild up to base-stage\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw-root6-base\n          file: docker/Dockerfile.root6\n          target: base-stage\n          push: true\n          tags: ghcr.io/${{ github.repository_owner }}/star-sw-root6-base:${{ steps.branch-name.outputs.current_branch }}_latest\n          cache-to: type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw-root6-base,mode=max\n\n      - name: Build release container\n        if: steps.branch-name.outputs.is_tag == 'true'\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw-root6-base\n          file: docker/Dockerfile.root6\n          target: build-stage\n          push: true\n          tags: ghcr.io/${{ github.repository_owner }}/star-sw-root6-build:${{ steps.branch-name.outputs.tag }}\n"
+    },
+    "2021-11-17T02-31-41Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main",
+            "SL*"
+          ],
+          "tags": [
+            "*"
+          ]
+        }
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "ROOT5": 5,
+        "ROOT6": 5
+      },
+      "line_count": 86,
+      "workflow": "name: Build Containers\n\non:\n  push:\n    branches:\n      - main\n      - 'SL*'\n    tags:\n      - '*'\n\njobs:\n  ROOT5:\n    if: github.repository_owner == 'star-bnl'\n    runs-on: ubuntu-latest\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v4.8\n\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v1\n\n      - name: Login to GitHub Container Registry\n        uses: docker/login-action@v1\n        with:\n          registry: ghcr.io\n          username: ${{ github.actor }}\n          password: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: Rebuild up to base-stage\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw-root5-base:cache\n          file: docker/Dockerfile.root5\n          target: base-stage\n          push: true\n          tags: ghcr.io/${{ github.repository_owner }}/star-sw-root5-base:${{ steps.branch-name.outputs.current_branch }}_latest\n          cache-to: type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw-root5-base:cache,mode=max\n\n      - name: Build release container\n        if: steps.branch-name.outputs.is_tag == 'true'\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw-root5-base:cache\n          file: docker/Dockerfile.root5\n          target: build-stage\n          push: true\n          tags: ghcr.io/${{ github.repository_owner }}/star-sw-root5-build:${{ steps.branch-name.outputs.tag }}\n\n  ROOT6:\n    if: github.repository_owner == 'star-bnl'\n    runs-on: ubuntu-latest\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v4.8\n\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v1\n\n      - name: Login to GitHub Container Registry\n        uses: docker/login-action@v1\n        with:\n          registry: ghcr.io\n          username: ${{ github.actor }}\n          password: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: Rebuild up to base-stage\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw-root6-base:cache\n          file: docker/Dockerfile.root6\n          target: base-stage\n          push: true\n          tags: ghcr.io/${{ github.repository_owner }}/star-sw-root6-base:${{ steps.branch-name.outputs.current_branch }}_latest\n          cache-to: type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw-root6-base:cache,mode=max\n\n      - name: Build release container\n        if: steps.branch-name.outputs.is_tag == 'true'\n        uses: docker/build-push-action@v2\n        with:\n          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw-root6-base:cache\n          file: docker/Dockerfile.root6\n          target: build-stage\n          push: true\n          tags: ghcr.io/${{ github.repository_owner }}/star-sw-root6-build:${{ steps.branch-name.outputs.tag }}\n"
+    },
+    "2022-05-16T23-52-09Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main",
+            "SL*"
+          ],
+          "tags": [
+            "*"
+          ]
+        }
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "ROOT5": 5,
+        "ROOT6": 5
+      },
+      "line_count": 86,
+      "workflow": "name: Build Containers\n\non:\n  push:\n    branches:\n      - main\n      - 'SL*'\n    tags:\n      - '*'\n\njobs:\n  ROOT5:\n    if: github.repository_owner == 'star-bnl'\n    runs-on: ubuntu-latest\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v5.2\n\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v2\n\n      - name: Login to GitHub Container Registry\n        uses: docker/login-action@v1\n        with:\n          registry: ghcr.io\n          username: ${{ github.actor }}\n          password: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: Rebuild up to base-stage\n        uses: docker/build-push-action@v3\n        with:\n          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw-root5-base:cache\n          file: docker/Dockerfile.root5\n          target: base-stage\n          push: true\n          tags: ghcr.io/${{ github.repository_owner }}/star-sw-root5-base:${{ steps.branch-name.outputs.current_branch }}_latest\n          cache-to: type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw-root5-base:cache,mode=max\n\n      - name: Build release container\n        if: steps.branch-name.outputs.is_tag == 'true'\n        uses: docker/build-push-action@v3\n        with:\n          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw-root5-base:cache\n          file: docker/Dockerfile.root5\n          target: build-stage\n          push: true\n          tags: ghcr.io/${{ github.repository_owner }}/star-sw-root5-build:${{ steps.branch-name.outputs.tag }}\n\n  ROOT6:\n    if: github.repository_owner == 'star-bnl'\n    runs-on: ubuntu-latest\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v5.2\n\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v2\n\n      - name: Login to GitHub Container Registry\n        uses: docker/login-action@v1\n        with:\n          registry: ghcr.io\n          username: ${{ github.actor }}\n          password: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: Rebuild up to base-stage\n        uses: docker/build-push-action@v3\n        with:\n          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw-root6-base:cache\n          file: docker/Dockerfile.root6\n          target: base-stage\n          push: true\n          tags: ghcr.io/${{ github.repository_owner }}/star-sw-root6-base:${{ steps.branch-name.outputs.current_branch }}_latest\n          cache-to: type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw-root6-base:cache,mode=max\n\n      - name: Build release container\n        if: steps.branch-name.outputs.is_tag == 'true'\n        uses: docker/build-push-action@v3\n        with:\n          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw-root6-base:cache\n          file: docker/Dockerfile.root6\n          target: build-stage\n          push: true\n          tags: ghcr.io/${{ github.repository_owner }}/star-sw-root6-build:${{ steps.branch-name.outputs.tag }}\n"
+    },
+    "2022-05-20T20-33-04Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main",
+            "SL*"
+          ],
+          "tags": [
+            "*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 5
+      },
+      "line_count": 49,
+      "workflow": "name: Build Containers\n\non:\n  push:\n    branches:\n      - main\n      - 'SL*'\n    tags:\n      - '*'\n\njobs:\n  build:\n    if: github.repository_owner == 'star-bnl'\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        starenv: [root5, root616]\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v5.2\n\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v2\n\n      - name: Login to GitHub Container Registry\n        uses: docker/login-action@v1\n        with:\n          registry: ghcr.io\n          username: ${{ github.actor }}\n          password: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: Build latest container for the branch\n        uses: docker/build-push-action@v3\n        with:\n          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw-${{ matrix.starenv }}-base:cache\n          cache-to:   type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw-${{ matrix.starenv }}-base:cache,mode=max\n          build-args: starenv=${{ matrix.starenv }}\n          push: true\n          tags: ghcr.io/${{ github.repository_owner }}/star-sw-${{ matrix.starenv }}-base:${{ steps.branch-name.outputs.current_branch }}_latest\n\n      - name: Build release container\n        if: steps.branch-name.outputs.is_tag == 'true'\n        uses: docker/build-push-action@v3\n        with:\n          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw-${{ matrix.starenv }}-base:cache\n          build-args: starenv=${{ matrix.starenv }}\n          push: true\n          tags: ghcr.io/${{ github.repository_owner }}/star-sw-${{ matrix.starenv }}-build:${{ steps.branch-name.outputs.tag }}\n"
+    },
+    "2022-06-08T18-37-02Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main",
+            "SL*"
+          ],
+          "tags": [
+            "*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 5
+      },
+      "line_count": 51,
+      "workflow": "name: Build Containers\n\non:\n  push:\n    branches:\n      - main\n      - 'SL*'\n    tags:\n      - '*'\n\njobs:\n  build:\n    if: github.repository_owner == 'star-bnl'\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        starenv: [root5, root6]\n    env:\n      STARENV: ${{ matrix.starenv }}\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v5.2\n\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v2\n\n      - name: Login to GitHub Container Registry\n        uses: docker/login-action@v1\n        with:\n          registry: ghcr.io\n          username: ${{ github.actor }}\n          password: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: Build latest container for the branch\n        uses: docker/build-push-action@v3\n        with:\n          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw:cache-${{ env.STARENV }}\n          cache-to:   type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw:cache-${{ env.STARENV }},mode=max\n          build-args: starenv=${{ matrix.starenv }}\n          push: true\n          tags: ghcr.io/${{ github.repository_owner }}/star-sw:${{ steps.branch-name.outputs.current_branch }}-${{ env.STARENV }}\n\n      - name: Build release container\n        if: steps.branch-name.outputs.is_tag == 'true'\n        uses: docker/build-push-action@v3\n        with:\n          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw:cache-${{ env.STARENV }}\n          build-args: starenv=${{ matrix.starenv }}\n          push: true\n          tags: ghcr.io/${{ github.repository_owner }}/star-sw:${{ steps.branch-name.outputs.tag }}-${{ env.STARENV }}\n"
+    },
+    "2022-05-23T13-31-55Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main",
+            "SL*"
+          ],
+          "tags": [
+            "*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 5
+      },
+      "line_count": 49,
+      "workflow": "name: Build Containers\n\non:\n  push:\n    branches:\n      - main\n      - 'SL*'\n    tags:\n      - '*'\n\njobs:\n  build:\n    if: github.repository_owner == 'star-bnl'\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        starenv: [root5, root6]\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v5.2\n\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v2\n\n      - name: Login to GitHub Container Registry\n        uses: docker/login-action@v1\n        with:\n          registry: ghcr.io\n          username: ${{ github.actor }}\n          password: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: Build latest container for the branch\n        uses: docker/build-push-action@v3\n        with:\n          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw-${{ matrix.starenv }}-base:cache\n          cache-to:   type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw-${{ matrix.starenv }}-base:cache,mode=max\n          build-args: starenv=${{ matrix.starenv }}\n          push: true\n          tags: ghcr.io/${{ github.repository_owner }}/star-sw-${{ matrix.starenv }}-base:${{ steps.branch-name.outputs.current_branch }}_latest\n\n      - name: Build release container\n        if: steps.branch-name.outputs.is_tag == 'true'\n        uses: docker/build-push-action@v3\n        with:\n          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/star-sw-${{ matrix.starenv }}-base:cache\n          build-args: starenv=${{ matrix.starenv }}\n          push: true\n          tags: ghcr.io/${{ github.repository_owner }}/star-sw-${{ matrix.starenv }}-build:${{ steps.branch-name.outputs.tag }}\n"
+    },
+    "2022-06-10T14-47-53Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main",
+            "SL*"
+          ],
+          "tags": [
+            "*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 4
+      },
+      "line_count": 40,
+      "workflow": "name: Build Containers\n\non:\n  push:\n    branches:\n      - main\n      - 'SL*'\n    tags:\n      - '*'\n\njobs:\n  build:\n    if: github.repository_owner == 'star-bnl'\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        starenv: [root5, root6]\n    env:\n      STARENV: ${{ matrix.starenv }}\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v5.2\n\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v2\n\n      - name: Login to GitHub Container Registry\n        uses: docker/login-action@v1\n        with:\n          registry: ghcr.io\n          username: ${{ github.actor }}\n          password: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: Build a release container\n        uses: docker/build-push-action@v3\n        with:\n          build-args: starenv=${{ matrix.starenv }}\n          push: true\n          tags: ghcr.io/${{ github.repository_owner }}/star-sw:${{ steps.branch-name.outputs.current_branch }}-${{ env.STARENV }}\n"
+    },
+    "2022-06-15T15-08-09Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main",
+            "SL*"
+          ],
+          "tags": [
+            "*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 4
+      },
+      "line_count": 43,
+      "workflow": "name: Build Containers\n\non:\n  push:\n    branches:\n      - main\n      - 'SL*'\n    tags:\n      - '*'\n\njobs:\n  build:\n    if: github.repository_owner == 'star-bnl'\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        starenv: [root5, root6]\n        compiler: [gcc485]\n    env:\n      STARENV: ${{ matrix.starenv }}-${{ matrix.compiler }}\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v5.2\n\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v2\n\n      - name: Login to GitHub Container Registry\n        uses: docker/login-action@v1\n        with:\n          registry: ghcr.io\n          username: ${{ github.actor }}\n          password: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: Build a release container\n        uses: docker/build-push-action@v3\n        with:\n          build-args: |\n            starenv=${{ matrix.starenv }}\n            compiler=${{ matrix.compiler }}\n          push: true\n          tags: ghcr.io/${{ github.repository_owner }}/star-sw:${{ steps.branch-name.outputs.current_branch }}-${{ env.STARENV }}\n"
+    },
+    "2022-07-08T18-43-06Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main",
+            "SL*"
+          ],
+          "tags": [
+            "*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 4
+      },
+      "line_count": 43,
+      "workflow": "name: Build Containers\n\non:\n  push:\n    branches:\n      - main\n      - 'SL*'\n    tags:\n      - '*'\n\njobs:\n  build:\n    if: github.repository_owner == 'star-bnl'\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        starenv: [root5, root6]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: ${{ matrix.starenv }}-${{ matrix.compiler }}\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v5.2\n\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v2\n\n      - name: Login to GitHub Container Registry\n        uses: docker/login-action@v1\n        with:\n          registry: ghcr.io\n          username: ${{ github.actor }}\n          password: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: Build a release container\n        uses: docker/build-push-action@v3\n        with:\n          build-args: |\n            starenv=${{ matrix.starenv }}\n            compiler=${{ matrix.compiler }}\n          push: true\n          tags: ghcr.io/${{ github.repository_owner }}/star-sw:${{ steps.branch-name.outputs.current_branch }}-${{ env.STARENV }}\n"
+    },
+    "2022-10-23T23-35-40Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main",
+            "SL*"
+          ],
+          "tags": [
+            "*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 4
+      },
+      "line_count": 43,
+      "workflow": "name: Build Containers\n\non:\n  push:\n    branches:\n      - main\n      - 'SL*'\n    tags:\n      - '*'\n\njobs:\n  build:\n    if: github.repository_owner == 'star-bnl'\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        starenv: [root5, root6]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: ${{ matrix.starenv }}-${{ matrix.compiler }}\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v6\n\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v2\n\n      - name: Login to GitHub Container Registry\n        uses: docker/login-action@v2\n        with:\n          registry: ghcr.io\n          username: ${{ github.actor }}\n          password: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: Build a release container\n        uses: docker/build-push-action@v3\n        with:\n          build-args: |\n            starenv=${{ matrix.starenv }}\n            compiler=${{ matrix.compiler }}\n          push: true\n          tags: ghcr.io/${{ github.repository_owner }}/star-sw:${{ steps.branch-name.outputs.current_branch }}-${{ env.STARENV }}\n"
+    },
+    "2022-11-08T14-33-42Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main",
+            "SL*"
+          ],
+          "tags": [
+            "*"
+          ]
+        }
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "build": 4,
+        "build-cleanup": 2
+      },
+      "line_count": 51,
+      "workflow": "name: Build Containers\n\non:\n  push:\n    branches:\n      - main\n      - 'SL*'\n    tags:\n      - '*'\n\njobs:\n  build:\n    if: github.repository_owner == 'star-bnl'\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        starenv: [root5, root6]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: ${{ matrix.starenv }}-${{ matrix.compiler }}\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v6\n\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v2\n\n      - name: Login to GitHub Container Registry\n        uses: docker/login-action@v2\n        with:\n          registry: ghcr.io\n          username: ${{ github.actor }}\n          password: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: Build a release container\n        uses: docker/build-push-action@v3\n        with:\n          build-args: |\n            starenv=${{ matrix.starenv }}\n            compiler=${{ matrix.compiler }}\n          push: true\n          tags: ghcr.io/${{ github.repository_owner }}/star-sw:${{ steps.branch-name.outputs.current_branch }}-${{ env.STARENV }}\n\n  build-cleanup:\n    runs-on: ubuntu-latest\n    needs: build\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n      - run: .github/workflows/delete_untagged.py ${{ secrets.STAR_BNL_STAR_SW_TOKEN }}\n"
+    },
+    "2022-11-10T19-43-15Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main",
+            "SL*"
+          ],
+          "tags": [
+            "*"
+          ]
+        }
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "build": 7,
+        "build-cleanup": 2
+      },
+      "line_count": 67,
+      "workflow": "name: Build Containers\n\non:\n  push:\n    branches:\n      - main\n      - 'SL*'\n    tags:\n      - '*'\n\njobs:\n  build:\n    if: github.repository_owner == 'star-bnl'\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        starenv: [root5, root6]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: ${{ matrix.starenv }}-${{ matrix.compiler }}\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v6\n\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v2\n\n      - name: Login to GitHub Container Registry\n        uses: docker/login-action@v2\n        with:\n          registry: ghcr.io\n          username: ${{ github.actor }}\n          password: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: Build a release container\n        uses: docker/build-push-action@v3\n        with:\n          build-args: |\n            starenv=${{ matrix.starenv }}\n            compiler=${{ matrix.compiler }}\n          load: true\n          tags: ghcr.io/${{ github.repository_owner }}/star-sw:${{ steps.branch-name.outputs.current_branch }}-${{ env.STARENV }}\n\n      - name: Push container image\n        run: |\n          docker push ghcr.io/${{ github.repository_owner }}/star-sw:${{ steps.branch-name.outputs.current_branch }}-${{ env.STARENV }}\n\n      - name: Create latest tag for default branch\n        if: ${{ steps.branch-name.outputs.is_default == 'true' && env.STARENV == 'root5-gcc485' }}\n        run: |\n          docker tag  ghcr.io/${{ github.repository_owner }}/star-sw:${{ steps.branch-name.outputs.current_branch }}-${{ env.STARENV }} ghcr.io/${{ github.repository_owner }}/star-sw:latest\n          docker push ghcr.io/${{ github.repository_owner }}/star-sw:latest\n\n      - name: Create latest tag for SL* branches\n        if: ${{ steps.branch-name.outputs.is_default == 'false' && env.STARENV == 'root5-gcc485' }}\n        run: |\n          docker tag  ghcr.io/${{ github.repository_owner }}/star-sw:${{ steps.branch-name.outputs.current_branch }}-${{ env.STARENV }} ghcr.io/${{ github.repository_owner }}/star-sw:${{ steps.branch-name.outputs.current_branch }}\n          docker push ghcr.io/${{ github.repository_owner }}/star-sw:${{ steps.branch-name.outputs.current_branch }}\n\n  build-cleanup:\n    runs-on: ubuntu-latest\n    needs: build\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n      - run: .github/workflows/delete_untagged.py ${{ secrets.STAR_BNL_STAR_SW_TOKEN }}\n"
+    },
+    "2022-12-25T16-59-43Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main",
+            "SL*"
+          ],
+          "tags": [
+            "*"
+          ]
+        }
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "build": 9,
+        "build-cleanup": 2
+      },
+      "line_count": 77,
+      "workflow": "name: Build Containers\n\non:\n  push:\n    branches:\n      - main\n      - 'SL*'\n    tags:\n      - '*'\n\njobs:\n  build:\n    if: github.repository_owner == 'star-bnl'\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        starenv: [root5, root6]\n        compiler: [gcc485, gcc11]\n    env:\n      STARENV: ${{ matrix.starenv }}-${{ matrix.compiler }}\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v6\n\n      - name: Define complete image tag\n        run: |\n          echo \"TAG=${{ steps.branch-name.outputs.current_branch || steps.branch-name.outputs.tag }}-${{ env.STARENV }}\" >> $GITHUB_ENV\n\n      - name: Set up Docker Buildx\n        uses: docker/setup-buildx-action@v2\n\n      - name: Login to GitHub Container Registry\n        uses: docker/login-action@v2\n        with:\n          registry: ghcr.io\n          username: ${{ github.actor }}\n          password: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: Build a release container\n        uses: docker/build-push-action@v3\n        with:\n          build-args: |\n            starenv=${{ matrix.starenv }}\n            compiler=${{ matrix.compiler }}\n          load: true\n          tags: ghcr.io/${{ github.repository_owner }}/star-sw:${{ env.TAG }}\n\n      - name: Push container image\n        run: |\n          docker push ghcr.io/${{ github.repository_owner }}/star-sw:${{ env.TAG }}\n\n      - name: Create latest tag for default branch\n        if: ${{ steps.branch-name.outputs.is_tag == 'false' && steps.branch-name.outputs.is_default == 'true' && env.STARENV == 'root5-gcc485' }}\n        run: |\n          docker tag  ghcr.io/${{ github.repository_owner }}/star-sw:${{ env.TAG }} ghcr.io/${{ github.repository_owner }}/star-sw:latest\n          docker push ghcr.io/${{ github.repository_owner }}/star-sw:latest\n\n      - name: Create latest tag for SL* branches\n        if: ${{ steps.branch-name.outputs.is_tag == 'false' && steps.branch-name.outputs.is_default == 'false' && env.STARENV == 'root5-gcc485' }}\n        run: |\n          docker tag  ghcr.io/${{ github.repository_owner }}/star-sw:${{ env.TAG }} ghcr.io/${{ github.repository_owner }}/star-sw:${{ steps.branch-name.outputs.current_branch }}\n          docker push ghcr.io/${{ github.repository_owner }}/star-sw:${{ steps.branch-name.outputs.current_branch }}\n\n      - name: Create image tag based on pushed tag\n        if: ${{ steps.branch-name.outputs.is_tag == 'true' && env.STARENV == 'root5-gcc485' }}\n        run: |\n          docker tag  ghcr.io/${{ github.repository_owner }}/star-sw:${{ env.TAG }} ghcr.io/${{ github.repository_owner }}/star-sw:${{ steps.branch-name.outputs.tag }}\n          docker push ghcr.io/${{ github.repository_owner }}/star-sw:${{ steps.branch-name.outputs.tag }}\n\n  build-cleanup:\n    runs-on: ubuntu-latest\n    needs: build\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v3\n      - run: .github/workflows/delete_untagged.py ${{ secrets.STAR_BNL_STAR_SW_TOKEN }}\n"
+    }
+  }
+}

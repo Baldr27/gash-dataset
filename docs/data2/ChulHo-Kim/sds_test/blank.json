@@ -1,0 +1,470 @@
+{
+  "blank": {
+    "2022-04-28T08-40-05Z": [
+      {
+        "region": {
+          "startLine": 12,
+          "startColumn": 5,
+          "endLine": 18,
+          "endColumn": 32
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-04-28T08-41-10Z": [
+      {
+        "region": {
+          "startLine": 12,
+          "startColumn": 5,
+          "endLine": 18,
+          "endColumn": 37
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-04-28T08-42-25Z": [
+      {
+        "region": {
+          "startLine": 5,
+          "startColumn": 5,
+          "endLine": 10,
+          "endColumn": 55
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-04-28T10-10-04Z": [
+      {
+        "region": {
+          "startLine": 5,
+          "startColumn": 5,
+          "endLine": 10,
+          "endColumn": 60
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-04-28T10-17-53Z": [
+      {
+        "region": {
+          "startLine": 5,
+          "startColumn": 5,
+          "endLine": 10,
+          "endColumn": 60
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-04-28T10-32-37Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 7,
+          "endLine": 27,
+          "endColumn": 53
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 13,
+          "startColumn": 11,
+          "endLine": 17,
+          "endColumn": 9
+        },
+        "message": "The workflow is using a known vulnerable version ([v5.2](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2022-04-28T10-53-51Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 7,
+          "endLine": 17,
+          "endColumn": 26
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-04-28T11-02-38Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 7,
+          "endLine": 52,
+          "endColumn": 102
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-04-28T11-05-59Z": [
+      {
+        "region": {
+          "startLine": 14,
+          "startColumn": 7,
+          "endLine": 18,
+          "endColumn": 41
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-04-28T11-11-46Z": [
+      {
+        "region": {
+          "startLine": 14,
+          "startColumn": 7,
+          "endLine": 34,
+          "endColumn": 102
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-04-28T11-12-16Z": [
+      {
+        "region": {
+          "startLine": 14,
+          "startColumn": 7,
+          "endLine": 34,
+          "endColumn": 102
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-04-28T11-12-40Z": [
+      {
+        "region": {
+          "startLine": 14,
+          "startColumn": 7,
+          "endLine": 34,
+          "endColumn": 102
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-04-28T11-21-37Z": [
+      {
+        "region": {
+          "startLine": 14,
+          "startColumn": 7,
+          "endLine": 35,
+          "endColumn": 102
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-04-28T10-30-17Z": []
+  },
+  "metadata": {
+    "2022-04-28T08-40-05Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 2
+      },
+      "line_count": 18,
+      "workflow": "name: CI\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    branches: [ main ]\n\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v3\n\n      - name: Run a one-line script\n        run: ${GITHUB_REF##*/}\n"
+    },
+    "2022-04-28T08-41-10Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 2
+      },
+      "line_count": 18,
+      "workflow": "name: CI\n\non:\n  push:\n    branches: [ main ]\n  pull_request:\n    branches: [ main ]\n\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v3\n\n      - name: Run a one-line script\n        run: echo ${GITHUB_REF##*/}\n"
+    },
+    "2022-04-28T08-42-25Z": {
+      "triggers": {
+        "push": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 2
+      },
+      "line_count": 10,
+      "workflow": "name: CI\non: push\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Git checkout\n        uses: actions/checkout@v1\n      - name: Branch name\n        run: echo running on branch ${GITHUB_REF##*/}\n"
+    },
+    "2022-04-28T10-10-04Z": {
+      "triggers": {
+        "push": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 2
+      },
+      "line_count": 10,
+      "workflow": "name: CI\non: push\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Git checkout\n        uses: actions/checkout@v2\n      - name: Branch name\n        run: echo running on branch ${{ github.ref_name }}\n"
+    },
+    "2022-04-28T10-17-53Z": {
+      "triggers": {
+        "push": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 2
+      },
+      "line_count": 10,
+      "workflow": "name: CI\non: push\njobs:\n  build:\n    runs-on: windows-latest\n    steps:\n      - name: Git checkout\n        uses: actions/checkout@v2\n      - name: Branch name\n        run: echo running on branch ${{ github.ref_name }}\n"
+    },
+    "2022-04-28T10-32-37Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 3
+      },
+      "line_count": 27,
+      "workflow": "on:\n  push:\n    branches:\n      - main\n  pull_request:\n    branches:\n      - main\n      \njobs:    \n build:\n      runs-on: windows-latest\n      steps:\n        - name: Get branch name\n          id: branch-name\n          uses: tj-actions/branch-names@v5.2\n\n        - name: Running on the default branch.\n          if: steps.branch-name.outputs.is_default == 'true'\n          run: |\n            echo \"Running on default: ${{ steps.branch-name.outputs.current_branch }}\"\n          # Outputs: \"Running on default: main\".\n\n        - name: Running on a pull request branch.\n          if: steps.branch-name.outputs.is_default == 'false'\n          run: |\n            echo \"Running on pr: ${{ steps.branch-name.outputs.current_branch }}\"\n          # Outputs: \"Running on pr: feature/test\".\n"
+    },
+    "2022-04-28T10-53-51Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 2
+      },
+      "line_count": 17,
+      "workflow": "on:\n  push:\n    branches:\n      - main\n  pull_request:\n    branches:\n      - main\n      \njobs:    \n build:\n      runs-on: windows-latest\n\n      steps:\n        - name: Set current date as env variable\n          run: echo \"NOW::$(date +'%Y-%m-%dT%H:%M:%S')\" >> $GITHUB_ENV\n        - name: Echo current date\n          run: echo $NOW\n"
+    },
+    "2022-04-28T11-02-38Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 4
+      },
+      "line_count": 52,
+      "workflow": "on:\n  push:\n    branches:\n      - main\n  pull_request:\n    branches:\n      - main\n      \njobs:    \n build:\n      runs-on: windows-latest\n\n      steps:\n        - name: Test1\n          id: t1\n          uses: Kaven-Universe/github-action-current-date-time@v1.1.0\n          with:\n            format: \"YYYY_MM_DD HH_mm_ss_SSS\"\n        # Use the output from the `t1` step\n        - name: Output1\n          run: |\n            echo \"The time was ${{ steps.t1.outputs.time }}\"\n            echo \"The year was ${{ steps.t1.outputs.year }}\"\n            echo \"The month was ${{ steps.t1.outputs.month }}\"\n            echo \"The day was ${{ steps.t1.outputs.day }}\"\n            echo \"The hours was ${{ steps.t1.outputs.hours }}\"\n            echo \"The minutes was ${{ steps.t1.outputs.minutes }}\"\n            echo \"The seconds was ${{ steps.t1.outputs.seconds }}\"\n            echo \"The milliseconds was ${{ steps.t1.outputs.milliseconds }}\"\n            echo \"The day_of_week was ${{ steps.t1.outputs.day_of_week }}\"\n            echo \"The week_of_year was ${{ steps.t1.outputs.week_of_year }}\"\n            echo \"The milliseconds_since_epoch was ${{ steps.t1.outputs.milliseconds_since_epoch }}\"\n        - name: Test2\n          id: t2\n          uses: Kaven-Universe/github-action-current-date-time@v1.1.0\n          with:\n            format: \"YYYY\u5e74MM\u6708DD\u65e5 HH:mm:ss.SSS\"\n            timezone-offset: -480\n        # Use the output from the `t2` step\n        - name: Output2\n          run: |\n            echo \"The time was ${{ steps.t2.outputs.time }}\"\n            echo \"The year was ${{ steps.t2.outputs.year }}\"\n            echo \"The month was ${{ steps.t2.outputs.month }}\"\n            echo \"The day was ${{ steps.t2.outputs.day }}\"\n            echo \"The hours was ${{ steps.t2.outputs.hours }}\"\n            echo \"The minutes was ${{ steps.t2.outputs.minutes }}\"\n            echo \"The seconds was ${{ steps.t2.outputs.seconds }}\"\n            echo \"The milliseconds was ${{ steps.t2.outputs.milliseconds }}\"\n            echo \"The day_of_week was ${{ steps.t2.outputs.day_of_week }}\"\n            echo \"The week_of_year was ${{ steps.t2.outputs.week_of_year }}\"\n            echo \"The milliseconds_since_epoch was ${{ steps.t2.outputs.milliseconds_since_epoch }}\"\n"
+    },
+    "2022-04-28T11-05-59Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 1
+      },
+      "line_count": 18,
+      "workflow": "on:\n  push:\n    branches:\n      - main\n  pull_request:\n    branches:\n      - main\n      \nenv:\n  TIMESTAMP: ${{ date \"+%Y-%m-%d-%H:%M\" }}\n      \njobs:    \n build:\n      runs-on: windows-latest\n\n      steps:\n        - name: Test1\n          run: echo ${{ env.TIMESTAMP}}\n"
+    },
+    "2022-04-28T11-11-46Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 2
+      },
+      "line_count": 34,
+      "workflow": "on:\n  push:\n    branches:\n      - main\n  pull_request:\n    branches:\n      - main\n      \nenv:\n  TIMESTAMP: ${{ date \"+%Y-%m-%d-%H:%M\" }}\n      \njobs:    \n build:\n      runs-on: windows-latest\n\n      steps:\n        - name: Test1\n          uses: Kaven-Universe/github-action-current-date-time@v1.1.0\n          with:\n            format: \"YYYYMMDD.HHmmss\"\n        # Use the output from the `t1` step\n        - name: Output1\n          run: |\n            echo \"The time was ${{ steps.t1.outputs.time }}\"\n            echo \"The year was ${{ steps.t1.outputs.year }}\"\n            echo \"The month was ${{ steps.t1.outputs.month }}\"\n            echo \"The day was ${{ steps.t1.outputs.day }}\"\n            echo \"The hours was ${{ steps.t1.outputs.hours }}\"\n            echo \"The minutes was ${{ steps.t1.outputs.minutes }}\"\n            echo \"The seconds was ${{ steps.t1.outputs.seconds }}\"\n            echo \"The milliseconds was ${{ steps.t1.outputs.milliseconds }}\"\n            echo \"The day_of_week was ${{ steps.t1.outputs.day_of_week }}\"\n            echo \"The week_of_year was ${{ steps.t1.outputs.week_of_year }}\"\n            echo \"The milliseconds_since_epoch was ${{ steps.t1.outputs.milliseconds_since_epoch }}\"\n"
+    },
+    "2022-04-28T11-12-16Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 2
+      },
+      "line_count": 34,
+      "workflow": "on:\n  push:\n    branches:\n      - main\n  pull_request:\n    branches:\n      - main\n      \nenv:\n  TIMESTAMP: ${{  }}\n      \njobs:    \n build:\n      runs-on: windows-latest\n\n      steps:\n        - name: Test1\n          uses: Kaven-Universe/github-action-current-date-time@v1.1.0\n          with:\n            format: \"YYYYMMDD.HHmmss\"\n        # Use the output from the `t1` step\n        - name: Output1\n          run: |\n            echo \"The time was ${{ steps.t1.outputs.time }}\"\n            echo \"The year was ${{ steps.t1.outputs.year }}\"\n            echo \"The month was ${{ steps.t1.outputs.month }}\"\n            echo \"The day was ${{ steps.t1.outputs.day }}\"\n            echo \"The hours was ${{ steps.t1.outputs.hours }}\"\n            echo \"The minutes was ${{ steps.t1.outputs.minutes }}\"\n            echo \"The seconds was ${{ steps.t1.outputs.seconds }}\"\n            echo \"The milliseconds was ${{ steps.t1.outputs.milliseconds }}\"\n            echo \"The day_of_week was ${{ steps.t1.outputs.day_of_week }}\"\n            echo \"The week_of_year was ${{ steps.t1.outputs.week_of_year }}\"\n            echo \"The milliseconds_since_epoch was ${{ steps.t1.outputs.milliseconds_since_epoch }}\"\n"
+    },
+    "2022-04-28T11-12-40Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 2
+      },
+      "line_count": 34,
+      "workflow": "on:\n  push:\n    branches:\n      - main\n  pull_request:\n    branches:\n      - main\n      \nenv:\n  TIMESTAMP: 0\n      \njobs:    \n build:\n      runs-on: windows-latest\n\n      steps:\n        - name: Test1\n          uses: Kaven-Universe/github-action-current-date-time@v1.1.0\n          with:\n            format: \"YYYYMMDD.HHmmss\"\n        # Use the output from the `t1` step\n        - name: Output1\n          run: |\n            echo \"The time was ${{ steps.t1.outputs.time }}\"\n            echo \"The year was ${{ steps.t1.outputs.year }}\"\n            echo \"The month was ${{ steps.t1.outputs.month }}\"\n            echo \"The day was ${{ steps.t1.outputs.day }}\"\n            echo \"The hours was ${{ steps.t1.outputs.hours }}\"\n            echo \"The minutes was ${{ steps.t1.outputs.minutes }}\"\n            echo \"The seconds was ${{ steps.t1.outputs.seconds }}\"\n            echo \"The milliseconds was ${{ steps.t1.outputs.milliseconds }}\"\n            echo \"The day_of_week was ${{ steps.t1.outputs.day_of_week }}\"\n            echo \"The week_of_year was ${{ steps.t1.outputs.week_of_year }}\"\n            echo \"The milliseconds_since_epoch was ${{ steps.t1.outputs.milliseconds_since_epoch }}\"\n"
+    },
+    "2022-04-28T11-21-37Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "main"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 2
+      },
+      "line_count": 35,
+      "workflow": "on:\n  push:\n    branches:\n      - main\n  pull_request:\n    branches:\n      - main\n      \nenv:\n  TIMESTAMP: 0\n      \njobs:    \n build:\n      runs-on: windows-latest\n\n      steps:\n        - name: Test1\n          id: t1\n          uses: Kaven-Universe/github-action-current-date-time@v1.1.0\n          with:\n            format: \"YYYYMMDD.HHmmss\"\n        # Use the output from the `t1` step\n        - name: Output1\n          run: |\n            echo \"The time was ${{ steps.t1.outputs.time }}\"\n            echo \"The year was ${{ steps.t1.outputs.year }}\"\n            echo \"The month was ${{ steps.t1.outputs.month }}\"\n            echo \"The day was ${{ steps.t1.outputs.day }}\"\n            echo \"The hours was ${{ steps.t1.outputs.hours }}\"\n            echo \"The minutes was ${{ steps.t1.outputs.minutes }}\"\n            echo \"The seconds was ${{ steps.t1.outputs.seconds }}\"\n            echo \"The milliseconds was ${{ steps.t1.outputs.milliseconds }}\"\n            echo \"The day_of_week was ${{ steps.t1.outputs.day_of_week }}\"\n            echo \"The week_of_year was ${{ steps.t1.outputs.week_of_year }}\"\n            echo \"The milliseconds_since_epoch was ${{ steps.t1.outputs.milliseconds_since_epoch }}\"\n"
+    },
+    "2022-04-28T10-30-17Z": {
+      "triggers": {},
+      "num_jobs": 0,
+      "steps_per_job": {},
+      "line_count": 25,
+      "workflow": null,
+      "parse_error": "expected '<document start>', but found '<block mapping start>'\n  in \"<unicode string>\", line 10, column 5:\n        steps:\n        ^"
+    }
+  }
+}

@@ -1,0 +1,940 @@
+{
+  "deploy_preview": {
+    "2024-08-27T11-24-57Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 9,
+          "endLine": 17,
+          "endColumn": 28
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-08-27T11-27-07Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 9,
+          "endLine": 20,
+          "endColumn": 43
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-08-27T11-37-54Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 43,
+          "endColumn": 33
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-08-27T12-06-59Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 58,
+          "endColumn": 113
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-08-27T12-12-36Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 70,
+          "endColumn": 29
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-08-27T12-36-28Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 70,
+          "endColumn": 29
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-08-27T12-16-46Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 70,
+          "endColumn": 29
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-08-27T12-42-12Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 70,
+          "endColumn": 29
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-08-27T13-06-47Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 71,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-08-27T13-11-08Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 71,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-08-27T13-29-50Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 71,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-08-27T13-43-14Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 72,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-08-27T13-47-00Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 72,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-08-27T14-57-57Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 72,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-08-27T14-59-45Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 72,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-08-27T15-01-52Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 73,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-08-27T15-05-00Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 72,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-08-27T15-08-09Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 72,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-08-27T15-10-20Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 71,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-08-27T15-50-37Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 71,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-08-27T15-56-44Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 69,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-08-27T16-26-56Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 70,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-08-27T16-36-53Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 71,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-08-27T16-43-29Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 71,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-08-27T16-58-14Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 71,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-08-27T17-07-18Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 71,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-08-27T17-28-36Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 59,
+          "endColumn": 51
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-08-27T17-33-12Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 59,
+          "endColumn": 55
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-08-27T17-41-16Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 59,
+          "endColumn": 51
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-08-27T18-20-52Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 69,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-08-27T18-14-49Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 58,
+          "endColumn": 113
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-08-28T06-35-50Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 69,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 69,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 69,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 69,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 71,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 71,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2024-08-27T11-24-57Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview": 4
+      },
+      "line_count": 17,
+      "workflow": "name: Deploy Preview\n\non: [pull_request]\n\njobs:\n    deploy-preview:\n        runs-on: ubuntu-latest\n        steps:\n        - uses: actions/checkout@v4\n        - uses: pnpm/action-setup@v2\n          with:\n            version: 8\n        - uses: actions/setup-node@v4\n          with:\n            node-version: 18\n            cache: \"pnpm\"\n        - run: pnpm install"
+    },
+    "2024-08-27T11-27-07Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview": 5
+      },
+      "line_count": 20,
+      "workflow": "name: Deploy Preview\n\non: [pull_request]\n\njobs:\n    deploy-preview:\n        runs-on: ubuntu-latest\n        steps:\n        - uses: actions/checkout@v4\n        - uses: pnpm/action-setup@v2\n          with:\n            version: 8\n        - uses: actions/setup-node@v4\n          with:\n            node-version: 18\n            cache: \"pnpm\"\n        - run: pnpm install\n        - name: Get git branch name\n          id: branch-name\n          uses: tj-actions/branch-names@v8"
+    },
+    "2024-08-27T11-37-54Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview": 8
+      },
+      "line_count": 43,
+      "workflow": "name: Preview Deployment\non: [pull_request]\n\nenv:\n  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }} # You can find this in your Neon project settings\n\njobs:\n  deploy-preview:\n    runs-on: ubuntu-latest\n\n    # Only run one deployment at a time per PR.\n    concurrency:\n      group: pr-${{ github.event.number }}\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Get git branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8\n\n      - id: create-branch\n        uses: neondatabase/create-branch-action@v5\n        with:\n          project_id: ${{ env.NEON_PROJECT_ID }}\n          username: \"neondb_owner\" # Change this to the role you use to connect to your database\n          # parent: dev # optional (defaults to your primary branch)\n          branch_name: preview/${{ steps.branch-name.outputs.current_branch }}\n          api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings\n\n      - run: |\n          echo \"DATABASE_URL=${{ steps.create-branch.outputs.db_url_with_pooler }}\" >> \"$GITHUB_ENV\"\n\n      - run: pnpm run db:migrate"
+    },
+    "2024-08-27T12-06-59Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview-db-branch": 12
+      },
+      "line_count": 58,
+      "workflow": "name: Preview Deployment\non: [pull_request]\n\nenv:\n  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }} # You can find this in your Neon project settings\n\njobs:\n  deploy-preview-db-branch:\n    runs-on: ubuntu-latest\n\n    # Only run one deployment at a time per PR.\n    concurrency:\n      group: pr-${{ github.event.number }}\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Get git branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8\n\n      - id: create-branch\n        uses: neondatabase/create-branch-action@v5\n        with:\n          project_id: ${{ env.NEON_PROJECT_ID }}\n          username: \"neondb_owner\" # Change this to the role you use to connect to your database\n          database: \"neondb\"\n          # parent: dev # optional (defaults to your primary branch)\n          branch_name: preview/${{ steps.branch-name.outputs.current_branch }}\n          api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings\n\n      - run: |\n          echo \"DATABASE_URL=${{ steps.create-branch.outputs.db_url_with_pooler }}\" >> \"$GITHUB_ENV\"\n\n        name: DB Migration\n      - run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: npm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Build Project Artifacts\n        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Preview to Vercel\n        id: deploy\n        run: echo preview_url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}) >> $GITHUB_OUTPUT\n"
+    },
+    "2024-08-27T12-12-36Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview-db-branch": 15
+      },
+      "line_count": 70,
+      "workflow": "name: Preview Deployment\non: [pull_request]\n\nenv:\n  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }} # You can find this in your Neon project settings\n\njobs:\n  deploy-preview-db-branch:\n    runs-on: ubuntu-latest\n\n    # Only run one deployment at a time per PR.\n    concurrency:\n      group: pr-${{ github.event.number }}\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Get git branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8\n\n      - id: create-branch\n        uses: neondatabase/create-branch-action@v5\n        with:\n          project_id: ${{ env.NEON_PROJECT_ID }}\n          username: \"neondb_owner\" # Change this to the role you use to connect to your database\n          database: \"neondb\"\n          # parent: dev # optional (defaults to your primary branch)\n          branch_name: preview/${{ steps.branch-name.outputs.current_branch }}\n          api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings\n\n      - run: |\n          echo \"DATABASE_URL=${{ steps.create-branch.outputs.db_url_with_pooler }}\" >> \"$GITHUB_ENV\"\n\n        name: DB Migration\n      - run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Build Project Artifacts\n        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Preview to Vercel\n        id: deploy\n        run: echo preview_url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}) >> $GITHUB_OUTPUT\n      \n      - name: Install testing browsers\n        run: pnpm exec playwright install --with-depsg\n      - name: Run Playwright tests\n        run: pnpm exec playwright test\n\n      - uses: actions/upload-artifact@v4\n        if: always()\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 30"
+    },
+    "2024-08-27T12-36-28Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview-db-branch": 15
+      },
+      "line_count": 70,
+      "workflow": "name: Preview Deployment\non: [pull_request]\n\nenv:\n  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }} # You can find this in your Neon project settings\n\njobs:\n  deploy-preview-db-branch:\n    runs-on: ubuntu-latest\n\n    # Only run one deployment at a time per PR.\n    concurrency:\n      group: pr-${{ github.event.number }}\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Get git branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8\n\n      - id: create-branch\n        uses: neondatabase/create-branch-action@v5\n        with:\n          project_id: ${{ env.NEON_PROJECT_ID }}\n          username: \"neondb_owner\" # Change this to the role you use to connect to your database\n          database: \"neondb\"\n          # parent: dev # optional (defaults to your primary branch)\n          branch_name: preview/${{ steps.branch-name.outputs.current_branch }}\n          api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings\n\n      - run: |\n          echo \"DATABASE_URL=${{ steps.create-branch.outputs.db_url_with_pooler }}\" >> \"$GITHUB_ENV\"\n\n        name: DB Migration\n      - run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Build Project Artifacts\n        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Preview to Vercel\n        id: deploy\n        run: echo preview_url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}) >> $GITHUB_OUTPUT\n      \n      - name: Install testing browsers\n        run: npx playwright install --with-deps\n      - name: Run Playwright tests\n        run: npx playwright test\n\n      - uses: actions/upload-artifact@v4\n        if: always()\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 30"
+    },
+    "2024-08-27T12-16-46Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview-db-branch": 15
+      },
+      "line_count": 70,
+      "workflow": "name: Preview Deployment\non: [pull_request]\n\nenv:\n  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }} # You can find this in your Neon project settings\n\njobs:\n  deploy-preview-db-branch:\n    runs-on: ubuntu-latest\n\n    # Only run one deployment at a time per PR.\n    concurrency:\n      group: pr-${{ github.event.number }}\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Get git branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8\n\n      - id: create-branch\n        uses: neondatabase/create-branch-action@v5\n        with:\n          project_id: ${{ env.NEON_PROJECT_ID }}\n          username: \"neondb_owner\" # Change this to the role you use to connect to your database\n          database: \"neondb\"\n          # parent: dev # optional (defaults to your primary branch)\n          branch_name: preview/${{ steps.branch-name.outputs.current_branch }}\n          api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings\n\n      - run: |\n          echo \"DATABASE_URL=${{ steps.create-branch.outputs.db_url_with_pooler }}\" >> \"$GITHUB_ENV\"\n\n        name: DB Migration\n      - run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Build Project Artifacts\n        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Preview to Vercel\n        id: deploy\n        run: echo preview_url=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}) >> $GITHUB_OUTPUT\n      \n      - name: Install testing browsers\n        run: pnpm exec playwright install\n      - name: Run Playwright tests\n        run: pnpm exec playwright test\n\n      - uses: actions/upload-artifact@v4\n        if: always()\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 30"
+    },
+    "2024-08-27T12-42-12Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview-db-branch": 15
+      },
+      "line_count": 70,
+      "workflow": "name: Preview Deployment\non: [pull_request]\n\nenv:\n  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }} # You can find this in your Neon project settings\n\njobs:\n  deploy-preview-db-branch:\n    runs-on: ubuntu-latest\n\n    # Only run one deployment at a time per PR.\n    concurrency:\n      group: pr-${{ github.event.number }}\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Get git branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8\n\n      - id: create-branch\n        uses: neondatabase/create-branch-action@v5\n        with:\n          project_id: ${{ env.NEON_PROJECT_ID }}\n          username: \"neondb_owner\" # Change this to the role you use to connect to your database\n          database: \"neondb\"\n          # parent: dev # optional (defaults to your primary branch)\n          branch_name: preview/${{ steps.branch-name.outputs.current_branch }}\n          api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings\n\n      - run: |\n          echo \"DATABASE_URL=${{ steps.create-branch.outputs.db_url_with_pooler }}\" >> \"$GITHUB_ENV\"\n\n        name: DB Migration\n      - run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Build Project Artifacts\n        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Preview to Vercel\n        id: deploy\n        run: echo PREVIEW_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}) >> $GITHUB_OUTPUT\n      \n      - name: Install testing browsers\n        run: npx playwright install --with-deps\n      - name: Run Playwright tests\n        run: npx playwright test\n\n      - uses: actions/upload-artifact@v4\n        if: always()\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 30"
+    },
+    "2024-08-27T13-06-47Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview-db-branch": 16
+      },
+      "line_count": 71,
+      "workflow": "name: Preview Deployment\non: [pull_request]\n\nenv:\n  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }} # You can find this in your Neon project settings\n\njobs:\n  deploy-preview-db-branch:\n    runs-on: ubuntu-latest\n\n    # Only run one deployment at a time per PR.\n    concurrency:\n      group: pr-${{ github.event.number }}\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Get git branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8\n\n      - id: create-branch\n        uses: neondatabase/create-branch-action@v5\n        with:\n          project_id: ${{ env.NEON_PROJECT_ID }}\n          username: \"neondb_owner\" # Change this to the role you use to connect to your database\n          database: \"neondb\"\n          # parent: dev # optional (defaults to your primary branch)\n          branch_name: preview/${{ steps.branch-name.outputs.current_branch }}\n          api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings\n\n      - run: |\n          echo \"DATABASE_URL=${{ steps.create-branch.outputs.db_url_with_pooler }}\" >> \"$GITHUB_ENV\"\n\n        name: DB Migration\n      - run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Build Project Artifacts\n        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Preview to Vercel\n        id: deploy\n        run: echo PREVIEW_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}) >> $GITHUB_ENV\n      - name: show prev url\n        run: echo $GITHUB_ENV\n      - name: Install testing browsers\n        run: npx playwright install --with-deps\n      - name: Run Playwright tests\n        run: npx playwright test\n\n      - uses: actions/upload-artifact@v4\n        if: always()\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 30\n"
+    },
+    "2024-08-27T13-11-08Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview-db-branch": 16
+      },
+      "line_count": 71,
+      "workflow": "name: Preview Deployment\non: [pull_request]\n\nenv:\n  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }} # You can find this in your Neon project settings\n\njobs:\n  deploy-preview-db-branch:\n    runs-on: ubuntu-latest\n\n    # Only run one deployment at a time per PR.\n    concurrency:\n      group: pr-${{ github.event.number }}\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Get git branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8\n\n      - id: create-branch\n        uses: neondatabase/create-branch-action@v5\n        with:\n          project_id: ${{ env.NEON_PROJECT_ID }}\n          username: \"neondb_owner\" # Change this to the role you use to connect to your database\n          database: \"neondb\"\n          # parent: dev # optional (defaults to your primary branch)\n          branch_name: preview/${{ steps.branch-name.outputs.current_branch }}\n          api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings\n\n      - run: |\n          echo \"DATABASE_URL=${{ steps.create-branch.outputs.db_url_with_pooler }}\" >> \"$GITHUB_ENV\"\n\n        name: DB Migration\n      - run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Build Project Artifacts\n        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Preview to Vercel\n        id: deploy\n        run: echo PREVIEW_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})  >> \"$GITHUB_ENV\"\n      - name: show prev url\n        run: echo $GITHUB_ENV\n      - name: Install testing browsers\n        run: npx playwright install --with-deps\n      - name: Run Playwright tests\n        run: npx playwright test\n\n      - uses: actions/upload-artifact@v4\n        if: always()\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 30\n"
+    },
+    "2024-08-27T13-29-50Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview-db-branch": 16
+      },
+      "line_count": 71,
+      "workflow": "name: Preview Deployment\non: [pull_request]\n\nenv:\n  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }} # You can find this in your Neon project settings\n\njobs:\n  deploy-preview-db-branch:\n    runs-on: ubuntu-latest\n\n    # Only run one deployment at a time per PR.\n    concurrency:\n      group: pr-${{ github.event.number }}\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Get git branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8\n\n      - id: create-branch\n        uses: neondatabase/create-branch-action@v5\n        with:\n          project_id: ${{ env.NEON_PROJECT_ID }}\n          username: \"neondb_owner\" # Change this to the role you use to connect to your database\n          database: \"neondb\"\n          # parent: dev # optional (defaults to your primary branch)\n          branch_name: preview/${{ steps.branch-name.outputs.current_branch }}\n          api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings\n\n      - run: |\n          echo \"DATABASE_URL=${{ steps.create-branch.outputs.db_url_with_pooler }}\" >> \"$GITHUB_ENV\"\n\n        name: DB Migration\n      - run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Build Project Artifacts\n        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Preview to Vercel\n        id: deploy\n        run: echo PREVIEW_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})  >> \"$GITHUB_ENV\"\n      - name: show prev url\n        run: echo $PREVIEW_URL\n      - name: Install testing browsers\n        run: npx playwright install --with-deps\n      - name: Run Playwright tests\n        run: npx playwright test\n\n      - uses: actions/upload-artifact@v4\n        if: always()\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 30\n"
+    },
+    "2024-08-27T13-43-14Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview-db-branch": 17
+      },
+      "line_count": 72,
+      "workflow": "name: Preview Deployment\non: [pull_request]\n\nenv:\n  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }} # You can find this in your Neon project settings\n\njobs:\n  deploy-preview-db-branch:\n    runs-on: ubuntu-latest\n\n    # Only run one deployment at a time per PR.\n    concurrency:\n      group: pr-${{ github.event.number }}\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Get git branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8\n\n      - id: create-branch\n        uses: neondatabase/create-branch-action@v5\n        with:\n          project_id: ${{ env.NEON_PROJECT_ID }}\n          username: \"neondb_owner\" # Change this to the role you use to connect to your database\n          database: \"neondb\"\n          # parent: dev # optional (defaults to your primary branch)\n          branch_name: preview/${{ steps.branch-name.outputs.current_branch }}\n          api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings\n\n      - run: |\n          echo \"DATABASE_URL=${{ steps.create-branch.outputs.db_url_with_pooler }}\" >> \"$GITHUB_ENV\"\n\n        name: DB Migration\n      - run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}\n      - name: set db env var\n        run: vercel --build-env DATABASE_URL=$DATABASE_URL\n      - name: Build Project Artifacts\n        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Preview to Vercel\n        id: deploy\n        run: echo PREVIEW_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})  >> \"$GITHUB_ENV\"\n      - name: show prev url\n        run: echo $PREVIEW_URL\n      - name: Install testing browsers\n        run: npx playwright install --with-deps\n      - name: Run Playwright tests\n        run: npx playwright test\n\n      - uses: actions/upload-artifact@v4\n        if: always()\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 30\n"
+    },
+    "2024-08-27T13-47-00Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview-db-branch": 17
+      },
+      "line_count": 72,
+      "workflow": "name: Preview Deployment\non: [pull_request]\n\nenv:\n  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }} # You can find this in your Neon project settings\n\njobs:\n  deploy-preview-db-branch:\n    runs-on: ubuntu-latest\n\n    # Only run one deployment at a time per PR.\n    concurrency:\n      group: pr-${{ github.event.number }}\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Get git branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8\n\n      - id: create-branch\n        uses: neondatabase/create-branch-action@v5\n        with:\n          project_id: ${{ env.NEON_PROJECT_ID }}\n          username: \"neondb_owner\" # Change this to the role you use to connect to your database\n          database: \"neondb\"\n          # parent: dev # optional (defaults to your primary branch)\n          branch_name: preview/${{ steps.branch-name.outputs.current_branch }}\n          api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings\n\n      - run: |\n          echo \"DATABASE_URL=${{ steps.create-branch.outputs.db_url_with_pooler }}\" >> \"$GITHUB_ENV\"\n\n        name: DB Migration\n      - run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}\n      - name: set db env var\n        run: vercel --build-env DATABASE_URL=$DATABASE_URL --token=${{ secrets.VERCEL_TOKEN }}\n      - name: Build Project Artifacts\n        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Preview to Vercel\n        id: deploy\n        run: echo PREVIEW_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})  >> \"$GITHUB_ENV\"\n      - name: show prev url\n        run: echo $PREVIEW_URL\n      - name: Install testing browsers\n        run: npx playwright install --with-deps\n      - name: Run Playwright tests\n        run: npx playwright test\n\n      - uses: actions/upload-artifact@v4\n        if: always()\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 30\n"
+    },
+    "2024-08-27T14-57-57Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview-db-branch": 17
+      },
+      "line_count": 72,
+      "workflow": "name: Preview Deployment\non: [pull_request]\n\nenv:\n  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }} # You can find this in your Neon project settings\n\njobs:\n  deploy-preview-db-branch:\n    runs-on: ubuntu-latest\n\n    # Only run one deployment at a time per PR.\n    concurrency:\n      group: pr-${{ github.event.number }}\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Get git branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8\n\n      - id: create-branch\n        uses: neondatabase/create-branch-action@v5\n        with:\n          project_id: ${{ env.NEON_PROJECT_ID }}\n          username: \"neondb_owner\" # Change this to the role you use to connect to your database\n          database: \"neondb\"\n          # parent: dev # optional (defaults to your primary branch)\n          branch_name: preview/${{ steps.branch-name.outputs.current_branch }}\n          api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings\n\n      - run: |\n          echo \"DATABASE_URL={{ steps.create-branch.outputs.db_url_with_pooler }} >> .env\n\n        name: DB Migration\n      - run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}\n      - name: set db env var\n        run: vercel --build-env DATABASE_URL=$DATABASE_URL --token=${{ secrets.VERCEL_TOKEN }}\n      - name: Build Project Artifacts\n        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Preview to Vercel\n        id: deploy\n        run: echo PREVIEW_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})  >> \"$GITHUB_ENV\"\n      - name: show prev url\n        run: echo $PREVIEW_URL\n      - name: Install testing browsers\n        run: npx playwright install --with-deps\n      - name: Run Playwright tests\n        run: npx playwright test\n\n      - uses: actions/upload-artifact@v4\n        if: always()\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 30\n"
+    },
+    "2024-08-27T14-59-45Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview-db-branch": 17
+      },
+      "line_count": 72,
+      "workflow": "name: Preview Deployment\non: [pull_request]\n\nenv:\n  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }} # You can find this in your Neon project settings\n\njobs:\n  deploy-preview-db-branch:\n    runs-on: ubuntu-latest\n\n    # Only run one deployment at a time per PR.\n    concurrency:\n      group: pr-${{ github.event.number }}\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Get git branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8\n\n      - id: create-branch\n        uses: neondatabase/create-branch-action@v5\n        with:\n          project_id: ${{ env.NEON_PROJECT_ID }}\n          username: \"neondb_owner\" # Change this to the role you use to connect to your database\n          database: \"neondb\"\n          # parent: dev # optional (defaults to your primary branch)\n          branch_name: preview/${{ steps.branch-name.outputs.current_branch }}\n          api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings\n\n      - run: |\n          echo DATABASE_URL={{ steps.create-branch.outputs.db_url_with_pooler }} >> .env\n\n        name: DB Migration\n      - run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}\n      - name: set db env var\n        run: vercel --build-env DATABASE_URL=$DATABASE_URL --token=${{ secrets.VERCEL_TOKEN }}\n      - name: Build Project Artifacts\n        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Preview to Vercel\n        id: deploy\n        run: echo PREVIEW_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})  >> \"$GITHUB_ENV\"\n      - name: show prev url\n        run: echo $PREVIEW_URL\n      - name: Install testing browsers\n        run: npx playwright install --with-deps\n      - name: Run Playwright tests\n        run: npx playwright test\n\n      - uses: actions/upload-artifact@v4\n        if: always()\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 30\n"
+    },
+    "2024-08-27T15-01-52Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview-db-branch": 17
+      },
+      "line_count": 73,
+      "workflow": "name: Preview Deployment\non: [pull_request]\n\nenv:\n  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }} # You can find this in your Neon project settings\n\njobs:\n  deploy-preview-db-branch:\n    runs-on: ubuntu-latest\n\n    # Only run one deployment at a time per PR.\n    concurrency:\n      group: pr-${{ github.event.number }}\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Get git branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8\n\n      - id: create-branch\n        uses: neondatabase/create-branch-action@v5\n        with:\n          project_id: ${{ env.NEON_PROJECT_ID }}\n          username: \"neondb_owner\" # Change this to the role you use to connect to your database\n          database: \"neondb\"\n          # parent: dev # optional (defaults to your primary branch)\n          branch_name: preview/${{ steps.branch-name.outputs.current_branch }}\n          api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings\n\n      - run: |\n          echo DATABASE_URL={{ steps.create-branch.outputs.db_url_with_pooler }} >> .env\n          echo \"DATABASE_URL={{ steps.create-branch.outputs.db_url_with_pooler }}\" >> $GITHUB_ENV\n\n        name: DB Migration\n      - run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}\n      - name: set db env var\n        run: vercel --build-env DATABASE_URL=$DATABASE_URL --token=${{ secrets.VERCEL_TOKEN }}\n      - name: Build Project Artifacts\n        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Preview to Vercel\n        id: deploy\n        run: echo PREVIEW_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})  >> \"$GITHUB_ENV\"\n      - name: show prev url\n        run: echo $PREVIEW_URL\n      - name: Install testing browsers\n        run: npx playwright install --with-deps\n      - name: Run Playwright tests\n        run: npx playwright test\n\n      - uses: actions/upload-artifact@v4\n        if: always()\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 30\n"
+    },
+    "2024-08-27T15-05-00Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview-db-branch": 18
+      },
+      "line_count": 72,
+      "workflow": "name: Preview Deployment\non: [pull_request]\n\nenv:\n  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }} # You can find this in your Neon project settings\n\njobs:\n  deploy-preview-db-branch:\n    runs-on: ubuntu-latest\n\n    # Only run one deployment at a time per PR.\n    concurrency:\n      group: pr-${{ github.event.number }}\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Get git branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8\n\n      - id: create-branch\n        uses: neondatabase/create-branch-action@v5\n        with:\n          project_id: ${{ env.NEON_PROJECT_ID }}\n          username: \"neondb_owner\" # Change this to the role you use to connect to your database\n          database: \"neondb\"\n          # parent: dev # optional (defaults to your primary branch)\n          branch_name: preview/${{ steps.branch-name.outputs.current_branch }}\n          api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings\n\n      - run: echo DATABASE_URL={{ steps.create-branch.outputs.db_url_with_pooler }} >> .env\n      - run: echo \"DATABASE_URL={{ steps.create-branch.outputs.db_url_with_pooler }}\" >> $GITHUB_ENV\n\n        name: DB Migration\n      - run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}\n      - name: set db env var\n        run: vercel --build-env DATABASE_URL=$DATABASE_URL --token=${{ secrets.VERCEL_TOKEN }}\n      - name: Build Project Artifacts\n        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Preview to Vercel\n        id: deploy\n        run: echo PREVIEW_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})  >> \"$GITHUB_ENV\"\n      - name: show prev url\n        run: echo $PREVIEW_URL\n      - name: Install testing browsers\n        run: npx playwright install --with-deps\n      - name: Run Playwright tests\n        run: npx playwright test\n\n      - uses: actions/upload-artifact@v4\n        if: always()\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 30\n"
+    },
+    "2024-08-27T15-08-09Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview-db-branch": 18
+      },
+      "line_count": 72,
+      "workflow": "name: Preview Deployment\non: [pull_request]\n\nenv:\n  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }} # You can find this in your Neon project settings\n\njobs:\n  deploy-preview-db-branch:\n    runs-on: ubuntu-latest\n\n    # Only run one deployment at a time per PR.\n    concurrency:\n      group: pr-${{ github.event.number }}\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Get git branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8\n\n      - id: create-branch\n        uses: neondatabase/create-branch-action@v5\n        with:\n          project_id: ${{ env.NEON_PROJECT_ID }}\n          username: \"neondb_owner\" # Change this to the role you use to connect to your database\n          database: \"neondb\"\n          # parent: dev # optional (defaults to your primary branch)\n          branch_name: preview/${{ steps.branch-name.outputs.current_branch }}\n          api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings\n\n      - run: echo DATABASE_URL=${{ steps.create-branch.outputs.db_url_with_pooler }} >> .env\n      - run: echo DATABASE_URL=${{ steps.create-branch.outputs.db_url_with_pooler }} >> $GITHUB_ENV\n\n        name: DB Migration\n      - run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}\n      - name: set db env var\n        run: vercel --build-env DATABASE_URL=$DATABASE_URL --token=${{ secrets.VERCEL_TOKEN }}\n      - name: Build Project Artifacts\n        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Preview to Vercel\n        id: deploy\n        run: echo PREVIEW_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})  >> \"$GITHUB_ENV\"\n      - name: show prev url\n        run: echo $PREVIEW_URL\n      - name: Install testing browsers\n        run: npx playwright install --with-deps\n      - name: Run Playwright tests\n        run: npx playwright test\n\n      - uses: actions/upload-artifact@v4\n        if: always()\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 30\n"
+    },
+    "2024-08-27T15-10-20Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview-db-branch": 17
+      },
+      "line_count": 71,
+      "workflow": "name: Preview Deployment\non: [pull_request]\n\nenv:\n  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }} # You can find this in your Neon project settings\n\njobs:\n  deploy-preview-db-branch:\n    runs-on: ubuntu-latest\n\n    # Only run one deployment at a time per PR.\n    concurrency:\n      group: pr-${{ github.event.number }}\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Get git branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8\n\n      - id: create-branch\n        uses: neondatabase/create-branch-action@v5\n        with:\n          project_id: ${{ env.NEON_PROJECT_ID }}\n          username: \"neondb_owner\" # Change this to the role you use to connect to your database\n          database: \"neondb\"\n          # parent: dev # optional (defaults to your primary branch)\n          branch_name: preview/${{ steps.branch-name.outputs.current_branch }}\n          api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings\n\n      - run: echo \"DATABASE_URL=${{ steps.create-branch.outputs.db_url_with_pooler }}\" >> .env\n\n        name: DB Migration\n      - run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}\n      - name: set db env var\n        run: vercel --build-env DATABASE_URL=$DATABASE_URL --token=${{ secrets.VERCEL_TOKEN }}\n      - name: Build Project Artifacts\n        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Preview to Vercel\n        id: deploy\n        run: echo PREVIEW_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})  >> \"$GITHUB_ENV\"\n      - name: show prev url\n        run: echo $PREVIEW_URL\n      - name: Install testing browsers\n        run: npx playwright install --with-deps\n      - name: Run Playwright tests\n        run: npx playwright test\n\n      - uses: actions/upload-artifact@v4\n        if: always()\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 30\n"
+    },
+    "2024-08-27T15-50-37Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview-db-branch": 17
+      },
+      "line_count": 71,
+      "workflow": "name: Preview Deployment\non: [pull_request]\n\nenv:\n  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }} # You can find this in your Neon project settings\n\njobs:\n  deploy-preview-db-branch:\n    runs-on: ubuntu-latest\n\n    # Only run one deployment at a time per PR.\n    concurrency:\n      group: pr-${{ github.event.number }}\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Get git branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8\n\n      - id: create-branch\n        uses: neondatabase/create-branch-action@v5\n        with:\n          project_id: ${{ env.NEON_PROJECT_ID }}\n          username: \"neondb_owner\" # Change this to the role you use to connect to your database\n          database: \"neondb\"\n          # parent: dev # optional (defaults to your primary branch)\n          branch_name: preview/${{ steps.branch-name.outputs.current_branch }}\n          api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings\n\n      - run: echo \"DATABASE_URL=${{ steps.create-branch.outputs.db_url_with_pooler }}\" >> \"$GITHUB_ENV\"\n\n        name: DB Migration\n      - run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}\n      - name: set db env var\n        run: vercel --build-env DATABASE_URL=$DATABASE_URL --token=${{ secrets.VERCEL_TOKEN }}\n      - name: Build Project Artifacts\n        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Preview to Vercel\n        id: deploy\n        run: echo PREVIEW_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})  >> \"$GITHUB_ENV\"\n      - name: show prev url\n        run: echo $PREVIEW_URL\n      - name: Install testing browsers\n        run: npx playwright install --with-deps\n      - name: Run Playwright tests\n        run: npx playwright test\n\n      - uses: actions/upload-artifact@v4\n        if: always()\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 30\n"
+    },
+    "2024-08-27T15-56-44Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview-db-branch": 16
+      },
+      "line_count": 69,
+      "workflow": "name: Preview Deployment\non: [pull_request]\n\nenv:\n  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }} # You can find this in your Neon project settings\n\njobs:\n  deploy-preview-db-branch:\n    runs-on: ubuntu-latest\n\n    # Only run one deployment at a time per PR.\n    concurrency:\n      group: pr-${{ github.event.number }}\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Get git branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8\n\n      - id: create-branch\n        uses: neondatabase/create-branch-action@v5\n        with:\n          project_id: ${{ env.NEON_PROJECT_ID }}\n          username: \"neondb_owner\" # Change this to the role you use to connect to your database\n          database: \"neondb\"\n          # parent: dev # optional (defaults to your primary branch)\n          branch_name: preview/${{ steps.branch-name.outputs.current_branch }}\n          api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings\n\n      - run: echo \"DATABASE_URL=${{ steps.create-branch.outputs.db_url_with_pooler }}\" >> .env\n\n        name: DB Migration\n      - run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}\n      - name: Build Project Artifacts\n        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Preview to Vercel\n        id: deploy\n        run: echo PREVIEW_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})  >> \"$GITHUB_ENV\"\n      - name: show prev url\n        run: echo $PREVIEW_URL\n      - name: Install testing browsers\n        run: npx playwright install --with-deps\n      - name: Run Playwright tests\n        run: npx playwright test\n\n      - uses: actions/upload-artifact@v4\n        if: always()\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 30\n"
+    },
+    "2024-08-27T16-26-56Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview-db-branch": 16
+      },
+      "line_count": 70,
+      "workflow": "name: Preview Deployment\non: [pull_request]\n\nenv:\n  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }} # You can find this in your Neon project settings\n\njobs:\n  deploy-preview-db-branch:\n    runs-on: ubuntu-latest\n\n    # Only run one deployment at a time per PR.\n    concurrency:\n      group: pr-${{ github.event.number }}\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Get git branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8\n\n      - id: create-branch\n        uses: neondatabase/create-branch-action@v5\n        with:\n          project_id: ${{ env.NEON_PROJECT_ID }}\n          username: \"neondb_owner\" # Change this to the role you use to connect to your database\n          database: \"neondb\"\n          # parent: dev # optional (defaults to your primary branch)\n          branch_name: preview/${{ steps.branch-name.outputs.current_branch }}\n          api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings\n\n        #needed to push to .env, pushing to #GITHUB_ENV doesnt work during vercel deployment\n      - run: echo \"DATABASE_URL=${{ steps.create-branch.outputs.Db_url_with_pooler }}\" >> .env\n\n        name: DB Migration\n      - run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}\n      - name: Build Project Artifacts\n        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Preview to Vercel\n        id: deploy\n        run: echo PREVIEW_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})  >> \"$GITHUB_ENV\"\n      - name: show prev url\n        run: echo $PREVIEW_URL\n      - name: Install testing browsers\n        run: npx playwright install --with-deps\n      - name: Run Playwright tests\n        run: npx playwright test\n\n      - uses: actions/upload-artifact@v4\n        if: always()\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 30\n"
+    },
+    "2024-08-27T16-36-53Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview-db-branch": 16
+      },
+      "line_count": 71,
+      "workflow": "name: Preview Deployment\non: [pull_request]\n\nenv:\n  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }} # You can find this in your Neon project settings\n\njobs:\n  deploy-preview-db-branch:\n    runs-on: ubuntu-latest\n\n    # Only run one deployment at a time per PR.\n    concurrency:\n      group: pr-${{ github.event.number }}\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Get git branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8\n\n      - id: create-branch\n        uses: neondatabase/create-branch-action@v5\n        with:\n          project_id: ${{ env.NEON_PROJECT_ID }}\n          username: \"neondb_owner\" # Change this to the role you use to connect to your database\n          database: \"neondb\"\n          # parent: dev # optional (defaults to your primary branch)\n          branch_name: preview/${{ steps.branch-name.outputs.current_branch }}\n          api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings\n\n        #needed to push to .env, pushing to #GITHUB_ENV doesnt work during vercel deployment\n        name: Save db url to .env\n      - run: echo \"DATABASE_URL=${{ steps.create-branch.outputs.Db_url_with_pooler }}\" >> .env\n\n        name: DB Migration\n      - run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}\n      - name: Build Project Artifacts\n        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Preview to Vercel\n        id: deploy\n        run: echo PREVIEW_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})  >> \"$GITHUB_ENV\"\n      - name: show prev url\n        run: echo $PREVIEW_URL\n      - name: Install testing browsers\n        run: npx playwright install --with-deps\n      - name: Run Playwright tests\n        run: npx playwright test\n\n      - uses: actions/upload-artifact@v4\n        if: always()\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 30\n"
+    },
+    "2024-08-27T16-43-29Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview-db-branch": 16
+      },
+      "line_count": 71,
+      "workflow": "name: Preview Deployment\non: [pull_request]\n\nenv:\n  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }} # You can find this in your Neon project settings\n\njobs:\n  deploy-preview-db-branch:\n    runs-on: ubuntu-latest\n\n    # Only run one deployment at a time per PR.\n    concurrency:\n      group: pr-${{ github.event.number }}\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Get git branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8\n\n      - id: create-branch\n        uses: neondatabase/create-branch-action@v5\n        with:\n          project_id: ${{ env.NEON_PROJECT_ID }}\n          username: \"neondb_owner\" # Change this to the role you use to connect to your database\n          database: \"neondb\"\n          # parent: dev # optional (defaults to your primary branch)\n          branch_name: preview/${{ steps.branch-name.outputs.current_branch }}\n          api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings\n\n        #needed to push to .env, pushing to #GITHUB_ENV doesnt work during vercel deployment\n      - name: Save db url to .env\n        run: echo \"DATABASE_URL=${{ steps.create-branch.outputs.Db_url_with_pooler }}\" >> .env\n\n      - name: DB Migration\n        run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}\n      - name: Build Project Artifacts\n        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Preview to Vercel\n        id: deploy\n        run: echo PREVIEW_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})  >> \"$GITHUB_ENV\"\n      - name: show prev url\n        run: echo $PREVIEW_URL\n      - name: Install testing browsers\n        run: npx playwright install --with-deps\n      - name: Run Playwright tests\n        run: npx playwright test\n\n      - uses: actions/upload-artifact@v4\n        if: always()\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 30\n"
+    },
+    "2024-08-27T16-58-14Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview-db-branch": 16
+      },
+      "line_count": 71,
+      "workflow": "name: Preview Deployment\non: [pull_request]\n\nenv:\n  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }} # You can find this in your Neon project settings\n\njobs:\n  deploy-preview-db-branch:\n    runs-on: ubuntu-latest\n\n    # Only run one deployment at a time per PR.\n    concurrency:\n      group: pr-${{ github.event.number }}\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n          \n      - run: pnpm install\n\n      - name: Get git branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8\n\n      - id: create-branch\n        uses: neondatabase/create-branch-action@v5\n        with:\n          project_id: ${{ env.NEON_PROJECT_ID }}\n          username: \"neondb_owner\" # Change this to the role you use to connect to your database\n          database: \"neondb\"\n          # parent: dev # optional (defaults to your primary branch)\n          branch_name: preview/${{ steps.branch-name.outputs.current_branch }}\n          api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings\n\n        #needed to push to .env, pushing to #GITHUB_ENV doesnt work during vercel deployment\n      - name: Save db url to .env\n        run: echo \"DATABASE_URL=${{ steps.create-branch.outputs.Db_url_with_pooler }}\" >> .env\n\n      - name: DB Migration\n        run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}\n      - name: Build Project Artifacts\n        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Preview to Vercel\n        id: deploy\n        run: echo PREVIEW_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})  >> \"$GITHUB_ENV\"\n      - name: show prev url\n        run: echo $PREVIEW_URL\n      - name: Install testing browsers\n        run: npx playwright install --with-deps\n      - name: Run Playwright tests\n        run: npx playwright test\n\n      - uses: actions/upload-artifact@v4\n        if: always()\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 30\n"
+    },
+    "2024-08-27T17-07-18Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview-db-branch": 16
+      },
+      "line_count": 71,
+      "workflow": "name: Preview Deployment\non: [pull_request]\n\nenv:\n  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }} # You can find this in your Neon project settings\n\njobs:\n  deploy-preview-db-branch:\n    runs-on: ubuntu-latest\n\n    # Only run one deployment at a time per PR.\n    concurrency:\n      group: pr-${{ github.event.number }}\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Get git branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8\n\n      - id: create-branch\n        uses: neondatabase/create-branch-action@v5\n        with:\n          project_id: ${{ env.NEON_PROJECT_ID }}\n          username: \"neondb_owner\" # Change this to the role you use to connect to your database\n          database: \"neondb\"\n          # parent: dev # optional (defaults to your primary branch)\n          branch_name: preview/pr-${{ github.event.number }}-${{ steps.branch-name.outputs.current_branch }}\n          api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings\n\n        #needed to push to .env, pushing to #GITHUB_ENV doesnt work during vercel deployment\n      - name: Save db url to .env\n        run: echo \"DATABASE_URL=${{ steps.create-branch.outputs.Db_url_with_pooler }}\" >> .env\n\n      - name: DB Migration\n        run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}\n      - name: Build Project Artifacts\n        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Preview to Vercel\n        id: deploy\n        run: echo PREVIEW_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})  >> \"$GITHUB_ENV\"\n      - name: show prev url\n        run: echo $PREVIEW_URL\n      - name: Install testing browsers\n        run: npx playwright install --with-deps\n      - name: Run Playwright tests\n        run: npx playwright test\n\n      - uses: actions/upload-artifact@v4\n        if: always()\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 30\n"
+    },
+    "2024-08-27T17-28-36Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview-db-branch": 13
+      },
+      "line_count": 59,
+      "workflow": "name: Preview Deployment\non: [pull_request]\n\nenv:\n  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }} # You can find this in your Neon project settings\n\njobs:\n  deploy-preview-db-branch:\n    runs-on: ubuntu-latest\n\n    # Only run one deployment at a time per PR.\n    concurrency:\n      group: pr-${{ github.event.number }}\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Get git branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8\n\n      - id: create-branch\n        uses: neondatabase/create-branch-action@v5\n        with:\n          project_id: ${{ env.NEON_PROJECT_ID }}\n          username: \"neondb_owner\" # Change this to the role you use to connect to your database\n          database: \"neondb\"\n          # parent: dev # optional (defaults to your primary branch)\n          branch_name: preview/pr-${{ github.event.number }}-${{ steps.branch-name.outputs.current_branch }}\n          api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings\n\n        #needed to push to .env, pushing to #GITHUB_ENV doesnt work during vercel deployment\n      - name: Save db url to .env\n        run: echo \"DATABASE_URL=${{ steps.create-branch.outputs.Db_url_with_pooler }}\" >> .env\n\n      - name: DB Migration\n        run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}\n      - name: Build Project Artifacts\n        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Preview to Vercel\n        id: deploy\n        run: echo PREVIEW_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})  >> \"$GITHUB_ENV\"\n      - uses: ./.github/workflows/playwright-test\n"
+    },
+    "2024-08-27T17-33-12Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview-db-branch": 13
+      },
+      "line_count": 59,
+      "workflow": "name: Preview Deployment\non: [pull_request]\n\nenv:\n  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }} # You can find this in your Neon project settings\n\njobs:\n  deploy-preview-db-branch:\n    runs-on: ubuntu-latest\n\n    # Only run one deployment at a time per PR.\n    concurrency:\n      group: pr-${{ github.event.number }}\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Get git branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8\n\n      - id: create-branch\n        uses: neondatabase/create-branch-action@v5\n        with:\n          project_id: ${{ env.NEON_PROJECT_ID }}\n          username: \"neondb_owner\" # Change this to the role you use to connect to your database\n          database: \"neondb\"\n          # parent: dev # optional (defaults to your primary branch)\n          branch_name: preview/pr-${{ github.event.number }}-${{ steps.branch-name.outputs.current_branch }}\n          api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings\n\n        #needed to push to .env, pushing to #GITHUB_ENV doesnt work during vercel deployment\n      - name: Save db url to .env\n        run: echo \"DATABASE_URL=${{ steps.create-branch.outputs.Db_url_with_pooler }}\" >> .env\n\n      - name: DB Migration\n        run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}\n      - name: Build Project Artifacts\n        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Preview to Vercel\n        id: deploy\n        run: echo PREVIEW_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})  >> \"$GITHUB_ENV\"\n      - uses: ./.github/workflows/playwright-test.yml\n"
+    },
+    "2024-08-27T17-41-16Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview-db-branch": 13
+      },
+      "line_count": 59,
+      "workflow": "name: Preview Deployment\non: [pull_request]\n\nenv:\n  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }} # You can find this in your Neon project settings\n\njobs:\n  deploy-preview-db-branch:\n    runs-on: ubuntu-latest\n\n    # Only run one deployment at a time per PR.\n    concurrency:\n      group: pr-${{ github.event.number }}\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Get git branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8\n\n      - id: create-branch\n        uses: neondatabase/create-branch-action@v5\n        with:\n          project_id: ${{ env.NEON_PROJECT_ID }}\n          username: \"neondb_owner\" # Change this to the role you use to connect to your database\n          database: \"neondb\"\n          # parent: dev # optional (defaults to your primary branch)\n          branch_name: preview/pr-${{ github.event.number }}-${{ steps.branch-name.outputs.current_branch }}\n          api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings\n\n        #needed to push to .env, pushing to #GITHUB_ENV doesnt work during vercel deployment\n      - name: Save db url to .env\n        run: echo \"DATABASE_URL=${{ steps.create-branch.outputs.Db_url_with_pooler }}\" >> .env\n\n      - name: DB Migration\n        run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}\n      - name: Build Project Artifacts\n        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Preview to Vercel\n        id: deploy\n        run: echo PREVIEW_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})  >> \"$GITHUB_ENV\"\n      - uses: ./.github/workflows/playwright-test\n"
+    },
+    "2024-08-27T18-20-52Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview-db-branch": 15
+      },
+      "line_count": 69,
+      "workflow": "name: Preview Deployment\non: [pull_request]\n\nenv:\n  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }} # You can find this in your Neon project settings\n\njobs:\n  deploy-preview-db-branch:\n    runs-on: ubuntu-latest\n\n    # Only run one deployment at a time per PR.\n    concurrency:\n      group: pr-${{ github.event.number }}\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Get git branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8\n\n      - id: create-branch\n        uses: neondatabase/create-branch-action@v5\n        with:\n          project_id: ${{ env.NEON_PROJECT_ID }}\n          username: \"neondb_owner\" # Change this to the role you use to connect to your database\n          database: \"neondb\"\n          # parent: dev # optional (defaults to your primary branch)\n          branch_name: preview/pr-${{ github.event.number }}-${{ steps.branch-name.outputs.current_branch }}\n          api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings\n\n        #needed to push to .env, pushing to #GITHUB_ENV doesnt work during vercel deployment\n      - name: Save db url to .env\n        run: echo \"DATABASE_URL=${{ steps.create-branch.outputs.Db_url_with_pooler }}\" >> .env\n\n      - name: DB Migration\n        run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}\n      - name: Build Project Artifacts\n        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Preview to Vercel\n        id: deploy\n        run: echo PREVIEW_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})  >> \"$GITHUB_ENV\"\n      - name: Install testing browsers\n        run: npx playwright install --with-deps\n      - name: Run Playwright tests\n        run: npx playwright test\n\n      - uses: actions/upload-artifact@v4\n        if: always()\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 30\n"
+    },
+    "2024-08-27T18-14-49Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview-db-branch": 12
+      },
+      "line_count": 58,
+      "workflow": "name: Preview Deployment\non: [pull_request]\n\nenv:\n  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }} # You can find this in your Neon project settings\n\njobs:\n  deploy-preview-db-branch:\n    runs-on: ubuntu-latest\n\n    # Only run one deployment at a time per PR.\n    concurrency:\n      group: pr-${{ github.event.number }}\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Get git branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8\n\n      - id: create-branch\n        uses: neondatabase/create-branch-action@v5\n        with:\n          project_id: ${{ env.NEON_PROJECT_ID }}\n          username: \"neondb_owner\" # Change this to the role you use to connect to your database\n          database: \"neondb\"\n          # parent: dev # optional (defaults to your primary branch)\n          branch_name: preview/pr-${{ github.event.number }}-${{ steps.branch-name.outputs.current_branch }}\n          api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings\n\n        #needed to push to .env, pushing to #GITHUB_ENV doesnt work during vercel deployment\n      - name: Save db url to .env\n        run: echo \"DATABASE_URL=${{ steps.create-branch.outputs.Db_url_with_pooler }}\" >> .env\n\n      - name: DB Migration\n        run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}\n      - name: Build Project Artifacts\n        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Preview to Vercel\n        id: deploy\n        run: echo PREVIEW_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})  >> \"$GITHUB_ENV\"\n"
+    },
+    "2024-08-28T06-35-50Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-preview-db-branch": 16
+      },
+      "line_count": 71,
+      "workflow": "name: Preview Deployment\non: [pull_request]\n\nenv:\n  NEON_PROJECT_ID: ${{ secrets.NEON_PROJECT_ID }} # You can find this in your Neon project settings\n\njobs:\n  deploy-preview-db-branch:\n    runs-on: ubuntu-latest\n\n    # Only run one deployment at a time per PR.\n    concurrency:\n      group: pr-${{ github.event.number }}\n\n    steps:\n      - uses: actions/checkout@v4\n      - uses: pnpm/action-setup@v2\n        with:\n          version: 8\n      - uses: actions/setup-node@v4\n        with:\n          node-version: 18\n          cache: \"pnpm\"\n\n      - run: pnpm install\n\n      - name: Get git branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8\n\n      - id: create-branch\n        uses: neondatabase/create-branch-action@v5\n        with:\n          project_id: ${{ env.NEON_PROJECT_ID }}\n          username: \"neondb_owner\" # Change this to the role you use to connect to your database\n          database: \"neondb\"\n          # parent: dev # optional (defaults to your primary branch)\n          branch_name: preview/pr-${{ github.event.number }}-${{ steps.branch-name.outputs.current_branch }}\n          api_key: ${{ secrets.NEON_API_KEY }} # Generate an API key in your Neon account settings\n\n        #needed to push to .env, pushing to #GITHUB_ENV doesnt work during vercel deployment\n      - name: Save db url to .env\n        run: echo \"DATABASE_URL=${{ steps.create-branch.outputs.Db_url_with_pooler }}\" >> \"$GITHUB_ENV\"\n      - name: Save db url to .env\n        run: echo \"DATABASE_URL=${{ steps.create-branch.outputs.Db_url_with_pooler }}\" >> .env\n\n      - name: DB Migration\n        run: pnpm run db:migrate\n\n      - name: Install Vercel CLI\n        run: pnpm install --global vercel@latest\n\n      - name: Pull Vercel Environment Information\n        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}\n      - name: Build Project Artifacts\n        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}\n\n      - name: Deploy Preview to Vercel\n        id: deploy\n        run: echo \"PREVIEW_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})\"  >> \"$GITHUB_ENV\"\n      - name: Install testing browsers\n        run: npx playwright install --with-deps\n      - name: Run Playwright tests\n        run: npx playwright test\n\n      - uses: actions/upload-artifact@v4\n        if: always()\n        with:\n          name: playwright-report\n          path: playwright-report/\n          retention-days: 30\n"
+    }
+  }
+}

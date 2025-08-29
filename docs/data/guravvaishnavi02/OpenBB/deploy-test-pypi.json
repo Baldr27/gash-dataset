@@ -1,0 +1,68 @@
+{
+  "deploy-test-pypi": {
+    "2024-05-14T15-38-06Z": [
+      {
+        "region": {
+          "startLine": 14,
+          "startColumn": 5,
+          "endLine": 68,
+          "endColumn": 57
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-07-01T13-05-59Z": [
+      {
+        "region": {
+          "startLine": 14,
+          "startColumn": 5,
+          "endLine": 68,
+          "endColumn": 57
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2024-05-14T15-38-06Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "feature/v4-pypi"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-test-pypi": 9
+      },
+      "line_count": 68,
+      "workflow": "name: Deploy the OpenBB Platform to Test PyPI\n\non:\n  push:\n    branches:\n      - feature/v4-pypi\n\nconcurrency:\n  group: ${{ github.workflow }}-${{ github.ref }}\n  cancel-in-progress: true\n\njobs:\n  deploy-test-pypi:\n    name: Build and publish \ud83d\udce6 to TestPyPI\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v3\n      - name: Setup Python 3.9\n        uses: actions/setup-python@v4\n        with:\n          python-version: \"3.9\"\n\n      - name: Install pypa/build\n        run: >-\n          python -m\n          pip install\n          build\n          --user\n\n      - name: OpenBBTerminal - Update version in pyproject.toml and Edit docs\n        run: |\n          sed -i 's/name = \".*\"/name = \"openbb-terminal-nightly\"/' pyproject.toml\n          sed -i \"3s/version = \\\"\\(.*\\)\\\"/version = \\\"\\1.dev$(date +%Y%m%d%H%M)\\\"/\" pyproject.toml\n          sed -i 's|pip install openbb-terminal|pip install openbb-terminal-nightly|g' ./website/pypi.md\n\n      - name: OpenBBTerminal - Build a binary wheel and a source tarball\n        run: >-\n          python -m\n          build\n          --sdist\n          --wheel\n          --outdir dist/\n          .\n\n      - name: OpenBBTerminal - Publish distribution \ud83d\udce6 to Test PyPI\n        uses: pypa/gh-action-pypi-publish@release/v1\n        with:\n          packages-dir: dist/\n          password: ${{ secrets.TEST_PYPI_API_TOKEN_OBB_TERMINAL_NIGHTLY }}\n          repository-url: https://test.pypi.org/legacy/\n\n      - name: OpenBB Platform - Update version in pyproject.toml and Edit docs\n        run: |\n          sed -i 's/name = \".*\"/name = \"openbb-nightly\"/' openbb_platform/pyproject.toml\n          sed -i \"3s/version = \\\"\\(.*\\)\\\"/version = \\\"\\1.dev$(date +%Y%m%d%H%M)\\\"/\" openbb_platform/pyproject.toml\n\n      - name: OpenBB Platform - Create the dinamically generated wheel\n        run: |\n          python -m pip install poetry toml\n          python build/pypi/openbb_platform/nightly.py\n\n      - name: OpenBB Platform - Publish distribution \ud83d\udce6 to Test PyPI\n        uses: pypa/gh-action-pypi-publish@release/v1\n        with:\n          packages-dir: openbb_platform/dist/\n          password: ${{ secrets.TEST_PYPI_API_TOKEN_OBB_PLATFORM_NIGHTLY }}\n          repository-url: https://test.pypi.org/legacy/\n"
+    },
+    "2024-07-01T13-05-59Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "feature/v4-pypi"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy-test-pypi": 9
+      },
+      "line_count": 68,
+      "workflow": "name: Deploy the OpenBB Platform to Test PyPI\n\non:\n  push:\n    branches:\n      - feature/v4-pypi\n\nconcurrency:\n  group: ${{ github.workflow }}-${{ github.ref }}\n  cancel-in-progress: true\n\njobs:\n  deploy-test-pypi:\n    name: Build and publish \ud83d\udce6 to TestPyPI\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v4\n      - name: Setup Python 3.10\n        uses: actions/setup-python@v5\n        with:\n          python-version: \"3.10\"\n\n      - name: Install pypa/build\n        run: >-\n          python -m\n          pip install\n          build\n          --user\n\n      - name: OpenBBTerminal - Update version in pyproject.toml and Edit docs\n        run: |\n          sed -i 's/name = \".*\"/name = \"openbb-terminal-nightly\"/' pyproject.toml\n          sed -i \"3s/version = \\\"\\(.*\\)\\\"/version = \\\"\\1.dev$(date +%Y%m%d%H%M)\\\"/\" pyproject.toml\n          sed -i 's|pip install openbb-terminal|pip install openbb-terminal-nightly|g' ./website/pypi.md\n\n      - name: OpenBBTerminal - Build a binary wheel and a source tarball\n        run: >-\n          python -m\n          build\n          --sdist\n          --wheel\n          --outdir dist/\n          .\n\n      - name: OpenBBTerminal - Publish distribution \ud83d\udce6 to Test PyPI\n        uses: pypa/gh-action-pypi-publish@release/v1\n        with:\n          packages-dir: dist/\n          password: ${{ secrets.TEST_PYPI_API_TOKEN_OBB_TERMINAL_NIGHTLY }}\n          repository-url: https://test.pypi.org/legacy/\n\n      - name: OpenBB Platform - Update version in pyproject.toml and Edit docs\n        run: |\n          sed -i 's/name = \".*\"/name = \"openbb-nightly\"/' openbb_platform/pyproject.toml\n          sed -i \"3s/version = \\\"\\(.*\\)\\\"/version = \\\"\\1.dev$(date +%Y%m%d%H%M)\\\"/\" openbb_platform/pyproject.toml\n\n      - name: OpenBB Platform - Create the dynamically generated wheel\n        run: |\n          python -m pip install poetry toml\n          python build/pypi/openbb_platform/nightly.py\n\n      - name: OpenBB Platform - Publish distribution \ud83d\udce6 to Test PyPI\n        uses: pypa/gh-action-pypi-publish@release/v1\n        with:\n          packages-dir: openbb_platform/dist/\n          password: ${{ secrets.TEST_PYPI_API_TOKEN_OBB_PLATFORM_NIGHTLY }}\n          repository-url: https://test.pypi.org/legacy/\n"
+    }
+  }
+}

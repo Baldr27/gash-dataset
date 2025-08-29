@@ -1,0 +1,697 @@
+{
+  "performance": {
+    "2021-04-17T21-54-54Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 66,
+          "endColumn": 31
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-04-17T22-34-28Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 66,
+          "endColumn": 31
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-04-18T00-44-40Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 66,
+          "endColumn": 32
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-07-07T21-36-52Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 66,
+          "endColumn": 31
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-07-07T20-53-12Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 67,
+          "endColumn": 31
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-07-07T22-16-58Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 66,
+          "endColumn": 31
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-07-08T06-09-17Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 66,
+          "endColumn": 32
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-07-18T00-14-21Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 66,
+          "endColumn": 32
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-07-18T11-54-32Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 64,
+          "endColumn": 32
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2025-01-05T21-34-14Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 169,
+          "endColumn": 81
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2025-01-04T21-00-04Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 153,
+          "endColumn": 81
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2025-01-05T21-46-40Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 169,
+          "endColumn": 81
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2025-01-06T21-10-19Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 172,
+          "endColumn": 81
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2025-01-17T05-24-18Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 172,
+          "endColumn": 81
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2025-01-18T07-15-22Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 172,
+          "endColumn": 81
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2025-01-18T01-01-17Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 172,
+          "endColumn": 81
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2025-01-20T22-52-10Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 174,
+          "endColumn": 81
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2025-01-24T21-43-30Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 67,
+          "endColumn": 81
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2025-01-25T05-23-12Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 69,
+          "endColumn": 81
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2025-01-31T20-56-53Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 70,
+          "endColumn": 81
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2025-01-24T22-13-20Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 67,
+          "endColumn": 81
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2021-04-17T21-54-54Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "develop"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "develop"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "codecov": 8
+      },
+      "line_count": 66,
+      "workflow": "name: performance\n\non:\n  push:\n    branches: [ develop ]\n  pull_request:\n    branches: [ develop ]\n\njobs:\n  codecov:\n    strategy:\n      fail-fast: false\n      matrix:\n        # We only actually run on a single OS/Python pair, but use the matrix\n        # form so that our Action calls can mirror the main test flow.\n        python-version: [ 3.9 ]\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v2\n\n      # Python setup\n      - name: Set up Python environment\n        uses: actions/setup-python@v2\n        with:\n          python-version: ${{ matrix.python-version }}\n\n      # Install build dependencies\n      - name: Install build dependencies\n        run: python -m pip install --upgrade pip setuptools wheel poetry nox\n\n      # Setup Poetry caching\n      - name: Get Poetry cache dir\n        id: poetry-cache\n        run: echo \"::set-output name=dir::$(poetry config cache-dir)\"\n\n      - name: Poetry/Nox cache\n        uses: actions/cache@v2\n        with:\n          path: ${{ steps.poetry-cache.outputs.dir }}\n          key: ${{ runner.os }}-${{ matrix.python-version }}-poetry-codecov-${{ hashFiles('**/poetry.lock') }}\n          restore-keys: |\n            ${{ runner.os }}-${{ matrix.python-version }}-poetry-codecov-\n            ${{ runner.os }}-${{ matrix.python-version }}-poetry-\n\n      # Redis is a dep for integration tests\n      - name: Install Redis\n        run: sudo apt-get install redis-server\n\n      # Run performance\n      - name: Run performance tests\n        run: nox -s performance_tests --reuse-existing-virtualenvs\n\n      # Store benchmark results\n      - name: Store benchmark result\n        uses: rhysd/github-action-benchmark@v1\n        with:\n          name: Python Benchmark with pytest-benchmark\n          tool: \"pytest\"\n          output-file-path: PERF.JSON\n          github-token: ${{ secrets.GITHUB_TOKEN }}\n          auto-push: true\n          # Show alert with commit comment on detecting possible performance regression\n          alert-threshold: '200%'\n          comment-on-alert: true\n          fail-on-alert: true\n"
+    },
+    "2021-04-17T22-34-28Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "develop"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "develop"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "performance": 8
+      },
+      "line_count": 66,
+      "workflow": "name: performance\n\non:\n  push:\n    branches: [ develop ]\n  pull_request:\n    branches: [ develop ]\n\njobs:\n  performance:\n    strategy:\n      fail-fast: false\n      matrix:\n        # We only actually run on a single OS/Python pair, but use the matrix\n        # form so that our Action calls can mirror the main test flow.\n        python-version: [ 3.9 ]\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v2\n\n      # Python setup\n      - name: Set up Python environment\n        uses: actions/setup-python@v2\n        with:\n          python-version: ${{ matrix.python-version }}\n\n      # Install build dependencies\n      - name: Install build dependencies\n        run: python -m pip install --upgrade pip setuptools wheel poetry nox\n\n      # Setup Poetry caching\n      - name: Get Poetry cache dir\n        id: poetry-cache\n        run: echo \"::set-output name=dir::$(poetry config cache-dir)\"\n\n      - name: Poetry/Nox cache\n        uses: actions/cache@v2\n        with:\n          path: ${{ steps.poetry-cache.outputs.dir }}\n          key: ${{ runner.os }}-${{ matrix.python-version }}-poetry-codecov-${{ hashFiles('**/poetry.lock') }}\n          restore-keys: |\n            ${{ runner.os }}-${{ matrix.python-version }}-poetry-codecov-\n            ${{ runner.os }}-${{ matrix.python-version }}-poetry-\n\n      # Redis is a dep for integration tests\n      - name: Install Redis\n        run: sudo apt-get install redis-server\n\n      # Run performance\n      - name: Run performance tests\n        run: nox -s performance_tests --reuse-existing-virtualenvs\n\n      # Store benchmark results\n      - name: Store benchmark result\n        uses: rhysd/github-action-benchmark@v1\n        with:\n          name: Python Benchmark with pytest-benchmark\n          tool: \"pytest\"\n          output-file-path: PERF.JSON\n          github-token: ${{ secrets.GITHUB_TOKEN }}\n          auto-push: true\n          # Show alert with commit comment on detecting possible performance regression\n          alert-threshold: '200%'\n          comment-on-alert: true\n          fail-on-alert: true\n"
+    },
+    "2021-04-18T00-44-40Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "develop"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "develop"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "performance": 7
+      },
+      "line_count": 66,
+      "workflow": "name: performance\n\non:\n  push:\n    branches: [ develop ]\n  pull_request:\n    branches: [ develop ]\n\njobs:\n  performance:\n    strategy:\n      fail-fast: false\n      matrix:\n        # We only actually run on a single OS/Python pair, but use the matrix\n        # form so that our Action calls can mirror the main test flow.\n        python-version: [ 3.9 ]\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v2\n\n      # Python setup\n      - name: Set up Python environment\n        uses: actions/setup-python@v2\n        with:\n          python-version: ${{ matrix.python-version }}\n\n      # Install build dependencies\n      - name: Install build dependencies\n        run: python -m pip install --upgrade pip setuptools wheel poetry nox\n\n      # Setup Poetry caching\n      - name: Get Poetry cache dir\n        id: poetry-cache\n        run: echo \"::set-output name=dir::$(poetry config cache-dir)\"\n\n      - name: Poetry/Nox cache\n        uses: actions/cache@v2\n        with:\n          path: ${{ steps.poetry-cache.outputs.dir }}\n          key: ${{ runner.os }}-${{ matrix.python-version }}-poetry-codecov-${{ hashFiles('**/poetry.lock') }}\n          restore-keys: |\n            ${{ runner.os }}-${{ matrix.python-version }}-poetry-codecov-\n            ${{ runner.os }}-${{ matrix.python-version }}-poetry-\n\n      # Redis is a dep for integration tests\n      - name: Install Redis\n        run: sudo apt-get install redis-server\n\n      # Run performance\n      - name: Run performance tests\n        run: nox -s performance_tests --reuse-existing-virtualenvs\n\n      # TODO: Store benchmark results\n#      - name: Store benchmark result\n#        uses: rhysd/github-action-benchmark@v1\n#        with:\n#          name: Python Benchmark with pytest-benchmark\n#          tool: \"pytest\"\n#          output-file-path: PERF.JSON\n#          github-token: ${{ secrets.GITHUB_TOKEN }}\n#          auto-push: true\n#          # Show alert with commit comment on detecting possible performance regression\n#          alert-threshold: '200%'\n#          comment-on-alert: true\n#          fail-on-alert: true\n"
+    },
+    "2021-07-07T21-36-52Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "develop"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "develop"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "performance": 8
+      },
+      "line_count": 66,
+      "workflow": "name: performance\n\non:\n  push:\n    branches: [ develop ]\n  pull_request:\n    branches: [ develop ]\n\njobs:\n  performance:\n    strategy:\n      fail-fast: false\n      matrix:\n        # We only actually run on a single OS/Python pair, but use the matrix\n        # form so that our Action calls can mirror the main test flow.\n        python-version: [ 3.9 ]\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v2\n\n      # Python setup\n      - name: Set up Python environment\n        uses: actions/setup-python@v2\n        with:\n          python-version: ${{ matrix.python-version }}\n\n      # Install build dependencies\n      - name: Install build dependencies\n        run: python -m pip install --upgrade pip setuptools wheel poetry nox\n\n      # Setup Poetry caching\n      - name: Get Poetry cache dir\n        id: poetry-cache\n        run: echo \"::set-output name=dir::$(poetry config cache-dir)\"\n\n      - name: Poetry/Nox cache\n        uses: actions/cache@v2\n        with:\n          path: ${{ steps.poetry-cache.outputs.dir }}\n          key: ${{ runner.os }}-${{ matrix.python-version }}-poetry-codecov-${{ hashFiles('**/poetry.lock') }}\n          restore-keys: |\n            ${{ runner.os }}-${{ matrix.python-version }}-poetry-codecov-\n            ${{ runner.os }}-${{ matrix.python-version }}-poetry-\n\n      # Redis is a dep for integration tests\n      - name: Install Redis\n        run: sudo apt-get install redis-server\n\n      # Run performance\n      - name: Run performance tests\n        run: nox -s performance_tests --reuse-existing-virtualenvs\n\n      # Store benchmark results\n      - name: Store benchmark result\n        uses: rhysd/github-action-benchmark@v1\n        with:\n          name: Benchmark with pytest-benchmark\n          tool: \"pytest\"\n          output-file-path: output.json\n          github-token: ${{ secrets.GITHUB_TOKEN }}\n          auto-push: true\n          # Show alert with commit comment on detecting possible performance regression\n          alert-threshold: '200%'\n          comment-always: true\n          fail-on-alert: true\n"
+    },
+    "2021-07-07T20-53-12Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "develop"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "develop"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "performance": 8
+      },
+      "line_count": 67,
+      "workflow": "name: performance\n\non:\n  push:\n    branches: [ develop ]\n  pull_request:\n    branches: [ develop ]\n\njobs:\n  performance:\n    strategy:\n      fail-fast: false\n      matrix:\n        # We only actually run on a single OS/Python pair, but use the matrix\n        # form so that our Action calls can mirror the main test flow.\n        python-version: [ 3.9 ]\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v2\n\n      # Python setup\n      - name: Set up Python environment\n        uses: actions/setup-python@v2\n        with:\n          python-version: ${{ matrix.python-version }}\n\n      # Install build dependencies\n      - name: Install build dependencies\n        run: python -m pip install --upgrade pip setuptools wheel poetry nox\n\n      # Setup Poetry caching\n      - name: Get Poetry cache dir\n        id: poetry-cache\n        run: echo \"::set-output name=dir::$(poetry config cache-dir)\"\n\n      - name: Poetry/Nox cache\n        uses: actions/cache@v2\n        with:\n          path: ${{ steps.poetry-cache.outputs.dir }}\n          key: ${{ runner.os }}-${{ matrix.python-version }}-poetry-codecov-${{ hashFiles('**/poetry.lock') }}\n          restore-keys: |\n            ${{ runner.os }}-${{ matrix.python-version }}-poetry-codecov-\n            ${{ runner.os }}-${{ matrix.python-version }}-poetry-\n\n      # Redis is a dep for integration tests\n      - name: Install Redis\n        run: sudo apt-get install redis-server\n\n      # Run performance\n      - name: Run performance tests\n        run: nox -s performance_tests --reuse-existing-virtualenvs\n\n      # Store benchmark results\n      - name: Store benchmark result\n        uses: rhysd/github-action-benchmark@v1\n        with:\n          name: Benchmark with pytest-benchmark\n          tool: \"pytest\"\n          output-file-path: output.json\n          external-data-json-path: ./cache/benchmark-data.json\n          github-token: ${{ secrets.GITHUB_TOKEN }}\n          auto-push: true\n          # Show alert with commit comment on detecting possible performance regression\n          alert-threshold: '200%'\n          comment-on-alert: true\n          fail-on-alert: true\n"
+    },
+    "2021-07-07T22-16-58Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "develop"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "develop"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "performance": 8
+      },
+      "line_count": 66,
+      "workflow": "name: performance\n\non:\n  push:\n    branches: [ develop ]\n  pull_request:\n    branches: [ develop ]\n\njobs:\n  performance:\n    strategy:\n      fail-fast: false\n      matrix:\n        # We only actually run on a single OS/Python pair, but use the matrix\n        # form so that our Action calls can mirror the main test flow.\n        python-version: [ 3.9 ]\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v2\n\n      # Python setup\n      - name: Set up Python environment\n        uses: actions/setup-python@v2\n        with:\n          python-version: ${{ matrix.python-version }}\n\n      # Install build dependencies\n      - name: Install build dependencies\n        run: python -m pip install --upgrade pip setuptools wheel poetry nox\n\n      # Setup Poetry caching\n      - name: Get Poetry cache dir\n        id: poetry-cache\n        run: echo \"::set-output name=dir::$(poetry config cache-dir)\"\n\n      - name: Poetry/Nox cache\n        uses: actions/cache@v2\n        with:\n          path: ${{ steps.poetry-cache.outputs.dir }}\n          key: ${{ runner.os }}-${{ matrix.python-version }}-poetry-codecov-${{ hashFiles('**/poetry.lock') }}\n          restore-keys: |\n            ${{ runner.os }}-${{ matrix.python-version }}-poetry-codecov-\n            ${{ runner.os }}-${{ matrix.python-version }}-poetry-\n\n      # Redis is a dep for integration tests\n      - name: Install Redis\n        run: sudo apt-get install redis-server\n\n      # Run performance\n      - name: Run performance tests\n        run: nox -s performance_tests --reuse-existing-virtualenvs\n\n      # Store benchmark results\n      - name: Store benchmark result\n        uses: rhysd/github-action-benchmark@v1\n        with:\n          name: Benchmark with pytest-benchmark\n          tool: \"pytest\"\n          output-file-path: output.json\n          github-token: ${{ secrets.GHPAGES_ACCESS }}\n          auto-push: true\n          # Show alert with commit comment on detecting possible performance regression\n          alert-threshold: '200%'\n          comment-always: true\n          fail-on-alert: true\n"
+    },
+    "2021-07-08T06-09-17Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "develop"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "develop"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "performance": 8
+      },
+      "line_count": 66,
+      "workflow": "name: performance\n\non:\n  push:\n    branches: [ develop ]\n  pull_request:\n    branches: [ develop ]\n\njobs:\n  performance:\n    strategy:\n      fail-fast: false\n      matrix:\n        # We only actually run on a single OS/Python pair, but use the matrix\n        # form so that our Action calls can mirror the main test flow.\n        python-version: [ 3.9 ]\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v2\n\n      # Python setup\n      - name: Set up Python environment\n        uses: actions/setup-python@v2\n        with:\n          python-version: ${{ matrix.python-version }}\n\n      # Install build dependencies\n      - name: Install build dependencies\n        run: python -m pip install --upgrade pip setuptools wheel poetry nox\n\n      # Setup Poetry caching\n      - name: Get Poetry cache dir\n        id: poetry-cache\n        run: echo \"::set-output name=dir::$(poetry config cache-dir)\"\n\n      - name: Poetry/Nox cache\n        uses: actions/cache@v2\n        with:\n          path: ${{ steps.poetry-cache.outputs.dir }}\n          key: ${{ runner.os }}-${{ matrix.python-version }}-poetry-codecov-${{ hashFiles('**/poetry.lock') }}\n          restore-keys: |\n            ${{ runner.os }}-${{ matrix.python-version }}-poetry-codecov-\n            ${{ runner.os }}-${{ matrix.python-version }}-poetry-\n\n      # Redis is a dep for integration tests\n      - name: Install Redis\n        run: sudo apt-get install redis-server\n\n      # Run performance\n      - name: Run performance tests\n        run: nox -s performance_tests --reuse-existing-virtualenvs\n\n      # Store benchmark results\n      - name: Store benchmark result\n        uses: rhysd/github-action-benchmark@v1\n        with:\n          name: Benchmark with pytest-benchmark\n          tool: \"pytest\"\n          output-file-path: output.json\n          github-token: ${{ secrets.GHPAGES_ACCESS }}\n          auto-push: true\n          # Show alert with commit comment on detecting possible performance regression\n          alert-threshold: '200%'\n          comment-always: true\n          fail-on-alert: false\n"
+    },
+    "2021-07-18T00-14-21Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "develop"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "develop"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "performance": 8
+      },
+      "line_count": 66,
+      "workflow": "name: performance\n\non:\n  push:\n    branches: [ develop ]\n  pull_request:\n    branches: [ develop ]\n\njobs:\n  performance:\n    strategy:\n      fail-fast: false\n      matrix:\n        # We only actually run on a single OS/Python pair, but use the matrix\n        # form so that our Action calls can mirror the main test flow.\n        python-version: [ 3.9 ]\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v2\n\n      # Python setup\n      - name: Set up Python environment\n        uses: actions/setup-python@v2\n        with:\n          python-version: ${{ matrix.python-version }}\n\n      # Install build dependencies\n      - name: Install build dependencies\n        run: python -m pip install --upgrade pip setuptools wheel poetry nox\n\n      # Setup Poetry caching\n      - name: Get Poetry cache dir\n        id: poetry-cache\n        run: echo \"::set-output name=dir::$(poetry config cache-dir)\"\n\n      - name: Poetry/Nox cache\n        uses: actions/cache@v2\n        with:\n          path: ${{ steps.poetry-cache.outputs.dir }}\n          key: ${{ runner.os }}-${{ matrix.python-version }}-poetry-codecov-${{ hashFiles('**/poetry.lock') }}\n          restore-keys: |\n            ${{ runner.os }}-${{ matrix.python-version }}-poetry-codecov-\n            ${{ runner.os }}-${{ matrix.python-version }}-poetry-\n\n      # Redis is a dep for integration tests\n      - name: Install Redis\n        run: sudo apt-get install redis-server\n\n      # Run performance\n      - name: Run performance tests\n        run: nox -rs performance_tests -- no-parallel\n\n      # Store benchmark results\n      - name: Store benchmark result\n        uses: rhysd/github-action-benchmark@v1\n        with:\n          name: Benchmark with pytest-benchmark\n          tool: \"pytest\"\n          output-file-path: output.json\n          github-token: ${{ secrets.GHPAGES_ACCESS }}\n          auto-push: true\n          # Show alert with commit comment on detecting possible performance regression\n          alert-threshold: '200%'\n          comment-always: true\n          fail-on-alert: false\n"
+    },
+    "2021-07-18T11-54-32Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "develop"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "performance": 8
+      },
+      "line_count": 64,
+      "workflow": "name: performance\n\non:\n  push:\n    branches: [ develop ]\n\njobs:\n  performance:\n    strategy:\n      fail-fast: false\n      matrix:\n        # We only actually run on a single OS/Python pair, but use the matrix\n        # form so that our Action calls can mirror the main test flow.\n        python-version: [ 3.9 ]\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v2\n\n      # Python setup\n      - name: Set up Python environment\n        uses: actions/setup-python@v2\n        with:\n          python-version: ${{ matrix.python-version }}\n\n      # Install build dependencies\n      - name: Install build dependencies\n        run: python -m pip install --upgrade pip setuptools wheel poetry nox\n\n      # Setup Poetry caching\n      - name: Get Poetry cache dir\n        id: poetry-cache\n        run: echo \"::set-output name=dir::$(poetry config cache-dir)\"\n\n      - name: Poetry/Nox cache\n        uses: actions/cache@v2\n        with:\n          path: ${{ steps.poetry-cache.outputs.dir }}\n          key: ${{ runner.os }}-${{ matrix.python-version }}-poetry-codecov-${{ hashFiles('**/poetry.lock') }}\n          restore-keys: |\n            ${{ runner.os }}-${{ matrix.python-version }}-poetry-codecov-\n            ${{ runner.os }}-${{ matrix.python-version }}-poetry-\n\n      # Redis is a dep for integration tests\n      - name: Install Redis\n        run: sudo apt-get install redis-server\n\n      # Run performance\n      - name: Run performance tests\n        run: nox -rs performance_tests -- no-parallel\n\n      # Store benchmark results\n      - name: Store benchmark result\n        uses: rhysd/github-action-benchmark@v1\n        with:\n          name: Benchmark with pytest-benchmark\n          tool: \"pytest\"\n          output-file-path: output.json\n          github-token: ${{ secrets.GHPAGES_ACCESS }}\n          auto-push: true\n          # Show alert with commit comment on detecting possible performance regression\n          alert-threshold: '200%'\n          comment-always: true\n          fail-on-alert: false\n"
+    },
+    "2025-01-05T21-34-14Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "performance-benchmarks": 21
+      },
+      "line_count": 169,
+      "workflow": "name: performance\n\non:\n  push:\n    branches: [nightly]\n\njobs:\n  performance-benchmarks:\n    runs-on: ubuntu-latest\n    env:\n      BUILD_MODE: release\n      RUST_BACKTRACE: 1\n      # > --------------------------------------------------\n      # > sccache\n      # https://github.com/Mozilla-Actions/sccache-action\n      SCCACHE_IDLE_TIMEOUT: 0\n      SCCACHE_DIRECT: \"true\"\n      SCCACHE_CACHE_MULTIARCH: 1\n      SCCACHE_DIR: ${{ github.workspace }}/.cache/sccache\n      RUSTC_WRAPPER: \"sccache\"\n      CC: \"sccache clang\"\n      CXX: \"sccache clang++\"\n      # Incrementally compiled crates cannot be cached by sccache\n      # https://github.com/mozilla/sccache#rust\n      CARGO_INCREMENTAL: 0\n      # > --------------------------------------------------\n\n    services:\n      redis:\n        image: redis\n        ports:\n          - 6379:6379\n        options: >-\n          --health-cmd \"redis-cli ping\"\n          --health-interval 10s\n          --health-timeout 5s\n          --health-retries 5\n      postgres:\n        image: postgres\n        env:\n          POSTGRES_USER: postgres\n          POSTGRES_PASSWORD: pass\n          POSTGRES_DB: nautilus\n        ports:\n          - 5432:5432\n        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5\n\n    steps:\n      - name: Install runner dependencies\n        run: sudo apt-get install -y curl clang git libssl-dev make pkg-config\n\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Cached sccache\n        id: cached-sccache\n        uses: actions/cache@v4\n        with:\n          path: ${{ env.SCCACHE_DIR }}\n          key: ${{ matrix.os }}-sccache-build-${{ hashFiles('**/Cargo.lock', '**/poetry.lock') }}\n          restore-keys: ${{ matrix.os }}-sccache-build-\n\n      - name: Run sccache\n        uses: mozilla-actions/sccache-action@v0.0.7\n\n      - name: Set up Rust toolchain\n        run: |\n          rustup toolchain add --profile minimal stable --component clippy,rustfmt\n\n      - name: Set up Python environment\n        uses: actions/setup-python@v5\n        with:\n          python-version: \"3.12\"\n\n      - name: Get Python version\n        run: |\n          version=$(bash scripts/python-version.sh)\n          echo \"PYTHON_VERSION=$version\" >> $GITHUB_ENV\n\n      - name: Get Poetry version from poetry-version\n        run: |\n          version=$(cat poetry-version)\n          echo \"POETRY_VERSION=$version\" >> $GITHUB_ENV\n\n      - name: Install Poetry\n        uses: snok/install-poetry@v1\n        with:\n          version: ${{ env.POETRY_VERSION }}\n\n      - name: Install build dependencies\n        run: python -m pip install --upgrade pip setuptools wheel poetry-plugin-export pre-commit msgspec\n\n      - name: Cached pre-commit\n        id: cached-pre-commit\n        uses: actions/cache@v4\n        with:\n          path: ~/.cache/pre-commit\n          key: ${{ runner.os }}-${{ env.PYTHON_VERSION }}-pre-commit-${{ hashFiles('.pre-commit-config.yaml') }}\n\n      - name: Run pre-commit # Runs again here to check on Python 3.12\n        run: |\n          pre-commit run --all-files\n\n      - name: Cached cargo\n        id: cached-cargo\n        uses: actions/cache@v4\n        with:\n          path: |\n            ~/.cargo/bin/\n            ~/.cargo/registry/index/\n            ~/.cargo/registry/cache/\n            ~/.cargo/git/db/\n            target/\n          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}\n          restore-keys: ${{ runner.os }}-cargo-\n\n      - name: Cache Python site-packages\n        id: cached-site-packages\n        uses: actions/cache@v4\n        with:\n          path: ~/.local/lib/python${{ env.PYTHON_VERSION }}/site-packages\n          key: ${{ runner.os }}-${{ env.PYTHON_VERSION }}-site-packages\n          restore-keys: |\n            ${{ runner.os }}-site-packages-\n\n      - name: Cached test data\n        id: cached-testdata-large\n        uses: actions/cache@v4\n        with:\n          path: tests/test_data/large\n          key: ${{ runner.os }}-large-files-${{ hashFiles('tests/test_data/large/checksums.json') }}\n          restore-keys: ${{ runner.os }}-large-files-\n\n      - name: Install Nautilus CLI and run init postgres\n        run: |\n          make install-cli\n          nautilus database init --schema ${{ github.workspace }}/schema\n        env:\n          POSTGRES_HOST: localhost\n          POSTGRES_PORT: 5432\n          POSTGRES_USERNAME: postgres\n          POSTGRES_PASSWORD: pass\n          POSTGRES_DATABASE: nautilus\n\n      - name: Install cargo-nextest\n        uses: taiki-e/install-action@v2\n        with:\n          tool: nextest\n\n      - name: Run nautilus_core tests\n        run: make cargo-test\n\n      - name: Build Python wheel\n        run: |\n          poetry build --format wheel\n          ls -lh dist/\n\n      - name: Install Python wheel\n        run: |\n          poetry export --with test --all-extras --format requirements.txt --output requirements-test.txt\n          python -m pip install -r requirements-test.txt\n          pip install \"$(ls dist/*.whl)\"\n\n      # Run codspeed once only\n      - name: Run benchmarks\n        uses: CodSpeedHQ/action@v3.2\n        with:\n          token: ${{ secrets.CODSPEED_TOKEN }}\n          run: pytest tests/performance_tests --benchmark-disable-gc --codspeed\n"
+    },
+    "2025-01-04T21-00-04Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "performance-benchmarks": 20
+      },
+      "line_count": 153,
+      "workflow": "name: performance\n\non:\n  push:\n    branches: [nightly]\n\njobs:\n  performance-benchmarks:\n    runs-on: ubuntu-latest\n    env:\n      BUILD_MODE: release\n      RUST_BACKTRACE: 1\n      # https://github.com/Mozilla-Actions/sccache-action\n      SCCACHE_GHA_ENABLED: \"true\"\n      SCCACHE_CACHE_MULTIARCH: 1\n      RUSTC_WRAPPER: \"sccache\"\n      CC: \"sccache clang\"\n      CXX: \"sccache clang\"\n\n    services:\n      redis:\n        image: redis\n        ports:\n          - 6379:6379\n        options: >-\n          --health-cmd \"redis-cli ping\"\n          --health-interval 10s\n          --health-timeout 5s\n          --health-retries 5\n      postgres:\n        image: postgres\n        env:\n          POSTGRES_USER: postgres\n          POSTGRES_PASSWORD: pass\n          POSTGRES_DB: nautilus\n        ports:\n          - 5432:5432\n        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5\n\n    steps:\n      - name: Install runner dependencies\n        run: sudo apt-get install -y curl clang git libssl-dev make pkg-config\n\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Run sccache-cache\n        uses: mozilla-actions/sccache-action@v0.0.6\n\n      - name: Set up Rust toolchain\n        run: |\n          rustup toolchain add --profile minimal stable --component clippy,rustfmt\n\n      - name: Set up Python environment\n        uses: actions/setup-python@v5\n        with:\n          python-version: \"3.12\"\n\n      - name: Get Python version\n        run: |\n          version=$(bash scripts/python-version.sh)\n          echo \"PYTHON_VERSION=$version\" >> $GITHUB_ENV\n\n      - name: Get Poetry version from poetry-version\n        run: |\n          version=$(cat poetry-version)\n          echo \"POETRY_VERSION=$version\" >> $GITHUB_ENV\n\n      - name: Install Poetry\n        uses: snok/install-poetry@v1\n        with:\n          version: ${{ env.POETRY_VERSION }}\n\n      - name: Install build dependencies\n        run: python -m pip install --upgrade pip setuptools wheel poetry-plugin-export pre-commit msgspec\n\n      - name: Cached pre-commit\n        id: cached-pre-commit\n        uses: actions/cache@v4\n        with:\n          path: ~/.cache/pre-commit\n          key: ${{ runner.os }}-${{ env.PYTHON_VERSION }}-pre-commit-${{ hashFiles('.pre-commit-config.yaml') }}\n\n      - name: Run pre-commit  # Runs again here to check on Python 3.12\n        run: |\n          pre-commit run --all-files\n\n      - name: Cached cargo\n        id: cached-cargo\n        uses: actions/cache@v4\n        with:\n          path: |\n            ~/.cargo/bin/\n            ~/.cargo/registry/index/\n            ~/.cargo/registry/cache/\n            ~/.cargo/git/db/\n            target/\n          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}\n          restore-keys: ${{ runner.os }}-cargo-\n\n      - name: Cache Python site-packages\n        id: cached-site-packages\n        uses: actions/cache@v4\n        with:\n          path: ~/.local/lib/python${{ env.PYTHON_VERSION }}/site-packages\n          key: ${{ runner.os }}-${{ env.PYTHON_VERSION }}-site-packages\n          restore-keys: |\n            ${{ runner.os }}-site-packages-\n\n      - name: Cached test data\n        id: cached-testdata-large\n        uses: actions/cache@v4\n        with:\n          path: tests/test_data/large\n          key: ${{ runner.os }}-large-files-${{ hashFiles('tests/test_data/large/checksums.json') }}\n          restore-keys: ${{ runner.os }}-large-files-\n\n      - name: Install Nautilus CLI and run init postgres\n        run: |\n          make install-cli\n          nautilus database init --schema ${{ github.workspace }}/schema\n        env:\n          POSTGRES_HOST: localhost\n          POSTGRES_PORT: 5432\n          POSTGRES_USERNAME: postgres\n          POSTGRES_PASSWORD: pass\n          POSTGRES_DATABASE: nautilus\n\n      - name: Install cargo-nextest\n        uses: taiki-e/install-action@v2\n        with:\n          tool: nextest\n\n      - name: Run nautilus_core tests\n        run: make cargo-test\n\n      - name: Build Python wheel\n        run: |\n          poetry build --format wheel\n          ls -lh dist/\n\n      - name: Install Python wheel\n        run: |\n          poetry export --with test --all-extras --format requirements.txt --output requirements-test.txt\n          python -m pip install -r requirements-test.txt\n          pip install \"$(ls dist/*.whl)\"\n\n      # Run codspeed once only\n      - name: Run benchmarks\n        uses: CodSpeedHQ/action@v3.2\n        with:\n          token: ${{ secrets.CODSPEED_TOKEN }}\n          run: pytest tests/performance_tests --benchmark-disable-gc --codspeed\n"
+    },
+    "2025-01-05T21-46-40Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "performance-benchmarks": 21
+      },
+      "line_count": 169,
+      "workflow": "name: performance\n\non:\n  push:\n    branches: [nightly]\n\njobs:\n  performance-benchmarks:\n    runs-on: ubuntu-latest\n    env:\n      BUILD_MODE: release\n      RUST_BACKTRACE: 1\n      # > --------------------------------------------------\n      # > sccache\n      # https://github.com/Mozilla-Actions/sccache-action\n      SCCACHE_IDLE_TIMEOUT: 0\n      SCCACHE_DIRECT: \"true\"\n      SCCACHE_CACHE_MULTIARCH: 1\n      SCCACHE_DIR: ${{ github.workspace }}/.cache/sccache\n      RUSTC_WRAPPER: \"sccache\"\n      CC: \"sccache clang\"\n      CXX: \"sccache clang++\"\n      # Incrementally compiled crates cannot be cached by sccache\n      # https://github.com/mozilla/sccache#rust\n      CARGO_INCREMENTAL: 0\n      # > --------------------------------------------------\n\n    services:\n      redis:\n        image: redis\n        ports:\n          - 6379:6379\n        options: >-\n          --health-cmd \"redis-cli ping\"\n          --health-interval 10s\n          --health-timeout 5s\n          --health-retries 5\n      postgres:\n        image: postgres\n        env:\n          POSTGRES_USER: postgres\n          POSTGRES_PASSWORD: pass\n          POSTGRES_DB: nautilus\n        ports:\n          - 5432:5432\n        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5\n\n    steps:\n      - name: Install runner dependencies\n        run: sudo apt-get install -y curl clang git libssl-dev make pkg-config\n\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Cached sccache\n        id: cached-sccache\n        uses: actions/cache@v4\n        with:\n          path: ${{ env.SCCACHE_DIR }}\n          key: ${{ matrix.os }}-sccache-build-${{ hashFiles('**/Cargo.lock', '**/poetry.lock') }}\n          restore-keys: ${{ matrix.os }}-sccache-build-\n\n      - name: Run sccache\n        uses: mozilla-actions/sccache-action@v0.0.7\n\n      - name: Set up Rust toolchain\n        run: |\n          rustup toolchain add --profile minimal stable --component clippy,rustfmt\n\n      - name: Set up Python environment\n        uses: actions/setup-python@v5\n        with:\n          python-version: \"3.12\"\n\n      - name: Get Python version\n        run: |\n          version=$(bash scripts/python-version.sh)\n          echo \"PYTHON_VERSION=$version\" >> $GITHUB_ENV\n\n      - name: Get Poetry version from poetry-version\n        run: |\n          version=$(cat poetry-version)\n          echo \"POETRY_VERSION=$version\" >> $GITHUB_ENV\n\n      - name: Install Poetry\n        uses: snok/install-poetry@v1\n        with:\n          version: ${{ env.POETRY_VERSION }}\n\n      - name: Install build dependencies\n        run: python -m pip install --upgrade pip setuptools wheel poetry-plugin-export pre-commit msgspec\n\n      - name: Cached pre-commit\n        id: cached-pre-commit\n        uses: actions/cache@v4\n        with:\n          path: ~/.cache/pre-commit\n          key: ${{ runner.os }}-${{ env.PYTHON_VERSION }}-pre-commit-${{ hashFiles('.pre-commit-config.yaml') }}\n\n      - name: Run pre-commit # Runs again here to check on Python 3.12\n        run: |\n          pre-commit run --all-files\n\n      - name: Cached cargo\n        id: cached-cargo\n        uses: actions/cache@v4\n        with:\n          path: |\n            ~/.cargo/bin/\n            ~/.cargo/registry/index/\n            ~/.cargo/registry/cache/\n            ~/.cargo/git/db/\n            target/\n          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}\n          restore-keys: ${{ runner.os }}-cargo-\n\n      - name: Cache Python site-packages\n        id: cached-site-packages\n        uses: actions/cache@v4\n        with:\n          path: ~/.local/lib/python${{ env.PYTHON_VERSION }}/site-packages\n          key: ${{ runner.os }}-${{ env.PYTHON_VERSION }}-site-packages\n          restore-keys: |\n            ${{ runner.os }}-site-packages-\n\n      - name: Cached test data\n        id: cached-testdata-large\n        uses: actions/cache@v4\n        with:\n          path: tests/test_data/large\n          key: ${{ runner.os }}-large-files-${{ hashFiles('tests/test_data/large/checksums.json') }}\n          restore-keys: ${{ runner.os }}-large-files-\n\n      - name: Install Nautilus CLI and run init postgres\n        run: |\n          make install-cli\n          nautilus database init --schema ${{ github.workspace }}/schema\n        env:\n          POSTGRES_HOST: localhost\n          POSTGRES_PORT: 5432\n          POSTGRES_USERNAME: postgres\n          POSTGRES_PASSWORD: pass\n          POSTGRES_DATABASE: nautilus\n\n      - name: Install cargo-nextest\n        uses: taiki-e/install-action@v2\n        with:\n          tool: nextest\n\n      - name: Run nautilus_core tests\n        run: make cargo-test\n\n      - name: Build Python wheel\n        run: |\n          poetry build --format wheel\n          ls -lh dist/\n\n      - name: Install Python wheel\n        run: |\n          poetry export --with test --all-extras --format requirements.txt --output requirements-test.txt\n          python -m pip install -r requirements-test.txt\n          pip install \"$(ls dist/*.whl)\"\n\n      # Run codspeed once only\n      - name: Run benchmarks\n        uses: CodSpeedHQ/action@v3.2.0\n        with:\n          token: ${{ secrets.CODSPEED_TOKEN }}\n          run: pytest tests/performance_tests --benchmark-disable-gc --codspeed\n"
+    },
+    "2025-01-06T21-10-19Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "performance-benchmarks": 21
+      },
+      "line_count": 172,
+      "workflow": "name: performance\n\non:\n  push:\n    branches: [nightly]\n\njobs:\n  performance-benchmarks:\n    runs-on: ubuntu-latest\n    env:\n      BUILD_MODE: release\n      RUST_BACKTRACE: 1\n      # > --------------------------------------------------\n      # > sccache\n      # https://github.com/Mozilla-Actions/sccache-action\n      SCCACHE_IDLE_TIMEOUT: 0\n      SCCACHE_DIRECT: \"true\"\n      SCCACHE_CACHE_MULTIARCH: 1\n      SCCACHE_DIR: ${{ github.workspace }}/.cache/sccache\n      RUSTC_WRAPPER: \"sccache\"\n      CC: \"sccache clang\"\n      CXX: \"sccache clang++\"\n      # Incrementally compiled crates cannot be cached by sccache\n      # https://github.com/mozilla/sccache#rust\n      CARGO_INCREMENTAL: 0\n      # > --------------------------------------------------\n\n    services:\n      redis:\n        image: redis\n        ports:\n          - 6379:6379\n        options: >-\n          --health-cmd \"redis-cli ping\"\n          --health-interval 10s\n          --health-timeout 5s\n          --health-retries 5\n      postgres:\n        image: postgres\n        env:\n          POSTGRES_USER: postgres\n          POSTGRES_PASSWORD: pass\n          POSTGRES_DB: nautilus\n        ports:\n          - 5432:5432\n        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5\n\n    steps:\n      - name: Install runner dependencies\n        run: sudo apt-get install -y curl clang git libssl-dev make pkg-config\n\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Cached sccache\n        id: cached-sccache\n        uses: actions/cache@v4\n        with:\n          path: ${{ env.SCCACHE_DIR }}\n          key: sccache-${{ runner.os }}-${{ github.workflow }}-${{ github.job }}-${{ hashFiles('**/Cargo.lock', '**/poetry.lock') }}\n          restore-keys: |\n            sccache-${{ runner.os }}-${{ github.workflow }}-${{ github.job }}-\n            sccache-${{ runner.os }}-${{ github.workflow }}-\n            sccache-${{ runner.os }}-\n\n      - name: Run sccache\n        uses: mozilla-actions/sccache-action@v0.0.7\n\n      - name: Set up Rust toolchain\n        run: |\n          rustup toolchain add --profile minimal stable --component clippy,rustfmt\n\n      - name: Set up Python environment\n        uses: actions/setup-python@v5\n        with:\n          python-version: \"3.12\"\n\n      - name: Get Python version\n        run: |\n          version=$(bash scripts/python-version.sh)\n          echo \"PYTHON_VERSION=$version\" >> $GITHUB_ENV\n\n      - name: Get Poetry version from poetry-version\n        run: |\n          version=$(cat poetry-version)\n          echo \"POETRY_VERSION=$version\" >> $GITHUB_ENV\n\n      - name: Install Poetry\n        uses: snok/install-poetry@v1\n        with:\n          version: ${{ env.POETRY_VERSION }}\n\n      - name: Install build dependencies\n        run: python -m pip install --upgrade pip setuptools wheel poetry-plugin-export pre-commit msgspec\n\n      - name: Cached pre-commit\n        id: cached-pre-commit\n        uses: actions/cache@v4\n        with:\n          path: ~/.cache/pre-commit\n          key: ${{ runner.os }}-${{ env.PYTHON_VERSION }}-pre-commit-${{ hashFiles('.pre-commit-config.yaml') }}\n\n      - name: Run pre-commit # Runs again here to check on Python 3.12\n        run: |\n          pre-commit run --all-files\n\n      - name: Cached cargo\n        id: cached-cargo\n        uses: actions/cache@v4\n        with:\n          path: |\n            ~/.cargo/bin/\n            ~/.cargo/registry/index/\n            ~/.cargo/registry/cache/\n            ~/.cargo/git/db/\n            target/\n          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}\n          restore-keys: ${{ runner.os }}-cargo-\n\n      - name: Cache Python site-packages\n        id: cached-site-packages\n        uses: actions/cache@v4\n        with:\n          path: ~/.local/lib/python${{ env.PYTHON_VERSION }}/site-packages\n          key: ${{ runner.os }}-${{ env.PYTHON_VERSION }}-site-packages\n          restore-keys: |\n            ${{ runner.os }}-site-packages-\n\n      - name: Cached test data\n        id: cached-testdata-large\n        uses: actions/cache@v4\n        with:\n          path: tests/test_data/large\n          key: ${{ runner.os }}-large-files-${{ hashFiles('tests/test_data/large/checksums.json') }}\n          restore-keys: ${{ runner.os }}-large-files-\n\n      - name: Install Nautilus CLI and run init postgres\n        run: |\n          make install-cli\n          nautilus database init --schema ${{ github.workspace }}/schema\n        env:\n          POSTGRES_HOST: localhost\n          POSTGRES_PORT: 5432\n          POSTGRES_USERNAME: postgres\n          POSTGRES_PASSWORD: pass\n          POSTGRES_DATABASE: nautilus\n\n      - name: Install cargo-nextest\n        uses: taiki-e/install-action@v2\n        with:\n          tool: nextest\n\n      - name: Run nautilus_core tests\n        run: make cargo-test\n\n      - name: Build Python wheel\n        run: |\n          poetry build --format wheel\n          ls -lh dist/\n\n      - name: Install Python wheel\n        run: |\n          poetry export --with test --all-extras --format requirements.txt --output requirements-test.txt\n          python -m pip install -r requirements-test.txt\n          pip install \"$(ls dist/*.whl)\"\n\n      # Run codspeed once only\n      - name: Run benchmarks\n        uses: CodSpeedHQ/action@v3.2.0\n        with:\n          token: ${{ secrets.CODSPEED_TOKEN }}\n          run: pytest tests/performance_tests --benchmark-disable-gc --codspeed\n"
+    },
+    "2025-01-17T05-24-18Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "performance-benchmarks": 21
+      },
+      "line_count": 172,
+      "workflow": "name: performance\n\non:\n  push:\n    branches: [nightly]\n\njobs:\n  performance-benchmarks:\n    runs-on: ubuntu-latest\n    env:\n      BUILD_MODE: release\n      RUST_BACKTRACE: 1\n      # > --------------------------------------------------\n      # > sccache\n      # https://github.com/Mozilla-Actions/sccache-action\n      SCCACHE_IDLE_TIMEOUT: 0\n      SCCACHE_DIRECT: \"true\"\n      SCCACHE_CACHE_MULTIARCH: 1\n      SCCACHE_DIR: ${{ github.workspace }}/.cache/sccache\n      RUSTC_WRAPPER: \"sccache\"\n      CC: \"sccache clang\"\n      CXX: \"sccache clang++\"\n      # Incrementally compiled crates cannot be cached by sccache\n      # https://github.com/mozilla/sccache#rust\n      CARGO_INCREMENTAL: 0\n      # > --------------------------------------------------\n\n    services:\n      redis:\n        image: redis\n        ports:\n          - 6379:6379\n        options: >-\n          --health-cmd \"redis-cli ping\"\n          --health-interval 10s\n          --health-timeout 5s\n          --health-retries 5\n      postgres:\n        image: postgres\n        env:\n          POSTGRES_USER: postgres\n          POSTGRES_PASSWORD: pass\n          POSTGRES_DB: nautilus\n        ports:\n          - 5432:5432\n        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5\n\n    steps:\n      - name: Install runner dependencies\n        run: sudo apt-get install -y curl clang git libssl-dev make pkg-config\n\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Cached sccache\n        id: cached-sccache\n        uses: actions/cache@v4\n        with:\n          path: ${{ env.SCCACHE_DIR }}\n          key: sccache-${{ runner.os }}-${{ github.workflow }}-${{ github.job }}-${{ hashFiles('**/Cargo.lock', '**/poetry.lock') }}\n          restore-keys: |\n            sccache-${{ runner.os }}-${{ github.workflow }}-${{ github.job }}-\n            sccache-${{ runner.os }}-${{ github.workflow }}-\n            sccache-${{ runner.os }}-\n\n      - name: Run sccache\n        uses: mozilla-actions/sccache-action@v0.0.7\n\n      - name: Set up Rust toolchain\n        run: |\n          rustup toolchain add --profile minimal stable --component clippy,rustfmt\n\n      - name: Set up Python environment\n        uses: actions/setup-python@v5\n        with:\n          python-version: \"3.12\"\n\n      - name: Get Python version\n        run: |\n          version=$(bash scripts/python-version.sh)\n          echo \"PYTHON_VERSION=$version\" >> $GITHUB_ENV\n\n      - name: Get Poetry version from poetry-version\n        run: |\n          version=$(cat poetry-version)\n          echo \"POETRY_VERSION=$version\" >> $GITHUB_ENV\n\n      - name: Install Poetry\n        uses: snok/install-poetry@v1\n        with:\n          version: ${{ env.POETRY_VERSION }}\n\n      - name: Install build dependencies\n        run: python -m pip install --upgrade pip setuptools wheel poetry-plugin-export pre-commit msgspec\n\n      - name: Cached pre-commit\n        id: cached-pre-commit\n        uses: actions/cache@v4\n        with:\n          path: ~/.cache/pre-commit\n          key: ${{ runner.os }}-${{ env.PYTHON_VERSION }}-pre-commit-${{ hashFiles('.pre-commit-config.yaml') }}\n\n      - name: Run pre-commit # Runs again here to check on Python 3.12\n        run: |\n          pre-commit run --all-files\n\n      - name: Cached cargo\n        id: cached-cargo\n        uses: actions/cache@v4\n        with:\n          path: |\n            ~/.cargo/bin/\n            ~/.cargo/registry/index/\n            ~/.cargo/registry/cache/\n            ~/.cargo/git/db/\n            target/\n          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}\n          restore-keys: ${{ runner.os }}-cargo-\n\n      - name: Cache Python site-packages\n        id: cached-site-packages\n        uses: actions/cache@v4\n        with:\n          path: ~/.local/lib/python${{ env.PYTHON_VERSION }}/site-packages\n          key: ${{ runner.os }}-${{ env.PYTHON_VERSION }}-site-packages\n          restore-keys: |\n            ${{ runner.os }}-site-packages-\n\n      - name: Cached test data\n        id: cached-testdata-large\n        uses: actions/cache@v4\n        with:\n          path: tests/test_data/large\n          key: ${{ runner.os }}-large-files-${{ hashFiles('tests/test_data/large/checksums.json') }}\n          restore-keys: ${{ runner.os }}-large-files-\n\n      - name: Install Nautilus CLI and run init postgres\n        run: |\n          make install-cli\n          nautilus database init --schema ${{ github.workspace }}/schema/sql\n        env:\n          POSTGRES_HOST: localhost\n          POSTGRES_PORT: 5432\n          POSTGRES_USERNAME: postgres\n          POSTGRES_PASSWORD: pass\n          POSTGRES_DATABASE: nautilus\n\n      - name: Install cargo-nextest\n        uses: taiki-e/install-action@v2\n        with:\n          tool: nextest\n\n      - name: Run nautilus_core tests\n        run: make cargo-test\n\n      - name: Build Python wheel\n        run: |\n          poetry build --format wheel\n          ls -lh dist/\n\n      - name: Install Python wheel\n        run: |\n          poetry export --with test --all-extras --format requirements.txt --output requirements-test.txt\n          python -m pip install -r requirements-test.txt\n          pip install \"$(ls dist/*.whl)\"\n\n      # Run codspeed once only\n      - name: Run benchmarks\n        uses: CodSpeedHQ/action@v3.2.0\n        with:\n          token: ${{ secrets.CODSPEED_TOKEN }}\n          run: pytest tests/performance_tests --benchmark-disable-gc --codspeed\n"
+    },
+    "2025-01-18T07-15-22Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "performance-benchmarks": 21
+      },
+      "line_count": 172,
+      "workflow": "name: performance\n\non:\n  push:\n    branches: [nightly]\n\njobs:\n  performance-benchmarks:\n    runs-on: ubuntu-latest\n    env:\n      BUILD_MODE: release\n      RUST_BACKTRACE: 1\n      # > --------------------------------------------------\n      # > sccache\n      # https://github.com/Mozilla-Actions/sccache-action\n      SCCACHE_IDLE_TIMEOUT: 0\n      SCCACHE_DIRECT: \"true\"\n      SCCACHE_CACHE_MULTIARCH: 1\n      SCCACHE_DIR: ${{ github.workspace }}/.cache/sccache\n      RUSTC_WRAPPER: \"sccache\"\n      CC: \"sccache clang\"\n      CXX: \"sccache clang++\"\n      # Incrementally compiled crates cannot be cached by sccache\n      # https://github.com/mozilla/sccache#rust\n      CARGO_INCREMENTAL: 0\n      # > --------------------------------------------------\n\n    services:\n      redis:\n        image: redis\n        ports:\n          - 6379:6379\n        options: >-\n          --health-cmd \"redis-cli ping\"\n          --health-interval 10s\n          --health-timeout 5s\n          --health-retries 5\n      postgres:\n        image: postgres\n        env:\n          POSTGRES_USER: postgres\n          POSTGRES_PASSWORD: pass\n          POSTGRES_DB: nautilus\n        ports:\n          - 5432:5432\n        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5\n\n    steps:\n      - name: Install runner dependencies\n        run: sudo apt-get install -y curl clang git libssl-dev make pkg-config\n\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Cached sccache\n        id: cached-sccache\n        uses: actions/cache@v4\n        with:\n          path: ${{ env.SCCACHE_DIR }}\n          key: sccache-${{ runner.os }}-${{ github.workflow }}-${{ github.job }}-${{ hashFiles('**/Cargo.lock', '**/poetry.lock') }}\n          restore-keys: |\n            sccache-${{ runner.os }}-${{ github.workflow }}-${{ github.job }}-\n            sccache-${{ runner.os }}-${{ github.workflow }}-\n            sccache-${{ runner.os }}-\n\n      - name: Run sccache\n        uses: mozilla-actions/sccache-action@v0.0.7\n\n      - name: Set up Rust toolchain\n        run: |\n          rustup toolchain add --profile minimal stable --component clippy,rustfmt\n\n      - name: Set up Python environment\n        uses: actions/setup-python@v5\n        with:\n          python-version: \"3.12\"\n\n      - name: Get Python version\n        run: |\n          version=$(bash scripts/python-version.sh)\n          echo \"PYTHON_VERSION=$version\" >> $GITHUB_ENV\n\n      - name: Get Poetry version from poetry-version\n        run: |\n          version=$(cat poetry-version)\n          echo \"POETRY_VERSION=$version\" >> $GITHUB_ENV\n\n      - name: Install Poetry\n        uses: snok/install-poetry@v1\n        with:\n          version: ${{ env.POETRY_VERSION }}\n\n      - name: Install build dependencies\n        run: python -m pip install --upgrade pip setuptools wheel poetry-plugin-export pre-commit msgspec\n\n      - name: Cached pre-commit\n        id: cached-pre-commit\n        uses: actions/cache@v4\n        with:\n          path: ~/.cache/pre-commit\n          key: ${{ runner.os }}-${{ env.PYTHON_VERSION }}-pre-commit-${{ hashFiles('.pre-commit-config.yaml') }}\n\n      - name: Run pre-commit # Runs again here to check on Python 3.12\n        run: |\n          pre-commit run --all-files\n\n      - name: Cached cargo\n        id: cached-cargo\n        uses: actions/cache@v4\n        with:\n          path: |\n            ~/.cargo/bin/\n            ~/.cargo/registry/index/\n            ~/.cargo/registry/cache/\n            ~/.cargo/git/db/\n            target/\n          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}\n          restore-keys: ${{ runner.os }}-cargo-\n\n      - name: Cache Python site-packages\n        id: cached-site-packages\n        uses: actions/cache@v4\n        with:\n          path: ~/.local/lib/python${{ env.PYTHON_VERSION }}/site-packages\n          key: ${{ runner.os }}-${{ env.PYTHON_VERSION }}-site-packages\n          restore-keys: |\n            ${{ runner.os }}-site-packages-\n\n      - name: Cached test data\n        id: cached-testdata-large\n        uses: actions/cache@v4\n        with:\n          path: tests/test_data/large\n          key: ${{ runner.os }}-large-files-${{ hashFiles('tests/test_data/large/checksums.json') }}\n          restore-keys: ${{ runner.os }}-large-files-\n\n      - name: Install Nautilus CLI and run init postgres\n        run: |\n          make install-cli\n          nautilus database init --schema ${{ github.workspace }}/schema/sql\n        env:\n          POSTGRES_HOST: localhost\n          POSTGRES_PORT: 5432\n          POSTGRES_USERNAME: postgres\n          POSTGRES_PASSWORD: pass\n          POSTGRES_DATABASE: nautilus\n\n      - name: Install cargo-nextest\n        uses: taiki-e/install-action@v2\n        with:\n          tool: nextest\n\n      - name: Run nautilus_core tests\n        run: make cargo-test\n\n      - name: Build Python wheel\n        run: |\n          poetry build --format wheel\n          ls -lh dist/\n\n      - name: Install Python wheel\n        run: |\n          poetry export --with test --all-extras --format requirements.txt --output requirements-test.txt\n          python -m pip install -r requirements-test.txt\n          pip install \"$(ls dist/*.whl)\"\n\n      # Run codspeed once only\n      - name: Run benchmarks\n        uses: CodSpeedHQ/action@v3.2.0\n        with:\n          token: ${{ secrets.CODSPEED_TOKEN }}\n          run: pytest tests/performance_tests --benchmark-disable-gc --codspeed\n"
+    },
+    "2025-01-18T01-01-17Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "performance-benchmarks": 21
+      },
+      "line_count": 172,
+      "workflow": "name: performance\n\non:\n  push:\n    branches: [nightly]\n\njobs:\n  performance-benchmarks:\n    runs-on: ubuntu-latest\n    env:\n      BUILD_MODE: release\n      RUST_BACKTRACE: 1\n      # > --------------------------------------------------\n      # > sccache\n      # https://github.com/Mozilla-Actions/sccache-action\n      SCCACHE_IDLE_TIMEOUT: 0\n      SCCACHE_DIRECT: \"true\"\n      SCCACHE_CACHE_MULTIARCH: 1\n      SCCACHE_DIR: ${{ github.workspace }}/.cache/sccache\n      RUSTC_WRAPPER: \"sccache\"\n      CC: \"sccache clang\"\n      CXX: \"sccache clang++\"\n      # Incrementally compiled crates cannot be cached by sccache\n      # https://github.com/mozilla/sccache#rust\n      CARGO_INCREMENTAL: 0\n      # > --------------------------------------------------\n\n    services:\n      redis:\n        image: redis\n        ports:\n          - 6379:6379\n        options: >-\n          --health-cmd \"redis-cli ping\"\n          --health-interval 10s\n          --health-timeout 5s\n          --health-retries 5\n      postgres:\n        image: postgres\n        env:\n          POSTGRES_USER: postgres\n          POSTGRES_PASSWORD: pass\n          POSTGRES_DB: nautilus\n        ports:\n          - 5432:5432\n        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5\n\n    steps:\n      - name: Install runner dependencies\n        run: sudo apt-get install -y curl clang git libssl-dev make pkg-config\n\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Cached sccache\n        id: cached-sccache\n        uses: actions/cache@v4\n        with:\n          path: ${{ env.SCCACHE_DIR }}\n          key: sccache-${{ runner.os }}-${{ github.workflow }}-${{ github.job }}-${{ hashFiles('**/Cargo.lock', '**/poetry.lock') }}\n          restore-keys: |\n            sccache-${{ runner.os }}-${{ github.workflow }}-${{ github.job }}-\n            sccache-${{ runner.os }}-${{ github.workflow }}-\n            sccache-${{ runner.os }}-\n\n      - name: Run sccache\n        uses: mozilla-actions/sccache-action@v0.0.7\n\n      - name: Set up Rust toolchain\n        run: |\n          rustup toolchain add --profile minimal stable --component clippy,rustfmt\n\n      - name: Set up Python environment\n        uses: actions/setup-python@v5\n        with:\n          python-version: \"3.12\"\n\n      - name: Get Python version\n        run: |\n          version=$(bash scripts/python-version.sh)\n          echo \"PYTHON_VERSION=$version\" >> $GITHUB_ENV\n\n      - name: Get Poetry version from poetry-version\n        run: |\n          version=$(cat poetry-version)\n          echo \"POETRY_VERSION=$version\" >> $GITHUB_ENV\n\n      - name: Install Poetry\n        uses: snok/install-poetry@v1\n        with:\n          version: ${{ env.POETRY_VERSION }}\n\n      - name: Install build dependencies\n        run: python -m pip install --upgrade pip setuptools wheel poetry-plugin-export pre-commit msgspec\n\n      - name: Cached pre-commit\n        id: cached-pre-commit\n        uses: actions/cache@v4\n        with:\n          path: ~/.cache/pre-commit\n          key: ${{ runner.os }}-${{ env.PYTHON_VERSION }}-pre-commit-${{ hashFiles('.pre-commit-config.yaml') }}\n\n      - name: Run pre-commit # Runs again here to check on Python 3.12\n        run: |\n          pre-commit run --all-files\n\n      - name: Cached cargo\n        id: cached-cargo\n        uses: actions/cache@v4\n        with:\n          path: |\n            ~/.cargo/bin/\n            ~/.cargo/registry/index/\n            ~/.cargo/registry/cache/\n            ~/.cargo/git/db/\n            target/\n          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}\n          restore-keys: ${{ runner.os }}-cargo-\n\n      - name: Cache Python site-packages\n        id: cached-site-packages\n        uses: actions/cache@v4\n        with:\n          path: ~/.local/lib/python${{ env.PYTHON_VERSION }}/site-packages\n          key: ${{ runner.os }}-${{ env.PYTHON_VERSION }}-site-packages\n          restore-keys: |\n            ${{ runner.os }}-site-packages-\n\n      - name: Cached test data\n        id: cached-testdata-large\n        uses: actions/cache@v4\n        with:\n          path: tests/test_data/large\n          key: ${{ runner.os }}-large-files-${{ hashFiles('tests/test_data/large/checksums.json') }}\n          restore-keys: ${{ runner.os }}-large-files-\n\n      - name: Install Nautilus CLI and run init postgres\n        run: |\n          make install-cli\n          nautilus database init --schema ${{ github.workspace }}/schema/sql\n        env:\n          POSTGRES_HOST: localhost\n          POSTGRES_PORT: 5432\n          POSTGRES_USERNAME: postgres\n          POSTGRES_PASSWORD: pass\n          POSTGRES_DATABASE: nautilus\n\n      - name: Install cargo-nextest\n        uses: taiki-e/install-action@v2\n        with:\n          tool: nextest\n\n      - name: Run nautilus_core tests\n        run: make cargo-test-high-precision\n\n      - name: Build Python wheel\n        run: |\n          poetry build --format wheel\n          ls -lh dist/\n\n      - name: Install Python wheel\n        run: |\n          poetry export --with test --all-extras --format requirements.txt --output requirements-test.txt\n          python -m pip install -r requirements-test.txt\n          pip install \"$(ls dist/*.whl)\"\n\n      # Run codspeed once only\n      - name: Run benchmarks\n        uses: CodSpeedHQ/action@v3.2.0\n        with:\n          token: ${{ secrets.CODSPEED_TOKEN }}\n          run: pytest tests/performance_tests --benchmark-disable-gc --codspeed\n"
+    },
+    "2025-01-20T22-52-10Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "performance-benchmarks": 21
+      },
+      "line_count": 174,
+      "workflow": "name: performance\n\non:\n  push:\n    branches: [nightly]\n\njobs:\n  performance-benchmarks:\n    runs-on: ubuntu-latest\n    env:\n      BUILD_MODE: release\n      RUST_BACKTRACE: 1\n      # > --------------------------------------------------\n      # > sccache\n      # https://github.com/Mozilla-Actions/sccache-action\n      SCCACHE_IDLE_TIMEOUT: 0\n      SCCACHE_DIRECT: \"true\"\n      SCCACHE_CACHE_MULTIARCH: 1\n      SCCACHE_DIR: ${{ github.workspace }}/.cache/sccache\n      RUSTC_WRAPPER: \"sccache\"\n      CC: \"sccache clang\"\n      CXX: \"sccache clang++\"\n      # Incrementally compiled crates cannot be cached by sccache\n      # https://github.com/mozilla/sccache#rust\n      CARGO_INCREMENTAL: 0\n      # > --------------------------------------------------\n\n    services:\n      redis:\n        image: redis\n        ports:\n          - 6379:6379\n        options: >-\n          --health-cmd \"redis-cli ping\"\n          --health-interval 10s\n          --health-timeout 5s\n          --health-retries 5\n      postgres:\n        image: postgres\n        env:\n          POSTGRES_USER: postgres\n          POSTGRES_PASSWORD: pass\n          POSTGRES_DB: nautilus\n        ports:\n          - 5432:5432\n        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5\n\n    steps:\n      - name: Install runner dependencies\n        run: sudo apt-get install -y curl clang git libssl-dev make pkg-config\n\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Cached sccache\n        id: cached-sccache\n        uses: actions/cache@v4\n        with:\n          path: ${{ env.SCCACHE_DIR }}\n          key: sccache-${{ runner.os }}-${{ github.workflow }}-${{ github.job }}-${{ hashFiles('**/Cargo.lock', '**/poetry.lock') }}\n          restore-keys: |\n            sccache-${{ runner.os }}-${{ github.workflow }}-${{ github.job }}-\n            sccache-${{ runner.os }}-${{ github.workflow }}-\n            sccache-${{ runner.os }}-\n\n      - name: Run sccache\n        uses: mozilla-actions/sccache-action@v0.0.7\n\n      - name: Set up Rust toolchain\n        run: |\n          rustup toolchain add --profile minimal stable --component clippy,rustfmt\n\n      - name: Set up Python environment\n        uses: actions/setup-python@v5\n        with:\n          python-version: \"3.12\"\n\n      - name: Get Python version\n        run: |\n          version=$(bash scripts/python-version.sh)\n          echo \"PYTHON_VERSION=$version\" >> $GITHUB_ENV\n\n      - name: Get Poetry version from poetry-version\n        run: |\n          version=$(cat poetry-version)\n          echo \"POETRY_VERSION=$version\" >> $GITHUB_ENV\n\n      - name: Install Poetry\n        uses: snok/install-poetry@v1\n        with:\n          version: ${{ env.POETRY_VERSION }}\n\n      - name: Install build and dev dependencies\n        run: |\n          python -m pip install --upgrade pip setuptools wheel\n          poetry install --only dev --no-root\n\n      - name: Cached pre-commit\n        id: cached-pre-commit\n        uses: actions/cache@v4\n        with:\n          path: ~/.cache/pre-commit\n          key: ${{ runner.os }}-${{ env.PYTHON_VERSION }}-pre-commit-${{ hashFiles('.pre-commit-config.yaml') }}\n\n      - name: Run pre-commit # Runs again here to check on Python 3.12\n        run: make pre-commit\n\n      - name: Cached cargo\n        id: cached-cargo\n        uses: actions/cache@v4\n        with:\n          path: |\n            ~/.cargo/bin/\n            ~/.cargo/registry/index/\n            ~/.cargo/registry/cache/\n            ~/.cargo/git/db/\n            target/\n          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}\n          restore-keys: ${{ runner.os }}-cargo-\n\n      - name: Cache Python site-packages\n        id: cached-site-packages\n        uses: actions/cache@v4\n        with:\n          path: ~/.local/lib/python${{ env.PYTHON_VERSION }}/site-packages\n          key: ${{ runner.os }}-${{ env.PYTHON_VERSION }}-site-packages\n          restore-keys: |\n            ${{ runner.os }}-site-packages-\n\n      - name: Cached test data\n        id: cached-testdata-large\n        uses: actions/cache@v4\n        with:\n          path: tests/test_data/large\n          key: ${{ runner.os }}-large-files-${{ hashFiles('tests/test_data/large/checksums.json') }}\n          restore-keys: ${{ runner.os }}-large-files-\n\n      - name: Install Nautilus CLI and run init postgres\n        run: |\n          make install-cli\n          nautilus database init --schema ${{ github.workspace }}/schema/sql\n        env:\n          POSTGRES_HOST: localhost\n          POSTGRES_PORT: 5432\n          POSTGRES_USERNAME: postgres\n          POSTGRES_PASSWORD: pass\n          POSTGRES_DATABASE: nautilus\n\n      - name: Install cargo-nextest\n        uses: taiki-e/install-action@v2\n        with:\n          tool: nextest\n\n      - name: Run nautilus_core tests\n        run: make cargo-test\n\n      - name: Build Python wheel\n        run: |\n          poetry build --format wheel\n          ls -lh dist/\n\n      - name: Install Python wheel\n        run: |\n          python -m pip install --upgrade poetry-plugin-export\n          poetry export --with test --all-extras --format requirements.txt --output requirements-test.txt\n          python -m pip install -r requirements-test.txt\n          pip install \"$(ls dist/*.whl)\"\n\n      # Run codspeed once only\n      - name: Run benchmarks\n        uses: CodSpeedHQ/action@v3.2.0\n        with:\n          token: ${{ secrets.CODSPEED_TOKEN }}\n          run: pytest tests/performance_tests --benchmark-disable-gc --codspeed\n"
+    },
+    "2025-01-24T21-43-30Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "performance-benchmarks": 7
+      },
+      "line_count": 67,
+      "workflow": "name: performance\n\non:\n  push:\n    branches: [nightly]\n\njobs:\n  performance-benchmarks:\n    runs-on: ubuntu-latest\n    env:\n      BUILD_MODE: release\n      RUST_BACKTRACE: 1\n    services:\n      redis:\n        image: redis\n        ports:\n          - 6379:6379\n        options: >-\n          --health-cmd \"redis-cli ping\"\n          --health-interval 10s\n          --health-timeout 5s\n          --health-retries 5\n      postgres:\n        image: postgres\n        env:\n          POSTGRES_USER: postgres\n          POSTGRES_PASSWORD: pass\n          POSTGRES_DB: nautilus\n        ports:\n          - 5432:5432\n        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Common setup\n        uses: ./.github/actions/common-setup\n        with:\n          python-version: \"3.12\"\n\n      - name: Run pre-commit # Runs again here to check on Python 3.12\n        run: make pre-commit\n\n      - name: Install Nautilus CLI and run init postgres\n        run: |\n          make install-cli\n          nautilus database init --schema ${{ github.workspace }}/schema/sql\n        env:\n          POSTGRES_HOST: localhost\n          POSTGRES_PORT: 5432\n          POSTGRES_USERNAME: postgres\n          POSTGRES_PASSWORD: pass\n          POSTGRES_DATABASE: nautilus\n\n      - name: Common tests\n        uses: ./.github/actions/common-tests\n\n      - name: Run nautilus_core tests\n        run: make cargo-test\n\n      # Run codspeed once only\n      - name: Run benchmarks\n        uses: CodSpeedHQ/action@v3.2.0\n        with:\n          token: ${{ secrets.CODSPEED_TOKEN }}\n          run: pytest tests/performance_tests --benchmark-disable-gc --codspeed\n"
+    },
+    "2025-01-25T05-23-12Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "performance-benchmarks": 7
+      },
+      "line_count": 69,
+      "workflow": "name: performance\n\non:\n  push:\n    branches: [nightly]\n\njobs:\n  performance-benchmarks:\n    runs-on: ubuntu-latest\n    env:\n      BUILD_MODE: release\n      RUST_BACKTRACE: 1\n    services:\n      redis:\n        image: redis\n        ports:\n          - 6379:6379\n        options: >-\n          --health-cmd \"redis-cli ping\"\n          --health-interval 10s\n          --health-timeout 5s\n          --health-retries 5\n      postgres:\n        image: postgres\n        env:\n          POSTGRES_USER: postgres\n          POSTGRES_PASSWORD: pass\n          POSTGRES_DB: nautilus\n        ports:\n          - 5432:5432\n        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Common setup\n        uses: ./.github/actions/common-setup\n        with:\n          python-version: \"3.12\"\n\n      - name: Run pre-commit # Runs again here to check pre-commit with Python 3.12\n        run: make pre-commit\n\n      - name: Install Nautilus CLI and run init postgres\n        run: |\n          make install-cli\n          nautilus database init --schema ${{ github.workspace }}/schema/sql\n        env:\n          POSTGRES_HOST: localhost\n          POSTGRES_PORT: 5432\n          POSTGRES_USERNAME: postgres\n          POSTGRES_PASSWORD: pass\n          POSTGRES_DATABASE: nautilus\n\n      - name: Run nautilus_core tests\n        run: make cargo-test\n\n      - name: Build and install wheel\n        uses: ./.github/actions/common-wheel-build\n        with:\n          python-version: ${{ matrix.python-version }}\n\n      # Run codspeed once only\n      - name: Run benchmarks\n        uses: CodSpeedHQ/action@v3.2.0\n        with:\n          token: ${{ secrets.CODSPEED_TOKEN }}\n          run: pytest tests/performance_tests --benchmark-disable-gc --codspeed\n"
+    },
+    "2025-01-31T20-56-53Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "performance-benchmarks": 7
+      },
+      "line_count": 70,
+      "workflow": "name: performance\n\non:\n  push:\n    branches: [nightly]\n\njobs:\n  performance-benchmarks:\n    runs-on: ubuntu-latest\n    env:\n      BUILD_MODE: release\n      RUST_BACKTRACE: 1\n    services:\n      redis:\n        image: redis\n        ports:\n          - 6379:6379\n        options: >-\n          --health-cmd \"redis-cli ping\"\n          --health-interval 10s\n          --health-timeout 5s\n          --health-retries 5\n      postgres:\n        image: postgres\n        env:\n          POSTGRES_USER: postgres\n          POSTGRES_PASSWORD: pass\n          POSTGRES_DB: nautilus\n        ports:\n          - 5432:5432\n        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Common setup\n        uses: ./.github/actions/common-setup\n        with:\n          python-version: \"3.12\"\n          free-disk-space: \"true\"\n\n      - name: Run pre-commit # Runs again here to check pre-commit with Python 3.12\n        run: make pre-commit\n\n      - name: Install Nautilus CLI and run init postgres\n        run: |\n          make install-cli\n          nautilus database init --schema ${{ github.workspace }}/schema/sql\n        env:\n          POSTGRES_HOST: localhost\n          POSTGRES_PORT: 5432\n          POSTGRES_USERNAME: postgres\n          POSTGRES_PASSWORD: pass\n          POSTGRES_DATABASE: nautilus\n\n      - name: Run nautilus_core tests\n        run: make cargo-test\n\n      - name: Build and install wheel\n        uses: ./.github/actions/common-wheel-build\n        with:\n          python-version: ${{ matrix.python-version }}\n\n      # Run codspeed once only\n      - name: Run benchmarks\n        uses: CodSpeedHQ/action@v3.2.0\n        with:\n          token: ${{ secrets.CODSPEED_TOKEN }}\n          run: pytest tests/performance_tests --benchmark-disable-gc --codspeed\n"
+    },
+    "2025-01-24T22-13-20Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "nightly"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "performance-benchmarks": 7
+      },
+      "line_count": 67,
+      "workflow": "name: performance\n\non:\n  push:\n    branches: [nightly]\n\njobs:\n  performance-benchmarks:\n    runs-on: ubuntu-latest\n    env:\n      BUILD_MODE: release\n      RUST_BACKTRACE: 1\n    services:\n      redis:\n        image: redis\n        ports:\n          - 6379:6379\n        options: >-\n          --health-cmd \"redis-cli ping\"\n          --health-interval 10s\n          --health-timeout 5s\n          --health-retries 5\n      postgres:\n        image: postgres\n        env:\n          POSTGRES_USER: postgres\n          POSTGRES_PASSWORD: pass\n          POSTGRES_DB: nautilus\n        ports:\n          - 5432:5432\n        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5\n\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v4\n\n      - name: Common setup\n        uses: ./.github/actions/common-setup\n        with:\n          python-version: \"3.12\"\n\n      - name: Run pre-commit # Runs again here to check on Python 3.12\n        run: make pre-commit\n\n      - name: Install Nautilus CLI and run init postgres\n        run: |\n          make install-cli\n          nautilus database init --schema ${{ github.workspace }}/schema/sql\n        env:\n          POSTGRES_HOST: localhost\n          POSTGRES_PORT: 5432\n          POSTGRES_USERNAME: postgres\n          POSTGRES_PASSWORD: pass\n          POSTGRES_DATABASE: nautilus\n\n      - name: Run nautilus_core tests\n        run: make cargo-test\n\n      - name: Common test setup\n        uses: ./.github/actions/common-tests\n\n      # Run codspeed once only\n      - name: Run benchmarks\n        uses: CodSpeedHQ/action@v3.2.0\n        with:\n          token: ${{ secrets.CODSPEED_TOKEN }}\n          run: pytest tests/performance_tests --benchmark-disable-gc --codspeed\n"
+    }
+  }
+}

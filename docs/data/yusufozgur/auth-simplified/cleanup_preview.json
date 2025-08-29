@@ -1,0 +1,37 @@
+{
+  "cleanup_preview": {
+    "2024-08-27T12-15-37Z": [
+      {
+        "region": {
+          "startLine": 8,
+          "startColumn": 5,
+          "endLine": 15,
+          "endColumn": 47
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2024-08-27T12-15-37Z": {
+      "triggers": {
+        "pull_request": {
+          "types": [
+            "closed"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "delete-preview": 1
+      },
+      "line_count": 15,
+      "workflow": "name: Clean up Preview Deployment\non:\n  pull_request:\n    types: [closed]\n\njobs:\n  delete-preview:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Delete Neon Branch\n        uses: neondatabase/delete-branch-action@v3.1.3\n        with:\n          project_id: ${{ secrets.NEON_PROJECT_ID }}\n          branch: preview/pr-${{ github.event.number }}-${{ github.event.pull_request.head.ref }}\n          api_key: ${{ secrets.NEON_API_KEY }}"
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "merge_main": {
+    "2022-07-27T16-00-29Z": [
+      {
+        "region": {
+          "startLine": 19,
+          "startColumn": 5,
+          "endLine": 55,
+          "endColumn": 74
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 36,
+          "startColumn": 33,
+          "endLine": null,
+          "endColumn": 80
+        },
+        "message": "Potential code injection in [${{ steps.branch-name.outputs.current_branch }}](1), which may be controlled by an external user ([workflow_dispatch](2)).",
+        "ruleId": "actions/code-injection/critical",
+        "cwe": "CWE-094",
+        "precision": "very-high",
+        "severity": "error",
+        "security_severity": "9"
+      },
+      {
+        "region": {
+          "startLine": 26,
+          "startColumn": 9,
+          "endLine": 30,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v5.2](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ]
+  },
+  "metadata": {
+    "2022-07-27T16-00-29Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main",
+            "release**"
+          ]
+        },
+        "workflow_dispatch": null
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 5
+      },
+      "line_count": 55,
+      "workflow": "# This is a basic workflow to help you get started with Actions\n\nname: GenerateYaml\n\n# Controls when the action will run. \non:\n  # Triggers the workflow on push or pull request events but only for the main branch\n  push:\n    branches:\n      - main\n      - release**\n  workflow_dispatch:\n\n# A workflow run is made up of one or more jobs that can run sequentially or in parallel\njobs:\n  # This workflow contains a single job called \"build\"\n  build:\n    # The type of runner that the job will run on\n    runs-on: ubuntu-latest\n\n    # Steps represent a sequence of tasks that will be executed as part of the job\n    steps:\n      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it\n      - uses: actions/checkout@v2\n\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v5.2\n\n      - name: Run render-cd.sh\n        run: |\n          set -xe\n          chmod +x .github/workflows/render-cd.sh\n          .github/workflows/render-cd.sh\n\n          echo \"current branch: ${{ steps.branch-name.outputs.current_branch }}\"\n\n      - name: Abstract the repository name from env.\n        uses: bhowell2/github-substring-action@v1.0.0\n        id: repository_name\n        with:\n          value: ${{github.repository}}-manifests\n          index_of_str: ${{ github.repository_owner }}/\n\n      - name: Pushes to the repository for argocd\n        uses: cpina/github-action-push-to-another-repository@v1.3\n        env:\n          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}\n        with:\n          source-directory: 'output'\n          destination-github-username: ${{ github.repository_owner }}\n          destination-repository-name: ${{ steps.repository_name.outputs.substring }}\n          user-email: 'taco_support@sk.com'\n          commit-message: See ORIGIN_COMMIT\n          target-branch: ${{ steps.branch-name.outputs.current_branch }}\n"
+    }
+  }
+}

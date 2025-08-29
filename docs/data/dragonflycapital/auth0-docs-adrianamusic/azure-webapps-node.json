@@ -1,0 +1,24 @@
+{
+  "azure-webapps-node": {
+    "2023-02-09T17-22-51Z": []
+  },
+  "metadata": {
+    "2023-02-09T17-22-51Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "master"
+          ]
+        },
+        "workflow_dispatch": null
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "build": 4,
+        "deploy": 2
+      },
+      "line_count": 78,
+      "workflow": "# This workflow will build and push a node.js application to an Azure Web App when a commit is pushed to your default branch.\n#\n# This workflow assumes you have already created the target Azure App Service web app.\n# For instructions see https://docs.microsoft.com/en-us/azure/app-service/quickstart-nodejs?tabs=linux&pivots=development-environment-cli\n#\n# To configure this workflow:\n#\n# 1. Download the Publish Profile for your Azure Web App. You can download this file from the Overview page of your Web App in the Azure Portal.\n#    For more information: https://docs.microsoft.com/en-us/azure/app-service/deploy-github-actions?tabs=applevel#generate-deployment-credentials\n#\n# 2. Create a secret in your repository named AZURE_WEBAPP_PUBLISH_PROFILE, paste the publish profile contents as the value of the secret.\n#    For instructions on obtaining the publish profile see: https://docs.microsoft.com/azure/app-service/deploy-github-actions#configure-the-github-secret\n#\n# 3. Change the value for the AZURE_WEBAPP_NAME. Optionally, change the AZURE_WEBAPP_PACKAGE_PATH and NODE_VERSION environment variables below.\n#\n# For more information on GitHub Actions for Azure: https://github.com/Azure/Actions\n# For more information on the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy\n# For more samples to get started with GitHub Action workflows to deploy to Azure: https://github.com/Azure/actions-workflow-samples\n\non:\n  push:\n    branches: [ \"master\" ]\n  workflow_dispatch:\n\nenv:\n  AZURE_WEBAPP_NAME: your-app-name    # set this to your application's name\n  AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root\n  NODE_VERSION: '14.x'                # set this to the node version to use\n\npermissions:\n  contents: read\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n    - uses: actions/checkout@v3\n\n    - name: Set up Node.js\n      uses: actions/setup-node@v3\n      with:\n        node-version: ${{ env.NODE_VERSION }}\n        cache: 'npm'\n\n    - name: npm install, build, and test\n      run: |\n        npm install\n        npm run build --if-present\n        npm run test --if-present\n\n    - name: Upload artifact for deployment job\n      uses: actions/upload-artifact@v3\n      with:\n        name: node-app\n        path: .\n\n  deploy:\n    permissions:\n      contents: none\n    runs-on: ubuntu-latest\n    needs: build\n    environment:\n      name: 'Development'\n      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}\n\n    steps:\n    - name: Download artifact from build job\n      uses: actions/download-artifact@v3\n      with:\n        name: node-app\n\n    - name: 'Deploy to Azure WebApp'\n      id: deploy-to-webapp\n      uses: azure/webapps-deploy@v2\n      with:\n        app-name: ${{ env.AZURE_WEBAPP_NAME }}\n        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}\n        package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}\n"
+    }
+  }
+}

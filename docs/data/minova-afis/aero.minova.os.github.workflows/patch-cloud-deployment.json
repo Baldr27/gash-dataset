@@ -1,0 +1,434 @@
+{
+  "patch-cloud-deployment": {
+    "2023-06-12T13-02-51Z": [
+      {
+        "region": {
+          "startLine": 32,
+          "startColumn": 9,
+          "endLine": 36,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v6.4](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2023-06-12T13-04-38Z": [
+      {
+        "region": {
+          "startLine": 32,
+          "startColumn": 9,
+          "endLine": 36,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v6.5](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2023-09-07T10-45-40Z": [
+      {
+        "region": {
+          "startLine": 32,
+          "startColumn": 9,
+          "endLine": 36,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v6.5](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2023-12-06T09-44-47Z": [],
+    "2023-12-08T07-46-35Z": [],
+    "2024-02-15T10-18-50Z": [],
+    "2024-06-10T14-58-19Z": [],
+    "2024-06-10T15-07-46Z": [],
+    "2024-06-10T15-14-47Z": []
+  },
+  "metadata": {
+    "2023-06-12T13-02-51Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "cd-repo-name": {
+              "description": "GitHub repository of the CD pipeline",
+              "type": "string",
+              "default": "minova-afis/aero.minova.cloud.deployment"
+            },
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "type": "string",
+              "required": true
+            },
+            "email-address": {
+              "description": "e-mail address of Git committer",
+              "required": true,
+              "type": "string"
+            },
+            "patch-file": {
+              "description": "patch file where to insert/replace the container image string",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "outputs": {
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "value": "${{ inputs.container-image }}"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "patch": 3
+      },
+      "line_count": 55,
+      "workflow": "name: Patch Cloud Deployment\n\non:\n  workflow_call:\n    inputs:\n      cd-repo-name:\n        description: 'GitHub repository of the CD pipeline'\n        type: string\n        default: 'minova-afis/aero.minova.cloud.deployment'\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        type: string\n        required: true\n      email-address:\n        description: 'e-mail address of Git committer'\n        required: true\n        type: string\n      patch-file:\n        description: 'patch file where to insert/replace the container image string'\n        required: true\n        type: string\n    outputs:\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        value: ${{ inputs.container-image }}\n\njobs:\n  patch:\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v6.4\n\n      - name: checkout repository ${{ inputs.cd-repo-name }}\n        if: steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        uses: actions/checkout@v3\n        with:\n          repository: ${{ inputs.cd-repo-name }}\n          ref: 'main'\n          fetch-depth: 0\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: update '${{ inputs.patch-file }}' with '${{ inputs.container-image }}'\n        if:  inputs.container-image != '' && steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        run: |\n          test -f ${{ inputs.patch-file }} || (echo \"Test: ${{ inputs.patch-file }} not found\" && exit 1)\n          cat \"${{ inputs.patch-file }}\" | sed -e \"s@image:.*@image: ${{ inputs.container-image }}@g\" | tee \"${{ inputs.patch-file }}.tmp\" || (echo \"Sed: Unable to replace image name with ${{ inputs.container-image }}\" && exit 2)\n          mv \"${{ inputs.patch-file }}.tmp\" \"${{ inputs.patch-file }}\" || (echo \"Move: Unable to overwrite ${{ inputs.patch-file }}\" && exit 3)\n          git config --global user.email \"${{ inputs.email-address }}\" || (echo \"Git: Unable to set user.email to ${{ inputs.email-address }}\" && exit 4)\n          git config --global user.name \"${{ inputs.email-address }}\" || (echo \"Git: Unable to set user.name to ${{ inputs.email-address }}\" && exit 5)\n          git add . || (echo \"Git: Unable to add changed files\" && exit 6)\n          git commit -m \"Promoting to container ${{ inputs.container-image }}\" || (echo \"Git: Unable to commit files\" && exit 7)\n          git push || (echo \"Git: Unable to push\" && exit 8)\n"
+    },
+    "2023-06-12T13-04-38Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "cd-repo-name": {
+              "description": "GitHub repository of the CD pipeline",
+              "type": "string",
+              "default": "minova-afis/aero.minova.cloud.deployment"
+            },
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "type": "string",
+              "required": true
+            },
+            "email-address": {
+              "description": "e-mail address of Git committer",
+              "required": true,
+              "type": "string"
+            },
+            "patch-file": {
+              "description": "patch file where to insert/replace the container image string",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "outputs": {
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "value": "${{ inputs.container-image }}"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "patch": 3
+      },
+      "line_count": 55,
+      "workflow": "name: Patch Cloud Deployment\n\non:\n  workflow_call:\n    inputs:\n      cd-repo-name:\n        description: 'GitHub repository of the CD pipeline'\n        type: string\n        default: 'minova-afis/aero.minova.cloud.deployment'\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        type: string\n        required: true\n      email-address:\n        description: 'e-mail address of Git committer'\n        required: true\n        type: string\n      patch-file:\n        description: 'patch file where to insert/replace the container image string'\n        required: true\n        type: string\n    outputs:\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        value: ${{ inputs.container-image }}\n\njobs:\n  patch:\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v6.5\n\n      - name: checkout repository ${{ inputs.cd-repo-name }}\n        if: steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        uses: actions/checkout@v3\n        with:\n          repository: ${{ inputs.cd-repo-name }}\n          ref: 'main'\n          fetch-depth: 0\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: update '${{ inputs.patch-file }}' with '${{ inputs.container-image }}'\n        if:  inputs.container-image != '' && steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        run: |\n          test -f ${{ inputs.patch-file }} || (echo \"Test: ${{ inputs.patch-file }} not found\" && exit 1)\n          cat \"${{ inputs.patch-file }}\" | sed -e \"s@image:.*@image: ${{ inputs.container-image }}@g\" | tee \"${{ inputs.patch-file }}.tmp\" || (echo \"Sed: Unable to replace image name with ${{ inputs.container-image }}\" && exit 2)\n          mv \"${{ inputs.patch-file }}.tmp\" \"${{ inputs.patch-file }}\" || (echo \"Move: Unable to overwrite ${{ inputs.patch-file }}\" && exit 3)\n          git config --global user.email \"${{ inputs.email-address }}\" || (echo \"Git: Unable to set user.email to ${{ inputs.email-address }}\" && exit 4)\n          git config --global user.name \"${{ inputs.email-address }}\" || (echo \"Git: Unable to set user.name to ${{ inputs.email-address }}\" && exit 5)\n          git add . || (echo \"Git: Unable to add changed files\" && exit 6)\n          git commit -m \"Promoting to container ${{ inputs.container-image }}\" || (echo \"Git: Unable to commit files\" && exit 7)\n          git push || (echo \"Git: Unable to push\" && exit 8)\n"
+    },
+    "2023-09-07T10-45-40Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "cd-repo-name": {
+              "description": "GitHub repository of the CD pipeline",
+              "type": "string",
+              "default": "minova-afis/aero.minova.cloud.deployment"
+            },
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "type": "string",
+              "required": true
+            },
+            "email-address": {
+              "description": "e-mail address of Git committer",
+              "required": true,
+              "type": "string"
+            },
+            "patch-file": {
+              "description": "patch file where to insert/replace the container image string",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "outputs": {
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "value": "${{ inputs.container-image }}"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "patch": 3
+      },
+      "line_count": 55,
+      "workflow": "name: Patch Cloud Deployment\n\non:\n  workflow_call:\n    inputs:\n      cd-repo-name:\n        description: 'GitHub repository of the CD pipeline'\n        type: string\n        default: 'minova-afis/aero.minova.cloud.deployment'\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        type: string\n        required: true\n      email-address:\n        description: 'e-mail address of Git committer'\n        required: true\n        type: string\n      patch-file:\n        description: 'patch file where to insert/replace the container image string'\n        required: true\n        type: string\n    outputs:\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        value: ${{ inputs.container-image }}\n\njobs:\n  patch:\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v6.5\n\n      - name: checkout repository ${{ inputs.cd-repo-name }}\n        if: steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        uses: actions/checkout@v4\n        with:\n          repository: ${{ inputs.cd-repo-name }}\n          ref: 'main'\n          fetch-depth: 0\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: update '${{ inputs.patch-file }}' with '${{ inputs.container-image }}'\n        if:  inputs.container-image != '' && steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        run: |\n          test -f ${{ inputs.patch-file }} || (echo \"Test: ${{ inputs.patch-file }} not found\" && exit 1)\n          cat \"${{ inputs.patch-file }}\" | sed -e \"s@image:.*@image: ${{ inputs.container-image }}@g\" | tee \"${{ inputs.patch-file }}.tmp\" || (echo \"Sed: Unable to replace image name with ${{ inputs.container-image }}\" && exit 2)\n          mv \"${{ inputs.patch-file }}.tmp\" \"${{ inputs.patch-file }}\" || (echo \"Move: Unable to overwrite ${{ inputs.patch-file }}\" && exit 3)\n          git config --global user.email \"${{ inputs.email-address }}\" || (echo \"Git: Unable to set user.email to ${{ inputs.email-address }}\" && exit 4)\n          git config --global user.name \"${{ inputs.email-address }}\" || (echo \"Git: Unable to set user.name to ${{ inputs.email-address }}\" && exit 5)\n          git add . || (echo \"Git: Unable to add changed files\" && exit 6)\n          git commit -m \"Promoting to container ${{ inputs.container-image }}\" || (echo \"Git: Unable to commit files\" && exit 7)\n          git push || (echo \"Git: Unable to push\" && exit 8)\n"
+    },
+    "2023-12-06T09-44-47Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "cd-repo-name": {
+              "description": "GitHub repository of the CD pipeline",
+              "type": "string",
+              "default": "minova-afis/aero.minova.cloud.deployment"
+            },
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "type": "string",
+              "required": true
+            },
+            "email-address": {
+              "description": "e-mail address of Git committer",
+              "required": true,
+              "type": "string"
+            },
+            "patch-file": {
+              "description": "patch file where to insert/replace the container image string",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "outputs": {
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "value": "${{ inputs.container-image }}"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "patch": 3
+      },
+      "line_count": 55,
+      "workflow": "name: Patch Cloud Deployment\n\non:\n  workflow_call:\n    inputs:\n      cd-repo-name:\n        description: 'GitHub repository of the CD pipeline'\n        type: string\n        default: 'minova-afis/aero.minova.cloud.deployment'\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        type: string\n        required: true\n      email-address:\n        description: 'e-mail address of Git committer'\n        required: true\n        type: string\n      patch-file:\n        description: 'patch file where to insert/replace the container image string'\n        required: true\n        type: string\n    outputs:\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        value: ${{ inputs.container-image }}\n\njobs:\n  patch:\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v7.0.7\n\n      - name: checkout repository ${{ inputs.cd-repo-name }}\n        if: steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        uses: actions/checkout@v4\n        with:\n          repository: ${{ inputs.cd-repo-name }}\n          ref: 'main'\n          fetch-depth: 0\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: update '${{ inputs.patch-file }}' with '${{ inputs.container-image }}'\n        if:  inputs.container-image != '' && steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        run: |\n          test -f ${{ inputs.patch-file }} || (echo \"Test: ${{ inputs.patch-file }} not found\" && exit 1)\n          cat \"${{ inputs.patch-file }}\" | sed -e \"s@image:.*@image: ${{ inputs.container-image }}@g\" | tee \"${{ inputs.patch-file }}.tmp\" || (echo \"Sed: Unable to replace image name with ${{ inputs.container-image }}\" && exit 2)\n          mv \"${{ inputs.patch-file }}.tmp\" \"${{ inputs.patch-file }}\" || (echo \"Move: Unable to overwrite ${{ inputs.patch-file }}\" && exit 3)\n          git config --global user.email \"${{ inputs.email-address }}\" || (echo \"Git: Unable to set user.email to ${{ inputs.email-address }}\" && exit 4)\n          git config --global user.name \"${{ inputs.email-address }}\" || (echo \"Git: Unable to set user.name to ${{ inputs.email-address }}\" && exit 5)\n          git add . || (echo \"Git: Unable to add changed files\" && exit 6)\n          git commit -m \"Promoting to container ${{ inputs.container-image }}\" || (echo \"Git: Unable to commit files\" && exit 7)\n          git push || (echo \"Git: Unable to push\" && exit 8)\n"
+    },
+    "2023-12-08T07-46-35Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "cd-repo-name": {
+              "description": "GitHub repository of the CD pipeline",
+              "type": "string",
+              "default": "minova-afis/aero.minova.cloud.deployment"
+            },
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "type": "string",
+              "required": true
+            },
+            "email-address": {
+              "description": "e-mail address of Git committer",
+              "required": true,
+              "type": "string"
+            },
+            "patch-file": {
+              "description": "patch file where to insert/replace the container image string",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "outputs": {
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "value": "${{ inputs.container-image }}"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "patch": 3
+      },
+      "line_count": 55,
+      "workflow": "name: Patch Cloud Deployment\n\non:\n  workflow_call:\n    inputs:\n      cd-repo-name:\n        description: 'GitHub repository of the CD pipeline'\n        type: string\n        default: 'minova-afis/aero.minova.cloud.deployment'\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        type: string\n        required: true\n      email-address:\n        description: 'e-mail address of Git committer'\n        required: true\n        type: string\n      patch-file:\n        description: 'patch file where to insert/replace the container image string'\n        required: true\n        type: string\n    outputs:\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        value: ${{ inputs.container-image }}\n\njobs:\n  patch:\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8.0.0\n\n      - name: checkout repository ${{ inputs.cd-repo-name }}\n        if: steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        uses: actions/checkout@v4\n        with:\n          repository: ${{ inputs.cd-repo-name }}\n          ref: 'main'\n          fetch-depth: 0\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: update '${{ inputs.patch-file }}' with '${{ inputs.container-image }}'\n        if:  inputs.container-image != '' && steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        run: |\n          test -f ${{ inputs.patch-file }} || (echo \"Test: ${{ inputs.patch-file }} not found\" && exit 1)\n          cat \"${{ inputs.patch-file }}\" | sed -e \"s@image:.*@image: ${{ inputs.container-image }}@g\" | tee \"${{ inputs.patch-file }}.tmp\" || (echo \"Sed: Unable to replace image name with ${{ inputs.container-image }}\" && exit 2)\n          mv \"${{ inputs.patch-file }}.tmp\" \"${{ inputs.patch-file }}\" || (echo \"Move: Unable to overwrite ${{ inputs.patch-file }}\" && exit 3)\n          git config --global user.email \"${{ inputs.email-address }}\" || (echo \"Git: Unable to set user.email to ${{ inputs.email-address }}\" && exit 4)\n          git config --global user.name \"${{ inputs.email-address }}\" || (echo \"Git: Unable to set user.name to ${{ inputs.email-address }}\" && exit 5)\n          git add . || (echo \"Git: Unable to add changed files\" && exit 6)\n          git commit -m \"Promoting to container ${{ inputs.container-image }}\" || (echo \"Git: Unable to commit files\" && exit 7)\n          git push || (echo \"Git: Unable to push\" && exit 8)\n"
+    },
+    "2024-02-15T10-18-50Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "cd-repo-name": {
+              "description": "GitHub repository of the CD pipeline",
+              "type": "string",
+              "default": "minova-afis/aero.minova.cloud.deployment"
+            },
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "type": "string",
+              "required": true
+            },
+            "email-address": {
+              "description": "e-mail address of Git committer",
+              "required": true,
+              "type": "string"
+            },
+            "patch-file": {
+              "description": "patch file where to insert/replace the container image string",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "outputs": {
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "value": "${{ inputs.container-image }}"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "patch": 3
+      },
+      "line_count": 55,
+      "workflow": "name: Patch Cloud Deployment\n\non:\n  workflow_call:\n    inputs:\n      cd-repo-name:\n        description: 'GitHub repository of the CD pipeline'\n        type: string\n        default: 'minova-afis/aero.minova.cloud.deployment'\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        type: string\n        required: true\n      email-address:\n        description: 'e-mail address of Git committer'\n        required: true\n        type: string\n      patch-file:\n        description: 'patch file where to insert/replace the container image string'\n        required: true\n        type: string\n    outputs:\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        value: ${{ inputs.container-image }}\n\njobs:\n  patch:\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8.0.1\n\n      - name: checkout repository ${{ inputs.cd-repo-name }}\n        if: steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        uses: actions/checkout@v4\n        with:\n          repository: ${{ inputs.cd-repo-name }}\n          ref: 'main'\n          fetch-depth: 0\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: update '${{ inputs.patch-file }}' with '${{ inputs.container-image }}'\n        if:  inputs.container-image != '' && steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        run: |\n          test -f ${{ inputs.patch-file }} || (echo \"Test: ${{ inputs.patch-file }} not found\" && exit 1)\n          cat \"${{ inputs.patch-file }}\" | sed -e \"s@image:.*@image: ${{ inputs.container-image }}@g\" | tee \"${{ inputs.patch-file }}.tmp\" || (echo \"Sed: Unable to replace image name with ${{ inputs.container-image }}\" && exit 2)\n          mv \"${{ inputs.patch-file }}.tmp\" \"${{ inputs.patch-file }}\" || (echo \"Move: Unable to overwrite ${{ inputs.patch-file }}\" && exit 3)\n          git config --global user.email \"${{ inputs.email-address }}\" || (echo \"Git: Unable to set user.email to ${{ inputs.email-address }}\" && exit 4)\n          git config --global user.name \"${{ inputs.email-address }}\" || (echo \"Git: Unable to set user.name to ${{ inputs.email-address }}\" && exit 5)\n          git add . || (echo \"Git: Unable to add changed files\" && exit 6)\n          git commit -m \"Promoting to container ${{ inputs.container-image }}\" || (echo \"Git: Unable to commit files\" && exit 7)\n          git push || (echo \"Git: Unable to push\" && exit 8)\n"
+    },
+    "2024-06-10T14-58-19Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "cd-repo-name": {
+              "description": "GitHub repository of the CD pipeline",
+              "type": "string",
+              "default": "minova-afis/aero.minova.cloud.deployment"
+            },
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "type": "string",
+              "required": true
+            },
+            "triggered-by": {
+              "description": "Username of Git committer",
+              "type": "string",
+              "required": false
+            },
+            "email-address": {
+              "description": "e-mail address of Git committer",
+              "required": true,
+              "type": "string"
+            },
+            "patch-file": {
+              "description": "patch file where to insert/replace the container image string",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "outputs": {
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "value": "${{ inputs.container-image }}"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "patch": 3
+      },
+      "line_count": 59,
+      "workflow": "name: Patch Cloud Deployment\n\non:\n  workflow_call:\n    inputs:\n      cd-repo-name:\n        description: 'GitHub repository of the CD pipeline'\n        type: string\n        default: 'minova-afis/aero.minova.cloud.deployment'\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        type: string\n        required: true\n      triggered-by:\n        description: \"Username of Git committer\"\n        type: string\n        required: false\n      email-address:\n        description: 'e-mail address of Git committer'\n        required: true\n        type: string\n      patch-file:\n        description: 'patch file where to insert/replace the container image string'\n        required: true\n        type: string\n    outputs:\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        value: ${{ inputs.container-image }}\n\njobs:\n  patch:\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8.0.1\n\n      - name: checkout repository ${{ inputs.cd-repo-name }}\n        if: steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        uses: actions/checkout@v4\n        with:\n          repository: ${{ inputs.cd-repo-name }}\n          ref: 'main'\n          fetch-depth: 0\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: update '${{ inputs.patch-file }}' with '${{ inputs.container-image }}'\n        if:  inputs.container-image != '' && steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        run: |\n          test -f ${{ inputs.patch-file }} || (echo \"Test: ${{ inputs.patch-file }} not found\" && exit 1)\n          cat \"${{ inputs.patch-file }}\" | sed -e \"s@image:.*@image: ${{ inputs.container-image }}@g\" | tee \"${{ inputs.patch-file }}.tmp\" || (echo \"Sed: Unable to replace image name with ${{ inputs.container-image }}\" && exit 2)\n          mv \"${{ inputs.patch-file }}.tmp\" \"${{ inputs.patch-file }}\" || (echo \"Move: Unable to overwrite ${{ inputs.patch-file }}\" && exit 3)\n          git config --global user.email \"${{ inputs.email-address }}\" || (echo \"Git: Unable to set user.email to ${{ inputs.email-address }}\" && exit 4)\n          git config --global user.name \"${{ inputs.email-address }}\" || (echo \"Git: Unable to set user.name to ${{ inputs.email-address }}\" && exit 5)\n          git add . || (echo \"Git: Unable to add changed files\" && exit 6)\n          git commit -m \"Promoting to container ${{ inputs.container-image }}\" || (echo \"Git: Unable to commit files\" && exit 7)\n          git push || (echo \"Git: Unable to push\" && exit 8)\n"
+    },
+    "2024-06-10T15-07-46Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "cd-repo-name": {
+              "description": "GitHub repository of the CD pipeline",
+              "type": "string",
+              "default": "minova-afis/aero.minova.cloud.deployment"
+            },
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "type": "string",
+              "required": true
+            },
+            "triggered-by": {
+              "description": "Username of Git committer",
+              "type": "string",
+              "required": false
+            },
+            "email-address": {
+              "description": "e-mail address of Git committer",
+              "required": true,
+              "type": "string"
+            },
+            "patch-file": {
+              "description": "patch file where to insert/replace the container image string",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "outputs": {
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "value": "${{ inputs.container-image }}"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "patch": 3
+      },
+      "line_count": 59,
+      "workflow": "name: Patch Cloud Deployment\n\non:\n  workflow_call:\n    inputs:\n      cd-repo-name:\n        description: 'GitHub repository of the CD pipeline'\n        type: string\n        default: 'minova-afis/aero.minova.cloud.deployment'\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        type: string\n        required: true\n      triggered-by:\n        description: \"Username of Git committer\"\n        type: string\n        required: false\n      email-address:\n        description: 'e-mail address of Git committer'\n        required: true\n        type: string\n      patch-file:\n        description: 'patch file where to insert/replace the container image string'\n        required: true\n        type: string\n    outputs:\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        value: ${{ inputs.container-image }}\n\njobs:\n  patch:\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8.0.1\n\n      - name: checkout repository ${{ inputs.cd-repo-name }}\n        if: steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        uses: actions/checkout@v4\n        with:\n          repository: ${{ inputs.cd-repo-name }}\n          ref: 'main'\n          fetch-depth: 0\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: update '${{ inputs.patch-file }}' with '${{ inputs.container-image }}'\n        if:  inputs.container-image != '' && steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        run: |\n          test -f ${{ inputs.patch-file }} || (echo \"Test: ${{ inputs.patch-file }} not found\" && exit 1)\n          cat \"${{ inputs.patch-file }}\" | sed -e \"s@image:.*@image: ${{ inputs.container-image }}@g\" | tee \"${{ inputs.patch-file }}.tmp\" || (echo \"Sed: Unable to replace image name with ${{ inputs.container-image }}\" && exit 2)\n          mv \"${{ inputs.patch-file }}.tmp\" \"${{ inputs.patch-file }}\" || (echo \"Move: Unable to overwrite ${{ inputs.patch-file }}\" && exit 3)\n          git config --global user.email \"${{ inputs.email-address }}\" || (echo \"Git: Unable to set user.email to ${{ inputs.email-address }}\" && exit 4)\n          git config --global user.name \"${{ inputs.email-address }}\" || git config --global user.name \"${{ inputs.triggered-by }}\" || (echo \"Git: Unable to set user.name to ${{ inputs.email-address }}\" && exit 5)\n          git add . || (echo \"Git: Unable to add changed files\" && exit 6)\n          git commit -m \"Promoting to container ${{ inputs.container-image }}\" || (echo \"Git: Unable to commit files\" && exit 7)\n          git push || (echo \"Git: Unable to push\" && exit 8)\n"
+    },
+    "2024-06-10T15-14-47Z": {
+      "triggers": {
+        "workflow_call": {
+          "inputs": {
+            "cd-repo-name": {
+              "description": "GitHub repository of the CD pipeline",
+              "type": "string",
+              "default": "minova-afis/aero.minova.cloud.deployment"
+            },
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "type": "string",
+              "required": true
+            },
+            "triggered-by": {
+              "description": "Username of Git committer",
+              "type": "string"
+            },
+            "email-address": {
+              "description": "e-mail address of Git committer",
+              "required": true,
+              "type": "string"
+            },
+            "patch-file": {
+              "description": "patch file where to insert/replace the container image string",
+              "required": true,
+              "type": "string"
+            }
+          },
+          "outputs": {
+            "container-image": {
+              "description": "Fully qualified name of the prepared container image",
+              "value": "${{ inputs.container-image }}"
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "patch": 3
+      },
+      "line_count": 58,
+      "workflow": "name: Patch Cloud Deployment\n\non:\n  workflow_call:\n    inputs:\n      cd-repo-name:\n        description: 'GitHub repository of the CD pipeline'\n        type: string\n        default: 'minova-afis/aero.minova.cloud.deployment'\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        type: string\n        required: true\n      triggered-by:\n        description: \"Username of Git committer\"\n        type: string\n      email-address:\n        description: 'e-mail address of Git committer'\n        required: true\n        type: string\n      patch-file:\n        description: 'patch file where to insert/replace the container image string'\n        required: true\n        type: string\n    outputs:\n      container-image:\n        description: \"Fully qualified name of the prepared container image\"\n        value: ${{ inputs.container-image }}\n\njobs:\n  patch:\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v8.0.1\n\n      - name: checkout repository ${{ inputs.cd-repo-name }}\n        if: steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        uses: actions/checkout@v4\n        with:\n          repository: ${{ inputs.cd-repo-name }}\n          ref: 'main'\n          fetch-depth: 0\n          token: ${{ secrets.MAIN_GITHUB_REPO_FULL_ACCESS }}\n\n      - name: update '${{ inputs.patch-file }}' with '${{ inputs.container-image }}'\n        if:  inputs.container-image != '' && steps.branch-name.outputs.ref_branch == 'main' && github.event_name != 'pull_request'\n        run: |\n          test -f ${{ inputs.patch-file }} || (echo \"Test: ${{ inputs.patch-file }} not found\" && exit 1)\n          cat \"${{ inputs.patch-file }}\" | sed -e \"s@image:.*@image: ${{ inputs.container-image }}@g\" | tee \"${{ inputs.patch-file }}.tmp\" || (echo \"Sed: Unable to replace image name with ${{ inputs.container-image }}\" && exit 2)\n          mv \"${{ inputs.patch-file }}.tmp\" \"${{ inputs.patch-file }}\" || (echo \"Move: Unable to overwrite ${{ inputs.patch-file }}\" && exit 3)\n          git config --global user.email \"${{ inputs.email-address }}\" || (echo \"Git: Unable to set user.email to ${{ inputs.email-address }}\" && exit 4)\n          git config --global user.name \"${{ inputs.email-address }}\" || git config --global user.name \"${{ inputs.triggered-by }}\" || (echo \"Git: Unable to set user.name to ${{ inputs.email-address }}\" && exit 5)\n          git add . || (echo \"Git: Unable to add changed files\" && exit 6)\n          git commit -m \"Promoting to container ${{ inputs.container-image }}\" || (echo \"Git: Unable to commit files\" && exit 7)\n          git push || (echo \"Git: Unable to push\" && exit 8)\n"
+    }
+  }
+}

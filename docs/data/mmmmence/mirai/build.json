@@ -1,0 +1,417 @@
+{
+  "build": {
+    "2021-01-30T12-34-55Z": [
+      {
+        "region": {
+          "startLine": 8,
+          "startColumn": 5,
+          "endLine": 25,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 26,
+          "startColumn": 5,
+          "endLine": 47,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-01-28T03-51-32Z": [
+      {
+        "region": {
+          "startLine": 8,
+          "startColumn": 5,
+          "endLine": 25,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 26,
+          "startColumn": 5,
+          "endLine": 42,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-01-30T13-58-26Z": [
+      {
+        "region": {
+          "startLine": 8,
+          "startColumn": 5,
+          "endLine": 30,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 31,
+          "startColumn": 5,
+          "endLine": 54,
+          "endColumn": 50
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-02-09T13-58-27Z": [
+      {
+        "region": {
+          "startLine": 8,
+          "startColumn": 5,
+          "endLine": 30,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 31,
+          "startColumn": 5,
+          "endLine": 54,
+          "endColumn": 37
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-02-27T06-44-46Z": [
+      {
+        "region": {
+          "startLine": 8,
+          "startColumn": 5,
+          "endLine": 30,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 31,
+          "startColumn": 5,
+          "endLine": 54,
+          "endColumn": 37
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-04-05T14-41-26Z": [
+      {
+        "region": {
+          "startLine": 8,
+          "startColumn": 5,
+          "endLine": 30,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 31,
+          "startColumn": 5,
+          "endLine": 54,
+          "endColumn": 62
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-05-31T08-14-51Z": [
+      {
+        "region": {
+          "startLine": 8,
+          "startColumn": 5,
+          "endLine": null,
+          "endColumn": 5
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-05-31T08-20-09Z": [
+      {
+        "region": {
+          "startLine": 8,
+          "startColumn": 5,
+          "endLine": 33,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 34,
+          "startColumn": 5,
+          "endLine": 61,
+          "endColumn": 57
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-06-19T15-58-27Z": [
+      {
+        "region": {
+          "startLine": 8,
+          "startColumn": 5,
+          "endLine": 33,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 34,
+          "startColumn": 5,
+          "endLine": 61,
+          "endColumn": 57
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-07-28T03-45-43Z": [
+      {
+        "region": {
+          "startLine": 8,
+          "startColumn": 5,
+          "endLine": 33,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 34,
+          "startColumn": 5,
+          "endLine": 61,
+          "endColumn": 51
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2021-01-30T12-34-55Z": {
+      "triggers": {
+        "push": {},
+        "pull_request": {}
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "build-mirai-core": 6,
+        "build-all": 7
+      },
+      "line_count": 47,
+      "workflow": "name: Build\n\non: [ push, pull_request ]\n\njobs:\n  build-mirai-core:\n\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v2\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n      - name: chmod +x gradlew\n        run: chmod +x gradlew\n      - name: Init gradle project\n        run: ./gradlew clean\n      - name: Build mirai-core series\n        run: ./gradlew assemble\n      - name: mirai-core Tests\n        run: ./gradlew check\n\n  build-all:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      - name: Checkout submodules\n        uses: textbook/git-checkout-submodule-action@master\n        with:\n          remote: true\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n      - name: chmod +x gradlew\n        run: chmod +x gradlew\n      - name: Init gradle project\n        run: ./gradlew clean\n      - name: Build all\n        run: ./gradlew assemble\n      - name: All Tests\n        run: ./gradlew check\n"
+    },
+    "2021-01-28T03-51-32Z": {
+      "triggers": {
+        "push": {},
+        "pull_request": {}
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "build-mirai-core": 6,
+        "build-all": 6
+      },
+      "line_count": 42,
+      "workflow": "name: Build\n\non: [ push, pull_request ]\n\njobs:\n  build-mirai-core:\n\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v2\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n      - name: chmod +x gradlew\n        run: chmod +x gradlew\n      - name: Init gradle project\n        run: ./gradlew clean\n      - name: Build mirai-core series\n        run: ./gradlew assemble\n      - name: mirai-core Tests\n        run: ./gradlew check\n\n  build-all:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n        with:\n          submodules: recursive\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n      - name: chmod +x gradlew\n        run: chmod +x gradlew\n      - name: Init gradle project\n        run: ./gradlew clean\n      - name: Build all\n        run: ./gradlew assemble\n      - name: All Tests\n        run: ./gradlew check\n"
+    },
+    "2021-01-30T13-58-26Z": {
+      "triggers": {
+        "push": {},
+        "pull_request": {}
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "build-mirai-core": 6,
+        "build-all": 7
+      },
+      "line_count": 54,
+      "workflow": "name: Build\n\non: [ push, pull_request ]\n\njobs:\n  build-mirai-core:\n\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v2\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Init gradle project\n        run: ./gradlew clean --info --stacktrace\n\n      - name: Build mirai-core series\n        run: ./gradlew assemble --info --stacktrace\n\n      - name: mirai-core Tests\n        run: ./gradlew check --info --stacktrace\n\n  build-all:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      - name: Checkout submodules\n        run: git submodule update --init --recursive --remote\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Init gradle project\n        run: ./gradlew clean --info --stacktrace\n\n      - name: Build all\n        run: ./gradlew assemble --info --stacktrace\n\n      - name: All Tests\n        run: ./gradlew check --info --stacktrace\n"
+    },
+    "2021-02-09T13-58-27Z": {
+      "triggers": {
+        "push": {},
+        "pull_request": {}
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "build-mirai-core": 6,
+        "build-all": 7
+      },
+      "line_count": 54,
+      "workflow": "name: Build\n\non: [ push, pull_request ]\n\njobs:\n  build-mirai-core:\n\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v2\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Init gradle project\n        run: ./gradlew clean --scan\n\n      - name: Build mirai-core series\n        run: ./gradlew assemble --scan\n\n      - name: mirai-core Tests\n        run: ./gradlew check --scan\n\n  build-all:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      - name: Checkout submodules\n        run: git submodule update --init --recursive --remote\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Init gradle project\n        run: ./gradlew clean --scan\n\n      - name: Build all\n        run: ./gradlew assemble --scan\n\n      - name: All Tests\n        run: ./gradlew check --scan\n"
+    },
+    "2021-02-27T06-44-46Z": {
+      "triggers": {
+        "push": {},
+        "pull_request": {}
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "build-mirai-core": 6,
+        "build-all": 7
+      },
+      "line_count": 54,
+      "workflow": "name: Build\n\non: [ push, pull_request ]\n\njobs:\n  build-mirai-core:\n\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v2\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Init gradle project\n        run: ./gradlew clean --scan\n\n      - name: Build mirai-core series\n        run: ./gradlew assemble --scan\n\n      - name: mirai-core Tests\n        run: ./gradlew check --scan\n\n  build-all:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      - name: Checkout submodules\n        run: git submodule update --init --recursive\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Init gradle project\n        run: ./gradlew clean --scan\n\n      - name: Build all\n        run: ./gradlew assemble --scan\n\n      - name: All Tests\n        run: ./gradlew check --scan\n"
+    },
+    "2021-04-05T14-41-26Z": {
+      "triggers": {
+        "push": {},
+        "pull_request": {}
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "build-mirai-core": 6,
+        "build-all": 7
+      },
+      "line_count": 54,
+      "workflow": "name: Build\n\non: [ push, pull_request ]\n\njobs:\n  build-mirai-core:\n\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v2\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Init gradle project\n        run: ./gradlew clean --scan\n\n      - name: Build mirai-core series\n        run: ./gradlew assemble -Pmirai.pkc.check.enable --scan\n\n      - name: mirai-core Tests\n        run: ./gradlew check -Pmirai.pkc.check.enable --scan\n\n  build-all:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      - name: Checkout submodules\n        run: git submodule update --init --recursive\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Init gradle project\n        run: ./gradlew clean --scan\n\n      - name: Build all\n        run: ./gradlew assemble -Pmirai.pkc.check.enable --scan\n\n      - name: All Tests\n        run: ./gradlew check -Pmirai.pkc.check.enable --scan\n"
+    },
+    "2021-05-31T08-14-51Z": {
+      "triggers": {},
+      "num_jobs": 0,
+      "steps_per_job": {},
+      "line_count": 61,
+      "workflow": null,
+      "parse_error": "while scanning a simple key\n  in \"<unicode string>\", line 29, column 9:\n            ./gradlew check -Pmirai.pkc.chec ... \n            ^\ncould not find expected ':'\n  in \"<unicode string>\", line 30, column 9:\n            -Dmirai.debug.network.show.all.c ... \n            ^"
+    },
+    "2021-05-31T08-20-09Z": {
+      "triggers": {
+        "push": {},
+        "pull_request": {}
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "build-mirai-core": 6,
+        "build-all": 7
+      },
+      "line_count": 61,
+      "workflow": "name: Build\n\non: [ push, pull_request ]\n\njobs:\n  build-mirai-core:\n\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v2\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Init gradle project\n        run: ./gradlew clean --scan\n\n      - name: Build mirai-core series\n        run: ./gradlew assemble -Pmirai.pkc.check.enable --scan\n\n      - name: mirai-core Tests\n        run: >\n          ./gradlew check -Pmirai.pkc.check.enable --scan\n          -Dmirai.debug.network.show.all.components=true\n          -Dkotlinx.coroutines.debug=on\n          -Dmirai.debug.network.show.packet.details=true\n  build-all:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      - name: Checkout submodules\n        run: git submodule update --init --recursive\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Init gradle project\n        run: ./gradlew clean --scan\n\n      - name: Build all\n        run: ./gradlew assemble -Pmirai.pkc.check.enable --scan\n\n      - name: All Tests\n        run: >\n          ./gradlew check -Pmirai.pkc.check.enable --scan\n          -Dmirai.debug.network.show.all.components=true\n          -Dkotlinx.coroutines.debug=on\n          -Dmirai.debug.network.show.packet.details=true"
+    },
+    "2021-06-19T15-58-27Z": {
+      "triggers": {
+        "push": {},
+        "pull_request": {}
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "build-mirai-core": 6,
+        "build-all": 7
+      },
+      "line_count": 61,
+      "workflow": "name: Build\n\non: [ push, pull_request ]\n\njobs:\n  build-mirai-core:\n\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v2\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Init gradle project\n        run: ./gradlew clean --scan\n\n      - name: Build mirai-core series\n        run: ./gradlew assemble --scan\n\n      - name: mirai-core Tests\n        run: >\n          ./gradlew check --scan\n          -Dmirai.debug.network.show.all.components=true\n          -Dkotlinx.coroutines.debug=on\n          -Dmirai.debug.network.show.packet.details=true\n  build-all:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      - name: Checkout submodules\n        run: git submodule update --init --recursive\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Init gradle project\n        run: ./gradlew clean --scan\n\n      - name: Build all\n        run: ./gradlew assemble --scan\n\n      - name: All Tests\n        run: >\n          ./gradlew check --scan\n          -Dmirai.debug.network.show.all.components=true\n          -Dkotlinx.coroutines.debug=on\n          -Dmirai.debug.network.show.packet.details=true"
+    },
+    "2021-07-28T03-45-43Z": {
+      "triggers": {
+        "push": {},
+        "pull_request": {}
+      },
+      "num_jobs": 2,
+      "steps_per_job": {
+        "build-mirai-core": 6,
+        "build-all": 7
+      },
+      "line_count": 61,
+      "workflow": "name: Build\n\non: [ push, pull_request ]\n\njobs:\n  build-mirai-core:\n\n    runs-on: ubuntu-latest\n\n    steps:\n      - uses: actions/checkout@v2\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Init gradle project\n        run: ./gradlew clean --scan\n\n      - name: Build mirai-core series\n        run: ./gradlew assemble --scan\n\n      - name: mirai-core Tests\n        run: >\n          ./gradlew check --scan\n          -Dmirai.network.show.all.components=true\n          -Dkotlinx.coroutines.debug=on\n          -Dmirai.network.show.packet.details=true\n  build-all:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout repository\n        uses: actions/checkout@v2\n\n      - name: Checkout submodules\n        run: git submodule update --init --recursive\n\n      - name: Set up JDK 1.8\n        uses: actions/setup-java@v1\n        with:\n          java-version: 1.8\n\n      - name: chmod -R 777 *\n        run: chmod -R 777 *\n\n      - name: Init gradle project\n        run: ./gradlew clean --scan\n\n      - name: Build all\n        run: ./gradlew assemble --scan\n\n      - name: All Tests\n        run: >\n          ./gradlew check --scan\n          -Dmirai.network.show.all.components=true\n          -Dkotlinx.coroutines.debug=on\n          -Dmirai.network.show.packet.details=true"
+    }
+  }
+}

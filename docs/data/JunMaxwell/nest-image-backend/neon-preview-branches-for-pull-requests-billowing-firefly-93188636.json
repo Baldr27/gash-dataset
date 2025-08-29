@@ -1,0 +1,70 @@
+{
+  "neon-preview-branches-for-pull-requests-billowing-firefly-93188636": {
+    "2024-10-27T14-42-03Z": [
+      {
+        "region": {
+          "startLine": 16,
+          "startColumn": 5,
+          "endLine": 25,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 26,
+          "startColumn": 5,
+          "endLine": 62,
+          "endColumn": 3
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 63,
+          "startColumn": 5,
+          "endLine": 73,
+          "endColumn": 48
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2024-10-27T14-42-03Z": {
+      "triggers": {
+        "pull_request": {
+          "types": [
+            "opened",
+            "reopened",
+            "synchronize",
+            "closed"
+          ]
+        }
+      },
+      "num_jobs": 3,
+      "steps_per_job": {
+        "setup": 1,
+        "create_neon_branch": 1,
+        "delete_neon_branch": 1
+      },
+      "line_count": 73,
+      "workflow": "name: Create/Delete Branch for Pull Request\n\non:\n  pull_request:\n    types:\n      - opened\n      - reopened\n      - synchronize\n      - closed\n\nconcurrency:\n  group: ${{ github.workflow }}-${{ github.ref }}\n\njobs:\n  setup:\n    name: Setup\n    outputs:\n      branch: ${{ steps.branch_name.outputs.current_branch }}\n    runs-on: ubuntu-latest\n    steps:\n      - name: Get branch name\n        id: branch_name\n        uses: tj-actions/branch-names@v8\n\n  create_neon_branch:\n    name: Create Neon Branch\n    outputs:\n      db_url: ${{ steps.create_neon_branch_encode.outputs.db_url }}\n      db_url_with_pooler: ${{ steps.create_neon_branch_encode.outputs.db_url_with_pooler }}\n    needs: setup\n    if: |\n      github.event_name == 'pull_request' && (\n      github.event.action == 'synchronize'\n      || github.event.action == 'opened'\n      || github.event.action == 'reopened')\n    runs-on: ubuntu-latest\n    steps:\n      - name: Create Neon Branch\n        id: create_neon_branch\n        uses: neondatabase/create-branch-action@v5\n        with:\n          project_id: ${{ vars.NEON_PROJECT_ID }}\n          branch_name: preview/pr-${{ github.event.number }}-${{ needs.setup.outputs.branch }}\n          api_key: ${{ secrets.NEON_API_KEY }}\n\n# The step above creates a new Neon branch.\n# You may want to do something with the new branch, such as run migrations, run tests\n# on it, or send the connection details to a hosting platform environment.\n# The branch DATABASE_URL is available to you via:\n# \"${{ steps.create_neon_branch.outputs.db_url_with_pooler }}\".\n# It's important you don't log the DATABASE_URL as output as it contains a username and\n# password for your database.\n# For example, you can uncomment the lines below to run a database migration command:\n#      - name: Run Migrations\n#        run: npm run db:migrate\n#        env:\n#          # to use pooled connection\n#          DATABASE_URL: \"${{ steps.create_neon_branch.outputs.db_url_with_pooler }}\"\n#          # OR to use unpooled connection\n#          # DATABASE_URL: \"${{ steps.create_neon_branch.outputs.db_url }}\"\n\n  delete_neon_branch:\n    name: Delete Neon Branch\n    needs: setup\n    if: github.event_name == 'pull_request' && github.event.action == 'closed'\n    runs-on: ubuntu-latest\n    steps:\n      - name: Delete Neon Branch\n        uses: neondatabase/delete-branch-action@v3\n        with:\n          project_id: ${{ vars.NEON_PROJECT_ID }}\n          branch: preview/pr-${{ github.event.number }}-${{ needs.setup.outputs.branch }}\n          api_key: ${{ secrets.NEON_API_KEY }}\n"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "[feature]-push": {
+    "2024-04-25T14-53-14Z": []
+  },
+  "metadata": {
+    "2024-04-25T14-53-14Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "backend/*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "create-pull-request": 3
+      },
+      "line_count": 24,
+      "workflow": "name: Create Pull Request Feature\non:\n  push:\n    branches:\n      - backend/*\nenv:\n    BRANCH: \"backend-main\"\njobs:\n  create-pull-request:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v6\n      - name: Check out repository code\n        uses: actions/checkout@v3\n      - name: pull-request\n        uses: repo-sync/pull-request@v2\n        with:\n          destination_branch: \"$BRANCH\"\n          pr_label: \"Feature automated PR (backend/)\"\n          pr_title: \"${{ steps.branch-name.outputs.current_branch }} into $BRANCH\"\n          github_token: ${{ secrets.GAT }}\n          pr_allow_empty: true"
+    }
+  }
+}

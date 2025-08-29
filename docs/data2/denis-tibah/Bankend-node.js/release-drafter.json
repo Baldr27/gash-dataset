@@ -1,0 +1,105 @@
+{
+  "release-drafter": {
+    "2021-08-02T19-34-59Z": [
+      {
+        "region": {
+          "startLine": 15,
+          "startColumn": 5,
+          "endLine": 29,
+          "endColumn": 53
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-08-02T20-01-41Z": [
+      {
+        "region": {
+          "startLine": 15,
+          "startColumn": 5,
+          "endLine": 29,
+          "endColumn": 53
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2023-06-16T16-52-11Z": []
+  },
+  "metadata": {
+    "2021-08-02T19-34-59Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "master"
+          ]
+        },
+        "pull_request": {
+          "types": [
+            "opened",
+            "reopened",
+            "synchronize"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "update_release_draft": 1
+      },
+      "line_count": 29,
+      "workflow": "name: Release Drafter\n\non:\n  push:\n    # branches to consider in the event; optional, defaults to all\n    branches:\n      - master\n  # pull_request event is required only for autolabeler\n  pull_request:\n    # Only following types are handled by the action, but one can default to all as well\n    types: [opened, reopened, synchronize]\n\njobs:\n  update_release_draft:\n    runs-on: ubuntu-latest\n    steps:\n      # (Optional) GitHub Enterprise requires GHE_HOST variable set\n      #- name: Set GHE_HOST\n      #  run: |\n      #    echo \"GHE_HOST=${GITHUB_SERVER_URL##https:\\/\\/}\" >> $GITHUB_ENV\n\n      # Drafts your next Release notes as Pull Requests are merged into \"master\"\n      - uses: release-drafter/release-drafter@v5\n        # (Optional) specify config name to use, relative to .github/. Default: release-drafter.yml\n        # with:\n        #   config-name: my-config.yml\n        #   disable-autolabeler: true\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n"
+    },
+    "2021-08-02T20-01-41Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "types": [
+            "opened",
+            "reopened",
+            "synchronize"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "update_release_draft": 1
+      },
+      "line_count": 29,
+      "workflow": "name: Release Drafter\n\non:\n  push:\n    # branches to consider in the event; optional, defaults to all\n    branches:\n      - main\n  # pull_request event is required only for autolabeler\n  pull_request:\n    # Only following types are handled by the action, but one can default to all as well\n    types: [opened, reopened, synchronize]\n\njobs:\n  update_release_draft:\n    runs-on: ubuntu-latest\n    steps:\n      # (Optional) GitHub Enterprise requires GHE_HOST variable set\n      #- name: Set GHE_HOST\n      #  run: |\n      #    echo \"GHE_HOST=${GITHUB_SERVER_URL##https:\\/\\/}\" >> $GITHUB_ENV\n\n      # Drafts your next Release notes as Pull Requests are merged into \"master\"\n      - uses: release-drafter/release-drafter@v5\n        # (Optional) specify config name to use, relative to .github/. Default: release-drafter.yml\n        # with:\n        #   config-name: my-config.yml\n        #   disable-autolabeler: true\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n"
+    },
+    "2023-06-16T16-52-11Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        },
+        "pull_request": {
+          "types": [
+            "opened",
+            "reopened",
+            "synchronize"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "update_release_draft": 1
+      },
+      "line_count": 35,
+      "workflow": "name: Release Drafter\n\non:\n  push:\n    # branches to consider in the event; optional, defaults to all\n    branches:\n      - main\n  # pull_request event is required only for autolabeler\n  pull_request:\n    # Only following types are handled by the action, but one can default to all as well\n    types: [opened, reopened, synchronize]\n\njobs:\n  update_release_draft:\n    permissions:\n      # write permission is required to create a github release\n      contents: write\n      # write permission is required for autolabeler\n      # otherwise, read permission is required at least\n      pull-requests: write\n    runs-on: ubuntu-latest\n    steps:\n      # (Optional) GitHub Enterprise requires GHE_HOST variable set\n      #- name: Set GHE_HOST\n      #  run: |\n      #    echo \"GHE_HOST=${GITHUB_SERVER_URL##https:\\/\\/}\" >> $GITHUB_ENV\n\n      # Drafts your next Release notes as Pull Requests are merged into \"master\"\n      - uses: release-drafter/release-drafter@v5\n        # (Optional) specify config name to use, relative to .github/. Default: release-drafter.yml\n        # with:\n        #   config-name: my-config.yml\n        #   disable-autolabeler: true\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n"
+    }
+  }
+}

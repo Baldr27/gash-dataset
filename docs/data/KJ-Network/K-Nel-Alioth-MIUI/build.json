@@ -1,0 +1,68 @@
+{
+  "build": {
+    "2025-05-25T10-27-17Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 99,
+          "endColumn": 11
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2025-05-30T22-24-49Z": [
+      {
+        "region": {
+          "startLine": 9,
+          "startColumn": 5,
+          "endLine": 100,
+          "endColumn": 11
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2025-05-25T10-27-17Z": {
+      "triggers": {
+        "push": {
+          "tags": [
+            "C-*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 12
+      },
+      "line_count": 99,
+      "workflow": "name: Build K-Nel Alioth\non:\n  push:\n    tags:\n      - \"C-*\"\n\njobs:\n  build:\n    name: Build K-Nel Alioth by ${{ github.actor }}\n    runs-on: ubuntu-24.04\n    steps:\n\n      - name: Set Beijing timezone\n        uses: szenius/set-timezone@v1.2\n        with:\n          timezoneLinux: \"Asia/Shanghai\"\n\n      - name: Set SWAP to 5GiB\n        uses: pierotofy/set-swap-space@master\n        with:\n          swap-size-gb: 5\n\n      - name: Clean useless files\n        run: |\n          sudo rm -rf \"/usr/local/share/boost\"\n          sudo rm -rf \"$AGENT_TOOLSDIRECTORY\"\n          \n      - name: Get Tag Name\n        id: get-tag\n        run: |\n          echo \"TAG_NAME=$(echo $GITHUB_REF | cut -d'/' -f3)\" >> $GITHUB_OUTPUT\n\n      - name: Initialize compilation environment\n        run: |\n          sudo apt-get update\n          sudo apt-get install git automake flex lzop bison gperf build-essential zip curl zlib1g-dev g++-multilib gcc-multilib libxml2-utils bzip2 libbz2-dev libbz2-1.0 libghc-bzlib-dev squashfs-tools pngcrush schedtool dpkg-dev liblz4-tool make optipng maven libssl-dev pwgen libswitch-perl policycoreutils minicom libxml-sax-base-perl libxml-simple-perl bc libc6-dev-i386 libx11-dev lib32z-dev libgl1-mesa-dev xsltproc unzip device-tree-compiler python3 ccache git-lfs gnupg imagemagick libelf-dev libncurses5-dev libsdl1.2-dev rsync adb fastboot cpio libstdc++6 -y\n          mkdir -p $GITHUB_WORKSPACE/workdir\n          cd $GITHUB_WORKSPACE/workdir\n          echo \"BUILD_TIME=$(TZ=Asia/Shanghai date \"+%Y%m%d%H%M\")\" >> $GITHUB_ENV\n\n      - name: Get Toolchain\n        run: |\n          git clone -q https://gitlab.com/ThankYouMario/android_prebuilts_clang-standalone.git --depth 1 $GITHUB_WORKSPACE/workdir/toolchain/llvm\n          git clone https://github.com/KJ-Network/python-2.7.18-prebuilt.git --depth=1 $GITHUB_WORKSPACE/workdir/toolchain/python2\n\n      - name: Get Kernel source\n        run: |\n          git clone https://github.com/$GITHUB_REPOSITORY/ --depth 1 -b ${{ steps.get-tag.outputs.TAG_NAME }} $GITHUB_WORKSPACE/workdir/source\n          \n      - name: Processing submodules\n        run: |\n          cd $GITHUB_WORKSPACE/workdir/source\n          git submodule update --init --remote --rebase --recursive KernelSU\n          sed -i -e '$a\\'$'\\n''CONFIG_KSU=y\\nCONFIG_KSU_MANUAL_HOOK=y\\nCONFIG_KPM=y\\nCONFIG_KSU_SUSFS=y\\nCONFIG_KSU_SUSFS_HAS_MAGIC_MOUNT=y\\nCONFIG_KSU_SUSFS_SUS_PATH=y\\nCONFIG_KSU_SUSFS_SUS_MOUNT=y\\nCONFIG_KSU_SUSFS_AUTO_ADD_SUS_KSU_DEFAULT_MOUNT=y\\nCONFIG_KSU_SUSFS_AUTO_ADD_SUS_BIND_MOUNT=y\\nCONFIG_KSU_SUSFS_SUS_KSTAT=y\\nCONFIG_KSU_SUSFS_TRY_UMOUNT=y\\nCONFIG_KSU_SUSFS_AUTO_ADD_TRY_UMOUNT_FOR_BIND_MOUNT=y\\nCONFIG_KSU_SUSFS_SPOOF_UNAME=y\\nCONFIG_KSU_SUSFS_ENABLE_LOG=y\\nCONFIG_KSU_SUSFS_HIDE_KSU_SUSFS_SYMBOLS=y\\nCONFIG_KSU_SUSFS_OPEN_REDIRECT=y' arch/arm64/configs/alioth_k-nel_defconfig\n          \n      - name: Build Kernel\n        run: |\n          export LOCALVERSION=${{ steps.get-tag.outputs.TAG_NAME }}\n          export KBUILD_BUILD_HOST=Github-Action\n          export KBUILD_BUILD_USER=$(echo ${{ github.actor }} | tr A-Z a-z)\n          export ARCH=\"arm64\"\n          export SUBARCH=\"arm64\"\n          export PATH=\"$GITHUB_WORKSPACE/workdir/toolchain/llvm/bin:$GITHUB_WORKSPACE/workdir/toolchain/python2/bin:$PATH\"\n          export LD_LIBRARY_PATH=\"$GITHUB_WORKSPACE/workdir/toolchain/llvm/lib64:$GITHUB_WORKSPACE/workdir/toolchain/python2/lib:$LD_LIBRARY_PATH\"\n          export KBUILD_COMPILER_STRING=$(clang --version | head -n 1 | perl -pe 's/\\(http.*?\\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')\n          export KBUILD_LINKER_STRING=$(ld.lld --version | head -n 1 | perl -pe 's/\\(http.*?\\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//' | sed 's/(compatible with [^)]*)//')\n          export CC=clang\n          export LLVM=1\n          export LLVM_IAS=1\n          export CLANG_TRIPLE=\"aarch64-linux-gnu-\"\n          export CROSS_COMPILE=\"aarch64-linux-android-\"\n          cd $GITHUB_WORKSPACE/workdir/source\n          make O=out alioth_k-nel_defconfig\n          make -j$(nproc --all) O=out CC=\"ccache clang\" HOSTCC=\"ccache gcc\" HOSTCXX=\"ccache g++\" 2>&1\n\n      - name: Patch SukiSU Ultra KPM\n        run: |\n          mkdir $GITHUB_WORKSPACE/workdir/SukiSU-Patch\n          cd $GITHUB_WORKSPACE/workdir/SukiSU-Patch\n          wget https://raw.githubusercontent.com/ShirkNeko/SukiSU_patch/refs/heads/main/kpm/patch_linux\n          cp $GITHUB_WORKSPACE/workdir/source/out/arch/arm64/boot/Image .\n          cp $GITHUB_WORKSPACE/workdir/source/out/arch/arm64/boot/dts/vendor/qcom/*.dtb .\n          chmod +x patch_linux\n          ./patch_linux\n          mv -f oImage Image\n          gzip -k Image Image.gz\n          cat Image.gz *.dtb > Image.gz-dtb\n\n      - name: Pack Kernel\n        run: |\n          cp $GITHUB_WORKSPACE/workdir/SukiSU-Patch/Image.gz-dtb $GITHUB_WORKSPACE/workdir/source/android/Packer/\n          sed -i '/description/ s/$/ Just installed K-Nel Alioth version: ${{ steps.get-tag.outputs.TAG_NAME }}/'  $GITHUB_WORKSPACE/workdir/source/android/Packer/module.prop\n          \n      - name: Upload Kernel Package\n        uses: actions/upload-artifact@v4\n        with:\n          name: K-Nel_Alioth_${{ steps.get-tag.outputs.TAG_NAME }}_AK3&APM_${{ env.BUILD_TIME }}\n          path: workdir/source/android/Packer/*\n          "
+    },
+    "2025-05-30T22-24-49Z": {
+      "triggers": {
+        "push": {
+          "tags": [
+            "C-*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 12
+      },
+      "line_count": 100,
+      "workflow": "name: Build K-Nel Alioth\non:\n  push:\n    tags:\n      - \"C-*\"\n\njobs:\n  build:\n    name: Build K-Nel Alioth by ${{ github.actor }}\n    runs-on: ubuntu-24.04\n    steps:\n\n      - name: Set Beijing timezone\n        uses: szenius/set-timezone@v1.2\n        with:\n          timezoneLinux: \"Asia/Shanghai\"\n\n      - name: Set SWAP to 5GiB\n        uses: pierotofy/set-swap-space@master\n        with:\n          swap-size-gb: 5\n\n      - name: Clean useless files\n        run: |\n          sudo rm -rf \"/usr/local/share/boost\"\n          sudo rm -rf \"$AGENT_TOOLSDIRECTORY\"\n          \n      - name: Get Tag Name\n        id: get-tag\n        run: |\n          echo \"TAG_NAME=$(echo $GITHUB_REF | cut -d'/' -f3)\" >> $GITHUB_OUTPUT\n\n      - name: Initialize compilation environment\n        run: |\n          sudo apt-get update\n          sudo apt-get install git automake flex lzop bison gperf build-essential zip curl zlib1g-dev g++-multilib gcc-multilib libxml2-utils bzip2 libbz2-dev libbz2-1.0 libghc-bzlib-dev squashfs-tools pngcrush schedtool dpkg-dev liblz4-tool make optipng maven libssl-dev pwgen libswitch-perl policycoreutils minicom libxml-sax-base-perl libxml-simple-perl bc libc6-dev-i386 libx11-dev lib32z-dev libgl1-mesa-dev xsltproc unzip device-tree-compiler python3 ccache git-lfs gnupg imagemagick libelf-dev libncurses5-dev libsdl1.2-dev rsync adb fastboot cpio libstdc++6 -y\n          mkdir -p $GITHUB_WORKSPACE/workdir\n          cd $GITHUB_WORKSPACE/workdir\n          echo \"BUILD_TIME=$(TZ=Asia/Shanghai date \"+%Y%m%d%H%M\")\" >> $GITHUB_ENV\n\n      - name: Get Toolchain\n        run: |\n          git clone -q https://gitlab.com/ThankYouMario/android_prebuilts_clang-standalone.git --depth 1 $GITHUB_WORKSPACE/workdir/toolchain/llvm\n          git clone https://github.com/KJ-Network/python-2.7.18-prebuilt.git --depth=1 $GITHUB_WORKSPACE/workdir/toolchain/python2\n\n      - name: Get Kernel source\n        run: |\n          git clone https://github.com/$GITHUB_REPOSITORY/ --depth 1 -b ${{ steps.get-tag.outputs.TAG_NAME }} $GITHUB_WORKSPACE/workdir/source\n          \n      - name: Processing submodules\n        run: |\n          cd $GITHUB_WORKSPACE/workdir/source\n          git submodule update --init --remote --rebase --recursive KernelSU\n          sed -i -e '$a\\'$'\\n''CONFIG_KSU=y\\nCONFIG_KSU_MANUAL_HOOK=y\\nCONFIG_KPM=y\\nCONFIG_KSU_SUSFS=y\\nCONFIG_KSU_SUSFS_HAS_MAGIC_MOUNT=y\\nCONFIG_KSU_SUSFS_SUS_PATH=y\\nCONFIG_KSU_SUSFS_SUS_MOUNT=y\\nCONFIG_KSU_SUSFS_AUTO_ADD_SUS_KSU_DEFAULT_MOUNT=y\\nCONFIG_KSU_SUSFS_AUTO_ADD_SUS_BIND_MOUNT=y\\nCONFIG_KSU_SUSFS_SUS_KSTAT=y\\nCONFIG_KSU_SUSFS_TRY_UMOUNT=y\\nCONFIG_KSU_SUSFS_AUTO_ADD_TRY_UMOUNT_FOR_BIND_MOUNT=y\\nCONFIG_KSU_SUSFS_SPOOF_UNAME=y\\nCONFIG_KSU_SUSFS_ENABLE_LOG=y\\nCONFIG_KSU_SUSFS_HIDE_KSU_SUSFS_SYMBOLS=y\\nCONFIG_KSU_SUSFS_OPEN_REDIRECT=y' arch/arm64/configs/alioth_k-nel_defconfig\n          \n      - name: Build Kernel\n        run: |\n          export LOCALVERSION=${{ steps.get-tag.outputs.TAG_NAME }}\n          export KBUILD_BUILD_HOST=Github-Action\n          export KBUILD_BUILD_USER=$(echo ${{ github.actor }} | tr A-Z a-z)\n          export ARCH=\"arm64\"\n          export SUBARCH=\"arm64\"\n          export PATH=\"$GITHUB_WORKSPACE/workdir/toolchain/llvm/bin:$GITHUB_WORKSPACE/workdir/toolchain/python2/bin:$PATH\"\n          export LD_LIBRARY_PATH=\"$GITHUB_WORKSPACE/workdir/toolchain/llvm/lib64:$GITHUB_WORKSPACE/workdir/toolchain/python2/lib:$LD_LIBRARY_PATH\"\n          export KBUILD_COMPILER_STRING=$(clang --version | head -n 1 | perl -pe 's/\\(http.*?\\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')\n          export KBUILD_LINKER_STRING=$(ld.lld --version | head -n 1 | perl -pe 's/\\(http.*?\\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//' | sed 's/(compatible with [^)]*)//')\n          export CC=clang\n          export LLVM=1\n          export LLVM_IAS=1\n          export CLANG_TRIPLE=\"aarch64-linux-gnu-\"\n          export CROSS_COMPILE=\"aarch64-linux-android-\"\n          cd $GITHUB_WORKSPACE/workdir/source\n          make O=out alioth_k-nel_defconfig\n          make -j$(nproc --all) O=out CC=\"ccache clang\" HOSTCC=\"ccache gcc\" HOSTCXX=\"ccache g++\" 2>&1\n\n      - name: Patch SukiSU Ultra KPM\n        run: |\n          mkdir $GITHUB_WORKSPACE/workdir/SukiSU-Patch\n          cd $GITHUB_WORKSPACE/workdir/SukiSU-Patch\n          wget https://raw.githubusercontent.com/ShirkNeko/SukiSU_patch/refs/heads/main/kpm/patch_linux\n          cp $GITHUB_WORKSPACE/workdir/source/out/arch/arm64/boot/Image .\n          cp $GITHUB_WORKSPACE/workdir/source/out/arch/arm64/boot/dts/vendor/qcom/*.dtb .\n          chmod +x patch_linux\n          ./patch_linux\n          mv -f oImage Image\n          gzip -k Image Image.gz\n          cat Image.gz *.dtb > Image.gz-dtb\n\n      - name: Pack Kernel\n        run: |\n          cp $GITHUB_WORKSPACE/workdir/SukiSU-Patch/Image.gz-dtb $GITHUB_WORKSPACE/workdir/source/android/Packer/\n          cp $GITHUB_WORKSPACE/workdir/source/out/arch/arm64/boot/dtbo.img $GITHUB_WORKSPACE/workdir/source/android/Packer/\n          sed -i '/description/ s/$/ Just installed K-Nel Alioth version: ${{ steps.get-tag.outputs.TAG_NAME }}/'  $GITHUB_WORKSPACE/workdir/source/android/Packer/module.prop\n          \n      - name: Upload Kernel Package\n        uses: actions/upload-artifact@v4\n        with:\n          name: K-Nel_Alioth_${{ steps.get-tag.outputs.TAG_NAME }}_AK3&APM_${{ env.BUILD_TIME }}\n          path: workdir/source/android/Packer/*\n          "
+    }
+  }
+}

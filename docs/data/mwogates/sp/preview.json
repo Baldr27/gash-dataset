@@ -1,0 +1,170 @@
+{
+  "preview": {
+    "2024-06-14T23-38-38Z": [
+      {
+        "region": {
+          "startLine": 3,
+          "startColumn": 5,
+          "endLine": 78,
+          "endColumn": 34
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 6,
+          "startColumn": 9,
+          "endLine": 9,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v6](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2024-06-14T23-29-39Z": [
+      {
+        "region": {
+          "startLine": 3,
+          "startColumn": 5,
+          "endLine": 57,
+          "endColumn": 33
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 6,
+          "startColumn": 9,
+          "endLine": 9,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v6](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2024-06-15T00-12-05Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 9,
+          "endLine": 10,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v6](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2024-06-14T23-59-12Z": [
+      {
+        "region": {
+          "startLine": 8,
+          "startColumn": 9,
+          "endLine": 11,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v6](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ]
+  },
+  "metadata": {
+    "2024-06-14T23-38-38Z": {
+      "triggers": {
+        "pull_request": {
+          "branches": [
+            "main"
+          ],
+          "paths": [
+            "theme/**"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy": 13
+      },
+      "line_count": 85,
+      "workflow": "jobs:\n  deploy:\n    name: Deploy\n    runs-on: ubuntu-latest\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v6\n      - uses: actions/checkout@v3\n      - uses: actions/setup-node@v3\n        with:\n          node-version: 20\n      - uses: ruby/setup-ruby@v1\n        with:\n          ruby-version: 3.1\n          bundler: 'latest'\n      - name: Install Shopify CLI\n        run: npm install -g @shopify/cli @shopify/theme\n      - name: Select Store\n        id: select-store\n        uses: actions/github-script@v6\n        with:\n          result-encoding: string\n          script: |\n            return 'sp-home-test'\n      - name: Select Token\n        id: select-token\n        uses: actions/github-script@v6\n        with:\n          result-encoding: string\n          script: |\n            return 'shptka_5a287548322834b94b68e577aaf85239'\n      - name: Check theme existence\n        id: check-theme-existence\n        env:\n          SHOPIFY_FLAG_STORE: ${{ steps.select-store.outputs.result }}\n          SHOPIFY_CLI_THEME_TOKEN: ${{ steps.select-token.outputs.result }}\n        run: |\n          echo \"THEME_COUNT=$(shopify theme list | grep '${{ steps.branch-name.outputs.current_branch }}' -c)\" >> $GITHUB_OUTPUT\n      - name: Create a new unpublished theme\n        id: create-theme\n        env:\n          SHOPIFY_FLAG_STORE: ${{ steps.select-store.outputs.result }}\n          SHOPIFY_CLI_THEME_TOKEN: ${{ steps.select-token.outputs.result }}\n          SHOPIFY_FLAG_PATH: './theme'\n          SHOPIFY_FLAG_THEME_ID: ${{ steps.branch-name.outputs.current_branch }}\n        if: steps.check-theme-existence.outputs.THEME_COUNT == 0\n        run: echo \"PREVIEW_URL=$(shopify theme push -u --json | jq '.theme.preview_url')\" >> $GITHUB_OUTPUT\n      - name: Update the existing theme\n        id: update-theme\n        env:\n          SHOPIFY_FLAG_STORE: ${{ steps.select-store.outputs.result }}\n          SHOPIFY_CLI_THEME_TOKEN: ${{ steps.select-token.outputs.result }}\n          SHOPIFY_FLAG_PATH: './theme'\n          SHOPIFY_FLAG_THEME_ID: ${{ steps.branch-name.outputs.current_branch }}\n        if: steps.check-theme-existence.outputs.THEME_COUNT > 0\n        run: shopify theme push\n      - name: Parse Theme URL\n        id: parse-theme\n        if: steps.check-theme-existence.outputs.THEME_COUNT == 0\n        uses: actions/github-script@v6\n        with:\n          result-encoding: string\n          script: return ${{ steps.create-theme.outputs.PREVIEW_URL }}\n      - name: Comment on PR (Preview Link)\n        if: steps.check-theme-existence.outputs.THEME_COUNT == 0\n        uses: thollander/actions-comment-pull-request@v2\n        with:\n          comment_tag: preview\n          message: |\n            \ud83d\udfe2 Preview Theme: ${{ steps.parse-theme.outputs.result }}\n      - name: Comment on PR (Failure)\n        if: ${{ failure() }}\n        uses: thollander/actions-comment-pull-request@v2\n        with:\n          comment_tag: preview\n          message: |\n            \ud83d\udd34 Deployment Failed\nname: 'Preview'\non:\n  pull_request:\n    branches:\n      - main\n    paths:\n      - 'theme/**'\n"
+    },
+    "2024-06-14T23-29-39Z": {
+      "triggers": {
+        "pull_request": {
+          "branches": [
+            "main"
+          ],
+          "paths": [
+            "theme/**"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy": 10
+      },
+      "line_count": 64,
+      "workflow": "jobs:\n  deploy:\n    name: Deploy\n    runs-on: ubuntu-latest\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v6\n      - uses: actions/checkout@v3\n      - uses: actions/setup-node@v3\n        with:\n          node-version: 20\n      - uses: ruby/setup-ruby@v1\n        with:\n          ruby-version: 3.1\n          bundler: 'latest'\n      - name: Install Shopify CLI\n        run: npm install -g @shopify/cli @shopify/theme\n      - name: Select Store\n        id: select-store\n        uses: actions/github-script@v6\n        with:\n          result-encoding: string\n          script: |\n            return 'sp-home-test'\n      - name: Select Token\n        id: select-token\n        uses: actions/github-script@v6\n        with:\n          result-encoding: string\n          script: |\n            return 'shptka_5a287548322834b94b68e577aaf85239'\n      - name: Check theme existence\n        id: check-theme-existence\n        env:\n          SHOPIFY_FLAG_STORE: ${{ steps.select-store.outputs.result }}\n          SHOPIFY_CLI_THEME_TOKEN: ${{ steps.select-token.outputs.result }}\n        run: |\n          echo \"THEME_COUNT=$(shopify theme list | grep '${{ steps.branch-name.outputs.current_branch }}' -c)\" >> $GITHUB_OUTPUT\n      - name: Create a new unpublished theme\n        id: create-theme\n        env:\n          SHOPIFY_FLAG_STORE: ${{ steps.select-store.outputs.result }}\n          SHOPIFY_CLI_THEME_TOKEN: ${{ steps.select-token.outputs.result }}\n          SHOPIFY_FLAG_PATH: './theme'\n          SHOPIFY_FLAG_THEME_ID: ${{ steps.branch-name.outputs.current_branch }}\n        if: steps.check-theme-existence.outputs.THEME_COUNT == 0\n        run: shopify theme push -u\n      - name: Update the existing theme\n        id: update-theme\n        env:\n          SHOPIFY_FLAG_STORE: ${{ steps.select-store.outputs.result }}\n          SHOPIFY_CLI_THEME_TOKEN: ${{ steps.select-token.outputs.result }}\n          SHOPIFY_FLAG_PATH: './theme'\n          SHOPIFY_FLAG_THEME_ID: ${{ steps.branch-name.outputs.current_branch }}\n        if: steps.check-theme-existence.outputs.THEME_COUNT > 0\n        run: shopify theme push\nname: 'Preview'\non:\n  pull_request:\n    branches:\n      - main\n    paths:\n      - 'theme/**'\n"
+    },
+    "2024-06-15T00-12-05Z": {
+      "triggers": {
+        "pull_request": {
+          "branches": [
+            "main"
+          ],
+          "paths": [
+            "theme/**"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy": 13
+      },
+      "line_count": 86,
+      "workflow": "jobs:\n  deploy:\n    name: Deploy\n    runs-on: ubuntu-latest\n    permissions: write-all\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v6\n      - uses: actions/checkout@v3\n      - uses: actions/setup-node@v3\n        with:\n          node-version: 20\n      - uses: ruby/setup-ruby@v1\n        with:\n          ruby-version: 3.1\n          bundler: 'latest'\n      - name: Install Shopify CLI\n        run: npm install -g @shopify/cli @shopify/theme\n      - name: Select Store\n        id: select-store\n        uses: actions/github-script@v6\n        with:\n          result-encoding: string\n          script: |\n            return 'sp-home-test'\n      - name: Select Token\n        id: select-token\n        uses: actions/github-script@v6\n        with:\n          result-encoding: string\n          script: |\n            return 'shptka_5a287548322834b94b68e577aaf85239'\n      - name: Check theme existence\n        id: check-theme-existence\n        env:\n          SHOPIFY_FLAG_STORE: ${{ steps.select-store.outputs.result }}\n          SHOPIFY_CLI_THEME_TOKEN: ${{ steps.select-token.outputs.result }}\n        run: |\n          echo \"THEME_COUNT=$(shopify theme list | grep '${{ steps.branch-name.outputs.current_branch }}' -c)\" >> $GITHUB_OUTPUT\n      - name: Create a new unpublished theme\n        id: create-theme\n        env:\n          SHOPIFY_FLAG_STORE: ${{ steps.select-store.outputs.result }}\n          SHOPIFY_CLI_THEME_TOKEN: ${{ steps.select-token.outputs.result }}\n          SHOPIFY_FLAG_PATH: './theme'\n          SHOPIFY_FLAG_THEME_ID: ${{ steps.branch-name.outputs.current_branch }}\n        if: steps.check-theme-existence.outputs.THEME_COUNT == 0\n        run: echo \"PREVIEW_URL=$(shopify theme push -u --json | jq '.theme.preview_url')\" >> $GITHUB_OUTPUT\n      - name: Update the existing theme\n        id: update-theme\n        env:\n          SHOPIFY_FLAG_STORE: ${{ steps.select-store.outputs.result }}\n          SHOPIFY_CLI_THEME_TOKEN: ${{ steps.select-token.outputs.result }}\n          SHOPIFY_FLAG_PATH: './theme'\n          SHOPIFY_FLAG_THEME_ID: ${{ steps.branch-name.outputs.current_branch }}\n        if: steps.check-theme-existence.outputs.THEME_COUNT > 0\n        run: shopify theme push\n      - name: Parse Theme URL\n        id: parse-theme\n        if: steps.check-theme-existence.outputs.THEME_COUNT == 0\n        uses: actions/github-script@v6\n        with:\n          result-encoding: string\n          script: return ${{ steps.create-theme.outputs.PREVIEW_URL }}\n      - name: Comment on PR (Preview Link)\n        if: steps.check-theme-existence.outputs.THEME_COUNT == 0\n        uses: thollander/actions-comment-pull-request@v2\n        with:\n          comment_tag: preview\n          message: |\n            \ud83d\udfe2 Preview Theme: ${{ steps.parse-theme.outputs.result }}\n      - name: Comment on PR (Failure)\n        if: ${{ failure() }}\n        uses: thollander/actions-comment-pull-request@v2\n        with:\n          comment_tag: preview\n          message: |\n            \ud83d\udd34 Deployment Failed\nname: 'Preview'\non:\n  pull_request:\n    branches:\n      - main\n    paths:\n      - 'theme/**'\n"
+    },
+    "2024-06-14T23-59-12Z": {
+      "triggers": {
+        "pull_request": {
+          "branches": [
+            "main"
+          ],
+          "paths": [
+            "theme/**"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy": 13
+      },
+      "line_count": 87,
+      "workflow": "jobs:\n  deploy:\n    name: Deploy\n    runs-on: ubuntu-latest\n    permissions:\n      pull-requests: write\n    steps:\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v6\n      - uses: actions/checkout@v3\n      - uses: actions/setup-node@v3\n        with:\n          node-version: 20\n      - uses: ruby/setup-ruby@v1\n        with:\n          ruby-version: 3.1\n          bundler: 'latest'\n      - name: Install Shopify CLI\n        run: npm install -g @shopify/cli @shopify/theme\n      - name: Select Store\n        id: select-store\n        uses: actions/github-script@v6\n        with:\n          result-encoding: string\n          script: |\n            return 'sp-home-test'\n      - name: Select Token\n        id: select-token\n        uses: actions/github-script@v6\n        with:\n          result-encoding: string\n          script: |\n            return 'shptka_5a287548322834b94b68e577aaf85239'\n      - name: Check theme existence\n        id: check-theme-existence\n        env:\n          SHOPIFY_FLAG_STORE: ${{ steps.select-store.outputs.result }}\n          SHOPIFY_CLI_THEME_TOKEN: ${{ steps.select-token.outputs.result }}\n        run: |\n          echo \"THEME_COUNT=$(shopify theme list | grep '${{ steps.branch-name.outputs.current_branch }}' -c)\" >> $GITHUB_OUTPUT\n      - name: Create a new unpublished theme\n        id: create-theme\n        env:\n          SHOPIFY_FLAG_STORE: ${{ steps.select-store.outputs.result }}\n          SHOPIFY_CLI_THEME_TOKEN: ${{ steps.select-token.outputs.result }}\n          SHOPIFY_FLAG_PATH: './theme'\n          SHOPIFY_FLAG_THEME_ID: ${{ steps.branch-name.outputs.current_branch }}\n        if: steps.check-theme-existence.outputs.THEME_COUNT == 0\n        run: echo \"PREVIEW_URL=$(shopify theme push -u --json | jq '.theme.preview_url')\" >> $GITHUB_OUTPUT\n      - name: Update the existing theme\n        id: update-theme\n        env:\n          SHOPIFY_FLAG_STORE: ${{ steps.select-store.outputs.result }}\n          SHOPIFY_CLI_THEME_TOKEN: ${{ steps.select-token.outputs.result }}\n          SHOPIFY_FLAG_PATH: './theme'\n          SHOPIFY_FLAG_THEME_ID: ${{ steps.branch-name.outputs.current_branch }}\n        if: steps.check-theme-existence.outputs.THEME_COUNT > 0\n        run: shopify theme push\n      - name: Parse Theme URL\n        id: parse-theme\n        if: steps.check-theme-existence.outputs.THEME_COUNT == 0\n        uses: actions/github-script@v6\n        with:\n          result-encoding: string\n          script: return ${{ steps.create-theme.outputs.PREVIEW_URL }}\n      - name: Comment on PR (Preview Link)\n        if: steps.check-theme-existence.outputs.THEME_COUNT == 0\n        uses: thollander/actions-comment-pull-request@v2\n        with:\n          comment_tag: preview\n          message: |\n            \ud83d\udfe2 Preview Theme: ${{ steps.parse-theme.outputs.result }}\n      - name: Comment on PR (Failure)\n        if: ${{ failure() }}\n        uses: thollander/actions-comment-pull-request@v2\n        with:\n          comment_tag: preview\n          message: |\n            \ud83d\udd34 Deployment Failed\nname: 'Preview'\non:\n  pull_request:\n    branches:\n      - main\n    paths:\n      - 'theme/**'\n"
+    }
+  }
+}

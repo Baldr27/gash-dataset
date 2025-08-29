@@ -1,0 +1,273 @@
+{
+  "draft-release": {
+    "2023-04-11T18-53-05Z": [
+      {
+        "region": {
+          "startLine": 7,
+          "startColumn": 5,
+          "endLine": 11,
+          "endColumn": 53
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-02-08T09-38-06Z": [
+      {
+        "region": {
+          "startLine": 17,
+          "startColumn": 5,
+          "endLine": 49,
+          "endColumn": 52
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-04-24T10-55-36Z": [
+      {
+        "region": {
+          "startLine": 17,
+          "startColumn": 5,
+          "endLine": 50,
+          "endColumn": 53
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-04-26T17-18-00Z": [
+      {
+        "region": {
+          "startLine": 17,
+          "startColumn": 5,
+          "endLine": 51,
+          "endColumn": 53
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-04-24T15-25-48Z": [
+      {
+        "region": {
+          "startLine": 17,
+          "startColumn": 5,
+          "endLine": 51,
+          "endColumn": 53
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-05-14T15-38-06Z": [
+      {
+        "region": {
+          "startLine": 17,
+          "startColumn": 5,
+          "endLine": 51,
+          "endColumn": 53
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2024-06-20T12-39-38Z": [
+      {
+        "region": {
+          "startLine": 17,
+          "startColumn": 5,
+          "endLine": 51,
+          "endColumn": 53
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2023-04-11T18-53-05Z": {
+      "triggers": {
+        "workflow_dispatch": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "update_release_draft": 1
+      },
+      "line_count": 11,
+      "workflow": "name: Release Drafter\n\non: workflow_dispatch\n\njobs:\n  update_release_draft:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: release-drafter/release-drafter@v5.21.0\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n"
+    },
+    "2024-02-08T09-38-06Z": {
+      "triggers": {
+        "workflow_dispatch": {
+          "inputs": {
+            "release_pr_number": {
+              "description": "Release PR Number",
+              "required": true,
+              "default": ""
+            },
+            "tag": {
+              "description": "Tag for release (manual input)",
+              "required": true,
+              "default": ""
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "update_release_draft": 5
+      },
+      "line_count": 49,
+      "workflow": "name: Release Drafter\n\non: \n  workflow_dispatch:\n    inputs:\n      release_pr_number:\n        description: 'Release PR Number'\n        required: true\n        default: ''\n      tag:\n        description: 'Tag for release (manual input)'\n        required: true\n        default: ''\n\njobs:\n  update_release_draft:\n    runs-on: ubuntu-latest\n    steps:\n      - name: \ud83d\udcdf Checkout code\n        uses: actions/checkout@v4\n\n      - name: \ud83d\udcdd Release Drafter\n        id: release-drafter\n        uses: release-drafter/release-drafter@v6.0.0\n        # with:\n        #   config-name: platform-drafter.yml\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: \ud83d\udcbe Save Changelog\n        run: |\n          cat << 'EOF' > CHANGELOG.md\n          ${{ steps.release-drafter.outputs.body }}\n          EOF\n\n      - name: \ud83e\uddec Process Changelog\n        run: |\n          python process_changelog.py CHANGELOG.md ${{ github.event.inputs.release_pr_number }}\n          cat CHANGELOG.md\n\n      - name: \ud83d\udeeb Create Release\n        uses: mikepenz/action-gh-release@v1\n        with:\n          body_path: \"CHANGELOG.md\"\n          tag_name: ${{ github.event.inputs.tag }}\n          prerelease: false\n          draft: true\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}"
+    },
+    "2024-04-24T10-55-36Z": {
+      "triggers": {
+        "workflow_dispatch": {
+          "inputs": {
+            "release_pr_number": {
+              "description": "Release PR Number",
+              "required": true,
+              "default": ""
+            },
+            "tag": {
+              "description": "Tag for release (manual input)",
+              "required": true,
+              "default": ""
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "update_release_draft": 5
+      },
+      "line_count": 50,
+      "workflow": "name: Release Drafter\n\non:\n  workflow_dispatch:\n    inputs:\n      release_pr_number:\n        description: \"Release PR Number\"\n        required: true\n        default: \"\"\n      tag:\n        description: \"Tag for release (manual input)\"\n        required: true\n        default: \"\"\n\njobs:\n  update_release_draft:\n    runs-on: ubuntu-latest\n    steps:\n      - name: \ud83d\udcdf Checkout code\n        uses: actions/checkout@v4\n\n      - name: \ud83d\udcdd Release Drafter\n        id: release-drafter\n        uses: release-drafter/release-drafter@v6.0.0\n        # with:\n        #   config-name: platform-drafter.yml\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: \ud83d\udcbe Save Changelog\n        run: |\n          cat << 'EOF' > CHANGELOG.md\n          ${{ steps.release-drafter.outputs.body }}\n          EOF\n\n      - name: \ud83e\uddec Process Changelog\n        run: |\n          python process_changelog.py CHANGELOG.md ${{ github.event.inputs.release_pr_number }}\n          python summarize_changelog.py ${{ secrets.GITHUB_TOKEN }} ${{ secrets.OPENAI_API_KEY }}\n          cat CHANGELOG.md\n\n      - name: \ud83d\udeeb Create Release\n        uses: mikepenz/action-gh-release@v1\n        with:\n          body_path: \"CHANGELOG.md\"\n          tag_name: ${{ github.event.inputs.tag }}\n          prerelease: false\n          draft: true\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n"
+    },
+    "2024-04-26T17-18-00Z": {
+      "triggers": {
+        "workflow_dispatch": {
+          "inputs": {
+            "release_pr_number": {
+              "description": "Release PR Number",
+              "required": true,
+              "default": ""
+            },
+            "tag": {
+              "description": "Tag for release (manual input)",
+              "required": true,
+              "default": ""
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "update_release_draft": 5
+      },
+      "line_count": 51,
+      "workflow": "name: Release Drafter\n\non:\n  workflow_dispatch:\n    inputs:\n      release_pr_number:\n        description: \"Release PR Number\"\n        required: true\n        default: \"\"\n      tag:\n        description: \"Tag for release (manual input)\"\n        required: true\n        default: \"\"\n\njobs:\n  update_release_draft:\n    runs-on: ubuntu-latest\n    steps:\n      - name: \ud83d\udcdf Checkout code\n        uses: actions/checkout@v4\n\n      - name: \ud83d\udcdd Release Drafter\n        id: release-drafter\n        uses: release-drafter/release-drafter@v6.0.0\n        # with:\n        #   config-name: platform-drafter.yml\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: \ud83d\udcbe Save Changelog\n        run: |\n          cat << 'EOF' > CHANGELOG.md\n          ${{ steps.release-drafter.outputs.body }}\n          EOF\n\n      - name: \ud83e\uddec Process Changelog\n        run: |\n          pip install requests openai\n          python .github/scripts/process_changelog.py CHANGELOG.md ${{ github.event.inputs.release_pr_number }}\n          python .github/scripts/summarize_changelog.py ${{ secrets.GITHUB_TOKEN }} ${{ secrets.OPENAI_API_KEY }}\n          cat CHANGELOG.md\n\n      - name: \ud83d\udeeb Create Release\n        uses: mikepenz/action-gh-release@v1\n        with:\n          body_path: \"CHANGELOG.md\"\n          tag_name: ${{ github.event.inputs.tag }}\n          prerelease: false\n          draft: true\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n"
+    },
+    "2024-04-24T15-25-48Z": {
+      "triggers": {
+        "workflow_dispatch": {
+          "inputs": {
+            "release_pr_number": {
+              "description": "Release PR Number",
+              "required": true,
+              "default": ""
+            },
+            "tag": {
+              "description": "Tag for release (manual input)",
+              "required": true,
+              "default": ""
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "update_release_draft": 5
+      },
+      "line_count": 51,
+      "workflow": "name: Release Drafter\n\non:\n  workflow_dispatch:\n    inputs:\n      release_pr_number:\n        description: \"Release PR Number\"\n        required: true\n        default: \"\"\n      tag:\n        description: \"Tag for release (manual input)\"\n        required: true\n        default: \"\"\n\njobs:\n  update_release_draft:\n    runs-on: ubuntu-latest\n    steps:\n      - name: \ud83d\udcdf Checkout code\n        uses: actions/checkout@v4\n\n      - name: \ud83d\udcdd Release Drafter\n        id: release-drafter\n        uses: release-drafter/release-drafter@v6.0.0\n        # with:\n        #   config-name: platform-drafter.yml\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: \ud83d\udcbe Save Changelog\n        run: |\n          cat << 'EOF' > CHANGELOG.md\n          ${{ steps.release-drafter.outputs.body }}\n          EOF\n\n      - name: \ud83e\uddec Process Changelog\n        run: |\n          pip install requests openai\n          python process_changelog.py CHANGELOG.md ${{ github.event.inputs.release_pr_number }}\n          python summarize_changelog.py ${{ secrets.GITHUB_TOKEN }} ${{ secrets.OPENAI_API_KEY }}\n          cat CHANGELOG.md\n\n      - name: \ud83d\udeeb Create Release\n        uses: mikepenz/action-gh-release@v1\n        with:\n          body_path: \"CHANGELOG.md\"\n          tag_name: ${{ github.event.inputs.tag }}\n          prerelease: false\n          draft: true\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n"
+    },
+    "2024-05-14T15-38-06Z": {
+      "triggers": {
+        "workflow_dispatch": {
+          "inputs": {
+            "release_pr_number": {
+              "description": "Release PR Number",
+              "required": true,
+              "default": ""
+            },
+            "tag": {
+              "description": "Tag for release (manual input)",
+              "required": true,
+              "default": ""
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "update_release_draft": 5
+      },
+      "line_count": 51,
+      "workflow": "name: Draft release\n\non:\n  workflow_dispatch:\n    inputs:\n      release_pr_number:\n        description: \"Release PR Number\"\n        required: true\n        default: \"\"\n      tag:\n        description: \"Tag for release (manual input)\"\n        required: true\n        default: \"\"\n\njobs:\n  update_release_draft:\n    runs-on: ubuntu-latest\n    steps:\n      - name: \ud83d\udcdf Checkout code\n        uses: actions/checkout@v4\n\n      - name: \ud83d\udcdd Release Drafter\n        id: release-drafter\n        uses: release-drafter/release-drafter@v6.0.0\n        # with:\n        #   config-name: platform-drafter.yml\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: \ud83d\udcbe Save Changelog\n        run: |\n          cat << 'EOF' > CHANGELOG.md\n          ${{ steps.release-drafter.outputs.body }}\n          EOF\n\n      - name: \ud83e\uddec Process Changelog\n        run: |\n          pip install requests openai\n          python .github/scripts/process_changelog.py CHANGELOG.md ${{ github.event.inputs.release_pr_number }}\n          python .github/scripts/summarize_changelog.py ${{ secrets.GITHUB_TOKEN }} ${{ secrets.OPENAI_API_KEY }}\n          cat CHANGELOG.md\n\n      - name: \ud83d\udeeb Create Release\n        uses: mikepenz/action-gh-release@v1\n        with:\n          body_path: \"CHANGELOG.md\"\n          tag_name: ${{ github.event.inputs.tag }}\n          prerelease: false\n          draft: true\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n"
+    },
+    "2024-06-20T12-39-38Z": {
+      "triggers": {
+        "workflow_dispatch": {
+          "inputs": {
+            "release_pr_number": {
+              "description": "Previous Release PR Number",
+              "required": true,
+              "default": ""
+            },
+            "tag": {
+              "description": "Tag for release (manual input)",
+              "required": true,
+              "default": ""
+            }
+          }
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "update_release_draft": 5
+      },
+      "line_count": 51,
+      "workflow": "name: \ud83d\udcdd Draft release changelog\n\non:\n  workflow_dispatch:\n    inputs:\n      release_pr_number:\n        description: \"Previous Release PR Number\"\n        required: true\n        default: \"\"\n      tag:\n        description: \"Tag for release (manual input)\"\n        required: true\n        default: \"\"\n\njobs:\n  update_release_draft:\n    runs-on: ubuntu-latest\n    steps:\n      - name: \ud83d\udcdf Checkout code\n        uses: actions/checkout@v4\n\n      - name: \ud83d\udcdd Release Drafter\n        id: release-drafter\n        uses: release-drafter/release-drafter@v6.0.0\n        # with:\n        #   config-name: platform-drafter.yml\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\n      - name: \ud83d\udcbe Save Changelog\n        run: |\n          cat << 'EOF' > CHANGELOG.md\n          ${{ steps.release-drafter.outputs.body }}\n          EOF\n\n      - name: \ud83e\uddec Process Changelog\n        run: |\n          pip install requests openai\n          python .github/scripts/process_changelog.py CHANGELOG.md ${{ github.event.inputs.release_pr_number }}\n          python .github/scripts/summarize_changelog.py ${{ secrets.GITHUB_TOKEN }} ${{ secrets.OPENAI_API_KEY }}\n          cat CHANGELOG.md\n\n      - name: \ud83d\udeeb Create Release\n        uses: mikepenz/action-gh-release@v1\n        with:\n          body_path: \"CHANGELOG.md\"\n          tag_name: ${{ github.event.inputs.tag }}\n          prerelease: false\n          draft: true\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n"
+    }
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "CI": {
+    "2021-10-21T23-05-24Z": [
+      {
+        "region": {
+          "startLine": 14,
+          "startColumn": 5,
+          "endLine": 34,
+          "endColumn": 67
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-10-14T07-22-41Z": [
+      {
+        "region": {
+          "startLine": 14,
+          "startColumn": 5,
+          "endLine": 34,
+          "endColumn": 66
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-11-03T00-09-24Z": [
+      {
+        "region": {
+          "startLine": 14,
+          "startColumn": 9,
+          "endLine": 35,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-01-18T00-04-18Z": [
+      {
+        "region": {
+          "startLine": 14,
+          "startColumn": 9,
+          "endLine": 35,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-01-19T23-10-26Z": [
+      {
+        "region": {
+          "startLine": 14,
+          "startColumn": 9,
+          "endLine": 36,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2021-10-21T23-05-24Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "Version-1.1",
+            "Version-2"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 7
+      },
+      "line_count": 34,
+      "workflow": "# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node\n# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions\n\nname: Smart Contract CI\n\non:\n  push:\n    branches: [ Version-1.1, Version-2]\n  pull_request:\n    branches: [ \"*\" ]\n\njobs:\n  build:\n    strategy:\n      matrix:\n        node-version: [14.x]\n        os: [ubuntu-latest]\n        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/\n    runs-on: ${{ matrix.os }}\n    steps:\n    - uses: actions/checkout@v2\n    - name: Use Node.js ${{ matrix.node-version }}\n      uses: actions/setup-node@v2\n    - id: yarn-cache\n      run: echo \"::set-output name=dir::$(yarn cache dir)\"\n    - uses: actions/cache@v2\n      with:\n        path: ${{ steps.yarn-cache.outputs.dir }}\n        key: ${{ matrix.os }}-yarn-${{ hashFiles('**/yarn.lock') }}\n        restore-keys: |\n          ${{ matrix.os }}-yarn-\n    - run: yarn --frozen-lockfile\n    - run: yarn compile\n    - run : echo \"We would run tests here if we had them :dafoe:\"\n"
+    },
+    "2021-10-14T07-22-41Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "Version-1.1",
+            "Version-2"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "Version-1.1",
+            "Version-2"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 7
+      },
+      "line_count": 34,
+      "workflow": "# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node\n# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions\n\nname: Smart Contract CI\n\non:\n  push:\n    branches: [ Version-1.1, Version-2]\n  pull_request:\n    branches: [ Version-1.1, Version-2]\n\njobs:\n  build:\n    strategy:\n      matrix:\n        node-version: [14.x]\n        os: [ubuntu-latest]\n        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/\n    runs-on: ${{ matrix.os }}\n    steps:\n    - uses: actions/checkout@v2\n    - name: Use Node.js ${{ matrix.node-version }}\n      uses: actions/setup-node@v2\n    - id: yarn-cache\n      run: echo \"::set-output name=dir::$(yarn cache dir)\"\n    - uses: actions/cache@v2\n      with:\n        path: ${{ steps.yarn-cache.outputs.dir }}\n        key: ${{ matrix.os }}-yarn-${{ hashFiles('**/yarn.lock') }}\n        restore-keys: |\n          ${{ matrix.os }}-yarn-\n    - run: yarn --frozen-lockfile\n    - run: yarn compile\n    - run : echo \"We would run tests here if we had them :dafoe:\""
+    },
+    "2021-11-03T00-09-24Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "Version-1.1",
+            "Version-2"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 8
+      },
+      "line_count": 35,
+      "workflow": "# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node\n# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions\n\nname: Smart Contract CI\n\non:\n    push:\n        branches: [Version-1.1, Version-2]\n    pull_request:\n        branches: [\"*\"]\n\njobs:\n    build:\n        strategy:\n            matrix:\n                node-version: [14.x]\n                os: [ubuntu-latest]\n                # See supported Node.js release schedule at https://nodejs.org/en/about/releases/\n        runs-on: ${{ matrix.os }}\n        steps:\n            - uses: actions/checkout@v2\n            - name: Use Node.js ${{ matrix.node-version }}\n              uses: actions/setup-node@v2\n            - id: yarn-cache\n              run: echo \"::set-output name=dir::$(yarn cache dir)\"\n            - uses: actions/cache@v2\n              with:\n                  path: ${{ steps.yarn-cache.outputs.dir }}\n                  key: ${{ matrix.os }}-yarn-${{ hashFiles('**/yarn.lock') }}\n                  restore-keys: |\n                      ${{ matrix.os }}-yarn-\n            - run: yarn --frozen-lockfile\n            - run: yarn compile\n            - run: cp .env.example .env\n            - run: yarn test\n"
+    },
+    "2022-01-18T00-04-18Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "Version-1.1",
+            "Version-2"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 8
+      },
+      "line_count": 35,
+      "workflow": "# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node\n# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions\n\nname: Smart Contract CI\n\non:\n    push:\n        branches: [Version-1.1, Version-2]\n    pull_request:\n        branches: [\"*\"]\n\njobs:\n    build:\n        strategy:\n            matrix:\n                node-version: [16.x]\n                os: [ubuntu-latest]\n                # See supported Node.js release schedule at https://nodejs.org/en/about/releases/\n        runs-on: ${{ matrix.os }}\n        steps:\n            - uses: actions/checkout@v2\n            - name: Use Node.js ${{ matrix.node-version }}\n              uses: actions/setup-node@v2\n            - id: yarn-cache\n              run: echo \"::set-output name=dir::$(yarn cache dir)\"\n            - uses: actions/cache@v2\n              with:\n                  path: ${{ steps.yarn-cache.outputs.dir }}\n                  key: ${{ matrix.os }}-yarn-${{ hashFiles('**/yarn.lock') }}\n                  restore-keys: |\n                      ${{ matrix.os }}-yarn-\n            - run: yarn --frozen-lockfile\n            - run: yarn compile\n            - run: cp .env.example .env\n            - run: yarn test\n"
+    },
+    "2022-01-19T23-10-26Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "Version-1.1",
+            "Version-2"
+          ]
+        },
+        "pull_request": {
+          "branches": [
+            "*"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "build": 9
+      },
+      "line_count": 36,
+      "workflow": "# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node\n# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions\n\nname: Smart Contract CI\n\non:\n    push:\n        branches: [Version-1.1, Version-2]\n    pull_request:\n        branches: [\"*\"]\n\njobs:\n    build:\n        strategy:\n            matrix:\n                node-version: [16.x]\n                os: [ubuntu-latest]\n                # See supported Node.js release schedule at https://nodejs.org/en/about/releases/\n        runs-on: ${{ matrix.os }}\n        steps:\n            - uses: actions/checkout@v2\n            - name: Use Node.js ${{ matrix.node-version }}\n              uses: actions/setup-node@v2\n            - id: yarn-cache\n              run: echo \"::set-output name=dir::$(yarn cache dir)\"\n            - uses: actions/cache@v2\n              with:\n                  path: ${{ steps.yarn-cache.outputs.dir }}\n                  key: ${{ matrix.os }}-yarn-${{ hashFiles('**/yarn.lock') }}\n                  restore-keys: |\n                      ${{ matrix.os }}-yarn-\n            - run: yarn --frozen-lockfile\n            - run: yarn format\n            - run: yarn compile\n            - run: cp .env.example .env\n            - run: yarn test\n"
+    }
+  }
+}

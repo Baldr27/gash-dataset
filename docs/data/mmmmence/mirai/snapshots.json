@@ -1,0 +1,56 @@
+{
+  "snapshots": {
+    "2021-09-01T05-47-02Z": [
+      {
+        "region": {
+          "startLine": 14,
+          "startColumn": 5,
+          "endLine": 63,
+          "endColumn": 36
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 25,
+          "startColumn": 9,
+          "endLine": 29,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v4.8](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ]
+  },
+  "metadata": {
+    "2021-09-01T05-47-02Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "dev",
+            "snapshots-publishing"
+          ],
+          "paths-ignore": [
+            "docs/**",
+            "**/README*.md"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "publish-mirai": 11
+      },
+      "line_count": 63,
+      "workflow": "name: Snapshots Publish\n\non:\n  push:\n    branches:\n      - dev\n      - snapshots-publishing\n    paths-ignore:\n      - 'docs/**'\n      - '**/README*.md'\n\njobs:\n  publish-mirai:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      - run: git submodule update --init --recursive\n      - uses: actions/setup-java@v2\n        with:\n          distribution: 'adopt'\n          java-version: '11'\n\n      - run: chmod -R 777 *\n\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v4.8\n\n      - name: Init gradle project\n        run: ./gradlew clean --scan\n\n      - run: >\n          ./gradlew updateSnapshotVersion --info --scan\n        env:\n          MIRAI_IS_SNAPSHOTS_PUBLISHING: true\n          SNAPSHOTS_PUBLISHING_USER: ${{ secrets.SNAPSHOTS_PUBLISHING_USER }}\n          SNAPSHOTS_PUBLISHING_KEY: ${{ secrets.SNAPSHOTS_PUBLISHING_KEY }}\n          SNAPSHOTS_PUBLISHING_URL: ${{ secrets.SNAPSHOTS_PUBLISHING_URL }}\n          CURRENT_BRANCH_NAME: dev\n\n      - name: fillBuildConstants\n        run: >\n          ./gradlew\n          fillBuildConstants --scan\n\n      - name: Assemble\n        run: ./gradlew assemble --scan\n\n      - name: Check\n        run: >\n          ./gradlew check --scan\n          -Dmirai.network.show.all.components=true\n          -Dkotlinx.coroutines.debug=on\n          -Dmirai.network.show.packet.details=true\n\n      - run: >\n          ./gradlew publish --info --scan\n        env:\n          MIRAI_IS_SNAPSHOTS_PUBLISHING: true\n          SNAPSHOTS_PUBLISHING_USER: ${{ secrets.SNAPSHOTS_PUBLISHING_USER }}\n          SNAPSHOTS_PUBLISHING_KEY: ${{ secrets.SNAPSHOTS_PUBLISHING_KEY }}\n          SNAPSHOTS_PUBLISHING_URL: ${{ secrets.SNAPSHOTS_PUBLISHING_URL }}\n          CURRENT_BRANCH_NAME: dev\n"
+    }
+  }
+}

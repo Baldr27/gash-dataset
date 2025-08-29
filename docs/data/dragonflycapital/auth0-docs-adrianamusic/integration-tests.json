@@ -1,0 +1,639 @@
+{
+  "integration-tests": {
+    "2022-05-02T17-34-30Z": [
+      {
+        "region": {
+          "startLine": 6,
+          "startColumn": 5,
+          "endLine": null,
+          "endColumn": 5
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-05-02T17-54-45Z": [
+      {
+        "region": {
+          "startLine": 6,
+          "startColumn": 5,
+          "endLine": 19,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-05-02T18-23-20Z": [
+      {
+        "region": {
+          "startLine": 6,
+          "startColumn": 5,
+          "endLine": 19,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-05-02T18-25-22Z": [
+      {
+        "region": {
+          "startLine": 6,
+          "startColumn": 5,
+          "endLine": 26,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 12,
+          "startColumn": 9,
+          "endLine": 15,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v5.2](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2022-05-02T18-44-30Z": [
+      {
+        "region": {
+          "startLine": 6,
+          "startColumn": 5,
+          "endLine": 26,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 12,
+          "startColumn": 9,
+          "endLine": 15,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v5.2](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2022-05-02T18-31-56Z": [
+      {
+        "region": {
+          "startLine": 6,
+          "startColumn": 5,
+          "endLine": 26,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 12,
+          "startColumn": 9,
+          "endLine": 15,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v5.2](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2022-05-02T18-49-11Z": [
+      {
+        "region": {
+          "startLine": 6,
+          "startColumn": 5,
+          "endLine": 26,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 12,
+          "startColumn": 9,
+          "endLine": 15,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v5.2](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2022-05-02T19-04-35Z": [
+      {
+        "region": {
+          "startLine": 6,
+          "startColumn": 5,
+          "endLine": 26,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 12,
+          "startColumn": 9,
+          "endLine": 15,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v5.2](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2022-05-02T19-13-30Z": [
+      {
+        "region": {
+          "startLine": 6,
+          "startColumn": 5,
+          "endLine": 27,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 12,
+          "startColumn": 9,
+          "endLine": 15,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v5.2](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2022-05-02T21-10-06Z": [
+      {
+        "region": {
+          "startLine": 6,
+          "startColumn": 5,
+          "endLine": 20,
+          "endColumn": 30
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-05-02T21-22-34Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 25,
+          "endColumn": 31
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-05-03T12-38-19Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 25,
+          "endColumn": 31
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-05-03T12-51-05Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 25,
+          "endColumn": 31
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-05-03T14-30-49Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 26,
+          "endColumn": 31
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-05-03T18-37-50Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 26,
+          "endColumn": 31
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-05-03T18-39-58Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 26,
+          "endColumn": 31
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-05-03T19-03-49Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 26,
+          "endColumn": 31
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-05-04T18-21-36Z": [
+      {
+        "region": {
+          "startLine": 11,
+          "startColumn": 5,
+          "endLine": 33,
+          "endColumn": 31
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 18,
+          "startColumn": 9,
+          "endLine": 21,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v5.2](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2022-05-05T16-00-17Z": [
+      {
+        "region": {
+          "startLine": 12,
+          "startColumn": 5,
+          "endLine": 34,
+          "endColumn": 31
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      },
+      {
+        "region": {
+          "startLine": 19,
+          "startColumn": 9,
+          "endLine": 22,
+          "endColumn": 7
+        },
+        "message": "The workflow is using a known vulnerable version ([v5.2](1)) of the [tj-actions/branch-names](2) action. Update it to [7.07](3)",
+        "ruleId": "actions/vulnerable-action",
+        "cwe": "CWE-1395",
+        "precision": "high",
+        "severity": "error",
+        "security_severity": "7.5"
+      }
+    ],
+    "2022-05-02T18-22-14Z": []
+  },
+  "metadata": {
+    "2022-05-02T17-34-30Z": {
+      "triggers": {},
+      "num_jobs": 0,
+      "steps_per_job": {},
+      "line_count": 19,
+      "workflow": null,
+      "parse_error": "while parsing a block mapping\n  in \"<unicode string>\", line 8, column 7:\n        - name: Wait for Tests Results\n          ^\nexpected <block end>, but found '-'\n  in \"<unicode string>\", line 9, column 7:\n          - uses: convictional/trigger-wor ... \n          ^"
+    },
+    "2022-05-02T17-54-45Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "tests": 1
+      },
+      "line_count": 19,
+      "workflow": "name: Integration Tests\non:\n  pull_request: {}\njobs:\n  tests:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Wait for Tests Results\n        uses: convictional/trigger-workflow-and-wait@v1.6.1\n        with:\n          owner: ${{ secrets.NOTIFY_ORG }},\n          repo: ${{ secrets.NOTIFY_REPO }},\n          github_token: ${{ secrets.NOTIFY_PAT_TOKEN }}\n          workflow_file_name: integration-tests.yml\n          ref: master\n          client_payload: '{ \"inputs\": { \"docsBranch\": ${{ github.ref_name }} } }'\n          propagate_failure: true\n          trigger_workflow: true\n          wait_workflow: true"
+    },
+    "2022-05-02T18-23-20Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "tests": 1
+      },
+      "line_count": 19,
+      "workflow": "name: Integration Tests\non:\n  pull_request: {}\njobs:\n  tests:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Wait for Tests Results\n        uses: convictional/trigger-workflow-and-wait@v1.6.1\n        with:\n          owner: ${{ secrets.NOTIFY_ORG }},\n          repo: ${{ secrets.NOTIFY_REPO }},\n          github_token: ${{ secrets.NOTIFY_PAT_TOKEN }}\n          workflow_file_name: integration-tests.yml\n          ref: master\n          client_payload: '{ \"inputs\": { \"docsBranch\": \"${{ steps.branch-name.outputs.current_branch }}\" } }'\n          propagate_failure: true\n          trigger_workflow: true\n          wait_workflow: true"
+    },
+    "2022-05-02T18-25-22Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "tests": 3
+      },
+      "line_count": 26,
+      "workflow": "name: Integration Tests\non:\n  pull_request: {}\njobs:\n  tests:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Check out code\n        uses: actions/checkout@v2\n        with:\n          fetch-depth: 0\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v5.2\n      - name: Wait for Tests Results\n        uses: convictional/trigger-workflow-and-wait@v1.6.1\n        with:\n          owner: ${{ secrets.NOTIFY_ORG }},\n          repo: ${{ secrets.NOTIFY_REPO }},\n          github_token: ${{ secrets.NOTIFY_PAT_TOKEN }}\n          workflow_file_name: integration-tests.yml\n          ref: master\n          client_payload: '{ \"inputs\": { \"docsBranch\": \"${{ steps.branch-name.outputs.current_branch }}\" } }'\n          propagate_failure: true\n          trigger_workflow: true\n          wait_workflow: true"
+    },
+    "2022-05-02T18-44-30Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "tests": 3
+      },
+      "line_count": 26,
+      "workflow": "name: Integration Tests\non:\n  pull_request: {}\njobs:\n  tests:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Check out code\n        uses: actions/checkout@v2\n        with:\n          fetch-depth: 0\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v5.2\n      - name: Wait for Tests Results\n        uses: convictional/trigger-workflow-and-wait@v1.6.1\n        with:\n          owner: ${{ secrets.NOTIFY_ORG }},\n          repo: ${{ secrets.NOTIFY_REPO }},\n          github_token: ${{ secrets.NOTIFY_PAT_TOKEN }}\n          workflow_file_name: integration-tests\n          ref: master\n          client_payload: '{ \"docsBranch\": \"${{ steps.branch-name.outputs.current_branch }}\" }'\n          propagate_failure: true\n          trigger_workflow: true\n          wait_workflow: true"
+    },
+    "2022-05-02T18-31-56Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "tests": 3
+      },
+      "line_count": 26,
+      "workflow": "name: Integration Tests\non:\n  pull_request: {}\njobs:\n  tests:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Check out code\n        uses: actions/checkout@v2\n        with:\n          fetch-depth: 0\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v5.2\n      - name: Wait for Tests Results\n        uses: convictional/trigger-workflow-and-wait@v1.6.1\n        with:\n          owner: ${{ secrets.NOTIFY_ORG }},\n          repo: ${{ secrets.NOTIFY_REPO }},\n          github_token: ${{ secrets.NOTIFY_PAT_TOKEN }}\n          workflow_file_name: integration-tests.yml\n          ref: master\n          client_payload: '{ \"docsBranch\": \"${{ steps.branch-name.outputs.current_branch }}\" }'\n          propagate_failure: true\n          trigger_workflow: true\n          wait_workflow: true"
+    },
+    "2022-05-02T18-49-11Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "tests": 3
+      },
+      "line_count": 26,
+      "workflow": "name: Integration Tests\non:\n  pull_request: {}\njobs:\n  tests:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Check out code\n        uses: actions/checkout@v2\n        with:\n          fetch-depth: 0\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v5.2\n      - name: Wait for Tests Results\n        uses: convictional/trigger-workflow-and-wait@v1.6.1\n        with:\n          owner: ${{ secrets.NOTIFY_ORG }},\n          repo: ${{ secrets.NOTIFY_REPO }},\n          github_token: ${{ secrets.NOTIFY_PAT_TOKEN }}\n          workflow_file_name: integration-tests.yml\n          ref: master\n          client_payload: '{ \"docsBranch\": \"${{ steps.branch-name.outputs.current_branch }}\" }'\n          propagate_failure: true\n          trigger_workflow: true\n          wait_workflow: true"
+    },
+    "2022-05-02T19-04-35Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "tests": 3
+      },
+      "line_count": 26,
+      "workflow": "name: Integration Tests\non:\n  pull_request: {}\njobs:\n  tests:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Check out code\n        uses: actions/checkout@v2\n        with:\n          fetch-depth: 0\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v5.2\n      - name: Wait for Tests Results\n        uses: convictional/trigger-workflow-and-wait@v1.6.1\n        with:\n          owner: ${{ secrets.NOTIFY_ORG }}\n          repo: ${{ secrets.NOTIFY_REPO }}\n          github_token: ${{ secrets.NOTIFY_PAT_TOKEN }}\n          workflow_file_name: integration-tests.yml\n          ref: master\n          client_payload: '{ \"docsBranch\": \"${{ steps.branch-name.outputs.current_branch }}\" }'\n          propagate_failure: true\n          trigger_workflow: true\n          wait_workflow: true"
+    },
+    "2022-05-02T19-13-30Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "tests": 3
+      },
+      "line_count": 27,
+      "workflow": "name: Integration Tests\non:\n  pull_request: {}\njobs:\n  tests:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Check out code\n        uses: actions/checkout@v2\n        with:\n          fetch-depth: 0\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v5.2\n      - name: Wait for Tests Results\n        uses: convictional/trigger-workflow-and-wait@v1.6.1\n        with:\n          owner: ${{ secrets.NOTIFY_ORG }}\n          repo: ${{ secrets.NOTIFY_REPO }}\n          github_token: ${{ secrets.NOTIFY_PAT_TOKEN }}\n          workflow_file_name: integration-tests.yml\n          ref: master\n          wait_interval: 90\n          client_payload: '{ \"docsBranch\": \"${{ steps.branch-name.outputs.current_branch }}\" }'\n          propagate_failure: true\n          trigger_workflow: true\n          wait_workflow: true"
+    },
+    "2022-05-02T21-10-06Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "tests": 1
+      },
+      "line_count": 20,
+      "workflow": "name: Integration Tests\non:\n  pull_request: {}\njobs:\n  tests:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Wait for Tests Results\n        uses: convictional/trigger-workflow-and-wait@v1.6.1\n        with:\n          owner: ${{ secrets.NOTIFY_ORG }}\n          repo: ${{ secrets.NOTIFY_REPO }}\n          github_token: ${{ secrets.NOTIFY_PAT_TOKEN }}\n          workflow_file_name: integration-tests.yml\n          ref: master\n          wait_interval: 90\n          client_payload: '{ \"docsBranch\": \"${{ github.ref.name }}\" }'\n          propagate_failure: true\n          trigger_workflow: true\n          wait_workflow: true"
+    },
+    "2022-05-02T21-22-34Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "tests": 1
+      },
+      "line_count": 25,
+      "workflow": "name: Integration Tests\non:\n  pull_request: {}\n\nconcurrency: \n  group: pr-integration-tests-${{ github.event.pull_request.id }}\n  cancel-in-progress: true\n\njobs:\n  tests:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Wait for Tests Results\n        uses: convictional/trigger-workflow-and-wait@v1.6.1\n        with:\n          owner: ${{ secrets.NOTIFY_ORG }}\n          repo: ${{ secrets.NOTIFY_REPO }}\n          github_token: ${{ secrets.NOTIFY_PAT_TOKEN }}\n          workflow_file_name: integration-tests.yml\n          ref: master\n          wait_interval: 90\n          client_payload: '{ \"docsBranch\": \"${{ github.ref.name }}\" }'\n          propagate_failure: true\n          trigger_workflow: true\n          wait_workflow: true\n"
+    },
+    "2022-05-03T12-38-19Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "tests": 1
+      },
+      "line_count": 25,
+      "workflow": "name: Integration Tests\non:\n  pull_request: {}\n\nconcurrency: \n  group: pr-integration-tests-${{ github.event.pull_request.id }}\n  cancel-in-progress: true\n\njobs:\n  tests:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Wait for Tests Results\n        uses: convictional/trigger-workflow-and-wait@v1.6.1\n        with:\n          owner: ${{ secrets.NOTIFY_ORG }}\n          repo: ${{ secrets.NOTIFY_REPO }}\n          github_token: ${{ secrets.NOTIFY_PAT_TOKEN }}\n          workflow_file_name: integration-tests.yml\n          ref: master\n          wait_interval: 90\n          client_payload: '{ \"docsBranch\": \"${{ github.ref.name }}\", \"pullRequest\": \"${{ github.event.pull_request.id }}\" }'\n          propagate_failure: true\n          trigger_workflow: true\n          wait_workflow: true\n"
+    },
+    "2022-05-03T12-51-05Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "tests": 1
+      },
+      "line_count": 25,
+      "workflow": "name: Integration Tests\non:\n  pull_request: {}\n\nconcurrency: \n  group: pr-integration-tests-${{ github.event.pull_request.id }}\n  cancel-in-progress: true\n\njobs:\n  tests:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Wait for Tests Results\n        uses: convictional/trigger-workflow-and-wait@v1.6.1\n        with:\n          owner: ${{ secrets.NOTIFY_ORG }}\n          repo: ${{ secrets.NOTIFY_REPO }}\n          github_token: ${{ secrets.NOTIFY_PAT_TOKEN }}\n          workflow_file_name: integration-tests.yml\n          ref: master\n          wait_interval: 90\n          client_payload: '{ \"docsBranch\": \"${{ github.ref.name }}\", \"pullRequest\": \"${{ github.event.pull_request.number }}\" }'\n          propagate_failure: true\n          trigger_workflow: true\n          wait_workflow: true\n"
+    },
+    "2022-05-03T14-30-49Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "tests": 1
+      },
+      "line_count": 26,
+      "workflow": "name: Integration Tests\non:\n  pull_request: {}\n\nconcurrency: \n  group: pr-integration-tests-${{ github.event.pull_request.id }}\n  cancel-in-progress: true\n\njobs:\n  tests:\n    name: Trigger Tests\n    runs-on: ubuntu-latest\n    steps:\n      - name: Wait for Tests Results\n        uses: convictional/trigger-workflow-and-wait@v1.6.1\n        with:\n          owner: ${{ secrets.NOTIFY_ORG }}\n          repo: ${{ secrets.NOTIFY_REPO }}\n          github_token: ${{ secrets.NOTIFY_PAT_TOKEN }}\n          workflow_file_name: integration-tests.yml\n          ref: master\n          wait_interval: 90\n          client_payload: '{ \"docsBranch\": \"${{ github.ref.name }}\", \"pullRequest\": \"${{ github.event.pull_request.number }}\" }'\n          propagate_failure: true\n          trigger_workflow: true\n          wait_workflow: true\n"
+    },
+    "2022-05-03T18-37-50Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "tests": 1
+      },
+      "line_count": 26,
+      "workflow": "name: Integration Tests\non:\n  pull_request: {}\n\nconcurrency: \n  group: pr-integration-tests-${{ github.event.pull_request.id }}\n  cancel-in-progress: true\n\njobs:\n  tests:\n    name: Trigger Tests\n    runs-on: ubuntu-latest\n    steps:\n      - name: Wait for Tests Results\n        uses: convictional/trigger-workflow-and-wait@v1.6.1\n        with:\n          owner: ${{ secrets.NOTIFY_ORG }}\n          repo: ${{ secrets.NOTIFY_REPO }}\n          github_token: ${{ secrets.NOTIFY_PAT_TOKEN }}\n          workflow_file_name: integration-tests.yml\n          ref: master\n          wait_interval: 90\n          client_payload: '{ \"docsBranch\": \"${{ github.ref.name }}\", \"pullRequest\": \"${{ github.event.pull_request.number }}\", \"postStatus\": true }'\n          propagate_failure: true\n          trigger_workflow: true\n          wait_workflow: true\n"
+    },
+    "2022-05-03T18-39-58Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "tests": 1
+      },
+      "line_count": 26,
+      "workflow": "name: Integration Tests\non:\n  pull_request: {}\n\nconcurrency: \n  group: pr-integration-tests-${{ github.event.pull_request.id }}\n  cancel-in-progress: true\n\njobs:\n  tests:\n    name: Trigger Tests\n    runs-on: ubuntu-latest\n    steps:\n      - name: Wait for Tests Results\n        uses: convictional/trigger-workflow-and-wait@v1.6.1\n        with:\n          owner: ${{ secrets.NOTIFY_ORG }}\n          repo: ${{ secrets.NOTIFY_REPO }}\n          github_token: ${{ secrets.NOTIFY_PAT_TOKEN }}\n          workflow_file_name: integration-tests.yml\n          ref: master\n          wait_interval: 90\n          client_payload: '{ \"docsBranch\": \"${{ github.ref_name }}\", \"pullRequest\": \"${{ github.event.pull_request.number }}\", \"postStatus\": true }'\n          propagate_failure: true\n          trigger_workflow: true\n          wait_workflow: true\n"
+    },
+    "2022-05-03T19-03-49Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "tests": 1
+      },
+      "line_count": 26,
+      "workflow": "name: Integration Tests\non:\n  pull_request: {}\n\nconcurrency: \n  group: pr-integration-tests-${{ github.event.pull_request.id }}\n  cancel-in-progress: true\n\njobs:\n  tests:\n    name: Trigger Tests\n    runs-on: ubuntu-latest\n    steps:\n      - name: Wait for Tests Results\n        uses: convictional/trigger-workflow-and-wait@v1.6.1\n        with:\n          owner: ${{ secrets.NOTIFY_ORG }}\n          repo: ${{ secrets.NOTIFY_REPO }}\n          github_token: ${{ secrets.NOTIFY_PAT_TOKEN }}\n          workflow_file_name: integration-tests.yml\n          ref: master\n          wait_interval: 90\n          client_payload: '{ \"docsBranch\": \"${{ github.ref_name }}\", \"pullRequest\": \"${{ github.event.pull_request.number }}\", \"postStatus\": \"true\" }'\n          propagate_failure: true\n          trigger_workflow: true\n          wait_workflow: true\n"
+    },
+    "2022-05-04T18-21-36Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "tests": 3
+      },
+      "line_count": 33,
+      "workflow": "name: Integration Tests\non:\n  pull_request: {}\n\nconcurrency: \n  group: pr-integration-tests-${{ github.event.pull_request.id }}\n  cancel-in-progress: true\n\njobs:\n  tests:\n    name: Trigger Tests\n    runs-on: ubuntu-latest\n    steps:\n      - name: Check out code\n        uses: actions/checkout@v2\n        with:\n          fetch-depth: 0\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v5.2\n      - name: Wait for Tests Results\n        uses: convictional/trigger-workflow-and-wait@v1.6.1\n        with:\n          owner: ${{ secrets.NOTIFY_ORG }}\n          repo: ${{ secrets.NOTIFY_REPO }}\n          github_token: ${{ secrets.NOTIFY_PAT_TOKEN }}\n          workflow_file_name: integration-tests.yml\n          ref: master\n          wait_interval: 90\n          client_payload: '{ \"docsBranch\": \"${{ steps.branch-name.outputs.current_branch }}\", \"pullRequest\": \"${{ github.event.pull_request.number }}\", \"postStatus\": \"true\" }'\n          propagate_failure: true\n          trigger_workflow: true\n          wait_workflow: true\n"
+    },
+    "2022-05-05T16-00-17Z": {
+      "triggers": {
+        "pull_request": {
+          "branches": "master"
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "tests": 3
+      },
+      "line_count": 34,
+      "workflow": "name: Integration Tests\non:\n  pull_request:\n    branches: master\n\nconcurrency: \n  group: pr-integration-tests-${{ github.event.pull_request.id }}\n  cancel-in-progress: true\n\njobs:\n  tests:\n    name: Trigger Tests\n    runs-on: ubuntu-latest\n    steps:\n      - name: Check out code\n        uses: actions/checkout@v2\n        with:\n          fetch-depth: 0\n      - name: Get branch name\n        id: branch-name\n        uses: tj-actions/branch-names@v5.2\n      - name: Wait for Tests Results\n        uses: convictional/trigger-workflow-and-wait@v1.6.1\n        with:\n          owner: ${{ secrets.NOTIFY_ORG }}\n          repo: ${{ secrets.NOTIFY_REPO }}\n          github_token: ${{ secrets.NOTIFY_PAT_TOKEN }}\n          workflow_file_name: integration-tests.yml\n          ref: master\n          wait_interval: 90\n          client_payload: '{ \"docsBranch\": \"${{ steps.branch-name.outputs.current_branch }}\", \"pullRequest\": \"${{ github.event.pull_request.number }}\", \"postStatus\": \"true\" }'\n          propagate_failure: true\n          trigger_workflow: true\n          wait_workflow: true\n"
+    },
+    "2022-05-02T18-22-14Z": {
+      "triggers": {},
+      "num_jobs": 0,
+      "steps_per_job": {},
+      "line_count": 21,
+      "workflow": null,
+      "parse_error": "mapping values are not allowed here\n  in \"<unicode string>\", line 3, column 5:\n    name: Integration Tests\n        ^"
+    }
+  }
+}
