@@ -7,7 +7,7 @@ let currentSort = { column: null, direction: 'asc' };
 let workflowIndex = {}; // workflow_index.json content
 
 // Chart instances
-let lineCountChartInstance, jobsChartInstance, stepsChartInstance;
+let lineCountCorrelationChart, jobsCorrelationChart, stepsCorrelationChart, vulnerabilityDistributionChart;
 
 // ===== Utility Functions =====
 function parseStepsPerJob(stepsStr) {
@@ -21,12 +21,13 @@ function parseStepsPerJob(stepsStr) {
 }
 
 function calculateStats(data) {
-    if (!data || !data.length) return { totalFindings: 0, avgLineCount: 0, findingsPerLine: 0 };
+    if (!data || !data.length) return { totalFindings: 0, avgLineCount: 0, findingsPerLine: 0, totalWorkflows: 0 };
     const totalFindings = data.reduce((sum, r) => sum + (r.findings || 0), 0);
     const totalLines = data.reduce((sum, r) => sum + (r.line_count || 0), 0);
     const avgLineCount = totalLines / data.length;
     const findingsPerLine = totalLines > 0 ? totalFindings / totalLines : 0;
-    return { totalFindings, avgLineCount, findingsPerLine };
+    const totalWorkflows = data.length;
+    return { totalFindings, avgLineCount, findingsPerLine, totalWorkflows };
 }
 
 function renderTable(data, page=1, rows=rowsPerPage) {
@@ -108,165 +109,316 @@ async function loadWorkflowIndex() {
     }
 }
 
-// ===== Create Charts =====
-function createCharts(data) {
+// ===== Create Correlation Charts =====
+function createCorrelationCharts(data) {
     // Destroy existing charts if they exist
-    if (lineCountChartInstance) lineCountChartInstance.destroy();
-    if (jobsChartInstance) jobsChartInstance.destroy();
-    if (stepsChartInstance) stepsChartInstance.destroy();
+    if (lineCountCorrelationChart) lineCountCorrelationChart.destroy();
+    if (jobsCorrelationChart) jobsCorrelationChart.destroy();
+    if (stepsCorrelationChart) stepsCorrelationChart.destroy();
+    if (vulnerabilityDistributionChart) vulnerabilityDistributionChart.destroy();
     
-    // Prepare data for charts
+    // Prepare data for correlation analysis
     const lineCounts = data.map(d => d.line_count || 0);
     const jobsCounts = data.map(d => d.jobs || 0);
     const stepsPerJob = data.map(d => parseFloat(d.steps_per_job) || 0);
+    const findings = data.map(d => d.findings || 0);
     
-    // Create histogram data
-    function createHistogramData(values, bins = 10) {
-        const max = Math.max(...values);
-        const min = Math.min(...values);
-        const binSize = (max - min) / bins;
-        
-        const histogram = Array(bins).fill(0);
-        values.forEach(value => {
-            const binIndex = Math.min(Math.floor((value - min) / binSize), bins - 1);
-            histogram[binIndex]++;
-        });
-        
-        const labels = Array.from({length: bins}, (_, i) => 
-            `${Math.round(min + i * binSize)}-${Math.round(min + (i+1) * binSize)}`
-        );
-        
-        return { labels, data: histogram };
+    // Create scatter plot data
+    const lineCountVsFindings = data.map(d => ({x: d.line_count || 0, y: d.findings || 0}));
+    const jobsVsFindings = data.map(d => ({x: d.jobs || 0, y: d.findings || 0}));
+    const stepsVsFindings = data.map(d => ({x: parseFloat(d.steps_per_job) || 0, y: d.findings || 0}));
+    
+    // Calculate correlation coefficients
+    const lineCountCorrelation = calculateCorrelation(lineCounts, findings);
+    const jobsCorrelation = calculateCorrelation(jobsCounts, findings);
+    const stepsCorrelation = calculateCorrelation(stepsPerJob, findings);
+    
+    // Create regression lines
+    const lineCountRegression = regression.linear(lineCountVsFindings);
+    const jobsRegression = regression.linear(jobsVsFindings);
+    const stepsRegression = regression.linear(stepsVsFindings);
+    
+    // Line Count vs Findings Chart
+    const lineCountCtx = document.getElementById('lineCountCorrelationChart').getContext('2d');
+    lineCountCorrelationChart = new Chart(lineCountCtx, {
+        type: 'scatter',
+        data: {
+            datasets: [{
+                label: 'Workflows',
+                data: lineCountVsFindings,
+                backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                pointRadius: 4,
+                pointHoverRadius: 6
+            }, {
+                label: 'Trend Line',
+                data: lineCountRegression.points,
+                type: 'line',
+                fill: false,
+                borderColor: 'rgba(255, 99, 132, 0.8)',
+                borderWidth: 2,
+                pointRadius: 0,
+                pointHoverRadius: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Line Count vs Vulnerabilities'
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return `Lines: ${context.raw.x}, Findings: ${context.raw.y}`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Line Count'
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Number of Vulnerabilities'
+                    }
+                }
+            }
+        }
+    });
+    
+    // Jobs vs Findings Chart
+    const jobsCtx = document.getElementById('jobsCorrelationChart').getContext('2d');
+    jobsCorrelationChart = new Chart(jobsCtx, {
+        type: 'scatter',
+        data: {
+            datasets: [{
+                label: 'Workflows',
+                data: jobsVsFindings,
+                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                pointRadius: 4,
+                pointHoverRadius: 6
+            }, {
+                label: 'Trend Line',
+                data: jobsRegression.points,
+                type: 'line',
+                fill: false,
+                borderColor: 'rgba(54, 162, 235, 0.8)',
+                borderWidth: 2,
+                pointRadius: 0,
+                pointHoverRadius: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Job Count vs Vulnerabilities'
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return `Jobs: ${context.raw.x}, Findings: ${context.raw.y}`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Number of Jobs'
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Number of Vulnerabilities'
+                    }
+                }
+            }
+        }
+    });
+    
+    // Steps per Job vs Findings Chart
+    const stepsCtx = document.getElementById('stepsCorrelationChart').getContext('2d');
+    stepsCorrelationChart = new Chart(stepsCtx, {
+        type: 'scatter',
+        data: {
+            datasets: [{
+                label: 'Workflows',
+                data: stepsVsFindings,
+                backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                pointRadius: 4,
+                pointHoverRadius: 6
+            }, {
+                label: 'Trend Line',
+                data: stepsRegression.points,
+                type: 'line',
+                fill: false,
+                borderColor: 'rgba(255, 99, 132, 0.8)',
+                borderWidth: 2,
+                pointRadius: 0,
+                pointHoverRadius: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Steps per Job vs Vulnerabilities'
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return `Steps/Job: ${context.raw.x.toFixed(1)}, Findings: ${context.raw.y}`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Average Steps per Job'
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Number of Vulnerabilities'
+                    }
+                }
+            }
+        }
+    });
+    
+    // Vulnerability Distribution Chart
+    const vulnerabilityDistribution = [0, 0, 0, 0, 0]; // 0, 1-2, 3-5, 6-10, 10+
+    findings.forEach(count => {
+        if (count === 0) vulnerabilityDistribution[0]++;
+        else if (count <= 2) vulnerabilityDistribution[1]++;
+        else if (count <= 5) vulnerabilityDistribution[2]++;
+        else if (count <= 10) vulnerabilityDistribution[3]++;
+        else vulnerabilityDistribution[4]++;
+    });
+    
+    const distributionCtx = document.getElementById('vulnerabilityDistributionChart').getContext('2d');
+    vulnerabilityDistributionChart = new Chart(distributionCtx, {
+        type: 'bar',
+        data: {
+            labels: ['0', '1-2', '3-5', '6-10', '10+'],
+            datasets: [{
+                label: 'Number of Workflows',
+                data: vulnerabilityDistribution,
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(255, 206, 86, 0.5)',
+                    'rgba(255, 159, 64, 0.5)',
+                    'rgba(255, 99, 132, 0.5)'
+                ],
+                borderColor: [
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 99, 132, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Vulnerability Distribution'
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Number of Workflows'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Number of Vulnerabilities'
+                    }
+                }
+            }
+        }
+    });
+    
+    // Update correlation summaries
+    document.getElementById('lineCountSummary').innerHTML = `
+        <p class="text-center"><span class="correlation">Correlation: ${lineCountCorrelation.toFixed(3)}</span></p>
+        <p class="interpretation text-center">${interpretCorrelation(lineCountCorrelation, 'line count')}</p>
+    `;
+    
+    document.getElementById('jobsSummary').innerHTML = `
+        <p class="text-center"><span class="correlation">Correlation: ${jobsCorrelation.toFixed(3)}</span></p>
+        <p class="interpretation text-center">${interpretCorrelation(jobsCorrelation, 'job count')}</p>
+    `;
+    
+    document.getElementById('stepsSummary').innerHTML = `
+        <p class="text-center"><span class="correlation">Correlation: ${stepsCorrelation.toFixed(3)}</span></p>
+        <p class="interpretation text-center">${interpretCorrelation(stepsCorrelation, 'steps per job')}</p>
+    `;
+    
+    document.getElementById('distributionSummary').innerHTML = `
+        <p class="text-center"><span class="correlation">Workflows with vulnerabilities: ${((data.length - vulnerabilityDistribution[0]) / data.length * 100).toFixed(1)}%</span></p>
+        <p class="interpretation text-center">${vulnerabilityDistribution[0]} workflows have no vulnerabilities</p>
+    `;
+}
+
+// Calculate correlation coefficient
+function calculateCorrelation(x, y) {
+    if (x.length !== y.length || x.length === 0) return 0;
+    
+    const n = x.length;
+    let sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0, sumY2 = 0;
+    
+    for (let i = 0; i < n; i++) {
+        sumX += x[i];
+        sumY += y[i];
+        sumXY += x[i] * y[i];
+        sumX2 += x[i] * x[i];
+        sumY2 += y[i] * y[i];
     }
     
-    // Line Count Chart
-    const lineCountHistogram = createHistogramData(lineCounts);
-    lineCountChartInstance = new Chart(document.getElementById('lineCountChart'), {
-        type: 'bar',
-        data: {
-            labels: lineCountHistogram.labels,
-            datasets: [{
-                label: 'Workflows by Line Count',
-                data: lineCountHistogram.data,
-                backgroundColor: 'rgba(54, 162, 235, 0.5)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                title: {
-                    display: true,
-                    text: 'Line Count Distribution'
-                },
-                legend: {
-                    display: false
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    title: {
-                        display: true,
-                        text: 'Number of Workflows'
-                    }
-                },
-                x: {
-                    title: {
-                        display: true,
-                        text: 'Line Count Range'
-                    }
-                }
-            }
-        }
-    });
+    const numerator = n * sumXY - sumX * sumY;
+    const denominator = Math.sqrt((n * sumX2 - sumX * sumX) * (n * sumY2 - sumY * sumY));
     
-    // Jobs Chart
-    const jobsHistogram = createHistogramData(jobsCounts, 5);
-    jobsChartInstance = new Chart(document.getElementById('jobsChart'), {
-        type: 'bar',
-        data: {
-            labels: jobsHistogram.labels,
-            datasets: [{
-                label: 'Workflows by Job Count',
-                data: jobsHistogram.data,
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
-                borderColor: 'rgba(255, 99, 132, 1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                title: {
-                    display: true,
-                    text: 'Jobs Distribution'
-                },
-                legend: {
-                    display: false
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    title: {
-                        display: true,
-                        text: 'Number of Workflows'
-                    }
-                },
-                x: {
-                    title: {
-                        display: true,
-                        text: 'Job Count Range'
-                    }
-                }
-            }
-        }
-    });
+    return denominator === 0 ? 0 : numerator / denominator;
+}
+
+// Interpret correlation value
+function interpretCorrelation(correlation, metric) {
+    const absCorrelation = Math.abs(correlation);
     
-    // Steps Chart
-    const stepsHistogram = createHistogramData(stepsPerJob);
-    stepsChartInstance = new Chart(document.getElementById('stepsChart'), {
-        type: 'bar',
-        data: {
-            labels: stepsHistogram.labels,
-            datasets: [{
-                label: 'Workflows by Steps/Job',
-                data: stepsHistogram.data,
-                backgroundColor: 'rgba(75, 192, 192, 0.5)',
-                borderColor: 'rgba(75, 192, 192, 1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                title: {
-                    display: true,
-                    text: 'Steps per Job Distribution'
-                },
-                legend: {
-                    display: false
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    title: {
-                        display: true,
-                        text: 'Number of Workflows'
-                    }
-                },
-                x: {
-                    title: {
-                        display: true,
-                        text: 'Steps per Job Range'
-                    }
-                }
-            }
-        }
-    });
+    if (absCorrelation < 0.1) {
+        return `No significant relationship between ${metric} and vulnerabilities`;
+    } else if (absCorrelation < 0.3) {
+        return `Weak ${correlation > 0 ? 'positive' : 'negative'} relationship between ${metric} and vulnerabilities`;
+    } else if (absCorrelation < 0.5) {
+        return `Moderate ${correlation > 0 ? 'positive' : 'negative'} relationship between ${metric} and vulnerabilities`;
+    } else if (absCorrelation < 0.7) {
+        return `Strong ${correlation > 0 ? 'positive' : 'negative'} relationship between ${metric} and vulnerabilities`;
+    } else {
+        return `Very strong ${correlation > 0 ? 'positive' : 'negative'} relationship between ${metric} and vulnerabilities`;
+    }
 }
 
 // ===== Populate Repository Filter =====
@@ -298,7 +450,7 @@ function populateRepoFilter(data) {
         currentPage = 1;
         renderTable(filteredData);
         updateStats(filteredData);
-        createCharts(filteredData);
+        createCorrelationCharts(filteredData);
     });
 }
 
@@ -308,6 +460,7 @@ function updateStats(data) {
     document.getElementById('totalFindings').textContent = stats.totalFindings.toLocaleString();
     document.getElementById('avgLineCount').textContent = Math.round(stats.avgLineCount);
     document.getElementById('findingsPerLine').textContent = stats.findingsPerLine.toFixed(4);
+    document.getElementById('totalWorkflows').textContent = stats.totalWorkflows.toLocaleString();
 }
 
 // ===== Load All Data =====
@@ -372,7 +525,7 @@ async function initializeApp() {
         // Update UI with data
         renderTable(filteredData);
         updateStats(allData);
-        createCharts(allData);
+        createCorrelationCharts(allData);
         populateRepoFilter(allData);
         
         // Set up pagination

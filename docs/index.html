@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/regression@2.0.1/dist/regression.min.js"></script>
 </head>
 <body>
 <div class="loading-overlay" id="loadingOverlay">
@@ -26,7 +27,7 @@
 
     <!-- Dashboard -->
     <div class="row mb-4">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="card stats-card">
                 <div class="card-body">
                     <div class="stats-number" id="totalFindings">0</div>
@@ -34,7 +35,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="card stats-card">
                 <div class="card-body">
                     <div class="stats-number" id="avgLineCount">0</div>
@@ -42,7 +43,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="card stats-card">
                 <div class="card-body">
                     <div class="stats-number" id="findingsPerLine">0</div>
@@ -50,13 +51,55 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-3">
+            <div class="card stats-card">
+                <div class="card-body">
+                    <div class="stats-number" id="totalWorkflows">0</div>
+                    <div class="stats-label">Total Workflows</div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- Charts -->
+    <!-- Correlation Analysis Section -->
     <div class="row mb-4">
-        <div class="col-md-4"><canvas id="lineCountChart"></canvas></div>
-        <div class="col-md-4"><canvas id="jobsChart"></canvas></div>
-        <div class="col-md-4"><canvas id="stepsChart"></canvas></div>
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Vulnerability Correlation Analysis</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <canvas id="lineCountCorrelationChart"></canvas>
+                            <div class="chart-summary" id="lineCountSummary">
+                                <p class="text-center mt-2">Analyzing relationship between workflow length and vulnerabilities...</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <canvas id="jobsCorrelationChart"></canvas>
+                            <div class="chart-summary" id="jobsSummary">
+                                <p class="text-center mt-2">Analyzing relationship between job count and vulnerabilities...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <canvas id="stepsCorrelationChart"></canvas>
+                            <div class="chart-summary" id="stepsSummary">
+                                <p class="text-center mt-2">Analyzing relationship between steps/job and vulnerabilities...</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <canvas id="vulnerabilityDistributionChart"></canvas>
+                            <div class="chart-summary" id="distributionSummary">
+                                <p class="text-center mt-2">Analyzing vulnerability distribution...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Analysis Table -->
@@ -115,7 +158,7 @@
     </div>
 </div>
 
-<!-- YAML Modal -->
+<!-- Workflow YAML Modal -->
 <div class="modal fade" id="workflowYamlModal" tabindex="-1" aria-labelledby="workflowYamlModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-scrollable">
     <div class="modal-content">
