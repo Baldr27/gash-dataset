@@ -1,536 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Actions Workflow Vulnerability Analysis</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <style>
-        .stats-card {
-            text-align: center;
-            padding: 20px;
-            margin-bottom: 20px;
-            transition: transform 0.2s;
-        }
-        .stats-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .stats-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #0d6efd;
-        }
-        .stats-label {
-            font-size: 1rem;
-            color: #6c757d;
-        }
-        .analysis-section {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 25px;
-            border-radius: 10px;
-            margin-bottom: 25px;
-            border-left: 4px solid #0d6efd;
-        }
-        .chart-container {
-            position: relative;
-            height: 300px;
-            margin-bottom: 20px;
-        }
-        .analysis-result {
-            padding: 15px;
-            background-color: #f8f9fa;
-            border-radius: 5px;
-            margin-top: 15px;
-            border-left: 3px solid #20c997;
-        }
-        .card {
-            margin-bottom: 20px;
-            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-            border: none;
-            border-radius: 10px;
-        }
-        .card-header {
-            background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
-            color: white;
-            border-radius: 10px 10px 0 0 !important;
-        }
-        .navbar-brand {
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-        .loading-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.9);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-        .spinner {
-            width: 3rem;
-            height: 3rem;
-        }
-        .btn-primary {
-            background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
-            border: none;
-        }
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #0a58ca 0%, #084298 100%);
-        }
-        .table th {
-            background-color: #f1f8ff;
-        }
-        .pagination {
-            margin: 0;
-        }
-        .stats-card { text-align: center; padding: 20px; margin-bottom: 20px; transition: transform 0.2s; }
-        .stats-card:hover { transform: translateY(-5px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        .stats-number { font-size: 2.5rem; font-weight: bold; color: #0d6efd; }
-        .stats-label { font-size: 1rem; color: #6c757d; }
-        .analysis-section { background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 25px; border-radius: 10px; margin-bottom: 25px; border-left: 4px solid #0d6efd; }
-        .chart-container { position: relative; height: 300px; margin-bottom: 20px; }
-        .analysis-result { padding: 15px; background-color: #f8f9fa; border-radius: 5px; margin-top: 15px; border-left: 3px solid #20c997; }
-        .card { margin-bottom: 20px; box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); border: none; border-radius: 10px; }
-        .card-header { background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%); color: white; border-radius: 10px 10px 0 0 !important; }
-        .navbar-brand { font-weight: bold; font-size: 1.5rem; }
-        .loading-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.9); display: flex; justify-content: center; align-items: center; z-index: 9999; }
-        .spinner { width: 3rem; height: 3rem; }
-        .btn-primary { background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%); border: none; }
-        .btn-primary:hover { background: linear-gradient(135deg, #0a58ca 0%, #084298 100%); }
-        .table th { background-color: #f1f8ff; }
-        .pagination { margin: 0; }
-        pre { background-color: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto; }
-        code { white-space: pre-wrap; word-break: break-word; }
-    </style>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/regression@2.0.1/dist/regression.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Actions Workflow Vulnerability Analysis</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<style>
+/* --- General styling --- */
+.stats-card { text-align: center; padding: 20px; margin-bottom: 20px; transition: transform 0.2s; }
+.stats-card:hover { transform: translateY(-5px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+.stats-number { font-size: 2.5rem; font-weight: bold; color: #0d6efd; }
+.stats-label { font-size: 1rem; color: #6c757d; }
+.analysis-section { background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 25px; border-radius: 10px; margin-bottom: 25px; border-left: 4px solid #0d6efd; }
+.chart-container { position: relative; height: 300px; margin-bottom: 20px; }
+.analysis-result { padding: 15px; background-color: #f8f9fa; border-radius: 5px; margin-top: 15px; border-left: 3px solid #20c997; }
+.card { margin-bottom: 20px; box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); border: none; border-radius: 10px; }
+.card-header { background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%); color: white; border-radius: 10px 10px 0 0 !important; }
+.navbar-brand { font-weight: bold; font-size: 1.5rem; }
+.loading-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.9); display:flex; justify-content:center; align-items:center; z-index:9999; }
+.spinner { width: 3rem; height: 3rem; }
+.btn-primary { background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%); border: none; }
+.btn-primary:hover { background: linear-gradient(135deg, #0a58ca 0%, #084298 100%); }
+.table th { background-color: #f1f8ff; }
+.pagination { margin: 0; }
+pre { background-color: #f8f9fa; padding: 15px; border-radius: 5px; overflow-x: auto; }
+code { white-space: pre-wrap; word-break: break-word; }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/regression@2.0.1/dist/regression.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <div class="loading-overlay" id="loadingOverlay">
-        <div class="text-center">
-            <div class="spinner-border text-primary spinner" role="status">
-                <span class="visually-hidden">Loading...</span>
+<div class="loading-overlay" id="loadingOverlay">
+    <div class="text-center">
+        <div class="spinner-border text-primary spinner" role="status"><span class="visually-hidden">Loading...</span></div>
+        <p class="mt-2">Loading data...</p>
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container"><a class="navbar-brand" href="#">GitHub Actions Workflow Analysis</a></div>
+</nav>
+
+<div class="container mt-4">
+    <!-- Analysis section -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="analysis-section">
+                <h2>Workflow Metadata vs. Vulnerability Analysis</h2>
+                <p>This dashboard analyzes the relationship between workflow characteristics (line count, number of jobs, steps) and security vulnerabilities.</p>
+                <div class="alert alert-info" id="statusAlert"><strong>Status:</strong> Loading data...</div>
             </div>
-            <p class="mt-2">Loading data...</p>
         </div>
     </div>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                GitHub Actions Workflow Analysis
-            </a>
-        </div>
-    </nav>
+    <!-- Stats cards -->
+    <div class="row">
+        <div class="col-md-4"><div class="card stats-card"><div class="stats-number" id="totalFindings">0</div><div class="stats-label">Total Findings</div></div></div>
+        <div class="col-md-4"><div class="card stats-card"><div class="stats-number" id="avgLineCount">0</div><div class="stats-label">Avg. Workflow Lines</div></div></div>
+        <div class="col-md-4"><div class="card stats-card"><div class="stats-number" id="findingsPerLine">0</div><div class="stats-label">Findings per 100 Lines</div></div></div>
+    </div>
 
-    <div class="container mt-4">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="analysis-section">
-                    <h2>Workflow Metadata vs. Vulnerability Analysis</h2>
-                    <p>This dashboard analyzes the relationship between workflow characteristics (line count, number of jobs, steps) and security vulnerabilities.</p>
-                    <div class="alert alert-info" id="statusAlert">
-                        <strong>Status:</strong> Loading data...
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card stats-card">
-                    <div class="stats-number" id="totalFindings">0</div>
-                    <div class="stats-label">Total Findings</div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card stats-card">
-                    <div class="stats-number" id="avgLineCount">0</div>
-                    <div class="stats-label">Avg. Workflow Lines</div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card stats-card">
-                    <div class="stats-number" id="findingsPerLine">0</div>
-                    <div class="stats-label">Findings per 100 Lines</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Line Count vs. Vulnerabilities</h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="chart-container">
-                            <canvas id="lineCountChart"></canvas>
-                        </div>
-                        <div id="lineCountAnalysis" class="analysis-result"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Number of Jobs vs. Vulnerabilities</h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="chart-container">
-                            <canvas id="jobsChart"></canvas>
-                        </div>
-                        <div id="jobsAnalysis" class="analysis-result"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Steps per Job vs. Vulnerabilities</h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="chart-container">
-                            <canvas id="stepsChart"></canvas>
-                        </div>
-                        <div id="stepsAnalysis" class="analysis-result"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Workflow Evolution Over Time</h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="row mb-3">
-                            <div class="col-md-4">
-                                <select id="repoSelect" class="form-select">
-                                    <option value="">Select Repository</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4">
-                                <select id="workflowSelect" class="form-select">
-                                    <option value="">Select Workflow</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4">
-                                <button id="analyzeBtn" class="btn btn-primary w-100">Analyze Evolution</button>
-                            </div>
-                        </div>
-                        <div class="chart-container">
-                            <canvas id="evolutionChart"></canvas>
-                        </div>
-                        <div id="evolutionAnalysis" class="analysis-result"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row mt-4">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Detailed Findings</h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <div class="d-flex align-items-center">
-                                <span class="me-2">Show</span>
-                                <select id="rowsPerPage" class="form-select form-select-sm" style="width: auto;">
-                                    <option value="10">10</option>
-                                    <option value="25">25</option>
-                                    <option value="50">50</option>
-                                    <option value="100">100</option>
-                                </select>
-                                <span class="ms-2">entries</span>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <span class="me-2">Search:</span>
-                                <input type="text" id="searchInput" class="form-control form-control-sm" style="width: auto;">
-                            </div>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Repository</th>
-                                        <th>Workflow</th>
-                                        <th>Line Count</th>
-                                        <th>Jobs</th>
-                                        <th>Steps/Job</th>
-                                        <th>Findings</th>
-                                        <th>Findings/Line</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="findingsTable">
-                                    <tr>
-                                        <td colspan="7" class="text-center">Loading data...</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div id="paginationInfo"></div>
-                            <nav>
-                                <ul class="pagination" id="pagination">
-                                    <li class="page-item disabled"><a class="page-link" href="#" id="prevPage">Previous</a></li>
-                                    <li class="page-item"><a class="page-link" href="#" id="nextPage">Next</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-	   <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header"><h3>Detailed Findings</h3></div>
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <div class="d-flex align-items-center">
-                                <span class="me-2">Show</span>
-                                <select id="rowsPerPage" class="form-select form-select-sm" style="width: auto;">
-                                    <option value="10">10</option>
-                                    <option value="25">25</option>
-                                    <option value="50">50</option>
-                                    <option value="100">100</option>
-                                </select>
-                                <span class="ms-2">entries</span>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <span class="me-2">Search:</span>
-                                <input type="text" id="searchInput" class="form-control form-control-sm" style="width: auto;">
-                            </div>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Repository</th>
-                                        <th>Workflow</th>
-                                        <th>Line Count</th>
-                                        <th>Jobs</th>
-                                        <th>Steps/Job</th>
-                                        <th>Findings</th>
-                                        <th>Findings/Line</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="findingsTable">
-                                    <tr><td colspan="7" class="text-center">Loading data...</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div id="paginationInfo"></div>
-                            <nav>
-                                <ul class="pagination" id="pagination">
-                                    <li class="page-item disabled"><a class="page-link" href="#" id="prevPage">Previous</a></li>
-                                    <li class="page-item"><a class="page-link" href="#" id="nextPage">Next</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
+    <!-- Charts -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header"><h3>Line Count vs. Vulnerabilities</h3></div>
+                <div class="card-body">
+                    <div class="chart-container"><canvas id="lineCountChart"></canvas></div>
+                    <div id="lineCountAnalysis" class="analysis-result"></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Workflow Modal -->
-    <div class="modal fade" id="workflowModal" tabindex="-1" aria-labelledby="workflowModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-xl modal-dialog-scrollable">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="workflowModalLabel">Workflow YAML</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <pre><code id="workflowContent"></code></pre>
-          </div>
+    <div class="row">
+        <div class="col-md-6"><div class="card">
+            <div class="card-header"><h3>Number of Jobs vs. Vulnerabilities</h3></div>
+            <div class="card-body">
+                <div class="chart-container"><canvas id="jobsChart"></canvas></div>
+                <div id="jobsAnalysis" class="analysis-result"></div>
+            </div>
+        </div></div>
+        <div class="col-md-6"><div class="card">
+            <div class="card-header"><h3>Steps per Job vs. Vulnerabilities</h3></div>
+            <div class="card-body">
+                <div class="chart-container"><canvas id="stepsChart"></canvas></div>
+                <div id="stepsAnalysis" class="analysis-result"></div>
+            </div>
+        </div></div>
+    </div>
+
+    <!-- Evolution chart and filters -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header"><h3>Workflow Evolution Over Time</h3></div>
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <select id="repoSelect" class="form-select"><option value="">Select Repository</option></select>
+                        </div>
+                        <div class="col-md-4">
+                            <select id="workflowSelect" class="form-select"><option value="">Select Workflow</option></select>
+                        </div>
+                        <div class="col-md-4">
+                            <button id="analyzeBtn" class="btn btn-primary w-100">Analyze Evolution</button>
+                        </div>
+                    </div>
+                    <div class="chart-container"><canvas id="evolutionChart"></canvas></div>
+                    <div id="evolutionAnalysis" class="analysis-result"></div>
+                </div>
+            </div>
         </div>
+    </div>
+
+    <!-- Detailed findings table -->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header"><h3>Detailed Findings</h3></div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="d-flex align-items-center">
+                            <span class="me-2">Show</span>
+                            <select id="rowsPerPage" class="form-select form-select-sm" style="width:auto;">
+                                <option value="10">10</option>
+                                <option value="25">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                            <span class="ms-2">entries</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <span class="me-2">Search:</span>
+                            <input type="text" id="searchInput" class="form-control form-control-sm" style="width:auto;">
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Repository</th>
+                                    <th>Workflow</th>
+                                    <th>Line Count</th>
+                                    <th>Jobs</th>
+                                    <th>Steps/Job</th>
+                                    <th>Findings</th>
+                                    <th>Findings/Line</th>
+                                </tr>
+                            </thead>
+                            <tbody id="findingsTable"><tr><td colspan="7" class="text-center">Loading data...</td></tr></tbody>
+                        </table>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div id="paginationInfo"></div>
+                        <nav>
+                            <ul class="pagination" id="pagination">
+                                <li class="page-item disabled"><a class="page-link" href="#" id="prevPage">Previous</a></li>
+                                <li class="page-item"><a class="page-link" href="#" id="nextPage">Next</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Workflow Modal -->
+<div class="modal fade" id="workflowModal" tabindex="-1" aria-labelledby="workflowModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="workflowModalLabel">Workflow YAML</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <pre><code id="workflowContent"></code></pre>
       </div>
     </div>
+  </div>
+</div>
 
-    <script>
-        let allData = [];
-        let filteredData = [];
-        let currentPage = 1;
-        let rowsPerPage = 10;
+<script>
+let allData = [];
+let filteredData = [];
+let currentPage = 1;
+let rowsPerPage = 10;
 
-        function processWorkflowMetadata(metadata) {
-            const workflowMap = {};
-            metadata.forEach(item => {
-                const key = `${item.repo_name}|${item.workflow_name}`;
-                if (!workflowMap[key] || item.version_ts > workflowMap[key].version_ts) {
-                    workflowMap[key] = item;
-                }
-            });
-            return Object.values(workflowMap);
-        }
+function processWorkflowMetadata(metadata){
+    const workflowMap={};
+    metadata.forEach(item=>{
+        const key = `${item.repo_name}|${item.workflow_name}`;
+        if(!workflowMap[key] || item.version_ts>workflowMap[key].version_ts) workflowMap[key]=item;
+    });
+    return Object.values(workflowMap);
+}
 
-        function processFindings(findings) {
-            const workflowCounts = {};
-            findings.forEach(finding => {
-                const key = `${finding.repo_name}|${finding.workflow_name}`;
-                workflowCounts[key] = (workflowCounts[key] || 0) + 1;
-            });
-            return workflowCounts;
-        }
+function processFindings(findings){
+    const counts={};
+    findings.forEach(f=>{const key=`${f.repo_name}|${f.workflow_name}`; counts[key]=(counts[key]||0)+1;});
+    return counts;
+}
 
-        function combineData(metadata, findingsCounts) {
-            return metadata.map(item => {
-                const key = `${item.repo_name}|${item.workflow_name}`;
-                const findingsCount = findingsCounts[key] || 0;
+function combineData(metadata, findingsCounts){
+    return metadata.map(item=>{
+        const key=`${item.repo_name}|${item.workflow_name}`;
+        const findingsCount=findingsCounts[key]||0;
+        let stepsPerJob=0;
+        try{
+            const stepsData=typeof item.steps_per_job==='string'?JSON.parse(item.steps_per_job):item.steps_per_job;
+            const stepsValues=Object.values(stepsData||{});
+            if(stepsValues.length>0) stepsPerJob=stepsValues.reduce((sum,val)=>sum+val,0)/stepsValues.length;
+        }catch(e){console.log('Error parsing steps_per_job:',e);}
+        return {
+            repository:item.repo_name,
+            workflow:item.workflow_name,
+            line_count:item.line_count,
+            jobs:item.num_jobs,
+            steps_per_job:stepsPerJob.toFixed(1),
+            findings:findingsCount,
+            findings_per_line:item.line_count?(findingsCount/item.line_count).toFixed(4):0,
+            workflow_yaml:item.workflow
+        };
+    });
+}
 
-                let stepsPerJob = 0;
-                try {
-                    const stepsData = typeof item.steps_per_job === 'string' ? JSON.parse(item.steps_per_job) : item.steps_per_job;
-                    const stepsValues = Object.values(stepsData || {});
-                    if (stepsValues.length > 0) stepsPerJob = stepsValues.reduce((sum,val)=>sum+val,0)/stepsValues.length;
-                } catch(e){ console.log('Error parsing steps_per_job:', e); }
+function renderTable(data,page=1,rows=rowsPerPage){
+    const container=document.getElementById("findingsTable");
+    container.innerHTML="";
+    if(!data || data.length===0){container.innerHTML='<tr><td colspan="7" class="text-center">No data available</td></tr>'; return;}
+    const totalPages=Math.ceil(data.length/rows);
+    const startIndex=(page-1)*rows;
+    const endIndex=Math.min(startIndex+rows,data.length);
+    const pageData=data.slice(startIndex,endIndex);
+    for(let row of pageData){
+        const tr=document.createElement("tr");
+        tr.innerHTML=`
+            <td>${row.repository||""}</td>
+            <td>${row.workflow||""}</td>
+            <td>${row.line_count||""}</td>
+            <td>${row.jobs||""}</td>
+            <td>${row.steps_per_job||""}</td>
+            <td><a href="#" class="btn btn-sm btn-link show-workflow" data-repo="${row.repository}" data-workflow="${row.workflow}">${row.findings||""}</a></td>
+            <td>${row.findings_per_line||""}</td>
+        `;
+        container.appendChild(tr);
+    }
+    document.getElementById("paginationInfo").textContent=`Showing ${startIndex+1} to ${endIndex} of ${data.length} entries`;
+    document.getElementById("prevPage").parentElement.classList.toggle("disabled",page<=1);
+    document.getElementById("nextPage").parentElement.classList.toggle("disabled",page>=totalPages);
+    currentPage=page;
+}
 
-                return {
-                    repository: item.repo_name,
-                    workflow: item.workflow_name,
-                    line_count: item.line_count,
-                    jobs: item.num_jobs,
-                    steps_per_job: stepsPerJob.toFixed(1),
-                    findings: findingsCount,
-                    findings_per_line: item.line_count ? (findingsCount/item.line_count).toFixed(4):0,
-                    workflow_yaml: item.workflow  // <-- This is the YAML from your Python script
-                };
-            });
-        }
+function calculateStats(data){if(!data||data.length===0) return {totalFindings:0, avgLineCount:0, findingsPerLine:0}; const totalFindings=data.reduce((sum,row)=>sum+(row.findings||0),0); const avgLineCount=data.reduce((sum,row)=>sum+(row.line_count||0),0)/data.length; const findingsPerLine=totalFindings/data.reduce((sum,row)=>sum+(row.line_count||0),0); return {totalFindings, avgLineCount, findingsPerLine};}
 
-        function renderTable(data, page=1, rows=rowsPerPage) {
-            const container = document.getElementById("findingsTable");
-            container.innerHTML = "";
-            if (!data || data.length === 0) {
-                container.innerHTML = '<tr><td colspan="7" class="text-center">No data available</td></tr>';
-                return;
-            }
+async function loadData(){
+    try{
+        const findingsResponse=await fetch('./data/findings.json');
+        const findingsData=await findingsResponse.json();
+        const metadataResponse=await fetch('./data/workflow_metadata.json');
+        const metadataData=await metadataResponse.json();
+        const processedMetadata=processWorkflowMetadata(metadataData);
+        const findingsCounts=processFindings(findingsData);
+        return combineData(processedMetadata,findingsCounts);
+    }catch(e){console.error("Failed to load data:",e); return[];}
+}
 
-            const totalPages = Math.ceil(data.length / rows);
-            const startIndex = (page-1)*rows;
-            const endIndex = Math.min(startIndex+rows, data.length);
-            const pageData = data.slice(startIndex,endIndex);
+function populateDropdowns(){
+    const repos=[...new Set(allData.map(d=>d.repository))].sort();
+    const repoSelect=document.getElementById("repoSelect");
+    repoSelect.innerHTML='<option value="">Select Repository</option>';
+    repos.forEach(r=>{const o=document.createElement("option");o.value=r;o.textContent=r;repoSelect.appendChild(o);});
+    document.getElementById("workflowSelect").innerHTML='<option value="">Select Workflow</option>';
+}
 
-            for(let row of pageData){
-                const tr = document.createElement("tr");
-                tr.innerHTML = `
-                    <td>${row.repository || ""}</td>
-                    <td>${row.workflow || ""}</td>
-                    <td>${row.line_count || ""}</td>
-                    <td>${row.jobs || ""}</td>
-                    <td>${row.steps_per_job || ""}</td>
-                    <td>
-                      <a href="#" class="btn btn-sm btn-link show-workflow" data-repo="${row.repository}" data-workflow="${row.workflow}">${row.findings || ""}</a>
-                    </td>
-                    <td>${row.findings_per_line || ""}</td>
-                `;
-                container.appendChild(tr);
-            }
+async function initializeApp(){
+    allData=await loadData();
+    filteredData=[...allData];
+    renderTable(filteredData);
+    const stats=calculateStats(allData);
+    document.getElementById('totalFindings').textContent=stats.totalFindings.toLocaleString();
+    document.getElementById('avgLineCount').textContent=Math.round(stats.avgLineCount);
+    document.getElementById('findingsPerLine').textContent=stats.findingsPerLine.toFixed(4);
+    populateDropdowns();
 
-            document.getElementById("paginationInfo").textContent =
-                `Showing ${startIndex+1} to ${endIndex} of ${data.length} entries`;
+    document.getElementById('rowsPerPage').addEventListener('change',(e)=>{rowsPerPage=parseInt(e.target.value); renderTable(filteredData,1,rowsPerPage);});
+    document.getElementById('searchInput').addEventListener('input',(e)=>{const term=e.target.value.toLowerCase(); filteredData=allData.filter(row=>(row.repository&&row.repository.toLowerCase().includes(term))||(row.workflow&&row.workflow.toLowerCase().includes(term))); renderTable(filteredData,1,rowsPerPage);});
+    document.getElementById('prevPage').addEventListener('click',(e)=>{e.preventDefault(); if(currentPage>1) renderTable(filteredData,currentPage-1,rowsPerPage);});
+    document.getElementById('nextPage').addEventListener('click',(e)=>{e.preventDefault(); const totalPages=Math.ceil(filteredData.length/rowsPerPage); if(currentPage<totalPages) renderTable(filteredData,currentPage+1,rowsPerPage);});
+    document.addEventListener('click',function(e){if(e.target && e.target.classList.contains('show-workflow')){e.preventDefault(); const repo=e.target.dataset.repo; const workflow=e.target.dataset.workflow; const item=allData.find(d=>d.repository===repo&&d.workflow===workflow); if(item&&item.workflow_yaml){document.getElementById('workflowContent').textContent=item.workflow_yaml; const modal=new bootstrap.Modal(document.getElementById('workflowModal')); modal.show();}}});
+    document.getElementById('repoSelect').addEventListener('change',(e)=>{
+        const workflows=[...new Set(allData.filter(d=>d.repository===e.target.value).map(d=>d.workflow))].sort();
+        const workflowSelect=document.getElementById("workflowSelect");
+        workflowSelect.innerHTML='<option value="">Select Workflow</option>';
+        workflows.forEach(w=>{const o=document.createElement("option"); o.value=w; o.textContent=w; workflowSelect.appendChild(o);});
+    });
 
-            document.getElementById("prevPage").parentElement.classList.toggle("disabled", page <= 1);
-            document.getElementById("nextPage").parentElement.classList.toggle("disabled", page >= totalPages);
-            currentPage = page;
-        }
+    document.getElementById('analyzeBtn').addEventListener('click',()=>{
+        const repo=document.getElementById('repoSelect').value;
+        const workflow=document.getElementById('workflowSelect').value;
+        if(!repo || !workflow){alert('Select repo and workflow'); return;}
+        const evolutionData=allData.filter(d=>d.repository===repo&&d.workflow===workflow).map(d=>({x:new Date(d.version_ts),y:d.findings}));
+        const ctx=document.getElementById('evolutionChart').getContext('2d');
+        if(window.evolutionChartInstance) window.evolutionChartInstance.destroy();
+        window.evolutionChartInstance=new Chart(ctx,{type:'line',data:{datasets:[{label:'Findings',data:evolutionData,borderColor:'#0d6efd',backgroundColor:'rgba(13,110,253,0.2)',tension:0.2}]},options:{scales:{x:{type:'time',time:{unit:'day'},title:{display:true,text:'Date'}},y:{title:{display:true,text:'Findings'}}}}});
+    });
 
-        function calculateStats(data){
-            if(!data || data.length===0) return {totalFindings:0, avgLineCount:0, findingsPerLine:0};
-            const totalFindings = data.reduce((sum,row)=>sum+(row.findings||0),0);
-            const avgLineCount = data.reduce((sum,row)=>sum+(row.line_count||0),0)/data.length;
-            const findingsPerLine = totalFindings / data.reduce((sum,row)=>sum+(row.line_count||0),0);
-            return {totalFindings, avgLineCount, findingsPerLine};
-        }
+    document.getElementById('loadingOverlay').style.display='none';
+}
 
-        // --- Load data ---
-        async function loadData(){
-            try {
-                const findingsResponse = await fetch('./data/findings.json');
-                const findingsData = await findingsResponse.json();
-                const metadataResponse = await fetch('./data/workflow_metadata.json');
-                const metadataData = await metadataResponse.json();
-                const processedMetadata = processWorkflowMetadata(metadataData);
-                const findingsCounts = processFindings(findingsData);
-                return combineData(processedMetadata, findingsCounts);
-            } catch(e){
-                console.error("Failed to load data:", e);
-                return [];
-            }
-        }
-
-        async function initializeApp(){
-            allData = await loadData();
-            filteredData = [...allData];
-            renderTable(filteredData);
-
-            const stats = calculateStats(allData);
-            document.getElementById('totalFindings').textContent = stats.totalFindings.toLocaleString();
-            document.getElementById('avgLineCount').textContent = Math.round(stats.avgLineCount);
-            document.getElementById('findingsPerLine').textContent = stats.findingsPerLine.toFixed(4);
-
-            // --- Event listeners ---
-            document.getElementById('rowsPerPage').addEventListener('change',(e)=>{
-                rowsPerPage=parseInt(e.target.value);
-                renderTable(filteredData,1,rowsPerPage);
-            });
-
-            document.getElementById('searchInput').addEventListener('input',(e)=>{
-                const term = e.target.value.toLowerCase();
-                filteredData = allData.filter(row =>
-                    (row.repository && row.repository.toLowerCase().includes(term)) ||
-                    (row.workflow && row.workflow.toLowerCase().includes(term))
-                );
-                renderTable(filteredData,1,rowsPerPage);
-            });
-
-            document.getElementById('prevPage').addEventListener('click',(e)=>{
-                e.preventDefault();
-                if(currentPage>1) renderTable(filteredData,currentPage-1,rowsPerPage);
-            });
-            document.getElementById('nextPage').addEventListener('click',(e)=>{
-                e.preventDefault();
-                const totalPages = Math.ceil(filteredData.length/rowsPerPage);
-                if(currentPage<totalPages) renderTable(filteredData,currentPage+1,rowsPerPage);
-            });
-
-            // --- Show workflow modal ---
-            document.addEventListener('click', function(e){
-                if(e.target && e.target.classList.contains('show-workflow')){
-                    e.preventDefault();
-                    const repo = e.target.dataset.repo;
-                    const workflow = e.target.dataset.workflow;
-                    const item = allData.find(d=>d.repository===repo && d.workflow===workflow);
-                    if(item && item.workflow_yaml){
-                        document.getElementById('workflowContent').textContent = item.workflow_yaml;
-                        const modal = new bootstrap.Modal(document.getElementById('workflowModal'));
-                        modal.show();
-                    }
-                }
-            });
-
-            document.getElementById('loadingOverlay').style.display = 'none';
-        }
-
-        initializeApp();
-    </script>
-
+initializeApp();
+</script>
 </body>
 </html>
+
