@@ -85,6 +85,9 @@
         .table th {
             background-color: #f1f8ff;
         }
+        .fallback-data {
+            display: none;
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/regression@2.0.1/dist/regression.min.js"></script>
@@ -95,7 +98,7 @@
             <div class="spinner-border text-primary spinner" role="status">
                 <span class="visually-hidden">Loading...</span>
             </div>
-            <p class="mt-2">Initializing DuckDB and loading data...</p>
+            <p class="mt-2" id="loadingText">Initializing application...</p>
         </div>
     </div>
 
@@ -250,54 +253,88 @@
         </div>
     </div>
 
-    <!-- Load Apache Arrow first -->
-    <script src="https://cdn.jsdelivr.net/npm/apache-arrow@14.0.2/+esm"></script>
-    
+    <!-- Fallback data in case DuckDB fails -->
+    <script class="fallback-data" id="sampleData">
+        const sampleData = [
+            {
+                repository: "example/repo1",
+                workflow: "ci.yml",
+                line_count: 45,
+                jobs: 3,
+                steps_per_job: 4,
+                findings: 2,
+                findings_per_line: 0.044
+            },
+            {
+                repository: "example/repo2",
+                workflow: "deploy.yml",
+                line_count: 78,
+                jobs: 2,
+                steps_per_job: 5,
+                findings: 5,
+                findings_per_line: 0.064
+            },
+            {
+                repository: "example/repo3",
+                workflow: "test.yml",
+                line_count: 32,
+                jobs: 1,
+                steps_per_job: 3,
+                findings: 1,
+                findings_per_line: 0.031
+            }
+        ];
+    </script>
+
     <script>
-        // Set Arrow to globalThis for DuckDB
-        window.Arrow = window.arrow;
-        
-        // Load DuckDB with a fallback to local files
-        function loadDuckDB() {
-            return new Promise((resolve, reject) => {
-                // Try to load from local files first
-                const script = document.createElement('script');
-                script.type = 'module';
-                script.innerHTML = `
-                    import * as duckdb from './js/duckdb/duckdb-browser.mjs';
-                    window.duckdb = duckdb;
-                    console.log('DuckDB loaded from local files');
-                `;
-                script.onload = () => resolve();
-                script.onerror = () => {
-                    console.warn('Failed to load DuckDB from local files, trying fallback...');
-                    // Fallback to CDN if local files fail
-                    const fallbackScript = document.createElement('script');
-                    fallbackScript.type = 'module';
-                    fallbackScript.innerHTML = `
-                        import * as duckdb from 'https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.25.0/dist/duckdb-browser-async.mjs';
-                        window.duckdb = duckdb;
-                        console.log('DuckDB loaded from CDN fallback');
-                    `;
-                    fallbackScript.onload = () => resolve();
-                    fallbackScript.onerror = () => reject(new Error('Failed to load DuckDB from both local and CDN sources'));
-                    document.head.appendChild(fallbackScript);
+        // Simple DuckDB initialization without external dependencies
+        async function initDuckDB() {
+            try {
+                document.getElementById('loadingText').textContent = 'Loading DuckDB engine...';
+                document.getElementById('statusAlert').innerHTML = '<strong>Status:</strong> Loading DuckDB engine...';
+                
+                // Create a worker from local file
+                const worker = new Worker('./js/duckdb/duckdb-browser-eh.worker.js');
+                
+                // Create a simple logger
+                const logger = {
+                    log: function() { console.log.apply(console, arguments); },
+                    error: function() { console.error.apply(console, arguments); }
                 };
-                document.head.appendChild(script);
-            });
+                
+                // Load the DuckDB module
+                const response = await fetch('./js/duckdb/duckdb-browser.mjs');
+                const duckdbCode = await response.text();
+                
+                // Create a blob URL for the module
+                const blob = new Blob([duckdbCode], { type: 'application/javascript' });
+                const blobURL = URL.createObjectURL(blob);
+                
+                // Import the DuckDB module
+                const duckdb = await import(blobURL);
+                
+                // Initialize DuckDB
+                const db = new duckdb.AsyncDuckDB(logger, worker);
+                await db.instantiate();
+                
+                return db;
+            } catch (error) {
+                console.error('DuckDB initialization failed:', error);
+                throw error;
+            }
         }
 
-        // Render a query result into an HTML table
-        function renderTable(arrowTable, containerId = "findingsTable") {
+        // Render table function
+        function renderTable(data, containerId = "findingsTable") {
             const container = document.getElementById(containerId);
             container.innerHTML = "";
 
-            if (!arrowTable || arrowTable.length === 0) {
+            if (!data || data.length === 0) {
                 container.innerHTML = '<tr><td colspan="7" class="text-center">No data available</td></tr>';
                 return;
             }
 
-            for (let row of arrowTable) {
+            for (let row of data) {
                 const tr = document.createElement("tr");
                 tr.innerHTML = `
                     <td>${row.repository ?? ""}</td>
@@ -312,43 +349,13 @@
             }
         }
 
-        // Initialize DuckDB in the browser
-        async function initDB() {
-            try {
-                // Create a worker using local files
-                const worker = new Worker('./js/duckdb/duckdb-browser-eh.worker.js');
-                const logger = new window.duckdb.ConsoleLogger();
-                const db = new window.duckdb.AsyncDuckDB(logger, worker);
-                
-                // Instantiate with local module
-                await db.instantiate();
-                return db;
-            } catch (error) {
-                console.error("Failed to initialize DuckDB with local files:", error);
-                
-                // Fallback: try with MVP worker
-                try {
-                    const worker = new Worker('./js/duckdb/duckdb-browser-mvp.worker.js');
-                    const logger = new window.duckdb.ConsoleLogger();
-                    const db = new window.duckdb.AsyncDuckDB(logger, worker);
-                    
-                    await db.instantiate();
-                    return db;
-                } catch (fallbackError) {
-                    console.error("Failed to initialize DuckDB with MVP worker:", fallbackError);
-                    throw fallbackError;
-                }
-            }
-        }
-
-        // Create sample charts (to be replaced with real data)
+        // Create sample charts
         function createSampleCharts() {
-            // Sample data for charts
             const chartData = {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                labels: ['Simple', 'Medium', 'Complex'],
                 datasets: [{
-                    label: 'Vulnerabilities',
-                    data: [12, 19, 3, 5, 2, 3],
+                    label: 'Vulnerabilities per Workflow',
+                    data: [2, 5, 8],
                     backgroundColor: 'rgba(255, 99, 132, 0.2)',
                     borderColor: 'rgba(255, 99, 132, 1)',
                     borderWidth: 1
@@ -358,14 +365,24 @@
             const chartOptions = {
                 scales: {
                     y: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Number of Vulnerabilities'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Workflow Complexity'
+                        }
                     }
                 }
             };
 
             // Create charts
             new Chart(document.getElementById('lineCountChart'), {
-                type: 'line',
+                type: 'bar',
                 data: chartData,
                 options: chartOptions
             });
@@ -384,27 +401,61 @@
 
             new Chart(document.getElementById('evolutionChart'), {
                 type: 'line',
-                data: chartData,
-                options: chartOptions
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                    datasets: [{
+                        label: 'Vulnerabilities Over Time',
+                        data: [12, 19, 3, 5, 2, 3],
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
             });
         }
 
-        // Main execution
+        // Use fallback data
+        function useFallbackData() {
+            // Parse sample data
+            const sampleDataScript = document.getElementById('sampleData').text;
+            eval(sampleDataScript); // This will define sampleData variable
+            
+            // Render sample data
+            renderTable(sampleData, "findingsTable");
+            
+            // Update stats
+            document.getElementById('totalFindings').textContent = '8';
+            document.getElementById('avgLineCount').textContent = '52';
+            document.getElementById('findingsPerLine').textContent = '0.046';
+            
+            // Create charts
+            createSampleCharts();
+            
+            // Update status
+            document.getElementById('statusAlert').innerHTML = 
+                '<strong>Status:</strong> Using sample data. DuckDB initialization failed.';
+            document.getElementById('statusAlert').className = 'alert alert-warning';
+        }
+
+        // Main initialization function
         async function initializeApp() {
             try {
-                document.getElementById('statusAlert').innerHTML = '<strong>Status:</strong> Loading DuckDB...';
+                // Try to initialize DuckDB
+                document.getElementById('statusAlert').innerHTML = '<strong>Status:</strong> Initializing DuckDB...';
                 
-                // Load DuckDB
-                await loadDuckDB();
-                
-                document.getElementById('statusAlert').innerHTML = '<strong>Status:</strong> Initializing database...';
-                
-                const db = await initDB();
+                const db = await initDuckDB();
                 const conn = await db.connect();
 
                 document.getElementById('statusAlert').innerHTML = '<strong>Status:</strong> Loading parquet data...';
                 
-                // Register parquet files with correct relative path
+                // Register parquet files
                 await conn.query(`
                     CREATE OR REPLACE VIEW findings AS
                     SELECT * FROM read_parquet('./data/findings.parquet');
@@ -421,36 +472,29 @@
                 const result = await conn.query("SELECT * FROM findings LIMIT 20");
                 renderTable(result, "findingsTable");
 
-                // Update stats with sample data (replace with actual queries)
-                document.getElementById('totalFindings').textContent = '1,243';
-                document.getElementById('avgLineCount').textContent = '87';
-                document.getElementById('findingsPerLine').textContent = '0.043';
+                // Update stats
+                const totalFindings = await conn.query("SELECT SUM(findings) as total FROM findings");
+                const avgLineCount = await conn.query("SELECT AVG(line_count) as avg FROM findings");
+                const findingsPerLine = await conn.query("SELECT AVG(findings_per_line) as avg FROM findings");
+                
+                document.getElementById('totalFindings').textContent = totalFindings.toArray()[0].total;
+                document.getElementById('avgLineCount').textContent = Math.round(avgLineCount.toArray()[0].avg);
+                document.getElementById('findingsPerLine').textContent = findingsPerLine.toArray()[0].avg.toFixed(4);
 
-                // Create sample charts
+                // Create charts (you would need to implement this with real data)
                 createSampleCharts();
 
-                console.log("DuckDB initialized, query executed.");
+                console.log("DuckDB initialized successfully");
                 
                 // Update status and hide loading overlay
                 document.getElementById('statusAlert').innerHTML = '<strong>Status:</strong> Data loaded successfully!';
                 document.getElementById('statusAlert').className = 'alert alert-success';
                 
-                setTimeout(() => {
-                    document.getElementById('loadingOverlay').style.display = 'none';
-                }, 1000);
-                
             } catch (error) {
-                console.error("Error initializing application:", error);
-                document.getElementById('statusAlert').className = 'alert alert-danger';
-                document.getElementById('statusAlert').innerHTML = `
-                    <strong>Error:</strong> Failed to load data. Please check the console for details.
-                    <div>${error.message}</div>
-                `;
-                
-                // Create sample charts even if data loading fails
-                createSampleCharts();
-                
-                // Hide loading overlay even on error
+                console.error("DuckDB initialization failed, using fallback data:", error);
+                useFallbackData();
+            } finally {
+                // Hide loading overlay
                 setTimeout(() => {
                     document.getElementById('loadingOverlay').style.display = 'none';
                 }, 1000);
@@ -458,7 +502,7 @@
         }
 
         // Start the application
-        initializeApp();
+        document.addEventListener('DOMContentLoaded', initializeApp);
     </script>
 </body>
 </html>
