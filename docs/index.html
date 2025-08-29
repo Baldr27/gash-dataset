@@ -85,6 +85,9 @@
         .table th {
             background-color: #f1f8ff;
         }
+        .pagination {
+            margin: 0;
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/regression@2.0.1/dist/regression.min.js"></script>
@@ -224,6 +227,22 @@
                         <h3>Detailed Findings</h3>
                     </div>
                     <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <span class="me-2">Show</span>
+                                <select id="rowsPerPage" class="form-select form-select-sm" style="width: auto;">
+                                    <option value="10">10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>
+                                <span class="ms-2">entries</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <span class="me-2">Search:</span>
+                                <input type="text" id="searchInput" class="form-control form-control-sm" style="width: auto;">
+                            </div>
+                        </div>
                         <div class="table-responsive">
                             <table class="table table-striped">
                                 <thead>
@@ -244,6 +263,15 @@
                                 </tbody>
                             </table>
                         </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div id="paginationInfo"></div>
+                            <nav>
+                                <ul class="pagination" id="pagination">
+                                    <li class="page-item disabled"><a class="page-link" href="#" id="prevPage">Previous</a></li>
+                                    <li class="page-item"><a class="page-link" href="#" id="nextPage">Next</a></li>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -251,9 +279,16 @@
     </div>
 
     <script>
-        // Render data into an HTML table
-        function renderTable(data, containerId = "findingsTable") {
-            const container = document.getElementById(containerId);
+        // Global variables
+        let allData = [];
+        let filteredData = [];
+        let currentPage = 1;
+        let rowsPerPage = 10;
+        let currentSort = { column: null, direction: 'asc' };
+
+        // Render data into an HTML table with pagination
+        function renderTable(data, page = 1, rows = rowsPerPage) {
+            const container = document.getElementById("findingsTable");
             container.innerHTML = "";
 
             if (!data || data.length === 0) {
@@ -261,7 +296,14 @@
                 return;
             }
 
-            for (let row of data) {
+            // Calculate pagination
+            const totalPages = Math.ceil(data.length / rows);
+            const startIndex = (page - 1) * rows;
+            const endIndex = Math.min(startIndex + rows, data.length);
+            const pageData = data.slice(startIndex, endIndex);
+
+            // Render table rows
+            for (let row of pageData) {
                 const tr = document.createElement("tr");
                 tr.innerHTML = `
                     <td>${row.repository || ""}</td>
@@ -270,14 +312,29 @@
                     <td>${row.jobs || ""}</td>
                     <td>${row.steps_per_job || ""}</td>
                     <td>${row.findings || ""}</td>
-                    <td>${row.findings_per_line || ""}</td>
+                    <td>${row.findings_per_line ? row.findings_per_line.toFixed(4) : ""}</td>
                 `;
                 container.appendChild(tr);
             }
+
+            // Update pagination info
+            document.getElementById("paginationInfo").textContent = 
+                `Showing ${startIndex + 1} to ${endIndex} of ${data.length} entries`;
+            
+            // Update pagination controls
+            document.getElementById("prevPage").parentElement.classList.toggle("disabled", page <= 1);
+            document.getElementById("nextPage").parentElement.classList.toggle("disabled", page >= totalPages);
+            
+            // Store current page
+            currentPage = page;
         }
 
         // Calculate statistics from data
         function calculateStats(data) {
+            if (!data || data.length === 0) {
+                return { totalFindings: 0, avgLineCount: 0, findingsPerLine: 0 };
+            }
+            
             const totalFindings = data.reduce((sum, row) => sum + (row.findings || 0), 0);
             const avgLineCount = data.reduce((sum, row) => sum + (row.line_count || 0), 0) / data.length;
             const findingsPerLine = data.reduce((sum, row) => sum + (row.findings_per_line || 0), 0) / data.length;
@@ -291,77 +348,141 @@
 
         // Create charts from data
         function createCharts(data) {
-            // Sample data for charts (replace with actual data analysis)
-            const chartData = {
-                labels: data.slice(0, 10).map(row => row.repository),
-                datasets: [{
-                    label: 'Findings',
-                    data: data.slice(0, 10).map(row => row.findings),
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    borderWidth: 1
-                }]
-            };
-
-            const chartOptions = {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            };
-
-            // Create charts
+            if (!data || data.length === 0) return;
+            
+            // Prepare data for charts
+            const lineCountData = data.map(row => ({ x: row.line_count, y: row.findings }));
+            const jobsData = data.map(row => ({ x: row.jobs, y: row.findings }));
+            const stepsData = data.map(row => ({ x: row.steps_per_job, y: row.findings }));
+            
+            // Create scatter charts
             new Chart(document.getElementById('lineCountChart'), {
-                type: 'line',
+                type: 'scatter',
                 data: {
-                    labels: data.slice(0, 10).map(row => row.repository),
                     datasets: [{
-                        label: 'Line Count',
-                        data: data.slice(0, 10).map(row => row.line_count),
-                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        label: 'Line Count vs Findings',
+                        data: lineCountData,
+                        backgroundColor: 'rgba(54, 162, 235, 0.5)',
                         borderColor: 'rgba(54, 162, 235, 1)',
                         borderWidth: 1
                     }]
                 },
-                options: chartOptions
+                options: {
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Line Count'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Findings'
+                            }
+                        }
+                    }
+                }
             });
 
             new Chart(document.getElementById('jobsChart'), {
-                type: 'bar',
+                type: 'scatter',
                 data: {
-                    labels: data.slice(0, 10).map(row => row.repository),
                     datasets: [{
-                        label: 'Jobs',
-                        data: data.slice(0, 10).map(row => row.jobs),
-                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        label: 'Jobs vs Findings',
+                        data: jobsData,
+                        backgroundColor: 'rgba(75, 192, 192, 0.5)',
                         borderColor: 'rgba(75, 192, 192, 1)',
                         borderWidth: 1
                     }]
                 },
-                options: chartOptions
+                options: {
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Number of Jobs'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Findings'
+                            }
+                        }
+                    }
+                }
             });
 
             new Chart(document.getElementById('stepsChart'), {
-                type: 'bar',
+                type: 'scatter',
                 data: {
-                    labels: data.slice(0, 10).map(row => row.repository),
                     datasets: [{
-                        label: 'Steps per Job',
-                        data: data.slice(0, 10).map(row => row.steps_per_job),
-                        backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                        label: 'Steps per Job vs Findings',
+                        data: stepsData,
+                        backgroundColor: 'rgba(153, 102, 255, 0.5)',
                         borderColor: 'rgba(153, 102, 255, 1)',
                         borderWidth: 1
                     }]
                 },
-                options: chartOptions
+                options: {
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Steps per Job'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Findings'
+                            }
+                        }
+                    }
+                }
             });
 
+            // Create evolution chart (placeholder)
             new Chart(document.getElementById('evolutionChart'), {
                 type: 'line',
-                data: chartData,
-                options: chartOptions
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                    datasets: [{
+                        label: 'Vulnerabilities Over Time',
+                        data: [12, 19, 3, 5, 2, 3],
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
             });
+        }
+
+        // Filter data based on search input
+        function filterData(searchTerm) {
+            if (!searchTerm) {
+                filteredData = [...allData];
+                return;
+            }
+            
+            const term = searchTerm.toLowerCase();
+            filteredData = allData.filter(row => 
+                (row.repository && row.repository.toLowerCase().includes(term)) ||
+                (row.workflow && row.workflow.toLowerCase().includes(term)) ||
+                (row.line_count && row.line_count.toString().includes(term)) ||
+                (row.jobs && row.jobs.toString().includes(term)) ||
+                (row.steps_per_job && row.steps_per_job.toString().includes(term)) ||
+                (row.findings && row.findings.toString().includes(term)) ||
+                (row.findings_per_line && row.findings_per_line.toString().includes(term))
+            );
         }
 
         // Load data from JSON files
@@ -416,21 +537,23 @@
             try {
                 // Load data
                 const data = await loadData();
+                allData = data.findings;
+                filteredData = [...allData];
                 
                 // Render table
-                renderTable(data.findings, "findingsTable");
+                renderTable(filteredData);
                 
                 // Calculate and display stats
-                const stats = calculateStats(data.findings);
+                const stats = calculateStats(allData);
                 document.getElementById('totalFindings').textContent = stats.totalFindings.toLocaleString();
                 document.getElementById('avgLineCount').textContent = Math.round(stats.avgLineCount);
                 document.getElementById('findingsPerLine').textContent = stats.findingsPerLine.toFixed(4);
                 
                 // Create charts
-                createCharts(data.findings);
+                createCharts(allData);
                 
                 // Populate dropdowns
-                const repos = [...new Set(data.findings.map(item => item.repository))];
+                const repos = [...new Set(allData.map(item => item.repository))];
                 const repoSelect = document.getElementById('repoSelect');
                 
                 repos.forEach(repo => {
@@ -438,6 +561,32 @@
                     option.value = repo;
                     option.textContent = repo;
                     repoSelect.appendChild(option);
+                });
+                
+                // Set up event listeners
+                document.getElementById('rowsPerPage').addEventListener('change', (e) => {
+                    rowsPerPage = parseInt(e.target.value);
+                    renderTable(filteredData, 1, rowsPerPage);
+                });
+                
+                document.getElementById('searchInput').addEventListener('input', (e) => {
+                    filterData(e.target.value);
+                    renderTable(filteredData, 1, rowsPerPage);
+                });
+                
+                document.getElementById('prevPage').addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (currentPage > 1) {
+                        renderTable(filteredData, currentPage - 1, rowsPerPage);
+                    }
+                });
+                
+                document.getElementById('nextPage').addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const totalPages = Math.ceil(filteredData.length / rowsPerPage);
+                    if (currentPage < totalPages) {
+                        renderTable(filteredData, currentPage + 1, rowsPerPage);
+                    }
                 });
                 
                 // Update status and hide loading overlay
