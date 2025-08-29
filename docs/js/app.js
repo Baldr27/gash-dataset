@@ -1,155 +1,171 @@
+// Global variables
 let allData = [];
 let filteredData = [];
 let currentPage = 1;
 let rowsPerPage = 10;
+let workflowIndex = {};
 
-async function loadData() {
+// Load workflow index
+async function loadWorkflowIndex() {
     try {
-        const findingsRes = await fetch('./data/findings.json');
-        const findings = await findingsRes.json();
+        const response = await fetch('./data/workflow_index.json');
+        if (!response.ok) throw new Error("Failed to load workflow index");
+        workflowIndex = await response.json();
 
-        const metadataRes = await fetch('./data/workflow_metadata.json');
-        const metadata = await metadataRes.json();
-
-        return combineData(metadata, processFindings(findings));
-    } catch (err) {
-        console.error(err);
-        return [];
+        const repoSelect = document.getElementById('repoSelect');
+        for (const owner of Object.keys(workflowIndex)) {
+            for (const repo of Object.keys(workflowIndex[owner])) {
+                const option = document.createElement('option');
+                option.value = `${owner}|${repo}`;
+                option.textContent = `${owner}/${repo}`;
+                repoSelect.appendChild(option);
+            }
+        }
+    } catch (error) {
+        console.error("Error loading workflow index:", error);
     }
 }
 
-function processFindings(findings) {
-    const counts = {};
-    findings.forEach(f => {
-        const key = `${f.repo_name}|${f.workflow_name}`;
-        counts[key] = (counts[key] || 0) + 1;
-    });
-    return counts;
-}
-
-function combineData(metadata, findingsCounts) {
-    return metadata.map(item => {
-        const key = `${item.repo_name}|${item.workflow_name}`;
-        const count = findingsCounts[key] || 0;
-        let steps = 0;
+// Load workflow JSONs for selected repo
+async function loadWorkflowData(owner, repo) {
+    const workflows = workflowIndex[owner][repo];
+    const data = [];
+    for (const wfFile of workflows) {
         try {
-            const stepsData = JSON.parse(item.steps_per_job);
-            const vals = Object.values(stepsData);
-            if (vals.length > 0) steps = vals.reduce((a,b)=>a+b,0)/vals.length;
-        } catch {}
-        return {
-            repository: item.repo_name,
-            workflow: item.workflow_name,
-            line_count: item.line_count,
-            jobs: item.num_jobs,
-            steps_per_job: steps.toFixed(1),
-            findings: count,
-            findings_per_line: item.line_count ? (count / item.line_count).toFixed(4) : 0
-        };
-    });
+            const response = await fetch(`./data/${owner}/${repo}/${wfFile}`);
+            if (!response.ok) continue;
+            const wfData = await response.json();
+            for (const wfName in wfData) {
+                if (wfName === 'metadata') continue;
+                const versions = wfData[wfName];
+                for (const ts in versions) {
+                    const meta = wfData['metadata'][ts];
+                    data.push({
+                        repository: `${owner}/${repo}`,
+                        workflow: wfName,
+                        line_count: meta.line_count,
+                        jobs: meta.num_jobs,
+                        steps_per_job: Object.values(meta.steps_per_job || {}).reduce((a,b)=>a+b,0)/Object.keys(meta.steps_per_job || {}).length || 0,
+                        findings: versions[ts].length,
+                        findings_per_line: meta.line_count ? (versions[ts].length/meta.line_count).toFixed(4) : 0,
+                        yaml: meta.workflow
+                    });
+                }
+            }
+        } catch (e) { console.error(`Failed to load ${wfFile}:`, e); }
+    }
+    return data;
 }
 
-function renderTable(data, page=currentPage, rows=rowsPerPage) {
+// Render table
+function renderTable(data, page = 1, rows = rowsPerPage) {
     const container = document.getElementById("findingsTable");
     container.innerHTML = "";
-
     if (!data || data.length === 0) {
         container.innerHTML = '<tr><td colspan="7" class="text-center">No data available</td></tr>';
         return;
     }
-
     const totalPages = Math.ceil(data.length / rows);
-    const start = (page-1)*rows;
-    const end = Math.min(start+rows, data.length);
-    const pageData = data.slice(start,end);
-
-    pageData.forEach(row=>{
+    const startIndex = (page-1)*rows;
+    const endIndex = Math.min(startIndex+rows, data.length);
+    const pageData = data.slice(startIndex,endIndex);
+    for (const row of pageData) {
         const tr = document.createElement("tr");
         tr.innerHTML = `
             <td>${row.repository}</td>
-            <td>${row.workflow}</td>
+            <td><a href="#" class="view-yaml" data-yaml="${encodeURIComponent(row.yaml)}">${row.workflow}</a></td>
             <td>${row.line_count}</td>
             <td>${row.jobs}</td>
-            <td>${row.steps_per_job}</td>
+            <td>${row.steps_per_job.toFixed(1)}</td>
             <td>${row.findings}</td>
             <td>${row.findings_per_line}</td>
         `;
         container.appendChild(tr);
-    });
-
-    document.getElementById("paginationInfo").textContent = `Showing ${start+1} to ${end} of ${data.length} entries`;
+    }
+    document.getElementById("paginationInfo").textContent =
+        `Showing ${startIndex+1} to ${endIndex} of ${data.length} entries`;
     document.getElementById("prevPage").parentElement.classList.toggle("disabled", page<=1);
     document.getElementById("nextPage").parentElement.classList.toggle("disabled", page>=totalPages);
     currentPage = page;
+
+    // Add YAML click listeners
+    document.querySelectorAll('.view-yaml').forEach(el => {
+        el.addEventListener('click', (e) => {
+            e.preventDefault();
+            const yamlContent = decodeURIComponent(el.dataset.yaml);
+            document.getElementById('yamlModalBody').textContent = yamlContent;
+            const yamlModal = new bootstrap.Modal(document.getElementById('yamlModal'));
+            yamlModal.show();
+        });
+    });
 }
 
+// Calculate stats
 function calculateStats(data) {
-    if (!data.length) return {totalFindings:0, avgLineCount:0, findingsPerLine:0};
-    const totalFindings = data.reduce((s,r)=>s+(r.findings||0),0);
-    const avgLineCount = data.reduce((s,r)=>s+(r.line_count||0),0)/data.length;
-    const findingsPerLine = totalFindings/data.reduce((s,r)=>s+(r.line_count||0),0);
-    return {totalFindings, avgLineCount, findingsPerLine};
+    if (!data || data.length===0) return { totalFindings:0, avgLineCount:0, findingsPerLine:0 };
+    const totalFindings = data.reduce((sum,row)=>sum+(row.findings||0),0);
+    const avgLineCount = data.reduce((sum,row)=>sum+(row.line_count||0),0)/data.length;
+    const findingsPerLine = totalFindings/data.reduce((sum,row)=>sum+(row.line_count||0),0);
+    return { totalFindings, avgLineCount, findingsPerLine };
 }
 
+// Create charts
 function createCharts(data) {
-    if (!data.length) return;
+    if (!data || data.length===0) return;
+    const lineCountData = data.map(row=>({x:row.line_count, y:row.findings}));
+    const jobsData = data.map(row=>({x:row.jobs, y:row.findings}));
+    const stepsData = data.map(row=>({x:row.steps_per_job, y:row.findings}));
 
     new Chart(document.getElementById('lineCountChart'), {
         type:'scatter',
-        data:{datasets:[{label:'Line Count vs Findings', data:data.map(r=>({x:r.line_count,y:r.findings})), backgroundColor:'rgba(54, 162, 235, 0.5)', borderColor:'rgba(54, 162, 235, 1)'}]},
+        data:{datasets:[{label:'Line Count vs Findings',data:lineCountData,backgroundColor:'rgba(54,162,235,0.5)',borderColor:'rgba(54,162,235,1)',borderWidth:1}]},
         options:{scales:{x:{title:{display:true,text:'Line Count'}},y:{title:{display:true,text:'Findings'}}}}
     });
-
     new Chart(document.getElementById('jobsChart'), {
         type:'scatter',
-        data:{datasets:[{label:'Jobs vs Findings', data:data.map(r=>({x:r.jobs,y:r.findings})), backgroundColor:'rgba(75, 192, 192, 0.5)', borderColor:'rgba(75, 192, 192, 1)'}]},
+        data:{datasets:[{label:'Jobs vs Findings',data:jobsData,backgroundColor:'rgba(75,192,192,0.5)',borderColor:'rgba(75,192,192,1)',borderWidth:1}]},
         options:{scales:{x:{title:{display:true,text:'Number of Jobs'}},y:{title:{display:true,text:'Findings'}}}}
     });
-
     new Chart(document.getElementById('stepsChart'), {
         type:'scatter',
-        data:{datasets:[{label:'Steps per Job vs Findings', data:data.map(r=>({x:parseFloat(r.steps_per_job)||0,y:r.findings})), backgroundColor:'rgba(153, 102, 255, 0.5)', borderColor:'rgba(153, 102, 255, 1)'}]},
+        data:{datasets:[{label:'Steps/Job vs Findings',data:stepsData,backgroundColor:'rgba(255,99,132,0.5)',borderColor:'rgba(255,99,132,1)',borderWidth:1}]},
         options:{scales:{x:{title:{display:true,text:'Steps per Job'}},y:{title:{display:true,text:'Findings'}}}}
     });
-
-    new Chart(document.getElementById('evolutionChart'), {
-        type:'line',
-        data:{labels:['Jan','Feb','Mar','Apr','May','Jun'], datasets:[{label:'Vulnerabilities Over Time', data:[12,19,3,5,2,3], backgroundColor:'rgba(255, 99, 132, 0.2)', borderColor:'rgba(255, 99, 132, 1)'}]},
-        options:{scales:{y:{beginAtZero:true}}}
-    });
 }
 
-function filterData(term) {
-    if (!term) filteredData=[...allData];
-    else {
-        const t=term.toLowerCase();
-        filteredData = allData.filter(r=>Object.values(r).some(v=>v.toString().toLowerCase().includes(t)));
-    }
-    renderTable(filteredData,1,rowsPerPage);
-}
-
-async function initializeApp() {
-    allData = await loadData();
+// Event listeners
+document.getElementById('repoSelect').addEventListener('change', async (e)=>{
+    const [owner, repo] = e.target.value.split('|');
+    if(!owner||!repo) return;
+    allData = await loadWorkflowData(owner,repo);
     filteredData = [...allData];
-    renderTable(filteredData);
     const stats = calculateStats(allData);
-    document.getElementById('totalFindings').textContent = stats.totalFindings.toLocaleString();
-    document.getElementById('avgLineCount').textContent = Math.round(stats.avgLineCount);
+    document.getElementById('totalFindings').textContent = stats.totalFindings;
+    document.getElementById('avgLineCount').textContent = stats.avgLineCount.toFixed(1);
     document.getElementById('findingsPerLine').textContent = stats.findingsPerLine.toFixed(4);
+    renderTable(filteredData,1,rowsPerPage);
     createCharts(allData);
+});
 
-    const repoSelect = document.getElementById('repoSelect');
-    [...new Set(allData.map(r=>r.repository))].forEach(repo=>{
-        const option = document.createElement('option'); option.value=repo; option.textContent=repo; repoSelect.appendChild(option);
-    });
+document.getElementById('rowsPerPage').addEventListener('change',(e)=>{
+    rowsPerPage=parseInt(e.target.value);
+    renderTable(filteredData,1,rowsPerPage);
+});
+document.getElementById('prevPage').addEventListener('click',(e)=>{
+    e.preventDefault();
+    if(currentPage>1) renderTable(filteredData,currentPage-1,rowsPerPage);
+});
+document.getElementById('nextPage').addEventListener('click',(e)=>{
+    e.preventDefault();
+    const totalPages = Math.ceil(filteredData.length/rowsPerPage);
+    if(currentPage<totalPages) renderTable(filteredData,currentPage+1,rowsPerPage);
+});
 
-    document.getElementById('rowsPerPage').addEventListener('change',e=>{rowsPerPage=parseInt(e.target.value); renderTable(filteredData,1,rowsPerPage);});
-    document.getElementById('searchInput').addEventListener('input',e=>filterData(e.target.value));
-    document.getElementById('prevPage').addEventListener('click',e=>{e.preventDefault(); if(currentPage>1) renderTable(filteredData,currentPage-1,rowsPerPage);});
-    document.getElementById('nextPage').addEventListener('click',e=>{e.preventDefault(); const totalPages=Math.ceil(filteredData.length/rowsPerPage); if(currentPage<totalPages) renderTable(filteredData,currentPage+1,rowsPerPage);});
-
-    setTimeout(()=>{document.getElementById('loadingOverlay').style.display='none';},1000);
+// Initialize app
+async function initializeApp() {
+    document.getElementById('loadingOverlay').style.display = 'flex';
+    await loadWorkflowIndex();
+    document.getElementById('loadingOverlay').style.display = 'none';
 }
-
 initializeApp();
 
