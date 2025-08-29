@@ -286,6 +286,65 @@
         let rowsPerPage = 10;
         let currentSort = { column: null, direction: 'asc' };
 
+        // Process workflow metadata to create summary data
+        function processWorkflowMetadata(metadata) {
+            // Group by repo and workflow to get the latest version
+            const workflowMap = {};
+            
+            metadata.forEach(item => {
+                const key = `${item.repo_name}|${item.workflow_name}`;
+                
+                // Only keep the latest version of each workflow
+                if (!workflowMap[key] || item.version_ts > workflowMap[key].version_ts) {
+                    workflowMap[key] = item;
+                }
+            });
+            
+            return Object.values(workflowMap);
+        }
+
+        // Process findings to count vulnerabilities per workflow
+        function processFindings(findings) {
+            const workflowCounts = {};
+            
+            findings.forEach(finding => {
+                const key = `${finding.repo_name}|${finding.workflow_name}`;
+                workflowCounts[key] = (workflowCounts[key] || 0) + 1;
+            });
+            
+            return workflowCounts;
+        }
+
+        // Combine metadata and findings data
+        function combineData(metadata, findingsCounts) {
+            return metadata.map(item => {
+                const key = `${item.repo_name}|${item.workflow_name}`;
+                const findingsCount = findingsCounts[key] || 0;
+                
+                // Parse steps_per_job to get an average
+                let stepsPerJob = 0;
+                try {
+                    const stepsData = JSON.parse(item.steps_per_job);
+                    const stepsValues = Object.values(stepsData);
+                    if (stepsValues.length > 0) {
+                        stepsPerJob = stepsValues.reduce((sum, val) => sum + val, 0) / stepsValues.length;
+                    }
+                } catch (e) {
+                    console.log('Error parsing steps_per_job:', e);
+                }
+                
+                return {
+                    repository: item.repo_name,
+                    workflow: item.workflow_name,
+                    line_count: item.line_count,
+                    jobs: item.num_jobs,
+                    steps_per_job: stepsPerJob.toFixed(1),
+                    findings: findingsCount,
+                    findings_per_line: item.line_count ? (findingsCount / item.line_count).toFixed(4) : 0
+                };
+            });
+        }
+
         // Render data into an HTML table with pagination
         function renderTable(data, page = 1, rows = rowsPerPage) {
             const container = document.getElementById("findingsTable");
@@ -312,7 +371,7 @@
                     <td>${row.jobs || ""}</td>
                     <td>${row.steps_per_job || ""}</td>
                     <td>${row.findings || ""}</td>
-                    <td>${row.findings_per_line ? row.findings_per_line.toFixed(4) : ""}</td>
+                    <td>${row.findings_per_line || ""}</td>
                 `;
                 container.appendChild(tr);
             }
@@ -337,7 +396,7 @@
             
             const totalFindings = data.reduce((sum, row) => sum + (row.findings || 0), 0);
             const avgLineCount = data.reduce((sum, row) => sum + (row.line_count || 0), 0) / data.length;
-            const findingsPerLine = data.reduce((sum, row) => sum + (row.findings_per_line || 0), 0) / data.length;
+            const findingsPerLine = totalFindings / data.reduce((sum, row) => sum + (row.line_count || 0), 0);
             
             return {
                 totalFindings,
@@ -353,7 +412,7 @@
             // Prepare data for charts
             const lineCountData = data.map(row => ({ x: row.line_count, y: row.findings }));
             const jobsData = data.map(row => ({ x: row.jobs, y: row.findings }));
-            const stepsData = data.map(row => ({ x: row.steps_per_job, y: row.findings }));
+            const stepsData = data.map(row => ({ x: parseFloat(row.steps_per_job) || 0, y: row.findings }));
             
             // Create scatter charts
             new Chart(document.getElementById('lineCountChart'), {
@@ -495,40 +554,34 @@
                 if (!findingsResponse.ok) {
                     throw new Error('Failed to load findings data');
                 }
-                
                 const findingsData = await findingsResponse.json();
                 
                 document.getElementById('statusAlert').innerHTML = '<strong>Status:</strong> Loading metadata...';
                 
-                // Load metadata (if available)
-                let metadata = [];
-                try {
-                    const metadataResponse = await fetch('./data/workflow_metadata.json');
-                    if (metadataResponse.ok) {
-                        metadata = await metadataResponse.json();
-                    }
-                } catch (e) {
-                    console.log('Metadata not available, continuing without it');
+                // Load metadata
+                const metadataResponse = await fetch('./data/workflow_metadata.json');
+                if (!metadataResponse.ok) {
+                    throw new Error('Failed to load metadata');
                 }
+                const metadataData = await metadataResponse.json();
                 
-                return {
-                    findings: findingsData,
-                    metadata: metadata
-                };
+                // Process the data
+                const processedMetadata = processWorkflowMetadata(metadataData);
+                const findingsCounts = processFindings(findingsData);
+                const combinedData = combineData(processedMetadata, findingsCounts);
+                
+                return combinedData;
             } catch (error) {
                 console.error("Failed to load data:", error);
                 
                 // Return sample data if loading fails
-                return {
-                    findings: [
-                        { repository: 'example/repo1', workflow: 'ci.yml', line_count: 120, jobs: 3, steps_per_job: 5, findings: 12, findings_per_line: 0.1 },
-                        { repository: 'example/repo2', workflow: 'deploy.yml', line_count: 85, jobs: 2, steps_per_job: 4, findings: 8, findings_per_line: 0.094 },
-                        { repository: 'example/repo3', workflow: 'test.yml', line_count: 65, jobs: 1, steps_per_job: 6, findings: 5, findings_per_line: 0.077 },
-                        { repository: 'example/repo4', workflow: 'build.yml', line_count: 95, jobs: 2, steps_per_job: 7, findings: 10, findings_per_line: 0.105 },
-                        { repository: 'example/repo5', workflow: 'release.yml', line_count: 110, jobs: 4, steps_per_job: 3, findings: 15, findings_per_line: 0.136 }
-                    ],
-                    metadata: []
-                };
+                return [
+                    { repository: 'example/repo1', workflow: 'ci.yml', line_count: 120, jobs: 3, steps_per_job: 5, findings: 12, findings_per_line: 0.1 },
+                    { repository: 'example/repo2', workflow: 'deploy.yml', line_count: 85, jobs: 2, steps_per_job: 4, findings: 8, findings_per_line: 0.094 },
+                    { repository: 'example/repo3', workflow: 'test.yml', line_count: 65, jobs: 1, steps_per_job: 6, findings: 5, findings_per_line: 0.077 },
+                    { repository: 'example/repo4', workflow: 'build.yml', line_count: 95, jobs: 2, steps_per_job: 7, findings: 10, findings_per_line: 0.105 },
+                    { repository: 'example/repo5', workflow: 'release.yml', line_count: 110, jobs: 4, steps_per_job: 3, findings: 15, findings_per_line: 0.136 }
+                ];
             }
         }
 
@@ -537,7 +590,7 @@
             try {
                 // Load data
                 const data = await loadData();
-                allData = data.findings;
+                allData = data;
                 filteredData = [...allData];
                 
                 // Render table
