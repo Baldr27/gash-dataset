@@ -95,7 +95,7 @@
             <div class="spinner-border text-primary spinner" role="status">
                 <span class="visually-hidden">Loading...</span>
             </div>
-            <p class="mt-2">Initializing database and loading data...</p>
+            <p class="mt-2">Loading data...</p>
         </div>
     </div>
 
@@ -114,7 +114,7 @@
                     <h2>Workflow Metadata vs. Vulnerability Analysis</h2>
                     <p>This dashboard analyzes the relationship between workflow characteristics (line count, number of jobs, steps) and security vulnerabilities.</p>
                     <div class="alert alert-info" id="statusAlert">
-                        <strong>Status:</strong> Initializing application...
+                        <strong>Status:</strong> Loading data...
                     </div>
                 </div>
             </div>
@@ -250,43 +250,53 @@
         </div>
     </div>
 
-    <!-- Load a pre-bundled version of DuckDB that includes all dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.25.0/dist/duckdb-browser-async-eh.js"></script>
-    
     <script>
-        // Render a query result into an HTML table
-        function renderTable(arrowTable, containerId = "findingsTable") {
+        // Render data into an HTML table
+        function renderTable(data, containerId = "findingsTable") {
             const container = document.getElementById(containerId);
             container.innerHTML = "";
 
-            if (!arrowTable || arrowTable.length === 0) {
+            if (!data || data.length === 0) {
                 container.innerHTML = '<tr><td colspan="7" class="text-center">No data available</td></tr>';
                 return;
             }
 
-            for (let row of arrowTable) {
+            for (let row of data) {
                 const tr = document.createElement("tr");
                 tr.innerHTML = `
-                    <td>${row.repository ?? ""}</td>
-                    <td>${row.workflow ?? ""}</td>
-                    <td>${row.line_count ?? ""}</td>
-                    <td>${row.jobs ?? ""}</td>
-                    <td>${row.steps_per_job ?? ""}</td>
-                    <td>${row.findings ?? ""}</td>
-                    <td>${row.findings_per_line ?? ""}</td>
+                    <td>${row.repository || ""}</td>
+                    <td>${row.workflow || ""}</td>
+                    <td>${row.line_count || ""}</td>
+                    <td>${row.jobs || ""}</td>
+                    <td>${row.steps_per_job || ""}</td>
+                    <td>${row.findings || ""}</td>
+                    <td>${row.findings_per_line || ""}</td>
                 `;
                 container.appendChild(tr);
             }
         }
 
-        // Create sample charts (to be replaced with real data)
-        function createSampleCharts() {
-            // Sample data for charts
+        // Calculate statistics from data
+        function calculateStats(data) {
+            const totalFindings = data.reduce((sum, row) => sum + (row.findings || 0), 0);
+            const avgLineCount = data.reduce((sum, row) => sum + (row.line_count || 0), 0) / data.length;
+            const findingsPerLine = data.reduce((sum, row) => sum + (row.findings_per_line || 0), 0) / data.length;
+            
+            return {
+                totalFindings,
+                avgLineCount,
+                findingsPerLine
+            };
+        }
+
+        // Create charts from data
+        function createCharts(data) {
+            // Sample data for charts (replace with actual data analysis)
             const chartData = {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                labels: data.slice(0, 10).map(row => row.repository),
                 datasets: [{
-                    label: 'Vulnerabilities',
-                    data: [12, 19, 3, 5, 2, 3],
+                    label: 'Findings',
+                    data: data.slice(0, 10).map(row => row.findings),
                     backgroundColor: 'rgba(255, 99, 132, 0.2)',
                     borderColor: 'rgba(255, 99, 132, 1)',
                     borderWidth: 1
@@ -304,19 +314,46 @@
             // Create charts
             new Chart(document.getElementById('lineCountChart'), {
                 type: 'line',
-                data: chartData,
+                data: {
+                    labels: data.slice(0, 10).map(row => row.repository),
+                    datasets: [{
+                        label: 'Line Count',
+                        data: data.slice(0, 10).map(row => row.line_count),
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
                 options: chartOptions
             });
 
             new Chart(document.getElementById('jobsChart'), {
                 type: 'bar',
-                data: chartData,
+                data: {
+                    labels: data.slice(0, 10).map(row => row.repository),
+                    datasets: [{
+                        label: 'Jobs',
+                        data: data.slice(0, 10).map(row => row.jobs),
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
                 options: chartOptions
             });
 
             new Chart(document.getElementById('stepsChart'), {
                 type: 'bar',
-                data: chartData,
+                data: {
+                    labels: data.slice(0, 10).map(row => row.repository),
+                    datasets: [{
+                        label: 'Steps per Job',
+                        data: data.slice(0, 10).map(row => row.steps_per_job),
+                        backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                        borderColor: 'rgba(153, 102, 255, 1)',
+                        borderWidth: 1
+                    }]
+                },
                 options: chartOptions
             });
 
@@ -327,116 +364,81 @@
             });
         }
 
-        // Load data using Fetch API as fallback
-        async function loadDataWithFetch() {
+        // Load data from JSON files
+        async function loadData() {
             try {
-                document.getElementById('statusAlert').innerHTML = '<strong>Status:</strong> Loading data with fallback method...';
+                document.getElementById('statusAlert').innerHTML = '<strong>Status:</strong> Loading findings data...';
                 
-                // Try to load the parquet files using Fetch API
-                const findingsResponse = await fetch('./data/findings.parquet');
-                const findingsData = await findingsResponse.arrayBuffer();
-                
-                // Process the data (this is a simplified example)
-                // In a real scenario, you would need to parse the Parquet file
-                console.log("Loaded parquet file with", findingsData.byteLength, "bytes");
-                
-                // For demo purposes, create sample data
-                const sampleData = [
-                    { repository: 'example/repo1', workflow: 'ci.yml', line_count: 120, jobs: 3, steps_per_job: 5, findings: 12, findings_per_line: 0.1 },
-                    { repository: 'example/repo2', workflow: 'deploy.yml', line_count: 85, jobs: 2, steps_per_job: 4, findings: 8, findings_per_line: 0.094 },
-                    { repository: 'example/repo3', workflow: 'test.yml', line_count: 65, jobs: 1, steps_per_job: 6, findings: 5, findings_per_line: 0.077 }
-                ];
-                
-                // Render the sample data
-                const container = document.getElementById("findingsTable");
-                container.innerHTML = "";
-                
-                for (let row of sampleData) {
-                    const tr = document.createElement("tr");
-                    tr.innerHTML = `
-                        <td>${row.repository}</td>
-                        <td>${row.workflow}</td>
-                        <td>${row.line_count}</td>
-                        <td>${row.jobs}</td>
-                        <td>${row.steps_per_job}</td>
-                        <td>${row.findings}</td>
-                        <td>${row.findings_per_line.toFixed(3)}</td>
-                    `;
-                    container.appendChild(tr);
+                // Load findings data
+                const findingsResponse = await fetch('./data/findings.json');
+                if (!findingsResponse.ok) {
+                    throw new Error('Failed to load findings data');
                 }
                 
-                // Update stats
-                document.getElementById('totalFindings').textContent = '25';
-                document.getElementById('avgLineCount').textContent = '90';
-                document.getElementById('findingsPerLine').textContent = '0.09';
+                const findingsData = await findingsResponse.json();
                 
-                return true;
+                document.getElementById('statusAlert').innerHTML = '<strong>Status:</strong> Loading metadata...';
+                
+                // Load metadata (if available)
+                let metadata = [];
+                try {
+                    const metadataResponse = await fetch('./data/workflow_metadata.json');
+                    if (metadataResponse.ok) {
+                        metadata = await metadataResponse.json();
+                    }
+                } catch (e) {
+                    console.log('Metadata not available, continuing without it');
+                }
+                
+                return {
+                    findings: findingsData,
+                    metadata: metadata
+                };
             } catch (error) {
-                console.error("Failed to load data with fetch:", error);
-                return false;
-            }
-        }
-
-        // Initialize DuckDB in the browser
-        async function initDuckDB() {
-            try {
-                // Use the pre-bundled version of DuckDB
-                const JSDELIVR_BUNDLES = duckdb.getJsDelivrBundles();
-                const bundle = await duckdb.selectBundle(JSDELIVR_BUNDLES);
+                console.error("Failed to load data:", error);
                 
-                const worker = new Worker(bundle.mainWorker);
-                const logger = new duckdb.ConsoleLogger();
-                const db = new duckdb.AsyncDuckDB(logger, worker);
-                
-                await db.instantiate(bundle.mainModule, bundle.pthreadWorker);
-                return db;
-            } catch (error) {
-                console.error("Failed to initialize DuckDB:", error);
-                throw error;
+                // Return sample data if loading fails
+                return {
+                    findings: [
+                        { repository: 'example/repo1', workflow: 'ci.yml', line_count: 120, jobs: 3, steps_per_job: 5, findings: 12, findings_per_line: 0.1 },
+                        { repository: 'example/repo2', workflow: 'deploy.yml', line_count: 85, jobs: 2, steps_per_job: 4, findings: 8, findings_per_line: 0.094 },
+                        { repository: 'example/repo3', workflow: 'test.yml', line_count: 65, jobs: 1, steps_per_job: 6, findings: 5, findings_per_line: 0.077 },
+                        { repository: 'example/repo4', workflow: 'build.yml', line_count: 95, jobs: 2, steps_per_job: 7, findings: 10, findings_per_line: 0.105 },
+                        { repository: 'example/repo5', workflow: 'release.yml', line_count: 110, jobs: 4, steps_per_job: 3, findings: 15, findings_per_line: 0.136 }
+                    ],
+                    metadata: []
+                };
             }
         }
 
         // Main execution
         async function initializeApp() {
             try {
-                document.getElementById('statusAlert').innerHTML = '<strong>Status:</strong> Initializing DuckDB...';
+                // Load data
+                const data = await loadData();
                 
-                // Initialize DuckDB
-                const db = await initDuckDB();
-                const conn = await db.connect();
-
-                document.getElementById('statusAlert').innerHTML = '<strong>Status:</strong> Loading parquet data...';
+                // Render table
+                renderTable(data.findings, "findingsTable");
                 
-                // Register parquet files with correct relative path
-                await conn.query(`
-                    CREATE OR REPLACE VIEW findings AS
-                    SELECT * FROM read_parquet('./data/findings.parquet');
-                `);
-
-                await conn.query(`
-                    CREATE OR REPLACE VIEW metadata AS
-                    SELECT * FROM read_parquet('./data/workflow_metadata.parquet');
-                `);
-
-                document.getElementById('statusAlert').innerHTML = '<strong>Status:</strong> Querying data...';
+                // Calculate and display stats
+                const stats = calculateStats(data.findings);
+                document.getElementById('totalFindings').textContent = stats.totalFindings.toLocaleString();
+                document.getElementById('avgLineCount').textContent = Math.round(stats.avgLineCount);
+                document.getElementById('findingsPerLine').textContent = stats.findingsPerLine.toFixed(4);
                 
-                // Example query
-                const result = await conn.query("SELECT * FROM findings LIMIT 20");
-                renderTable(result, "findingsTable");
-
-                // Update stats with real queries
-                const totalFindings = await conn.query("SELECT SUM(findings) as total FROM findings");
-                const avgLineCount = await conn.query("SELECT AVG(line_count) as avg FROM findings");
-                const findingsPerLine = await conn.query("SELECT AVG(findings_per_line) as avg FROM findings");
+                // Create charts
+                createCharts(data.findings);
                 
-                document.getElementById('totalFindings').textContent = totalFindings.toArray()[0].total;
-                document.getElementById('avgLineCount').textContent = Math.round(avgLineCount.toArray()[0].avg);
-                document.getElementById('findingsPerLine').textContent = findingsPerLine.toArray()[0].avg.toFixed(4);
-
-                // Create charts with real data
-                createSampleCharts();
-
-                console.log("DuckDB initialized, query executed.");
+                // Populate dropdowns
+                const repos = [...new Set(data.findings.map(item => item.repository))];
+                const repoSelect = document.getElementById('repoSelect');
+                
+                repos.forEach(repo => {
+                    const option = document.createElement('option');
+                    option.value = repo;
+                    option.textContent = repo;
+                    repoSelect.appendChild(option);
+                });
                 
                 // Update status and hide loading overlay
                 document.getElementById('statusAlert').innerHTML = '<strong>Status:</strong> Data loaded successfully!';
@@ -447,26 +449,14 @@
                 }, 1000);
                 
             } catch (error) {
-                console.error("DuckDB initialization failed, using fallback data:", error);
+                console.error("Error initializing application:", error);
+                document.getElementById('statusAlert').className = 'alert alert-danger';
+                document.getElementById('statusAlert').innerHTML = `
+                    <strong>Error:</strong> Failed to load data. Please check the console for details.
+                    <div>${error.message}</div>
+                `;
                 
-                // Try to load data with fetch as fallback
-                const success = await loadDataWithFetch();
-                
-                if (success) {
-                    document.getElementById('statusAlert').innerHTML = '<strong>Status:</strong> Data loaded using fallback method!';
-                    document.getElementById('statusAlert').className = 'alert alert-warning';
-                } else {
-                    document.getElementById('statusAlert').className = 'alert alert-danger';
-                    document.getElementById('statusAlert').innerHTML = `
-                        <strong>Error:</strong> Failed to load data. Please check the console for details.
-                        <div>${error.message}</div>
-                    `;
-                    
-                    // Create sample charts even if data loading fails
-                    createSampleCharts();
-                }
-                
-                // Hide loading overlay
+                // Hide loading overlay even on error
                 setTimeout(() => {
                     document.getElementById('loadingOverlay').style.display = 'none';
                 }, 1000);
