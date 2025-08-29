@@ -12,6 +12,10 @@ let lineCountCorrelationChart, jobsCorrelationChart, stepsCorrelationChart, vuln
 // ===== Utility Functions =====
 function parseStepsPerJob(stepsStr) {
     try {
+        if (typeof stepsStr === 'object') {
+            const values = Object.values(stepsStr);
+            return values.length > 0 ? (values.reduce((a,b)=>a+b,0)/values.length).toFixed(1) : 0;
+        }
         const stepsData = JSON.parse(stepsStr);
         const values = Object.values(stepsData);
         return values.length > 0 ? (values.reduce((a,b)=>a+b,0)/values.length).toFixed(1) : 0;
@@ -86,7 +90,19 @@ async function showWorkflowYaml(owner, repo, file) {
         const response = await fetch(path);
         if (!response.ok) throw new Error(`File not found: ${path}`);
         const json = await response.json();
-        yamlContainer.textContent = json.workflow || JSON.stringify(json, null, 2);
+        
+        // Extract the workflow YAML from metadata
+        let workflowYaml = "No workflow content found";
+        if (json.metadata) {
+            // Get the latest timestamp
+            const timestamps = Object.keys(json.metadata);
+            if (timestamps.length > 0) {
+                const latestTimestamp = timestamps.sort().reverse()[0];
+                workflowYaml = json.metadata[latestTimestamp].workflow || workflowYaml;
+            }
+        }
+        
+        yamlContainer.textContent = workflowYaml;
         const modal = new bootstrap.Modal(document.getElementById('workflowYamlModal'));
         modal.show();
     } catch (err) {
@@ -482,11 +498,44 @@ async function loadAllData() {
                     if (!resp.ok) throw new Error(`File not found: ${path}`);
                     const json = await resp.json();
 
-                    // Metadata extraction
-                    const stepsAvg = parseStepsPerJob(JSON.stringify(json.steps_per_job || {}));
-                    const lineCount = json.line_count || 0;
-                    const numJobs = json.num_jobs || 0;
-                    const findingsCount = (json.findings || []).length || 0;
+                    // Extract findings count from the JSON structure
+                    let findingsCount = 0;
+                    
+                    // Find the workflow name (any key that's not "metadata")
+                    let workflowName = null;
+                    for (const key in json) {
+                        if (key !== "metadata") {
+                            workflowName = key;
+                            break;
+                        }
+                    }
+                    
+                    if (workflowName && json[workflowName]) {
+                        // Sum findings across all timestamps for this workflow
+                        for (const timestamp in json[workflowName]) {
+                            findingsCount += json[workflowName][timestamp].length;
+                        }
+                    }
+                    
+                    // Extract metadata from the latest timestamp
+                    let lineCount = 0;
+                    let numJobs = 0;
+                    let stepsPerJob = "{}";
+                    
+                    if (json.metadata) {
+                        // Get the latest timestamp
+                        const timestamps = Object.keys(json.metadata);
+                        if (timestamps.length > 0) {
+                            const latestTimestamp = timestamps.sort().reverse()[0];
+                            const metadata = json.metadata[latestTimestamp];
+                            
+                            lineCount = metadata.line_count || 0;
+                            numJobs = metadata.num_jobs || 0;
+                            stepsPerJob = JSON.stringify(metadata.steps_per_job || {});
+                        }
+                    }
+
+                    const stepsAvg = parseStepsPerJob(stepsPerJob);
 
                     dataArray.push({
                         owner,
