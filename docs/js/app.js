@@ -6,6 +6,9 @@ let rowsPerPage = 10;
 let currentSort = { column: null, direction: 'asc' };
 let workflowIndex = {}; // workflow_index.json content
 
+// Chart instances
+let lineCountChartInstance, jobsChartInstance, stepsChartInstance;
+
 // ===== Utility Functions =====
 function parseStepsPerJob(stepsStr) {
     try {
@@ -19,9 +22,10 @@ function parseStepsPerJob(stepsStr) {
 
 function calculateStats(data) {
     if (!data || !data.length) return { totalFindings: 0, avgLineCount: 0, findingsPerLine: 0 };
-    const totalFindings = data.reduce((sum,r)=>sum+(r.findings||0),0);
-    const avgLineCount = data.reduce((sum,r)=>sum+(r.line_count||0),0)/data.length;
-    const findingsPerLine = totalFindings/data.reduce((sum,r)=>sum+(r.line_count||0),0);
+    const totalFindings = data.reduce((sum, r) => sum + (r.findings || 0), 0);
+    const totalLines = data.reduce((sum, r) => sum + (r.line_count || 0), 0);
+    const avgLineCount = totalLines / data.length;
+    const findingsPerLine = totalLines > 0 ? totalFindings / totalLines : 0;
     return { totalFindings, avgLineCount, findingsPerLine };
 }
 
@@ -30,7 +34,7 @@ function renderTable(data, page=1, rows=rowsPerPage) {
     container.innerHTML = "";
 
     if (!data.length) {
-        container.innerHTML = '<tr><td colspan="8" class="text-center">No data available</td></tr>';
+        container.innerHTML = '<tr><td colspan="7" class="text-center">No data available</td></tr>';
         return;
     }
 
@@ -39,7 +43,7 @@ function renderTable(data, page=1, rows=rowsPerPage) {
     const end = Math.min(start+rows, data.length);
     const pageData = data.slice(start,end);
 
-    pageData.forEach(row=>{
+    pageData.forEach(row => {
         const tr = document.createElement("tr");
         tr.innerHTML = `
             <td>${row.repository||""}</td>
@@ -61,8 +65,8 @@ function renderTable(data, page=1, rows=rowsPerPage) {
     currentPage = page;
 
     // Add click handlers for workflow links
-    document.querySelectorAll(".workflow-link").forEach(link=>{
-        link.addEventListener("click", async e=>{
+    document.querySelectorAll(".workflow-link").forEach(link => {
+        link.addEventListener("click", async e => {
             e.preventDefault();
             const owner = link.dataset.owner;
             const repo = link.dataset.repo;
@@ -76,7 +80,7 @@ function renderTable(data, page=1, rows=rowsPerPage) {
 async function showWorkflowYaml(owner, repo, file) {
     const yamlContainer = document.getElementById("workflowYamlModalBody");
     yamlContainer.textContent = "Loading...";
-    const path = `./data/${owner}/${repo}/${file}`;
+    const path = `data/${owner}/${repo}/${file}`;
     try {
         const response = await fetch(path);
         if (!response.ok) throw new Error(`File not found: ${path}`);
@@ -93,25 +97,233 @@ async function showWorkflowYaml(owner, repo, file) {
 // ===== Load Workflow Index =====
 async function loadWorkflowIndex() {
     try {
-        const response = await fetch('./data/workflow_index.json');
+        const response = await fetch('data/workflow_index.json');
         if (!response.ok) throw new Error("workflow_index.json not found");
         workflowIndex = await response.json();
+        return true;
     } catch (err) {
         console.error("Error loading workflow_index.json:", err);
         workflowIndex = {};
+        return false;
     }
+}
+
+// ===== Create Charts =====
+function createCharts(data) {
+    // Destroy existing charts if they exist
+    if (lineCountChartInstance) lineCountChartInstance.destroy();
+    if (jobsChartInstance) jobsChartInstance.destroy();
+    if (stepsChartInstance) stepsChartInstance.destroy();
+    
+    // Prepare data for charts
+    const lineCounts = data.map(d => d.line_count || 0);
+    const jobsCounts = data.map(d => d.jobs || 0);
+    const stepsPerJob = data.map(d => parseFloat(d.steps_per_job) || 0);
+    
+    // Create histogram data
+    function createHistogramData(values, bins = 10) {
+        const max = Math.max(...values);
+        const min = Math.min(...values);
+        const binSize = (max - min) / bins;
+        
+        const histogram = Array(bins).fill(0);
+        values.forEach(value => {
+            const binIndex = Math.min(Math.floor((value - min) / binSize), bins - 1);
+            histogram[binIndex]++;
+        });
+        
+        const labels = Array.from({length: bins}, (_, i) => 
+            `${Math.round(min + i * binSize)}-${Math.round(min + (i+1) * binSize)}`
+        );
+        
+        return { labels, data: histogram };
+    }
+    
+    // Line Count Chart
+    const lineCountHistogram = createHistogramData(lineCounts);
+    lineCountChartInstance = new Chart(document.getElementById('lineCountChart'), {
+        type: 'bar',
+        data: {
+            labels: lineCountHistogram.labels,
+            datasets: [{
+                label: 'Workflows by Line Count',
+                data: lineCountHistogram.data,
+                backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Line Count Distribution'
+                },
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Number of Workflows'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Line Count Range'
+                    }
+                }
+            }
+        }
+    });
+    
+    // Jobs Chart
+    const jobsHistogram = createHistogramData(jobsCounts, 5);
+    jobsChartInstance = new Chart(document.getElementById('jobsChart'), {
+        type: 'bar',
+        data: {
+            labels: jobsHistogram.labels,
+            datasets: [{
+                label: 'Workflows by Job Count',
+                data: jobsHistogram.data,
+                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Jobs Distribution'
+                },
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Number of Workflows'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Job Count Range'
+                    }
+                }
+            }
+        }
+    });
+    
+    // Steps Chart
+    const stepsHistogram = createHistogramData(stepsPerJob);
+    stepsChartInstance = new Chart(document.getElementById('stepsChart'), {
+        type: 'bar',
+        data: {
+            labels: stepsHistogram.labels,
+            datasets: [{
+                label: 'Workflows by Steps/Job',
+                data: stepsHistogram.data,
+                backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Steps per Job Distribution'
+                },
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Number of Workflows'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Steps per Job Range'
+                    }
+                }
+            }
+        }
+    });
+}
+
+// ===== Populate Repository Filter =====
+function populateRepoFilter(data) {
+    const repoSelect = document.getElementById('repoSelect');
+    const repos = [...new Set(data.map(item => item.repository))].sort();
+    
+    // Clear existing options except the first one
+    while (repoSelect.options.length > 1) {
+        repoSelect.remove(1);
+    }
+    
+    // Add repository options
+    repos.forEach(repo => {
+        const option = document.createElement('option');
+        option.value = repo;
+        option.textContent = repo;
+        repoSelect.appendChild(option);
+    });
+    
+    // Add event listener for filtering
+    repoSelect.addEventListener('change', function() {
+        const selectedRepo = this.value;
+        if (selectedRepo) {
+            filteredData = allData.filter(item => item.repository === selectedRepo);
+        } else {
+            filteredData = [...allData];
+        }
+        currentPage = 1;
+        renderTable(filteredData);
+        updateStats(filteredData);
+        createCharts(filteredData);
+    });
+}
+
+// ===== Update Stats =====
+function updateStats(data) {
+    const stats = calculateStats(data);
+    document.getElementById('totalFindings').textContent = stats.totalFindings.toLocaleString();
+    document.getElementById('avgLineCount').textContent = Math.round(stats.avgLineCount);
+    document.getElementById('findingsPerLine').textContent = stats.findingsPerLine.toFixed(4);
 }
 
 // ===== Load All Data =====
 async function loadAllData() {
-    await loadWorkflowIndex();
-
     const dataArray = [];
+    
+    // Check if workflow index was loaded successfully
+    if (Object.keys(workflowIndex).length === 0) {
+        console.error("Workflow index is empty");
+        return dataArray;
+    }
 
     for (const owner in workflowIndex) {
         for (const repo in workflowIndex[owner]) {
             for (const wfFile of workflowIndex[owner][repo]) {
-                const path = `./data/${owner}/${repo}/${wfFile}`;
+                const path = `data/${owner}/${repo}/${wfFile}`;
                 try {
                     const resp = await fetch(path);
                     if (!resp.ok) throw new Error(`File not found: ${path}`);
@@ -147,19 +359,49 @@ async function loadAllData() {
 async function initializeApp() {
     const loadingOverlay = document.getElementById('loadingOverlay');
     try {
+        // Load workflow index first
+        const indexLoaded = await loadWorkflowIndex();
+        if (!indexLoaded) {
+            throw new Error("Failed to load workflow index");
+        }
+        
+        // Load all data
         allData = await loadAllData();
         filteredData = [...allData];
 
+        // Update UI with data
         renderTable(filteredData);
-
-        const stats = calculateStats(allData);
-        document.getElementById('totalFindings').textContent = stats.totalFindings.toLocaleString();
-        document.getElementById('avgLineCount').textContent = Math.round(stats.avgLineCount);
-        document.getElementById('findingsPerLine').textContent = stats.findingsPerLine.toFixed(4);
+        updateStats(allData);
+        createCharts(allData);
+        populateRepoFilter(allData);
+        
+        // Set up pagination
+        document.getElementById('rowsPerPage').addEventListener('change', function() {
+            rowsPerPage = parseInt(this.value);
+            currentPage = 1;
+            renderTable(filteredData, currentPage, rowsPerPage);
+        });
+        
+        document.getElementById('prevPage').addEventListener('click', function(e) {
+            e.preventDefault();
+            if (currentPage > 1) {
+                renderTable(filteredData, currentPage - 1, rowsPerPage);
+            }
+        });
+        
+        document.getElementById('nextPage').addEventListener('click', function(e) {
+            e.preventDefault();
+            const totalPages = Math.ceil(filteredData.length / rowsPerPage);
+            if (currentPage < totalPages) {
+                renderTable(filteredData, currentPage + 1, rowsPerPage);
+            }
+        });
 
         loadingOverlay.style.display = 'none';
     } catch (err) {
         console.error("Failed to initialize app:", err);
+        document.getElementById('findingsTable').innerHTML = 
+            '<tr><td colspan="7" class="text-center text-danger">Error loading data: ' + err.message + '</td></tr>';
         loadingOverlay.style.display = 'none';
     }
 }
@@ -168,4 +410,3 @@ async function initializeApp() {
 document.addEventListener("DOMContentLoaded", () => {
     initializeApp();
 });
-
