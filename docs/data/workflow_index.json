@@ -1,0 +1,76 @@
+{
+  "allyelvis": {
+    "aenzbi-backend": [
+      "daily_scan.json",
+      "main.json",
+      "neon_workflows.json",
+      "node.js.json",
+      "npm-publish.json",
+      "release-package.json",
+      "ci.json",
+      "google.json",
+      "jekyll-gh-pages.json"
+    ]
+  },
+  "bokyranger": {
+    "palera1n": [
+      "build.json"
+    ]
+  },
+  "chengivan2": {
+    "todoish": [
+      "neon-preview-branches-for-pull-requests-cool-surf-52229957.json"
+    ]
+  },
+  "ChulHo-Kim": {
+    "sds_test": [
+      "blank.json"
+    ]
+  },
+  "denis-tibah": {
+    "Bankend-node.js": [
+      "codeball.json",
+      "commitlint.json",
+      "create-issue-on-pr-merge.json",
+      "pr_verify_linked_issue.json",
+      "release-drafter.json",
+      "sonar.json",
+      "dependency-review.json"
+    ]
+  },
+  "dragonflycapital": {
+    "docs-": [
+      "check-content-version.json",
+      "clean-redirects-pr.json",
+      "integration-tests.json",
+      "push-notify.json",
+      "semgrep.json"
+    ]
+  },
+  "hueitan": {
+    "wikistories-prototype": [
+      "blank.json"
+    ]
+  },
+  "levibostian": {
+    "is-it-deployed": [
+      "test.json",
+      "deployment.json"
+    ]
+  },
+  "lpetkov": {
+    "p5": [
+      "neon-preview-branches-for-pull-requests-small-heart-92003888.json"
+    ]
+  },
+  "rweich": {
+    "streamdeck-events": [
+      "build-test-versions.json",
+      "commitlint.json",
+      "release.json",
+      "test-coverage.json",
+      "test-release.json",
+      "codeql-analysis.json"
+    ]
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "pr_verify_linked_issue": {
+    "2023-02-10T11-11-16Z": [
+      {
+        "region": {
+          "startLine": 13,
+          "startColumn": 5,
+          "endLine": 19,
+          "endColumn": 53
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2022-04-15T06-02-19Z": [
+      {
+        "region": {
+          "startLine": 13,
+          "startColumn": 5,
+          "endLine": 20,
+          "endColumn": 8
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2023-03-28T00-26-49Z": [
+      {
+        "region": {
+          "startLine": 13,
+          "startColumn": 5,
+          "endLine": 19,
+          "endColumn": 53
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2023-03-28T00-36-10Z": [
+      {
+        "region": {
+          "startLine": 13,
+          "startColumn": 5,
+          "endLine": 19,
+          "endColumn": 53
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2023-06-16T16-52-11Z": [
+      {
+        "region": {
+          "startLine": 13,
+          "startColumn": 5,
+          "endLine": 19,
+          "endColumn": 53
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2023-02-10T11-11-16Z": {
+      "triggers": {
+        "pull_request": {
+          "types": [
+            "edited",
+            "synchronize",
+            "opened",
+            "reopened"
+          ]
+        },
+        "check_run": null
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "verify_linked_issue": 1
+      },
+      "line_count": 19,
+      "workflow": "# This workflow will inspect a pull request to ensure there is a linked issue or a\n# valid issue is mentioned in the body. If neither is present it fails the check and adds\n# a comment alerting users of this missing requirement.\nname: VerifyIssue\n\non:\n  pull_request:\n    types: [edited, synchronize, opened, reopened]\n  check_run:\n\njobs:\n  verify_linked_issue:\n    runs-on: ubuntu-latest\n    name: Ensure Pull Request has a linked issue.\n    steps:\n      - name: Verify Linked Issue\n        uses: hattan/verify-linked-issue-action@v1.1.0\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n"
+    },
+    "2022-04-15T06-02-19Z": {
+      "triggers": {
+        "pull_request": {
+          "types": [
+            "edited",
+            "synchronize",
+            "opened",
+            "reopened"
+          ]
+        },
+        "check_run": null
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "verify_linked_issue": 1
+      },
+      "line_count": 20,
+      "workflow": "# This workflow will inspect a pull request to ensure there is a linked issue or a\n# valid issue is mentioned in the body. If neither is present it fails the check and adds\n# a comment alerting users of this missing requirement.\nname: VerifyIssue\n\non:\n  pull_request:\n    types: [edited, synchronize, opened, reopened]\n  check_run:\n\njobs:\n  verify_linked_issue:\n    runs-on: ubuntu-latest\n    name: Ensure Pull Request has a linked issue.\n    steps:\n      - name: Verify Linked Issue\n        uses: hattan/verify-linked-issue-action@v1.1.0\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n      \n"
+    },
+    "2023-03-28T00-26-49Z": {
+      "triggers": {
+        "pull_request": {
+          "types": [
+            "edited",
+            "opened"
+          ]
+        },
+        "check_run": null
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "verify_linked_issue": 1
+      },
+      "line_count": 19,
+      "workflow": "# This workflow will inspect a pull request to ensure there is a linked issue or a\n# valid issue is mentioned in the body. If neither is present it fails the check and adds\n# a comment alerting users of this missing requirement.\nname: VerifyIssue\n\non:\n  pull_request:\n    types: [edited, opened]\n  check_run:\n\njobs:\n  verify_linked_issue:\n    runs-on: ubuntu-latest\n    name: Ensure Pull Request has a linked issue.\n    steps:\n      - name: Verify Linked Issue\n        uses: srikanthccv/verify-linked-issue-action@v0.69\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n"
+    },
+    "2023-03-28T00-36-10Z": {
+      "triggers": {
+        "pull_request": {
+          "types": [
+            "edited",
+            "opened"
+          ]
+        },
+        "check_run": null
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "verify_linked_issue": 1
+      },
+      "line_count": 19,
+      "workflow": "# This workflow will inspect a pull request to ensure there is a linked issue or a\n# valid issue is mentioned in the body. If neither is present it fails the check and adds\n# a comment alerting users of this missing requirement.\nname: VerifyIssue\n\non:\n  pull_request:\n    types: [edited, opened]\n  check_run:\n\njobs:\n  verify_linked_issue:\n    runs-on: ubuntu-latest\n    name: Ensure Pull Request has a linked issue.\n    steps:\n      - name: Verify Linked Issue\n        uses: srikanthccv/verify-linked-issue-action@v0.70\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n"
+    },
+    "2023-06-16T16-52-11Z": {
+      "triggers": {
+        "pull_request": {
+          "types": [
+            "edited",
+            "opened"
+          ]
+        },
+        "check_run": null
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "verify_linked_issue": 1
+      },
+      "line_count": 19,
+      "workflow": "# This workflow will inspect a pull request to ensure there is a linked issue or a\n# valid issue is mentioned in the body. If neither is present it fails the check and adds\n# a comment alerting users of this missing requirement.\nname: VerifyIssue\n\non:\n  pull_request:\n    types: [edited, opened]\n  check_run:\n\njobs:\n  verify_linked_issue:\n    runs-on: ubuntu-latest\n    name: Ensure Pull Request has a linked issue.\n    steps:\n      - name: Verify Linked Issue\n        uses: srikanthccv/verify-linked-issue-action@v0.71\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n"
+    }
+  }
+}

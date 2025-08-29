@@ -1,0 +1,138 @@
+{
+  "commitlint": {
+    "2021-08-02T20-36-34Z": [
+      {
+        "region": {
+          "startLine": 5,
+          "startColumn": 5,
+          "endLine": 14,
+          "endColumn": 97
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-08-18T13-26-44Z": [
+      {
+        "region": {
+          "startLine": 5,
+          "startColumn": 5,
+          "endLine": null,
+          "endColumn": 5
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-08-23T06-22-28Z": [
+      {
+        "region": {
+          "startLine": 5,
+          "startColumn": 5,
+          "endLine": 15,
+          "endColumn": 163
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2021-08-29T07-31-38Z": [
+      {
+        "region": {
+          "startLine": 8,
+          "startColumn": 5,
+          "endLine": 18,
+          "endColumn": 163
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ],
+    "2023-05-19T11-47-13Z": [
+      {
+        "region": {
+          "startLine": 8,
+          "startColumn": 5,
+          "endLine": 13,
+          "endColumn": 50
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2021-08-02T20-36-34Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "lint-commits": 4
+      },
+      "line_count": 14,
+      "workflow": "name: commitlint\non: [pull_request]\njobs:\n  lint-commits:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2.3.1\n        with:\n          # we actually need \"github.event.pull_request.commits + 1\" commit\n          fetch-depth: 0\n      - uses: actions/setup-node@v2.1.0\n      # or just \"yarn\" if you depend on \"@commitlint/cli\" already\n      - run: yarn add @commitlint/cli\n      - run: yarn run commitlint --from HEAD~${{ github.event.pull_request.commits }} --to HEAD\n"
+    },
+    "2021-08-18T13-26-44Z": {
+      "triggers": {},
+      "num_jobs": 0,
+      "steps_per_job": {},
+      "line_count": 16,
+      "workflow": null,
+      "parse_error": "mapping values are not allowed here\n  in \"<unicode string>\", line 15, column 45:\n     ...  echo \"module.exports = {extends: ['@commitlint/config-conventio ... \n                                         ^"
+    },
+    "2021-08-23T06-22-28Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "lint-commits": 5
+      },
+      "line_count": 15,
+      "workflow": "name: commitlint\non: [pull_request]\njobs:\n  lint-commits:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2.3.1\n        with:\n          # we actually need \"github.event.pull_request.commits + 1\" commit\n          fetch-depth: 0\n      - uses: actions/setup-node@v2.1.0\n      # or just \"yarn\" if you depend on \"@commitlint/cli\" already\n      - run: yarn add @commitlint/cli\n      - run: yarn add @commitlint/config-conventional\n      - run: yarn run commitlint --config ./node_modules/@commitlint/config-conventional/index.js  --from HEAD~${{ github.event.pull_request.commits }} --to HEAD\n"
+    },
+    "2021-08-29T07-31-38Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "lint-commits": 5
+      },
+      "line_count": 18,
+      "workflow": "name: commitlint\non: [pull_request]\ndefaults:\n  run:\n    working-directory: frontend\njobs:\n  lint-commits:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2.3.1\n        with:\n          # we actually need \"github.event.pull_request.commits + 1\" commit\n          fetch-depth: 0\n      - uses: actions/setup-node@v2.1.0\n      # or just \"yarn\" if you depend on \"@commitlint/cli\" already\n      - run: yarn add @commitlint/cli\n      - run: yarn add @commitlint/config-conventional\n      - run: yarn run commitlint --config ./node_modules/@commitlint/config-conventional/index.js  --from HEAD~${{ github.event.pull_request.commits }} --to HEAD\n"
+    },
+    "2023-05-19T11-47-13Z": {
+      "triggers": {
+        "pull_request": {}
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "lint-commits": 2
+      },
+      "line_count": 13,
+      "workflow": "name: commitlint\non: [pull_request]\ndefaults:\n  run:\n    working-directory: frontend\njobs:\n  lint-commits:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v3\n        with:\n          fetch-depth: 0\n      - uses: wagoid/commitlint-github-action@v5\n"
+    }
+  }
+}

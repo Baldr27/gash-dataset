@@ -1,0 +1,38 @@
+{
+  "check-content-version": {
+    "2024-08-30T06-28-22Z": [
+      {
+        "region": {
+          "startLine": 10,
+          "startColumn": 5,
+          "endLine": 22,
+          "endColumn": 18
+        },
+        "message": "Actions job or workflow does not limit the permissions of the GITHUB_TOKEN. Consider setting an explicit permissions block, using the following as a minimal starting point: {{contents: read}}",
+        "ruleId": "actions/missing-workflow-permissions",
+        "cwe": "CWE-275",
+        "precision": "high",
+        "severity": "warning",
+        "security_severity": "5.0"
+      }
+    ]
+  },
+  "metadata": {
+    "2024-08-30T06-28-22Z": {
+      "triggers": {
+        "schedule": [
+          {
+            "cron": "0 * * * *"
+          }
+        ],
+        "workflow_dispatch": null
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "run-script": 3
+      },
+      "line_count": 22,
+      "workflow": "name: Check Content Version\n\non:\n  schedule:\n    - cron: '0 * * * *' # Runs every hour\n  workflow_dispatch: # Allows manual trigger from GitHub Actions tab\n\njobs:\n  run-script:\n    runs-on: ubuntu-latest\n      \n    steps:\n    - name: Checkout repository\n      uses: actions/checkout@v3\n      \n    - name: Make script executable\n      run: chmod +x scripts/check-version.sh\n      shell: bash\n      \n    - name: Run check-version.sh script\n      run: scripts/check-version.sh\n      shell: bash"
+    }
+  }
+}

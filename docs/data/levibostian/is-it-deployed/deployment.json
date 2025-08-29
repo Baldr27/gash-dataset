@@ -1,0 +1,22 @@
+{
+  "deployment": {
+    "2023-10-02T11-49-01Z": []
+  },
+  "metadata": {
+    "2023-10-02T11-49-01Z": {
+      "triggers": {
+        "push": {
+          "branches": [
+            "main"
+          ]
+        }
+      },
+      "num_jobs": 1,
+      "steps_per_job": {
+        "deploy": 6
+      },
+      "line_count": 40,
+      "workflow": "\non: \n  push:\n    branches: [main]\n\njobs:\n  deploy:\n    runs-on: ubuntu-latest\n    permissions:\n      contents: write # to push git tags \n    steps:\n    - uses: actions/checkout@v4\n    - uses: actions/setup-node@v3\n      with:\n        node-version-file: '.nvmrc'\n\n    - run: npm ci\n    - run: npm run compile \n\n    - name: Get branch name\n      id: branch-name\n      uses: tj-actions/branch-names@v7  \n\n    - name: Deploy git tag via semantic-release\n      uses: cycjimmy/semantic-release-action@v4\n      with:\n        semantic_version: latest \n        branches: |\n          [\n            '${{ steps.branch-name.outputs.current_branch }}',\n            { name: 'beta', prerelease: true },\n            { name: 'alpha', prerelease: true }\n          ]\n        extra_plugins: |\n          conventional-changelog-conventionalcommits\n          @semantic-release/github\n          semantic-release-recovery\n      env:\n        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n        NPM_TOKEN: ${{ secrets.NPM_PUSH_TOKEN }}"
+    }
+  }
+}
