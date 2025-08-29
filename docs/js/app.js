@@ -165,5 +165,7 @@ async function initializeApp() {
 }
 
 // ===== Start App =====
-initializeApp();
+document.addEventListener("DOMContentLoaded", () => {
+    initializeApp();
+});
 
