@@ -95,7 +95,7 @@
             <div class="spinner-border text-primary spinner" role="status">
                 <span class="visually-hidden">Loading...</span>
             </div>
-            <p class="mt-2">Initializing DuckDB and loading data...</p>
+            <p class="mt-2">Initializing database and loading data...</p>
         </div>
     </div>
 
@@ -250,16 +250,10 @@
         </div>
     </div>
 
-    <!-- Load Apache Arrow -->
-    <script src="https://cdn.jsdelivr.net/npm/apache-arrow@14.0.2/+esm"></script>
-    
-    <!-- Load DuckDB Sync version to avoid CORS issues -->
-    <script src="./js/duckdb/duckdb-browser.mjs"></script>
+    <!-- Load a pre-bundled version of DuckDB that includes all dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.25.0/dist/duckdb-browser-async-eh.js"></script>
     
     <script>
-        // Set Arrow to globalThis for DuckDB
-        window.Arrow = window.arrow;
-        
         // Render a query result into an HTML table
         function renderTable(arrowTable, containerId = "findingsTable") {
             const container = document.getElementById(containerId);
@@ -282,31 +276,6 @@
                     <td>${row.findings_per_line ?? ""}</td>
                 `;
                 container.appendChild(tr);
-            }
-        }
-
-        // Initialize DuckDB in synchronous mode
-        async function initDuckDB() {
-            try {
-                // Use the synchronous version of DuckDB
-                const JSDELIVR_BUNDLES = duckdb.getJsDelivrBundles();
-                
-                // Select the synchronous bundle
-                const bundle = JSDELIVR_BUNDLES.find(b => b.async === false);
-                
-                if (!bundle) {
-                    throw new Error("Synchronous bundle not found");
-                }
-                
-                // Instantiate DuckDB
-                const logger = new duckdb.ConsoleLogger();
-                const db = new duckdb.DuckDB(logger);
-                await db.instantiate(bundle.mainModule);
-                
-                return db;
-            } catch (error) {
-                console.error("DuckDB initialization failed:", error);
-                throw error;
             }
         }
 
@@ -408,6 +377,25 @@
             }
         }
 
+        // Initialize DuckDB in the browser
+        async function initDuckDB() {
+            try {
+                // Use the pre-bundled version of DuckDB
+                const JSDELIVR_BUNDLES = duckdb.getJsDelivrBundles();
+                const bundle = await duckdb.selectBundle(JSDELIVR_BUNDLES);
+                
+                const worker = new Worker(bundle.mainWorker);
+                const logger = new duckdb.ConsoleLogger();
+                const db = new duckdb.AsyncDuckDB(logger, worker);
+                
+                await db.instantiate(bundle.mainModule, bundle.pthreadWorker);
+                return db;
+            } catch (error) {
+                console.error("Failed to initialize DuckDB:", error);
+                throw error;
+            }
+        }
+
         // Main execution
         async function initializeApp() {
             try {
@@ -415,7 +403,7 @@
                 
                 // Initialize DuckDB
                 const db = await initDuckDB();
-                const conn = db.connect();
+                const conn = await db.connect();
 
                 document.getElementById('statusAlert').innerHTML = '<strong>Status:</strong> Loading parquet data...';
                 
