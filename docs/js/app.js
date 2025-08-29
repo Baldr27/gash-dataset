@@ -1,171 +1,169 @@
-// Global variables
+// ===== Global Variables =====
 let allData = [];
 let filteredData = [];
 let currentPage = 1;
 let rowsPerPage = 10;
-let workflowIndex = {};
+let currentSort = { column: null, direction: 'asc' };
+let workflowIndex = {}; // workflow_index.json content
 
-// Load workflow index
-async function loadWorkflowIndex() {
+// ===== Utility Functions =====
+function parseStepsPerJob(stepsStr) {
     try {
-        const response = await fetch('./data/workflow_index.json');
-        if (!response.ok) throw new Error("Failed to load workflow index");
-        workflowIndex = await response.json();
-
-        const repoSelect = document.getElementById('repoSelect');
-        for (const owner of Object.keys(workflowIndex)) {
-            for (const repo of Object.keys(workflowIndex[owner])) {
-                const option = document.createElement('option');
-                option.value = `${owner}|${repo}`;
-                option.textContent = `${owner}/${repo}`;
-                repoSelect.appendChild(option);
-            }
-        }
-    } catch (error) {
-        console.error("Error loading workflow index:", error);
+        const stepsData = JSON.parse(stepsStr);
+        const values = Object.values(stepsData);
+        return values.length > 0 ? (values.reduce((a,b)=>a+b,0)/values.length).toFixed(1) : 0;
+    } catch {
+        return 0;
     }
 }
 
-// Load workflow JSONs for selected repo
-async function loadWorkflowData(owner, repo) {
-    const workflows = workflowIndex[owner][repo];
-    const data = [];
-    for (const wfFile of workflows) {
-        try {
-            const response = await fetch(`./data/${owner}/${repo}/${wfFile}`);
-            if (!response.ok) continue;
-            const wfData = await response.json();
-            for (const wfName in wfData) {
-                if (wfName === 'metadata') continue;
-                const versions = wfData[wfName];
-                for (const ts in versions) {
-                    const meta = wfData['metadata'][ts];
-                    data.push({
-                        repository: `${owner}/${repo}`,
-                        workflow: wfName,
-                        line_count: meta.line_count,
-                        jobs: meta.num_jobs,
-                        steps_per_job: Object.values(meta.steps_per_job || {}).reduce((a,b)=>a+b,0)/Object.keys(meta.steps_per_job || {}).length || 0,
-                        findings: versions[ts].length,
-                        findings_per_line: meta.line_count ? (versions[ts].length/meta.line_count).toFixed(4) : 0,
-                        yaml: meta.workflow
-                    });
-                }
-            }
-        } catch (e) { console.error(`Failed to load ${wfFile}:`, e); }
-    }
-    return data;
+function calculateStats(data) {
+    if (!data || !data.length) return { totalFindings: 0, avgLineCount: 0, findingsPerLine: 0 };
+    const totalFindings = data.reduce((sum,r)=>sum+(r.findings||0),0);
+    const avgLineCount = data.reduce((sum,r)=>sum+(r.line_count||0),0)/data.length;
+    const findingsPerLine = totalFindings/data.reduce((sum,r)=>sum+(r.line_count||0),0);
+    return { totalFindings, avgLineCount, findingsPerLine };
 }
 
-// Render table
-function renderTable(data, page = 1, rows = rowsPerPage) {
+function renderTable(data, page=1, rows=rowsPerPage) {
     const container = document.getElementById("findingsTable");
     container.innerHTML = "";
-    if (!data || data.length === 0) {
-        container.innerHTML = '<tr><td colspan="7" class="text-center">No data available</td></tr>';
+
+    if (!data.length) {
+        container.innerHTML = '<tr><td colspan="8" class="text-center">No data available</td></tr>';
         return;
     }
+
     const totalPages = Math.ceil(data.length / rows);
-    const startIndex = (page-1)*rows;
-    const endIndex = Math.min(startIndex+rows, data.length);
-    const pageData = data.slice(startIndex,endIndex);
-    for (const row of pageData) {
+    const start = (page-1)*rows;
+    const end = Math.min(start+rows, data.length);
+    const pageData = data.slice(start,end);
+
+    pageData.forEach(row=>{
         const tr = document.createElement("tr");
         tr.innerHTML = `
-            <td>${row.repository}</td>
-            <td><a href="#" class="view-yaml" data-yaml="${encodeURIComponent(row.yaml)}">${row.workflow}</a></td>
-            <td>${row.line_count}</td>
-            <td>${row.jobs}</td>
-            <td>${row.steps_per_job.toFixed(1)}</td>
-            <td>${row.findings}</td>
-            <td>${row.findings_per_line}</td>
+            <td>${row.repository||""}</td>
+            <td><a href="#" class="workflow-link" data-owner="${row.owner}" data-repo="${row.repository}" data-file="${row.workflow}">${row.workflow||""}</a></td>
+            <td>${row.line_count||""}</td>
+            <td>${row.jobs||""}</td>
+            <td>${row.steps_per_job||""}</td>
+            <td>${row.findings||""}</td>
+            <td>${row.findings_per_line||""}</td>
         `;
         container.appendChild(tr);
-    }
+    });
+
     document.getElementById("paginationInfo").textContent =
-        `Showing ${startIndex+1} to ${endIndex} of ${data.length} entries`;
-    document.getElementById("prevPage").parentElement.classList.toggle("disabled", page<=1);
-    document.getElementById("nextPage").parentElement.classList.toggle("disabled", page>=totalPages);
+        `Showing ${start+1} to ${end} of ${data.length} entries`;
+    document.getElementById("prevPage").parentElement.classList.toggle("disabled", page <= 1);
+    document.getElementById("nextPage").parentElement.classList.toggle("disabled", page >= totalPages);
+
     currentPage = page;
 
-    // Add YAML click listeners
-    document.querySelectorAll('.view-yaml').forEach(el => {
-        el.addEventListener('click', (e) => {
+    // Add click handlers for workflow links
+    document.querySelectorAll(".workflow-link").forEach(link=>{
+        link.addEventListener("click", async e=>{
             e.preventDefault();
-            const yamlContent = decodeURIComponent(el.dataset.yaml);
-            document.getElementById('yamlModalBody').textContent = yamlContent;
-            const yamlModal = new bootstrap.Modal(document.getElementById('yamlModal'));
-            yamlModal.show();
+            const owner = link.dataset.owner;
+            const repo = link.dataset.repo;
+            const file = link.dataset.file;
+            await showWorkflowYaml(owner, repo, file);
         });
     });
 }
 
-// Calculate stats
-function calculateStats(data) {
-    if (!data || data.length===0) return { totalFindings:0, avgLineCount:0, findingsPerLine:0 };
-    const totalFindings = data.reduce((sum,row)=>sum+(row.findings||0),0);
-    const avgLineCount = data.reduce((sum,row)=>sum+(row.line_count||0),0)/data.length;
-    const findingsPerLine = totalFindings/data.reduce((sum,row)=>sum+(row.line_count||0),0);
-    return { totalFindings, avgLineCount, findingsPerLine };
+// ===== Fetch Workflow YAML =====
+async function showWorkflowYaml(owner, repo, file) {
+    const yamlContainer = document.getElementById("workflowYamlModalBody");
+    yamlContainer.textContent = "Loading...";
+    const path = `./data/${owner}/${repo}/${file}`;
+    try {
+        const response = await fetch(path);
+        if (!response.ok) throw new Error(`File not found: ${path}`);
+        const json = await response.json();
+        yamlContainer.textContent = json.workflow || JSON.stringify(json, null, 2);
+        const modal = new bootstrap.Modal(document.getElementById('workflowYamlModal'));
+        modal.show();
+    } catch (err) {
+        console.error(err);
+        yamlContainer.textContent = `Failed to load workflow: ${err.message}`;
+    }
 }
 
-// Create charts
-function createCharts(data) {
-    if (!data || data.length===0) return;
-    const lineCountData = data.map(row=>({x:row.line_count, y:row.findings}));
-    const jobsData = data.map(row=>({x:row.jobs, y:row.findings}));
-    const stepsData = data.map(row=>({x:row.steps_per_job, y:row.findings}));
-
-    new Chart(document.getElementById('lineCountChart'), {
-        type:'scatter',
-        data:{datasets:[{label:'Line Count vs Findings',data:lineCountData,backgroundColor:'rgba(54,162,235,0.5)',borderColor:'rgba(54,162,235,1)',borderWidth:1}]},
-        options:{scales:{x:{title:{display:true,text:'Line Count'}},y:{title:{display:true,text:'Findings'}}}}
-    });
-    new Chart(document.getElementById('jobsChart'), {
-        type:'scatter',
-        data:{datasets:[{label:'Jobs vs Findings',data:jobsData,backgroundColor:'rgba(75,192,192,0.5)',borderColor:'rgba(75,192,192,1)',borderWidth:1}]},
-        options:{scales:{x:{title:{display:true,text:'Number of Jobs'}},y:{title:{display:true,text:'Findings'}}}}
-    });
-    new Chart(document.getElementById('stepsChart'), {
-        type:'scatter',
-        data:{datasets:[{label:'Steps/Job vs Findings',data:stepsData,backgroundColor:'rgba(255,99,132,0.5)',borderColor:'rgba(255,99,132,1)',borderWidth:1}]},
-        options:{scales:{x:{title:{display:true,text:'Steps per Job'}},y:{title:{display:true,text:'Findings'}}}}
-    });
+// ===== Load Workflow Index =====
+async function loadWorkflowIndex() {
+    try {
+        const response = await fetch('./data/workflow_index.json');
+        if (!response.ok) throw new Error("workflow_index.json not found");
+        workflowIndex = await response.json();
+    } catch (err) {
+        console.error("Error loading workflow_index.json:", err);
+        workflowIndex = {};
+    }
 }
 
-// Event listeners
-document.getElementById('repoSelect').addEventListener('change', async (e)=>{
-    const [owner, repo] = e.target.value.split('|');
-    if(!owner||!repo) return;
-    allData = await loadWorkflowData(owner,repo);
-    filteredData = [...allData];
-    const stats = calculateStats(allData);
-    document.getElementById('totalFindings').textContent = stats.totalFindings;
-    document.getElementById('avgLineCount').textContent = stats.avgLineCount.toFixed(1);
-    document.getElementById('findingsPerLine').textContent = stats.findingsPerLine.toFixed(4);
-    renderTable(filteredData,1,rowsPerPage);
-    createCharts(allData);
-});
-
-document.getElementById('rowsPerPage').addEventListener('change',(e)=>{
-    rowsPerPage=parseInt(e.target.value);
-    renderTable(filteredData,1,rowsPerPage);
-});
-document.getElementById('prevPage').addEventListener('click',(e)=>{
-    e.preventDefault();
-    if(currentPage>1) renderTable(filteredData,currentPage-1,rowsPerPage);
-});
-document.getElementById('nextPage').addEventListener('click',(e)=>{
-    e.preventDefault();
-    const totalPages = Math.ceil(filteredData.length/rowsPerPage);
-    if(currentPage<totalPages) renderTable(filteredData,currentPage+1,rowsPerPage);
-});
-
-// Initialize app
-async function initializeApp() {
-    document.getElementById('loadingOverlay').style.display = 'flex';
+// ===== Load All Data =====
+async function loadAllData() {
     await loadWorkflowIndex();
-    document.getElementById('loadingOverlay').style.display = 'none';
+
+    const dataArray = [];
+
+    for (const owner in workflowIndex) {
+        for (const repo in workflowIndex[owner]) {
+            for (const wfFile of workflowIndex[owner][repo]) {
+                const path = `./data/${owner}/${repo}/${wfFile}`;
+                try {
+                    const resp = await fetch(path);
+                    if (!resp.ok) throw new Error(`File not found: ${path}`);
+                    const json = await resp.json();
+
+                    // Metadata extraction
+                    const stepsAvg = parseStepsPerJob(JSON.stringify(json.steps_per_job || {}));
+                    const lineCount = json.line_count || 0;
+                    const numJobs = json.num_jobs || 0;
+                    const findingsCount = (json.findings || []).length || 0;
+
+                    dataArray.push({
+                        owner,
+                        repository: repo,
+                        workflow: wfFile,
+                        line_count: lineCount,
+                        jobs: numJobs,
+                        steps_per_job: stepsAvg,
+                        findings: findingsCount,
+                        findings_per_line: lineCount ? (findingsCount/lineCount).toFixed(4) : 0
+                    });
+                } catch (err) {
+                    console.warn("Skipping file:", path, err.message);
+                }
+            }
+        }
+    }
+
+    return dataArray;
 }
+
+// ===== Initialize App =====
+async function initializeApp() {
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    try {
+        allData = await loadAllData();
+        filteredData = [...allData];
+
+        renderTable(filteredData);
+
+        const stats = calculateStats(allData);
+        document.getElementById('totalFindings').textContent = stats.totalFindings.toLocaleString();
+        document.getElementById('avgLineCount').textContent = Math.round(stats.avgLineCount);
+        document.getElementById('findingsPerLine').textContent = stats.findingsPerLine.toFixed(4);
+
+        loadingOverlay.style.display = 'none';
+    } catch (err) {
+        console.error("Failed to initialize app:", err);
+        loadingOverlay.style.display = 'none';
+    }
+}
+
+// ===== Start App =====
 initializeApp();
 
